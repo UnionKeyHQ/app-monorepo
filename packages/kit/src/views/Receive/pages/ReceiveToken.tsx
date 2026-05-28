@@ -1,0 +1,498 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+
+import { useRoute } from '@react-navigation/core';
+import { useIntl } from 'react-intl';
+import { Linking, StyleSheet } from 'react-native';
+
+import {
+  Badge,
+  Button,
+  Dialog,
+  Empty,
+  IconButton,
+  Page,
+  QRCode,
+  SizableText,
+  XStack,
+  YStack,
+  useClipboard,
+  useMedia,
+} from '@onekeyhq/components';
+import {
+  EHardwareUiStateAction,
+  useHardwareUiStateAtom,
+} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import {
+  EAppEventBusNames,
+  appEventBus,
+} from '@onekeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type {
+  EModalReceiveRoutes,
+  IModalReceiveParamList,
+} from '@onekeyhq/shared/src/routes';
+import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
+import { EConfirmOnDeviceType } from '@onekeyhq/shared/types/device';
+
+import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
+import { useAccountData } from '../../../hooks/useAccountData';
+import { useHelpLink } from '../../../hooks/useHelpLink';
+import { EAddressState } from '../types';
+
+import type { RouteProp } from '@react-navigation/core';
+
+function ReceiveToken() {
+  useDebugComponentRemountLog({
+    name: 'ReceiveToken9971',
+  });
+  const media = useMedia();
+  const intl = useIntl();
+  const route =
+    useRoute<
+      RouteProp<IModalReceiveParamList, EModalReceiveRoutes.ReceiveToken>
+    >();
+
+  const { networkId, accountId, walletId, token } = route.params;
+
+  const { account, network, wallet, vaultSettings, addressType, deriveType } =
+    useAccountData({
+      accountId,
+      networkId,
+      walletId,
+    });
+
+  const [addressState, setAddressState] = useState<EAddressState>(
+    EAddressState.Unverified,
+  );
+
+  const [hardwareUiState] = useHardwareUiStateAtom();
+
+  const { copyText } = useClipboard();
+
+  const requestsUrl = useHelpLink({ path: 'topic/unionkey-use-kp.html' });
+
+  const isHardwareWallet =
+    accountUtils.isQrWallet({
+      walletId,
+    }) ||
+    accountUtils.isHwWallet({
+      walletId,
+    });
+
+  const shouldShowAddress = useMemo(() => {
+    if (!isHardwareWallet) {
+      return true;
+    }
+
+    if (
+      addressState === EAddressState.ForceShow ||
+      addressState === EAddressState.Verified
+    ) {
+      return true;
+    }
+
+    if (
+      addressState === EAddressState.Verifying &&
+      hardwareUiState?.action === EHardwareUiStateAction.REQUEST_BUTTON
+    ) {
+      return true;
+    }
+
+    return false;
+  }, [addressState, hardwareUiState?.action, isHardwareWallet]);
+
+  const shouldShowQRCode = useMemo(() => {
+    if (!isHardwareWallet) {
+      return true;
+    }
+
+    if (
+      addressState === EAddressState.ForceShow ||
+      addressState === EAddressState.Verified
+    ) {
+      return true;
+    }
+
+    return false;
+  }, [addressState, isHardwareWallet]);
+
+  const handleVerifyOnDevicePress = useCallback(async () => {
+    setAddressState(EAddressState.Verifying);
+    try {
+      if (!deriveType) return;
+
+      const addresses =
+        await backgroundApiProxy.serviceAccount.verifyHWAccountAddresses({
+          walletId,
+          networkId,
+          indexedAccountId: account?.indexedAccountId,
+          deriveType,
+          confirmOnDevice: EConfirmOnDeviceType.EveryItem,
+        });
+
+      const isSameAddress =
+        addresses?.[0]?.toLowerCase() === account?.address?.toLowerCase();
+
+      defaultLogger.transaction.receive.showReceived({
+        walletType: wallet?.type,
+        isSuccess: isSameAddress,
+        failedReason: isSameAddress
+          ? ''
+          : intl.formatMessage({
+              id: ETranslations.feedback_address_mismatch,
+            }),
+      });
+
+      if (!isSameAddress) {
+        Dialog.confirm({
+          icon: 'ErrorOutline',
+          tone: 'destructive',
+          title: intl.formatMessage({
+            id: ETranslations.feedback_address_mismatch,
+          }),
+          description: intl.formatMessage({
+            id: ETranslations.feedback_address_mismatch_desc,
+          }),
+          onConfirmText: intl.formatMessage({
+            id: ETranslations.global_contact_us,
+          }),
+          onConfirm: () => Linking.openURL(requestsUrl),
+          confirmButtonProps: {
+            variant: 'primary',
+          },
+        });
+      }
+      setAddressState(
+        isSameAddress ? EAddressState.Verified : EAddressState.Unverified,
+      );
+    } catch (e: any) {
+      setAddressState(EAddressState.Unverified);
+      // verifyHWAccountAddresses handler error toast
+      defaultLogger.transaction.receive.showReceived({
+        walletType: wallet?.type,
+        isSuccess: false,
+        failedReason: (e as Error).message,
+      });
+      throw e;
+    }
+  }, [
+    account?.address,
+    account?.indexedAccountId,
+    deriveType,
+    intl,
+    networkId,
+    requestsUrl,
+    wallet?.type,
+    walletId,
+  ]);
+
+  useEffect(() => {
+    const callback = () => setAddressState(EAddressState.Unverified);
+    appEventBus.on(
+      EAppEventBusNames.CloseHardwareUiStateDialogManually,
+      callback,
+    );
+    return () => {
+      appEventBus.off(
+        EAppEventBusNames.CloseHardwareUiStateDialogManually,
+        callback,
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isHardwareWallet) {
+      defaultLogger.transaction.receive.showReceived({
+        walletType: wallet?.type,
+        isSuccess: true,
+        failedReason: '',
+      });
+    }
+  }, [isHardwareWallet, wallet?.type]);
+
+  const renderCopyAddressButton = useCallback(() => {
+    if (
+      isHardwareWallet &&
+      addressState !== EAddressState.Verified &&
+      addressState !== EAddressState.ForceShow
+    ) {
+      return null;
+    }
+
+    return (
+      <IconButton
+        size="medium"
+        icon="Copy3Outline"
+        onPress={() => copyText(account?.address ?? '')}
+        variant="primary"
+      />
+    );
+  }, [account?.address, addressState, copyText, isHardwareWallet]);
+
+  const renderVerifyAddressButton = useCallback(() => {
+    if (!isHardwareWallet || shouldShowAddress) return null;
+
+    return (
+      <YStack
+        mt="$5"
+        alignItems="center"
+        justifyContent="space-between"
+        flexDirection="row-reverse"
+        $md={{
+          flexDirection: 'column',
+          gap: '$5',
+          mt: '0',
+          justifyContent: 'center',
+        }}
+      >
+        <Button
+          variant="primary"
+          size={media.gtMd ? 'medium' : 'large'}
+          onPress={handleVerifyOnDevicePress}
+          $md={{
+            width: '100%',
+          }}
+        >
+          {intl.formatMessage({
+            id: ETranslations.global_verify_on_device,
+          })}
+        </Button>
+        <Button
+          size="medium"
+          variant="tertiary"
+          onPress={() => {
+            Dialog.confirm({
+              icon: 'ErrorOutline',
+              tone: 'warning',
+              title: intl.formatMessage({
+                id: ETranslations.global_receive_address_confirmation,
+              }),
+              description: intl.formatMessage({
+                id: ETranslations.global_receive_address_confirmation_desc,
+              }),
+              onConfirmText: intl.formatMessage({
+                id: ETranslations.global_receive_address_confirmation_button,
+              }),
+              onConfirm: () => {
+                setAddressState(EAddressState.ForceShow);
+              },
+              confirmButtonProps: {
+                variant: 'secondary',
+              },
+            });
+          }}
+        >
+          {intl.formatMessage({
+            id: ETranslations.skip_verify_text,
+          })}
+        </Button>
+      </YStack>
+    );
+  }, [
+    handleVerifyOnDevicePress,
+    intl,
+    isHardwareWallet,
+    media.gtMd,
+    shouldShowAddress,
+  ]);
+
+  const renderAddress = useCallback(() => {
+    if (!account || !network || !wallet) return null;
+
+    let addressContent = '';
+
+    if (shouldShowAddress) {
+      addressContent =
+        account.address.match(/.{1,4}/g)?.join(' ') || account.address;
+    } else {
+      addressContent = Array.from({ length: 11 })
+        .map(() => '****')
+        .join(' ');
+    }
+
+    return (
+      <XStack
+        maxWidth={288}
+        flexWrap="wrap"
+        {...(shouldShowAddress && {
+          onPress: () => copyText(account?.address ?? ''),
+          userSelect: 'none',
+          borderRadius: '$1',
+          hoverStyle: {
+            bg: '$bgHover',
+          },
+          pressStyle: {
+            bg: '$bgActive',
+          },
+          focusable: true,
+          focusVisibleStyle: {
+            outlineWidth: 2,
+            outlineColor: '$focusRing',
+            outlineOffset: 2,
+            outlineStyle: 'solid',
+          },
+        })}
+      >
+        <SizableText fontFamily="$monoMedium">{addressContent}</SizableText>
+      </XStack>
+    );
+  }, [account, network, shouldShowAddress, wallet, copyText]);
+
+  const renderReceiveFooter = useCallback(() => {
+    if (!account || !network || !wallet) return null;
+
+    return (
+      <YStack
+        borderTopWidth={StyleSheet.hairlineWidth}
+        borderColor="$borderSubdued"
+        backgroundColor="$bgSubdued"
+        padding="$5"
+        gap="$5"
+      >
+        <YStack gap="$1.5">
+          <XStack gap="$2" alignItems="center">
+            <SizableText size="$bodyMd">
+              {token?.symbol ?? network.symbol}
+            </SizableText>
+            <Badge>
+              <Badge.Text>
+                {network.name}{' '}
+                {vaultSettings?.showAddressType && addressType
+                  ? `/ ${addressType}`
+                  : ''}
+              </Badge.Text>
+            </Badge>
+            {shouldShowAddress && addressState === EAddressState.ForceShow ? (
+              <Badge badgeType="critical">
+                {intl.formatMessage({
+                  id: ETranslations.receive_address_unconfimed_alert_message,
+                })}
+              </Badge>
+            ) : null}
+          </XStack>
+          <XStack gap="$2" alignItems="center" justifyContent="space-between">
+            {renderAddress()}
+            {renderCopyAddressButton()}
+          </XStack>
+        </YStack>
+        {renderVerifyAddressButton()}
+        {shouldShowAddress ? (
+          <SizableText size="$bodyMd" color="$textSubdued">
+            {intl.formatMessage(
+              {
+                id: ETranslations.receive_send_asset_warning_message,
+              },
+              {
+                network: network.name,
+              },
+            )}
+          </SizableText>
+        ) : null}
+      </YStack>
+    );
+  }, [
+    account,
+    addressState,
+    addressType,
+    intl,
+    network,
+    renderAddress,
+    renderCopyAddressButton,
+    renderVerifyAddressButton,
+    shouldShowAddress,
+    token?.symbol,
+    vaultSettings?.showAddressType,
+    wallet,
+  ]);
+
+  const renderReceiveQrCode = useCallback(() => {
+    if (!account || !network || !wallet) return null;
+
+    return (
+      <YStack
+        width={264}
+        height={264}
+        p="$5"
+        borderRadius="$3"
+        borderCurve="continuous"
+        borderWidth={StyleSheet.hairlineWidth}
+        borderColor="$borderSubdued"
+        elevation={0.5}
+        alignItems="center"
+        justifyContent="center"
+        {...(!shouldShowQRCode && {
+          onPress: handleVerifyOnDevicePress,
+          userSelect: 'none',
+          hoverStyle: {
+            bg: '$bgHover',
+          },
+          pressStyle: {
+            bg: '$bgActive',
+          },
+          focusable: true,
+          focusVisibleStyle: {
+            outlineWidth: 2,
+            outlineColor: '$focusRing',
+            outlineOffset: 2,
+            outlineStyle: 'solid',
+          },
+        })}
+      >
+        {shouldShowQRCode ? (
+          <QRCode
+            value={account.address}
+            size={224}
+            logo={
+              network.isCustomNetwork
+                ? undefined
+                : { uri: token?.logoURI || network.logoURI }
+            }
+            logoSize={network.isCustomNetwork ? undefined : 45}
+          />
+        ) : null}
+
+        {!shouldShowQRCode ? (
+          <Empty
+            p="0"
+            icon="QrCodeOutline"
+            description={intl.formatMessage({
+              id: ETranslations.address_verify_address_instruction,
+            })}
+            iconProps={{
+              size: '$8',
+              mb: '$5',
+            }}
+            descriptionProps={{
+              size: '$bodyLgMedium',
+              color: '$text',
+            }}
+          />
+        ) : null}
+      </YStack>
+    );
+  }, [
+    account,
+    network,
+    wallet,
+    intl,
+    token?.logoURI,
+    shouldShowQRCode,
+    handleVerifyOnDevicePress,
+  ]);
+
+  return (
+    <Page safeAreaEnabled>
+      <Page.Header
+        title={intl.formatMessage({ id: ETranslations.global_receive })}
+      />
+      <Page.Body flex={1} justifyContent="center" alignItems="center">
+        {renderReceiveQrCode()}
+      </Page.Body>
+      <Page.Footer>{renderReceiveFooter()}</Page.Footer>
+    </Page>
+  );
+}
+
+export default ReceiveToken;

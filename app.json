@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "99ea403f-8f20-41b0-971e-1b9263ecd0f2"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.zyfshr.unionkeyapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    }
+  }
+}
