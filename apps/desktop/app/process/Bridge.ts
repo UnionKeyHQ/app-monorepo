@@ -6,6 +6,8 @@ import BaseProcess from './BaseProcess';
 
 import type { IStatus } from './BaseProcess';
 
+const BRIDGE_ALLOWED_ORIGIN = 'https://electron.onekey.so';
+
 class BridgeProcess extends BaseProcess {
   constructor() {
     super('bridge', 'unionkeyd', {
@@ -18,7 +20,8 @@ class BridgeProcess extends BaseProcess {
       const resp = await fetch(`http://127.0.0.1:21320/`, {
         method: 'POST',
         headers: {
-          Origin: 'https://electron.unionkey.so',
+          // The bundled bridge binary keeps an internal origin whitelist.
+          Origin: BRIDGE_ALLOWED_ORIGIN,
         },
       });
       logger.debug(`Checking status (${resp.status})`);
@@ -70,7 +73,7 @@ export const BridgeHeart = {
         const resp = await fetchWithTimeout(localBridgeUrl, {
           method: 'POST',
           headers: {
-            Origin: 'https://electron.unionkey.so',
+            Origin: BRIDGE_ALLOWED_ORIGIN,
           },
           timeout: 3000,
         });
