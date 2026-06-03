@@ -96,10 +96,12 @@ node .yarn/releases/yarn-4.1.0.cjs install
 
 ## Current Blocking Notes
 
-- `UnionKeyHQ` was not available to the authenticated GitHub account during the
-  first repository setup pass, so repositories were prepared under `zyfshr`.
-  See `development/unionkey/created-repos.zyfshr.json`.
+- `UnionKeyHQ` repositories have been prepared. See
+  `development/unionkey/created-repos.unionkeyhq.json`.
+- `zyfshr` repositories were also prepared during the first setup pass before
+  the organization existed. See `development/unionkey/created-repos.zyfshr.json`.
 - Several generated bundles may still contain OneKey strings until the external
   injected provider and hardware SDK packages are forked and rebuilt.
-- `UnionKeyHQ/*` git URLs in `apps/mobile/package.json` must exist before a
-  fresh install can succeed.
+- `UnionKeyHQ/onekey-cross-webview` and
+  `UnionKeyHQ/react-native-text-input` are private empty placeholder repos
+  because the matching `OneKeyHQ/*` source repos returned 404.

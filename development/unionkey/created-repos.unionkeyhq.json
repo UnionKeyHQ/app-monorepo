@@ -1,0 +1,98 @@
+{
+  "owner": "UnionKeyHQ",
+  "createdAt": "2026-06-03",
+  "repositories": [
+    {
+      "nameWithOwner": "UnionKeyHQ/app-monorepo",
+      "url": "https://github.com/UnionKeyHQ/app-monorepo",
+      "isPrivate": true,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/cross-inpage-provider",
+      "url": "https://github.com/UnionKeyHQ/cross-inpage-provider",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/hardware-js-sdk",
+      "url": "https://github.com/UnionKeyHQ/hardware-js-sdk",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/onekey-cross-webview",
+      "url": "https://github.com/UnionKeyHQ/onekey-cross-webview",
+      "isPrivate": true,
+      "status": "created-empty",
+      "note": "Source OneKeyHQ/onekey-cross-webview returned 404."
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-webview",
+      "url": "https://github.com/UnionKeyHQ/react-native-webview",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-webview-cleaner",
+      "url": "https://github.com/UnionKeyHQ/react-native-webview-cleaner",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-cloud-fs",
+      "url": "https://github.com/UnionKeyHQ/react-native-cloud-fs",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-animated-charts",
+      "url": "https://github.com/UnionKeyHQ/react-native-animated-charts",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-ble-utils",
+      "url": "https://github.com/UnionKeyHQ/react-native-ble-utils",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-lite-card",
+      "url": "https://github.com/UnionKeyHQ/react-native-lite-card",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-tab-page-view",
+      "url": "https://github.com/UnionKeyHQ/react-native-tab-page-view",
+      "isPrivate": false,
+      "status": "forked"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-text-input",
+      "url": "https://github.com/UnionKeyHQ/react-native-text-input",
+      "isPrivate": true,
+      "status": "created-empty",
+      "note": "Source OneKeyHQ/react-native-text-input returned 404."
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/jcore-react-native",
+      "url": "https://github.com/UnionKeyHQ/jcore-react-native",
+      "isPrivate": true,
+      "status": "created-empty"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/jpush-react-native",
+      "url": "https://github.com/UnionKeyHQ/jpush-react-native",
+      "isPrivate": true,
+      "status": "created-empty"
+    },
+    {
+      "nameWithOwner": "UnionKeyHQ/react-native-nested-scroll-view",
+      "url": "https://github.com/UnionKeyHQ/react-native-nested-scroll-view",
+      "isPrivate": true,
+      "status": "created-empty"
+    }
+  ]
+}
