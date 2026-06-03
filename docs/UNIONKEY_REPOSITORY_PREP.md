@@ -60,6 +60,32 @@ node development/scripts/prepare_unionkey_repos.js --gh
 
 Then review and run the printed commands.
 
+To check whether the repos already exist:
+
+```powershell
+node development/scripts/prepare_unionkey_repos.js --check
+```
+
+The canonical repo/package mapping lives in:
+
+```text
+development/unionkey/external-repos.json
+```
+
+After the UnionKey packages have been published, preview the package manifest
+migration with:
+
+```powershell
+node development/scripts/migrate_unionkey_dependencies.js
+```
+
+Apply it with:
+
+```powershell
+node development/scripts/migrate_unionkey_dependencies.js --write
+node .yarn/releases/yarn-4.1.0.cjs install
+```
+
 ## Current Blocking Notes
 
 - `gh` is not installed on the current machine, so repository creation cannot be

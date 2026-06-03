@@ -1,95 +1,27 @@
 #!/usr/bin/env node
 
-const repos = [
-  {
-    name: 'app-monorepo',
-    source: 'zyfshr/app-monorepo',
-    description: 'UnionKey wallet monorepo',
-  },
-  {
-    name: 'cross-inpage-provider',
-    source: 'OneKeyHQ/cross-inpage-provider',
-    description: 'UnionKey inpage provider packages',
-  },
-  {
-    name: 'hardware-js-sdk',
-    source: 'OneKeyHQ/hardware-js-sdk',
-    description: 'UnionKey hardware JavaScript SDK packages',
-  },
-  {
-    name: 'onekey-cross-webview',
-    source: 'OneKeyHQ/onekey-cross-webview',
-    description: 'UnionKey cross webview bridge package',
-  },
-  {
-    name: 'react-native-webview',
-    source: 'OneKeyHQ/react-native-webview',
-    description: 'UnionKey React Native webview fork',
-  },
-  {
-    name: 'react-native-webview-cleaner',
-    source: 'OneKeyHQ/react-native-webview-cleaner',
-    description: 'UnionKey webview cleaner fork',
-  },
-  {
-    name: 'react-native-cloud-fs',
-    source: 'OneKeyHQ/react-native-cloud-fs',
-    description: 'UnionKey React Native cloud filesystem fork',
-  },
-  {
-    name: 'react-native-animated-charts',
-    source: 'OneKeyHQ/react-native-animated-charts',
-    description: 'UnionKey React Native animated charts fork',
-  },
-  {
-    name: 'react-native-ble-utils',
-    source: 'OneKeyHQ/react-native-ble-utils',
-    description: 'UnionKey React Native BLE utilities fork',
-  },
-  {
-    name: 'react-native-lite-card',
-    source: 'OneKeyHQ/react-native-lite-card',
-    description: 'UnionKey React Native lite card fork',
-  },
-  {
-    name: 'react-native-tab-page-view',
-    source: 'OneKeyHQ/react-native-tab-page-view',
-    description: 'UnionKey React Native tab page view fork',
-  },
-  {
-    name: 'react-native-text-input',
-    source: 'OneKeyHQ/react-native-text-input',
-    description: 'UnionKey React Native text input fork',
-  },
-  {
-    name: 'jcore-react-native',
-    source: null,
-    description: 'UnionKey JCore React Native package',
-  },
-  {
-    name: 'jpush-react-native',
-    source: null,
-    description: 'UnionKey JPush React Native package',
-  },
-  {
-    name: 'react-native-nested-scroll-view',
-    source: null,
-    description: 'UnionKey React Native nested scroll view package',
-  },
-];
+const fs = require('fs');
+const path = require('path');
+
+const configPath = path.resolve(__dirname, '../unionkey/external-repos.json');
+const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+const repos = config.repositories;
+const owner = config.owner;
 
 const useGh = process.argv.includes('--gh');
+const json = process.argv.includes('--json');
+const check = process.argv.includes('--check');
 
 function quote(value) {
   return `"${String(value).replace(/"/g, '\\"')}"`;
 }
 
 function printRepoCommands(repo) {
-  const target = `UnionKeyHQ/${repo.name}`;
+  const target = `${owner}/${repo.name}`;
   console.log(`# ${target}`);
   if (repo.source) {
     console.log(
-      `gh repo fork ${repo.source} --org UnionKeyHQ --remote=false --clone=false`,
+      `gh repo fork ${repo.source} --org ${owner} --remote=false --clone=false`,
     );
   } else {
     console.log(
@@ -104,9 +36,26 @@ function printRepoCommands(repo) {
   console.log('');
 }
 
+function printCheckCommands(repo) {
+  const target = `${owner}/${repo.name}`;
+  console.log(`gh repo view ${target} --json nameWithOwner,url,isPrivate`);
+}
+
+if (json) {
+  console.log(JSON.stringify(config, null, 2));
+  process.exit(0);
+}
+
 console.log('# UnionKey repository preparation commands');
 console.log('# Install/auth GitHub CLI first: gh auth login');
 console.log('');
+
+if (check) {
+  console.log('# Repository existence checks');
+  console.log('');
+  repos.forEach(printCheckCommands);
+  process.exit(0);
+}
 
 if (!useGh) {
   console.log(

@@ -1,0 +1,182 @@
+{
+  "owner": "UnionKeyHQ",
+  "repositories": [
+    {
+      "name": "app-monorepo",
+      "source": "zyfshr/app-monorepo",
+      "description": "UnionKey wallet monorepo",
+      "packageMappings": []
+    },
+    {
+      "name": "cross-inpage-provider",
+      "source": "OneKeyHQ/cross-inpage-provider",
+      "description": "UnionKey inpage provider packages",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/cross-inpage-provider-core",
+          "to": "@unionkeyfe/cross-inpage-provider-core"
+        },
+        {
+          "from": "@onekeyfe/cross-inpage-provider-errors",
+          "to": "@unionkeyfe/cross-inpage-provider-errors"
+        },
+        {
+          "from": "@onekeyfe/cross-inpage-provider-injected",
+          "to": "@unionkeyfe/cross-inpage-provider-injected"
+        },
+        {
+          "from": "@onekeyfe/cross-inpage-provider-types",
+          "to": "@unionkeyfe/cross-inpage-provider-types"
+        },
+        {
+          "from": "@onekeyfe/extension-bridge-hosted",
+          "to": "@unionkeyfe/extension-bridge-hosted"
+        }
+      ]
+    },
+    {
+      "name": "hardware-js-sdk",
+      "source": "OneKeyHQ/hardware-js-sdk",
+      "description": "UnionKey hardware JavaScript SDK packages",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/hd-ble-sdk",
+          "to": "@unionkeyfe/hd-ble-sdk"
+        },
+        {
+          "from": "@onekeyfe/hd-core",
+          "to": "@unionkeyfe/hd-core"
+        },
+        {
+          "from": "@onekeyfe/hd-shared",
+          "to": "@unionkeyfe/hd-shared"
+        },
+        {
+          "from": "@onekeyfe/hd-transport",
+          "to": "@unionkeyfe/hd-transport"
+        },
+        {
+          "from": "@onekeyfe/hd-web-sdk",
+          "to": "@unionkeyfe/hd-web-sdk"
+        }
+      ]
+    },
+    {
+      "name": "onekey-cross-webview",
+      "source": "OneKeyHQ/onekey-cross-webview",
+      "description": "UnionKey cross webview bridge package",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/onekey-cross-webview",
+          "to": "@unionkeyfe/cross-webview"
+        }
+      ]
+    },
+    {
+      "name": "react-native-webview",
+      "source": "OneKeyHQ/react-native-webview",
+      "description": "UnionKey React Native webview fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-webview",
+          "to": "@unionkeyfe/react-native-webview"
+        }
+      ]
+    },
+    {
+      "name": "react-native-webview-cleaner",
+      "source": "OneKeyHQ/react-native-webview-cleaner",
+      "description": "UnionKey webview cleaner fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-webview-cleaner",
+          "to": "@unionkeyfe/react-native-webview-cleaner"
+        }
+      ]
+    },
+    {
+      "name": "react-native-cloud-fs",
+      "source": "OneKeyHQ/react-native-cloud-fs",
+      "description": "UnionKey React Native cloud filesystem fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-cloud-fs",
+          "to": "@unionkeyfe/react-native-cloud-fs"
+        }
+      ]
+    },
+    {
+      "name": "react-native-animated-charts",
+      "source": "OneKeyHQ/react-native-animated-charts",
+      "description": "UnionKey React Native animated charts fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-animated-charts",
+          "to": "@unionkeyfe/react-native-animated-charts"
+        }
+      ]
+    },
+    {
+      "name": "react-native-ble-utils",
+      "source": "OneKeyHQ/react-native-ble-utils",
+      "description": "UnionKey React Native BLE utilities fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-ble-utils",
+          "to": "@unionkeyfe/react-native-ble-utils"
+        }
+      ]
+    },
+    {
+      "name": "react-native-lite-card",
+      "source": "OneKeyHQ/react-native-lite-card",
+      "description": "UnionKey React Native lite card fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-lite-card",
+          "to": "@unionkeyfe/react-native-lite-card"
+        }
+      ]
+    },
+    {
+      "name": "react-native-tab-page-view",
+      "source": "OneKeyHQ/react-native-tab-page-view",
+      "description": "UnionKey React Native tab page view fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-tab-page-view",
+          "to": "@unionkeyfe/react-native-tab-page-view"
+        }
+      ]
+    },
+    {
+      "name": "react-native-text-input",
+      "source": "OneKeyHQ/react-native-text-input",
+      "description": "UnionKey React Native text input fork",
+      "packageMappings": [
+        {
+          "from": "@onekeyfe/react-native-text-input",
+          "to": "@unionkeyfe/react-native-text-input"
+        }
+      ]
+    },
+    {
+      "name": "jcore-react-native",
+      "source": null,
+      "description": "UnionKey JCore React Native package",
+      "packageMappings": []
+    },
+    {
+      "name": "jpush-react-native",
+      "source": null,
+      "description": "UnionKey JPush React Native package",
+      "packageMappings": []
+    },
+    {
+      "name": "react-native-nested-scroll-view",
+      "source": null,
+      "description": "UnionKey React Native nested scroll view package",
+      "packageMappings": []
+    }
+  ]
+}
