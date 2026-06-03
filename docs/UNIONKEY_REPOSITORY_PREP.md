@@ -60,6 +60,14 @@ node development/scripts/prepare_unionkey_repos.js --gh
 
 Then review and run the printed commands.
 
+If the repositories are being prepared under the logged-in personal account
+instead of the future `UnionKeyHQ` organization, use:
+
+```powershell
+$env:UNIONKEY_GITHUB_OWNER='zyfshr'
+node development/scripts/prepare_unionkey_repos.js --personal --gh
+```
+
 To check whether the repos already exist:
 
 ```powershell
@@ -88,8 +96,9 @@ node .yarn/releases/yarn-4.1.0.cjs install
 
 ## Current Blocking Notes
 
-- `gh` is not installed on the current machine, so repository creation cannot be
-  automated from this checkout yet.
+- `UnionKeyHQ` was not available to the authenticated GitHub account during the
+  first repository setup pass, so repositories were prepared under `zyfshr`.
+  See `development/unionkey/created-repos.zyfshr.json`.
 - Several generated bundles may still contain OneKey strings until the external
   injected provider and hardware SDK packages are forked and rebuilt.
 - `UnionKeyHQ/*` git URLs in `apps/mobile/package.json` must exist before a

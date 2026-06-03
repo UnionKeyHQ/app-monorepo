@@ -6,11 +6,12 @@ const path = require('path');
 const configPath = path.resolve(__dirname, '../unionkey/external-repos.json');
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 const repos = config.repositories;
-const owner = config.owner;
+const owner = process.env.UNIONKEY_GITHUB_OWNER || config.owner;
 
 const useGh = process.argv.includes('--gh');
 const json = process.argv.includes('--json');
 const check = process.argv.includes('--check');
+const personal = process.argv.includes('--personal');
 
 function quote(value) {
   return `"${String(value).replace(/"/g, '\\"')}"`;
@@ -19,9 +20,12 @@ function quote(value) {
 function printRepoCommands(repo) {
   const target = `${owner}/${repo.name}`;
   console.log(`# ${target}`);
-  if (repo.source) {
+  if (repo.source === target) {
+    console.log(`gh repo view ${target} --json nameWithOwner,url,isPrivate`);
+  } else if (repo.source) {
+    const ownerArgs = personal ? '' : ` --org ${owner}`;
     console.log(
-      `gh repo fork ${repo.source} --org ${owner} --remote=false --clone=false`,
+      `gh repo fork ${repo.source}${ownerArgs} --clone=false --fork-name ${repo.name}`,
     );
   } else {
     console.log(
@@ -48,6 +52,8 @@ if (json) {
 
 console.log('# UnionKey repository preparation commands');
 console.log('# Install/auth GitHub CLI first: gh auth login');
+console.log('# Override owner with UNIONKEY_GITHUB_OWNER=your-owner.');
+console.log('# Add --personal when the owner is the active user account, not an org.');
 console.log('');
 
 if (check) {
