@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import ProviderApiAlgo from './ProviderApiAlgo';
 import ProviderApiAlph from './ProviderApiAlph';

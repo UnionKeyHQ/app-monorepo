@@ -1,4 +1,4 @@
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 import { Semaphore } from 'async-mutex';
 import { debounce } from 'lodash';
 
@@ -72,7 +72,7 @@ import type { IAccountDeriveTypes, ITransferInfo } from '../vaults/types';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 function getQueryDAppAccountParams(params: IGetDAppAccountInfoParams) {
   const { scope, isWalletConnectRequest, options = {} } = params;

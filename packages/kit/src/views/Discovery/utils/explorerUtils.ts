@@ -3,8 +3,8 @@ import platformEnv from '@unionkey/shared/src/platformEnv';
 import uriUtils from '@unionkey/shared/src/utils/uriUtils';
 
 import type { IBrowserType } from '../types';
-import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IElectronWebView } from '@unionkeyfe/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 import type { WebView } from 'react-native-webview';
 
 export const browserTypeHandler: IBrowserType = (() => {

@@ -1,10 +1,10 @@
 /* eslint-disable spellcheck/spell-checker */
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 
 import imageUtils from './imageUtils';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 const HAS_MONOCHROME_SCREEN: Partial<Record<IDeviceType, boolean>> = {
   [EDeviceType.Classic]: true,

@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { EDeviceType, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { EDeviceType, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { useRoute } from '@react-navigation/core';
 import { get } from 'lodash';
 import natsort from 'natsort';
@@ -96,7 +96,7 @@ import { useFirmwareUpdateActions } from '../../../FirmwareUpdate/hooks/useFirmw
 
 import { useFirmwareVerifyDialog } from './FirmwareVerifyDialog';
 
-import type { Features, IDeviceType, SearchDevice } from '@onekeyfe/hd-core';
+import type { Features, IDeviceType, SearchDevice } from '@unionkeyfe/hd-core';
 import type { RouteProp } from '@react-navigation/core';
 import type { ImageSourcePropType } from 'react-native';
 
@@ -595,7 +595,7 @@ function ConnectByUSBOrBLE() {
         );
         setSearchedDevices(sortedDevices);
         console.log('=====>>>>> startDeviceScan>>>>>', sortedDevices);
-       
+
       },
       (state) => {
         searchStateRef.current = state;
@@ -714,60 +714,60 @@ function ConnectByUSBOrBLE() {
         });
         return;
       }
-       
+
       try {
         stopScan();
-        let deviceFeatures: IUnionKeyDeviceFeatures | undefined;  
-      try {  
-        deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({  
-          connectId: device.connectId ?? '',  
-        });  
-      } catch (error) {  
-        console.log('获取设备特征失败:', error);  
-      }  
-        
-      const waitForDeviceUnlock = async () => {  
-        while (true) {  
-          let deviceFeatures: IUnionKeyDeviceFeatures | undefined;  
-          try {  
-            deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({  
-              connectId: device.connectId ?? '',  
-            });  
-          } catch (error) {  
-            console.log('获取设备特征失败:', error);  
-          }  
-            
-          // 如果设备已解锁，退出循�? 
-          if (deviceFeatures && deviceFeatures.unlocked) {  
-            break;  
-          }  
-            
-          // 设备未解锁，显示提示并等待用户确�? 
-          await new Promise<void>((resolve) => {  
-            Dialog.show({  
-              title: intl.formatMessage({  
-                id: ETranslations.device_hardware_communication,  
-              }),  
-              description: intl.formatMessage({  
-                id: ETranslations.onboarding_create_qr_wallet_unlock_device_desc,  
-              }),  
-              onConfirmText: intl.formatMessage({  
-                id: ETranslations.global_ok,  
-              }),  
-              showCancelButton: false,  
-              onConfirm: () => {  
-                resolve();  
-              },  
-            });  
-          });  
-            
-          // 等待一下再重新检查，避免过于频繁  
-          await new Promise(resolve => setTimeout(resolve, 1000));  
-        }  
-      };  
-        
-      // 等待设备解锁  
-      await waitForDeviceUnlock();  
+        let deviceFeatures: IUnionKeyDeviceFeatures | undefined;
+      try {
+        deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({
+          connectId: device.connectId ?? '',
+        });
+      } catch (error) {
+        console.log('获取设备特征失败:', error);
+      }
+
+      const waitForDeviceUnlock = async () => {
+        while (true) {
+          let deviceFeatures: IUnionKeyDeviceFeatures | undefined;
+          try {
+            deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({
+              connectId: device.connectId ?? '',
+            });
+          } catch (error) {
+            console.log('获取设备特征失败:', error);
+          }
+
+          // 如果设备已解锁，退出循�?
+          if (deviceFeatures && deviceFeatures.unlocked) {
+            break;
+          }
+
+          // 设备未解锁，显示提示并等待用户确�?
+          await new Promise<void>((resolve) => {
+            Dialog.show({
+              title: intl.formatMessage({
+                id: ETranslations.device_hardware_communication,
+              }),
+              description: intl.formatMessage({
+                id: ETranslations.onboarding_create_qr_wallet_unlock_device_desc,
+              }),
+              onConfirmText: intl.formatMessage({
+                id: ETranslations.global_ok,
+              }),
+              showCancelButton: false,
+              onConfirm: () => {
+                resolve();
+              },
+            });
+          });
+
+          // 等待一下再重新检查，避免过于频繁
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+      };
+
+      // 等待设备解锁
+      await waitForDeviceUnlock();
         const handleBootloaderMode = (existsFirmware: boolean) => {
           fwUpdateActions.showBootloaderMode({
             connectId: device.connectId ?? undefined,

@@ -1,6 +1,6 @@
-import { Address } from '@onekeyfe/kaspa-core-lib';
+import { Address } from '@unionkeyfe/kaspa-core-lib';
 
-import type { PublicKey } from '@onekeyfe/kaspa-core-lib';
+import type { PublicKey } from '@unionkeyfe/kaspa-core-lib';
 
 export enum EKaspaAddressType {
   PayToPublicKey = 'pubkey',

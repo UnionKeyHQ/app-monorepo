@@ -23,9 +23,9 @@ import { useThemeVariant } from '../../hooks/useThemeVariant';
 import { GlobalJotaiReady } from '../GlobalJotaiReady/GlobalJotaiReady';
 import WebView from '../WebView';
 
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
-import type { IJsBridgeReceiveHandler } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
+import type { IJsBridgeReceiveHandler } from '@unionkeyfe/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 import type { WebViewMessageEvent } from 'react-native-webview';
 
 const initTop = '15%';

@@ -1,0 +1,31 @@
+{
+  "name": "@unionkeyfe/hd-transport-webusb",
+  "version": "1.0.31",
+  "author": "OneKey",
+  "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnionKeyHQ/hardware-js-sdk.git"
+  },
+  "scripts": {
+    "dev": "rimraf dist && rollup -c ../../build/rollup.config.js -w",
+    "build": "rimraf dist && rollup -c ../../build/rollup.config.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@unionkeyfe/hd-shared": "workspace:*",
+    "@unionkeyfe/hd-transport": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/w3c-web-usb": "^1.0.6",
+    "@types/web-bluetooth": "^0.0.17"
+  },
+  "gitHead": "3e31186a4c2969d666a6ea124209075ab7a8e7aa"
+}

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return */
 
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 import { debounce } from 'lodash';
 
 import {
@@ -14,7 +14,7 @@ import type {
   IInjectedProviderNamesStrings,
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 export type IProviderBaseBackgroundNotifyInfo = {
   send: (data: any, targetOrigin: string) => void;

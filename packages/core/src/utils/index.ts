@@ -1,4 +1,4 @@
-import coinselectUtils from '@onekeyfe/coinselect/utils';
+import coinselectUtils from '@unionkeyfe/coinselect/utils';
 
 import type { IDBUtxoAccount } from '@unionkey/kit-bg/src/dbs/local/types';
 import accountUtils from '@unionkey/shared/src/utils/accountUtils';

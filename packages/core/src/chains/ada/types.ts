@@ -1,4 +1,4 @@
-import type { PROTO } from '@onekeyfe/hd-core';
+import type { PROTO } from '@unionkeyfe/hd-core';
 
 export const enum EAdaNetworkId {
   MAINNET = 1,

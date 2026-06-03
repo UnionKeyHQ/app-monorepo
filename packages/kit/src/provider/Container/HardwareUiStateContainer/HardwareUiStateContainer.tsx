@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { Semaphore } from 'async-mutex';
 import { throttle } from 'lodash';
 import { useIntl } from 'react-intl';

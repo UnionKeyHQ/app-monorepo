@@ -73,7 +73,7 @@ import type ServiceValidator from '../services/ServiceValidator';
 import type ServiceWalletConnect from '../services/ServiceWalletConnect';
 import type { EAtomNames } from '../states/jotai/atomNames';
 import type { IWebembedApiKeys } from '../webembeds/instance/IWebembedApi';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 import type {
   IInjectedProviderNames,
   IInjectedProviderNamesStrings,
@@ -81,8 +81,8 @@ import type {
   IJsBridgeReceiveHandler,
   IJsonRpcRequest,
   IJsonRpcResponse,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+} from '@unionkeyfe/cross-inpage-provider-types';
+import type { JsBridgeExtBackground } from '@unionkeyfe/extension-bridge-hosted';
 // import type ServiceCronJob from '../services/ServiceCronJob';
 
 export type IBackgroundApiInternalCallMessage = IJsonRpcRequest & {

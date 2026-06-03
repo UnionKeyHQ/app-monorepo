@@ -26,7 +26,7 @@ import type {
 import type {
   AllNetworkAddressParams,
   TronTransactionContract,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 import type { Types } from 'tronweb';
 
 export class KeyringHardware extends KeyringHardwareBase {

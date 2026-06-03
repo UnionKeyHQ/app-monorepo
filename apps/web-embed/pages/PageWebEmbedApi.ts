@@ -5,7 +5,7 @@ import type { IBackgroundApiWebembedCallMessage } from '@unionkey/kit-bg/src/api
 import webembedApi from '@unionkey/kit-bg/src/webembeds/instance/webembedApi';
 import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 defaultLogger.app.webembed.renderHtmlWebembedPage();
 

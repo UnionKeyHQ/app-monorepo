@@ -1,4 +1,4 @@
-import { CrossEventEmitter } from '@onekeyfe/cross-inpage-provider-core';
+import { CrossEventEmitter } from '@unionkeyfe/cross-inpage-provider-core';
 
 import type {
   EPushProviderEventNames,

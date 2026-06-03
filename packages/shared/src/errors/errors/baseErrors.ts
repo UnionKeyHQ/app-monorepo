@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 
-import { Web3RpcError } from '@onekeyfe/cross-inpage-provider-errors';
+import { Web3RpcError } from '@unionkeyfe/cross-inpage-provider-errors';
 import { isObject, isString } from 'lodash';
 
 import type {

@@ -1,4 +1,4 @@
-import { EDeviceType, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { EDeviceType, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { isArray, isNil } from 'lodash';
 import semver from 'semver';
 import axios from 'axios';
@@ -84,8 +84,8 @@ import type {
   DeviceUploadResourceParams,
   IDeviceType,
   IVersionArray,
-} from '@onekeyfe/hd-core';
-import type { Success } from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-core';
+import type { Success } from '@unionkeyfe/hd-transport';
 
 export type IAutoUpdateFirmwareParams = {
   connectId: string | undefined;

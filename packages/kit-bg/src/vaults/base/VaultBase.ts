@@ -125,7 +125,7 @@ import type {
   IUpdateUnsignedTxParams,
   IValidateGeneralInputParams,
 } from '../types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 import type { MessageDescriptor } from 'react-intl';
 
 export type IVaultInitConfig = {

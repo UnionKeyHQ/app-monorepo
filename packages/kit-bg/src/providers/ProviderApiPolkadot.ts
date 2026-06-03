@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { base58Decode } from '@polkadot/util-crypto';
 import { addressEq } from '@polkadot/util-crypto/address';
 import { Semaphore } from 'async-mutex';
@@ -21,7 +21,7 @@ import { getVaultSettings } from '../vaults/settings';
 import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 import type { InjectedAccount } from '@polkadot/extension-inject/types';
 import type {
   SignerPayloadJSON,

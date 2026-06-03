@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { JsBridgeNativeHost } from '@onekeyfe/onekey-cross-webview';
+import { JsBridgeNativeHost } from '@unionkeyfe/cross-webview';
 import { RefreshControl, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
@@ -25,7 +25,7 @@ import ErrorView from './ErrorView';
 import { createMessageInjectedScript } from './utils';
 
 import type { IInpageProviderWebViewProps, IWebViewRef } from './types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 import type { WebViewMessageEvent, WebViewProps } from 'react-native-webview';
 
 export type INativeWebViewProps = WebViewProps & IInpageProviderWebViewProps;

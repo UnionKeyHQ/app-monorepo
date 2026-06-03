@@ -1,10 +1,10 @@
-import { createDeferred } from '@onekeyfe/hd-shared';
+import { createDeferred } from '@unionkeyfe/hd-shared';
 
 import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
 import platformEnv from '@unionkey/shared/src/platformEnv';
 
-import type { SearchDevice, Success, Unsuccessful } from '@onekeyfe/hd-core';
-import type { Deferred } from '@onekeyfe/hd-shared';
+import type { SearchDevice, Success, Unsuccessful } from '@unionkeyfe/hd-core';
+import type { Deferred } from '@unionkeyfe/hd-shared';
 
 const MAX_SEARCH_TRY_COUNT = 15;
 const POLL_INTERVAL = 1000;

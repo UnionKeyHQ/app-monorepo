@@ -9,7 +9,7 @@ import type {
   ISignTxParams,
 } from '@unionkey/core/src/chains/dnx/types';
 
-import type { DnxSignature } from '@onekeyfe/hd-core';
+import type { DnxSignature } from '@unionkeyfe/hd-core';
 
 const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 185;
 const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 29;

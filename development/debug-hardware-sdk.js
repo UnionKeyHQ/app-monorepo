@@ -37,8 +37,8 @@ const needDependenceLibrary = [
 function addLibrary() {
   needDependenceLibrary.forEach((library) => {
     try {
-      execSync(`yalc add @onekeyfe/${library}@${LIB_VERSION}`);
-      console.log(`add @onekeyfe/${library}@${LIB_VERSION} Done`);
+      execSync(`yalc add @unionkeyfe/${library}@${LIB_VERSION}`);
+      console.log(`add @unionkeyfe/${library}@${LIB_VERSION} Done`);
     } catch (error) {
       console.error(`An error occurred while executing the command: ${error}`);
     }

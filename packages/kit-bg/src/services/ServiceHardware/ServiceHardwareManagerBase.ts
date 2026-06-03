@@ -1,5 +1,5 @@
 import type { IBackgroundApi } from '../../apis/IBackgroundApi';
-import type { CoreApi } from '@onekeyfe/hd-core';
+import type { CoreApi } from '@unionkeyfe/hd-core';
 
 export class ServiceHardwareManagerBase {
   constructor({ backgroundApi }: { backgroundApi: IBackgroundApi }) {

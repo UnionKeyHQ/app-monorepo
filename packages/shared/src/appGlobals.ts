@@ -18,7 +18,7 @@ import type { IAppDeviceInfo } from './appDeviceInfo/types';
 import type { AppEventBusClass } from './eventBus/appEventBus';
 import type { IndexedDBPromised } from './IndexedDBPromised';
 import type { IAppStorage } from './storage/syncStorage';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 import type { NavigationContainerRef } from '@react-navigation/native';
 import type Realm from 'realm';
 

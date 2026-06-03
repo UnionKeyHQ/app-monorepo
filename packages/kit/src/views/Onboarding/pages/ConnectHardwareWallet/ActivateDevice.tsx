@@ -1,4 +1,4 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
 import type { IPageScreenProps } from '@unionkey/components';
@@ -26,7 +26,7 @@ import {
   getWriteDownRecoveryPhraseStepImage,
 } from './ActivateDeviceResource';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 type IStep = {
   title?: ETranslations;

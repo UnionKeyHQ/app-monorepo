@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { bytesToHex } from '@noble/hashes/utils';
 import * as necc from '@noble/secp256k1';
-import { Transaction, crypto } from '@onekeyfe/kaspa-core-lib';
+import { Transaction, crypto } from '@unionkeyfe/kaspa-core-lib';
 import BigNumber from 'bignumber.js';
 
 import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
@@ -19,7 +19,7 @@ import type {
   IKaspaTransactionOutput,
 } from './types';
 import type { IEncodedTxKaspa, IKaspaSigner } from '../types';
-import type { Script } from '@onekeyfe/kaspa-core-lib';
+import type { Script } from '@unionkeyfe/kaspa-core-lib';
 
 export enum SignatureType {
   SIGHASH_ALL = 0x01,

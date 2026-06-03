@@ -28,7 +28,7 @@ import type {
   ISignMessageParams,
   ISignTransactionParams,
 } from '../../types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 const SIGN_TYPE = 'Schnorr';
 

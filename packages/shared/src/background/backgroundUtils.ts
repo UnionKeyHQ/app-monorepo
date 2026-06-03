@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import {
   isArray,
   isBoolean,
@@ -42,7 +42,7 @@ import errorUtils from '../errors/utils/errorUtils';
 import platformEnv from '../platformEnv';
 
 import type { UnionKeyError } from '../errors';
-import type { IInjectedProviderNamesStrings } from '@onekeyfe/cross-inpage-provider-types';
+import type { IInjectedProviderNamesStrings } from '@unionkeyfe/cross-inpage-provider-types';
 import type { Method } from 'axios';
 
 export function throwCrossError(msg: string, ...args: any) {

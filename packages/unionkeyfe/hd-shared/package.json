@@ -1,0 +1,29 @@
+{
+  "name": "@unionkeyfe/hd-shared",
+  "version": "1.0.31",
+  "description": "Hardware SDK's shared tool library",
+  "keywords": [
+    "Hardware-SDK",
+    "shared",
+    "utils"
+  ],
+  "author": "Leon <lixiao.dev@gmail.com>",
+  "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnionKeyHQ/hardware-js-sdk.git"
+  },
+  "scripts": {
+    "dev": "rimraf dist && rollup -c ../../build/rollup.config.js -w",
+    "build": "rimraf dist && rollup -c ../../build/rollup.config.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "gitHead": "3e31186a4c2969d666a6ea124209075ab7a8e7aa"
+}

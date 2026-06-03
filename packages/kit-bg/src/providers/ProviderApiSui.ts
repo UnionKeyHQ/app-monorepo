@@ -1,6 +1,6 @@
 import { Transaction } from '@mysten/sui/transactions';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import type { IEncodedTxSui } from '@unionkey/core/src/chains/sui/types';
 import type IVaultSui from '@unionkey/kit-bg/src/vaults/impls/sui/Vault';
@@ -29,7 +29,7 @@ import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
 import type { SuiTransactionBlockResponse } from '@mysten/sui/client';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 @backgroundClass()
 class ProviderApiSui extends ProviderApiBase {

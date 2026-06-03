@@ -1,0 +1,25 @@
+{
+  "name": "@unionkeyfe/kaspa-wasm",
+  "collaborators": [
+    "Kaspa developers"
+  ],
+  "description": "KASPA WASM bindings",
+  "version": "1.0.2",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UnionKeyHQ/rusty-kaspa"
+  },
+  "files": [
+    "kaspa_bg.wasm.d.ts",
+    "kaspa_bg.wasm.bin",
+    "kaspa.js",
+    "kaspa.d.ts",
+    "kaspa_bg.wasm.js"
+  ],
+  "module": "kaspa.js",
+  "types": "kaspa.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

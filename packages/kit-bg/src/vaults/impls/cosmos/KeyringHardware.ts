@@ -1,4 +1,4 @@
-import { HardwareError } from '@onekeyfe/hd-shared';
+import { HardwareError } from '@unionkeyfe/hd-shared';
 import { bytesToHex, hexToBytes } from 'viem';
 
 import {
@@ -30,7 +30,7 @@ import type {
   ISignMessageParams,
   ISignTransactionParams,
 } from '../../types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 export class KeyringHardware extends KeyringHardwareBase {
   override coreApi = coreChainApi.cosmos.hd;

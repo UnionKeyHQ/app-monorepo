@@ -5,7 +5,7 @@ import type { IUnionKeyDeviceFeatures } from '@unionkey/shared/types/device';
 
 import { WalletAvatar } from '../WalletAvatar';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export function DeviceAvatarWithColor({
   deviceType,

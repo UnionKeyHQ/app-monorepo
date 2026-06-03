@@ -1,4 +1,4 @@
-import { ResourceType, type Success } from '@onekeyfe/hd-transport';
+import { ResourceType, type Success } from '@unionkeyfe/hd-transport';
 import { isNil } from 'lodash';
 
 import type { IHardwareHomeScreenName } from '@unionkey/kit/src/views/AccountManagerStacks/pages/HardwareHomeScreen/hardwareHomeScreenData';
@@ -17,7 +17,7 @@ import type { IDBDeviceSettings as IDBDeviceDbSettings } from '../../dbs/local/t
 import type {
   DeviceSettingsParams,
   DeviceUploadResourceParams,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 export type ISetInputPinOnSoftwareParams = {
   walletId: string;

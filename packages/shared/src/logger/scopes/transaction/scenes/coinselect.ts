@@ -1,7 +1,7 @@
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';
 
-import type { ICoinSelectParams } from '@onekeyfe/coinselect/witness';
+import type { ICoinSelectParams } from '@unionkeyfe/coinselect/witness';
 
 export class CoinSelectScene extends BaseScene {
   @LogToLocal()

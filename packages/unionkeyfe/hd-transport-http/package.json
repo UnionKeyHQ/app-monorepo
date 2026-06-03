@@ -1,0 +1,33 @@
+{
+  "name": "@unionkeyfe/hd-transport-http",
+  "version": "1.0.31",
+  "description": "hardware http transport",
+  "author": "OneKey",
+  "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnionKeyHQ/hardware-js-sdk.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "rimraf dist && rollup -c ../../build/rollup.config.js -w",
+    "build": "rimraf dist && rollup -c ../../build/rollup.config.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "bugs": {
+    "url": "https://github.com/UnionKeyHQ/hardware-js-sdk/issues"
+  },
+  "dependencies": {
+    "@unionkeyfe/hd-shared": "workspace:*",
+    "@unionkeyfe/hd-transport": "workspace:*",
+    "axios": "^0.27.2",
+    "secure-json-parse": "^4.0.0"
+  },
+  "gitHead": "3e31186a4c2969d666a6ea124209075ab7a8e7aa"
+}

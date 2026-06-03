@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 

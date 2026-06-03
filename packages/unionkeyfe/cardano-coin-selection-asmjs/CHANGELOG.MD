@@ -1,0 +1,47 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## Unreleased
+
+### Added
+
+- Support for voting delegation certificates
+
+### Changed
+
+- Upgraded cardano-serialization-lib to Chang-compatible release (v13)
+- All set types are now serialized with a tag "258", which will become mandatory after the next hard fork (HF)
+- Upgraded cardano-serialization-lib to Chang-compatible release (v12)
+
+## [2.2.1] - 2023-11-29
+
+### Fixed
+
+- UTXO_BALANCE_INSUFFICIENT while using `setMax` on ADA output
+
+## [2.2.0] - 2023-10-06
+
+### Added
+
+- nodejs compatibility
+
+## [2.1.0] - 2022-11-22
+
+### Fixed
+
+- occasionally too low fee while using `setMax` on token output
+- order of inputs returned in txPlan did not always match the order of inputs in constructed transaction CBOR
+
+### Changed
+
+- Upgraded deps, cardano-serialization-lib to babbage-compatible release (v11)
+
+## [2.0.0] - 2022-02-14
+
+### Added
+
+- Initial release

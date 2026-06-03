@@ -40,7 +40,7 @@ import ServiceBase from './ServiceBase';
 
 import type { IDBExternalAccount } from '../dbs/local/types';
 import type { ITransferInfo } from '../vaults/types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 @backgroundClass()
 class ServiceDemo extends ServiceBase {

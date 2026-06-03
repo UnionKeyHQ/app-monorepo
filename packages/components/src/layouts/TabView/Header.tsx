@@ -7,7 +7,7 @@ import {
 } from 'react';
 import type { ForwardedRef, ReactElement } from 'react';
 
-import { PageHeaderView } from '@onekeyfe/react-native-tab-page-view';
+import { PageHeaderView } from '@unionkeyfe/react-native-tab-page-view';
 import { useProps, useStyle } from '@tamagui/core';
 import { Pressable, StyleSheet } from 'react-native';
 

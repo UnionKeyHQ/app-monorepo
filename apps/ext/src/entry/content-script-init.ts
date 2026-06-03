@@ -7,8 +7,8 @@ import '@unionkey/shared/src/polyfills/polyfillsExtContentScript';
 
 // injected hot-reload cache update:  1111222
 
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
-import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
+import { consts } from '@unionkeyfe/cross-inpage-provider-core';
+import { bridgeSetup } from '@unionkeyfe/extension-bridge-hosted';
 
 // import type { IUnionKeyWalletInfo } from '@unionkey/kit-bg/src/providers/ProviderApiPrivate';
 import platformEnv from '@unionkey/shared/src/platformEnv';

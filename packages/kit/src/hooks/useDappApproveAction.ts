@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 
 import { toPlainErrorObject } from '@unionkey/shared/src/errors/utils/errorUtils';
 import {

@@ -14,8 +14,8 @@ import type {
   Response,
   Success,
   Unsuccessful,
-} from '@onekeyfe/hd-core';
-import type { Features as FeaturesTransport } from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-core';
+import type { Features as FeaturesTransport } from '@unionkeyfe/hd-transport';
 
 export type IUnionKeyDeviceType = IDeviceType;
 

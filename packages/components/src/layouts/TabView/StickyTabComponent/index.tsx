@@ -11,7 +11,7 @@ import {
 } from 'react';
 import type { RefObject } from 'react';
 
-import { PageManager } from '@onekeyfe/react-native-tab-page-view';
+import { PageManager } from '@unionkeyfe/react-native-tab-page-view';
 import { Animated } from 'react-native';
 
 import platformEnv from '@unionkey/shared/src/platformEnv';

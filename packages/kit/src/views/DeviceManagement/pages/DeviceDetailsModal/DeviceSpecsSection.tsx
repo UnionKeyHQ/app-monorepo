@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import semver from 'semver';
 

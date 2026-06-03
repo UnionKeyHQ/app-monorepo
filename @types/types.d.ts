@@ -1,1 +1,1 @@
-export * from '@onekeyfe/cross-inpage-provider-types';
+export * from '@unionkeyfe/cross-inpage-provider-types';

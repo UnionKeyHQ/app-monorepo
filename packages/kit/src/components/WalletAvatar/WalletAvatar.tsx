@@ -8,7 +8,7 @@ import type { IAllWalletAvatarImageNames } from '@unionkey/shared/src/utils/avat
 import { AllWalletAvatarImages } from '@unionkey/shared/src/utils/avatarUtils';
 
 import type { IWalletProps } from '../../views/AccountManagerStacks/type';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export type IWalletAvatarBaseProps = {
   size?: SizeTokens;

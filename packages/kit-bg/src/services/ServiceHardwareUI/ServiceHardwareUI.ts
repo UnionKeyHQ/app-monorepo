@@ -1,4 +1,4 @@
-import { EDeviceType, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { EDeviceType, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import {
   backgroundClass,
@@ -31,7 +31,7 @@ import ServiceBase from '../ServiceBase';
 import { HardwareProcessingManager } from './HardwareProcessingManager';
 
 import type { IHardwareUiPayload } from '../../states/jotai/atoms';
-import type { UiResponseEvent } from '@onekeyfe/hd-core';
+import type { UiResponseEvent } from '@unionkeyfe/hd-core';
 
 export type IWithHardwareProcessingControlParams = {
   hideCheckingDeviceLoading?: boolean;

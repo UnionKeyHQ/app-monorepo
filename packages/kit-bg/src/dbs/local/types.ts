@@ -46,7 +46,7 @@ import type { RealmSchemaCredential } from './realm/schemas/RealmSchemaCredentia
 import type { RealmSchemaDevice } from './realm/schemas/RealmSchemaDevice';
 import type { RealmSchemaIndexedAccount } from './realm/schemas/RealmSchemaIndexedAccount';
 import type { RealmSchemaWallet } from './realm/schemas/RealmSchemaWallet';
-import type { IDeviceType, SearchDevice } from '@onekeyfe/hd-core';
+import type { IDeviceType, SearchDevice } from '@unionkeyfe/hd-core';
 import type { DBSchema } from 'idb';
 
 // ---------------------------------------------- base

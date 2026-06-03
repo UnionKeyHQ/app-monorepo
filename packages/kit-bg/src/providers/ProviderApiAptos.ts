@@ -9,8 +9,8 @@ import {
   SimpleTransaction,
 } from '@aptos-labs/ts-sdk';
 import { hexToBytes } from '@noble/hashes/utils';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { get, isArray } from 'lodash';
 
 import {
@@ -46,7 +46,7 @@ import type {
   AptosSignAndSubmitTransactionInput,
   AptosSignAndSubmitTransactionOutput,
 } from '@aptos-labs/wallet-standard';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 type IAccountInfo =
   | {

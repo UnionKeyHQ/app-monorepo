@@ -1,0 +1,43 @@
+{
+  "name": "@unionkeyfe/cross-webview",
+  "version": "2.2.25",
+  "keywords": [
+    "cross-inpage-provider"
+  ],
+  "author": "dev-fe@onekey.so",
+  "repository": "https://github.com/UnionKeyHQ/cross-inpage-provider",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc && tsc --project tsconfig.cjs.json",
+    "start": "tsc --watch"
+  },
+  "peerDependencies": {
+    "electron": "*",
+    "react-native-webview": "*"
+  },
+  "devDependencies": {
+    "electron": "^17.2.0",
+    "react-native-webview": "^11.17.2"
+  },
+  "dependencies": {
+    "@unionkeyfe/cross-inpage-provider-core": "workspace:*",
+    "@unionkeyfe/cross-inpage-provider-types": "workspace:*"
+  },
+  "gitHead": "b03afba95cb83e01062a2da65cdfdfb11a7a4dd1"
+}

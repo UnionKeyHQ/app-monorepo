@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import { EDeviceType, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { EDeviceType, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
 import type { IKeyOfIcons } from '@unionkey/components';
@@ -37,7 +37,7 @@ import ImgEnterBootGuideMini from '../assets/enter-boot-guide-mini.png';
 import { FirmwareUpdateBaseMessageView } from './FirmwareUpdateBaseMessageView';
 import { FirmwareUpdatePageFooter } from './FirmwareUpdatePageLayout';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 // like: DeviceNotFound
 function CommonError({

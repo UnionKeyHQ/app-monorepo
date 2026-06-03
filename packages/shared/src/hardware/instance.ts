@@ -14,7 +14,7 @@ import type {
   ConnectSettings,
   CoreApi,
   LowLevelCoreApi,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 // eslint-disable-next-line import/no-mutable-exports
 let HardwareSDK: CoreApi;
@@ -90,6 +90,6 @@ export const getHardwareSDKInstance = memoizee(
   },
 );
 
-export const CoreSDKLoader = async () => import('@onekeyfe/hd-core');
+export const CoreSDKLoader = async () => import('@unionkeyfe/hd-core');
 
 export { HardwareSDK };

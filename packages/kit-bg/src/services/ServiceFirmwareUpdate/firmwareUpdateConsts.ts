@@ -1,6 +1,6 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export const FIRMWARE_UPDATE_MIN_VERSION_ALLOWED: Partial<
   Record<

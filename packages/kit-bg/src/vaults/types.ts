@@ -63,8 +63,8 @@ import type {
 import type { IBackgroundApi } from '../apis/IBackgroundApi';
 import type { EDBAccountType } from '../dbs/local/consts';
 import type { IDBAccount, IDBWalletId } from '../dbs/local/types';
-import type { AllNetworkAddressParams, IDeviceType } from '@onekeyfe/hd-core';
-import type { HDNodeType } from '@onekeyfe/hd-transport';
+import type { AllNetworkAddressParams, IDeviceType } from '@unionkeyfe/hd-core';
+import type { HDNodeType } from '@unionkeyfe/hd-transport';
 import type { SignClientTypes } from '@walletconnect/types';
 import type { MessageDescriptor } from 'react-intl';
 
@@ -411,7 +411,7 @@ export type IHwAllNetworkPrepareAccountsItem =
       address?: string;
 
       pub?: string;
-      publicKey?: string; // cosmos, sui, aptos ç¼?
+      publicKey?: string; // cosmos, sui, aptos ï¿½?
       publickey?: string; // nostr
 
       npub?: string; // nostr

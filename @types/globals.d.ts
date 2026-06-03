@@ -7,7 +7,7 @@ import type {
 } from '@unionkey/shared/src/locale';
 import type { IWebEmbedUnionkeyAppSettings } from '@unionkey/web-embed/utils/webEmbedAppSettings';
 
-import type { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
+import type { ProviderPrivate } from '@unionkeyfe/onekey-private-provider';
 
 type IWindowUnionKeyHub = {
   $private: ProviderPrivate & {

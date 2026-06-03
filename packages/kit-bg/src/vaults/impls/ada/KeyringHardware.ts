@@ -32,7 +32,7 @@ import type {
 import type {
   AllNetworkAddressParams,
   CardanoGetAddressMethodParams,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 const ProtocolMagic = 764_824_073;
 

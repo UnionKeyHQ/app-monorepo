@@ -1,0 +1,1 @@
+{"version":3,"names":["NativeModules","clearAll","RNWebViewCleaner"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":"AAAA,SAASA,aAAa,QAAQ,cAAc;AAE5C,eAAe;EACbC,QAAQ,EAAEA,CAAA,KAAM;IACdD,aAAa,CAACE,gBAAgB,CAACD,QAAQ,CAAC,CAAC;EAC3C;AACF,CAAC"}

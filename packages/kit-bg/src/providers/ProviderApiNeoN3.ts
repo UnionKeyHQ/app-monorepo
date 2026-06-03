@@ -2,8 +2,8 @@
 /* eslint-disable spellcheck/spell-checker */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { tx, u, wallet } from '@cityofzion/neon-core';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import {
   backgroundClass,
@@ -46,7 +46,7 @@ import type {
   TransactionJson,
   TransactionLike,
 } from '@cityofzion/neon-core/lib/tx';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 const NODE_URL = 'http://seed1.neo.org:10332/';
 

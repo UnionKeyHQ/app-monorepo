@@ -1,4 +1,4 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 
 import { Dialog, Toast } from '@unionkey/components';
 import timerUtils from '@unionkey/shared/src/utils/timerUtils';

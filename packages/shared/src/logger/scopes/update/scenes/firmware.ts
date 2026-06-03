@@ -4,7 +4,7 @@ import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/devi
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 type IFirmwareType = 'Firmware' | 'Bootloader' | 'Bluetooth';
 

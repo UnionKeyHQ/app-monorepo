@@ -1,6 +1,6 @@
 import { EXT_UI_TO_BG_PORT_NAME } from '@unionkey/shared/types';
 
-import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+import type { JsBridgeExtBackground } from '@unionkeyfe/extension-bridge-hosted';
 
 const checkExtUIOpen = (bridgeExtBg: JsBridgeExtBackground) => {
   const currentExtOrigin = chrome.runtime.getURL('');

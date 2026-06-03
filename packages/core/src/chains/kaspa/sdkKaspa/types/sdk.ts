@@ -1,6 +1,6 @@
 import type { IKaspaTransaction } from './clientRestApi';
 import type { IEncodedTxKaspa } from '../../types';
-import type { KaspaSignTransactionParams } from '@onekeyfe/hd-core';
+import type { KaspaSignTransactionParams } from '@unionkeyfe/hd-core';
 
 export type IKaspaSdkApi = {
   createKRC20RevealTxJSON: (params: {

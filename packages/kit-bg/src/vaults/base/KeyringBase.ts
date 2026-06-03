@@ -31,7 +31,7 @@ import type {
   ISignMessageParams,
   ISignTransactionParams,
 } from '../types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 export abstract class KeyringBase extends VaultContext {
   constructor(vault: VaultBase) {

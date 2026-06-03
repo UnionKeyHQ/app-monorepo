@@ -3,7 +3,7 @@ import { isString } from 'lodash';
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export class HardwareHomeScreenScene extends BaseScene {
   @LogToLocal()

@@ -2,7 +2,7 @@ import type { IAccountSelectorAvailableNetworksMap } from '@unionkey/kit/src/sta
 import type { IAccountSelectorSelectedAccount } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
 
 import type { INetworkAccount } from './account';
-import type { IInjectedProviderNamesStrings } from '@onekeyfe/cross-inpage-provider-types';
+import type { IInjectedProviderNamesStrings } from '@unionkeyfe/cross-inpage-provider-types';
 import type { SessionTypes } from '@walletconnect/types';
 
 export type IConnectionAccountInfo = IAccountSelectorSelectedAccount & {

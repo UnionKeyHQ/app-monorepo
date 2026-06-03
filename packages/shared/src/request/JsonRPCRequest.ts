@@ -9,7 +9,7 @@ import {
   ResponseError,
 } from '../errors';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 
 export type IBatchResponse<T> = T extends any[] ? T : T[];
 // export type IBatchResponse<T> = T extends any[]

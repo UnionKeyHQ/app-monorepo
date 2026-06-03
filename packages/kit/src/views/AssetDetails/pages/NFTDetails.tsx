@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
@@ -37,7 +37,7 @@ import useAppNavigation from '../../../hooks/useAppNavigation';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';
 import { getNFTDetailsComponents } from '../../../utils/getNFTDetailsComponents';
 
-import type { DeviceUploadResourceParams } from '@onekeyfe/hd-core';
+import type { DeviceUploadResourceParams } from '@unionkeyfe/hd-core';
 import type { RouteProp } from '@react-navigation/core';
 
 const isCollectNFTDeviceCompatible = (device?: IDBDevice) =>

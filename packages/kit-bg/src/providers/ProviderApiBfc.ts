@@ -1,6 +1,6 @@
 import { TransactionBlock } from '@benfen/bfc.js/transactions';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import type { IEncodedTxBfc } from '@unionkey/core/src/chains/bfc/types';
 import type IVaultBfc from '@unionkey/kit-bg/src/vaults/impls/bfc/Vault';
@@ -25,7 +25,7 @@ import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
 import type { BenfenTransactionBlockResponse } from '@benfen/bfc.js/client';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 @backgroundClass()
 class ProviderApiBfc extends ProviderApiBase {

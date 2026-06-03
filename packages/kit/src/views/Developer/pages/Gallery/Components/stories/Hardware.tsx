@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unstable-nested-components */
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 
 import { Button, Dialog, SizableText, Stack } from '@unionkey/components';
 import {
@@ -24,7 +24,7 @@ import { EUnionKeyDeviceMode } from '@unionkey/shared/types/device';
 
 import { Layout } from './utils/Layout';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 // https://i.mij.rip/2024/09/19/b0cdcbdb45494fe53b831fff02981fdb.jpeg
 
 const HardwareActionTest = () => {

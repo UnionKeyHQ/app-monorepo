@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default-member */
-import { CrossEventEmitter } from '@onekeyfe/cross-inpage-provider-core';
+import { CrossEventEmitter } from '@unionkeyfe/cross-inpage-provider-core';
 import { cloneDeep } from 'lodash';
 
 import type {

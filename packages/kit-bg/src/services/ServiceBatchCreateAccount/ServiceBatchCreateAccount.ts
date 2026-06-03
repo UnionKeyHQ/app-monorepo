@@ -1,4 +1,4 @@
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { chunk, isNil, range, uniqBy } from 'lodash';
 
 import {
@@ -39,7 +39,7 @@ import type {
   IHwAllNetworkPrepareAccountsResponse,
 } from '../../vaults/types';
 import type { IWithHardwareProcessingControlParams } from '../ServiceHardwareUI/ServiceHardwareUI';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 export type IBatchCreateAccountProgressInfo = {
   totalCount: number;

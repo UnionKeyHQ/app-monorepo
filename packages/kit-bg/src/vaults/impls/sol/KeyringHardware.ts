@@ -37,7 +37,7 @@ import type {
   ISignMessageParams,
   ISignTransactionParams,
 } from '../../types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 export class KeyringHardware extends KeyringHardwareBase {
   override coreApi = coreChainApi.sol.hd;

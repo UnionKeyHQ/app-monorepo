@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import { Linking, StyleSheet } from 'react-native';
 
@@ -37,7 +37,7 @@ import type {
   IUnionKeyDeviceFeatures,
 } from '@unionkey/shared/types/device';
 
-import type { SearchDevice } from '@onekeyfe/hd-core';
+import type { SearchDevice } from '@unionkeyfe/hd-core';
 
 type IFirmwareAuthenticationState =
   | 'unknown'

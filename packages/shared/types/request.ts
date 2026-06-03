@@ -1,4 +1,4 @@
-import type { IJsonRpcResponse } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcResponse } from '@unionkeyfe/cross-inpage-provider-types';
 
 export interface IJsonRpcResponsePro<T> extends IJsonRpcResponse<T> {
   error?: any;

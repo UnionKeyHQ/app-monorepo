@@ -36,7 +36,7 @@ import type {
   IDeviceType,
   UnionkeyFeatures,
   SearchDevice,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 export type IShouldAuthenticateFirmwareParams = { device: SearchDevice };
 export type IFirmwareAuthenticateParams = {
@@ -117,14 +117,14 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
         const data = `${settings.instanceId}_${ts}_${stringUtils.randomString(12)}`;
         const dataHex = bufferUtils.textToHex(data, 'utf-8');
   
-        // 调用设备 SDK 获取证书和签�?
+        // 调用设备 SDK 获取证书和签�?
         const verifySig: DeviceVerifySignature = await this.getDeviceCertWithSig({
           connectId,
           dataHex,
         });
         const { cert, signature } = verifySig;
   
-        // 关闭硬件弹窗（只�?UI�?
+        // 关闭硬件弹窗（只�?UI�?
         await this.backgroundApi.serviceHardwareUI.closeHardwareUiStateDialog({
           skipDeviceCancel: true,
           connectId,
@@ -132,7 +132,7 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
   
         appEventBus.emit(EAppEventBusNames.HardwareVerifyAfterDeviceConfirm, undefined);
   
-        // --- 调用本地服务�?---
+        // --- 调用本地服务�?---
         let result: { code?: number; message?: string; data?: string } = {};
         try {
           const resp = await fetch("https://api.unionkey.io/hardware/verify", {

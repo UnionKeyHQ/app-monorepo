@@ -108,7 +108,7 @@ import type {
   IValidateGeneralInputParams,
   IWrappedInfo,
 } from '../../types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 
 const enabledNFTNetworkIds = getEnabledNFTNetworkIds();
 

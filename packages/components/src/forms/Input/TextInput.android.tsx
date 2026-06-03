@@ -1,3 +1,3 @@
-import TextInput from '@onekeyfe/react-native-text-input';
+import TextInput from '@unionkeyfe/react-native-text-input';
 
 export default TextInput;

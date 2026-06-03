@@ -20,7 +20,7 @@ import { getWebviewWrapperRef } from '../utils/explorerUtils';
 import { useWebTabDataById } from './useWebTabs';
 
 import type { IHandleAccountChangedParams } from '../../DAppConnection/hooks/useHandleAccountChanged';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 
 const notifyChanges = throttle((url: string, fromScene?: string) => {
   console.log('webview notify changed events: ', url, fromScene);

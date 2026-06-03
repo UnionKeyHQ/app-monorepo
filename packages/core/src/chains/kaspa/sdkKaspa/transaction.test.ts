@@ -1,5 +1,5 @@
 import { hexToBytes } from '@noble/hashes/utils';
-import { Address, Transaction } from '@onekeyfe/kaspa-core-lib';
+import { Address, Transaction } from '@unionkeyfe/kaspa-core-lib';
 import BigNumber from 'bignumber.js';
 
 import { MAX_UINT64_VALUE } from '@unionkey/core/src/consts';
@@ -15,7 +15,7 @@ import type {
   IKaspaSubmitTransactionRequest,
   IKaspaUnspentOutputInfo,
 } from './types';
-import type { PublicKey } from '@onekeyfe/kaspa-core-lib';
+import type { PublicKey } from '@unionkeyfe/kaspa-core-lib';
 
 jest.setTimeout(3 * 60 * 1000);
 
@@ -45,11 +45,11 @@ const checkTransactionResult = ({
     new BigNumber(0),
   );
 
-  // 获取转账金额和找零金�?
+  // 获取转账金额和找零金�?
   const transferAmount = new BigNumber(sendAmount);
   const changeAmount = totalOutput.minus(transferAmount);
 
-  // 计算手续�?
+  // 计算手续�?
   const fee = totalInput.minus(totalOutput);
 
   expect(totalInput.toFixed()).toBe(totalOutput.plus(fee).toFixed());

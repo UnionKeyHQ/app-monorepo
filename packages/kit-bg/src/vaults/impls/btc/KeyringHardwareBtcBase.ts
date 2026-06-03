@@ -39,8 +39,8 @@ import type {
   ISignMessageParams,
   ISignTransactionParams,
 } from '../../types';
-import type { RefTransaction } from '@onekeyfe/hd-core';
-import type { HDNodeType, Messages } from '@onekeyfe/hd-transport';
+import type { RefTransaction } from '@unionkeyfe/hd-core';
+import type { HDNodeType, Messages } from '@unionkeyfe/hd-transport';
 
 export abstract class KeyringHardwareBtcBase extends KeyringHardwareBase {
   abstract override coreApi: CoreChainSoftwareBtc | undefined;

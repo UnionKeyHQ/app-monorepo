@@ -13,23 +13,23 @@
       "description": "UnionKey inpage provider packages",
       "packageMappings": [
         {
-          "from": "@onekeyfe/cross-inpage-provider-core",
+          "from": "@unionkeyfe/cross-inpage-provider-core",
           "to": "@unionkeyfe/cross-inpage-provider-core"
         },
         {
-          "from": "@onekeyfe/cross-inpage-provider-errors",
+          "from": "@unionkeyfe/cross-inpage-provider-errors",
           "to": "@unionkeyfe/cross-inpage-provider-errors"
         },
         {
-          "from": "@onekeyfe/cross-inpage-provider-injected",
+          "from": "@unionkeyfe/cross-inpage-provider-injected",
           "to": "@unionkeyfe/cross-inpage-provider-injected"
         },
         {
-          "from": "@onekeyfe/cross-inpage-provider-types",
+          "from": "@unionkeyfe/cross-inpage-provider-types",
           "to": "@unionkeyfe/cross-inpage-provider-types"
         },
         {
-          "from": "@onekeyfe/extension-bridge-hosted",
+          "from": "@unionkeyfe/extension-bridge-hosted",
           "to": "@unionkeyfe/extension-bridge-hosted"
         }
       ]
@@ -40,23 +40,23 @@
       "description": "UnionKey hardware JavaScript SDK packages",
       "packageMappings": [
         {
-          "from": "@onekeyfe/hd-ble-sdk",
+          "from": "@unionkeyfe/hd-ble-sdk",
           "to": "@unionkeyfe/hd-ble-sdk"
         },
         {
-          "from": "@onekeyfe/hd-core",
+          "from": "@unionkeyfe/hd-core",
           "to": "@unionkeyfe/hd-core"
         },
         {
-          "from": "@onekeyfe/hd-shared",
+          "from": "@unionkeyfe/hd-shared",
           "to": "@unionkeyfe/hd-shared"
         },
         {
-          "from": "@onekeyfe/hd-transport",
+          "from": "@unionkeyfe/hd-transport",
           "to": "@unionkeyfe/hd-transport"
         },
         {
-          "from": "@onekeyfe/hd-web-sdk",
+          "from": "@unionkeyfe/hd-web-sdk",
           "to": "@unionkeyfe/hd-web-sdk"
         }
       ]
@@ -67,7 +67,7 @@
       "description": "UnionKey cross webview bridge package",
       "packageMappings": [
         {
-          "from": "@onekeyfe/onekey-cross-webview",
+          "from": "@unionkeyfe/cross-webview",
           "to": "@unionkeyfe/cross-webview"
         }
       ]
@@ -78,7 +78,7 @@
       "description": "UnionKey React Native webview fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-webview",
+          "from": "@unionkeyfe/react-native-webview",
           "to": "@unionkeyfe/react-native-webview"
         }
       ]
@@ -89,7 +89,7 @@
       "description": "UnionKey webview cleaner fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-webview-cleaner",
+          "from": "@unionkeyfe/react-native-webview-cleaner",
           "to": "@unionkeyfe/react-native-webview-cleaner"
         }
       ]
@@ -100,7 +100,7 @@
       "description": "UnionKey React Native cloud filesystem fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-cloud-fs",
+          "from": "@unionkeyfe/react-native-cloud-fs",
           "to": "@unionkeyfe/react-native-cloud-fs"
         }
       ]
@@ -111,7 +111,7 @@
       "description": "UnionKey React Native animated charts fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-animated-charts",
+          "from": "@unionkeyfe/react-native-animated-charts",
           "to": "@unionkeyfe/react-native-animated-charts"
         }
       ]
@@ -122,7 +122,7 @@
       "description": "UnionKey React Native BLE utilities fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-ble-utils",
+          "from": "@unionkeyfe/react-native-ble-utils",
           "to": "@unionkeyfe/react-native-ble-utils"
         }
       ]
@@ -133,7 +133,7 @@
       "description": "UnionKey React Native lite card fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-lite-card",
+          "from": "@unionkeyfe/react-native-lite-card",
           "to": "@unionkeyfe/react-native-lite-card"
         }
       ]
@@ -144,7 +144,7 @@
       "description": "UnionKey React Native tab page view fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-tab-page-view",
+          "from": "@unionkeyfe/react-native-tab-page-view",
           "to": "@unionkeyfe/react-native-tab-page-view"
         }
       ]
@@ -155,7 +155,7 @@
       "description": "UnionKey React Native text input fork",
       "packageMappings": [
         {
-          "from": "@onekeyfe/react-native-text-input",
+          "from": "@unionkeyfe/react-native-text-input",
           "to": "@unionkeyfe/react-native-text-input"
         }
       ]

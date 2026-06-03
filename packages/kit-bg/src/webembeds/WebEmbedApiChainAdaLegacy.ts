@@ -1,9 +1,9 @@
 import type { IAdaSdkApi } from '@unionkey/core/src/chains/ada/sdkAda/sdk/types';
 import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 
-import type IAdaLib from '@onekeyfe/cardano-coin-selection-asmjs';
+import type IAdaLib from '@unionkeyfe/cardano-coin-selection-asmjs';
 
-const LibLoader = async () => import('@onekeyfe/cardano-coin-selection-asmjs');
+const LibLoader = async () => import('@unionkeyfe/cardano-coin-selection-asmjs');
 
 type IAdaDappGetBalance = typeof IAdaLib.dAppUtils.getBalance;
 type IAdaDappGetUtxos = typeof IAdaLib.dAppUtils.getUtxos;

@@ -1,4 +1,4 @@
-import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
+import { bridgeSetup } from '@unionkeyfe/extension-bridge-hosted';
 
 import { jotaiUpdateFromUiByBgBroadcast } from '@unionkey/kit-bg/src/states/jotai/jotaiInitFromUi';
 import appGlobals from '@unionkey/shared/src/appGlobals';
@@ -12,11 +12,11 @@ import {
 } from '@unionkey/shared/src/background/backgroundUtils';
 import { appEventBus } from '@unionkey/shared/src/eventBus/appEventBus';
 
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 function init() {
   const jsBridgeReceiveHandler = async (payload: IJsBridgeMessagePayload) => {

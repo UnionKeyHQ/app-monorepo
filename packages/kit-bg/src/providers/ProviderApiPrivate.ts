@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable camelcase */
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import { getBgSensitiveTextEncodeKey } from '@unionkey/core/src/secret';
 import {
@@ -32,7 +32,7 @@ import type { IFloatingIconSettings } from '../dbs/simple/entity/SimpleDbEntityF
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 import BigNumber from 'bignumber.js';
 import { TypedDataUtils } from 'eth-sig-util';
 import { omitBy } from 'lodash';
@@ -36,7 +36,7 @@ import type {
   ISignMessageParams,
   ISignTransactionParams,
 } from '../../types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 const { address: confluxAddress, Transaction } = sdkCfx;
 

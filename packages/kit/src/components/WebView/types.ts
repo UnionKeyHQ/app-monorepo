@@ -6,8 +6,8 @@ import type {
   PageTitleUpdatedEvent,
 } from './DesktopWebView';
 import type { ESiteMode } from '../../views/Discovery/types';
-import type { InpageProviderWebViewProps as InpageWebViewProps } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { InpageProviderWebViewProps as InpageWebViewProps } from '@unionkeyfe/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 import type { WebViewMessageEvent } from 'react-native-webview';
 import type {
   WebViewErrorEvent,

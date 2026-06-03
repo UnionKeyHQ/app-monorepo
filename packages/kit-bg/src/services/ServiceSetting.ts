@@ -1,4 +1,4 @@
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
+import { consts } from '@unionkeyfe/cross-inpage-provider-core';
 import { flatten, groupBy, isEqual } from 'lodash';
 import semver from 'semver';
 

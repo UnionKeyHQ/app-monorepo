@@ -5,7 +5,7 @@ import type { ComponentType, ReactElement } from 'react';
 import {
   PageContentView,
   PageManager,
-} from '@onekeyfe/react-native-tab-page-view';
+} from '@unionkeyfe/react-native-tab-page-view';
 import { Animated } from 'react-native';
 
 import platformEnv from '@unionkey/shared/src/platformEnv';

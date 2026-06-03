@@ -14,7 +14,7 @@ import type {
   IWebViewRef,
 } from './types';
 import type { ESiteMode } from '../../views/Discovery/types';
-import type { IJsBridgeReceiveHandler } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeReceiveHandler } from '@unionkeyfe/cross-inpage-provider-types';
 import type { WebViewProps as RNWebViewProps } from 'react-native-webview';
 import type {
   WebViewErrorEvent,

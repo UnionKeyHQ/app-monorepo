@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { useRoute } from '@react-navigation/native';
 import { useIntl } from 'react-intl';
 

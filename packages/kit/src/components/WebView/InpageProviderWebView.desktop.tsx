@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { useWebViewBridge } from '@onekeyfe/onekey-cross-webview';
+import { useWebViewBridge } from '@unionkeyfe/cross-webview';
 
 // eslint-disable-next-line import/order
 import { Progress, Spinner, Stack } from '@unionkey/components';
@@ -16,7 +16,7 @@ import { Progress, Spinner, Stack } from '@unionkey/components';
 import { DesktopWebView } from './DesktopWebView';
 
 import type { IInpageProviderWebViewProps } from './types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 
 const InpageProviderWebView: FC<IInpageProviderWebViewProps> = forwardRef(
   (

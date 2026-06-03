@@ -14,14 +14,14 @@ import type {
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export enum EHardwareUiStateAction {
   DeviceChecking = 'DeviceChecking',
   EnterPinOnDevice = 'EnterPinOnDevice',
   ProcessLoading = 'ProcessLoading',
 
-  // @onekeyfe/hd-core UI_REQUEST const map ----------------------------------------------
+  // @unionkeyfe/hd-core UI_REQUEST const map ----------------------------------------------
 
   REQUEST_PIN = 'ui-request_pin',
   INVALID_PIN = 'ui-invalid_pin',

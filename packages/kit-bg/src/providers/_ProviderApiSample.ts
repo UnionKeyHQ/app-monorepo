@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import {
   backgroundClass,
@@ -9,7 +9,7 @@ import { NotImplemented } from '@unionkey/shared/src/errors';
 import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 @backgroundClass()
 class _ProviderApiSample extends ProviderApiBase {

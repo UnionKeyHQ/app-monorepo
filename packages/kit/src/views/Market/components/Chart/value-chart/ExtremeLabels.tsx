@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { memo, useCallback, useMemo, useState } from 'react';
 
-import { useChartData } from '@onekeyfe/react-native-animated-charts';
+import { useChartData } from '@unionkeyfe/react-native-animated-charts';
 import { Text, View } from 'react-native';
 
 import { NumberSizeableText } from '@unionkey/components';

@@ -1,5 +1,5 @@
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { isNil } from 'lodash';
 import { TronWeb } from 'tronweb';
 
@@ -22,7 +22,7 @@ import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 import type { Types } from 'tronweb';
 
 const TRON_SCAN_REQUESTED_URL = {

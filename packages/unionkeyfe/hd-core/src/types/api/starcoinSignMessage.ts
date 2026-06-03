@@ -1,0 +1,13 @@
+import { StarcoinMessageSignature } from '@unionkeyfe/hd-transport';
+import type { CommonParams, Response } from '../params';
+
+export type StarcoinSignMessageParams = {
+  path: string | number[];
+  messageHex: string;
+};
+
+export declare function starcoinSignMessage(
+  connectId: string,
+  deviceId: string,
+  params: CommonParams & StarcoinSignMessageParams
+): Response<StarcoinMessageSignature>;

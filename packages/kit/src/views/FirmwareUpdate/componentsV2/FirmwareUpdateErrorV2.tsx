@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
 import { Button, SizableText, YStack } from '@unionkey/components';

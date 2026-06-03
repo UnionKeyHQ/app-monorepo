@@ -1,4 +1,4 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import semver from 'semver';
 
 import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
@@ -31,7 +31,7 @@ import type {
   KnownDevice,
   UnionkeyFeatures,
   SearchDevice,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 type IGetDeviceVersionParams = {
   device: SearchDevice | undefined;

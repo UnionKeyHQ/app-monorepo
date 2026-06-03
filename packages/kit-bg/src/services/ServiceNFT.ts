@@ -26,7 +26,7 @@ import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 import ServiceBase from './ServiceBase';
 
 import type { IDBAccount } from '../dbs/local/types';
-import type { DeviceUploadResourceParams } from '@onekeyfe/hd-core';
+import type { DeviceUploadResourceParams } from '@unionkeyfe/hd-core';
 
 @backgroundClass()
 class ServiceNFT extends ServiceBase {

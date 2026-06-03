@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 
-import { useWebViewBridge } from '@onekeyfe/onekey-cross-webview';
+import { useWebViewBridge } from '@unionkeyfe/cross-webview';
 
 import { Progress, Spinner, Stack } from '@unionkey/components';
 import platformEnv from '@unionkey/shared/src/platformEnv';
@@ -14,7 +14,7 @@ import injectedNativeCode from './injectedNative.text-js';
 import { NativeWebView } from './NativeWebView';
 
 import type { IInpageProviderWebViewProps } from './types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 import type { WebViewProps } from 'react-native-webview';
 
 const desktopUserAgent = platformEnv.isNativeIOS

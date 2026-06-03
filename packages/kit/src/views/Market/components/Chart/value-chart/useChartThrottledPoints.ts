@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { monotoneCubicInterpolation } from '@onekeyfe/react-native-animated-charts';
+import { monotoneCubicInterpolation } from '@unionkeyfe/react-native-animated-charts';
 import { debounce } from 'lodash';
 
 import platformEnv from '@unionkey/shared/src/platformEnv';

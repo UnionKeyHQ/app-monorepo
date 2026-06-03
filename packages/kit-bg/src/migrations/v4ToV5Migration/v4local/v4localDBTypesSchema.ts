@@ -9,7 +9,7 @@ import type {
 } from '@unionkey/shared/src/consts/dbConsts';
 
 import type { EV4DBAccountType, EV4TokenRiskLevel } from '../v4types';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export type IV4DBWalletId =
   | string // hd-xxx, hw-xxx

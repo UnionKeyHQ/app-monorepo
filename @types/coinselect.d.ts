@@ -1,5 +1,5 @@
-// TODO: remove this file to @onekeyfe/coinselect
-declare module '@onekeyfe/coinselect' {
+// TODO: remove this file to @unionkeyfe/coinselect
+declare module '@unionkeyfe/coinselect' {
   export interface ICoinSelectInput {
     txId: string;
     vout: number;
@@ -30,7 +30,7 @@ declare module '@onekeyfe/coinselect' {
   ): ICoinSelectResult;
 }
 
-declare module '@onekeyfe/coinselect/split' {
+declare module '@unionkeyfe/coinselect/split' {
   import type {
     ICoinSelectInput,
     ICoinSelectOutput,
@@ -44,7 +44,7 @@ declare module '@onekeyfe/coinselect/split' {
   ): ICoinSelectResult;
 }
 
-declare module '@onekeyfe/coinselect/accumulative' {
+declare module '@unionkeyfe/coinselect/accumulative' {
   import type {
     ICoinSelectInput,
     ICoinSelectOutput,
@@ -58,7 +58,7 @@ declare module '@onekeyfe/coinselect/accumulative' {
   ): ICoinSelectResult;
 }
 
-declare module '@onekeyfe/coinselect/break' {
+declare module '@unionkeyfe/coinselect/break' {
   import type {
     ICoinSelectInput,
     ICoinSelectOutput,
@@ -72,7 +72,7 @@ declare module '@onekeyfe/coinselect/break' {
   ): ICoinSelectResult;
 }
 
-declare module '@onekeyfe/coinselect/blackjack' {
+declare module '@unionkeyfe/coinselect/blackjack' {
   import type {
     ICoinSelectInput,
     ICoinSelectOutput,
@@ -86,7 +86,7 @@ declare module '@onekeyfe/coinselect/blackjack' {
   ): ICoinSelectResult;
 }
 
-declare module '@onekeyfe/coinselect/utils' {
+declare module '@unionkeyfe/coinselect/utils' {
   import type {
     ICoinSelectInput,
     ICoinSelectOutput,

@@ -1,5 +1,5 @@
 import type { IEndpointInfo } from './endpoint';
-import type { CrossEventEmitter } from '@onekeyfe/cross-inpage-provider-core';
+import type { CrossEventEmitter } from '@unionkeyfe/cross-inpage-provider-core';
 import type { Socket } from 'socket.io-client';
 
 export enum ENotificationPermission {

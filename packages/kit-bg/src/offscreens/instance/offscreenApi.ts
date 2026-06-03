@@ -10,7 +10,7 @@ import type {
   IBackgroundApiInternalCallMessage,
   IOffscreenApiMessagePayload,
 } from '../../apis/IBackgroundApi';
-import type { LowLevelCoreApi } from '@onekeyfe/hd-core';
+import type { LowLevelCoreApi } from '@unionkeyfe/hd-core';
 
 let HardwareLowLevelSDK: LowLevelCoreApi;
 

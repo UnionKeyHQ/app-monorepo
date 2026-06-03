@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { Semaphore } from 'async-mutex';
 import BigNumber from 'bignumber.js';
 import { PubKey } from 'cosmjs-types/cosmos/crypto/ed25519/keys';
@@ -31,7 +31,7 @@ import { EMessageTypesCommon } from '@unionkey/shared/types/message';
 import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 @backgroundClass()
 class ProviderApiCosmos extends ProviderApiBase {

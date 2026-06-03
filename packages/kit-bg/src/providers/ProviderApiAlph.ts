@@ -1,6 +1,6 @@
 import { groupOfAddress } from '@alephium/web3';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import { EAlphTxType } from '@unionkey/core/src/chains/alph/types';
 import {
@@ -34,7 +34,7 @@ import type {
   SignUnsignedTxParams,
   SignUnsignedTxResult,
 } from '@alephium/web3';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 @backgroundClass()
 class ProviderApiAlph extends ProviderApiBase {

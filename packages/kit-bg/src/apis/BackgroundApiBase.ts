@@ -1,5 +1,5 @@
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { consts } from '@unionkeyfe/cross-inpage-provider-core';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { isFunction } from 'lodash';
 
 import '@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy';
@@ -49,15 +49,15 @@ import type {
 import type ProviderApiBase from '../providers/ProviderApiBase';
 import type { EAtomNames } from '../states/jotai/atomNames';
 import type { JotaiCrossAtom } from '../states/jotai/utils/JotaiCrossAtom';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 import type {
   IInjectedProviderNamesStrings,
   IJsBridgeMessagePayload,
   IJsBridgeReceiveHandler,
   IJsonRpcRequest,
   IJsonRpcResponse,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+} from '@unionkeyfe/cross-inpage-provider-types';
+import type { JsBridgeExtBackground } from '@unionkeyfe/extension-bridge-hosted';
 
 const UNIONKEY_REQUEST_TO_ALL_CS = consts[
   ['ONE', 'KEY_REQUEST_TO_ALL_CS'].join('') as keyof typeof consts

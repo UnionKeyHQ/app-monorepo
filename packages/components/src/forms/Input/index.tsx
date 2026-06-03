@@ -14,7 +14,7 @@ import {
   useState,
 } from 'react';
 
-import { EPasteEventPayloadItemType } from '@onekeyfe/react-native-text-input/src/enum';
+import { EPasteEventPayloadItemType } from '@unionkeyfe/react-native-text-input/src/enum';
 import noop from 'lodash/noop';
 import { InteractionManager } from 'react-native';
 import { Group, getFontSize, useProps, useThemeName } from 'tamagui';
@@ -38,7 +38,7 @@ import type {
 import type {
   IPasteEventParams,
   IPasteEventPayload,
-} from '@onekeyfe/react-native-text-input';
+} from '@unionkeyfe/react-native-text-input';
 import type {
   HostComponent,
   MeasureLayoutOnSuccessCallback,
@@ -51,13 +51,13 @@ import type { GetProps } from 'tamagui';
 
 type ITMInputProps = GetProps<typeof TMInput>;
 
-export { EPasteEventPayloadItemType } from '@onekeyfe/react-native-text-input/src/enum';
+export { EPasteEventPayloadItemType } from '@unionkeyfe/react-native-text-input/src/enum';
 
 export type {
   IPasteEventParams,
   IPasteEventPayload,
   IPasteEventPayloadItem,
-} from '@onekeyfe/react-native-text-input';
+} from '@unionkeyfe/react-native-text-input';
 
 export type IInputProps = {
   InputComponent?: ComponentType;

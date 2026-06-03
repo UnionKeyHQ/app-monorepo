@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { get, uniq } from 'lodash';
 
 import { EAppEventBusNames, appEventBus } from '../../eventBus/appEventBus';
@@ -337,7 +337,7 @@ export class NeedBluetoothTurnedOn extends UnionKeyHardwareError {
   override code = HardwareErrorCode.BlePermissionError;
 }
 
-// 没有使用蓝牙的权�?
+// 没有使用蓝牙的权�?
 export class NeedBluetoothPermissions extends UnionKeyHardwareError {
   constructor(props?: IUnionKeyErrorHardwareProps) {
     super(

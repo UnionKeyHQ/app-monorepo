@@ -1,7 +1,7 @@
 import type {
   IInjectedProviderNamesStrings,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 export type IDappSourceInfo = {
   id: string | number; // ServicePromise callback id to reject/resolve

@@ -1,4 +1,4 @@
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import { isArray, isNil } from 'lodash';
 
 import platformEnv from '../../platformEnv';

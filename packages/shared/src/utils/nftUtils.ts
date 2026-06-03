@@ -1,5 +1,5 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
-import { ResourceType } from '@onekeyfe/hd-transport';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
+import { ResourceType } from '@unionkeyfe/hd-transport';
 import { SaveFormat, manipulateAsync } from 'expo-image-manipulator';
 import { Image } from 'react-native';
 
@@ -12,7 +12,7 @@ import type { IAccountNFT, INFTMetaData } from '../../types/nft';
 import type {
   DeviceUploadResourceParams,
   IDeviceType,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 import type { Action } from 'expo-image-manipulator';
 
 export function getFilteredNftsBySearchKey({

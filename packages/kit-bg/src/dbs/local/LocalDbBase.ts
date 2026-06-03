@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line max-classes-per-file
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import {
   isEmpty,
   isNil,
@@ -128,7 +128,7 @@ import {
 
 import type { RealmSchemaCloudSyncItem } from './realm/schemas/RealmSchemaCloudSyncItem';
 import type { IBackgroundApi } from '../../apis/IBackgroundApi';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 const getOrderByWalletType = (walletType: IDBWalletType): number => {
   switch (walletType) {

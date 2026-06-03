@@ -4,7 +4,7 @@ import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 export const WEB_EMBED_API_WHITE_LIST_ORIGIN = [
   // iOS/Android origin in PRD for web-embed (local storage file).

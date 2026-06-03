@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
@@ -33,7 +33,7 @@ import { ETranslations } from '@unionkey/shared/src/locale';
 import { SHOW_CLOSE_ACTION_MIN_DURATION } from '../../provider/Container/HardwareUiStateContainer/constants';
 import { isPassphraseValid } from '../../utils/passphraseUtils';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export interface IConfirmOnDeviceToastContentProps {
   deviceType: IDeviceType;

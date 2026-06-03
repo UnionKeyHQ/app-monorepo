@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import * as HardwareShared from '@onekeyfe/hd-shared';
+import * as HardwareShared from '@unionkeyfe/hd-shared';
 
 import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import platformEnv from '@unionkey/shared/src/platformEnv';

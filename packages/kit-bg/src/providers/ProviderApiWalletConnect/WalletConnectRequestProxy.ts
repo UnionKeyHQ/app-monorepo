@@ -1,5 +1,5 @@
 import type ProviderApiWalletConnect from './ProviderApiWalletConnect';
-import type { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import type { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import type { Web3WalletTypes } from '@walletconnect/web3wallet';
 
 export type IWalletConnectRequestOptions = {

@@ -4,7 +4,7 @@ import {
   PageContentView,
   PageManager,
   SelectedLabel,
-} from '@onekeyfe/react-native-tab-page-view';
+} from '@unionkeyfe/react-native-tab-page-view';
 import { withStaticProperties } from 'tamagui';
 
 import { Header } from './Header';

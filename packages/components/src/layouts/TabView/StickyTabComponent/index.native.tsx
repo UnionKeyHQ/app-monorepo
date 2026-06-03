@@ -1,6 +1,6 @@
 import { createRef, useCallback, useMemo, useRef, useState } from 'react';
 
-import { NestedTabView } from '@onekeyfe/react-native-tab-page-view';
+import { NestedTabView } from '@unionkeyfe/react-native-tab-page-view';
 
 import platformEnv from '@unionkey/shared/src/platformEnv';
 

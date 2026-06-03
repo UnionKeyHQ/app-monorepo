@@ -3,7 +3,7 @@ import type { EHostSecurityLevel } from '@unionkey/shared/types/discovery';
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';
 
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
 export enum EEnterMethod {
   banner = 'banner',

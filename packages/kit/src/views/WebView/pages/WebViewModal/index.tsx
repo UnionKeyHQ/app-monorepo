@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { useWebViewBridge } from '@onekeyfe/onekey-cross-webview';
+import { useWebViewBridge } from '@unionkeyfe/cross-webview';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { Share } from 'react-native';
@@ -21,7 +21,7 @@ import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 import type { RouteProp } from '@react-navigation/core';
 
 export default function WebViewModal() {

@@ -1,0 +1,1 @@
+{"version":3,"names":["_reactNative","require","_default","exports","default","clearAll","NativeModules","RNWebViewCleaner"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":";;;;;;AAAA,IAAAA,YAAA,GAAAC,OAAA;AAA6C,IAAAC,QAAA,GAAAC,OAAA,CAAAC,OAAA,GAE9B;EACbC,QAAQ,EAAEA,CAAA,KAAM;IACdC,0BAAa,CAACC,gBAAgB,CAACF,QAAQ,CAAC,CAAC;EAC3C;AACF,CAAC"}

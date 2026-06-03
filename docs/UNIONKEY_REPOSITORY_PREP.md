@@ -17,10 +17,10 @@ to replace direct `@onekeyfe` package usage.
 | Repo | Source | Why it is needed |
 | --- | --- | --- |
 | `UnionKeyHQ/app-monorepo` | `zyfshr/app-monorepo` | Canonical UnionKey wallet monorepo. |
-| `UnionKeyHQ/cross-inpage-provider` | `OneKeyHQ/cross-inpage-provider` | Own inpage provider packages and remove `@onekeyfe/cross-inpage-provider-*`. |
-| `UnionKeyHQ/hardware-js-sdk` | `OneKeyHQ/hardware-js-sdk` | Own hardware SDK packages and remove `@onekeyfe/hd-*`. |
-| `UnionKeyHQ/onekey-cross-webview` | `OneKeyHQ/onekey-cross-webview` | Own webview bridge package currently published as `@onekeyfe/onekey-cross-webview`. |
-| `UnionKeyHQ/react-native-webview` | `OneKeyHQ/react-native-webview` | Own `react-native-webview` npm alias currently pointing at `@onekeyfe/react-native-webview`. |
+| `UnionKeyHQ/cross-inpage-provider` | `OneKeyHQ/cross-inpage-provider` | Own inpage provider packages and remove `@unionkeyfe/cross-inpage-provider-*`. |
+| `UnionKeyHQ/hardware-js-sdk` | `OneKeyHQ/hardware-js-sdk` | Own hardware SDK packages and remove `@unionkeyfe/hd-*`. |
+| `UnionKeyHQ/onekey-cross-webview` | `OneKeyHQ/onekey-cross-webview` | Own webview bridge package currently published as `@unionkeyfe/cross-webview`. |
+| `UnionKeyHQ/react-native-webview` | `OneKeyHQ/react-native-webview` | Own `react-native-webview` npm alias currently pointing at `@unionkeyfe/react-native-webview`. |
 | `UnionKeyHQ/react-native-webview-cleaner` | `OneKeyHQ/react-native-webview-cleaner` | Own `react-native-webview-cleaner` npm alias. |
 | `UnionKeyHQ/react-native-cloud-fs` | `OneKeyHQ/react-native-cloud-fs` | Own mobile cloud filesystem dependency. |
 | `UnionKeyHQ/react-native-animated-charts` | `OneKeyHQ/react-native-animated-charts` | Own mobile chart native dependency. |
@@ -36,9 +36,9 @@ to replace direct `@onekeyfe` package usage.
 
 1. Create or fork the GitHub repositories above under `UnionKeyHQ`.
 2. Keep package names stable at first if a dependency has deep transitive
-   references to `@onekeyfe/*`; change the repository ownership first.
+   references to `@unionkeyfe/*`; change the repository ownership first.
 3. Publish UnionKey-scoped npm packages only after each fork builds on its own.
-4. Update this monorepo dependency declarations from `@onekeyfe/*` to the new
+4. Update this monorepo dependency declarations from `@unionkeyfe/*` to the new
    package names or npm aliases.
 5. Run `yarn install`, `copy:inject`, desktop dev startup, and mobile install
    checks after each dependency family.

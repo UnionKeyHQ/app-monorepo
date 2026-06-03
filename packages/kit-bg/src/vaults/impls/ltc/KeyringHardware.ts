@@ -6,7 +6,7 @@ import type {
   IBuildHwAllNetworkPrepareAccountsParams,
   IHwSdkNetwork,
 } from '../../types';
-import type { AllNetworkAddressParams } from '@onekeyfe/hd-core';
+import type { AllNetworkAddressParams } from '@unionkeyfe/hd-core';
 
 export class KeyringHardware extends KeyringHardwareBtcBase {
   override coreApi = coreChainApi.ltc.hd;

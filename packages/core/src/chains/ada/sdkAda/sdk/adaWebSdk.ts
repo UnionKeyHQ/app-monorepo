@@ -1,7 +1,7 @@
 import type { IGetCardanoApi } from './types';
 
 const getCardanoApi: IGetCardanoApi = async () => {
-  const Loader = await import('@onekeyfe/cardano-coin-selection-asmjs');
+  const Loader = await import('@unionkeyfe/cardano-coin-selection-asmjs');
   const unionKeyUtils = (Loader as any)[['one', 'keyUtils'].join('')];
   const txToUnionKey = unionKeyUtils[['txTo', 'One', 'Key'].join('')];
   return {

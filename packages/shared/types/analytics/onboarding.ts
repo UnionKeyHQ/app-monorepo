@@ -1,5 +1,5 @@
 import type { IBaseEventPayload } from './base';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 // Specific parameter details for each add method
 interface ICreateWalletPayload {

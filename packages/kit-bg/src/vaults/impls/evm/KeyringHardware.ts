@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 import { TypedDataUtils } from 'eth-sig-util';
 import { omit } from 'lodash';
 
@@ -47,7 +47,7 @@ import type {
   EVMSignedTx,
   EVMTransaction,
   EVMTransactionEIP1559,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 async function hardwareEvmSignTransaction({
   sdk,

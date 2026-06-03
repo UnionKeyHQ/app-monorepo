@@ -1,0 +1,60 @@
+{
+  "name": "@unionkeyfe/cross-inpage-provider-injected",
+  "version": "2.2.25",
+  "keywords": [
+    "cross-inpage-provider"
+  ],
+  "author": "dev-fe@onekey.so",
+  "repository": "https://github.com/UnionKeyHQ/cross-inpage-provider",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "lint:dist": "NODE_OPTIONS=\"--max-old-space-size=8192\" npx eslint --config syntax-compatibility.eslint.config.cjs ./dist/injected/injectedNative.js",
+    "build": "tsc && tsc --project tsconfig.cjs.json && yarn webpack",
+    "build-prod": "tsc && tsc --project tsconfig.cjs.json && NODE_ENV=production yarn webpack && yarn lint:dist",
+    "start": "tsc --watch",
+    "webpack": "webpack",
+    "webpack-dev": "NODE_ENV=development webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-lodash": "^3.3.4",
+    "electron": "^17.2.0",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.69.1",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "peerDependencies": {
+    "electron": "*"
+  },
+  "dependencies": {
+    "@unionkeyfe/cross-inpage-provider-core": "workspace:*",
+    "@unionkeyfe/cross-inpage-provider-types": "workspace:*",
+    "@unionkeyfe/desktop-bridge-injected": "workspace:*",
+    "@unionkeyfe/extension-bridge-injected": "workspace:*",
+    "@unionkeyfe/inpage-providers-hub": "workspace:*",
+    "@unionkeyfe/native-bridge-injected": "workspace:*",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0"
+  },
+  "gitHead": "b03afba95cb83e01062a2da65cdfdfb11a7a4dd1"
+}

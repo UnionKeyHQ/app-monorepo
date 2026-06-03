@@ -1,0 +1,82 @@
+{
+  "name": "@unionkeyfe/coinselect",
+  "version": "3.1.14",
+  "description": "A transaction input selection module for bitcoin.",
+  "keywords": [
+    "coinselect",
+    "coin",
+    "unspents",
+    "wallet",
+    "BIP32",
+    "management",
+    "utxo",
+    "transaction",
+    "fee",
+    "optimization",
+    "optimizing",
+    "bitcoin"
+  ],
+  "homepage": "https://github.com/bitcoinjs/coinselect",
+  "bugs": {
+    "url": "https://github.com/bitcoinjs/coinselect/issues"
+  },
+  "license": "MIT",
+  "author": "Daniel Cousens",
+  "files": [
+    "accumulative.js",
+    "blackjack.js",
+    "break.js",
+    "index.js",
+    "split.js",
+    "utils.js",
+    "witness.js",
+    "witness.d.ts",
+    "third-party/**"
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitcoinjs/coinselect.git"
+  },
+  "scripts": {
+    "coverage": "nyc --exclude='third-party/**' --check-coverage --branches 90 --functions 95 tape test/*.js",
+    "standard": "standard",
+    "standard:file": "standard --fix",
+    "test": "npm run standard && npm run unit",
+    "unit": "tape test/*.js",
+    "test-witness": "tape test/witness.js"
+  },
+  "devDependencies": {
+    "nyc": "^15.0.0",
+    "standard": "^14.3.4",
+    "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "bchaddrjs": "^0.5.2",
+    "bech32": "^2.0.0",
+    "bignumber.js": "9.1.2",
+    "bip66": "^2.0.0",
+    "bitcoin-ops": "^1.4.1",
+    "blake-hash": "^2.0.0",
+    "blakejs": "^1.2.1",
+    "bn.js": "^5.2.1",
+    "bs58": "^6.0.0",
+    "bs58check": "^4.0.0",
+    "create-hmac": "^1.1.7",
+    "int64-buffer": "^1.0.1",
+    "pushdata-bitcoin": "^1.0.1",
+    "tiny-secp256k1": "^1.1.6",
+    "typeforce": "^1.18.0",
+    "varuint-bitcoin": "2.0.0",
+    "wif": "^5.0.0"
+  },
+  "peerDependencies": {
+    "tslib": "^2.6.2"
+  },
+  "standard": {
+    "ignore": [
+      "third-party/**"
+    ]
+  }
+}

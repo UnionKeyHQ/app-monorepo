@@ -2,7 +2,7 @@ import { ELocalDBStoreNames } from '../../localDBStoreNames';
 import { RealmObjectBase } from '../base/RealmObjectBase';
 
 import type { IDBDevice } from '../../types';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 import type Realm from 'realm';
 
 class RealmSchemaDevice extends RealmObjectBase<IDBDevice> {

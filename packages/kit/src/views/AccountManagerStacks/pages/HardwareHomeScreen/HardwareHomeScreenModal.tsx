@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { isNil } from 'lodash';
 
 import type { IPageScreenProps } from '@unionkey/components';
@@ -43,7 +43,7 @@ import type {
   IHardwareHomeScreenData,
   IHardwareHomeScreenName,
 } from './hardwareHomeScreenData';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 import type { DimensionValue } from 'react-native';
 
 const USER_UPLOAD_IMG_NAME_PREFIX = 'user_upload__';

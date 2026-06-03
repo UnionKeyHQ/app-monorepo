@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Transaction } from '@onekeyfe/kaspa-core-lib';
+import { Transaction } from '@unionkeyfe/kaspa-core-lib';
 
 import {
   EKaspaSignType,
@@ -41,7 +41,7 @@ import type {
 import type {
   AllNetworkAddressParams,
   KaspaSignTransactionParams,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 export class KeyringHardware extends KeyringHardwareBase {
   override coreApi = coreChainApi.kaspa.hd;

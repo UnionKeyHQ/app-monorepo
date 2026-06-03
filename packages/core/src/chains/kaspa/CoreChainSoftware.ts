@@ -33,7 +33,7 @@ import {
 import sdk from './sdkKaspa/sdk';
 
 import type { IEncodedTxKaspa } from './types';
-import type { PrivateKey } from '@onekeyfe/kaspa-core-lib';
+import type { PrivateKey } from '@unionkeyfe/kaspa-core-lib';
 
 const curve: ICurveName = 'secp256k1';
 

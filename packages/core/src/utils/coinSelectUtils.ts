@@ -1,10 +1,10 @@
-import coinSelectAuto from '@onekeyfe/coinselect';
-import coinSelectAccumulative from '@onekeyfe/coinselect/accumulative';
-import coinSelectBlackjack from '@onekeyfe/coinselect/blackjack';
-import coinSelectBreak from '@onekeyfe/coinselect/break';
-import coinSelectSplit from '@onekeyfe/coinselect/split';
-import coinSelectUtils from '@onekeyfe/coinselect/utils';
-import coinSelectWitness from '@onekeyfe/coinselect/witness';
+import coinSelectAuto from '@unionkeyfe/coinselect';
+import coinSelectAccumulative from '@unionkeyfe/coinselect/accumulative';
+import coinSelectBlackjack from '@unionkeyfe/coinselect/blackjack';
+import coinSelectBreak from '@unionkeyfe/coinselect/break';
+import coinSelectSplit from '@unionkeyfe/coinselect/split';
+import coinSelectUtils from '@unionkeyfe/coinselect/utils';
+import coinSelectWitness from '@unionkeyfe/coinselect/witness';
 import { isNil } from 'lodash';
 
 import { defaultLogger } from '@unionkey/shared/src/logger/logger';
@@ -19,11 +19,11 @@ import type {
   ICoinSelectInput,
   ICoinSelectOutput,
   ICoinSelectResult,
-} from '@onekeyfe/coinselect';
+} from '@unionkeyfe/coinselect';
 import type {
   ICoinSelectResult as ICoinSelectResultWitness,
   IUtxo,
-} from '@onekeyfe/coinselect/witness';
+} from '@unionkeyfe/coinselect/witness';
 import type { Network } from 'bitcoinjs-lib';
 
 export type ICoinSelectAlgorithm =

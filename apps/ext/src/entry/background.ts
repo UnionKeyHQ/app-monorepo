@@ -6,7 +6,7 @@ import 'setimmediate';
 // eslint-disable-next-line import/order
 import '@unionkey/shared/src/polyfills';
 
-import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
+import { bridgeSetup } from '@unionkeyfe/extension-bridge-hosted';
 import urlParse from 'url-parse';
 
 import offscreenApiProxy from '@unionkey/kit-bg/src/offscreens/instance/offscreenApiProxy';
@@ -20,7 +20,7 @@ import { setupSidePanelPortInBg } from '../background/sidePanel';
 
 import appGlobals from '@unionkey/shared/src/appGlobals';
 
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 
 function initBackground() {
   // TODO use backgroundApiInit

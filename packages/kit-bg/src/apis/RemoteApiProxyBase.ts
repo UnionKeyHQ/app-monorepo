@@ -3,7 +3,7 @@
 import platformEnv from '@unionkey/shared/src/platformEnv';
 import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 
 export function buildCallRemoteApiMethod<T extends IJsonRpcRequest>(
   moduleGetter: (module: any) => Promise<any>,

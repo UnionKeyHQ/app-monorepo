@@ -11,8 +11,8 @@ import {
   useState,
 } from 'react';
 
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
-import { JsBridgeDesktopHost } from '@onekeyfe/onekey-cross-webview';
+import { consts } from '@unionkeyfe/cross-inpage-provider-core';
+import { JsBridgeDesktopHost } from '@unionkeyfe/cross-webview';
 
 import { Stack } from '@unionkey/components';
 import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
@@ -28,8 +28,8 @@ import type {
   IInpageProviderWebViewProps,
   IWebViewRef,
 } from './types';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
+import type { IWebViewWrapperRef } from '@unionkeyfe/cross-webview';
 import type {
   DidFailLoadEvent,
   DidStartNavigationEvent,

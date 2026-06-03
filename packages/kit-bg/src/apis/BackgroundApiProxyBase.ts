@@ -33,14 +33,14 @@ import type {
 } from './IBackgroundApi';
 import type ProviderApiBase from '../providers/ProviderApiBase';
 import type { EAtomNames } from '../states/jotai/atomNames';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 import type {
   IInjectedProviderNames,
   IInjectedProviderNamesStrings,
   IJsBridgeMessagePayload,
   IJsonRpcResponse,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+} from '@unionkeyfe/cross-inpage-provider-types';
+import type { JsBridgeExtBackground } from '@unionkeyfe/extension-bridge-hosted';
 
 export class BackgroundApiProxyBase
   extends BackgroundServiceProxyBase

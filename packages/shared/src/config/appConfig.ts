@@ -7,7 +7,7 @@ export const HARDWARE_SDK_IFRAME_SRC_UNIONKEYSO =
 
 export const HARDWARE_SDK_VERSION: string =
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  require('@onekeyfe/hd-core/package.json').version as string;
+  require('@unionkeyfe/hd-core/package.json').version as string;
 
 export const HARDWARE_BRIDGE_DOWNLOAD_URL =
   'https://unionkey.so/download/?client=bridge';

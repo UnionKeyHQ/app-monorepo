@@ -2,7 +2,7 @@ import { EV4LocalDBStoreNames } from '../../v4localDBStoreNames';
 import { V4RealmObjectBase } from '../base/V4RealmObjectBase';
 
 import type { IV4DBDevice } from '../../v4localDBTypes';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 import type Realm from 'realm';
 
 class V4RealmSchemaDevice extends V4RealmObjectBase<IV4DBDevice> {

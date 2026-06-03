@@ -1,4 +1,4 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 
 import {
   COINTYPE_SCDO,

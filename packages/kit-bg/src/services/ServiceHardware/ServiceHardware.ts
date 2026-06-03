@@ -1,4 +1,4 @@
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 import { Semaphore } from 'async-mutex';
 import { uniq } from 'lodash';
 import semver from 'semver';
@@ -87,7 +87,7 @@ import type {
   Response,
   SearchDevice,
   UiEvent,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 export type IDeviceGetFeaturesOptions = {
   connectId: string | undefined;
@@ -209,15 +209,15 @@ class ServiceHardware extends ServiceBase {
     if (process.env.NODE_ENV !== 'production') {
       const {
         version: version1,
-      } = require('@onekeyfe/hd-ble-sdk/package.json');
-      const { version: version2 } = require('@onekeyfe/hd-core/package.json');
-      const { version: version3 } = require('@onekeyfe/hd-shared/package.json');
+      } = require('@unionkeyfe/hd-ble-sdk/package.json');
+      const { version: version2 } = require('@unionkeyfe/hd-core/package.json');
+      const { version: version3 } = require('@unionkeyfe/hd-shared/package.json');
       const {
         version: version4,
-      } = require('@onekeyfe/hd-transport/package.json');
+      } = require('@unionkeyfe/hd-transport/package.json');
       const {
         version: version5,
-      } = require('@onekeyfe/hd-web-sdk/package.json');
+      } = require('@unionkeyfe/hd-web-sdk/package.json');
       const allVersions = {
         HARDWARE_SDK_VERSION,
         version1,
@@ -237,9 +237,9 @@ class ServiceHardware extends ServiceBase {
 
   async getSDKInstance() {
     this.checkSdkVersionValid();
-    
+
     const { hardwareConnectSrc } = await settingsPersistAtom.get();
-   
+
     const isPreRelease =
       await this.backgroundApi.serviceDevSetting.getFirmwareUpdateDevSettings(
         'usePreReleaseConfig',
@@ -250,7 +250,7 @@ class ServiceHardware extends ServiceBase {
       );
     const hardwareTransportType =
       await this.backgroundApi.serviceSetting.getHardwareTransportType();
-      
+
     try {
       const instance = await getHardwareSDKInstance({
         hardwareTransportType,
@@ -504,10 +504,10 @@ class ServiceHardware extends ServiceBase {
   @backgroundMethod()
   async searchDevices() {
     const hardwareSDK = await this.getSDKInstance();
-    
+
     const response = await hardwareSDK?.searchDevices();
     console.log('searchDevices response: ', response);
-    
+
     return response;
     // if (response.success) {
     //   return response.payload;
@@ -564,25 +564,25 @@ class ServiceHardware extends ServiceBase {
       }
     }
   }
-  @backgroundMethod()  
-  async getFeaturesWithUnlock({ connectId }: { connectId: string }) {  
-    let features = await this.getFeaturesWithoutCache({  
-      connectId,  
-    });  
-    
-    if (!features.unlocked) {  
-      // unlock device  
-      await this.unlockDevice({  
-        connectId,  
-      });  
-        
-      // 重新获取特性确认解锁成�? 
-      features = await this.getFeaturesWithoutCache({  
-        connectId,  
-      });  
-    }  
-    
-    return features;  
+  @backgroundMethod()
+  async getFeaturesWithUnlock({ connectId }: { connectId: string }) {
+    let features = await this.getFeaturesWithoutCache({
+      connectId,
+    });
+
+    if (!features.unlocked) {
+      // unlock device
+      await this.unlockDevice({
+        connectId,
+      });
+
+      // 重新获取特性确认解锁成�?
+      features = await this.getFeaturesWithoutCache({
+        connectId,
+      });
+    }
+
+    return features;
   }
   @backgroundMethod()
   async unlockDevice({ connectId }: { connectId: string }) {

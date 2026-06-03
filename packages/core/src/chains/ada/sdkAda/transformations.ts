@@ -1,4 +1,4 @@
-import { CardanoAddressType as ECardanoAddressType } from '@onekeyfe/hd-transport';
+import { CardanoAddressType as ECardanoAddressType } from '@unionkeyfe/hd-transport';
 
 import type { IAdaUTXO } from '../types';
 

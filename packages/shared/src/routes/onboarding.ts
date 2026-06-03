@@ -2,7 +2,7 @@ import type { EMnemonicType } from '@unionkey/core/src/secret';
 
 import type { EConnectDeviceChannel } from '../../types/connectDevice';
 import type { IWalletConnectConnectToWalletParams } from '../walletConnect/types';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyfe/hd-core';
 
 export enum EOnboardingPages {
   GetStarted = 'GetStarted',

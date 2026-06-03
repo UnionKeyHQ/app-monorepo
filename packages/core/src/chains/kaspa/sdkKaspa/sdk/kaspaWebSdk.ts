@@ -1,4 +1,4 @@
-import { Script } from '@onekeyfe/kaspa-core-lib';
+import { Script } from '@unionkeyfe/kaspa-core-lib';
 
 import { BASE_KAS_TO_P2SH_ADDRESS } from '../constant';
 import { EKaspaSignType } from '../publickey';
@@ -7,11 +7,11 @@ import { EOpcodes } from '../types';
 
 import type { IEncodedTxKaspa } from '../../types';
 import type { IKaspaTransaction } from '../types';
-import type { KaspaSignTransactionParams } from '@onekeyfe/hd-core';
-import type { IScriptPublicKey, ITransactionInput } from '@onekeyfe/kaspa-wasm';
+import type { KaspaSignTransactionParams } from '@unionkeyfe/hd-core';
+import type { IScriptPublicKey, ITransactionInput } from '@unionkeyfe/kaspa-wasm';
 
 const getKaspaApi = async () => {
-  const Loader = await import('@onekeyfe/kaspa-wasm');
+  const Loader = await import('@unionkeyfe/kaspa-wasm');
   await Loader.default();
 
   const createKRC20RevealTx = async (params: {

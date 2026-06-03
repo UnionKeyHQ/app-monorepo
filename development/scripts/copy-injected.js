@@ -39,13 +39,13 @@ function ensureDirectoryExistence(dirPath) {
 
 // Copy to Desktop preload.js
 copyFile(
-  './node_modules/@onekeyfe/cross-inpage-provider-injected/dist/injected/injectedDesktop.js',
+  './node_modules/@unionkeyfe/cross-inpage-provider-injected/dist/injected/injectedDesktop.js',
   './apps/desktop/public/static/preload.js',
 );
 
 // Copy to Extension injected.js
 copyFile(
-  './node_modules/@onekeyfe/cross-inpage-provider-injected/dist/injected/injectedExtension.js',
+  './node_modules/@unionkeyfe/cross-inpage-provider-injected/dist/injected/injectedExtension.js',
   './apps/ext/src/entry/injected.js',
 );
 copyFile(
@@ -55,7 +55,7 @@ copyFile(
 
 // Copy to Native injectedCode
 copyFile(
-  './node_modules/@onekeyfe/cross-inpage-provider-injected/dist/injected/injectedNative.js',
+  './node_modules/@unionkeyfe/cross-inpage-provider-injected/dist/injected/injectedNative.js',
   './packages/kit/src/components/WebView/injectedNative.text-js',
 );
 
@@ -74,7 +74,7 @@ const srcDir = path.join(
   '..',
   '..',
   'node_modules',
-  '@onekeyfe',
+  '@unionkeyfe',
   'hd-web-sdk',
   'build',
 );
