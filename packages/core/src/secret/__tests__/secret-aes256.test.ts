@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { Buffer } from 'buffer';
 
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import {
   decodePasswordAsync,
@@ -43,12 +43,12 @@ jest.mock('crypto', () => ({
   }),
 }));
 
-jest.mock('@onekeyhq/shared/src/platformEnv', () => ({
-  ...jest.requireActual('@onekeyhq/shared/src/platformEnv'),
+jest.mock('@unionkey/shared/src/platformEnv', () => ({
+  ...jest.requireActual('@unionkey/shared/src/platformEnv'),
   isJest: true,
 }));
 
-const platformEnv = jest.requireMock('@onekeyhq/shared/src/platformEnv');
+const platformEnv = jest.requireMock('@unionkey/shared/src/platformEnv');
 
 beforeEach(() => {
   platformEnv.isExtensionUi = false;
@@ -510,7 +510,7 @@ describe('AES256 Encryption Tests', () => {
       });
       expect(isEncodedSensitiveText(aesEncoded)).toBe(true);
 
-      // 手动构造一个带有 xor 前缀的文本来测试
+      // 手动构造一个带�?xor 前缀的文本来测试
       const xorPrefix =
         'SENSITIVE_ENCODE::AAAAAAAA-2E51-4DC6-A913-79EB1C62D09E::';
       const mockXorEncoded = `${xorPrefix}some-encoded-data`;

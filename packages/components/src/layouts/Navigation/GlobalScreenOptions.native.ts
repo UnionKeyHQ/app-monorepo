@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { makeHeaderScreenOptions } from './Header';
 

@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import { Button } from '@onekeyhq/components';
-import type { IButtonProps } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Button } from '@unionkey/components';
+import type { IButtonProps } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 function NotificationsTestButton({ ...rest }: IButtonProps) {
   const intl = useIntl();

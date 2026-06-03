@@ -7,19 +7,19 @@ import TronWeb from 'tronweb';
 import type {
   IDecodedTxExtraTron,
   IEncodedTxTron,
-} from '@onekeyhq/core/src/chains/tron/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/tron/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   InsufficientBalance,
   InvalidAddress,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { toBigIntHex } from '@onekeyhq/shared/src/utils/numberUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { toBigIntHex } from '@unionkey/shared/src/utils/numberUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -27,22 +27,22 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IOnChainHistoryTx } from '@onekeyhq/shared/types/history';
-import { ESwapTabSwitchType } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/customRpc';
+import type { IOnChainHistoryTx } from '@unionkey/shared/types/history';
+import { ESwapTabSwitchType } from '@unionkey/shared/types/swap/types';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 import { EErc20MethodSelectors } from '../evm/decoder/abi';
@@ -122,7 +122,7 @@ export default class Vault extends VaultBase {
       return this._buildEncodedTxFromApprove(params);
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromApprove(params: IBuildEncodedTxParams) {
@@ -173,7 +173,7 @@ export default class Vault extends VaultBase {
       ],
     });
     if (!result) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Unable to build token approve transaction',
       );
     }
@@ -234,7 +234,7 @@ export default class Vault extends VaultBase {
           ],
         });
         if (!result) {
-          throw new OneKeyInternalError(
+          throw new UnionKeyInternalError(
             'Unable to build token transfer transaction',
           );
         }
@@ -495,7 +495,7 @@ export default class Vault extends VaultBase {
     if (encodedTx) {
       return this._buildUnsignedTxFromEncodedTx(encodedTx as IEncodedTxTron);
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildUnsignedTxFromEncodedTx(encodedTx: IEncodedTxTron) {
@@ -585,7 +585,7 @@ export default class Vault extends VaultBase {
           ],
         });
         if (!result) {
-          throw new OneKeyInternalError(
+          throw new UnionKeyInternalError(
             'Unable to build token approve transaction',
           );
         }
@@ -734,7 +734,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const tronWeb = new TronWeb.TronWeb({ fullHost: rpcUrl });
     const ret = await tronWeb.trx.sendRawTransaction(
@@ -742,7 +742,7 @@ export default class Vault extends VaultBase {
     );
 
     if (typeof ret.code !== 'undefined') {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `${ret.code} ${Buffer.from(ret.message || '', 'hex').toString()}`,
       );
     }
@@ -834,7 +834,7 @@ export default class Vault extends VaultBase {
       });
 
     if (!result) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Unable to build token transfer transaction',
       );
     }

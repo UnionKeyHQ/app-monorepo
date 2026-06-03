@@ -1,4 +1,4 @@
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
 
 export type IListItemSelectOption<T> = {
   value: T;

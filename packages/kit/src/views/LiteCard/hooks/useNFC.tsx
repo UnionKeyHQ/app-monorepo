@@ -10,10 +10,10 @@ import {
   LottieView,
   RichSizeableText,
   SizableText,
-} from '@onekeyhq/components';
-import type { IDialogInstance } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import type { IDialogInstance } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type {
   CallbackError,
@@ -50,7 +50,7 @@ export default function useNFC() {
         showFooter: false,
         renderContent: (
           <LottieView
-            source={require('@onekeyhq/kit/assets/animations/connect_onekeylite_connecting.json')}
+            source={require('@unionkey/kit/assets/animations/connect_unionkeylite_connecting.json')}
             height={225}
           />
         ),
@@ -154,7 +154,7 @@ export default function useNFC() {
                 id: ETranslations.hardware_connect_failed,
               }),
               description: intl.formatMessage({
-                id: ETranslations.hardware_two_onekey_lite_not_same,
+                id: ETranslations.hardware_two_unionkey_lite_not_same,
               }),
               onConfirmText: intl.formatMessage({
                 id: ETranslations.global_i_got_it,
@@ -200,7 +200,7 @@ export default function useNFC() {
                 icon: 'ErrorOutline',
                 tone: 'destructive',
                 title: intl.formatMessage({
-                  id: ETranslations.hardware_onekey_lite_pin_error,
+                  id: ETranslations.hardware_unionkey_lite_pin_error,
                 }),
                 renderContent: (
                   <RichSizeableText
@@ -211,7 +211,7 @@ export default function useNFC() {
                       number: `${cardInfo?.pinRetryCount ?? 10}`,
                     }}
                   >
-                    {ETranslations.hardware_onekey_lite_pin_error_desc}
+                    {ETranslations.hardware_unionkey_lite_pin_error_desc}
                   </RichSizeableText>
                 ),
                 onConfirmText: intl.formatMessage({
@@ -229,7 +229,7 @@ export default function useNFC() {
                 icon: 'ErrorOutline',
                 tone: 'destructive',
                 title: intl.formatMessage({
-                  id: ETranslations.hardware_onekey_lite_reset,
+                  id: ETranslations.hardware_unionkey_lite_reset,
                 }),
                 description: intl.formatMessage({
                   id: ETranslations.hardware_pin_incorrect_data_erased,
@@ -276,7 +276,7 @@ export default function useNFC() {
           showFooter: false,
           renderContent: (
             <LottieView
-              source={require('@onekeyhq/kit/assets/animations/connect_onekeylite_searching.json')}
+              source={require('@unionkey/kit/assets/animations/connect_unionkeylite_searching.json')}
               height={205}
             />
           ),
@@ -286,14 +286,14 @@ export default function useNFC() {
       }
       willCloseDialogInstance.current = Dialog.confirm({
         title: intl.formatMessage({
-          id: ETranslations.hardware_place_onekey_lite_close_to_phone,
+          id: ETranslations.hardware_place_unionkey_lite_close_to_phone,
         }),
         description: intl.formatMessage({
-          id: ETranslations.hardware_place_onekey_lite_close_to_phone_desc,
+          id: ETranslations.hardware_place_unionkey_lite_close_to_phone_desc,
         }),
         renderContent: (
           <LottieView
-            source={require('@onekeyhq/kit/assets/animations/connect_onekeylite_searching.json')}
+            source={require('@unionkey/kit/assets/animations/connect_unionkeylite_searching.json')}
             height={205}
           />
         ),

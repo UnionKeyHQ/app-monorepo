@@ -7,18 +7,18 @@ import {
   getADR36SignDoc,
   pubkeyToAddress,
   serializeSignedTx,
-} from '@onekeyhq/core/src/chains/cosmos/sdkCosmos';
-import type { IEncodedTxCosmos } from '@onekeyhq/core/src/chains/cosmos/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/cosmos/sdkCosmos';
+import type { IEncodedTxCosmos } from '@unionkey/core/src/chains/cosmos/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkey/core/src/types';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -43,7 +43,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -67,7 +67,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             deviceId,
             pathPrefix,
             template,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -99,7 +99,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //     /**
             //      * Search accounts not show detail at device.Only show on device when add accounts into wallet.
             //      */
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     chainId: Number(chainId),
             //   })),
             // });
@@ -210,7 +210,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         deviceId,
         pathPrefix,
         pathSuffix,
-        showOnOnekeyFn,
+        showOnUnionkeyFn,
       }) => {
         const sdk = await this.getHardwareSDKInstance();
 
@@ -219,7 +219,7 @@ export class KeyringHardware extends KeyringHardwareBase {
           bundle: indexes.map((index, arrIndex) => ({
             path: `${pathPrefix}/${pathSuffix.replace('{index}', `${index}`)}`,
             hrp: networkInfo.addressPrefix,
-            showOnOneKey: showOnOnekeyFn(arrIndex),
+            showOnUnionKey: showOnUnionkeyFn(arrIndex),
           })),
         });
         return response;

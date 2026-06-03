@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 
 import { useFeeInfoInDecodedTx } from '../../hooks/useTxFeeInfo';
 import { AddressInfo } from '../AddressInfo';

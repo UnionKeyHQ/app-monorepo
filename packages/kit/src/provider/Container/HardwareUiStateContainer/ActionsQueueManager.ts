@@ -1,7 +1,7 @@
-import type { IDialogInstance, IToastShowResult } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IHardwareUiState } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import type { IDialogInstance, IToastShowResult } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import type { IHardwareUiState } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import {
   CLOSE_ACTION_MIN_DURATION,

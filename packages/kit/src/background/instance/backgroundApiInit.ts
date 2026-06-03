@@ -1,4 +1,4 @@
-import BackgroundApi from '@onekeyhq/kit-bg/src/apis/BackgroundApi';
+import BackgroundApi from '@unionkey/kit-bg/src/apis/BackgroundApi';
 
 function backgroundApiInit() {
   const backgroundApi = new BackgroundApi();

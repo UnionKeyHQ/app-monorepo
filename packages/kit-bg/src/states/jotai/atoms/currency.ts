@@ -1,4 +1,4 @@
-import type { ICurrencyItem } from '@onekeyhq/kit/src/views/Setting/pages/Currency';
+import type { ICurrencyItem } from '@unionkey/kit/src/views/Setting/pages/Currency';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

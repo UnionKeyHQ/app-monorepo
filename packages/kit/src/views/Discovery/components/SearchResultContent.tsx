@@ -17,16 +17,16 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
+} from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/shared/src/routes';
+import type { IDApp } from '@unionkey/shared/types/discovery';
 
 import { useWebSiteHandler } from '../hooks/useWebSiteHandler';
 import { DappSearchModalSectionHeader } from '../pages/SearchModal/DappSearchModalSectionHeader';

@@ -2,18 +2,18 @@ import { useCallback, useRef } from 'react';
 
 import { useThrottledCallback } from 'use-debounce';
 
-import { useClipboard, useShare } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useV4migrationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { useClipboard, useShare } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useV4migrationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EModalRoutes,
   EOnboardingPages,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { stableStringify } from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/routes';
+import { stableStringify } from '@unionkey/shared/src/utils/stringUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 export function useV4MigrationActions() {
   const navigation = useAppNavigation();

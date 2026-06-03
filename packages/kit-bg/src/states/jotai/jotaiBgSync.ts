@@ -1,7 +1,7 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import type { IGlobalStatesSyncBroadcastParams } from '@onekeyhq/shared/src/background/backgroundUtils';
-import { GLOBAL_STATES_SYNC_BROADCAST_METHOD_NAME } from '@onekeyhq/shared/src/background/backgroundUtils';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import type { IGlobalStatesSyncBroadcastParams } from '@unionkey/shared/src/background/backgroundUtils';
+import { GLOBAL_STATES_SYNC_BROADCAST_METHOD_NAME } from '@unionkey/shared/src/background/backgroundUtils';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { jotaiInitFromUi } from './jotaiInitFromUi';
 

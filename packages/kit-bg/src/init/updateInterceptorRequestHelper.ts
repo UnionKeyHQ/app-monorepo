@@ -1,6 +1,6 @@
-import requestHelper from '@onekeyhq/shared/src/request/requestHelper';
+import requestHelper from '@unionkey/shared/src/request/requestHelper';
 
-import { checkIsOneKeyDomain } from '../endpoints';
+import { checkIsUnionKeyDomain } from '../endpoints';
 import {
   devSettingsPersistAtom,
   settingsPersistAtom,
@@ -9,7 +9,7 @@ import {
 
 export function updateInterceptorRequestHelper() {
   requestHelper.overrideMethods({
-    checkIsOneKeyDomain,
+    checkIsUnionKeyDomain,
     getDevSettingsPersistAtom: async () => devSettingsPersistAtom.get(),
     getSettingsPersistAtom: async () => settingsPersistAtom.get(),
     getSettingsValuePersistAtom: async () => settingsValuePersistAtom.get(),

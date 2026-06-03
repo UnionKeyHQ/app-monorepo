@@ -1,9 +1,9 @@
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/kit-bg/src/vaults/types';
+import type { IAccountHistoryTx } from '@unionkey/shared/types/history';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import type { IUtxoAddressInfo } from '../../types/tx';
 

@@ -3,11 +3,11 @@ name: lint
 on:
   pull_request:
     branches:
-      - onekey
+      - unionkey
       - x
   push:
     branches:
-      - onekey
+      - unionkey
       - x
 
 # Cancel a currently running workflow from the same PR/branch/tag
@@ -35,7 +35,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkey'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path

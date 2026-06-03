@@ -5,8 +5,8 @@ import {
   Page,
   SortableListView,
   SwipeableCell,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+} from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
 
 export const mapIndexToData = (_d: any, index: number, array: any[]) => {
   const getColor = (i: number, numItems = 25) => {

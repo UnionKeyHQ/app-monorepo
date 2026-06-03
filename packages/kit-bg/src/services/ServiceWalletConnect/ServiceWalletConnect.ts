@@ -5,11 +5,11 @@ import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import {
   WalletConnectAccountSelectorNumStartAt,
   caipsToNetworkMap,
@@ -17,7 +17,7 @@ import {
   namespaceToImplsMap,
   supportEventsMap,
   supportMethodsMap,
-} from '@onekeyhq/shared/src/walletConnect/constant';
+} from '@unionkey/shared/src/walletConnect/constant';
 import type {
   ICaipsInfo,
   INamespaceUnion,
@@ -29,8 +29,8 @@ import type {
   IWalletConnectRequiredNamespaces,
   IWalletConnectSession,
   IWcChainAddress,
-} from '@onekeyhq/shared/src/walletConnect/types';
-import type { IConnectionAccountInfo } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/walletConnect/types';
+import type { IConnectionAccountInfo } from '@unionkey/shared/types/dappConnection';
 
 import ServiceBase from '../ServiceBase';
 

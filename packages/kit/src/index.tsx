@@ -1,4 +1,4 @@
-import { updateInterceptorRequestHelper } from '@onekeyhq/kit-bg/src/init/updateInterceptorRequestHelper';
+import { updateInterceptorRequestHelper } from '@unionkey/kit-bg/src/init/updateInterceptorRequestHelper';
 
 updateInterceptorRequestHelper();
 export { KitProvider } from './provider';

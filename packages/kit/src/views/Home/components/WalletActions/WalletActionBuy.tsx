@@ -1,22 +1,22 @@
 import { useCallback, useMemo } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useAllTokenListMapAtom } from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { useFiatCrypto } from '@onekeyhq/kit/src/views/FiatCrypto/hooks';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { useAllTokenListMapAtom } from '@unionkey/kit/src/states/jotai/contexts/tokenList';
+import { useFiatCrypto } from '@unionkey/kit/src/views/FiatCrypto/hooks';
+import { WALLET_TYPE_WATCHING } from '@unionkey/shared/src/consts/dbConsts';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EModalFiatCryptoRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import { EDeriveAddressActionType } from '@unionkey/shared/types/address';
 
 import { RawActions } from './RawActions';
 

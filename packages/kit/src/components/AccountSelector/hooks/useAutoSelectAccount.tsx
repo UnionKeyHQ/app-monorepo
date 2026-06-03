@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { EAccountSelectorAutoSelectTriggerBy } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { EAccountSelectorAutoSelectTriggerBy } from '@unionkey/shared/types';
 
 import {
   useAccountSelectorActions,

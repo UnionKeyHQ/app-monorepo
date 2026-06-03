@@ -6,19 +6,19 @@ import {
   Checkbox,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
-import { exportLogs } from '@onekeyhq/kit/src/views/Setting/pages/List/ResourceSection/StateLogsItem/logs';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkey/components';
+import { exportLogs } from '@unionkey/kit/src/views/Setting/pages/List/ResourceSection/StateLogsItem/logs';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
 
 import LoggingConfigCheckbox from './LoggerConfigGallery';
 import { Layout } from './utils/Layout';
 
 const LoggerDemo = () => {
   const downloadLog = useCallback(() => {
-    void exportLogs('onekey_logs');
+    void exportLogs('unionkey_logs');
   }, []);
   return (
     <Stack gap="$2">

@@ -6,7 +6,7 @@ import {
 import {
   PRIVY_APP_ID,
   PRIVY_MOBILE_CLIENT_ID,
-} from '@onekeyhq/shared/src/consts/primeConsts';
+} from '@unionkey/shared/src/consts/primeConsts';
 
 import { PrimeGlobalEffect } from '../hooks/PrimeGlobalEffect';
 

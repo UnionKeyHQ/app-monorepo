@@ -12,26 +12,26 @@ import {
   getFormInstances,
   rootNavigationRef,
   useShortcuts,
-} from '@onekeyhq/components';
-import { ipcMessageKeys } from '@onekeyhq/desktop/app/config';
+} from '@unionkey/components';
+import { ipcMessageKeys } from '@unionkey/desktop/app/config';
 import {
   useAppIsLockedAtom,
   useDevSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { EAppUpdateStatus } from '@unionkey/shared/src/appUpdate';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
   EModalSettingRoutes,
   EMultiTabBrowserRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { ERootRoutes } from '@onekeyhq/shared/src/routes/root';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
+} from '@unionkey/shared/src/routes';
+import { ERootRoutes } from '@unionkey/shared/src/routes/root';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
+import { ESpotlightTour } from '@unionkey/shared/src/spotlight';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { useAppUpdateInfo } from '../components/UpdateReminder/hooks';
@@ -41,9 +41,9 @@ import {
   useReferFriends,
 } from '../hooks/useReferFriends';
 import {
-  isOpenedMyOneKeyModal,
-  useToMyOneKeyModal,
-} from '../views/DeviceManagement/hooks/useToMyOneKeyModal';
+  isOpenedMyUnionKeyModal,
+  useToMyUnionKeyModal,
+} from '../views/DeviceManagement/hooks/useToMyUnionKeyModal';
 import { useOnLock } from '../views/Setting/pages/List/DefaultSection';
 
 import type { IntlShape } from 'react-intl';
@@ -67,7 +67,7 @@ const useDesktopEvents = platformEnv.isDesktop
       useOnLockRef.current = onLock;
 
       const { toReferFriendsPage } = useReferFriends();
-      const toMyOneKeyModal = useToMyOneKeyModal();
+      const toMyUnionKeyModal = useToMyUnionKeyModal();
 
       const { checkForUpdates, onUpdateAction } = useAppUpdateInfoCallback(
         false,
@@ -225,6 +225,9 @@ const useDesktopEvents = platformEnv.isDesktop
       );
 
       useEffect(() => {
+        if (!globalThis.desktopApi?.on) {
+          return;
+        }
         globalThis.desktopApi.on(ipcMessageKeys.CHECK_FOR_UPDATES, () => {
           void onCheckUpdateRef.current();
         });
@@ -273,10 +276,10 @@ const useDesktopEvents = platformEnv.isDesktop
               ensureModalClosedAndNavigate();
             }
             break;
-          case EShortcutEvents.TabMyOneKey:
-            if (!isOpenedMyOneKeyModal()) {
+          case EShortcutEvents.TabMyUnionKey:
+            if (!isOpenedMyUnionKeyModal()) {
               ensureModalClosedAndNavigate(() => {
-                void toMyOneKeyModal();
+                void toMyUnionKeyModal();
               });
             } else {
               ensureModalClosedAndNavigate();
@@ -313,7 +316,10 @@ const useAboutVersion =
     ? () => {
         const intl = useIntl();
         useEffect(() => {
-          desktopApi.on(ipcMessageKeys.SHOW_ABOUT_WINDOW, () => {
+          if (!globalThis.desktopApi?.on) {
+            return;
+          }
+          globalThis.desktopApi.on(ipcMessageKeys.SHOW_ABOUT_WINDOW, () => {
             const versionString = intl.formatMessage(
               {
                 id: ETranslations.settings_version_versionnum,
@@ -382,7 +388,7 @@ const launchFloatingIconEvent = async (intl: IntlShape) => {
                 w: 360,
                 h: 163,
               }}
-              source={require('@onekeyhq/kit/assets/floating_icon_placeholder.png')}
+              source={require('@unionkey/kit/assets/floating_icon_placeholder.png')}
             />
             <YStack gap="$1">
               <SizableText size="$headingLg">
@@ -458,6 +464,9 @@ export const useCheckUpdateOnDesktop =
   !platformEnv.isDesktopWinMsStore
     ? () => {
         useEffect(() => {
+          if (!globalThis.desktopApi?.on) {
+            return;
+          }
           globalThis.desktopApi.on(
             ipcMessageKeys.UPDATE_DOWNLOAD_FILE_INFO,
             (downloadUrl) => {

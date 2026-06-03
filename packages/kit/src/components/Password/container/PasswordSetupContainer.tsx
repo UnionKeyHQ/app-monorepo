@@ -9,18 +9,18 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   usePasswordBiologyAuthInfoAtom,
   usePasswordModeAtom,
   usePasswordPersistAtom,
   usePasswordWebAuthInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms/password';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EPasswordMode } from '@onekeyhq/shared/types/password';
+} from '@unionkey/kit-bg/src/states/jotai/atoms/password';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EPasswordMode } from '@unionkey/shared/types/password';
 
 import { useBiometricAuthInfo } from '../../../hooks/useBiometricAuthInfo';
 import { UniversalContainerWithSuspense } from '../../BiologyAuthComponent/container/UniversalContainer';

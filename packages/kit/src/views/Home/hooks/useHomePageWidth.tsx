@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { useWindowDimensions } from 'react-native';
 
-import { getTokens, useMedia, useOrientation } from '@onekeyhq/components';
-import useProviderSideBarValue from '@onekeyhq/components/src/hocs/Provider/hooks/useProviderSideBarValue';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { getTokens, useMedia, useOrientation } from '@unionkey/components';
+import useProviderSideBarValue from '@unionkey/components/src/hocs/Provider/hooks/useProviderSideBarValue';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export default function useHomePageWidth() {
   const { md } = useMedia();

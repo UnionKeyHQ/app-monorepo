@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import { Page, View, XStack, useSafeAreaInsets } from '@onekeyhq/components';
-import { PageHeaderDivider } from '@onekeyhq/components/src/layouts/Page/PageHeader';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Page, View, XStack, useSafeAreaInsets } from '@unionkey/components';
+import { PageHeaderDivider } from '@unionkey/components/src/layouts/Page/PageHeader';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { HomeTokenListProviderMirror } from '../../views/Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
 

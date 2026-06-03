@@ -3,7 +3,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
 import { TextArea as TMTextArea, getFontSize } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useSelectionColor } from '../../hooks';
 import { useScrollToLocation } from '../../layouts/ScrollView';

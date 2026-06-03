@@ -2,15 +2,15 @@ import { sha256 } from '@noble/hashes/sha256';
 import { bytesToHex } from '@noble/hashes/utils';
 import axios from 'axios';
 
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import type {
   IInvoiceDecodedResponse,
   ILNURLAuthServiceResponse,
   ILNURLDetails,
   ILNURLError,
   ILNURLPaymentInfo,
-} from '@onekeyhq/shared/types/lightning';
+} from '@unionkey/shared/types/lightning';
 
 import { bech32Decode } from './bech32';
 

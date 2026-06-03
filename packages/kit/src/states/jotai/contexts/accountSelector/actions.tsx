@@ -3,13 +3,13 @@ import { useRef } from 'react';
 import { Semaphore } from 'async-mutex';
 import { cloneDeep, isEqual, isUndefined, omitBy } from 'lodash';
 
-import type { IDialogInstance } from '@onekeyhq/components';
-import { Dialog, Toast } from '@onekeyhq/components';
-import { tonMnemonicToKeyPair } from '@onekeyhq/core/src/secret';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { CommonDeviceLoading } from '@onekeyhq/kit/src/components/Hardware/Hardware';
-import type useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import qrHiddenCreateGuideDialog from '@onekeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/qrHiddenCreateGuideDialog';
+import type { IDialogInstance } from '@unionkey/components';
+import { Dialog, Toast } from '@unionkey/components';
+import { tonMnemonicToKeyPair } from '@unionkey/core/src/secret';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { CommonDeviceLoading } from '@unionkey/kit/src/components/Hardware/Hardware';
+import type useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import qrHiddenCreateGuideDialog from '@unionkey/kit/src/views/Onboarding/pages/ConnectHardwareWallet/qrHiddenCreateGuideDialog';
 import type {
   IDBAccount,
   IDBCreateHwWalletParamsBase,
@@ -17,50 +17,50 @@ import type {
   IDBIndexedAccount,
   IDBWallet,
   IDBWalletIdSingleton,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 import type {
   IAccountSelectorFocusedWallet,
   IAccountSelectorSelectedAccount,
   IAccountSelectorSelectedAccountsMap,
-} from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import type { IJotaiSetter } from '@onekeyhq/kit-bg/src/states/jotai/types';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import type { IJotaiSetter } from '@unionkey/kit-bg/src/states/jotai/types';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { type IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
+} from '@unionkey/shared/src/consts/dbConsts';
+import { type IUnionKeyError } from '@unionkey/shared/src/errors/types/errorTypes';
 import {
   EAppEventBusNames,
   EFinalizeWalletSetupSteps,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   IAccountChainSelectorRouteParams,
   IAccountSelectorRouteParamsExtraConfig,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 import {
   EAccountManagerStacksRoutes,
   EChainSelectorPages,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountSelectorUtils from '@onekeyhq/shared/src/utils/accountSelectorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/routes';
+import accountSelectorUtils from '@unionkey/shared/src/utils/accountSelectorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { memoFn } from '@unionkey/shared/src/utils/cacheUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import {
   EAccountSelectorAutoSelectTriggerBy,
   EAccountSelectorSceneName,
-} from '@onekeyhq/shared/types';
-import { EGlobalDeriveTypesScopes } from '@onekeyhq/shared/types/account';
+} from '@unionkey/shared/types';
+import { EGlobalDeriveTypesScopes } from '@unionkey/shared/types/account';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 
@@ -635,7 +635,7 @@ class AccountSelectorActions extends ContextJotaiActionsBase {
       } catch (error) {
         qrHiddenCreateGuideDialog.showDialogIfErrorMatched(error);
         appEventBus.emit(EAppEventBusNames.FinalizeWalletSetupError, {
-          error: error as IOneKeyError,
+          error: error as IUnionKeyError,
         });
         throw error;
       }
@@ -989,7 +989,7 @@ class AccountSelectorActions extends ContextJotaiActionsBase {
                   ...v,
                   // networkId: firstAccount.networkId,
                   // deriveType: firstAccount.deriveType || 'default',
-                  networkId: getNetworkIdsMap().onekeyall,
+                  networkId: getNetworkIdsMap().unionkeyall,
                   deriveType: 'default',
                 };
               },

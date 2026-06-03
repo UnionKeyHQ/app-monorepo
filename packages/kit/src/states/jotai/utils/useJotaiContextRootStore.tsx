@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import type { IJotaiContextStoreData } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IJotaiContextStoreData } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import { jotaiContextStore } from './jotaiContextStore';
 

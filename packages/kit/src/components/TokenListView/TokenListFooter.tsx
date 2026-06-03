@@ -2,15 +2,15 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Icon, NumberSizeableText, Stack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { SEARCH_KEY_MIN_LENGTH } from '@onekeyhq/shared/src/consts/walletConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, NumberSizeableText, Stack } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { SEARCH_KEY_MIN_LENGTH } from '@unionkey/shared/src/consts/walletConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EModalAssetListRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 import useAppNavigation from '../../hooks/useAppNavigation';
 import { useActiveAccount } from '../../states/jotai/contexts/accountSelector';

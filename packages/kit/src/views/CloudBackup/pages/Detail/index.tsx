@@ -17,29 +17,29 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
-import type { IIconProps } from '@onekeyhq/components/src/primitives';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { useAppUpdateInfo } from '@onekeyhq/kit/src/components/UpdateReminder/hooks';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import type { IPublicBackupData } from '@onekeyhq/kit-bg/src/services/ServiceCloudBackup/types';
+} from '@unionkey/components';
+import { HeaderIconButton } from '@unionkey/components/src/layouts/Navigation/Header';
+import type { IIconProps } from '@unionkey/components/src/primitives';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { useAppUpdateInfo } from '@unionkey/kit/src/components/UpdateReminder/hooks';
+import { WalletAvatar } from '@unionkey/kit/src/components/WalletAvatar';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import type { IPublicBackupData } from '@unionkey/kit-bg/src/services/ServiceCloudBackup/types';
 // TODO: Move lightning utils to shared module
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { ERestoreResult } from '@onekeyhq/kit-bg/src/services/ServiceCloudBackup/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { ERestoreResult } from '@unionkey/kit-bg/src/services/ServiceCloudBackup/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   ECloudBackupRoutes,
   ICloudBackupParamList,
-} from '@onekeyhq/shared/src/routes';
-import { ERootRoutes } from '@onekeyhq/shared/src/routes';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkey/shared/src/routes';
+import { ERootRoutes } from '@unionkey/shared/src/routes';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
 
 import BackupListLoading from '../../components/BackupListLoading';
 import { useDeleteBackupDialog } from '../../components/useDeleteBackupDialog';
@@ -398,7 +398,7 @@ export default function Detail() {
                         id: ETranslations.backup_encrypted_backup_contents,
                       }),
                       items: item.infoList.map((infoString) => ({
-                        label: `  â€¢${
+                        label: `  â€?{
                           platformEnv.isNativeAndroid ? '\t\t' : '\t'
                         }${infoString}`,
                       })),

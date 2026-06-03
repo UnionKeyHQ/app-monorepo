@@ -2,13 +2,13 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ColorTokens, IKeyOfIcons } from '@onekeyhq/components';
-import { IconButton, Page, XStack, useMedia } from '@onekeyhq/components';
-import { showAddressSafeNotificationDialog } from '@onekeyhq/kit/src/components/AddressInput/AddressSafeDialog';
-import { useIsEnableTransferAllowList } from '@onekeyhq/kit/src/components/AddressInput/hooks';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalAddressBookRoutes } from '@onekeyhq/shared/src/routes';
+import type { ColorTokens, IKeyOfIcons } from '@unionkey/components';
+import { IconButton, Page, XStack, useMedia } from '@unionkey/components';
+import { showAddressSafeNotificationDialog } from '@unionkey/kit/src/components/AddressInput/AddressSafeDialog';
+import { useIsEnableTransferAllowList } from '@unionkey/kit/src/components/AddressInput/hooks';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalAddressBookRoutes } from '@unionkey/shared/src/routes';
 
 import { AddressBookListContent } from '../../components/AddressBookListContent';
 import { ContentContainer } from '../../components/ContentContainer';

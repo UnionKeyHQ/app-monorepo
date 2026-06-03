@@ -7,12 +7,12 @@ import {
   IMPL_BTC,
   IMPL_LIGHTNING_TESTNET,
   IMPL_TBTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import type { ILNURLAuthServiceResponse } from '@onekeyhq/shared/types/lightning';
+} from '@unionkey/shared/src/engine/engineConsts';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import type { ILNURLAuthServiceResponse } from '@unionkey/shared/types/lightning';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { mnemonicFromEntropy } from '../../secret';

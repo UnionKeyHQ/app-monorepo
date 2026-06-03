@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText } from '@onekeyhq/components';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText } from '@unionkey/components';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function AccountAddress({
   num,

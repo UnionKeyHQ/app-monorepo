@@ -1,4 +1,4 @@
-import { locale as LocalizationLocale } from '@onekeyhq/shared/src/modules3rdParty/localization';
+import { locale as LocalizationLocale } from '@unionkey/shared/src/modules3rdParty/localization';
 
 import type { ISystemLocaleMethods } from './type';
 

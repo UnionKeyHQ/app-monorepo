@@ -19,24 +19,24 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { FormatHyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { FormatHyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
 import {
   PercentageStageOnKeyboard,
   calcPercentBalance,
-} from '@onekeyhq/kit/src/components/PercentageStageOnKeyboard';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { ECheckAmountActionType } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/kit/src/components/PercentageStageOnKeyboard';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { validateAmountInput } from '@unionkey/kit/src/utils/validateAmountInput';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import earnUtils from '@unionkey/shared/src/utils/earnUtils';
+import { ECheckAmountActionType } from '@unionkey/shared/types/staking';
 import type {
   IEarnEstimateFeeResp,
   IEarnTextTooltip,
   IStakeTransactionConfirmation,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/staking';
 
 import { capitalizeString, countDecimalPlaces } from '../../utils/utils';
 import { CalculationListItem } from '../CalculationList';

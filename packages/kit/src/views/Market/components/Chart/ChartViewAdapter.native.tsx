@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 
 import { ChartPathProvider } from '@onekeyfe/react-native-animated-charts';
 
-import { Stack } from '@onekeyhq/components';
+import { Stack } from '@unionkey/components';
 
 import ChartWrapper from './value-chart/Chart';
 import useChartThrottledPoints from './value-chart/useChartThrottledPoints';

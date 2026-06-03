@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Keyboard } from 'react-native';
 import { withTiming } from 'react-native-reanimated';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { KeyboardEventListener } from 'react-native';
 

@@ -1,6 +1,6 @@
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IExternalConnectionInfo } from '@onekeyhq/shared/types/externalWallet.types';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IExternalConnectionInfo } from '@unionkey/shared/types/externalWallet.types';
 
 import { ExternalControllerEvm } from './chains/evm/ExternalControllerEvm';
 import { ExternalControllerWalletConnect } from './chains/walletconnect/ExternalControllerWalletConnect';

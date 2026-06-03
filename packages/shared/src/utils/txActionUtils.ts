@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { findIndex, isEmpty } from 'lodash';
 
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
+import type { IUnsignedTxPro } from '@unionkey/core/src/types';
 import type {
   IDecodedTx,
   IDecodedTxAction,
@@ -10,11 +10,11 @@ import type {
   IDecodedTxActionTokenActivate,
   IDecodedTxActionTokenApprove,
   IDecodedTxActionUnknown,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import {
   EParseTxComponentType,

@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { INTERNAL_METHOD_PREFIX } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import { INTERNAL_METHOD_PREFIX } from '@unionkey/shared/src/background/backgroundDecorators';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 
 import { buildCallRemoteApiMethod } from '../../apis/RemoteApiProxyBase';
 
@@ -20,7 +20,7 @@ const createOffscreenApiModule = memoizee(
       case 'hardwareSDKLowLevel':
         if (!HardwareLowLevelSDK) {
           HardwareLowLevelSDK = await (
-            await import('@onekeyhq/shared/src/hardware/sdk-loader')
+            await import('@unionkey/shared/src/hardware/sdk-loader')
           ).importHardwareSDKLowLevel();
           HardwareLowLevelSDK.addHardwareGlobalEventListener((eventParams) => {
             const backgroundServiceName = 'serviceHardware';

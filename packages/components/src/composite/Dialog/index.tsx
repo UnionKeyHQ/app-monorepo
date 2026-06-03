@@ -24,10 +24,10 @@ import {
   useMedia,
 } from 'tamagui';
 
-import { dismissKeyboard } from '@onekeyhq/shared/src/keyboard';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { dismissKeyboard } from '@unionkey/shared/src/keyboard';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { Toast } from '../../actions/Toast';
 import { SheetGrabber } from '../../content';

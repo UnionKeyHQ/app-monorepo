@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { Pressable, Image } from 'react-native';
 
-import { Stack } from '@onekeyhq/components';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import type { IDiscoveryBanner } from '@onekeyhq/shared/types/discovery';
+import { Stack } from '@unionkey/components';
+import { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
+import type { IDiscoveryBanner } from '@unionkey/shared/types/discovery';
 
 import { useBannerData } from '../../hooks/useBannerData';
 import { useWebSiteHandler } from '../../hooks/useWebSiteHandler';
@@ -55,7 +55,7 @@ export function DashboardBanner({
             style={{
               width: '100%',
               height: 120,
-              resizeMode: 'cover', // 等价于 objectFit: 'cover'
+              resizeMode: 'cover', // 等价�?objectFit: 'cover'
             }}
           />
         </Pressable>

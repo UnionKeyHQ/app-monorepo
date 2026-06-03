@@ -2,10 +2,10 @@ import { memo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IStackProps } from '@onekeyhq/components';
-import type { IDecodedTxExtraSol } from '@onekeyhq/core/src/chains/sol/types';
-import { useDecodedTxsAtom } from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IStackProps } from '@unionkey/components';
+import type { IDecodedTxExtraSol } from '@unionkey/core/src/chains/sol/types';
+import { useDecodedTxsAtom } from '@unionkey/kit/src/states/jotai/contexts/signatureConfirm';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { SignatureConfirmItem } from '../../SignatureConfirmItem';
 

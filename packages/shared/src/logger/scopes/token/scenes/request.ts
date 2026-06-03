@@ -1,7 +1,7 @@
 import type {
   IFetchAccountTokensParams,
   IFetchTokenDetailParams,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';

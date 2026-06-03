@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { SearchBar, Shortcut, View, XStack } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EUniversalSearchPages } from '@onekeyhq/shared/src/routes/universalSearch';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import { SearchBar, Shortcut, View, XStack } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes } from '@unionkey/shared/src/routes';
+import { EUniversalSearchPages } from '@unionkey/shared/src/routes/universalSearch';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
 
 export function MarketHomeHeaderSearchBar() {
   const intl = useIntl();

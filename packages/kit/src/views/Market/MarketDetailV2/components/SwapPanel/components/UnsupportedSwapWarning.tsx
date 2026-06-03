@@ -1,4 +1,4 @@
-import { Alert } from '@onekeyhq/components';
+import { Alert } from '@unionkey/components';
 
 export function UnsupportedSwapWarning() {
   return (

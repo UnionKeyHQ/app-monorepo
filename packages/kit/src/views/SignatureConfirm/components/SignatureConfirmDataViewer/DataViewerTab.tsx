@@ -6,7 +6,7 @@ import {
   XStack,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import { DataViewer } from './DataViewer';
 

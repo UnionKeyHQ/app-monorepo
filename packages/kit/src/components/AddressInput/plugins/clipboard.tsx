@@ -2,10 +2,10 @@ import { type FC, useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { IconButton, Toast, useClipboard } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EInputAddressChangeType } from '@onekeyhq/shared/types/address';
+import { IconButton, Toast, useClipboard } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EInputAddressChangeType } from '@unionkey/shared/types/address';
 
 import type { IAddressPluginProps } from '../types';
 

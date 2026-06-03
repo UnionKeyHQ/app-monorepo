@@ -4,16 +4,16 @@ import {
   encryptAsync,
   encryptVerifyString,
   ensureSensitiveTextEncoded,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import {
   DB_MAIN_CONTEXT_ID,
   DEFAULT_VERIFY_STRING,
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { PasswordNotSet, WrongPassword } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import { PasswordNotSet, WrongPassword } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { V4LocalDbBaseContainer } from './V4LocalDbBaseContainer';
 import { EV4LocalDBStoreNames } from './v4localDBStoreNames';

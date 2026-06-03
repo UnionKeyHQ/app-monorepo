@@ -539,7 +539,7 @@ function getPlatformShortName() {
   return 'Wallet';
 }
 
-const appFullName = `OneKey ${getPlatformShortName()}`;
+const appFullName = `UnionKey ${getPlatformShortName()}`;
 platformEnv.appFullName = appFullName;
 
 /*

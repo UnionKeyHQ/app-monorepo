@@ -162,7 +162,7 @@ function isAllNetwork({
 }: {
   networkId: string | undefined;
 }): boolean {
-  return Boolean(networkId && networkId === getNetworkIdsMap().onekeyall);
+  return Boolean(networkId && networkId === getNetworkIdsMap().unionkeyall);
 }
 
 function getDefaultDeriveTypeVisibleNetworks() {

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import type { IScrollViewRef } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EDiscoveryModalRoutes } from '@onekeyhq/shared/src/routes/discovery';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
+import type { IScrollViewRef } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { EDiscoveryModalRoutes } from '@unionkey/shared/src/routes/discovery';
+import { EModalRoutes } from '@unionkey/shared/src/routes/modal';
 
 import { useSearchPopoverUIFeatureFlag } from './useSearchPopoverFeatureFlag';
 

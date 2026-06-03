@@ -28,17 +28,17 @@ import {
   useBackHandler,
   useDeferredPromise,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import type {
   IDeferredPromise,
   IElement,
   IStackStyle,
-} from '@onekeyhq/components';
-import { useAppIsLockedAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useSpotlightPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/spotlight';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
+} from '@unionkey/components';
+import { useAppIsLockedAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { useSpotlightPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/spotlight';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { ESpotlightTour } from '@unionkey/shared/src/spotlight';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 

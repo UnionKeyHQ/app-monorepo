@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { Icon, Stack } from '@onekeyhq/components';
-import type { IColorTokens, IIconProps } from '@onekeyhq/components';
+import { Icon, Stack } from '@unionkey/components';
+import type { IColorTokens, IIconProps } from '@unionkey/components';
 
 import { useRiskIndicator } from './useRiskIndicator';
 

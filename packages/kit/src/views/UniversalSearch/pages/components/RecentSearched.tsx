@@ -9,17 +9,17 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   useUniversalSearchActions,
   useUniversalSearchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/universalSearch';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/kit/src/states/jotai/contexts/universalSearch';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import {
   EUniversalSearchType,
   type IIUniversalRecentSearchItem,
-} from '@onekeyhq/shared/types/search';
+} from '@unionkey/shared/types/search';
 
 function SearchTextItem({
   item,

@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unused-vars */
 import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
 
-import type { IOffscreenApiMessagePayload } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import offscreenApi from '@onekeyhq/kit-bg/src/offscreens/instance/offscreenApi';
-import { OFFSCREEN_API_MESSAGE_TYPE } from '@onekeyhq/kit-bg/src/offscreens/types';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import type { IOffscreenApiMessagePayload } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
+import offscreenApi from '@unionkey/kit-bg/src/offscreens/instance/offscreenApi';
+import { OFFSCREEN_API_MESSAGE_TYPE } from '@unionkey/kit-bg/src/offscreens/types';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 
 import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
 

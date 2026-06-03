@@ -1,17 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { Stack } from '@onekeyhq/components';
-import type { IFirmwareUpdateRetry } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { Stack } from '@unionkey/components';
+import type { IFirmwareUpdateRetry } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateRetryAtom,
   useFirmwareUpdateStepInfoAtom,
   useHardwareUiStateAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import type {
   EFirmwareUpdateTipMessages,
   ICheckAllFirmwareReleaseResult,
-} from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/types/device';
 
 import { FirmwareUpdateErrorV2 } from './FirmwareUpdateErrorV2';
 import { FirmwareUpdateProgressBarV2 } from './FirmwareUpdateProgressBarV2';

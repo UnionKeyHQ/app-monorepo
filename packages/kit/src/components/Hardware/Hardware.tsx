@@ -5,7 +5,7 @@ import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IColorTokens, UseFormReturn } from '@onekeyhq/components';
+import type { IColorTokens, UseFormReturn } from '@unionkey/components';
 import {
   Alert,
   Anchor,
@@ -26,9 +26,9 @@ import {
   XStack,
   useForm,
   useMedia,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { SHOW_CLOSE_ACTION_MIN_DURATION } from '../../provider/Container/HardwareUiStateContainer/constants';
 import { isPassphraseValid } from '../../utils/passphraseUtils';
@@ -59,15 +59,15 @@ export function ConfirmOnDeviceToastContent({
       case EDeviceType.Classic1s:
       case EDeviceType.ClassicPure:
         return import(
-          '@onekeyhq/kit/assets/animations/confirm-on-classic.json'
+          '@unionkey/kit/assets/animations/confirm-on-classic.json'
         );
       case EDeviceType.Mini:
-        return import('@onekeyhq/kit/assets/animations/confirm-on-mini.json');
+        return import('@unionkey/kit/assets/animations/confirm-on-mini.json');
       case EDeviceType.Touch:
-        return import('@onekeyhq/kit/assets/animations/confirm-on-touch.json');
+        return import('@unionkey/kit/assets/animations/confirm-on-touch.json');
       case EDeviceType.Pro:
         return import(
-          '@onekeyhq/kit/assets/animations/confirm-on-pro-dark.json'
+          '@unionkey/kit/assets/animations/confirm-on-pro-dark.json'
         );
       default:
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-case-declarations
@@ -154,17 +154,17 @@ export function EnterPinOnDevice({
       case EDeviceType.Classic1s:
       case EDeviceType.ClassicPure:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-pin-on-classic.json'
+          '@unionkey/kit/assets/animations/enter-pin-on-classic.json'
         );
       case EDeviceType.Mini:
-        return import('@onekeyhq/kit/assets/animations/enter-pin-on-mini.json');
+        return import('@unionkey/kit/assets/animations/enter-pin-on-mini.json');
       case EDeviceType.Touch:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-pin-on-touch.json'
+          '@unionkey/kit/assets/animations/enter-pin-on-touch.json'
         );
       case EDeviceType.Pro:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-pin-on-pro-dark.json'
+          '@unionkey/kit/assets/animations/enter-pin-on-pro-dark.json'
         );
       default:
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-case-declarations
@@ -663,19 +663,19 @@ export function EnterPassphraseOnDevice({
       case EDeviceType.Classic1s:
       case EDeviceType.ClassicPure:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-passphrase-on-classic.json'
+          '@unionkey/kit/assets/animations/enter-passphrase-on-classic.json'
         );
       case EDeviceType.Mini:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-passphrase-on-mini.json'
+          '@unionkey/kit/assets/animations/enter-passphrase-on-mini.json'
         );
       case EDeviceType.Touch:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-passphrase-on-touch.json'
+          '@unionkey/kit/assets/animations/enter-passphrase-on-touch.json'
         );
       case EDeviceType.Pro:
         return import(
-          '@onekeyhq/kit/assets/animations/enter-passphrase-on-pro-dark.json'
+          '@unionkey/kit/assets/animations/enter-passphrase-on-pro-dark.json'
         );
       default:
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-case-declarations

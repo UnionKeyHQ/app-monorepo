@@ -3,8 +3,8 @@ import {
   REVENUECAT_API_KEY_GOOGLE,
   REVENUECAT_API_KEY_WEB,
   REVENUECAT_API_KEY_WEB_SANDBOX,
-} from '@onekeyhq/shared/src/consts/primeConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/consts/primeConsts';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

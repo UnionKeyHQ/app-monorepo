@@ -2,7 +2,7 @@ plugins {
     id("groovy-gradle-plugin")
 }
 
-group = "onekeybuild.buildlogic"
+group = "unionkeybuild.buildlogic"
 
 // Configure the build-logic plugins to target JDK 11
 // This matches the JDK used to build the project, and is not related to what is running on device.
@@ -28,8 +28,8 @@ dependencies {
 gradlePlugin {
     plugins {
         SecurityPlugin {
-            id = 'so.onekey.plugin.security'
-            implementationClass = 'onekey.privacy.security.SecurityPlugin'
+            id = 'so.unionkey.plugin.security'
+            implementationClass = 'unionkey.privacy.security.SecurityPlugin'
         }
     }
 }

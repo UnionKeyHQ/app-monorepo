@@ -1,8 +1,8 @@
-import { resetAnimationQrcodeScan } from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/handlers/animation';
+import { resetAnimationQrcodeScan } from '@unionkey/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/handlers/animation';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 
 import ServiceBase from '../ServiceBase';
 

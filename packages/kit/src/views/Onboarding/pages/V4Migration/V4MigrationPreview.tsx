@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkey/components';
 import {
   Alert,
   Button,
@@ -17,23 +17,23 @@ import {
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import type { IAppNavigation } from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import type { IAppNavigation } from '@unionkey/kit/src/hooks/useAppNavigation';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import type { IV4MigrationBackupItem } from '@onekeyhq/kit-bg/src/migrations/v4ToV5Migration/types';
+import type { IV4MigrationBackupItem } from '@unionkey/kit-bg/src/migrations/v4ToV5Migration/types';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import type { IV4DBAvatarParsed } from '@onekeyhq/kit-bg/src/migrations/v4ToV5Migration/v4local/v4localDBTypes';
+import type { IV4DBAvatarParsed } from '@unionkey/kit-bg/src/migrations/v4ToV5Migration/v4local/v4localDBTypes';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import v4MigrationUtils from '@onekeyhq/kit-bg/src/migrations/v4ToV5Migration/v4MigrationUtils';
-import { useV4migrationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+import v4MigrationUtils from '@unionkey/kit-bg/src/migrations/v4ToV5Migration/v4MigrationUtils';
+import { useV4migrationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IOnboardingParamList } from '@unionkey/shared/src/routes';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
 
 import {
   V4MigrationLogCopy,

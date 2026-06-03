@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 
-import type { Input } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import type { Input } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export const PasswordRegex = /[^\x20-\x7E]/gm;
 

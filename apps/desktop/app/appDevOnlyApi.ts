@@ -3,7 +3,7 @@ import { ipcMain, shell } from 'electron';
 import type {
   IDesktopMainProcessDevOnlyApiParams,
   IDesktopSubModuleInitParams,
-} from '@onekeyhq/shared/types/desktop';
+} from '@unionkey/shared/types/desktop';
 
 import { ipcMessageKeys } from './config';
 

@@ -1,6 +1,6 @@
 import { KEYUTIL, KJUR } from 'jsrsasign';
 
-// import flowLogger from '@onekeyhq/shared/src/logger/flowLogger/flowLogger';
+// import flowLogger from '@unionkey/shared/src/logger/flowLogger/flowLogger';
 
 import type { RSAKey } from 'jsrsasign';
 

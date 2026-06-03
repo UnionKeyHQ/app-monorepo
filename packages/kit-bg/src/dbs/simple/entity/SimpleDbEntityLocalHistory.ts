@@ -1,11 +1,11 @@
 import { assign, isEmpty, isNil, uniqBy } from 'lodash';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { buildAccountLocalAssetsKey } from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
-import type { IDecodedTxAction } from '@onekeyhq/shared/types/tx';
-import { EDecodedTxStatus } from '@onekeyhq/shared/types/tx';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { buildAccountLocalAssetsKey } from '@unionkey/shared/src/utils/accountUtils';
+import type { IAccountHistoryTx } from '@unionkey/shared/types/history';
+import type { IDecodedTxAction } from '@unionkey/shared/types/tx';
+import { EDecodedTxStatus } from '@unionkey/shared/types/tx';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 
@@ -32,7 +32,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
     historyId: string;
   }) {
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
 
     const key = buildAccountLocalAssetsKey({ networkId, accountAddress, xpub });
@@ -125,7 +125,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
     confirmedTxs?: IAccountHistoryTx[];
   }) {
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
 
     const key = buildAccountLocalAssetsKey({ networkId, accountAddress, xpub });
@@ -230,7 +230,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
         pendingTxsToModify,
       } = param;
       if (!accountAddress && !xpub) {
-        throw new OneKeyInternalError('accountAddress or xpub is required');
+        throw new UnionKeyInternalError('accountAddress or xpub is required');
       }
       const key = buildAccountLocalAssetsKey({
         networkId,
@@ -340,7 +340,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
     const { networkId, accountAddress, xpub, txid, status } = params;
 
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
     const key = buildAccountLocalAssetsKey({ networkId, accountAddress, xpub });
 
@@ -386,7 +386,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
   ) {
     params.forEach(({ accountAddress, xpub }) => {
       if (!accountAddress && !xpub) {
-        throw new OneKeyInternalError('accountAddress or xpub is required');
+        throw new UnionKeyInternalError('accountAddress or xpub is required');
       }
     });
 
@@ -420,7 +420,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
     const { accountAddress, xpub, networkId, tokenIdOnNetwork } = params;
 
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
 
     const key = buildAccountLocalAssetsKey({ networkId, accountAddress, xpub });
@@ -445,7 +445,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
     const { accountAddress, xpub, networkId, tokenIdOnNetwork } = params;
 
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
 
     const key = buildAccountLocalAssetsKey({ networkId, accountAddress, xpub });
@@ -472,7 +472,7 @@ export class SimpleDbEntityLocalHistory extends SimpleDbEntityBase<ILocalHistory
   ) {
     params.forEach(({ accountAddress, xpub }) => {
       if (!accountAddress && !xpub) {
-        throw new OneKeyInternalError('accountAddress or xpub is required');
+        throw new UnionKeyInternalError('accountAddress or xpub is required');
       }
     });
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { SegmentControl, SizableText, YStack } from '@onekeyhq/components';
+import { SegmentControl, SizableText, YStack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

@@ -12,9 +12,9 @@ import {
 import {
   FileLogger,
   LogLevel,
-} from '@onekeyhq/shared/src/modules3rdParty/react-native-file-logger';
-import RNFS from '@onekeyhq/shared/src/modules3rdParty/react-native-fs';
-import { zip } from '@onekeyhq/shared/src/modules3rdParty/react-native-zip-archive';
+} from '@unionkey/shared/src/modules3rdParty/react-native-file-logger';
+import RNFS from '@unionkey/shared/src/modules3rdParty/react-native-fs';
+import { zip } from '@unionkey/shared/src/modules3rdParty/react-native-zip-archive';
 
 import platformEnv from '../../platformEnv';
 

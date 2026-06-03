@@ -1,11 +1,11 @@
-import type { INumberSizeableTextProps } from '@onekeyhq/components';
+import type { INumberSizeableTextProps } from '@unionkey/components';
 import {
   NumberSizeableText,
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 export function TextCell({
   title,

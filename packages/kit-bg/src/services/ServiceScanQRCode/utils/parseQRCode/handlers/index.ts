@@ -1,4 +1,4 @@
-import { EQRCodeHandlerNames } from '@onekeyhq/shared/types/qrCode';
+import { EQRCodeHandlerNames } from '@unionkey/shared/types/qrCode';
 
 import animation from './animation';
 import bitcoin from './bitcoin';

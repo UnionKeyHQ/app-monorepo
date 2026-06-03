@@ -3,7 +3,7 @@ import { useCallback, useRef } from 'react';
 import RNSlider from '@react-native-community/slider';
 import { usePropsAndStyle } from '@tamagui/core';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useThemeValue } from '../../hooks';
 

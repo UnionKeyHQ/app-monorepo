@@ -1,10 +1,10 @@
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
+import type { IUnsignedTxPro } from '@unionkey/core/src/types';
 import type {
   IFeeInfoUnit,
   ISendSelectedFeeInfo,
-} from '@onekeyhq/shared/types/fee';
-import { EFeeType, ESendFeeStatus } from '@onekeyhq/shared/types/fee';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/fee';
+import { EFeeType, ESendFeeStatus } from '@unionkey/shared/types/fee';
+import type { IDecodedTx } from '@unionkey/shared/types/tx';
 
 import { createJotaiContext } from '../../utils/createJotaiContext';
 

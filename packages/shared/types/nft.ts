@@ -1,4 +1,4 @@
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+import type { IDBAccount } from '@unionkey/kit-bg/src/dbs/local/types';
 
 export enum ENFTType {
   ERC721 = 'ERC-721',

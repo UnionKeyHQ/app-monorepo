@@ -11,26 +11,26 @@ import {
   XStack,
   useMedia,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import { TabPageHeader } from '@onekeyhq/kit/src/components/TabPageHeader';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useListenTabFocusState from '@onekeyhq/kit/src/hooks/useListenTabFocusState';
-import { useBrowserTabActions } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { useTakeScreenshot } from '@onekeyhq/kit/src/views/Discovery/hooks/useTakeScreenshot';
+} from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components/src/layouts/Navigation';
+import { TabPageHeader } from '@unionkey/kit/src/components/TabPageHeader';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import useListenTabFocusState from '@unionkey/kit/src/hooks/useListenTabFocusState';
+import { useBrowserTabActions } from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import { useTakeScreenshot } from '@unionkey/kit/src/views/Discovery/hooks/useTakeScreenshot';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IDiscoveryModalParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IDiscoveryModalParamList } from '@unionkey/shared/src/routes';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/routes';
+import { useDebugComponentRemountLog } from '@unionkey/shared/src/utils/debug/debugUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import CustomHeaderTitle from '../../components/CustomHeaderTitle';
 import { HandleRebuildBrowserData } from '../../components/HandleData/HandleRebuildBrowserTabData';

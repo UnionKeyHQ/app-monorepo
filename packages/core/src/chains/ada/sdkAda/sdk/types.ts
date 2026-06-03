@@ -8,11 +8,11 @@ export interface IAdaSdk {
 }
 
 export interface IAdaSdkApi {
-  composeTxPlan: typeof import('@onekeyfe/cardano-coin-selection-asmjs').onekeyUtils.composeTxPlan;
-  signTransaction: typeof import('@onekeyfe/cardano-coin-selection-asmjs').onekeyUtils.signTransaction;
+  composeTxPlan: (...args: any[]) => any;
+  signTransaction: (...args: any[]) => any;
   hwSignTransaction: typeof import('@onekeyfe/cardano-coin-selection-asmjs').trezorUtils.signTransaction;
-  txToOneKey: typeof import('@onekeyfe/cardano-coin-selection-asmjs').onekeyUtils.txToOneKey;
-  hasSetTagWithBody: typeof import('@onekeyfe/cardano-coin-selection-asmjs').onekeyUtils.hasSetTagWithBody;
+  txToUnionKey: (...args: any[]) => any;
+  hasSetTagWithBody: (...args: any[]) => any;
   dAppGetBalance: typeof import('@onekeyfe/cardano-coin-selection-asmjs').dAppUtils.getBalance;
   dAppGetAddresses: typeof import('@onekeyfe/cardano-coin-selection-asmjs').dAppUtils.getAddresses;
   dAppGetUtxos: typeof import('@onekeyfe/cardano-coin-selection-asmjs').dAppUtils.getUtxos;

@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import type { ComponentProps, FC } from 'react';
 
-import { ChainSelectorListView } from '@onekeyhq/kit/src/views/ChainSelector/components/PureChainSelector/ChainSelectorListView';
-import type { IServerNetworkMatch } from '@onekeyhq/kit/src/views/ChainSelector/types';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import { ChainSelectorListView } from '@unionkey/kit/src/views/ChainSelector/components/PureChainSelector/ChainSelectorListView';
+import type { IServerNetworkMatch } from '@unionkey/kit/src/views/ChainSelector/types';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 // TODO: check IServerNetworkMatch type usage from ChainSelectorListView
 // The default swapNetworksIncludeAllNetwork data structure is NOT IServerNetworkMatch[]

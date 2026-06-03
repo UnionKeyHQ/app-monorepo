@@ -1,5 +1,5 @@
-import type { ICustomTokenDBStruct } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { ICustomTokenDBStruct } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
 
 export type IToken = {
   decimals: number;

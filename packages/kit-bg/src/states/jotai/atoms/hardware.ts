@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
+import type { IUnionKeyError } from '@unionkey/shared/src/errors/types/errorTypes';
 import type {
   EFirmwareUpdateTipMessages,
-  EOneKeyDeviceMode,
+  EUnionKeyDeviceMode,
   IBleFirmwareUpdateInfo,
   IBootloaderUpdateInfo,
   IDeviceFirmwareType,
   IFirmwareUpdateInfo,
   IFirmwareUpdatesDetectStatus,
-} from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/types/device';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';
@@ -53,7 +53,7 @@ export type IHardwareUiPayload = {
   deviceType: IDeviceType;
   deviceId: string;
   connectId: string;
-  deviceMode: EOneKeyDeviceMode;
+  deviceMode: EUnionKeyDeviceMode;
   isBootloaderMode?: boolean;
   passphraseState?: string; // use passphrase, REQUEST_PASSPHRASE_ON_DEVICE only
   firmwareTipData?: {
@@ -88,13 +88,13 @@ export type IFirmwareUpdateStepInfo =
   | {
       step: EFirmwareUpdateSteps.error;
       payload: {
-        error: IOneKeyError;
+        error: IUnionKeyError;
       };
     }
   | {
       step: EFirmwareUpdateSteps.checkReleaseError;
       payload: {
-        error: IOneKeyError;
+        error: IUnionKeyError;
       };
     }
   | {
@@ -135,7 +135,7 @@ export type IFirmwareUpdateStepInfo =
 
 export type IFirmwareUpdateRetry = {
   id: number;
-  error: IOneKeyError;
+  error: IUnionKeyError;
 };
 
 // hardware ui state ----------------------------------------------

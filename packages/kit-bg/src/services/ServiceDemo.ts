@@ -1,35 +1,35 @@
 import { verifyMessage } from '@ethersproject/wallet';
 import { random, range } from 'lodash';
 
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { DB_MAIN_CONTEXT_ID } from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { DB_MAIN_CONTEXT_ID } from '@unionkey/shared/src/consts/dbConsts';
 import {
   IncorrectPassword,
   MinimumTransferBalanceRequiredError,
-} from '@onekeyhq/shared/src/errors';
+} from '@unionkey/shared/src/errors';
 import {
   DeviceNotFound,
-  NeedOneKeyBridge,
-} from '@onekeyhq/shared/src/errors/errors/hardwareErrors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IWalletConnectChainString } from '@onekeyhq/shared/src/walletConnect/types';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+  NeedUnionKeyBridge,
+} from '@unionkey/shared/src/errors/errors/hardwareErrors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { IWalletConnectChainString } from '@unionkey/shared/src/walletConnect/types';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
+import type { IDecodedTx } from '@unionkey/shared/types/tx';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import localDb from '../dbs/local/localDb';
 import { ELocalDBStoreNames } from '../dbs/local/localDBStoreNames';
@@ -201,7 +201,7 @@ class ServiceDemo extends ServiceBase {
   @toastIfError()
   async demoErrorWithUrl(): Promise<string> {
     await timerUtils.wait(600);
-    throw new NeedOneKeyBridge();
+    throw new NeedUnionKeyBridge();
   }
 
   @backgroundMethod()
@@ -566,7 +566,7 @@ class ServiceDemo extends ServiceBase {
         {
           coin: 'btc',
           path: "m/49'/0'/1'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       ],
     });
@@ -583,7 +583,7 @@ class ServiceDemo extends ServiceBase {
         {
           coin: 'btc',
           path: "m/44'/0'/1'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       ],
     });
@@ -600,7 +600,7 @@ class ServiceDemo extends ServiceBase {
         {
           coin: 'btc',
           path: "m/84'/0'/1'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       ],
     });
@@ -617,7 +617,7 @@ class ServiceDemo extends ServiceBase {
         {
           coin: 'btc',
           path: "m/86'/0'/1'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       ],
     });
@@ -634,7 +634,7 @@ class ServiceDemo extends ServiceBase {
         {
           // network: 'evm',
           path: "m/44'/60'/0'/0/0",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       ],
     });
@@ -673,121 +673,121 @@ class ServiceDemo extends ServiceBase {
       {
         network: 'btc',
         path: "m/49'/0'/0'/0/0",
-        showOnOneKey: false,
+        showOnUnionKey: false,
       },
       {
         network: 'btc',
         path: "m/44'/0'/0'/0/0",
-        showOnOneKey: false,
+        showOnUnionKey: false,
       },
       {
         network: 'btc',
         path: "m/86'/0'/0'/0/0",
-        showOnOneKey: false,
+        showOnUnionKey: false,
       },
       {
         network: 'btc',
         path: "m/84'/0'/0'/0/0",
-        showOnOneKey: false,
+        showOnUnionKey: false,
       },
       {
         network: 'evm',
         path: "m/44'/60'/0'/0/0",
-        showOnOneKey: false,
+        showOnUnionKey: false,
       },
       {
         network: 'sol',
         path: "m/44'/501'/0'/0'",
-        showOnOneKey: false,
+        showOnUnionKey: false,
       },
       // {
       //   network: 'cfx',
       //   path: "m/44'/503'/0'/0/0",
       //   chainName: '1029',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'cfx',
       //   path: "m/44'/503'/0'/0/0",
       //   chainName: '1',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'cosmos',
       //   path: "m/44'/118'/0'/0/0",
       //   prefix: 'cosmos',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'cosmos',
       //   path: "m/44'/118'/0'/0/0",
       //   prefix: 'osmosis',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'dynex',
       //   path: "m/44'/29538'/0'/0'/0'",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'fil',
       //   path: "m/44'/461'/0'/0/0",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'kaspa',
       //   path: "m/44'/111111'/0'/0/0",
       //   prefix: 'kaspa',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'near',
       //   path: "m/44'/397'/0'",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'nexa',
       //   path: "m/44'/29223'/0'/0/0",
       //   prefix: 'nexa',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'nervos',
       //   path: "m/44'/309'/0'/0/0",
       //   chainName: 'ckb',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'dot',
       //   path: "m/44'/354'/0'/0'/0'",
       //   prefix: '0',
       //   chainName: 'polkadot',
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'xrp',
       //   path: "m/44'/144'/0'/0/0",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'sol',
       //   path: "m/44'/501'/0'/0'",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'stc',
       //   path: "m/44'/101010'/0'/0'/0'",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'sui',
       //   path: "m/44'/784'/0'/0'/0'",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
       // {
       //   network: 'tron',
       //   path: "m/44'/195'/0'/0/0",
-      //   showOnOneKey: false,
+      //   showOnUnionKey: false,
       // },
     ];
     console.log('sdk.allNetworkGetAddress bundle', bundle);
@@ -820,7 +820,7 @@ class ServiceDemo extends ServiceBase {
     await Promise.all(
       range(0, count).map(async (i) => {
         await localDb.addConnectedSite({
-          url: `https://onekey.so/${i}`,
+          url: `https://unionkey.so/${i}`,
           networkIds: [getNetworkIdsMap().eth],
           addresses: ['0x1959f5f4979c5cd87d5cb75c678c770515cb5e0e'],
         });
@@ -841,7 +841,7 @@ class ServiceDemo extends ServiceBase {
       data: [
         ...range(0, count).map((i) => ({
           id: generateUUID(),
-          url: `https://onekey.so/${i}`,
+          url: `https://unionkey.so/${i}`,
           title: `title ${i}`,
           createdAt: Date.now(),
         })),

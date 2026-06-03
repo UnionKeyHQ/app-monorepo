@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkey/components';
 import {
   Checkbox,
   Dialog,
@@ -10,16 +10,16 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { WalletAvatar } from '@unionkey/kit/src/components/WalletAvatar';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EAccountManagerStacksRoutes,
   IAccountManagerStacksParamList,
-} from '@onekeyhq/shared/src/routes/accountManagerStacks';
+} from '@unionkey/shared/src/routes/accountManagerStacks';
 
 function SameWalletItem({
   walletHash,

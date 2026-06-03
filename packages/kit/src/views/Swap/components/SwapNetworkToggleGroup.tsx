@@ -3,9 +3,9 @@ import { memo, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { useWindowDimensions } from 'react-native';
 
-import { XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapNetwork } from '@onekeyhq/shared/types/swap/types';
+import { XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ISwapNetwork } from '@unionkey/shared/types/swap/types';
 
 import { NetworksFilterItem } from '../../../components/NetworksFilterItem';
 

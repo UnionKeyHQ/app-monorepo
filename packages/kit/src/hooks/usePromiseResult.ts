@@ -7,10 +7,10 @@ import {
   onVisibilityStateChange,
   useDeferredPromise,
   useNetInfo,
-} from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkey/kit/src/hooks/useRouteIsFocused';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { useIsMounted } from './useIsMounted';
 import { usePrevious } from './usePrevious';
@@ -268,7 +268,7 @@ export function usePromiseResult<T>(
     // execute immediately when the timer has not changed.
     if (prevPollingInterval === optionsRef.current.pollingInterval) {
       callback();
-      // the interval duration of the call needs to be readjusted after the polling interval duration changesã€‚
+      // the interval duration of the call needs to be readjusted after the polling interval duration changesã€?
     } else {
       setTimeout(
         callback,

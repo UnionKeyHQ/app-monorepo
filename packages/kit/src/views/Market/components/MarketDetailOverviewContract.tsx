@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, SizableText, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketDetailPlatform } from '@onekeyhq/shared/types/market';
+import { Button, SizableText, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IMarketDetailPlatform } from '@unionkey/shared/types/market';
 
 import { MarketTokenAddress } from './MarketTokenAddress';
 
@@ -46,7 +46,7 @@ export function MarketDetailOverviewContract({
             tokenNameSize="$bodyMd"
             tokenNameColor="$textSubdued"
             addressSize="$bodyMdMedium"
-            networkId={platform.onekeyNetworkId}
+            networkId={platform.unionkeyNetworkId}
             address={platform.contract_address}
           />
         );

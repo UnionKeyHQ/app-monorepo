@@ -1,8 +1,8 @@
 import { memo, useMemo } from 'react';
 
-import { ProviderJotaiContextSendConfirm } from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm/atoms';
-import { useJotaiContextRootStore } from '@onekeyhq/kit/src/states/jotai/utils/useJotaiContextRootStore';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { ProviderJotaiContextSendConfirm } from '@unionkey/kit/src/states/jotai/contexts/sendConfirm/atoms';
+import { useJotaiContextRootStore } from '@unionkey/kit/src/states/jotai/utils/useJotaiContextRootStore';
+import { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 export function useSendConfirmContextStoreInitData() {
   const data = useMemo(

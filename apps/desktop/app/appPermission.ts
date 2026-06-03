@@ -5,7 +5,7 @@ import { ipcMain, shell } from 'electron';
 import type {
   IDesktopSubModuleInitParams,
   IPrefType,
-} from '@onekeyhq/shared/types/desktop';
+} from '@unionkey/shared/types/desktop';
 
 import { ipcMessageKeys } from './config';
 import { getMacAppId } from './libs/utils';

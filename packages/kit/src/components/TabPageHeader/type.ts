@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import type { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import type { ETabRoutes } from '@unionkey/shared/src/routes';
+import type { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 export interface ITabPageHeaderProp {
   children?: ReactNode;

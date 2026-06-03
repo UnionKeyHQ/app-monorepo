@@ -1,8 +1,8 @@
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 import type {
   IExternalConnectionInfo,
   IExternalConnectorEvm,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/types/externalWallet.types';
 
 import type { EvmConnectorManager } from './EvmConnectorManager';
 

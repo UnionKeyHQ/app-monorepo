@@ -1,6 +1,6 @@
 /* eslint-disable import/order */
 // eslint-disable-next-line import/order
-import '@onekeyhq/shared/src/polyfills/polyfillsExtContentScript';
+import '@unionkey/shared/src/polyfills/polyfillsExtContentScript';
 
 // inject css to dapp web
 // import './content-script.css';
@@ -10,8 +10,8 @@ import '@onekeyhq/shared/src/polyfills/polyfillsExtContentScript';
 import { consts } from '@onekeyfe/cross-inpage-provider-core';
 import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
 
-// import type { IOneKeyWalletInfo } from '@onekeyhq/kit-bg/src/providers/ProviderApiPrivate';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+// import type { IUnionKeyWalletInfo } from '@unionkey/kit-bg/src/providers/ProviderApiPrivate';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import { startKeepAlivePolling } from '../background/keepAlive';
@@ -25,7 +25,7 @@ import injectedCode from './injected.text-js';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('==== injected script tag start >>>>>>>', performance.now());
-  console.log('[OneKey RN]: Content script works! ', globalThis.location.href);
+  console.log('[UnionKey RN]: Content script works! ', globalThis.location.href);
   console.log('   Must reload extension for modifications to take effect.');
 }
 
@@ -61,7 +61,7 @@ if (shouldInject()) {
 
 bridgeSetup.contentScript.setupMessagePort();
 
-export interface IOneKeyWalletInfo {
+export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;
   platform?: string;
   version?: string;
@@ -94,7 +94,7 @@ export interface IOneKeyWalletInfo {
 if (process.env.NODE_ENV !== 'production') {
   try {
     if (consts.WALLET_INFO_LOACAL_KEY_V5) {
-      const walletInfo: IOneKeyWalletInfo = JSON.parse(
+      const walletInfo: IUnionKeyWalletInfo = JSON.parse(
         localStorage.getItem(consts.WALLET_INFO_LOACAL_KEY_V5) || '{}',
       );
       console.log(walletInfo);

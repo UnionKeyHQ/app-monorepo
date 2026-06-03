@@ -3,15 +3,15 @@ import { useMemo } from 'react';
 import * as ethUtils from 'ethereumjs-util';
 import { useIntl } from 'react-intl';
 
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IUnsignedMessage } from '@unionkey/core/src/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EMessageTypesAptos,
   EMessageTypesBtc,
   EMessageTypesCommon,
   EMessageTypesEth,
   EMessageTypesSolana,
-} from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/types/message';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

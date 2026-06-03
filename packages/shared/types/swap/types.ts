@@ -1,7 +1,7 @@
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import type { useSwapAddressInfo } from '@onekeyhq/kit/src/views/Swap/hooks/useSwapAccount';
-import type { IDBWalletId } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IKeyOfIcons } from '@unionkey/components';
+import type { useSwapAddressInfo } from '@unionkey/kit/src/views/Swap/hooks/useSwapAccount';
+import type { IDBWalletId } from '@unionkey/kit-bg/src/dbs/local/types';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
 import type {
   IEventSourceCloseEvent,
   IEventSourceDoneEvent,
@@ -10,7 +10,7 @@ import type {
   IEventSourceMessageEvent,
   IEventSourceOpenEvent,
   IEventSourceTimeoutEvent,
-} from '@onekeyhq/shared/src/eventSource';
+} from '@unionkey/shared/src/eventSource';
 
 import type { EMessageTypesEth } from '../message';
 import type { IDecodedTxActionTokenApprove } from '../tx';
@@ -367,9 +367,15 @@ export type IOneInchOrderStruct = {
   makerTraits: string;
 };
 
-export interface IOneKeyFeeInfo {
+export interface IUnionKeyFeeInfo {
+  unionKeyFeeAmount?: string;
+  unionKeyFeeSymbol?: string;
+  unionKeyFeeUsd?: string;
+  /** @deprecated use unionKeyFeeAmount */
   oneKeyFeeAmount?: string;
+  /** @deprecated use unionKeyFeeSymbol */
   oneKeyFeeSymbol?: string;
+  /** @deprecated use unionKeyFeeUsd */
   oneKeyFeeUsd?: string;
 }
 
@@ -382,7 +388,7 @@ export interface IFetchQuoteResult {
   errorMessage?: string;
   shouldWrappedToken?: ISwapTokenBase;
   fromAmount?: string;
-  toAmount?: string; // quote is after protocolFees, build_tx is after protocolFees + oneKeyFee
+  toAmount?: string; // quote is after protocolFees, build_tx is after protocolFees + unionKeyFee
   fee?: IFetchQuoteFee;
   instantRate?: string;
   allowanceResult?: IAllowanceResult;
@@ -404,7 +410,9 @@ export interface IFetchQuoteResult {
   cowSwapQuoteResult?: any;
   kind?: ESwapQuoteKind;
   networkCostBuyAmount?: string;
-  oneKeyFeeExtraInfo?: IOneKeyFeeInfo;
+  unionKeyFeeExtraInfo?: IUnionKeyFeeInfo;
+  /** @deprecated use unionKeyFeeExtraInfo */
+  oneKeyFeeExtraInfo?: IUnionKeyFeeInfo;
   networkCostExceedInfo?: {
     tokenInfo: {
       symbol: string;
@@ -754,8 +762,12 @@ export interface ISwapTxHistory {
     chainFlipExplorerUrl?: string;
     instantRate: string;
     protocolFee?: number;
+    unionKeyFee?: number;
+    unionKeyFeeExtraInfo?: IUnionKeyFeeInfo;
+    /** @deprecated use unionKeyFee */
     oneKeyFee?: number;
-    oneKeyFeeExtraInfo?: IOneKeyFeeInfo;
+    /** @deprecated use unionKeyFeeExtraInfo */
+    oneKeyFeeExtraInfo?: IUnionKeyFeeInfo;
     otherFeeInfos?: IQuoteResultFeeOtherFeeInfo[];
     orderId?: string;
     supportUrl?: string;
@@ -893,5 +905,5 @@ export const SwapAmountInputAccessoryViewID =
   'swap-amount-input-accessory-view';
 
 export const ChainFlipLogo =
-  'https://uni.onekey-asset.com/static/logo/chainFlip_logo.png';
+  'https://uni.unionkey-asset.com/static/logo/chainFlip_logo.png';
 export const ChainFlipName = 'ChainFlip';

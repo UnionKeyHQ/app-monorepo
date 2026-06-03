@@ -2,7 +2,7 @@ import {
   COINTYPE_ALLNETWORKS,
   IMPL_ALLNETWORKS,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/engine/engineConsts';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

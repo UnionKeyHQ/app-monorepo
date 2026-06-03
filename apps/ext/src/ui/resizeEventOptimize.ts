@@ -2,7 +2,7 @@
 // @ts-ignore
 import Dimensions from 'react-native-web/dist/exports/Dimensions/index.js';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 // Open firefox popup, wait for 5s, do NOT click anything
 function checkPerformance() {

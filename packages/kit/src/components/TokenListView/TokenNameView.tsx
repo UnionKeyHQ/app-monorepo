@@ -2,15 +2,15 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISizableTextProps, IXStackProps } from '@onekeyhq/components';
+import type { ISizableTextProps, IXStackProps } from '@unionkey/components';
 import {
   Badge,
   Icon,
   SizableText,
   Tooltip,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { useAccountData } from '../../hooks/useAccountData';
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 

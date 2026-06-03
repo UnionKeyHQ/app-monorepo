@@ -1,8 +1,8 @@
 import { bytesToHex } from '@noble/hashes/utils';
 
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { Stack, XStack, useMedia } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack, XStack, useMedia } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { DefaultTitle } from './DefaultTitle';
 import { SearchInput } from './SearchInput';
@@ -123,7 +123,7 @@ export function Welcome({
 }) {
   const media = useMedia();
 
-  // Use the 'hot' data instead of finding the "Onekey hot" category
+  // Use the 'hot' data instead of finding the "Unionkey hot" category
   const dapps = useMemo(() => discoveryData?.hot || [], [discoveryData]);
 
   // Create a randomized array of dapps

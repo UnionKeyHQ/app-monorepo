@@ -2,17 +2,17 @@ import { useCallback, useMemo, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance } from '@onekeyhq/components';
-import { Dialog } from '@onekeyhq/components';
-import { useSettingsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { mevSwapNetworks } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapSlippageSegmentItem } from '@onekeyhq/shared/types/swap/types';
+import type { IDialogInstance } from '@unionkey/components';
+import { Dialog } from '@unionkey/components';
+import { useSettingsAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { mevSwapNetworks } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { ISwapSlippageSegmentItem } from '@unionkey/shared/types/swap/types';
 import {
   ESwapDirectionType,
   ESwapSlippageSegmentKey,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import SlippageSettingDialog from '../../../components/SlippageSettingDialog';
 import { useSwapSlippageDialogOpeningAtom } from '../../../states/jotai/contexts/swap';

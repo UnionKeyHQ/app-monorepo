@@ -25,7 +25,7 @@ export type IDesktopMainProcessDevOnlyApiParams = {
   params: any[];
 };
 
-export const INSTANCE_META_BACKUP_KEY = '$onekey_backup--instance_meta';
+export const INSTANCE_META_BACKUP_KEY = '$unionkey_backup--instance_meta';
 
 export type IInstanceMetaBackup = {
   instanceId: string;

@@ -1,5 +1,5 @@
-import type { IFinalizeWalletSetupCreateWalletResult } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IBatchBuildAccountsParams } from '@onekeyhq/kit-bg/src/services/ServiceBatchCreateAccount/ServiceBatchCreateAccount';
+import type { IFinalizeWalletSetupCreateWalletResult } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import type { IBatchBuildAccountsParams } from '@unionkey/kit-bg/src/services/ServiceBatchCreateAccount/ServiceBatchCreateAccount';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToConsole } from '../../../base/decorators';

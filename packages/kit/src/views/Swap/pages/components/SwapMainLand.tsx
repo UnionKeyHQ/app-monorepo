@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { SizableText, YStack, ScrollView } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { EPageType } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { SizableText, YStack, ScrollView } from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components';
+import { EPageType } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import NFTMarket from './NFTMarket';
 import SwapHeaderContainer from './SwapHeaderContainer';
 import { SwapProviderMirror } from '../SwapProviderMirror';
@@ -33,7 +33,7 @@ const SwapMainLoad = ({ pageType }: ISwapMainLoadProps) => {
         maxWidth={pageType === EPageType.modal ? '100%' : 500}
       >
         <YStack pt="$2.5" px="$5" pb="$5" gap="$5" flex={1}>
-          {/* 只保留 Header 和 NFT 市场 */}
+          {/* 只保�?Header �?NFT 市场 */}
           <SwapHeaderContainer pageType={pageType} />
 
           {/* NFT 市场页面 */}

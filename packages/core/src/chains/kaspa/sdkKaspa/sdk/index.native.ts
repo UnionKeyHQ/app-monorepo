@@ -1,4 +1,4 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 
 import type { IEnsureSDKReady, IGetKaspaApi, IKaspaSdk } from '../types';
 

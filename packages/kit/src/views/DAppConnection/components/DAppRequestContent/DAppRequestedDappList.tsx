@@ -9,8 +9,8 @@ import {
   Tooltip,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function DAppRequestedDappList({
   origins = [],

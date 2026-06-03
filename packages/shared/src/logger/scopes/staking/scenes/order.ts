@@ -1,5 +1,5 @@
-import type { IAddEarnOrderParams } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityEarnOrders';
-import type { EDecodedTxStatus } from '@onekeyhq/shared/types/tx';
+import type { IAddEarnOrderParams } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityEarnOrders';
+import type { EDecodedTxStatus } from '@unionkey/shared/types/tx';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';

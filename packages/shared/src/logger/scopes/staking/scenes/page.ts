@@ -1,4 +1,4 @@
-import type { IToken } from '@onekeyhq/shared/types/token';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';

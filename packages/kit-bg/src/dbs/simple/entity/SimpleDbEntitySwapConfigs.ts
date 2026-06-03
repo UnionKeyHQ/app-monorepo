@@ -1,11 +1,11 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
 import type {
   ESwapProviderSort,
   ISwapProviderManager,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import { maxRecentTokenPairs } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
+import { maxRecentTokenPairs } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { ISwapToken } from '@unionkey/shared/types/swap/types';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

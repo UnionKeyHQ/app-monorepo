@@ -6,15 +6,15 @@ import { isNil } from 'lodash';
 import {
   WALLET_TYPE_HW,
   WALLET_TYPE_QR,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 import type {
   ICloudSyncKeyInfoIndexedAccount,
   ICloudSyncPayloadIndexedAccount,
   ICloudSyncTargetIndexedAccount,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 
 import cloudSyncItemBuilder from '../cloudSyncItemBuilder';
 

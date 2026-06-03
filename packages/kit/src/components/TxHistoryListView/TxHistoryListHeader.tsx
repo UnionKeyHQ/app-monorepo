@@ -8,15 +8,15 @@ import {
   Popover,
   Stack,
   Switch,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworksSupportFilterScamHistory } from '@onekeyhq/shared/src/config/presetNetworks';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { getNetworksSupportFilterScamHistory } from '@unionkey/shared/src/config/presetNetworks';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IAccountHistoryTx } from '@unionkey/shared/types/history';
 
 import { useActiveAccount } from '../../states/jotai/contexts/accountSelector';
 import { ListItem } from '../ListItem';

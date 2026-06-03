@@ -2,7 +2,7 @@
 import type {
   IPrimeServerUserInfo,
   IPrimeUserInfo,
-} from '@onekeyhq/shared/types/prime/primeTypes';
+} from '@unionkey/shared/types/prime/primeTypes';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

@@ -1,4 +1,4 @@
-import { IconButton, Tooltip, XStack } from '@onekeyhq/components';
+import { IconButton, Tooltip, XStack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

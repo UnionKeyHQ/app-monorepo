@@ -10,16 +10,16 @@ import {
   Spinner,  
   Heading,  
   Image,
-} from '@onekeyhq/components';  
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';  
+} from '@unionkey/components';  
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';  
 import {   
   useActiveAccount,  
   useAccountSelectorActions   
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';  
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';  
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';  
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';  
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit/src/states/jotai/contexts/accountSelector';  
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';  
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';  
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';  
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface NFT {  
   id: string;  
@@ -77,8 +77,8 @@ const NFTMarket: React.FC = () => {
           ? JSON.parse(device.featuresInfo)   
           : device.featuresInfo;  
           
-        // 按照OneKey的序列号字段优先级获取  
-        const serialNo = features.serial_no || features.onekey_serial_no || features.onekey_serial;  
+        // 按照UnionKey的序列号字段优先级获取  
+        const serialNo = features.serial_no || features.unionkey_serial_no || features.unionkey_serial;  
           
         if (serialNo) {  
           console.log('Device serial number from features:', serialNo);  
@@ -296,7 +296,7 @@ const NFTMarket: React.FC = () => {
 
   const handleClaim = async (nftId: string,dialog: any) => {  
     if (!solanaAddress || !activeAccount?.account) {  
-      const { Dialog } = require('@onekeyhq/components');
+      const { Dialog } = require('@unionkey/components');
       let loadingDialog: any = null;  
       Dialog.show({
         icon: 'ErrorOutline',  
@@ -315,7 +315,7 @@ const NFTMarket: React.FC = () => {
     setButtonContentKey(prev => prev + 1); // 立即刷新按钮内容
     let loadingDialog: any = null; 
     try { 
-      const { Dialog } = require('@onekeyhq/components'); 
+      const { Dialog } = require('@unionkey/components'); 
        
       loadingDialog=Dialog.show({  
         renderIcon: (  
@@ -380,7 +380,7 @@ const NFTMarket: React.FC = () => {
       setButtonContentKey(prev => prev + 1); // 立即刷新按钮内容
       
       // 显示错误对话框
-      const { Dialog } = require('@onekeyhq/components');
+      const { Dialog } = require('@unionkey/components');
       // Dialog.show({
       //   title: intl.formatMessage({ id: ETranslations.ClaimError }),
       //   description: error.message,
@@ -445,7 +445,7 @@ const NFTMarket: React.FC = () => {
     // 根据不同状态处理点击事件
     if (!isHardwareWallet) {
       // 显示仅限硬件钱包提示
-      const { Dialog } = require('@onekeyhq/components');
+      const { Dialog } = require('@unionkey/components');
       Dialog.show({
         title: '无法领取',
         description: '仅限硬件钱包领取',
@@ -457,7 +457,7 @@ const NFTMarket: React.FC = () => {
     
     if (!deviceSerialNo) {
       // 显示未检测到设备提示
-      const { Dialog } = require('@onekeyhq/components');
+      const { Dialog } = require('@unionkey/components');
       Dialog.show({
         title: '无法领取',
         description: '未检测到设备，请确保硬件钱包已连接',
@@ -485,7 +485,7 @@ const NFTMarket: React.FC = () => {
     
     if (!canClaim) {
       // 设备已使用，显示提示
-      const { Dialog } = require('@onekeyhq/components');
+      const { Dialog } = require('@unionkey/components');
       Dialog.show({
         title: '无法领取',
         description: '此设备已被使用',
@@ -497,7 +497,7 @@ const NFTMarket: React.FC = () => {
     
     if (type !== nft.id) {
       // 权益不匹配，显示提示
-      const { Dialog } = require('@onekeyhq/components');
+      const { Dialog } = require('@unionkey/components');
       Dialog.show({
         title: '无法领取',
         description: '设备类型与NFT不匹配',
@@ -518,7 +518,7 @@ const NFTMarket: React.FC = () => {
   // 修改 showNftDetails 函数
   const showNftDetails = useCallback(  
     async(nft: NFT) => {  
-      const { Dialog } = require('@onekeyhq/components');  
+      const { Dialog } = require('@unionkey/components');  
         
       const validation = await validateDeviceSerial(deviceSerialNo); 
     

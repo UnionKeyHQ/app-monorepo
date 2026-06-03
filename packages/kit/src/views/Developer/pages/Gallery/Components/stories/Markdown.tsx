@@ -1,11 +1,11 @@
-import { Markdown } from '@onekeyhq/components';
+import { Markdown } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 
 const content = `
 # Heading1
 ## Heading2
-### ✨ New Features
+### �?New Features
 - *Don’t forget your passphrase!*
 - **Don’t forget your passphrase!**
 - Support for Manta, Neurai, and Nervos networks.

@@ -2,15 +2,15 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, Input, Portal } from '@onekeyhq/components';
-import type { IDialogProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import { usePrimeAuthV2 } from '@onekeyhq/kit/src/views/Prime/hooks/usePrimeAuthV2';
-import { ETranslations, LOCALES_OPTION } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { RESET_OVERLAY_Z_INDEX } from '@onekeyhq/shared/src/utils/overlayUtils';
-import resetUtils from '@onekeyhq/shared/src/utils/resetUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { Dialog, Input, Portal } from '@unionkey/components';
+import type { IDialogProps } from '@unionkey/components/src/composite/Dialog/type';
+import { usePrimeAuthV2 } from '@unionkey/kit/src/views/Prime/hooks/usePrimeAuthV2';
+import { ETranslations, LOCALES_OPTION } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { RESET_OVERLAY_Z_INDEX } from '@unionkey/shared/src/utils/overlayUtils';
+import resetUtils from '@unionkey/shared/src/utils/resetUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 
@@ -50,7 +50,7 @@ export function useResetApp(
 ) {
   const { inAppStateLock = false, silentReset = false } = params || {};
   const intl = useIntl();
-  const { logout: logoutOnekeyID } = usePrimeAuthV2();
+  const { logout: logoutUnionkeyID } = usePrimeAuthV2();
 
   const doReset = useCallback(async () => {
     // reset app
@@ -60,7 +60,7 @@ export function useResetApp(
         resetUtils.startResetting();
       }
       try {
-        void logoutOnekeyID();
+        void logoutUnionkeyID();
         await timerUtils.wait(1000);
       } catch (error) {
         console.error('failed to logoutPrivy', error);
@@ -74,7 +74,7 @@ export function useResetApp(
         resetUtils.endResetting();
       }
     }
-  }, [logoutOnekeyID]);
+  }, [logoutUnionkeyID]);
 
   return useCallback(async () => {
     await timerUtils.wait(50);

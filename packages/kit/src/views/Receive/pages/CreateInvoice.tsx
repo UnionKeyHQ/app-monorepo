@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkey/components';
 import {
   Form,
   Input,
@@ -13,16 +13,16 @@ import {
   TextArea,
   useForm,
   useMedia,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalReceiveRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalReceiveRoutes } from '@unionkey/shared/src/routes';
 import type {
   IModalReceiveParamList,
   IModalSendParamList,
-} from '@onekeyhq/shared/src/routes';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import { ELightningUnit } from '@onekeyhq/shared/types/lightning';
+} from '@unionkey/shared/src/routes';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import { ELightningUnit } from '@unionkey/shared/types/lightning';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { LightningUnitSwitch } from '../../../components/UnitSwitch';

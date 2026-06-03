@@ -1,11 +1,11 @@
 {
-  "name": "@onekeyhq/kit",
+  "name": "@unionkey/kit",
   "version": "0.0.1",
   "private": true,
   "main": "src/index.tsx",
   "dependencies": {
-    "@onekeyhq/components": "*",
     "@types/url-parse": "^1.4.8",
+    "@unionkey/components": "*",
     "date-fns": "^2.29.3",
     "dequal": "^2.0.3",
     "eth-chains": "^1.0.0",

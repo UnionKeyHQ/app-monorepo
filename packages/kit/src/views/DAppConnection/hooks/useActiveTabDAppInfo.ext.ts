@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IConnectionAccountInfoWithNum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import type { IConnectionAccountInfoWithNum } from '@unionkey/shared/types/dappConnection';
 
 export default function useActiveTabDAppInfo() {
   const intl = useIntl();

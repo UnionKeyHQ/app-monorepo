@@ -1,6 +1,6 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkey/core/src/types';
+import type { IDeviceSharedCallParams } from '@unionkey/shared/types/device';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 

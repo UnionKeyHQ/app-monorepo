@@ -1,4 +1,4 @@
-import { Banner, Skeleton, Stack } from '@onekeyhq/components';
+import { Banner, Skeleton, Stack } from '@unionkey/components';
 
 import { Layout } from '../utils/Layout';
 

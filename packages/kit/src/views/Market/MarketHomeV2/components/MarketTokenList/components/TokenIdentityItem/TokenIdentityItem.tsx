@@ -8,8 +8,8 @@ import {
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
+} from '@unionkey/components';
+import { Token } from '@unionkey/kit/src/components/Token';
 
 interface ITokenIdentityItemProps {
   /**
@@ -26,7 +26,7 @@ interface ITokenIdentityItemProps {
    */
   tokenLogoURI?: string;
   /**
-   * Network logo URI â€“ mutually exclusive with `networkId`. If both are
+   * Network logo URI â€?mutually exclusive with `networkId`. If both are
    * provided `networkLogoURI` takes precedence.
    */
   networkLogoURI?: string;

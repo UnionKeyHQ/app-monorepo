@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { atom, useAtom } from 'jotai';
 
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 
 import {
   atomWithStorage,

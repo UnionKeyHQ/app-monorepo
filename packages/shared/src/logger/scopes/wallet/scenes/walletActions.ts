@@ -1,4 +1,4 @@
-import type { ESwapTabSwitchType } from '@onekeyhq/shared/types/swap/types';
+import type { ESwapTabSwitchType } from '@unionkey/shared/types/swap/types';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToServer } from '../../../base/decorators';

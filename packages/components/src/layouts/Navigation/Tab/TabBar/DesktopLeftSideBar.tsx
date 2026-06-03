@@ -5,19 +5,19 @@ import { MotiView } from 'moti';
 import { StyleSheet } from 'react-native';
 import { getTokens, useMedia, useTheme } from 'tamagui';
 
-import { type IActionListSection } from '@onekeyhq/components/src/actions';
+import { type IActionListSection } from '@unionkey/components/src/actions';
 import {
   EPortalContainerConstantName,
   Portal,
-} from '@onekeyhq/components/src/hocs';
-import useProviderSideBarValue from '@onekeyhq/components/src/hocs/Provider/hooks/useProviderSideBarValue';
-import { useSafeAreaInsets } from '@onekeyhq/components/src/hooks';
-import type { IKeyOfIcons } from '@onekeyhq/components/src/primitives';
-import { Icon, XStack, YStack } from '@onekeyhq/components/src/primitives';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { type EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { ESwapSource } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/components/src/hocs';
+import useProviderSideBarValue from '@unionkey/components/src/hocs/Provider/hooks/useProviderSideBarValue';
+import { useSafeAreaInsets } from '@unionkey/components/src/hooks';
+import type { IKeyOfIcons } from '@unionkey/components/src/primitives';
+import { Icon, XStack, YStack } from '@unionkey/components/src/primitives';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { type EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
+import { ESwapSource } from '@unionkey/shared/types/swap/types';
 
 import HeaderCollapseButton from '../../Header/HeaderCollapseButton';
 
@@ -78,10 +78,10 @@ function TabItemView({
   return contentMemo;
 }
 
-function OneKeyLogo() {
+function UnionKeyLogo() {
   return (
     <XStack px="$4" py="$3">
-      <Icon name="OnekeyTextIllus" width={101} height={28} color="$text" />
+      <Icon name="UnionkeyTextIllus" width={101} height={28} color="$text" />
     </XStack>
   );
 }
@@ -216,7 +216,7 @@ export function DesktopLeftSideBar({
           <YStack flex={1}>
             {!platformEnv.isDesktopMac && !platformEnv.isNativeIOSPad ? (
               <XStack ai="center" jc="space-between" pr="$3">
-                <OneKeyLogo />
+                <UnionKeyLogo />
                 <HeaderCollapseButton isRootScreen />
               </XStack>
             ) : null}

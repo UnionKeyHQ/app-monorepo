@@ -1,5 +1,5 @@
-import type { IKeyOfIcons, IStackProps } from '@onekeyhq/components';
-import { Icon, SizableText, Stack, XStack } from '@onekeyhq/components';
+import type { IKeyOfIcons, IStackProps } from '@unionkey/components';
+import { Icon, SizableText, Stack, XStack } from '@unionkey/components';
 
 export interface ITutorialsListItemProps {
   title?: string;

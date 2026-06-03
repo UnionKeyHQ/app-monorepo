@@ -62,7 +62,7 @@ function buildLoggerConfig(): ILoggerConfig {
 
 let savedLoggerConfig: ILoggerConfig | undefined;
 
-const storageKey = '$$OneKeyV5LoggerConfig';
+const storageKey = '$$UnionKeyV5LoggerConfig';
 async function getSavedLoggerConfig() {
   if (savedLoggerConfig) {
     return savedLoggerConfig;

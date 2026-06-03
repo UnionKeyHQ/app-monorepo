@@ -9,12 +9,12 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import earnUtils from '@unionkey/shared/src/utils/earnUtils';
+import type { IStakeProtocolDetails } from '@unionkey/shared/types/staking';
 
 function AutoRiskControlContent() {
   const intl = useIntl();

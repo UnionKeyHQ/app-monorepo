@@ -7,7 +7,7 @@ import {
   SizableText,
   Stack,
   usePopoverContext,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

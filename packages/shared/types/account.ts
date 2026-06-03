@@ -2,8 +2,8 @@ import type {
   IDBAccount,
   IDBDevice,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAirGapAccount } from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import type { IAirGapAccount } from '@unionkey/qr-wallet-sdk';
 
 import type { INetworkAccountAddressDetail } from './address';
 

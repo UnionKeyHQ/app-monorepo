@@ -1,6 +1,6 @@
-import type { INumberSizeableTextProps } from '@onekeyhq/components';
-import { NumberSizeableText } from '@onekeyhq/components';
-import { useSettingsValuePersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { INumberSizeableTextProps } from '@unionkey/components';
+import { NumberSizeableText } from '@unionkey/components';
+import { useSettingsValuePersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 function NumberSizeableTextWrapper(props: INumberSizeableTextProps) {
   const { hideValue, ...restProps } = props;

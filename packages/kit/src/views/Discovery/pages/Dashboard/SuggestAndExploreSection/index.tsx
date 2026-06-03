@@ -3,13 +3,13 @@ import { useCallback, useState } from 'react';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Skeleton, Stack, useMedia } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { ICategory, IDApp } from '@onekeyhq/shared/types/discovery';
+import { Skeleton, Stack, useMedia } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { ICategory, IDApp } from '@unionkey/shared/types/discovery';
 
 import { DashboardSectionHeader } from '../DashboardSectionHeader';
 

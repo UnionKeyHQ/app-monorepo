@@ -1,11 +1,11 @@
 import type {
   IApproveInfo,
   ITransferInfo,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IFeeInfoUnit, IFeesInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { IEncodedTxLightning } from '@onekeyhq/shared/types/lightning';
-import type { IStakingInfo } from '@onekeyhq/shared/types/staking';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/kit-bg/src/vaults/types';
+import type { IFeeInfoUnit, IFeesInfoUnit } from '@unionkey/shared/types/fee';
+import type { IEncodedTxLightning } from '@unionkey/shared/types/lightning';
+import type { IStakingInfo } from '@unionkey/shared/types/staking';
+import type { ISwapTxInfo } from '@unionkey/shared/types/swap/types';
 
 import type { ICurveName } from './coreTypesBase';
 import type { IEncodedTxAda } from '../chains/ada/types';

@@ -14,7 +14,7 @@ import { useIntl } from 'react-intl';
 import type {
   IPageNavigationProp,
   IPageScreenProps,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Badge,
   Empty,
@@ -28,47 +28,47 @@ import {
   Toast,
   XStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useCopyAccountAddress } from '@onekeyhq/kit/src/hooks/useCopyAccountAddress';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useFuseSearch } from '@onekeyhq/kit/src/views/ChainSelector/hooks/useFuseSearch';
-import type { IAllNetworksDBStruct } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAllNetworks';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { useAllNetworksPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { useAccountSelectorCreateAddress } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { NetworkAvatarBase } from '@unionkey/kit/src/components/NetworkAvatar';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useCopyAccountAddress } from '@unionkey/kit/src/hooks/useCopyAccountAddress';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useFuseSearch } from '@unionkey/kit/src/views/ChainSelector/hooks/useFuseSearch';
+import type { IAllNetworksDBStruct } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAllNetworks';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { useAllNetworksPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EModalReceiveRoutes,
   EModalRoutes,
   EModalWalletAddressRoutes,
   type IModalWalletAddressParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import debugUtils, {
   useDebugHooksDepsChangedChecker,
-} from '@onekeyhq/shared/src/utils/debug/debugUtils';
+} from '@unionkey/shared/src/utils/debug/debugUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
 import networkUtils, {
   isEnabledNetworksInAllNetworks,
-} from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/shared/src/utils/networkUtils';
 import {
   EAccountSelectorSceneName,
   type IServerNetwork,
-} from '@onekeyhq/shared/types';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types';
+import { EDeriveAddressActionType } from '@unionkey/shared/types/address';
 
 import { WalletAddressContext } from './WalletAddressContext';
 import WalletAddressHeaderRight from './WalletAddressHeaderRight';
@@ -766,7 +766,7 @@ function WalletAddressPageMainView({
         const { accountsInfo } =
           await backgroundApiProxy.serviceAllNetwork.getAllNetworkAccounts({
             accountId,
-            networkId: getNetworkIdsMap().onekeyall,
+            networkId: getNetworkIdsMap().unionkeyall,
             excludeTestNetwork: excludeTestNetwork ?? false,
           });
         networksAccount = accountsInfo;

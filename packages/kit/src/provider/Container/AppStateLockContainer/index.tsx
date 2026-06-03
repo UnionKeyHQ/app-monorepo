@@ -1,10 +1,10 @@
 import type { PropsWithChildren } from 'react';
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 
-import { AnimatePresence, Spinner } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAppIsLockedAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { AnimatePresence, Spinner } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useAppIsLockedAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import PasswordVerifyContainer from '../../../components/Password/container/PasswordVerifyContainer';
 

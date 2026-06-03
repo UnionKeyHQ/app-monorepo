@@ -1,18 +1,18 @@
 import { useCallback } from 'react';
 
-import { Button, Page, YStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useToOnBoardingPage } from '@onekeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { ITabMeParamList } from '@onekeyhq/shared/src/routes';
+import { Button, Page, YStack } from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components/src/layouts/Navigation';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useToOnBoardingPage } from '@unionkey/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { ITabMeParamList } from '@unionkey/shared/src/routes';
 import {
   EDAppConnectionModal,
   EModalRoutes,
   EModalSettingRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import extUtils, { EXT_HTML_FILES } from '@onekeyhq/shared/src/utils/extUtils';
+} from '@unionkey/shared/src/routes';
+import extUtils, { EXT_HTML_FILES } from '@unionkey/shared/src/utils/extUtils';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import { useV4MigrationActions } from '../../../views/Onboarding/pages/V4Migration/hooks/useV4MigrationActions';
@@ -39,7 +39,7 @@ const TabMe = () => {
               navigation.switchTab(ETabRoutes.Home);
             }}
           >
-            切换到首页
+            切换到首�?
           </Button>
           <Button
             onPress={() => {

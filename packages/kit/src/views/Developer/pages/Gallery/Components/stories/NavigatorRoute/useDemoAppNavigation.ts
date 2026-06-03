@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/core';
 
-import { Page } from '@onekeyhq/components';
+import { Page } from '@unionkey/components';
 import type {
   IModalNavigationProp,
   IPageNavigationProp,
   IStackNavigationOptions,
-} from '@onekeyhq/components/src/layouts/Navigation';
+} from '@unionkey/components/src/layouts/Navigation';
 
 import { EDemoRootRoutes } from './Routes';
 

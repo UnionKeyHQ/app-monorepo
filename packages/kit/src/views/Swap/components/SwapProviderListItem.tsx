@@ -15,13 +15,13 @@ import {
   Stack,
   Tooltip,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { numberFormat } from '@unionkey/shared/src/utils/numberUtils';
 import type {
   IFetchQuoteResult,
   ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { SwapProviderIcon } from './SwapProviderIcon';
 import SwapRoutePaths from './SwapRoutePaths';

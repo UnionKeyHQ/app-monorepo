@@ -1,7 +1,7 @@
-import { Button, Page, YStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import type { ITabDeveloperParamList } from '@onekeyhq/shared/src/routes';
-import { ETabDeveloperRoutes } from '@onekeyhq/shared/src/routes';
+import { Button, Page, YStack } from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components/src/layouts/Navigation';
+import type { ITabDeveloperParamList } from '@unionkey/shared/src/routes';
+import { ETabDeveloperRoutes } from '@unionkey/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 
@@ -17,14 +17,14 @@ const DevHomeStack2 = () => {
             navigation.pop();
           }}
         >
-          上一页
+          上一�?
         </Button>
         <Button
           onPress={() => {
             navigation.navigate(ETabDeveloperRoutes.DevHome);
           }}
         >
-          回首页
+          回首�?
         </Button>
       </YStack>
     </Page>

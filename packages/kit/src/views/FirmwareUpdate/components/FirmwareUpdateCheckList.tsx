@@ -2,22 +2,22 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Checkbox, Dialog, Stack } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import { Checkbox, Dialog, Stack } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateStepInfoAtom,
   useFirmwareUpdateWorkflowRunningAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { toPlainErrorObject } from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { parseFirmwareVersions } from '@onekeyhq/shared/src/logger/scopes/update/scenes/firmware';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalFirmwareUpdateRoutes } from '@onekeyhq/shared/src/routes';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { toPlainErrorObject } from '@unionkey/shared/src/errors/utils/errorUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { parseFirmwareVersions } from '@unionkey/shared/src/logger/scopes/update/scenes/firmware';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EModalFirmwareUpdateRoutes } from '@unionkey/shared/src/routes';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

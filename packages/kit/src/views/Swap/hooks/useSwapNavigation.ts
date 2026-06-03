@@ -1,5 +1,5 @@
-import { rootNavigationRef } from '@onekeyhq/components';
-import { EModalSwapRoutes, ETabRoutes } from '@onekeyhq/shared/src/routes';
+import { rootNavigationRef } from '@unionkey/components';
+import { EModalSwapRoutes, ETabRoutes } from '@unionkey/shared/src/routes';
 
 export const handleSwapNavigation = (
   callback: (params: {

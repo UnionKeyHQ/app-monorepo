@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IDragEndParamsWithItem } from '@onekeyhq/components';
+import type { IDragEndParamsWithItem } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -11,23 +11,23 @@ import {
   SortableListView,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { RenameInputWithNameSelector } from '@onekeyhq/kit/src/components/RenameDialog';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useBrowserBookmarkAction } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { RenameInputWithNameSelector } from '@unionkey/kit/src/components/RenameDialog';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useBrowserBookmarkAction } from '@unionkey/kit/src/states/jotai/contexts/discovery';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkey/shared/src/types/changeHistory';
 
 import { DiscoveryIcon } from '../../components/DiscoveryIcon';
 import { useWebSiteHandler } from '../../hooks/useWebSiteHandler';

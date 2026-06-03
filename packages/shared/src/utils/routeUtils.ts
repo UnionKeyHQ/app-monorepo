@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EGalleryRoutes,
   EModalReferFriendsRoutes,
@@ -11,7 +11,7 @@ import {
   ETabMarketRoutes,
   ETabRoutes,
   ETestModalPages,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 interface IAllowSettingItem {
   /** whether to show URL parameters, it is false in default. */
@@ -138,10 +138,6 @@ export const buildAllowList = (screens: IScreenPathConfig) => {
         showUrl: true,
         showParams: true,
       },
-    [pagePath`${ERootRoutes.Main}${ETabRoutes.Earn}`]: {
-      showUrl: true,
-      showParams: true,
-    },
     [pagePath`${ERootRoutes.Modal}${EModalRoutes.StakingModal}${EModalStakingRoutes.ProtocolDetails}`]:
       {
         showUrl: true,

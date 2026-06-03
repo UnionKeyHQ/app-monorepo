@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useHandleAppStateActive } from '@onekeyhq/kit/src/hooks/useHandleAppStateActive';
-import { usePasswordPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useHandleAppStateActive } from '@unionkey/kit/src/hooks/useHandleAppStateActive';
+import { usePasswordPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import { AppStateSignal } from '../AppStateSignal';
 

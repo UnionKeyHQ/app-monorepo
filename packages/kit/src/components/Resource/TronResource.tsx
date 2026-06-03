@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { IDialogShowProps } from '@onekeyhq/components';
+import type { IDialogShowProps } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -12,10 +12,10 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { openUrlInApp } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { openUrlInApp } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../hooks/usePromiseResult';

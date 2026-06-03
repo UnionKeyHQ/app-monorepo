@@ -10,7 +10,7 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import { useWebTabDataById } from '../../hooks/useWebTabs';
 

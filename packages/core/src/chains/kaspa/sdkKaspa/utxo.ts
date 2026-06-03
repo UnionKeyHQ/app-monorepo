@@ -1,7 +1,7 @@
 import { BigNumber } from 'bignumber.js';
 
-import { MAX_UINT64_VALUE } from '@onekeyhq/core/src/consts';
-import { LowerTransactionAmountError } from '@onekeyhq/shared/src/errors';
+import { MAX_UINT64_VALUE } from '@unionkey/core/src/consts';
+import { LowerTransactionAmountError } from '@unionkey/shared/src/errors';
 
 import { CONFIRMATION_COUNT } from './constant';
 import { UnspentOutput } from './types';

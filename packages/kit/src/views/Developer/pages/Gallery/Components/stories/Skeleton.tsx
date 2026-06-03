@@ -8,7 +8,7 @@ import {
   SizableText,
   Skeleton,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 
@@ -57,7 +57,7 @@ const SkeletonGroupDemo = () => {
               <Input />
             </Skeleton>
             <Skeleton>
-              <SizableText>Hello Onekey</SizableText>
+              <SizableText>Hello Unionkey</SizableText>
             </Skeleton>
           </YStack>
         </Skeleton.Group>

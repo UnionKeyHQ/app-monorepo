@@ -15,22 +15,22 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { openTransactionDetailsUrl } from '@onekeyhq/kit/src/utils/explorerUtils';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { Token } from '@unionkey/kit/src/components/Token';
+import { useAppRoute } from '@unionkey/kit/src/hooks/useAppRoute';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { openTransactionDetailsUrl } from '@unionkey/kit/src/utils/explorerUtils';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalStakingRoutes,
   IModalStakingParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { IBabylonPortfolioItem } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { IBabylonPortfolioItem } from '@unionkey/shared/types/staking';
 
 import {
   PageFrame,
@@ -147,7 +147,7 @@ const PortfolioItem = ({ item, network }: IPortfolioItemProps) => {
               {`${intl.formatMessage(
                 { id: ETranslations.earn_number_day },
                 { number: day },
-              )} â€¢ ${startDate} - ${endDate}`}
+              )} â€?${startDate} - ${endDate}`}
             </SizableText>
           </XStack>
         ) : null}

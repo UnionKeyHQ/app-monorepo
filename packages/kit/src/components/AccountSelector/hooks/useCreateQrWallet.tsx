@@ -3,21 +3,21 @@ import { useCallback } from 'react';
 import type {
   IDBDevice,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 import type {
   IAnimationValue,
   IQRCodeHandlerParseResult,
-} from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
-import type { IAirGapUrJson } from '@onekeyhq/qr-wallet-sdk';
-import { airGapUrUtils } from '@onekeyhq/qr-wallet-sdk';
-import { OneKeyErrorAirGapWalletMismatch } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EQRCodeHandlerNames } from '@onekeyhq/shared/types/qrCode';
+} from '@unionkey/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
+import type { IAirGapUrJson } from '@unionkey/qr-wallet-sdk';
+import { airGapUrUtils } from '@unionkey/qr-wallet-sdk';
+import { UnionKeyErrorAirGapWalletMismatch } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
+import appStorage from '@unionkey/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkey/shared/src/storage/syncStorage';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EQRCodeHandlerNames } from '@unionkey/shared/types/qrCode';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';
@@ -61,7 +61,7 @@ export function useCreateQrWallet() {
         accountUtils.getShortXfp({ xfp: qrDevice?.xfp }) !==
           accountUtils.getShortXfp({ xfp: byWallet?.xfp })
       ) {
-        throw new OneKeyErrorAirGapWalletMismatch();
+        throw new UnionKeyErrorAirGapWalletMismatch();
       }
       if (isOnboarding) {
         navigation.push(EOnboardingPages.FinalizeWalletSetup);

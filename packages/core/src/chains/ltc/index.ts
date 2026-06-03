@@ -1,4 +1,4 @@
-import { IMPL_LTC } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_LTC } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

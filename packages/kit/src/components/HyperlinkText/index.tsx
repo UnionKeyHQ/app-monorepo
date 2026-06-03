@@ -8,10 +8,10 @@ import {
   type ISizableTextProps,
   SizableText,
   getFontSize,
-} from '@onekeyhq/components';
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { EQRCodeHandlerNames } from '@onekeyhq/shared/types/qrCode';
+} from '@unionkey/components';
+import type { ETranslations } from '@unionkey/shared/src/locale';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import { EQRCodeHandlerNames } from '@unionkey/shared/types/qrCode';
 
 import useParseQRCode from '../../views/ScanQrCode/hooks/useParseQRCode';
 

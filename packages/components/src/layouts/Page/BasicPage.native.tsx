@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Dimensions, StatusBar } from 'react-native';
 import { AnimatePresence, useThemeName } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { EPageType, usePageType } from '../../hocs';
 import { useIsIpadLandscape } from '../../hooks/useOrientation';

@@ -2,14 +2,14 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
+import { Page, Toast } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkey/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkey/kit/src/hooks/useDappQuery';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
+import { EDAppModalPageStatus } from '@unionkey/shared/types/dappConnection';
 
 import { WalletConnectAccountTriggerList } from '../../components/DAppAccountList';
 import { DAppRequestedPermissionContent } from '../../components/DAppRequestContent';

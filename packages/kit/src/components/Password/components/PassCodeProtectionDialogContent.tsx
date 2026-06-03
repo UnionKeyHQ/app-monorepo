@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 // import PassCodeProtectionSwitch from '../container/PassCodeProtectionSwitch';
 

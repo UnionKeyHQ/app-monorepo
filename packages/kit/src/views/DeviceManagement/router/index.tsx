@@ -1,7 +1,7 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IModalDeviceManagementParamList } from '@onekeyhq/shared/src/routes';
-import { EModalDeviceManagementRoutes } from '@onekeyhq/shared/src/routes/deviceManagement';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import type { IModalDeviceManagementParamList } from '@unionkey/shared/src/routes';
+import { EModalDeviceManagementRoutes } from '@unionkey/shared/src/routes/deviceManagement';
 
 const DeviceGuideModal = LazyLoadPage(
   () => import('../pages/DeviceGuideModal'),
@@ -15,10 +15,10 @@ const DeviceDetailModal = LazyLoadPage(
   () => import('../pages/DeviceDetailsModal'),
 );
 
-const BuyOneKeyHardwareWallet = LazyLoadPage(
+const BuyUnionKeyHardwareWallet = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/OneKeyHardwareWallet'
+      '@unionkey/kit/src/views/Onboarding/pages/ConnectHardwareWallet/UnionKeyHardwareWallet'
     ),
 );
 
@@ -43,8 +43,8 @@ export const DeviceManagementStacks: IModalFlowNavigatorConfig<
     component: DeviceDetailModal,
   },
   {
-    name: EModalDeviceManagementRoutes.BuyOneKeyHardwareWallet,
-    component: BuyOneKeyHardwareWallet,
+    name: EModalDeviceManagementRoutes.BuyUnionKeyHardwareWallet,
+    component: BuyUnionKeyHardwareWallet,
     options: {
       headerShown: false,
     },

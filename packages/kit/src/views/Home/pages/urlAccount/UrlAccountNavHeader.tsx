@@ -7,17 +7,17 @@ import {
   XStack,
   useMedia,
   useShare,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { OpenInAppButton } from '@onekeyhq/kit/src/components/OpenInAppButton';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { EOneKeyDeepLinkPath } from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { OpenInAppButton } from '@unionkey/kit/src/components/OpenInAppButton';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { EUnionKeyDeepLinkPath } from '@unionkey/shared/src/consts/deeplinkConsts';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import {
   buildUrlAccountFullUrl,
@@ -75,7 +75,7 @@ function OpenInAppButtonContainer() {
     () =>
       account && network
         ? uriUtils.buildDeepLinkUrl({
-            path: EOneKeyDeepLinkPath.url_account,
+            path: EUnionKeyDeepLinkPath.url_account,
             query: {
               networkCode: network.code,
               address: account.address,

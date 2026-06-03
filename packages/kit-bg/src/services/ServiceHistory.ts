@@ -1,24 +1,24 @@
 import { isNil, unionBy } from 'lodash';
 
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
-import type ILightningVault from '@onekeyhq/kit-bg/src/vaults/impls/lightning/Vault';
+import type { IEncodedTx } from '@unionkey/core/src/types';
+import type ILightningVault from '@unionkey/kit-bg/src/vaults/impls/lightning/Vault';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import type { OneKeyServerApiError } from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import type { UnionKeyServerApiError } from '@unionkey/shared/src/errors';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 import {
   getOnChainHistoryTxStatus,
   isAccountCompatibleWithTx,
-} from '@onekeyhq/shared/src/utils/historyUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { TX_RISKY_LEVEL_SPAM } from '@onekeyhq/shared/src/walletConnect/constant';
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/utils/historyUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { TX_RISKY_LEVEL_SPAM } from '@unionkey/shared/src/walletConnect/constant';
+import type { IAddressInfo } from '@unionkey/shared/types/address';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 import type {
   IAccountHistoryTx,
   IAllNetworkHistoryExtraItem,
@@ -31,18 +31,18 @@ import type {
   IOnChainHistoryTxNFT,
   IOnChainHistoryTxToken,
   IServerFetchAccountHistoryDetailParams,
-} from '@onekeyhq/shared/types/history';
-import { EOnChainHistoryTxStatus } from '@onekeyhq/shared/types/history';
-import { ESwapTxHistoryStatus } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/history';
+import { EOnChainHistoryTxStatus } from '@unionkey/shared/types/history';
+import { ESwapTxHistoryStatus } from '@unionkey/shared/types/swap/types';
 import type {
   IReplaceTxInfo,
   ISendTxOnSuccessData,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import {
   EBtcF2poolReplaceState,
   EDecodedTxStatus,
   EReplaceTxType,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import simpleDb from '../dbs/simple/simpleDb';
 import { vaultFactory } from '../vaults/factory';
@@ -721,7 +721,7 @@ class ServiceHistory extends ServiceBase {
     const fetchHistoryFromServer = async () => {
       extraParams = await this.buildFetchHistoryListParams(params);
       let extraRequestParams = extraParams;
-      if (networkId === getNetworkIdsMap().onekeyall) {
+      if (networkId === getNetworkIdsMap().unionkeyall) {
         extraRequestParams = {
           allNetworkAccounts: (
             extraParams as unknown as {
@@ -759,7 +759,7 @@ class ServiceHistory extends ServiceBase {
     try {
       resp = await fetchHistoryFromServer();
     } catch (e) {
-      const error = e as OneKeyServerApiError;
+      const error = e as UnionKeyServerApiError;
       // Exchange the token on the first error to ensure subsequent polling requests succeed
       if (error.data?.code === 50_401) {
         // 50401 -> Lightning service special error code
@@ -1323,7 +1323,7 @@ class ServiceHistory extends ServiceBase {
             {
               route: 'f2pool',
               params: {
-                url: '/user/tx-acc/onekey-query',
+                url: '/user/tx-acc/unionkey-query',
                 method: 'GET',
                 params: {},
                 data: {

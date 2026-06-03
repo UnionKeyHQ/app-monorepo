@@ -8,14 +8,14 @@ import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EMessageTypesCommon } from '@unionkey/shared/types/message';
 import type {
   IArgument,
   IInvokeArguments,
@@ -30,8 +30,8 @@ import type {
   ISigners,
   IVerifyMessageV2Params,
   IVerifyMessageV2Response,
-} from '@onekeyhq/shared/types/ProviderApis/ProviderApiNeo.type';
-import { NeoDApiErrors } from '@onekeyhq/shared/types/ProviderApis/ProviderApiNeo.type';
+} from '@unionkey/shared/types/ProviderApis/ProviderApiNeo.type';
+import { NeoDApiErrors } from '@unionkey/shared/types/ProviderApis/ProviderApiNeo.type';
 
 import { vaultFactory } from '../vaults/factory';
 import { NEO_GAS_TOKEN_ADDRESS } from '../vaults/impls/neo/sdkNeo/constant';

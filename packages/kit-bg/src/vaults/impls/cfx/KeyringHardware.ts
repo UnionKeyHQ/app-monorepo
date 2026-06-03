@@ -4,25 +4,25 @@ import BigNumber from 'bignumber.js';
 import { TypedDataUtils } from 'eth-sig-util';
 import { omitBy } from 'lodash';
 
-import type { IEncodedTxCfx } from '@onekeyhq/core/src/chains/cfx/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxCfx } from '@unionkey/core/src/chains/cfx/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
   IUnsignedMessageCfx,
-} from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { toBigIntHex } from '@onekeyhq/shared/src/utils/numberUtils';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import { toBigIntHex } from '@unionkey/shared/src/utils/numberUtils';
+import type { IDeviceSharedCallParams } from '@unionkey/shared/types/device';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -51,7 +51,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -71,7 +71,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             template,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -104,7 +104,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       '{index}',
             //       `${index}`,
             //     )}`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     chainId: Number(chainId),
             //   })),
             // });

@@ -3,22 +3,22 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import { ActionList } from '@onekeyhq/components';
-import { ensureSensitiveTextEncoded } from '@onekeyhq/core/src/secret';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useLiteCard from '@onekeyhq/kit/src/views/LiteCard/hooks/useLiteCard';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import type { IKeyOfIcons } from '@unionkey/components';
+import { ActionList } from '@unionkey/components';
+import { ensureSensitiveTextEncoded } from '@unionkey/core/src/secret';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import useLiteCard from '@unionkey/kit/src/views/LiteCard/hooks/useLiteCard';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EModalKeyTagRoutes,
   EModalRoutes,
   EOnboardingPages,
-} from '@onekeyhq/shared/src/routes';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/src/routes';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 export function WalletBackupActions({
   wallet,
@@ -102,16 +102,16 @@ export function WalletBackupActions({
         },
         // platformEnv.isNative && {
         //   label: intl.formatMessage({
-        //     id: ETranslations.global_onekey_lite,
+        //     id: ETranslations.global_unionkey_lite,
         //   }),
-        //   icon: 'OnekeyLiteOutline' as IKeyOfIcons,
+        //   icon: 'UnionkeyLiteOutline' as IKeyOfIcons,
         //   onPress: () => void handleBackupLiteCard(),
         // },
         {
           label: intl.formatMessage({
-            id: ETranslations.global_onekey_keytag,
+            id: ETranslations.global_unionkey_keytag,
           }),
-          icon: 'OnekeyKeytagOutline' as IKeyOfIcons,
+          icon: 'UnionkeyKeytagOutline' as IKeyOfIcons,
           onPress: () => void handleBackupKeyTag(),
         },
       ].filter(Boolean)}

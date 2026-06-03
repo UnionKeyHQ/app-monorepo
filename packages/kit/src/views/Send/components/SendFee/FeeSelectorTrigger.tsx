@@ -2,12 +2,12 @@ import type { ComponentProps } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button } from '@onekeyhq/components';
+import { Button } from '@unionkey/components';
 import {
   useIsSinglePresetAtom,
   useSendSelectedFeeAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
-import { getFeeLabel } from '@onekeyhq/kit/src/utils/gasFee';
+} from '@unionkey/kit/src/states/jotai/contexts/sendConfirm';
+import { getFeeLabel } from '@unionkey/kit/src/utils/gasFee';
 
 type IProps = ComponentProps<typeof Button> & {
   disabled?: boolean;

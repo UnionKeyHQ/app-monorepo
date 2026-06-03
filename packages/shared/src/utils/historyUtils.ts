@@ -1,7 +1,7 @@
 import { isNil } from 'lodash';
 
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
 
 import { EOnChainHistoryTxStatus } from '../../types/history';
 import { EDecodedTxStatus } from '../../types/tx';

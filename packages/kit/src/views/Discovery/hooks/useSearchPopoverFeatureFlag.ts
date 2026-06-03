@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export function useSearchPopoverShortcutsFeatureFlag() {
   return platformEnv.isDesktop;

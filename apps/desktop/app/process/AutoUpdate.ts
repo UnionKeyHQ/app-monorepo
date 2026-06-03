@@ -10,9 +10,9 @@ import logger from 'electron-log/main';
 import { CancellationToken, autoUpdater } from 'electron-updater';
 import { readCleartextMessage, readKey } from 'openpgp';
 
-import { buildServiceEndpoint } from '@onekeyhq/shared/src/config/appConfig';
-import type { IDesktopStoreUpdateSettings } from '@onekeyhq/shared/types/desktop';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+import { buildServiceEndpoint } from '@unionkey/shared/src/config/appConfig';
+import type { IDesktopStoreUpdateSettings } from '@unionkey/shared/types/desktop';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 
 import { ipcMessageKeys } from '../config';
 import { PUBLIC_KEY } from '../constant/gpg';
@@ -344,7 +344,7 @@ const init = ({ mainWindow, store }: IDependencies) => {
       // @ts-ignore
       const baseCachePath = autoUpdater?.app?.baseCachePath;
       if (baseCachePath) {
-        const cachePath = path.join(baseCachePath, '@onekeyhqdesktop-updater');
+        const cachePath = path.join(baseCachePath, '@unionkeydesktop-updater');
         logger.info('auto-updater', `cachePath: ${cachePath}`);
         const isExist = fs.existsSync(cachePath);
         if (isExist) {

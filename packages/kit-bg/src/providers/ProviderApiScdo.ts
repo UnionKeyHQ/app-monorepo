@@ -4,16 +4,16 @@ import BigNumber from 'bignumber.js';
 import * as ethUtils from 'ethereumjs-util';
 import { keccak256 } from 'viem';
 
-import type { IEncodedTxScdo } from '@onekeyhq/core/src/chains/scdo/types';
+import type { IEncodedTxScdo } from '@unionkey/core/src/chains/scdo/types';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EMessageTypesCommon } from '@unionkey/shared/types/message';
 
 import { publicKeyToAddress } from '../vaults/impls/scdo/utils';
 
@@ -94,7 +94,7 @@ class ProviderApiScdo extends ProviderApiBase {
     const accountInfo = await this.getAccountsInfo(request);
     const { accountInfo: { networkId } = {} } = accountInfo[0];
     if (!networkId) {
-      throw new OneKeyInternalError('scdo_getBalance networkId is required');
+      throw new UnionKeyInternalError('scdo_getBalance networkId is required');
     }
     const [res] =
       await this.backgroundApi.serviceAccountProfile.sendProxyRequest<number>({

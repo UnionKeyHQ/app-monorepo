@@ -2,7 +2,7 @@ import { hexToBytes } from '@noble/hashes/utils';
 import { Address, Transaction } from '@onekeyfe/kaspa-core-lib';
 import BigNumber from 'bignumber.js';
 
-import { MAX_UINT64_VALUE } from '@onekeyhq/core/src/consts';
+import { MAX_UINT64_VALUE } from '@unionkey/core/src/consts';
 
 import { RestAPIClient } from './clientRestApi';
 import { privateKeyFromOriginPrivateKey } from './privatekey';
@@ -45,11 +45,11 @@ const checkTransactionResult = ({
     new BigNumber(0),
   );
 
-  // 获取转账金额和找零金额
+  // 获取转账金额和找零金�?
   const transferAmount = new BigNumber(sendAmount);
   const changeAmount = totalOutput.minus(transferAmount);
 
-  // 计算手续费
+  // 计算手续�?
   const fee = totalInput.minus(totalOutput);
 
   expect(totalInput.toFixed()).toBe(totalOutput.plus(fee).toFixed());

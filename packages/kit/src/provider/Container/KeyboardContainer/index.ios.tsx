@@ -3,13 +3,13 @@ import { useLayoutEffect } from 'react';
 import { useIntl } from 'react-intl';
 import KeyboardManager from 'react-native-keyboard-manager';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function KeyboardContainer() {
   const intl = useIntl();
 
   useLayoutEffect(() => {
-    // 暂时关闭 IQKeyboardManager, 因为 Modal 上的 textField 会让最底层的 View 跟着键盘移动
+    // 暂时关闭 IQKeyboardManager, 因为 Modal 上的 textField 会让最底层�?View 跟着键盘移动
     KeyboardManager.setEnable(false);
     KeyboardManager.setEnableDebugging(false);
     KeyboardManager.setKeyboardDistanceFromTextField(10);

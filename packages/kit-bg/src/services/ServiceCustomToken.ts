@@ -2,13 +2,13 @@ import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 import {
   ECustomTokenStatus,
   type IAccountToken,
   type ICloudSyncCustomToken,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import { type IDBCloudSyncItem } from '../dbs/local/types';
 import { vaultFactory } from '../vaults/factory';

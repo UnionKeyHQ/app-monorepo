@@ -3,7 +3,7 @@ import { CrossEventEmitter } from '@onekeyfe/cross-inpage-provider-core';
 import type {
   EPushProviderEventNames,
   IPushProviderEventPayload,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 
 export class NotificationEventEmitter extends CrossEventEmitter {
   emitToSelf(type: EPushProviderEventNames, ...args: any[]) {

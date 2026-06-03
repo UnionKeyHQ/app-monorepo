@@ -3,25 +3,25 @@ import { EDeviceType, HardwareErrorCode } from '@onekeyfe/hd-shared';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   isHardwareError,
   isHardwareErrorByCode,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
+} from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { CoreSDKLoader } from '@unionkey/shared/src/hardware/instance';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { IDeviceSharedCallParams } from '@unionkey/shared/types/device';
 import type {  
  
-  IOneKeyDeviceFeatures,  // 添加这行  
-} from '@onekeyhq/shared/types/device';
+  IUnionKeyDeviceFeatures,  // 添加这行  
+} from '@unionkey/shared/types/device';
 import {
   EHardwareUiStateAction,
   hardwareUiStateAtom,
@@ -74,7 +74,7 @@ class ServiceHardwareUI extends ServiceBase {
 
   @backgroundMethod()
   async showConfirmOnDeviceToastDemo({ connectId }: { connectId: string }) {
-    const { EOneKeyDeviceMode } = await CoreSDKLoader();
+    const { EUnionKeyDeviceMode } = await CoreSDKLoader();
     await hardwareUiStateAtom.set({
       action: EHardwareUiStateAction.REQUEST_BUTTON,
       connectId,
@@ -85,7 +85,7 @@ class ServiceHardwareUI extends ServiceBase {
         deviceId: '',
         connectId,
         rawPayload: {},
-        deviceMode: EOneKeyDeviceMode.normal,
+        deviceMode: EUnionKeyDeviceMode.normal,
       },
     });
   }
@@ -153,7 +153,7 @@ class ServiceHardwareUI extends ServiceBase {
 
     await this.sendUiResponse({
       type: UI_RESPONSE.RECEIVE_PIN,
-      payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+      payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
     });
   }
 
@@ -296,7 +296,7 @@ class ServiceHardwareUI extends ServiceBase {
     if (connectId) {  
       const waitForDeviceUnlock = async () => {  
         while (true) {  
-          let features: IOneKeyDeviceFeatures | undefined;  
+          let features: IUnionKeyDeviceFeatures | undefined;  
           try {  
             features = await this.backgroundApi.serviceHardware.getFeaturesWithoutCache({  
               connectId,  
@@ -308,7 +308,7 @@ class ServiceHardwareUI extends ServiceBase {
           if (features && features.unlocked) {  
             break;  
           }  
-          const { Dialog } = require('@onekeyhq/components');
+          const { Dialog } = require('@unionkey/components');
           // 设备未解锁，显示提示并等待用户确认  
           await new Promise<void>((resolve) => {  
             Dialog.show({  

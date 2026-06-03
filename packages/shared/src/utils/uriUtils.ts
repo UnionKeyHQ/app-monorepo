@@ -1,16 +1,16 @@
 import punycode from 'punycode';
 
-import type { IUrlValue } from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
+import type { IUrlValue } from '@unionkey/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
 
-import { ONEKEY_APP_DEEP_LINK_NAME } from '../consts/deeplinkConsts';
+import { UNIONKEY_APP_DEEP_LINK_NAME } from '../consts/deeplinkConsts';
 import {
   PROTOCOLS_SUPPORTED_TO_OPEN,
   VALID_DEEP_LINK,
 } from '../consts/urlProtocolConsts';
 
 import type {
-  EOneKeyDeepLinkPath,
-  IEOneKeyDeepLinkParams,
+  EUnionKeyDeepLinkPath,
+  IEUnionKeyDeepLinkParams,
 } from '../consts/deeplinkConsts';
 import type { Web3WalletTypes } from '@walletconnect/web3wallet';
 
@@ -83,16 +83,16 @@ function parseDappRedirect(
   return { action: EDAppOpenActionEnum.ALLOW };
 }
 
-export function checkOneKeyCardGoogleOauthUrl({
+export function checkUnionKeyCardGoogleOauthUrl({
   url,
 }: {
   url: string;
 }): boolean {
   const origin = getOriginFromUrl({ url });
   return [
-    'https://card.onekey.so',
-    'https://card.onekeytest.com',
-    'https://precard-762def0c-eacd-49b3-ad89-0bf807b37f57.onekeycn.com',
+    'https://card.unionkey.so',
+    'https://card.unionkeytest.com',
+    'https://precard-762def0c-eacd-49b3-ad89-0bf807b37f57.unionkeycn.com',
     'https://accounts.google.com',
   ].includes(origin);
 }
@@ -142,7 +142,7 @@ export function parseUrl(url: string): IUrlValue | null {
 export const checkIsDomain = (domain: string) => DOMAIN_REGEXP.test(domain);
 
 // eslint-disable-next-line spellcheck/spell-checker
-// check the ens format 元宇宙.bnb / diamondgs198.x
+// check the ens format 元宇�?bnb / diamondgs198.x
 export const addressIsEnsFormat = (address: string) => {
   const parts = address.split('.');
   return parts.length > 1 && parts.every((o) => Boolean(o) && o === o.trim());
@@ -226,15 +226,15 @@ function buildUrl({
   return url.toString();
 }
 
-function buildDeepLinkUrl<T extends EOneKeyDeepLinkPath>({
+function buildDeepLinkUrl<T extends EUnionKeyDeepLinkPath>({
   path,
   query,
 }: {
   path: T;
-  query?: IEOneKeyDeepLinkParams[T];
+  query?: IEUnionKeyDeepLinkParams[T];
 }) {
   return buildUrl({
-    protocol: ONEKEY_APP_DEEP_LINK_NAME,
+    protocol: UNIONKEY_APP_DEEP_LINK_NAME,
     path,
     query,
   });

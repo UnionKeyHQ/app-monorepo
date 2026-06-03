@@ -1,9 +1,9 @@
 import type { ComponentProps } from 'react';
 
-import { ListView } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
+import { ListView } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { WalletAvatar } from '@unionkey/kit/src/components/WalletAvatar';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
 
 type IWalletListViewProps = {
   walletList: IDBWallet[] | undefined;

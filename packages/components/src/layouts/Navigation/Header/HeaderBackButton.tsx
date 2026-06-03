@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo } from 'react';
 
 import { useMedia } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { type IIconButtonProps } from '../../../actions';
 
@@ -13,7 +13,7 @@ import HeaderCollapseButton, {
 } from './HeaderCollapseButton';
 import HeaderIconButton from './HeaderIconButton';
 
-import type { IOnekeyStackHeaderProps } from './HeaderScreenOptions';
+import type { IUnionkeyStackHeaderProps } from './HeaderScreenOptions';
 import type { HeaderBackButtonProps } from '@react-navigation/elements/src/types';
 
 type INavButtonProps = Omit<IIconButtonProps, 'icon' | 'testID'>;
@@ -46,7 +46,7 @@ function HeaderBackButton({
   disableClose,
   renderLeft,
   ...props
-}: IOnekeyStackHeaderProps &
+}: IUnionkeyStackHeaderProps &
   HeaderBackButtonProps & {
     renderLeft?: (props: any) => ReactNode | undefined;
   }) {

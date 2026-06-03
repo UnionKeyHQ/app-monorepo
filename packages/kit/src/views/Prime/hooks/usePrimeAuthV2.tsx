@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import { usePrimePersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { usePrimePersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

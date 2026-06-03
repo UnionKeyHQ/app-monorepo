@@ -1,21 +1,21 @@
 import { isNil } from 'lodash';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 import {
   DB_MAIN_CONTEXT_ID,
   DEFAULT_VERIFY_STRING,
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
 import type {
   IndexedDBObjectStorePromised,
   IndexedDBTransactionPromised,
-} from '@onekeyhq/shared/src/IndexedDBPromised';
-import { IndexedDBPromised } from '@onekeyhq/shared/src/IndexedDBPromised';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/IndexedDBPromised';
+import { IndexedDBPromised } from '@unionkey/shared/src/IndexedDBPromised';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import indexedToBucketsMigration from '../../../migrations/indexedToBucketsMigration/indexedToBucketsMigration';
 import {
@@ -226,12 +226,12 @@ export abstract class LocalDbIndexedBase extends LocalDbBase {
         });
       if (checkMigratedResult) {
         try {
-          await indexedToBucketsMigration.migrateOneKeyV5LegacyDBToBucket(
+          await indexedToBucketsMigration.migrateUnionKeyV5LegacyDBToBucket(
             checkMigratedResult,
           );
         } catch (error) {
           console.error(
-            'migrateOneKeyV5LegacyDBToBucket ERROR: ',
+            'migrateUnionKeyV5LegacyDBToBucket ERROR: ',
             error,
             checkMigratedResult,
           );

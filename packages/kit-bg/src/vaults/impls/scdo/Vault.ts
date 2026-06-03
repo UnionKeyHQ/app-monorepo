@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import BigNumber from 'bignumber.js';
 
-import type { IEncodedTxScdo } from '@onekeyhq/core/src/chains/scdo/types';
+import type { IEncodedTxScdo } from '@unionkey/core/src/chains/scdo/types';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -19,20 +19,20 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
+} from '@unionkey/shared/types/customRpc';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -329,7 +329,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new ClientScdo({ url: rpcUrl });
     const tx = JSON.parse(

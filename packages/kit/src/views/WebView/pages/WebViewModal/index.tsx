@@ -5,18 +5,18 @@ import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { Share } from 'react-native';
 
-import { ActionList, Page, useClipboard } from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
-import WebView from '@onekeyhq/kit/src/components/WebView';
-import { WebViewWebEmbed } from '@onekeyhq/kit/src/components/WebViewWebEmbed';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { ActionList, Page, useClipboard } from '@unionkey/components';
+import { HeaderIconButton } from '@unionkey/components/src/layouts/Navigation/Header';
+import WebView from '@unionkey/kit/src/components/WebView';
+import { WebViewWebEmbed } from '@unionkey/kit/src/components/WebViewWebEmbed';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EModalWebViewRoutes,
   IModalWebViewParamList,
-} from '@onekeyhq/shared/src/routes/webView';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/shared/src/routes/webView';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import type {
   IJsBridgeMessagePayload,

@@ -2,14 +2,14 @@ import type {
   IEncodedTx,
   IUnsignedMessage,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
   ITransferInfo,
   ITransferPayload,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
+} from '@unionkey/kit-bg/src/vaults/types';
+import type { IDappSourceInfo } from '@unionkey/shared/types';
 
 import type { ITokenSelectorParamList } from './assetSelector';
 import type { INetworkAccount } from '../../types/account';

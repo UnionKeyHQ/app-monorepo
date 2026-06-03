@@ -1,4 +1,4 @@
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+import type { IDecodedTx } from '@unionkey/shared/types/tx';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

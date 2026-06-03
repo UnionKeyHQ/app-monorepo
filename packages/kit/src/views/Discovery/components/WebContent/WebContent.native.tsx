@@ -1,15 +1,15 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
-import { Progress, Stack, useBackHandler } from '@onekeyhq/components';
-import WebView from '@onekeyhq/kit/src/components/WebView';
-import { handleDeepLinkUrl } from '@onekeyhq/kit/src/routes/config/deeplink';
+import { Progress, Stack, useBackHandler } from '@unionkey/components';
+import WebView from '@unionkey/kit/src/components/WebView';
+import { handleDeepLinkUrl } from '@unionkey/kit/src/routes/config/deeplink';
 import {
   homeTab,
   useBrowserAction,
   useBrowserTabActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { EValidateUrlEnum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import { EValidateUrlEnum } from '@unionkey/shared/types/dappConnection';
 
 import { webviewRefs } from '../../utils/explorerUtils';
 import BlockAccessView from '../BlockAccessView';

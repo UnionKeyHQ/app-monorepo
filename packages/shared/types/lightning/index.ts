@@ -1,4 +1,4 @@
-import type { IUnionMsgType } from '@onekeyhq/core/src/chains/lightning/types';
+import type { IUnionMsgType } from '@unionkey/core/src/chains/lightning/types';
 
 import type { IInvoiceConfig, IInvoiceDecodedResponse } from './invoice';
 import type {

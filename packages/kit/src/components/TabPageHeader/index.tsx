@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { Page } from '@onekeyhq/components';
+import { Page } from '@unionkey/components';
 
 import { useAccountSelectorContextData } from '../../states/jotai/contexts/accountSelector';
 import { HomeTokenListProviderMirror } from '../../views/Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';

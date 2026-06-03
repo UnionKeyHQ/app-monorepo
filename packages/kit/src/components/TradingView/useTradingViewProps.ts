@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { useCalendars } from 'expo-localization';
 
-import { useMedia, useThemeValue } from '@onekeyhq/components';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { ILocaleJSONSymbol } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { useMedia, useThemeValue } from '@unionkey/components';
+import { useDevSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { ILocaleJSONSymbol } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useLocaleVariant } from '../../hooks/useLocaleVariant';
 import { useThemeVariant } from '../../hooks/useThemeVariant';
@@ -100,7 +100,7 @@ export const useTradingViewProps = ({
     const isTest =
       devSettings.enabled && devSettings.settings?.useTradingViewTestDomain;
     const uri = isTest
-      ? 'https://tradingview.onekeytest.com/'
+      ? 'https://tradingview.unionkeytest.com/'
       : `https://www.tradingview-widget.com/embed-widget/advanced-chart/${query}${hash}`;
     if (platformEnv.isWeb || platformEnv.isExtension) {
       return {

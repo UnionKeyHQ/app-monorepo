@@ -3,16 +3,16 @@ import { merge } from 'lodash';
 import type {
   IGetDefaultPrivateKeyParams,
   IGetDefaultPrivateKeyResult,
-} from '@onekeyhq/kit-bg/src/vaults/types';
+} from '@unionkey/kit-bg/src/vaults/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 import type {
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 
 import {
   batchGetPrivateKeys,
@@ -60,7 +60,7 @@ export abstract class CoreChainApiBase {
       case 'nistp256':
         return nistp256;
       default:
-        throw new OneKeyInternalError('Unsupported curve');
+        throw new UnionKeyInternalError('Unsupported curve');
     }
   }
 
@@ -74,7 +74,7 @@ export abstract class CoreChainApiBase {
     password: string;
   }): Promise<ISigner> {
     if (typeof password === 'undefined') {
-      throw new OneKeyInternalError('Software signing requires a password.');
+      throw new UnionKeyInternalError('Software signing requires a password.');
     }
     const privateKeyBuffer = bufferUtils.toBuffer(privateKey);
     return Promise.resolve(new ChainSigner(privateKeyBuffer, password, curve));
@@ -119,7 +119,7 @@ export abstract class CoreChainApiBase {
     const { credentials, account, password, relPaths } = payload;
     let privateKeys: ICoreApiPrivateKeysMap = {};
     if (credentials.hd && credentials.imported) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'getPrivateKeys ERROR: hd and imported credentials can NOT both set.',
       );
     }
@@ -167,7 +167,7 @@ export abstract class CoreChainApiBase {
     const basePath = pathComponents.join('/');
 
     if (usedRelativePaths.length === 0) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'getPrivateKeysHd ERROR: relPaths is empty.',
       );
     }
@@ -226,7 +226,7 @@ export abstract class CoreChainApiBase {
     }
     const infos = isPrivateKeyMode ? pvtkeyInfos : pubkeyInfos;
     if (infos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
     const addresses = await Promise.all(
       infos.map(async (info: ISecretPublicKeyInfo | ISecretPrivateKeyInfo) => {
@@ -269,7 +269,7 @@ export abstract class CoreChainApiBase {
     credentials: ICoreCredentialsInfo;
   }) {
     if (credentials.hd && credentials.imported) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'getCredentialsType ERROR: hd and imported credentials can NOT both set.',
       );
     }
@@ -279,7 +279,7 @@ export abstract class CoreChainApiBase {
     if (credentials.imported) {
       return ECoreCredentialType.imported;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'getCredentialsType ERROR: no credentials found',
     );
   }

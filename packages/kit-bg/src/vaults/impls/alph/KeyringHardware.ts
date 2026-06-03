@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import type { IEncodedTxAlph } from '@onekeyhq/core/src/chains/alph/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxAlph } from '@unionkey/core/src/chains/alph/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/core/src/types';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -47,7 +47,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
       includePublicKey: true,
     };
   }
@@ -73,7 +73,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             template,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const allNetworkAccounts = await this.getAllNetworkPrepareAccounts({
               params,
@@ -103,7 +103,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //     '{index}',
             //     `${index}`,
             //   )}/0/0`,
-            //   showOnOneKey: showOnOnekeyFn(arrIndex),
+            //   showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //   includePublicKey: true,
             //   group: 0,
             // }));
@@ -146,7 +146,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     const account = await this.vault.getAccount();
     const encodedTx = unsignedTx.encodedTx as IEncodedTxAlph;
     if (!account.pub) {
-      throw new OneKeyInternalError('Account pub not found');
+      throw new UnionKeyInternalError('Account pub not found');
     }
     const { unsignedTx: rawTx } = await serializeUnsignedTransaction({
       encodedTx,
@@ -164,7 +164,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     const addressResponse = await sdk.alephiumGetAddress(connectId, deviceId, {
       ...deviceCommonParams,
       path: `${account.path}/0/0`,
-      showOnOneKey: false,
+      showOnUnionKey: false,
       includePublicKey: true,
       group: 0,
     });
@@ -181,7 +181,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       sdk.alephiumSignTransaction(connectId, deviceId, hwParams),
     );
     if (!res.signature) {
-      throw new OneKeyInternalError('Failed to sign transaction');
+      throw new UnionKeyInternalError('Failed to sign transaction');
     }
     return {
       txid: '',
@@ -206,7 +206,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     const addressResponse = await sdk.alephiumGetAddress(connectId, deviceId, {
       ...deviceCommonParams,
       path: `${account.path}/0/0`,
-      showOnOneKey: false,
+      showOnUnionKey: false,
       includePublicKey: true,
       group: 0,
     });
@@ -222,7 +222,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       }),
     );
     if (!res.signature) {
-      throw new OneKeyInternalError('Failed to sign message');
+      throw new UnionKeyInternalError('Failed to sign message');
     }
     return [res.signature];
   }

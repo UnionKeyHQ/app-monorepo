@@ -1,7 +1,7 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 
 import ServiceBase from './ServiceBase';
 

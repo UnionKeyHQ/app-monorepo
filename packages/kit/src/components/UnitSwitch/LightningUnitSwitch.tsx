@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { type ISegmentControlProps, SizableText } from '@onekeyhq/components';
-import { ELightningUnit } from '@onekeyhq/shared/types/lightning';
+import { type ISegmentControlProps, SizableText } from '@unionkey/components';
+import { ELightningUnit } from '@unionkey/shared/types/lightning';
 
 import { UnitSwitch } from './UnitSwitch';
 

@@ -2,20 +2,20 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ActionList } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { showRenameDialog } from '@onekeyhq/kit/src/components/RenameDialog';
+import { ActionList } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { showRenameDialog } from '@unionkey/kit/src/components/RenameDialog';
 import type {
   IDBAccount,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/types/changeHistory';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 
 import { showUpdateHardwareWalletLegacyXfpDialog } from '../../../Home/components/WalletXfpStatusReminder/WalletXfpStatusReminder';
 

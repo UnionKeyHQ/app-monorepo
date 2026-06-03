@@ -1,12 +1,12 @@
 import { useIntl } from 'react-intl';
 
-import { ActionList } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ActionList } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import type {
   IDBAccount,
   IDBIndexedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function AccountMoveToTopButton({
   indexedAccount,

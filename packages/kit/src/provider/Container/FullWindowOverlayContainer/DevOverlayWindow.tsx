@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo } from 'react';
 import { isObject } from 'lodash';
 import { useDebouncedCallback, useThrottledCallback } from 'use-debounce';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -16,18 +16,18 @@ import {
   Tooltip,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   useDevSettingsPersistAtom,
   usePasswordPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { ITabMeParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { ITabMeParamList } from '@unionkey/shared/src/routes';
 import {
   EModalRoutes,
   EModalSettingRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import dbPerfMonitor from '@onekeyhq/shared/src/utils/debug/dbPerfMonitor';
+} from '@unionkey/shared/src/routes';
+import dbPerfMonitor from '@unionkey/shared/src/utils/debug/dbPerfMonitor';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

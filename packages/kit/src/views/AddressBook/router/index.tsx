@@ -1,18 +1,18 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IModalAddressBookParamList } from '@onekeyhq/shared/src/routes/addressBook';
-import { EModalAddressBookRoutes } from '@onekeyhq/shared/src/routes/addressBook';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import type { IModalAddressBookParamList } from '@unionkey/shared/src/routes/addressBook';
+import { EModalAddressBookRoutes } from '@unionkey/shared/src/routes/addressBook';
 
 const AddressBookListModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AddressBook/pages/ListItem'),
+  () => import('@unionkey/kit/src/views/AddressBook/pages/ListItem'),
 );
 
 const AddressBookEditItemModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AddressBook/pages/EditItem'),
+  () => import('@unionkey/kit/src/views/AddressBook/pages/EditItem'),
 );
 
 const AddressBookPickItemModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AddressBook/pages/PickItem'),
+  () => import('@unionkey/kit/src/views/AddressBook/pages/PickItem'),
 );
 
 export const ModalAddressBookRouter: IModalFlowNavigatorConfig<

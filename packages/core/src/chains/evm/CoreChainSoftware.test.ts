@@ -1,5 +1,5 @@
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 
 import coreTestsUtils from '../../../@tests/coreTestsUtils';
 import coreTestsFixtures from '../../../@tests/fixtures/coreTestsFixtures';

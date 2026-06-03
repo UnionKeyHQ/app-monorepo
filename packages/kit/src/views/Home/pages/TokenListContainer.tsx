@@ -6,42 +6,42 @@ import { isEmpty, isNil, uniqBy } from 'lodash';
 import { useIntl } from 'react-intl';
 import { useThrottledCallback } from 'use-debounce';
 
-import type { ITabPageProps } from '@onekeyhq/components';
+import type { ITabPageProps } from '@unionkey/components';
 import {
   Stack,
   useMedia,
   useOnRouterChange,
   useTabIsRefreshingFocused,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useFiatCrypto } from '@onekeyhq/kit/src/views/FiatCrypto/hooks';
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { ICustomTokenDBStruct } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
-import type { ISimpleDBLocalTokens } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useFiatCrypto } from '@unionkey/kit/src/views/FiatCrypto/hooks';
+import type { IDBAccount } from '@unionkey/kit-bg/src/dbs/local/types';
+import type { ICustomTokenDBStruct } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
+import type { ISimpleDBLocalTokens } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { WALLET_TYPE_WATCHING } from '@unionkey/shared/src/consts/dbConsts';
 import {
   POLLING_DEBOUNCE_INTERVAL,
   POLLING_INTERVAL_FOR_HISTORY,
   POLLING_INTERVAL_FOR_TOKEN,
   TOKEN_LIST_HIGH_VALUE_MAX,
-} from '@onekeyhq/shared/src/consts/walletConsts';
+} from '@unionkey/shared/src/consts/walletConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EModalAssetDetailRoutes,
   EModalReceiveRoutes,
   EModalRoutes,
   EModalSendRoutes,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
 import {
   getEmptyTokenData,
   getMergedDeriveTokenData,
@@ -49,14 +49,14 @@ import {
   mergeDeriveTokenListMap,
   sortTokensByFiatValue,
   sortTokensByOrder,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
-import { EHomeTab } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/utils/tokenUtils';
+import { EHomeTab } from '@unionkey/shared/types';
 import type {
   IAccountToken,
   IFetchAccountTokensResp,
   IToken,
   ITokenFiat,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import { EmptyAccount } from '../../../components/Empty';
 import { TokenListView } from '../../../components/TokenListView';
@@ -1173,7 +1173,7 @@ function TokenListContainer(_props: ITabPageProps) {
         accountId,
       });
 
-      if (networkId === networkIdsMap.onekeyall) {
+      if (networkId === networkIdsMap.unionkeyall) {
         perfTokenListView.markStart('tokenListRefreshing_1');
         updateTokenListState({
           initialized: false,
@@ -1280,7 +1280,7 @@ function TokenListContainer(_props: ITabPageProps) {
           initialized: false,
           isRefreshing: true,
         });
-        if (networkId !== networkIdsMap.onekeyall) {
+        if (networkId !== networkIdsMap.unionkeyall) {
           handleClearAllNetworkData();
         }
       } else {

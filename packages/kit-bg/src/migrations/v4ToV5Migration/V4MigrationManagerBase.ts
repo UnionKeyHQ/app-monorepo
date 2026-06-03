@@ -1,9 +1,9 @@
-import type { CoreChainScopeBase } from '@onekeyhq/core/src/base/CoreChainScopeBase';
-import { getCoreChainApiScopeByImpl } from '@onekeyhq/core/src/instance/coreChainApi';
-import { DB_MAIN_CONTEXT_ID } from '@onekeyhq/shared/src/consts/dbConsts';
-import { COINTYPE_ETH } from '@onekeyhq/shared/src/engine/engineConsts';
-import { ensureRunOnBackground } from '@onekeyhq/shared/src/utils/assertUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import type { CoreChainScopeBase } from '@unionkey/core/src/base/CoreChainScopeBase';
+import { getCoreChainApiScopeByImpl } from '@unionkey/core/src/instance/coreChainApi';
+import { DB_MAIN_CONTEXT_ID } from '@unionkey/shared/src/consts/dbConsts';
+import { COINTYPE_ETH } from '@unionkey/shared/src/engine/engineConsts';
+import { ensureRunOnBackground } from '@unionkey/shared/src/utils/assertUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 import v4dbHubs from './v4dbHubs';
 import { EV4LocalDBStoreNames } from './v4local/v4localDBStoreNames';

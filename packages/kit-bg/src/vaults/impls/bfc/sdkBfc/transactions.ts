@@ -5,13 +5,13 @@ import { TransactionBlock } from '@benfen/bfc.js/transactions';
 import { BFC_TYPE_ARG } from '@benfen/bfc.js/utils';
 import BigNumber from 'bignumber.js';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { normalizeBfcCoinType, objectTypeToCoinType } from './utils';
 
-import type { OneKeyBfcClient } from './ClientBfc';
+import type { UnionKeyBfcClient } from './ClientBfc';
 import type { BalanceChange, CoinStruct } from '@benfen/bfc.js/client';
 
 export enum EBfcTransactionType {
@@ -25,7 +25,7 @@ async function getAllCoinsByCoinType({
   address,
   coinType,
 }: {
-  client: OneKeyBfcClient;
+  client: UnionKeyBfcClient;
   address: string;
   coinType: string;
 }) {
@@ -77,7 +77,7 @@ async function createTokenTransaction({
   coinType,
   maxSendNativeToken = false,
 }: {
-  client: OneKeyBfcClient;
+  client: UnionKeyBfcClient;
   sender: string;
   recipient: string;
   amount: string;
@@ -100,7 +100,7 @@ async function createTokenTransaction({
     totalBalance.lt(amount) ||
     (totalBalance.isZero() && allCoins.length === 0)
   ) {
-    throw new OneKeyInternalError({
+    throw new UnionKeyInternalError({
       key: ETranslations.earn_insufficient_balance,
     });
   }
@@ -298,7 +298,7 @@ async function getCoinTypeForHardwareTransfer({
   client,
   txBytes,
 }: {
-  client: OneKeyBfcClient;
+  client: UnionKeyBfcClient;
   txBytes: Uint8Array;
 }): Promise<string | null> {
   const tx = TransactionBlock.from(txBytes);

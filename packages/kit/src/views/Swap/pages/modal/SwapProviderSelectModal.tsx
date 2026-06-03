@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons, IPageNavigationProp } from '@onekeyhq/components';
+import type { IKeyOfIcons, IPageNavigationProp } from '@unionkey/components';
 import {
   Button,
   Icon,
@@ -16,8 +16,8 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+} from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
 import {
   useSwapFromTokenAmountAtom,
   useSwapManualSelectQuoteProvidersAtom,
@@ -26,16 +26,16 @@ import {
   useSwapSelectFromTokenAtom,
   useSwapSelectToTokenAtom,
   useSwapSortedQuoteListAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkey/kit/src/states/jotai/contexts/swap';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import { ESwapProviderSort } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { IFetchQuoteResult } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/src/routes/swap';
+import { ESwapProviderSort } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { IFetchQuoteResult } from '@unionkey/shared/types/swap/types';
 
 import SwapProviderListItem from '../../components/SwapProviderListItem';
 import { SwapProviderMirror } from '../SwapProviderMirror';

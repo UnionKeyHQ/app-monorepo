@@ -3,29 +3,29 @@ import { Semaphore } from 'async-mutex';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import { hash160 } from '@onekeyhq/core/src/secret/hash';
+} from '@unionkey/core/src/secret';
+import { hash160 } from '@unionkey/core/src/secret/hash';
 import type {
   IAddressItem,
   IAddressNetworkItem,
-} from '@onekeyhq/kit/src/views/AddressBook/type';
+} from '@unionkey/kit/src/views/AddressBook/type';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { stableStringify } from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/src/types/changeHistory';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import { stableStringify } from '@unionkey/shared/src/utils/stringUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 import { type IDBCloudSyncItem } from '../dbs/local/types';
 import { addressBookPersistAtom } from '../states/jotai/atoms/addressBooks';
@@ -540,7 +540,7 @@ class ServiceAddressBook extends ServiceBase {
     const { items } = await this.getSafeRawItems({ password });
 
     return items.find((item) => {
-      // 创建条件检查函数数组
+      // 创建条件检查函数数�?
       const conditions = [];
 
       if (networkId) {

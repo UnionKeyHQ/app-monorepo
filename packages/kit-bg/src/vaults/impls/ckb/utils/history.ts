@@ -1,5 +1,5 @@
-import { scriptToAddress } from '@onekeyhq/core/src/chains/ckb/sdkCkb';
-import type { IToken } from '@onekeyhq/shared/types/token';
+import { scriptToAddress } from '@unionkey/core/src/chains/ckb/sdkCkb';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import { decodeBalanceWithCell } from './balance';
 

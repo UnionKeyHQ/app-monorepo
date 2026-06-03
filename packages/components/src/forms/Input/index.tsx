@@ -19,7 +19,7 @@ import noop from 'lodash/noop';
 import { InteractionManager } from 'react-native';
 import { Group, getFontSize, useProps, useThemeName } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useSelectionColor } from '../../hooks';
 import { useScrollToLocation } from '../../layouts/ScrollView';

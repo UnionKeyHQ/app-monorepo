@@ -10,18 +10,18 @@ import {
   TextAreaInput,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { parsePrimaryType } from '@onekeyhq/shared/src/signMessage';
+} from '@unionkey/components';
+import type { IUnsignedMessage } from '@unionkey/core/src/types';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { parsePrimaryType } from '@unionkey/shared/src/signMessage';
 import {
   EMessageTypesAptos,
   EMessageTypesBtc,
   EMessageTypesCommon,
   EMessageTypesEth,
   EMessageTypesSolana,
-} from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/types/message';
 
 type ITypedDataV1 = {
   type: string;

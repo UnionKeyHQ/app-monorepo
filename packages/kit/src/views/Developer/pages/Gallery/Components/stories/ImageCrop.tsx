@@ -1,4 +1,4 @@
-import { Button, ImageCrop } from '@onekeyhq/components';
+import { Button, ImageCrop } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

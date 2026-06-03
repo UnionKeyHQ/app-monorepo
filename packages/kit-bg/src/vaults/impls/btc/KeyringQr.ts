@@ -4,24 +4,24 @@ import {
   convertBtcForkXpub,
   convertBtcScriptTypeForHardware,
   getBtcForkNetwork,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import { buildPsbt } from '@onekeyhq/core/src/chains/btc/sdkBtc/providerUtils';
-import { verifyBtcSignedPsbtMatched } from '@onekeyhq/core/src/chains/btc/sdkBtc/verify';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
+import { buildPsbt } from '@unionkey/core/src/chains/btc/sdkBtc/providerUtils';
+import { verifyBtcSignedPsbtMatched } from '@unionkey/core/src/chains/btc/sdkBtc/verify';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { getAirGapSdk } from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/core/src/types';
+import { getAirGapSdk } from '@unionkey/qr-wallet-sdk';
 import {
   NotImplemented,
-  OneKeyErrorAirGapAccountNotFound,
-  OneKeyErrorAirGapInvalidQrCode,
-} from '@onekeyhq/shared/src/errors';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+  UnionKeyErrorAirGapAccountNotFound,
+  UnionKeyErrorAirGapInvalidQrCode,
+} from '@unionkey/shared/src/errors';
+import { CoreSDKLoader } from '@unionkey/shared/src/hardware/instance';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 
 import localDb from '../../../dbs/local/localDb';
 import { KeyringQrBase } from '../../base/KeyringQrBase';
@@ -166,7 +166,7 @@ export class KeyringQr extends KeyringQrBase {
           // eslint-disable-next-line spellcheck/spell-checker
           // ERROR throw from node_modules/@keystonehq/keystone-sdk/dist/chains/bitcoin.js
           //        throw new Error('type not match');
-          throw new OneKeyErrorAirGapInvalidQrCode();
+          throw new UnionKeyErrorAirGapInvalidQrCode();
         }
 
         if (!psbtHex) {
@@ -242,7 +242,7 @@ export class KeyringQr extends KeyringQrBase {
             });
 
           if (!airGapAccount) {
-            throw new OneKeyErrorAirGapAccountNotFound();
+            throw new UnionKeyErrorAirGapAccountNotFound();
           }
 
           // let xpub = airGapAccount?.publicKey;

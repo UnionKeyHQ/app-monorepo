@@ -1,6 +1,6 @@
-import adaWebSdk from '@onekeyhq/core/src/chains/ada/sdkAda/sdk/adaWebSdk';
-import type { IAdaSdkApi } from '@onekeyhq/core/src/chains/ada/sdkAda/sdk/types';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import adaWebSdk from '@unionkey/core/src/chains/ada/sdkAda/sdk/adaWebSdk';
+import type { IAdaSdkApi } from '@unionkey/core/src/chains/ada/sdkAda/sdk/types';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 export default class OffscreenApiAdaSdk implements IAdaSdkApi {
   async sayHello() {
@@ -26,10 +26,10 @@ export default class OffscreenApiAdaSdk implements IAdaSdkApi {
     return api.hwSignTransaction(...args);
   }
 
-  async txToOneKey(...args: any[]) {
+  async txToUnionKey(...args: any[]) {
     const api = await adaWebSdk.getCardanoApi();
     // @ts-ignore
-    return api.txToOneKey(...args);
+    return api.txToUnionKey(...args);
   }
 
   async hasSetTagWithBody(...args: any[]) {

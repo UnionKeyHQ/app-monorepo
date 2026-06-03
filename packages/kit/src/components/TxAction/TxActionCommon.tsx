@@ -8,15 +8,15 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
-import { buildAddressMapInfoKey } from '@onekeyhq/shared/src/utils/historyUtils';
-import { TX_RISKY_LEVEL_SPAM } from '@onekeyhq/shared/src/walletConnect/constant';
-import { EDecodedTxStatus, EReplaceTxType } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import type { IListItemProps } from '@unionkey/kit/src/components/ListItem';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { formatTime } from '@unionkey/shared/src/utils/dateUtils';
+import { buildAddressMapInfoKey } from '@unionkey/shared/src/utils/historyUtils';
+import { TX_RISKY_LEVEL_SPAM } from '@unionkey/shared/src/walletConnect/constant';
+import { EDecodedTxStatus, EReplaceTxType } from '@unionkey/shared/types/tx';
 
 import { useAccountData } from '../../hooks/useAccountData';
 import { useActiveAccount } from '../../states/jotai/contexts/accountSelector';
@@ -351,7 +351,7 @@ function TxActionCommonListView(
                   </SizableText>
                   {description && description.children ? (
                     <SizableText size="$bodyMd" color="$textSubdued" mx="$1">
-                      â€¢
+                      â€?
                     </SizableText>
                   ) : null}
                 </>

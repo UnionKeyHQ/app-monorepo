@@ -1,7 +1,7 @@
 import {
   openUrlExternal,
   openUrlInApp,
-} from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/shared/src/utils/openUrlUtils';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

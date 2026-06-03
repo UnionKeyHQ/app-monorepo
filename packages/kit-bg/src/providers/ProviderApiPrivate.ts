@@ -3,23 +3,23 @@
 /* eslint-disable camelcase */
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 
-import { getBgSensitiveTextEncodeKey } from '@onekeyhq/core/src/secret';
+import { getBgSensitiveTextEncodeKey } from '@unionkey/core/src/secret';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IEventBusPayloadShowToast } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import type { IEventBusPayloadShowToast } from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import { waitForDataLoaded } from '@onekeyhq/shared/src/utils/promiseUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import { waitForDataLoaded } from '@unionkey/shared/src/utils/promiseUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { isWebEmbedApiAllowedOrigin } from '../apis/backgroundApiPermissions';
 
@@ -34,7 +34,7 @@ import type {
   IJsonRpcRequest,
 } from '@onekeyfe/cross-inpage-provider-types';
 
-export interface IOneKeyWalletInfo {
+export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;
   platform?: string;
   version?: string;
@@ -141,12 +141,12 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   // ----------------------------------------------
-  async getWalletInfo(): Promise<IOneKeyWalletInfo> {
+  async getWalletInfo(): Promise<IUnionKeyWalletInfo> {
     const { isDefaultWallet, excludedDappList } =
       await this.backgroundApi.serviceContextMenu.getDefaultWalletSettings();
     return {
       enableExtContentScriptReloadButton: false,
-      platform: process.env.ONEKEY_PLATFORM,
+      platform: process.env.UNIONKEY_PLATFORM,
       version: process.env.VERSION,
       buildNumber: process.env.BUILD_NUMBER,
       disableExt: false,
@@ -176,7 +176,7 @@ class ProviderApiPrivate extends ProviderApiBase {
     };
   }
 
-  // $onekey.$private.request({method:'wallet_getConnectWalletInfo'})
+  // $unionkey.$private.request({method:'wallet_getConnectWalletInfo'})
   @providerApiMethod()
   async wallet_getConnectWalletInfo(
     request: IJsBridgeMessagePayload,
@@ -217,7 +217,7 @@ class ProviderApiPrivate extends ProviderApiBase {
         // ** or you can update logger settings in Dapp console directly
         //    ** (all logger settings in Wallet should be disabled first)
         /*
-          window.localStorage.setItem('$$ONEKEY_DEBUG_LOGGER', 'jsBridge,ethereum');
+          window.localStorage.setItem('$$UNIONKEY_DEBUG_LOGGER', 'jsBridge,ethereum');
           window.location.reload();
            */
       },
@@ -226,7 +226,7 @@ class ProviderApiPrivate extends ProviderApiBase {
     };
   }
 
-  // $onekey.$private.request({method:'wallet_sendSiteMetadata'})
+  // $unionkey.$private.request({method:'wallet_sendSiteMetadata'})
   @providerApiMethod()
   wallet_sendSiteMetadata() {
     // TODO save to DB
@@ -234,7 +234,7 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   /*
-    window.$onekey.$private.request({
+    window.$unionkey.$private.request({
       method: 'wallet_detectRiskLevel',
       params: { url: 'https://www.google.com' },
     });
@@ -295,7 +295,7 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   /*
-    window.$onekey.$private.request({
+    window.$unionkey.$private.request({
       method: 'wallet_isShowFloatingButton',
       params: { url: 'https://www.google.com' },
     });
@@ -386,7 +386,7 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   /*
-    window.$onekey.$private.request({
+    window.$unionkey.$private.request({
       method: 'wallet_disableFloatingButton',
     });
   */
@@ -396,7 +396,7 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   /*
-    window.$onekey.$private.request({
+    window.$unionkey.$private.request({
       method: 'wallet_hideFloatingButtonOnSite',
       params: { url: 'https://www.google.com' },
     });
@@ -412,7 +412,7 @@ class ProviderApiPrivate extends ProviderApiBase {
 
   /*
     Only use for native and desktop browser
-    window.$onekey.$private.request({
+    window.$unionkey.$private.request({
       method: 'wallet_closeCurrentBrowserTab',
     });
   */
@@ -426,7 +426,7 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   /*
-    window.$onekey.$private.request({
+    window.$unionkey.$private.request({
       method: 'wallet_addBrowserUrlToRiskWhiteList',
     });
   */
@@ -550,7 +550,7 @@ class ProviderApiPrivate extends ProviderApiBase {
     return Promise.resolve(this.lastFocusUrl);
   }
 
-  // $onekey.$private.request({method:'wallet_showToast', params: {method: 'success',title:'2333', message: 'test'}})
+  // $unionkey.$private.request({method:'wallet_showToast', params: {method: 'success',title:'2333', message: 'test'}})
   @providerApiMethod()
   async wallet_showToast(request: IJsBridgeMessagePayload) {
     const params = (request.data as IJsonRpcRequest)

@@ -1,4 +1,4 @@
-import { IMPL_SUI } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_SUI } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

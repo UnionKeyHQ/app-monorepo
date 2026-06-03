@@ -1,6 +1,6 @@
-import { Button } from '@onekeyhq/components';
-import { SecureQRToast } from '@onekeyhq/kit/src/components/SecureQRToast';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+import { Button } from '@unionkey/components';
+import { SecureQRToast } from '@unionkey/kit/src/components/SecureQRToast';
+import useScanQrCode from '@unionkey/kit/src/views/ScanQrCode/hooks/useScanQrCode';
 
 import { Layout } from './utils/Layout';
 
@@ -17,7 +17,7 @@ const SecureQRToastGallery = () => {
             <Button
               onPress={() => {
                 const toast = SecureQRToast.show({
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.so',
                   onCancel: async () => {
                     await toast.close();
                   },
@@ -40,7 +40,7 @@ const SecureQRToastGallery = () => {
             <Button
               onPress={() => {
                 const toast = SecureQRToast.show({
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.so',
                   showQRCode: false,
                   onCancel: async () => {
                     await toast.close();
@@ -54,7 +54,7 @@ const SecureQRToastGallery = () => {
                 });
               }}
             >
-              点击单独显示(默认不展示)
+              点击单独显示(默认不展�?
             </Button>
           ),
         },
@@ -64,7 +64,7 @@ const SecureQRToastGallery = () => {
             <Button
               onPress={() => {
                 const toast = SecureQRToast.show({
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.so',
                   showConfirmButton: false,
                   onCancel: async () => {
                     await toast.close();
@@ -88,7 +88,7 @@ const SecureQRToastGallery = () => {
                   title: 'AAA',
                   message: 'BBBB',
                   dismissOnOverlayPress: false,
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.so',
                   onConfirm: async () => {
                     await toast.close();
                     await scanQrCode.start({

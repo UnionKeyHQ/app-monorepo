@@ -4,16 +4,16 @@ import { useMemo } from 'react';
 import { differenceInDays } from 'date-fns';
 import { useIntl } from 'react-intl';
 
-import type { INumberSizeableTextProps } from '@onekeyhq/components';
+import type { INumberSizeableTextProps } from '@unionkey/components';
 import {
   NumberSizeableText,
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketDetailPool } from '@onekeyhq/shared/types/market';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IMarketDetailPool } from '@unionkey/shared/types/market';
 
 import { MarketPoolIcon } from './MarketPoolIcon';
 import { MarketTokenAddress } from './MarketTokenAddress';
@@ -76,7 +76,7 @@ export function PoolDetailDialog({
     attributes,
     dexName,
     dexLogoUrl,
-    onekeyNetworkId,
+    unionkeyNetworkId,
     id: pairAddress,
     baseTokenImageUrl,
     quoteTokenImageUrl,
@@ -172,19 +172,19 @@ export function PoolDetailDialog({
       </XStack>
       <YStack gap="$6" pt="$6" pb="$10">
         <MarketTokenAddress
-          networkId={onekeyNetworkId}
+          networkId={unionkeyNetworkId}
           tokenName={baseTokenName.trim()}
           address={baseToken.data.id.split('_').pop() as string}
           uri={baseTokenImageUrl}
         />
         <MarketTokenAddress
-          networkId={onekeyNetworkId}
+          networkId={unionkeyNetworkId}
           tokenName={quoteTokenName.trim()}
           address={quoteToken.data.id.split('_').pop() as string}
           uri={quoteTokenImageUrl}
         />
         <MarketTokenAddress
-          networkId={onekeyNetworkId}
+          networkId={unionkeyNetworkId}
           tokenName={intl.formatMessage({
             id: ETranslations.global_pair_contract,
           })}

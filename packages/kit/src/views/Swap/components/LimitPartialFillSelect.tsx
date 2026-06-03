@@ -2,9 +2,9 @@ import { memo, useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem } from '@onekeyhq/components';
-import { Icon, Select, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ISelectItem } from '@unionkey/components';
+import { Icon, Select, SizableText, XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface ISwapLimitPartialFillSelectItem extends ISelectItem {
   value: boolean;

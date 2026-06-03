@@ -1,26 +1,26 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import { EModalKeyTagRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalKeyTagParamList } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import LazyLoad from '@unionkey/shared/src/lazyLoad';
+import { EModalKeyTagRoutes } from '@unionkey/shared/src/routes';
+import type { IModalKeyTagParamList } from '@unionkey/shared/src/routes';
 
 const BackupWallet = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/KeyTag/pages/BackupWallet'),
+  () => import('@unionkey/kit/src/views/KeyTag/pages/BackupWallet'),
 );
 
 const UserOptions = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/KeyTag/pages/UserOptions'),
+  () => import('@unionkey/kit/src/views/KeyTag/pages/UserOptions'),
 );
 
 const BackupDotMap = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/KeyTag/pages/BackupDotMap'),
+  () => import('@unionkey/kit/src/views/KeyTag/pages/BackupDotMap'),
 );
 
 const BackupRecoveryPhrase = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/KeyTag/pages/BackupRecoveryPhrase'),
+  () => import('@unionkey/kit/src/views/KeyTag/pages/BackupRecoveryPhrase'),
 );
 
 const BackupDocs = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/KeyTag/pages/BackupDocs'),
+  () => import('@unionkey/kit/src/views/KeyTag/pages/BackupDocs'),
 );
 
 export const KeyTagModalRouter: IModalFlowNavigatorConfig<

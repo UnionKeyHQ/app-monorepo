@@ -6,15 +6,15 @@ import { isEmpty } from 'lodash';
 import {
   getBtcForkNetwork,
   validateBtcAddress,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import type { IDecodedTxExtraLightning } from '@onekeyhq/core/src/chains/lightning/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
+import type { IDecodedTxExtraLightning } from '@unionkey/core/src/chains/lightning/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { IMPL_BTC, IMPL_TBTC } from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/core/src/types';
+import { IMPL_BTC, IMPL_TBTC } from '@unionkey/shared/src/engine/engineConsts';
 import {
   ChannelInsufficientLiquidityError,
   InsufficientBalance,
@@ -24,16 +24,16 @@ import {
   InvoiceExpiredError,
   NoRouteFoundError,
   NotImplemented,
-  OneKeyError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+  UnionKeyError,
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -41,23 +41,23 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/types/address';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 import type {
   IFetchAccountHistoryParams,
   IOnChainHistoryTx,
-} from '@onekeyhq/shared/types/history';
+} from '@unionkey/shared/types/history';
 import type {
   IEncodedTxLightning,
   IInvoiceDecodedResponse,
   ILnurlAuthParams,
-} from '@onekeyhq/shared/types/lightning';
-import { ELnPaymentStatusEnum } from '@onekeyhq/shared/types/lightning/payments';
+} from '@unionkey/shared/types/lightning';
+import { ELnPaymentStatusEnum } from '@unionkey/shared/types/lightning/payments';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
-import type { IDecodedTx, IDecodedTxAction } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
+import type { IDecodedTx, IDecodedTxAction } from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -141,10 +141,10 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTxLightning> {
     const { transfersInfo } = params;
     if (!transfersInfo || isEmpty(transfersInfo)) {
-      throw new OneKeyInternalError('transfersInfo is required');
+      throw new UnionKeyInternalError('transfersInfo is required');
     }
     if (transfersInfo.length > 1) {
-      throw new OneKeyInternalError('Only one transfer is allowed');
+      throw new UnionKeyInternalError('Only one transfer is allowed');
     }
     const transferInfo = transfersInfo[0];
     if (!transferInfo.to) {
@@ -276,7 +276,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo,
       };
     }
-    throw new OneKeyInternalError('Failed to build unsigned tx');
+    throw new UnionKeyInternalError('Failed to build unsigned tx');
   }
 
   override updateUnsignedTx(
@@ -641,13 +641,13 @@ export default class Vault extends VaultBase {
           paymentHash: paymentHash.data as string,
         });
         if (existInvoice.is_paid) {
-          throw new OneKeyError({
+          throw new UnionKeyError({
             key: ETranslations.send_invoice_is_already_paid,
           });
         }
       } catch (e: any) {
         if (
-          (e as OneKeyError)?.key === ETranslations.send_invoice_is_already_paid
+          (e as UnionKeyError)?.key === ETranslations.send_invoice_is_already_paid
         ) {
           throw new InvoiceAlreadyPaid();
         }

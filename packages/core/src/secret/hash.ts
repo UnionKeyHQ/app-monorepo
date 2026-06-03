@@ -1,8 +1,8 @@
 import { sha256 as sha256noble } from '@noble/hashes/sha256';
 import { sha512 as sha512noble } from '@noble/hashes/sha512';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { hash160, hmacSHA256, hmacSHA512, sha256 } from './crypto-functions';
 
@@ -39,10 +39,10 @@ async function sha512Async(params: ISha512Params): Promise<string> {
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     const webembedApiProxy = (
-      await import('@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy')
+      await import('@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy')
     ).default;
     const str = await webembedApiProxy.secret.sha512Async(params);
     return str;

@@ -1,5 +1,5 @@
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 
 import type { IToken } from '../types';
 

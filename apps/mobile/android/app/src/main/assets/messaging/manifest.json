@@ -6,7 +6,7 @@
   "browser_specific_settings": {
     "gecko": {
       "strict_min_version": "100.0",
-      "id": "messaging@onekey.so"
+      "id": "messaging@unionkey.so"
     }
   },
   "background": {

@@ -1,13 +1,13 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { ActionItem } from '@onekeyhq/kit/src/views/Home/components/WalletActions/RawActions';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Toast } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { ActionItem } from '@unionkey/kit/src/views/Home/components/WalletActions/RawActions';
+import { WALLET_TYPE_WATCHING } from '@unionkey/shared/src/consts/dbConsts';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import { useSupportToken } from '../../../FiatCrypto/hooks';
 

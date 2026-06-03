@@ -3,18 +3,18 @@
 
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import type { Emitter } from '@onekeyhq/shared/src/eventBus/WagmiEventEmitter';
-import { createEmitter } from '@onekeyhq/shared/src/eventBus/WagmiEventEmitter';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { uidForWagmi } from '@onekeyhq/shared/src/utils/miscUtils';
-import type { IWalletConnectConnectToWalletParams } from '@onekeyhq/shared/src/walletConnect/types';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import type { Emitter } from '@unionkey/shared/src/eventBus/WagmiEventEmitter';
+import { createEmitter } from '@unionkey/shared/src/eventBus/WagmiEventEmitter';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import { uidForWagmi } from '@unionkey/shared/src/utils/miscUtils';
+import type { IWalletConnectConnectToWalletParams } from '@unionkey/shared/src/walletConnect/types';
 import type {
   IExternalConnectResult,
   IExternalConnectionInfo,
   IExternalConnectorBase,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/types/externalWallet.types';
 
 import type { IBackgroundApi } from '../../../apis/IBackgroundApi';
 import type { WalletConnectDappSideProvider } from '../../../services/ServiceWalletConnect/WalletConnectDappSideProvider';

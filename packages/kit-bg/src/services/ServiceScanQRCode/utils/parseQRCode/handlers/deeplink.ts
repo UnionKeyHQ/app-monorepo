@@ -1,15 +1,15 @@
-import { ONEKEY_APP_DEEP_LINK_NAME } from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
+import { UNIONKEY_APP_DEEP_LINK_NAME } from '@unionkey/shared/src/consts/deeplinkConsts';
+import { EQRCodeHandlerType } from '@unionkey/shared/types/qrCode';
 
 import type { IQRCodeHandler, IUrlValue } from '../type';
 
-// onekey://search/list?q=onekey
-// onekey-wallet://search/list?q=onekey
+// unionkey://search/list?q=unionkey
+// unionkey-wallet://search/list?q=unionkey
 const deeplink: IQRCodeHandler<IUrlValue> = async (value, options) => {
   const urlValue = options?.urlResult;
   if (urlValue) {
     if (
-      [ONEKEY_APP_DEEP_LINK_NAME].findIndex(
+      [UNIONKEY_APP_DEEP_LINK_NAME].findIndex(
         (item) => item === urlValue.data.urlSchema,
       ) !== -1
     ) {

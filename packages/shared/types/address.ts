@@ -1,9 +1,9 @@
-import type { IBadgeProps, IKeyOfIcons } from '@onekeyhq/components';
-import type { EAddressEncodings } from '@onekeyhq/core/src/types';
+import type { IBadgeProps, IKeyOfIcons } from '@unionkey/components';
+import type { EAddressEncodings } from '@unionkey/core/src/types';
 import type {
   IAccountDeriveInfo,
   IUtxoInfo,
-} from '@onekeyhq/kit-bg/src/vaults/types';
+} from '@unionkey/kit-bg/src/vaults/types';
 
 import type { IInvoiceDecodedResponse, ILNURLDetails } from './lightning';
 

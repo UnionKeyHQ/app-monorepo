@@ -7,28 +7,28 @@ import {
   checkBtcAddressIsUsed,
   getBtcForkNetwork,
   isTaprootPath,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
 import type {
   IBtcInput,
   IBtcOutput,
   IEncodedTxBtc,
-} from '@onekeyhq/core/src/chains/btc/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/btc/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { AddressNotSupportSignMethodError } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/core/src/types';
+import { AddressNotSupportSignMethodError } from '@unionkey/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import { CoreSDKLoader } from '@unionkey/shared/src/hardware/instance';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -63,7 +63,7 @@ export class KeyringHardware extends KeyringHardwareBtcBase {
     return {
       network: this.hwSdkNetwork,
       path: this.buildPrepareAccountsPrefixedPath({ template, index }),
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 }

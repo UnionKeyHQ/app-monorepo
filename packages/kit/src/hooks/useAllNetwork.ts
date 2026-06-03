@@ -2,22 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isEmpty } from 'lodash';
 
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { ICustomTokenDBStruct } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
-import type { ISimpleDBLocalTokens } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { useAppIsLockedAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { POLLING_DEBOUNCE_INTERVAL } from '@onekeyhq/shared/src/consts/walletConsts';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import type { IDBAccount } from '@unionkey/kit-bg/src/dbs/local/types';
+import type { ICustomTokenDBStruct } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
+import type { ISimpleDBLocalTokens } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { useAppIsLockedAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { POLLING_DEBOUNCE_INTERVAL } from '@unionkey/shared/src/consts/walletConsts';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
 import networkUtils, {
   isEnabledNetworksInAllNetworks,
-} from '@onekeyhq/shared/src/utils/networkUtils';
-import { promiseAllSettledEnhanced } from '@onekeyhq/shared/src/utils/promiseUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/utils/networkUtils';
+import { promiseAllSettledEnhanced } from '@unionkey/shared/src/utils/promiseUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { perfTokenListView } from '../components/TokenListView/perfTokenListView';
@@ -160,7 +160,7 @@ function useAllNetworkRequests<T>(params: {
     async () => {
       perfTokenListView.markEnd(
         'useAllNetworkRequestsRun_debounceDelay',
-        '执行 useAllNetworkRequests 的 usePromiseResult debounced 延迟: POLLING_DEBOUNCE_INTERVAL',
+        '执行 useAllNetworkRequests �?usePromiseResult debounced 延迟: POLLING_DEBOUNCE_INTERVAL',
       );
 
       const perf = perfUtils.createPerf({
@@ -273,7 +273,7 @@ function useAllNetworkRequests<T>(params: {
             perf.done();
             perfTokenListView.markEnd(
               'useAllNetworkRequestsRun',
-              '执行时间明细请查看 EPerformanceTimerLogNames.allNetwork__useAllNetworkRequests',
+              '执行时间明细请查�?EPerformanceTimerLogNames.allNetwork__useAllNetworkRequests',
             );
             allNetworkCacheData?.({
               data: cachedData,
@@ -363,7 +363,7 @@ function useAllNetworkRequests<T>(params: {
           // pass
         }
 
-        // // 处理顺序请求的网络
+        // // 处理顺序请求的网�?
         // await (async (uuid: string) => {
         // for (const networkDataString of sequentialNetworks) {
         //   console.log(

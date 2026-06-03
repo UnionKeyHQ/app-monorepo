@@ -3,9 +3,9 @@ import {
   Portal,
   ShowToastProvider,
   Toaster,
-} from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { OneKeyFloatingChatBot } from './OneKeyFloatingChatBot';
+} from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { UnionKeyFloatingChatBot } from './UnionKeyFloatingChatBot';
 import { DevOverlayWindowContainer } from './DevOverlayWindowContainer';
 
 export function FullWindowOverlayContainer() {
@@ -16,7 +16,7 @@ export function FullWindowOverlayContainer() {
       
         <Portal.Container name={Portal.Constant.SPOTLIGHT_OVERLAY_PORTAL} />
         {/* <Portal.Container name={Portal.Constant.FULL_WINDOW_OVERLAY_PORTAL}>  
-          <OneKeyFloatingChatBot />  
+          <UnionKeyFloatingChatBot />  
         </Portal.Container>  */}
         <Portal.Container name={Portal.Constant.FULL_WINDOW_OVERLAY_PORTAL} />
         <ShowToastProvider />

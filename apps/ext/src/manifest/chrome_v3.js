@@ -105,11 +105,11 @@ module.exports = {
   },
   'permissions': [
     'offscreen',
-    // 'https://dapp-server.onekey.so/*', // allow CORS requests in firefox
+    // 'https://dapp-server.unionkey.so/*', // allow CORS requests in firefox
     // 'http://localhost:8545/',
     // 'https://*.infura.io/',
-    // '*://*.onekeycn.com/*',
-    // '*://*.onekeytest.com/*',
+    // '*://*.unionkeycn.com/*',
+    // '*://*.unionkeytest.com/*',
     // '*://*.eth/',
     'activeTab',
     'storage',

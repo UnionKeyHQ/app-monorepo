@@ -4,7 +4,7 @@ import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IImageProps, IXStackProps } from '@onekeyhq/components';
+import type { IImageProps, IXStackProps } from '@unionkey/components';
 import {
   Empty,
   Image,
@@ -12,21 +12,21 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import ClassicHomescreenDark from '@onekeyhq/kit/assets/device_management/classic-homescreen-dark.png';
-import ClassicHomescreenLight from '@onekeyhq/kit/assets/device_management/classic-homescreen-light.png';
-import ProHomescreenDark from '@onekeyhq/kit/assets/device_management/pro-homescreen-dark.png';
-import ProHomescreenLight from '@onekeyhq/kit/assets/device_management/pro-homescreen-light.png';
-import TouchHomescreenDark from '@onekeyhq/kit/assets/device_management/touch-homescreen-dark.png';
-import TouchHomescreenLight from '@onekeyhq/kit/assets/device_management/touch-homescreen-light.png';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import type { IAllWalletAvatarImageNames } from '@onekeyhq/shared/src/utils/avatarUtils';
+} from '@unionkey/components';
+import ClassicHomescreenDark from '@unionkey/kit/assets/device_management/classic-homescreen-dark.png';
+import ClassicHomescreenLight from '@unionkey/kit/assets/device_management/classic-homescreen-light.png';
+import ProHomescreenDark from '@unionkey/kit/assets/device_management/pro-homescreen-dark.png';
+import ProHomescreenLight from '@unionkey/kit/assets/device_management/pro-homescreen-light.png';
+import TouchHomescreenDark from '@unionkey/kit/assets/device_management/touch-homescreen-dark.png';
+import TouchHomescreenLight from '@unionkey/kit/assets/device_management/touch-homescreen-light.png';
+import { WalletAvatar } from '@unionkey/kit/src/components/WalletAvatar';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
+import type { IAllWalletAvatarImageNames } from '@unionkey/shared/src/utils/avatarUtils';
 
-import { useBuyOneKeyHeaderRightButton } from '../../hooks/useBuyOneKeyHeaderRightButton';
+import { useBuyUnionKeyHeaderRightButton } from '../../hooks/useBuyUnionKeyHeaderRightButton';
 
 function DeviceItem({
   img,
@@ -74,7 +74,7 @@ function DeviceItem({
 function DeviceGuideModal() {
   const intl = useIntl();
   const navigation = useAppNavigation();
-  const { headerRight } = useBuyOneKeyHeaderRightButton();
+  const { headerRight } = useBuyUnionKeyHeaderRightButton();
   const themeVariant = useThemeVariant();
 
   const handleStartConnect = useCallback(() => {

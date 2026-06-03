@@ -4,12 +4,12 @@ import { BFC_TYPE_ARG, isValidBenfenAddress } from '@benfen/bfc.js/utils';
 import BigNumber from 'bignumber.js';
 import { isEmpty } from 'lodash';
 
-import type { IEncodedTxSui } from '@onekeyhq/core/src/chains/sui/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import type { IEncodedTxSui } from '@unionkey/core/src/chains/sui/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkey/core/src/types';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -17,17 +17,17 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
+} from '@unionkey/shared/types/customRpc';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
   type IDecodedTx,
   type IDecodedTxAction,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -36,8 +36,8 @@ import { KeyringHardware } from './KeyringHardware';
 import { KeyringHd } from './KeyringHd';
 import { KeyringImported } from './KeyringImported';
 import { KeyringWatching } from './KeyringWatching';
-import { OneKeyBenfenTransport } from './sdkBfc/BFCTransport';
-import { OneKeyBfcClient } from './sdkBfc/ClientBfc';
+import { UnionKeyBenfenTransport } from './sdkBfc/BFCTransport';
+import { UnionKeyBfcClient } from './sdkBfc/ClientBfc';
 import transactionUtils, { EBfcTransactionType } from './sdkBfc/transactions';
 import { waitPendingTransaction } from './sdkBfc/utils';
 
@@ -85,11 +85,11 @@ export default class Vault extends VaultBase {
   }
 
   getBfcClient() {
-    const transport = new OneKeyBenfenTransport({
+    const transport = new UnionKeyBenfenTransport({
       backgroundApi: this.backgroundApi,
       networkId: this.networkId,
     });
-    return new OneKeyBfcClient({
+    return new UnionKeyBfcClient({
       transport,
     });
   }
@@ -115,10 +115,10 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTxSui> {
     const { transfersInfo } = params;
     if (!transfersInfo || isEmpty(transfersInfo)) {
-      throw new OneKeyInternalError('transfersInfo is required');
+      throw new UnionKeyInternalError('transfersInfo is required');
     }
     if (transfersInfo.length > 1) {
-      throw new OneKeyInternalError('Batch transfer is not supported');
+      throw new UnionKeyInternalError('Batch transfer is not supported');
     }
     const transferInfo = transfersInfo[0];
     if (!transferInfo.to) {
@@ -133,7 +133,7 @@ export default class Vault extends VaultBase {
       typeof tokenInfo.decimals !== 'number' ||
       tokenInfo.decimals < 0
     ) {
-      throw new OneKeyInternalError('Token decimals is required');
+      throw new UnionKeyInternalError('Token decimals is required');
     }
 
     const amountValue = new BigNumber(amount)
@@ -312,7 +312,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo,
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   override async updateUnsignedTx(
@@ -334,7 +334,7 @@ export default class Vault extends VaultBase {
       }
 
       if (!unsignedTx.transfersInfo?.[0]?.to) {
-        throw new OneKeyInternalError('Invalid transfer object');
+        throw new UnionKeyInternalError('Invalid transfer object');
       }
 
       // max send logic
@@ -413,9 +413,9 @@ export default class Vault extends VaultBase {
       const errorMessage = `${errorCode ?? ''} ${message}`;
       if (message.indexOf('Insufficient gas:') !== -1) {
         // TODO: need to i18n insufficient fee message
-        throw new OneKeyInternalError('msg__broadcast_tx_Insufficient_fee');
+        throw new UnionKeyInternalError('msg__broadcast_tx_Insufficient_fee');
       } else {
-        throw new OneKeyInternalError(errorMessage);
+        throw new UnionKeyInternalError(errorMessage);
       }
     }
   }
@@ -476,7 +476,7 @@ export default class Vault extends VaultBase {
   override async getCustomRpcEndpointStatus(
     params: IMeasureRpcStatusParams,
   ): Promise<IMeasureRpcStatusResult> {
-    const client = new OneKeyBfcClient({
+    const client = new UnionKeyBfcClient({
       url: params.rpcUrl,
     });
     const start = performance.now();
@@ -496,7 +496,7 @@ export default class Vault extends VaultBase {
 
       const rpcUrl = customRpcInfo.rpc;
       if (!rpcUrl) {
-        throw new OneKeyInternalError('Invalid rpc url');
+        throw new UnionKeyInternalError('Invalid rpc url');
       }
 
       if (!signature) {
@@ -506,7 +506,7 @@ export default class Vault extends VaultBase {
         throw new Error('publicKey is empty');
       }
 
-      const client = new OneKeyBfcClient({ url: rpcUrl });
+      const client = new UnionKeyBfcClient({ url: rpcUrl });
 
       const response = await client.executeTransactionBlock({
         transactionBlock: rawTx,
@@ -533,9 +533,9 @@ export default class Vault extends VaultBase {
       const errorMessage = `${errorCode ?? ''} ${message}`;
       if (message.indexOf('Insufficient gas:') !== -1) {
         // TODO: need to i18n insufficient fee message
-        throw new OneKeyInternalError('msg__broadcast_tx_Insufficient_fee');
+        throw new UnionKeyInternalError('msg__broadcast_tx_Insufficient_fee');
       } else {
-        throw new OneKeyInternalError(errorMessage);
+        throw new UnionKeyInternalError(errorMessage);
       }
     }
   }
@@ -545,7 +545,7 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTxSui> {
     const accountAddress = await this.getAccountAddress();
     if (params.okxTx.from !== accountAddress) {
-      throw new OneKeyInternalError('Invalid from address');
+      throw new UnionKeyInternalError('Invalid from address');
     }
     const encodedTx = {
       rawTx: TransactionBlock.from(params.okxTx.data).serialize(),

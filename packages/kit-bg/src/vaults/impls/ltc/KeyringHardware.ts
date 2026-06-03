@@ -1,4 +1,4 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 
 import { KeyringHardwareBtcBase } from '../btc/KeyringHardwareBtcBase';
 
@@ -22,7 +22,7 @@ export class KeyringHardware extends KeyringHardwareBtcBase {
     return {
       network: this.hwSdkNetwork,
       path: this.buildPrepareAccountsPrefixedPath({ template, index }),
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 }

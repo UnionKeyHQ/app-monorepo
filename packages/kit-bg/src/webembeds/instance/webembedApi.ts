@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable new-cap */
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 
 import { buildCallRemoteApiMethod } from '../../apis/RemoteApiProxyBase';
 

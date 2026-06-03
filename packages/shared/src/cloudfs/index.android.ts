@@ -1,7 +1,7 @@
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import RNCloudFs from 'react-native-cloud-fs';
 
-// import debugLogger from '@onekeyhq/shared/src/logger/debugLogger';
+// import debugLogger from '@unionkey/shared/src/logger/debugLogger';
 
 import googlePlayService from '../googlePlayService/googlePlayService';
 import platformEnv from '../platformEnv';

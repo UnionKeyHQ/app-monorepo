@@ -2,19 +2,19 @@ import { useCallback, useContext, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem } from '@onekeyhq/components';
-import { Select, XStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { TabFreezeOnBlurContext } from '@onekeyhq/kit/src/provider/Container/TabFreezeOnBlurContainer';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations, type ILocaleSymbol } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IModalSettingParamList } from '@onekeyhq/shared/src/routes';
-import { EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
+import type { ISelectItem } from '@unionkey/components';
+import { Select, XStack } from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components/src/layouts/Navigation';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { Section } from '@unionkey/kit/src/components/Section';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { TabFreezeOnBlurContext } from '@unionkey/kit/src/provider/Container/TabFreezeOnBlurContainer';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations, type ILocaleSymbol } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IModalSettingParamList } from '@unionkey/shared/src/routes';
+import { EModalSettingRoutes } from '@unionkey/shared/src/routes';
 
 import { useLocaleOptions } from '../../../hooks';
 

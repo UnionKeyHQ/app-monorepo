@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
 
-import { Icon, Select, SizableText, XStack } from '@onekeyhq/components';
+import { Icon, Select, SizableText, XStack } from '@unionkey/components';
 import type {
   ISelectProps,
   ISelectRenderTriggerProps,
-} from '@onekeyhq/components/src/forms/Select/type';
+} from '@unionkey/components/src/forms/Select/type';
 
 export enum EFilterOption {
   Trending = 'trending',

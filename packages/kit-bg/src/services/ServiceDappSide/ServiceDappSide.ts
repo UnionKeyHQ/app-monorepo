@@ -1,16 +1,16 @@
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkey/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import type {
   IExternalConnectWalletResult,
   IExternalConnectionInfo,
   IExternalConnector,
   IExternalWalletInfo,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/types/externalWallet.types';
 
 import externalWalletFactory from '../../connectors/externalWalletFactory';
 import ServiceBase from '../ServiceBase';

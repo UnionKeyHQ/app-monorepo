@@ -3,23 +3,23 @@ import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import BigNumber from 'bignumber.js';
 
-import { conflux } from '@onekeyhq/core/src/chains/cfx/sdkCfx';
-import type { IEncodedTxCfx } from '@onekeyhq/core/src/chains/cfx/types';
-import type ICfxVault from '@onekeyhq/kit-bg/src/vaults/impls/cfx/Vault';
+import { conflux } from '@unionkey/core/src/chains/cfx/sdkCfx';
+import type { IEncodedTxCfx } from '@unionkey/core/src/chains/cfx/types';
+import type ICfxVault from '@unionkey/kit-bg/src/vaults/impls/cfx/Vault';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import { toBigIntHex } from '@onekeyhq/shared/src/utils/numberUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import { toBigIntHex } from '@unionkey/shared/src/utils/numberUtils';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 import type {
   IAccountToken,
   IConfluxWatchAssetParameter,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import { vaultFactory } from '../vaults/factory';
 

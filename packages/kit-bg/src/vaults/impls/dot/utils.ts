@@ -6,11 +6,11 @@ import {
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil } from 'lodash';
 
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import numberUtils from '@onekeyhq/shared/src/utils/numberUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EDecodedTxActionType } from '@onekeyhq/shared/types/tx';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import numberUtils from '@unionkey/shared/src/utils/numberUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EDecodedTxActionType } from '@unionkey/shared/types/tx';
 
 import type { IBackgroundApi } from '../../../apis/IBackgroundApi';
 

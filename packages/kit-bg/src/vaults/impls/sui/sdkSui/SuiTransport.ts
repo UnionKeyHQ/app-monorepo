@@ -1,11 +1,11 @@
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
 
 import type {
   SuiTransport,
   SuiTransportRequestOptions,
 } from '@mysten/sui/client';
 
-export class OneKeySuiTransport implements SuiTransport {
+export class UnionKeySuiTransport implements SuiTransport {
   backgroundApi: IBackgroundApi;
 
   networkId: string;

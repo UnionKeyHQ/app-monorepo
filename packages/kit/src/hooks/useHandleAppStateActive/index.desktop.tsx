@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import type { IDesktopAppState } from '@onekeyhq/shared/types/desktop';
+import type { IDesktopAppState } from '@unionkey/shared/types/desktop';
 
 import type { IUseHandleAppStateActive } from './types';
 
@@ -11,6 +11,7 @@ export const useHandleAppStateActive: IUseHandleAppStateActive = (
   const appState = useRef<IDesktopAppState>();
   useEffect(() => {
     if (!onHandler) return;
+    if (!globalThis.desktopApi?.onAppState) return;
     const handleAppStateChange = (nextState: IDesktopAppState) => {
       if (appState.current === 'background' && nextState === 'active') {
         onHandler?.();

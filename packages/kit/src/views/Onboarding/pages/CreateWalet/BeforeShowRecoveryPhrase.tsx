@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import type { IIconProps } from '@onekeyhq/components';
+import type { IIconProps } from '@unionkey/components';
 import {
   Icon,
   Page,
@@ -11,20 +11,20 @@ import {
   Stack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   ensureSensitiveTextEncoded,
   generateMnemonic,
-} from '@onekeyhq/core/src/secret';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/core/src/secret';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import type { IOnboardingParamList } from '@unionkey/shared/src/routes';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
 
 import type { RouteProp } from '@react-navigation/core';
 
@@ -131,7 +131,7 @@ export function BeforeShowRecoveryPhrase() {
     {
       icon: 'ShieldCheckDoneOutline',
       message: intl.formatMessage({
-        id: ETranslations.onboarding_bullet_onekey_support_no_recovery_phrase,
+        id: ETranslations.onboarding_bullet_unionkey_support_no_recovery_phrase,
       }),
     },
   ];

@@ -7,8 +7,8 @@ import {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
 
 import { V4LocalDbBase } from '../V4LocalDbBase';
 import {

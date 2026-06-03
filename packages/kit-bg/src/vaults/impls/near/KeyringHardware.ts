@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import type { IEncodedTxNear } from '@onekeyhq/core/src/chains/near/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxNear } from '@unionkey/core/src/chains/near/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -43,7 +43,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -62,7 +62,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathSuffix,
             template,
             coinName,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -95,7 +95,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       '{index}',
             //       `${index}`,
             //     )}`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //   })),
             // });
             // return response;

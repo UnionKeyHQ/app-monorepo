@@ -1,11 +1,11 @@
 /* eslint-disable spellcheck/spell-checker */
 import { isNil } from 'lodash';
 
-import type { EAddressEncodings } from '@onekeyhq/core/src/types';
+import type { EAddressEncodings } from '@unionkey/core/src/types';
 import type {
   IDBAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 import {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_HD,
@@ -13,7 +13,7 @@ import {
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_QR,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkey/shared/src/consts/dbConsts';
 
 import { ALL_NETWORK_ACCOUNT_MOCK_ADDRESS } from '../consts/addresses';
 import {
@@ -28,7 +28,7 @@ import {
   SEPERATOR,
 } from '../engine/engineConsts';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 
 import { generateUUID } from './miscUtils';
 import networkUtils from './networkUtils';
@@ -518,7 +518,7 @@ export function buildAccountLocalAssetsKey({
   xpub?: string;
 }) {
   if (!accountAddress && !xpub) {
-    throw new OneKeyInternalError('accountAddress or xpub is required');
+    throw new UnionKeyInternalError('accountAddress or xpub is required');
   }
 
   return `${networkId}_${(xpub || accountAddress) ?? ''}`.toLowerCase();

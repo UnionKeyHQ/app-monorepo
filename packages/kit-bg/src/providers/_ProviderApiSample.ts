@@ -3,8 +3,8 @@ import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 
 import ProviderApiBase from './ProviderApiBase';
 

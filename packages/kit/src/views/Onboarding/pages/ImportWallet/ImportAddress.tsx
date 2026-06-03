@@ -6,7 +6,7 @@ import type {
   IFormMode,
   IReValidateMode,
   UseFormReturn,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Form,
   Icon,
@@ -20,36 +20,36 @@ import {
   useForm,
   useFormWatch,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   ControlledNetworkSelectorTrigger,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { DeriveTypeSelectorFormInput } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import { useAccountSelectorTrigger } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
-import type { IAddressInputValue } from '@onekeyhq/kit/src/components/AddressInput';
+} from '@unionkey/kit/src/components/AccountSelector';
+import { DeriveTypeSelectorFormInput } from '@unionkey/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import { useAccountSelectorTrigger } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
+import type { IAddressInputValue } from '@unionkey/kit/src/components/AddressInput';
 import {
   AddressInput,
   createValidateAddressRule,
-} from '@onekeyhq/kit/src/components/AddressInput';
-import { MAX_LENGTH_ACCOUNT_NAME } from '@onekeyhq/kit/src/components/RenameDialog/renameConsts';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+} from '@unionkey/kit/src/components/AddressInput';
+import { MAX_LENGTH_ACCOUNT_NAME } from '@unionkey/kit/src/components/RenameDialog/renameConsts';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useDebounce } from '@unionkey/kit/src/hooks/useDebounce';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { useAccountSelectorActions } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import useScanQrCode from '@unionkey/kit/src/views/ScanQrCode/hooks/useScanQrCode';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IGeneralInputValidation } from '@onekeyhq/shared/types/address';
+} from '@unionkey/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { WALLET_TYPE_WATCHING } from '@unionkey/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import type { IGeneralInputValidation } from '@unionkey/shared/types/address';
 
 import { Tutorials } from '../../components';
 
@@ -171,7 +171,7 @@ function ImportAddress() {
     () => ({
       values: {
         networkId:
-          network?.id && network.id !== getNetworkIdsMap().onekeyall
+          network?.id && network.id !== getNetworkIdsMap().unionkeyall
             ? network?.id
             : getNetworkIdsMap().btc,
         deriveType: undefined,

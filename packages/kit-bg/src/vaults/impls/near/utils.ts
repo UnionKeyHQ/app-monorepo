@@ -7,8 +7,8 @@ import { isString } from 'lodash';
 import * as nearApiJs from 'near-api-js';
 import { SignedTransaction } from 'near-api-js/lib/transaction';
 
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
-import type { IAddressValidation } from '@onekeyhq/shared/types/address';
+import { EAddressEncodings } from '@unionkey/core/src/types';
+import type { IAddressValidation } from '@unionkey/shared/types/address';
 
 import type { Transaction } from 'near-api-js/lib/transaction';
 

@@ -4,25 +4,25 @@ import BigNumber from 'bignumber.js';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { ENetworkStatus, type IServerNetwork } from '@onekeyhq/shared/types';
-import type { IChainListItem } from '@onekeyhq/shared/types/customNetwork';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { ENetworkStatus, type IServerNetwork } from '@unionkey/shared/types';
+import type { IChainListItem } from '@unionkey/shared/types/customNetwork';
 import type {
   ICustomRpcItem,
   IDBCustomRpc,
   IMeasureRpcStatusParams,
-} from '@onekeyhq/shared/types/customRpc';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/customRpc';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import { type IDBCloudSyncItem } from '../dbs/local/types';
 import { vaultFactory } from '../vaults/factory';

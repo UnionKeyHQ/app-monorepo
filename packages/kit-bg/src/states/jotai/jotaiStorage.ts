@@ -3,10 +3,10 @@
 import { atom } from 'jotai';
 import { isEqual, isString, merge } from 'lodash';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { storageHub } from '@onekeyhq/shared/src/storage/appStorage';
-import appStorageUtils from '@onekeyhq/shared/src/storage/appStorageUtils';
-import { createPromiseTarget } from '@onekeyhq/shared/src/utils/promiseUtils';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { storageHub } from '@unionkey/shared/src/storage/appStorage';
+import appStorageUtils from '@unionkey/shared/src/storage/appStorageUtils';
+import { createPromiseTarget } from '@unionkey/shared/src/utils/promiseUtils';
 
 import { atomsConfig } from './atomNames';
 import { JOTAI_RESET } from './types';
@@ -57,7 +57,7 @@ class JotaiStorage implements AsyncStorage<any> {
   subscribe = undefined;
 }
 
-export const onekeyJotaiStorage = platformEnv.isExtensionUi
+export const unionkeyJotaiStorage = platformEnv.isExtensionUi
   ? mockStorage // extension real storage is running at bg, the ui is a mock storage
   : new JotaiStorage();
 
@@ -92,7 +92,7 @@ export function atomWithStorage<Value>(
   storageName: IAtomNameKeys,
   initialValue: Value,
 ): any {
-  const storage = onekeyJotaiStorage;
+  const storage = unionkeyJotaiStorage;
   const key = buildJotaiStorageKey(storageName);
   const getOnInit = false;
   const baseAtom = atom(

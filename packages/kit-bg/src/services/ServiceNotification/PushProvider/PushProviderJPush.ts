@@ -1,14 +1,14 @@
 import JPush from 'jpush-react-native';
 import { isString } from 'lodash';
 
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   IJPushNotificationLocalEvent,
   IJPushNotificationRemoteEvent,
   INotificationPushMessageInfo,
-} from '@onekeyhq/shared/types/notification';
-import { EPushProviderEventNames } from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
+import { EPushProviderEventNames } from '@unionkey/shared/types/notification';
 
 import { PushProviderBase } from './PushProviderBase';
 
@@ -57,7 +57,7 @@ export class PushProviderJPush extends PushProviderBase {
       });
       JPush.addMobileNumberListener((payload) => {
         defaultLogger.notification.jpush.consoleLog(
-          'JPush 收到手机号:',
+          'JPush 收到手机�?',
           payload,
         );
       });
@@ -65,7 +65,7 @@ export class PushProviderJPush extends PushProviderBase {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       JPush.addCustomMessageListener((payload: any) => {
         defaultLogger.notification.jpush.consoleLog(
-          'JPush 收到自定义消息:',
+          'JPush 收到自定义消�?',
           payload,
         );
       });
@@ -84,7 +84,7 @@ export class PushProviderJPush extends PushProviderBase {
   }
 
   private handleConnect = (result: { connectEnable: boolean }) => {
-    defaultLogger.notification.jpush.consoleLog('JPush 连接状态:', result);
+    defaultLogger.notification.jpush.consoleLog('JPush 连接状�?', result);
     if (result.connectEnable) {
       JPush.getRegistrationID(async ({ registerID }) => {
         defaultLogger.notification.jpush.consoleLog(
@@ -168,7 +168,7 @@ export class PushProviderJPush extends PushProviderBase {
     notification: IJPushNotificationRemoteEvent,
   ) => {
     defaultLogger.notification.jpush.consoleLog(
-      'JPush 收到远程推送:',
+      'JPush 收到远程推�?',
       notification,
     );
     this.baseHandleNotification({ notification });
@@ -178,7 +178,7 @@ export class PushProviderJPush extends PushProviderBase {
     notification: IJPushNotificationLocalEvent,
   ) => {
     defaultLogger.notification.jpush.consoleLog(
-      'JPush 收到本地推送:',
+      'JPush 收到本地推�?',
       notification,
     );
     this.baseHandleNotification({

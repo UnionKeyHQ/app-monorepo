@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import TonWeb from 'tonweb';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { decryptAsync } from '../../secret';
@@ -71,7 +71,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
       curve,
     });
     if (!rawTxUnsigned) {
-      throw new OneKeyInternalError('rawTxUnsigned not found');
+      throw new UnionKeyInternalError('rawTxUnsigned not found');
     }
     const signingMessage = TonWeb.boc.Cell.oneFromBoc(rawTxUnsigned);
     const hash = await signingMessage.hash();

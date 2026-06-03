@@ -2,29 +2,29 @@ import { Suspense, useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { UniversalContainerWithSuspense } from '@onekeyhq/kit/src/components/BiologyAuthComponent/container/UniversalContainer';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import PasswordUpdateContainer from '@onekeyhq/kit/src/components/Password/container/PasswordUpdateContainer';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useBiometricAuthInfo } from '@onekeyhq/kit/src/hooks/useBiometricAuthInfo';
+import { Dialog } from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components/src/layouts/Navigation';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { UniversalContainerWithSuspense } from '@unionkey/kit/src/components/BiologyAuthComponent/container/UniversalContainer';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import PasswordUpdateContainer from '@unionkey/kit/src/components/Password/container/PasswordUpdateContainer';
+import { Section } from '@unionkey/kit/src/components/Section';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useBiometricAuthInfo } from '@unionkey/kit/src/hooks/useBiometricAuthInfo';
 import {
   usePasswordBiologyAuthInfoAtom,
   usePasswordPersistAtom,
   usePasswordWebAuthInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms/password';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IModalSettingParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/kit-bg/src/states/jotai/atoms/password';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IModalSettingParamList } from '@unionkey/shared/src/routes';
 import {
   EDAppConnectionModal,
   EModalRoutes,
   EModalSettingRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/src/routes';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 import { useOptions } from '../../AppAutoLock/useOptions';
 

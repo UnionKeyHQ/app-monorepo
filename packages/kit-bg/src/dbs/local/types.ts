@@ -1,7 +1,7 @@
 import type {
   IBip39RevealableSeed,
   IBip39RevealableSeedEncryptHex,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import type {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_HD,
@@ -9,31 +9,31 @@ import type {
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_QR,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import type { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+} from '@unionkey/shared/src/consts/dbConsts';
+import type { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
 import type {
   IndexedDBObjectStorePromised,
   IndexedDBPromised,
-} from '@onekeyhq/shared/src/IndexedDBPromised';
-import type { IAvatarInfo } from '@onekeyhq/shared/src/utils/emojiUtils';
+} from '@unionkey/shared/src/IndexedDBPromised';
+import type { IAvatarInfo } from '@unionkey/shared/src/utils/emojiUtils';
 import type {
   INetworkAccount,
   IQrWalletAirGapAccount,
   IQrWalletAirGapAccountsInfo,
-} from '@onekeyhq/shared/types/account';
+} from '@unionkey/shared/types/account';
 import type {
-  IOneKeyDeviceFeatures,
+  IUnionKeyDeviceFeatures,
   IQrWalletDevice,
-} from '@onekeyhq/shared/types/device';
-import type { IExternalConnectionInfo } from '@onekeyhq/shared/types/externalWallet.types';
-import type { ICloudSyncRawDataJson } from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/device';
+import type { IExternalConnectionInfo } from '@unionkey/shared/types/externalWallet.types';
+import type { ICloudSyncRawDataJson } from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 import type {
   IBaseConnectedSite,
   IBaseCreatedAt,
   IBaseSignedMessage,
   IBaseSignedTransaction,
   IBaseSignedTransactionDataStringify,
-} from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkey/shared/types/signatureRecord';
 
 import type { EDBAccountType, EDBCredentialType } from './consts';
 import type { ELocalDBStoreNames } from './localDBStoreNames';
@@ -171,7 +171,7 @@ export type IDBCreateHDWalletParams = {
 export type IDBCreateHwWalletParamsBase = {
   name?: string;
   device: SearchDevice;
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
   isFirmwareVerified?: boolean;
   skipDeviceCancel?: boolean;
   hideCheckingDeviceLoading?: boolean;
@@ -334,7 +334,7 @@ export type IDBDeviceSettings = {
 };
 export type IDBDevice = IDBBaseObjectWithName & {
   features: string; // TODO rename to featuresRaw
-  featuresInfo?: IOneKeyDeviceFeatures; // readonly field // TODO rename to features
+  featuresInfo?: IUnionKeyDeviceFeatures; // readonly field // TODO rename to features
   // TODO make index for better performance (getDeviceByQuery)
   connectId: string; // alias BLE mac or USB sn, never changed even if device reset
   name: string;
@@ -433,13 +433,13 @@ export enum EIndexedDBBucketNames {
   // default = 'default',
   // credential = 'credential', // credential, context
   // wallet = 'wallet', // wallet, device
-  account = 'account_local-db_onekey-bucket', // account
-  backupAccount = `${INDEXED_BUCKET_NAME_BACKUP_PREFIX}account_local-db_onekey-bucket`, // account
-  address = 'address_local-db_onekey-bucket', // address to account map
-  archive = 'archive_local-db_onekey-bucket', // connected site, signed message, signed transaction
+  account = 'account_local-db_unionkey-bucket', // account
+  backupAccount = `${INDEXED_BUCKET_NAME_BACKUP_PREFIX}account_local-db_unionkey-bucket`, // account
+  address = 'address_local-db_unionkey-bucket', // address to account map
+  archive = 'archive_local-db_unionkey-bucket', // connected site, signed message, signed transaction
 
   // using independent cloudsync bucket will cause transaction nesting, causing one of the transactions to terminate automatically, so it is still necessary to share the same bucket with account
-  // cloudSync = 'cloud-sync_local-db_onekey-bucket', // cloud sync
+  // cloudSync = 'cloud-sync_local-db_unionkey-bucket', // cloud sync
   // misc = 'misc', // misc
 }
 

@@ -5,14 +5,14 @@ import { cloneDeep } from 'lodash';
 import type {
   IDialogLoadingProps,
   IQrcodeDrawType,
-} from '@onekeyhq/components';
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import type { EHardwareUiStateAction } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IAirGapUrJson } from '@onekeyhq/qr-wallet-sdk';
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IAvatarInfo } from '@onekeyhq/shared/src/utils/emojiUtils';
+} from '@unionkey/components';
+import type { IDBAccount } from '@unionkey/kit-bg/src/dbs/local/types';
+import type { IAccountSelectorSelectedAccount } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import type { EHardwareUiStateAction } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import type { IAirGapUrJson } from '@unionkey/qr-wallet-sdk';
+import type { ETranslations } from '@unionkey/shared/src/locale';
+import type { IAvatarInfo } from '@unionkey/shared/src/utils/emojiUtils';
 
 import appGlobals from '../appGlobals';
 import { defaultLogger } from '../logger/logger';
@@ -32,7 +32,7 @@ import type {
   ISwapTokenBase,
 } from '../../types/swap/types';
 import type { IAccountToken, ITokenFiat } from '../../types/token';
-import type { IOneKeyError } from '../errors/types/errorTypes';
+import type { IUnionKeyError } from '../errors/types/errorTypes';
 
 export enum EFinalizeWalletSetupSteps {
   CreatingWallet = 'CreatingWallet',
@@ -108,7 +108,7 @@ export interface IAppEventBusPayload {
     step: EFinalizeWalletSetupSteps;
   };
   [EAppEventBusNames.FinalizeWalletSetupError]: {
-    error: IOneKeyError | undefined;
+    error: IUnionKeyError | undefined;
   };
   [EAppEventBusNames.WalletConnectOpenModal]: {
     uri: string;
@@ -148,7 +148,7 @@ export interface IAppEventBusPayload {
     progressCurrent: number;
     networkId?: string;
     deriveType?: string | IAccountDeriveTypes;
-    error?: IOneKeyError;
+    error?: IUnionKeyError;
   };
   [EAppEventBusNames.ExtensionContextMenuUpdate]: undefined;
   [EAppEventBusNames.ShowFirmwareUpdateFromBootloaderMode]: {

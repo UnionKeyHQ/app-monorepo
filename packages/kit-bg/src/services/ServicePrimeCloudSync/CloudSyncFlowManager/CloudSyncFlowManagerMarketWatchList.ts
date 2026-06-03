@@ -1,11 +1,11 @@
 import { cloneDeep } from 'lodash';
 
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import type { IMarketWatchListItem } from '@onekeyhq/shared/types/market';
+import { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
+import type { IMarketWatchListItem } from '@unionkey/shared/types/market';
 import type {
   ICloudSyncPayloadMarketWatchList,
   ICloudSyncTargetMarketWatchList,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 
 import { CloudSyncFlowManagerBase } from './CloudSyncFlowManagerBase';
 

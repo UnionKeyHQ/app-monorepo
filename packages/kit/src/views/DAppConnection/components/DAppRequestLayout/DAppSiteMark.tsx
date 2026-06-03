@@ -1,19 +1,19 @@
 import { useMemo } from 'react';
 
-import type { IIconProps } from '@onekeyhq/components';
+import type { IIconProps } from '@unionkey/components';
 import {
   Icon,
   Image,
   SizableText,
   Skeleton,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   EHostSecurityLevel,
   type IHostSecurity,
-} from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/shared/types/discovery';
 
 function DAppSiteMark({
   origin,

@@ -13,15 +13,15 @@ import {
   Stack,
   Switch,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useIsEnableTransferAllowList } from '@onekeyhq/kit/src/components/AddressInput/hooks';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import PassCodeProtectionSwitch from '@onekeyhq/kit/src/components/Password/container/PassCodeProtectionSwitch';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/settings';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useIsEnableTransferAllowList } from '@unionkey/kit/src/components/AddressInput/hooks';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import PassCodeProtectionSwitch from '@unionkey/kit/src/components/Password/container/PassCodeProtectionSwitch';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/settings';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 const SettingProtectionModal = () => {
   const intl = useIntl();

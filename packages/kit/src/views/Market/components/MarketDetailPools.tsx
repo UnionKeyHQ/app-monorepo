@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ITabPageProps, ITableColumn } from '@onekeyhq/components';
+import type { ITabPageProps, ITableColumn } from '@unionkey/components';
 import {
   Dialog,
   Icon,
@@ -15,15 +15,15 @@ import {
   YStack,
   renderNestedScrollView,
   useMedia,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   IMarketDetailPlatform,
   IMarketDetailPool,
   IMarketDetailTicker,
   IMarketResponsePool,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkey/shared/types/market';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { NetworksFilterItem } from '../../../components/NetworksFilterItem';
@@ -40,11 +40,11 @@ function NetworkIdSelect({
   value,
   onChange,
   options,
-  oneKeyNetworkSymbols,
+  unionKeyNetworkSymbols,
 }: {
   options: string[];
   value: number;
-  oneKeyNetworkSymbols: { logoURI?: string; networkName?: string }[];
+  unionKeyNetworkSymbols: { logoURI?: string; networkName?: string }[];
   onChange: (selectedIndex: number) => void;
 }) {
   return (
@@ -60,8 +60,8 @@ function NetworkIdSelect({
       {options.map((networkId, index) => (
         <NetworksFilterItem
           key={networkId}
-          networkImageUri={oneKeyNetworkSymbols[index]?.logoURI}
-          networkName={oneKeyNetworkSymbols[index]?.networkName}
+          networkImageUri={unionKeyNetworkSymbols[index]?.logoURI}
+          networkName={unionKeyNetworkSymbols[index]?.networkName}
           isSelected={value === index}
           onPress={() => onChange(index)}
         />
@@ -181,9 +181,9 @@ export function MarketDetailPools({
     },
   );
 
-  const oneKeyNetworkIds = useMemo(() => {
+  const unionKeyNetworkIds = useMemo(() => {
     const result = pools
-      .map((i) => i.onekeyNetworkId)
+      .map((i) => i.unionkeyNetworkId)
       .filter((i) => Boolean(i)) as string[];
     if (tickers?.length) {
       result.push(CEX);
@@ -191,13 +191,13 @@ export function MarketDetailPools({
     return result;
   }, [pools, tickers?.length]);
 
-  const { result: oneKeyNetworkSymbols } = usePromiseResult(
+  const { result: unionKeyNetworkSymbols } = usePromiseResult(
     async () => {
       const symbols: {
         logoURI?: string;
         networkName?: string;
       }[] = await Promise.all(
-        oneKeyNetworkIds.map((networkId) => {
+        unionKeyNetworkIds.map((networkId) => {
           if (networkId === CEX) {
             return Promise.resolve({ networkName: CEX });
           }
@@ -208,7 +208,7 @@ export function MarketDetailPools({
       );
       return symbols;
     },
-    [oneKeyNetworkIds],
+    [unionKeyNetworkIds],
     {
       initResult: [],
     },
@@ -570,8 +570,8 @@ export function MarketDetailPools({
       }}
       TableHeaderComponent={
         <NetworkIdSelect
-          options={oneKeyNetworkIds}
-          oneKeyNetworkSymbols={oneKeyNetworkSymbols}
+          options={unionKeyNetworkIds}
+          unionKeyNetworkSymbols={unionKeyNetworkSymbols}
           value={index}
           onChange={handleChange}
         />

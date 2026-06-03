@@ -1,12 +1,12 @@
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
+} from '@unionkey/kit-bg/src/vaults/types';
 import type {
   IToken,
   ITokenData,
   ITokenFiat,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import type { INetworkAccount } from '../../types/account';
 import type { EDeriveAddressActionType } from '../../types/address';

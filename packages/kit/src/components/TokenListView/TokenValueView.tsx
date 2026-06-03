@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { ISizableTextProps } from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import { useTokenListMapAtom } from '../../states/jotai/contexts/tokenList';
 import NumberSizeableTextWrapper from '../NumberSizeableTextWrapper';

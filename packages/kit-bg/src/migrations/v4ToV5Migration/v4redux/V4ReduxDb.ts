@@ -33,7 +33,7 @@ export class V4ReduxDb {
     // eslint-disable-next-line no-async-promise-executor
     this.reduxData = new Promise(async (resolve) => {
       try {
-        const data = await v4appStorage.getItem('persist:ONEKEY_WALLET');
+        const data = await v4appStorage.getItem('persist:UNIONKEY_WALLET');
         if (!data) {
           resolve(undefined);
           return;

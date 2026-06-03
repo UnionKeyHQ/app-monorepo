@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-import { Stack, useOrientation } from '@onekeyhq/components';
-import type { IStackStyle } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack, useOrientation } from '@unionkey/components';
+import type { IStackStyle } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import WebView from '../WebView';
 
@@ -24,7 +24,7 @@ export function TradingViewV2(props: ITradingViewProps & WebViewProps) {
   const isLandscape = useOrientation();
   const isIPadPortrait = platformEnv.isNativeIOSPad && !isLandscape;
   const webRef = useRef<IWebViewRef | null>(null);
-  const { onLoadEnd, tradingViewUrl = 'https://tradingview.onekeytest.com/' } =
+  const { onLoadEnd, tradingViewUrl = 'https://tradingview.unionkeytest.com/' } =
     props;
 
   useEffect(() => {

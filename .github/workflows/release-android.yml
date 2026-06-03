@@ -41,7 +41,7 @@ jobs:
           node-version: 20.x
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkey'
 
       - name: Setup keys secret
         run: |
@@ -56,7 +56,7 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Modify build.gradle
-        uses: OneKeyHQ/actions/build-gradle-edit@main
+        uses: UnionKeyHQ/actions/build-gradle-edit@main
         with:
           versionCode: ${{ env.BUILD_NUMBER }}
           versionName: ${{ env.BUILD_APP_VERSION }}

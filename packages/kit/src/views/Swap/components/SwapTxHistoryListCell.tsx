@@ -10,11 +10,11 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
-import { ESwapTxHistoryStatus } from '@onekeyhq/shared/types/swap/types';
-import type { ISwapTxHistory } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
+import { ESwapTxHistoryStatus } from '@unionkey/shared/types/swap/types';
+import type { ISwapTxHistory } from '@unionkey/shared/types/swap/types';
 
 import { ListItem } from '../../../components/ListItem';
 import { Token } from '../../../components/Token';

@@ -1,4 +1,4 @@
-import { IMPL_ALLNETWORKS } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_ALLNETWORKS } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

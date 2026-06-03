@@ -3,13 +3,13 @@ import { useCallback, useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Alert, BackHandler } from 'react-native';
 
-import { Dialog, usePreventRemove } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Dialog, usePreventRemove } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EModalFirmwareUpdateRoutes,
   IModalFirmwareUpdateParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import { useAppRoute } from '../../../hooks/useAppRoute';

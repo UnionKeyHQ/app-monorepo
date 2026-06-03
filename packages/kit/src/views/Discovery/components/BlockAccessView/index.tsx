@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Empty, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EValidateUrlEnum } from '@onekeyhq/shared/types/dappConnection';
+import { Empty, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EValidateUrlEnum } from '@unionkey/shared/types/dappConnection';
 
 function BlockAccessView({
   urlValidateState,

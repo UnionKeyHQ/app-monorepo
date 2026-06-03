@@ -5,8 +5,8 @@ import { StyleSheet } from 'react-native';
 import { globalRef } from 'react-native-draggable-flatlist/src/context/globalRef';
 import { getTokenValue, useMedia, withStaticProperties } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { listItemPressStyle } from '@onekeyhq/shared/src/style';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { listItemPressStyle } from '@unionkey/shared/src/style';
 
 import { IconButton } from '../../actions/IconButton';
 import { ListView } from '../../layouts/ListView';

@@ -13,21 +13,21 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useAppRoute } from '@unionkey/kit/src/hooks/useAppRoute';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EModalAssetDetailRoutes,
   type EModalStakingRoutes,
   type IModalStakingParamList,
-} from '@onekeyhq/shared/src/routes';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
-import type { IStakeHistory } from '@onekeyhq/shared/types/staking';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/src/routes';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
+import type { IStakeHistory } from '@unionkey/shared/types/staking';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import {
   PageFrame,

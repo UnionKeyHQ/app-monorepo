@@ -1,11 +1,11 @@
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   // useBrowserBookmarkAction,
   // useBrowserHistoryAction,
   useBrowserTabActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 
 export function HandleRebuildBrowserData() {
   const { buildWebTabs, setBrowserDataReady } = useBrowserTabActions().current;

@@ -1,4 +1,4 @@
-import type { IVaultSettings } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IVaultSettings } from '@unionkey/kit-bg/src/vaults/types';
 
 import type { IServerNetwork } from '.';
 import type { EEarnLabels } from './staking';

@@ -5,7 +5,7 @@ import { type PurchaseParams, Purchases } from '@revenuecat/purchases-js';
 import { useSearchParams } from 'react-router-dom';
 
 async function closeNativeWebViewModal() {
-  await globalThis.$onekey.$private.request({
+  await globalThis.$unionkey.$private.request({
     method: 'wallet_closeWebViewModal',
   });
 }

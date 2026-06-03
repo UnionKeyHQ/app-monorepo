@@ -1,5 +1,5 @@
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import type { CoreChainApiBase } from '@unionkey/core/src/base/CoreChainApiBase';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 
 import { KeyringWatchingBase } from '../../base/KeyringWatchingBase';
 

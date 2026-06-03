@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { debounce } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkey/components';
 import {
   Badge,
   Button,
@@ -19,39 +19,39 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   HeaderButtonGroup,
   HeaderIconButton,
-} from '@onekeyhq/components/src/layouts/Navigation/Header';
-import { SlippageInput } from '@onekeyhq/kit/src/components/SlippageSettingDialog';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSwapTypeSwitchAtom } from '@onekeyhq/kit/src/states/jotai/contexts/swap';
+} from '@unionkey/components/src/layouts/Navigation/Header';
+import { SlippageInput } from '@unionkey/kit/src/components/SlippageSettingDialog';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useSwapTypeSwitchAtom } from '@unionkey/kit/src/states/jotai/contexts/swap';
 import {
   EJotaiContextStoreNames,
   useInAppNotificationAtom,
   useSettingsAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import type { IModalSwapParamList } from '@onekeyhq/shared/src/routes/swap';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes } from '@unionkey/shared/src/routes';
+import { EModalSwapRoutes } from '@unionkey/shared/src/routes/swap';
+import type { IModalSwapParamList } from '@unionkey/shared/src/routes/swap';
 import {
   swapSlippageCustomDefaultList,
   swapSlippageItems,
   swapSlippageMaxValue,
   swapSlippageWillAheadMinValue,
   swapSlippageWillFailMinValue,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapSlippageSegmentItem } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { ISwapSlippageSegmentItem } from '@unionkey/shared/types/swap/types';
 import {
   EProtocolOfExchange,
   ESwapSlippageCustomStatus,
   ESwapSlippageSegmentKey,
   ESwapTabSwitchType,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { useSwapSlippagePercentageModeInfo } from '../../hooks/useSwapState';
 import { SwapProviderMirror } from '../SwapProviderMirror';

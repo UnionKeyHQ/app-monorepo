@@ -9,16 +9,16 @@ import {
   Switch,
   YStack,
   usePopoverContext,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAllNetworksPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useAllNetworksPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EChainSelectorPages, EModalRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EChainSelectorPages, EModalRoutes } from '@unionkey/shared/src/routes';
 
 const Content = ({
   walletId,

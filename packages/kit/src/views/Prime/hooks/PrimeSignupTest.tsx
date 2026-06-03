@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useLoginWithEmail } from '@privy-io/expo';
 
-import { Button, Input, OTPInput, Toast, YStack } from '@onekeyhq/components';
+import { Button, Input, OTPInput, Toast, YStack } from '@unionkey/components';
 
 export function PrimeSignupTest() {
   const [email, setEmail] = useState('limichange@hotmail.com');

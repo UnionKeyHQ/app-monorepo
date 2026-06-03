@@ -1,4 +1,4 @@
-import type { ESwapSelectTokenSource } from '@onekeyhq/shared/types/swap/types';
+import type { ESwapSelectTokenSource } from '@unionkey/shared/types/swap/types';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';

@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Button, Empty } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Button, Empty } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 function EmptySearch({
   onManageToken,

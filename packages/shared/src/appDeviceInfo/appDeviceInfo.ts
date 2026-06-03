@@ -1,6 +1,6 @@
 import { uniq } from 'lodash';
 
-import type { IDesktopSystemInfo } from '@onekeyhq/desktop/app/config';
+import type { IDesktopSystemInfo } from '@unionkey/desktop/app/config';
 
 import appGlobals from '../appGlobals';
 import platformEnv from '../platformEnv';

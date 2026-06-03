@@ -4,8 +4,8 @@ import { keccak256 } from '@ethersproject/keccak256';
 import * as ethUtil from 'ethereumjs-util';
 import { isString } from 'lodash';
 
-import { decryptAsync, uncompressPublicKey } from '@onekeyhq/core/src/secret';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { decryptAsync, uncompressPublicKey } from '@unionkey/core/src/secret';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {
@@ -119,7 +119,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
 
     if (isString(unsignedMsg.message)) {
       // Special temporary fix for attribute name error on SpaceSwap
-      // https://onekeyhq.atlassian.net/browse/OK-18748
+      // https://unionkey.atlassian.net/browse/OK-18748
       try {
         const finalMessageParsed: {
           message: { value1?: string; value?: string };

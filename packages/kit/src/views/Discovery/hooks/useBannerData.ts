@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { useBannerClosePersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IDiscoveryBanner } from '@onekeyhq/shared/types/discovery';
+import type { ISizableTextProps } from '@unionkey/components';
+import { useBannerClosePersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { IDiscoveryBanner } from '@unionkey/shared/types/discovery';
 
 /**
  * Hook to transform and filter banner data based on user preferences

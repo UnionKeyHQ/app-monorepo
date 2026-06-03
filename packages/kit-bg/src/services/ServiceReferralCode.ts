@@ -1,7 +1,7 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 import type {
   IEarnPositionsResponse,
   IEarnRewardResponse,
@@ -10,9 +10,9 @@ import type {
   IInviteHistory,
   IInvitePostConfig,
   IInviteSummary,
-} from '@onekeyhq/shared/src/referralCode/type';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/referralCode/type';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 
 import ServiceBase from './ServiceBase';
 
@@ -26,7 +26,7 @@ class ServiceReferralCode extends ServiceBase {
 
   @backgroundMethod()
   async getSummaryInfo() {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     const summary = await client.get<{
       data: IInviteSummary;
     }>('/rebate/v1/invite/summary');
@@ -44,13 +44,13 @@ class ServiceReferralCode extends ServiceBase {
     address: string;
     emailOTP: string;
   }) {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     return client.post('/rebate/v1/address', params);
   }
 
   @backgroundMethod()
   async getHardwareSalesRewardHistory(cursor?: string) {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     const params: {
       subject: string;
       limit: number;
@@ -70,7 +70,7 @@ class ServiceReferralCode extends ServiceBase {
 
   @backgroundMethod()
   async getEarnWalletHistory(cursor?: string) {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     const params: {
       subject: string;
       limit: number;
@@ -90,7 +90,7 @@ class ServiceReferralCode extends ServiceBase {
 
   @backgroundMethod()
   async getEarnRewardHistory(cursor?: string) {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     const params: {
       subject: string;
       limit: number;
@@ -110,7 +110,7 @@ class ServiceReferralCode extends ServiceBase {
 
   @backgroundMethod()
   async getHardwareSales(cursor?: string) {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     const params: {
       subject: string;
       cursor?: string;
@@ -139,7 +139,7 @@ class ServiceReferralCode extends ServiceBase {
 
   @backgroundMethod()
   async getEarnReward(cursor?: string, available?: boolean) {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Rebate);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Rebate);
     const params: {
       subject: string;
       cursor?: string;

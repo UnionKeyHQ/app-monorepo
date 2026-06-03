@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
-import { Button, Portal } from '@onekeyhq/components';
+import { Button, Portal } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

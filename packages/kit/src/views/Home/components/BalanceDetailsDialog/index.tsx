@@ -15,23 +15,23 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
+} from '@unionkey/components';
+import type { IDialogShowProps } from '@unionkey/components/src/composite/Dialog/type';
 import {
   isTaprootAddress,
   isTaprootPath,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useHelpLink } from '@onekeyhq/kit/src/hooks/useHelpLink';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveInfoItems } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IFetchAccountDetailsResp } from '@onekeyhq/shared/types/address';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useHelpLink } from '@unionkey/kit/src/hooks/useHelpLink';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveInfoItems } from '@unionkey/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { IFetchAccountDetailsResp } from '@unionkey/shared/types/address';
 
 const detailsBlockStyles: ComponentProps<typeof Stack> = {
   borderRadius: '$2',

@@ -24,25 +24,25 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
-import type { IWalletAvatarProps } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountAvatar } from '@unionkey/kit/src/components/AccountAvatar';
+import type { IWalletAvatarProps } from '@unionkey/kit/src/components/WalletAvatar';
+import { WalletAvatar } from '@unionkey/kit/src/components/WalletAvatar';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import type {
   IDBAccount,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountActivityNotificationSettings } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityNotificationSettings';
-import { useNotificationsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/notifications';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import type { IAccountActivityNotificationSettings } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityNotificationSettings';
+import { useNotificationsAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/notifications';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import {
   NOTIFICATION_ACCOUNT_ACTIVITY_DEFAULT_ENABLED,
   NOTIFICATION_ACCOUNT_ACTIVITY_DEFAULT_MAX_ACCOUNT_COUNT,
-} from '@onekeyhq/shared/src/utils/notificationsUtils';
+} from '@unionkey/shared/src/utils/notificationsUtils';
 
 import { EmptyNoWalletView } from '../../../AccountManagerStacks/pages/AccountSelectorStack/WalletDetails/EmptyView';
 

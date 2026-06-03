@@ -1,21 +1,21 @@
 /* eslint-disable no-var,vars-on-top */
 
-import type { ICheckCurrentDBIsMigratedToBucketResult } from '@onekeyhq/kit-bg/src/migrations/indexedToBucketsMigration/indexedToBucketsMigration';
+import type { ICheckCurrentDBIsMigratedToBucketResult } from '@unionkey/kit-bg/src/migrations/indexedToBucketsMigration/indexedToBucketsMigration';
 import type {
   ETranslations,
   ETranslationsMock,
-} from '@onekeyhq/shared/src/locale';
-import type { IWebEmbedOnekeyAppSettings } from '@onekeyhq/web-embed/utils/webEmbedAppSettings';
+} from '@unionkey/shared/src/locale';
+import type { IWebEmbedUnionkeyAppSettings } from '@unionkey/web-embed/utils/webEmbedAppSettings';
 
 import type { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
 
-type IWindowOneKeyHub = {
+type IWindowUnionKeyHub = {
   $private: ProviderPrivate & {
     webembedReceiveHandler: (payload: IJsBridgeMessagePayload) => Promise<any>;
   };
 };
 
-type IOneKeyPerfTrace = {
+type IUnionKeyPerfTrace = {
   log: (options: { name: string; payload?: any }) => void;
   timeline: Array<{
     time: string;
@@ -28,22 +28,22 @@ type IOneKeyPerfTrace = {
 
 declare global {
   var $$appGlobals: IAppGlobals;
-  var $onekeySystemDiskIsFull: boolean | undefined;
+  var $unionkeySystemDiskIsFull: boolean | undefined;
   var $indexedDBIsMigratedToBucket:
     | ICheckCurrentDBIsMigratedToBucketResult
     | undefined;
 
   // eslint-disable-next-line
-  // var onekey: WindowOneKey;
-  var $onekey: IWindowOneKeyHub;
-  var $onekeyAppWebembedApiWebviewInitFailed: boolean | undefined;
+  // var unionkey: WindowUnionKey;
+  var $unionkey: IWindowUnionKeyHub;
+  var $unionkeyAppWebembedApiWebviewInitFailed: boolean | undefined;
 
-  var $$onekeyDisabledSetTimeout: boolean | undefined;
-  var $$onekeyDisabledSetInterval: boolean | undefined;
+  var $$unionkeyDisabledSetTimeout: boolean | undefined;
+  var $$unionkeyDisabledSetInterval: boolean | undefined;
 
   // defined in preload-html-head.js, check ext html bootstrap timeline:
-  //      window.$$onekeyPerfTrace.timeline
-  var $$onekeyPerfTrace: IOneKeyPerfTrace | undefined;
+  //      window.$$unionkeyPerfTrace.timeline
+  var $$unionkeyPerfTrace: IUnionKeyPerfTrace | undefined;
 
   var chrome: typeof chrome; // chrome api
   var browser: typeof chrome; // firefox api
@@ -53,31 +53,31 @@ declare global {
     // All website
     ethereum: any;
     web3: any;
-    $onekey: IWindowOneKeyHub;
+    $unionkey: IWindowUnionKeyHub;
 
     // Desktop internal (main,renderer)
-    // ONEKEY_DESKTOP_GLOBALS: Record<any, any>;
+    // UNIONKEY_DESKTOP_GLOBALS: Record<any, any>;
 
-    ONEKEY_DESKTOP_DEEP_LINKS: any[];
+    UNIONKEY_DESKTOP_DEEP_LINKS: any[];
   }
 
   // All website
   var ethereum: any;
   var web3: any;
-  var $onekey: IWindowOneKeyHub;
+  var $unionkey: IWindowUnionKeyHub;
 
   // Native App webview content
   var ReactNativeWebView: WebView;
 
   // Desktop internal (main,renderer)
-  var ONEKEY_DESKTOP_GLOBALS: Record<any, any>;
+  var UNIONKEY_DESKTOP_GLOBALS: Record<any, any>;
 
   // Ext internal (ui,background,contentScript)
   var extJsBridgeUiToBg: JsBridgeBase;
   var extJsBridgeOffscreenToBg: JsBridgeBase;
-  var ONEKEY_DESKTOP_DEEP_LINKS: any[];
+  var UNIONKEY_DESKTOP_DEEP_LINKS: any[];
 
-  var WEB_EMBED_ONEKEY_APP_SETTINGS: IWebEmbedOnekeyAppSettings | undefined;
+  var WEB_EMBED_UNIONKEY_APP_SETTINGS: IWebEmbedUnionkeyAppSettings | undefined;
 
   // Added for webpack/bundler injected variables
   var __CURRENT_FILE_PATH__: string | undefined;

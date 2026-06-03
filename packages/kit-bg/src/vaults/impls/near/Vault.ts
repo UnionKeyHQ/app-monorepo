@@ -2,20 +2,20 @@
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil, sortBy } from 'lodash';
 
-import type { IEncodedTxNear } from '@onekeyhq/core/src/chains/near/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxNear } from '@unionkey/core/src/chains/near/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/secret';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkey/core/src/types';
 import {
   CanNotSendZeroAmountError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -23,21 +23,21 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/customRpc';
+import type { IToken } from '@unionkey/shared/types/token';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -140,10 +140,10 @@ export default class Vault extends VaultBase {
           transferInfo: transfersInfo[0],
         });
       }
-      throw new OneKeyInternalError('Batch transfers not supported');
+      throw new UnionKeyInternalError('Batch transfers not supported');
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromTransfer(params: { transferInfo: ITransferInfo }) {
@@ -430,7 +430,7 @@ export default class Vault extends VaultBase {
     if (encodedTx) {
       return this._buildUnsignedTxFromEncodedTx(encodedTx as IEncodedTxNear);
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildUnsignedTxFromEncodedTx(encodedTx: IEncodedTxNear) {
@@ -570,7 +570,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new NearRpcClient({ url: rpcUrl });
     const txId = await client.broadcastTransaction(signedTx.rawTx);

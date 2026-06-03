@@ -1,4 +1,4 @@
-import { Button, Stack, XStack, YStack } from '@onekeyhq/components';
+import { Button, Stack, XStack, YStack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

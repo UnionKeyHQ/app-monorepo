@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Badge } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import { useAppUpdateInfo } from '@onekeyhq/kit/src/components/UpdateReminder/hooks';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useHelpLink } from '@onekeyhq/kit/src/hooks/useHelpLink';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalShortcutsRoutes } from '@onekeyhq/shared/src/routes/shortcuts';
+import { Badge } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { Section } from '@unionkey/kit/src/components/Section';
+import { useAppUpdateInfo } from '@unionkey/kit/src/components/UpdateReminder/hooks';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useHelpLink } from '@unionkey/kit/src/hooks/useHelpLink';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EModalRoutes } from '@unionkey/shared/src/routes';
+import { EModalShortcutsRoutes } from '@unionkey/shared/src/routes/shortcuts';
 
 import { UrlExternalListItem } from '../../../components/UrlExternalListItem';
 

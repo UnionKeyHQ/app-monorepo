@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkey/components';
 import {
   Button,
   Heading,
@@ -8,7 +8,7 @@ import {
   Stack,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 type ILiquidityFilterContentProps = {
   value?: { min?: string; max?: string };
@@ -83,7 +83,7 @@ function LiquidityFilterContent({
               onPress={() => handlePresetPress(preset)}
               flex={1}
             >
-              â‰¥ {preset}
+              â‰?{preset}
             </Button>
           ))}
         </XStack>
@@ -96,7 +96,7 @@ function LiquidityFilterContent({
               onPress={() => handlePresetPress(preset)}
               flex={1}
             >
-              â‰¥ {preset}
+              â‰?{preset}
             </Button>
           ))}
         </XStack>

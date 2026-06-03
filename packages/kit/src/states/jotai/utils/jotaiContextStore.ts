@@ -1,8 +1,8 @@
 import { createStore } from 'jotai';
 
-import type { IJotaiContextStoreData } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import accountSelectorUtils from '@onekeyhq/shared/src/utils/accountSelectorUtils';
+import type { IJotaiContextStoreData } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import accountSelectorUtils from '@unionkey/shared/src/utils/accountSelectorUtils';
 
 import type { IJotaiContextStore } from './createJotaiContext';
 

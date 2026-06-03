@@ -1,22 +1,22 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
 import {
   useAccountSelectorActions,
   useAccountSelectorContextDataAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import type { IAccountSelectorSelectedAccount } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
-import type { IConnectionAccountInfo } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ESpotlightTour } from '@unionkey/shared/src/spotlight';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import { EAlignPrimaryAccountMode } from '@unionkey/shared/types/dappConnection';
+import type { IConnectionAccountInfo } from '@unionkey/shared/types/dappConnection';
 
 import { useSpotlight } from '../../../components/Spotlight';
 

@@ -1,5 +1,5 @@
-import type { IWithHardwareProcessingOptions } from '@onekeyhq/kit-bg/src/services/ServiceHardwareUI/ServiceHardwareUI';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IWithHardwareProcessingOptions } from '@unionkey/kit-bg/src/services/ServiceHardwareUI/ServiceHardwareUI';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToConsole } from '../../../base/decorators';

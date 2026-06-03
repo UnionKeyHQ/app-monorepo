@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem } from '@onekeyhq/components';
+import type { ISelectItem } from '@unionkey/components';
 import {
   Icon,
   Select,
@@ -10,8 +10,8 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface ISwapApproveAllowanceSelectProps {
   onSelectAllowanceValue: (value: string) => void;

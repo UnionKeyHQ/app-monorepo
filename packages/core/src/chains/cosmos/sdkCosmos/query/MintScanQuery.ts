@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import BigNumber from 'bignumber.js';
 
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 
 import type {
   ICosmosCw20TokenBalance,

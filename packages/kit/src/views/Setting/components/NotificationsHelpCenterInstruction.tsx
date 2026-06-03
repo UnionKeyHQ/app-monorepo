@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Anchor, SizableText } from '@onekeyhq/components';
-import { NOTIFICATIONS_HELP_CENTER_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Anchor, SizableText } from '@unionkey/components';
+import { NOTIFICATIONS_HELP_CENTER_URL } from '@unionkey/shared/src/config/appConfig';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import type { FormatXMLElementFn } from 'intl-messageformat';
 

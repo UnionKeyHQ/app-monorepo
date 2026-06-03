@@ -1,13 +1,13 @@
 import { useCallback, useContext } from 'react';
 
-import type { IFieldErrorProps } from '@onekeyhq/components';
-import { useFormContext } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalAddressBookRoutes } from '@onekeyhq/shared/src/routes/addressBook';
+import type { IFieldErrorProps } from '@unionkey/components';
+import { useFormContext } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { HyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import type { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes } from '@unionkey/shared/src/routes';
+import { EModalAddressBookRoutes } from '@unionkey/shared/src/routes/addressBook';
 
 import { AddressInputContext } from './AddressInputContext';
 

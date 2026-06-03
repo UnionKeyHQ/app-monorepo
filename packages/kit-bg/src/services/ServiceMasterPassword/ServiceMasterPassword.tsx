@@ -5,11 +5,11 @@ import {
   encryptStringAsync,
   ensureSensitiveTextEncoded,
   sha512Async,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import {
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   ALWAYS_VERIFY_PASSCODE_WHEN_CHANGE_SET_MASTER_PASSWORD,
   ENCRYPTED_SECURITY_PASSWORD_R1_FOR_SERVER_PREFIX,
@@ -17,24 +17,24 @@ import {
   ENCRYPTED_SECURITY_PASSWORD_SPLITTER,
   EPrimeCloudSyncDataType,
   RESET_CLOUD_SYNC_MASTER_PASSWORD_UUID as RESET_MASTER_PASSWORD_UUID,
-} from '@onekeyhq/shared/src/consts/primeConsts';
-import { IncorrectMasterPassword } from '@onekeyhq/shared/src/errors';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
+} from '@unionkey/shared/src/consts/primeConsts';
+import { IncorrectMasterPassword } from '@unionkey/shared/src/errors';
+import { EUnionKeyErrorClassNames } from '@unionkey/shared/src/errors/types/errorTypes';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkey/shared/src/locale/enum/translations';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import stringUtils from '@unionkey/shared/src/utils/stringUtils';
 import type {
   ICloudSyncCredential,
   ICloudSyncCredentialForLock,
   ICloudSyncPayloadLock,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 import type {
   ESecurityPasswordType,
   IPrimeServerUserInfo,
-} from '@onekeyhq/shared/types/prime/primeTypes';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/types/prime/primeTypes';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 import { primeMasterPasswordPersistAtom } from '../../states/jotai/atoms/prime';
 import ServiceBase from '../ServiceBase';
@@ -203,7 +203,7 @@ class ServiceMasterPassword extends ServiceBase {
       if (
         errorUtils.isErrorByClassName({
           error,
-          className: EOneKeyErrorClassNames.IncorrectPassword,
+          className: EUnionKeyErrorClassNames.IncorrectPassword,
         })
       ) {
         throw new IncorrectMasterPassword();

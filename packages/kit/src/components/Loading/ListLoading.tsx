@@ -1,4 +1,4 @@
-import { Skeleton, Stack, XStack } from '@onekeyhq/components';
+import { Skeleton, Stack, XStack } from '@unionkey/components';
 
 import { ListItem } from '../ListItem';
 

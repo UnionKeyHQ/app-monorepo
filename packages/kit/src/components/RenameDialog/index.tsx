@@ -3,7 +3,7 @@ import { useState } from 'react';
 import natsort from 'natsort';
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem } from '@onekeyhq/components';
+import type { ISelectItem } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -12,17 +12,17 @@ import {
   Select,
   Stack,
   Toast,
-} from '@onekeyhq/components';
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import type { IDBIndexedAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/components';
+import type { IDialogShowProps } from '@unionkey/components/src/composite/Dialog/type';
+import type { IDBIndexedAccount } from '@unionkey/kit-bg/src/dbs/local/types';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { v4CoinTypeToNetworkId } from '@onekeyhq/kit-bg/src/migrations/v4ToV5Migration/v4CoinTypeToNetworkId';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import { v4CoinTypeToNetworkId } from '@unionkey/kit-bg/src/migrations/v4ToV5Migration/v4CoinTypeToNetworkId';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
 import type {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkey/shared/src/types/changeHistory';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../hooks/usePromiseResult';

@@ -1,26 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return */
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { INTERNAL_METHOD_PREFIX } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import { INTERNAL_METHOD_PREFIX } from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   getBackgroundServiceApi,
   throwMethodNotFound,
-} from '@onekeyhq/shared/src/background/backgroundUtils';
-import { globalErrorHandler } from '@onekeyhq/shared/src/errors/globalErrorHandler';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
+} from '@unionkey/shared/src/background/backgroundUtils';
+import { globalErrorHandler } from '@unionkey/shared/src/errors/globalErrorHandler';
+import errorToastUtils from '@unionkey/shared/src/errors/utils/errorToastUtils';
 import type {
   EAppEventBusNames,
   IAppEventBusPayload,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EEventBusBroadcastMethodNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   ensurePromiseObject,
   ensureSerializable,
-} from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkey/shared/src/utils/assertUtils';
 
 import { jotaiBgSync } from '../states/jotai/jotaiBgSync';
 

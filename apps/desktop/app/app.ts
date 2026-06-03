@@ -24,16 +24,16 @@ import logger from 'electron-log/main';
 import si from 'systeminformation';
 
 import {
-  ONEKEY_APP_DEEP_LINK_NAME,
+  UNIONKEY_APP_DEEP_LINK_NAME,
   WALLET_CONNECT_DEEP_LINK_NAME,
-} from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+} from '@unionkey/shared/src/consts/deeplinkConsts';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
 import type {
   IDesktopAppState,
   IDesktopStoreMap,
   IDesktopSubModuleInitParams,
   IMediaType,
-} from '@onekeyhq/shared/types/desktop';
+} from '@unionkey/shared/types/desktop';
 
 import appDevOnlyApi from './appDevOnlyApi';
 import appNotification from './appNotification';
@@ -110,7 +110,7 @@ const initMenu = () => {
       submenu: [
         {
           role: isMac ? 'about' : undefined,
-          label: i18nText(ETranslations.menu_about_onekey_wallet),
+          label: i18nText(ETranslations.menu_about_unionkey_wallet),
           click: isMac
             ? undefined
             : () => {
@@ -164,7 +164,7 @@ const initMenu = () => {
         isMac && {
           role: 'hide',
           accelerator: 'Alt+CmdOrCtrl+H',
-          label: i18nText(ETranslations.menu_hide_onekey_wallet),
+          label: i18nText(ETranslations.menu_hide_unionkey_wallet),
         },
         isMac && {
           role: 'unhide',
@@ -174,7 +174,7 @@ const initMenu = () => {
         {
           role: 'quit',
           accelerator: 'CmdOrCtrl+Q',
-          label: i18nText(ETranslations.menu_quit_onekey_wallet),
+          label: i18nText(ETranslations.menu_quit_unionkey_wallet),
         },
       ].filter(Boolean),
     },
@@ -417,7 +417,7 @@ function createMainWindow() {
     savedWinBounds = {};
   }
   const browserWindow = new BrowserWindow({
-    show: false,
+    show: isDev,
     title: APP_NAME,
     titleBarStyle: 'hidden',
     titleBarOverlay: !isMac,
@@ -472,8 +472,8 @@ function createMainWindow() {
     browserWindow.webContents.openDevTools();
   }
 
-  const src = isDev
-    ? 'http://localhost:3001/'
+const src = isDev
+    ? 'http://localhost:3099/'
     : formatUrl({
         pathname: 'index.html',
         protocol: 'file',
@@ -494,11 +494,12 @@ function createMainWindow() {
     logger.info('browserWindow >>>> did-finish-load');
     // fix white flicker on Windows & Linux
     if (!isMac) {
-      showMainWindow();
+      browserWindow.show();
+      browserWindow.focus();
     }
     const safelyBrowserWindow = getSafelyBrowserWindow();
     safelyBrowserWindow?.webContents.send(
-      ipcMessageKeys.SET_ONEKEY_DESKTOP_GLOBALS,
+      ipcMessageKeys.SET_UNIONKEY_DESKTOP_GLOBALS,
       {
         resourcesPath,
         staticPath: `file://${staticPath}`,
@@ -528,6 +529,10 @@ function createMainWindow() {
   browserWindow.webContents.on('dom-ready', () => {
     isAppReady = true;
     logger.info('set isAppReady on browserWindow dom-ready', isAppReady);
+    if (isDev) {
+      browserWindow.show();
+      browserWindow.focus();
+    }
   });
 
   browserWindow.webContents.setWindowOpenHandler(({ url }) => {
@@ -876,7 +881,7 @@ function createMainWindow() {
 
   app.on('login', (event, webContents, request, authInfo, callback) => {
     event.preventDefault();
-    callback('onekey', 'juDUIpz3lVnubZ2aHOkwBB6SJotYynyb');
+    callback('unionkey', 'juDUIpz3lVnubZ2aHOkwBB6SJotYynyb');
   });
 
   // Prevents clicking on links to open new Windows
@@ -930,8 +935,8 @@ function createMainWindow() {
         url.startsWith('http://127.0.0.1:21320/') ||
         url.startsWith('http://localhost:21320/')
       ) {
-        // resolve onekey bridge CORS error
-        details.requestHeaders.Origin = 'https://jssdk.onekey.so';
+        // resolve unionkey bridge CORS error
+        details.requestHeaders.Origin = 'https://jssdk.unionkey.so';
       } else if (url.startsWith('https://mainnet.optimism.io/')) {
         // add metamask header to resolve rate-limit
         details.requestHeaders.Origin =
@@ -1083,7 +1088,7 @@ app.on('window-all-closed', () => {
   quitOrMinimizeApp();
 });
 
-// Closing the cause context: https://onekeyhq.atlassian.net/browse/OK-8096
+// Closing the cause context: https://unionkey.atlassian.net/browse/OK-8096
 app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy');
 
 if (isDev) {
@@ -1097,23 +1102,23 @@ if (isDev) {
 if (process.defaultApp) {
   if (process.argv.length >= 2) {
     app.setAsDefaultProtocolClient(
-      ONEKEY_APP_DEEP_LINK_NAME,
+      UNIONKEY_APP_DEEP_LINK_NAME,
       process.execPath,
       // reassign args to argv[1]  ?
       [path.resolve(process.argv[1])],
     );
   }
 } else {
-  app.setAsDefaultProtocolClient(ONEKEY_APP_DEEP_LINK_NAME);
+  app.setAsDefaultProtocolClient(UNIONKEY_APP_DEEP_LINK_NAME);
 }
 if (!app.isDefaultProtocolClient(WALLET_CONNECT_DEEP_LINK_NAME)) {
   // Define custom protocol handler. Deep linking works on packaged versions of the application!
   app.setAsDefaultProtocolClient(WALLET_CONNECT_DEEP_LINK_NAME);
 }
 // also define `protocols` at apps/desktop/electron-builder.config.js
-if (!app.isDefaultProtocolClient(ONEKEY_APP_DEEP_LINK_NAME)) {
+if (!app.isDefaultProtocolClient(UNIONKEY_APP_DEEP_LINK_NAME)) {
   // Define custom protocol handler. Deep linking works on packaged versions of the application!
-  app.setAsDefaultProtocolClient(ONEKEY_APP_DEEP_LINK_NAME);
+  app.setAsDefaultProtocolClient(UNIONKEY_APP_DEEP_LINK_NAME);
 }
 
 if (isWin) {

@@ -7,7 +7,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const notifier = require('node-notifier');
 const { exit } = require('process');
 const { createResolveExtensions } = require('./utils');
-const { isDev, PUBLIC_URL, NODE_ENV, ONEKEY_PROXY } = require('./constant');
+const { isDev, PUBLIC_URL, NODE_ENV, UNIONKEY_PROXY } = require('./constant');
 
 const IS_EAS_BUILD = !!process.env.EAS_BUILD;
 
@@ -17,7 +17,7 @@ class BuildDoneNotifyPlugin {
       if (IS_EAS_BUILD) {
         exit(0);
       } else {
-        const msg = `OneKey Build at ${new Date().toLocaleTimeString()}, completed in ${
+        const msg = `UnionKey Build at ${new Date().toLocaleTimeString()}, completed in ${
           (compilation.endTime - compilation.startTime) / 1000
         }s`;
         setTimeout(() => {
@@ -73,7 +73,7 @@ const baseResolve = ({ platform, configName, basePath }) => ({
   },
   fallback: {
     'crypto': require.resolve(
-      '@onekeyhq/shared/src/modules3rdParty/cross-crypto/index.js',
+      '@unionkey/shared/src/modules3rdParty/cross-crypto/index.js',
     ),
     stream: require.resolve('stream-browserify'),
     path: false,
@@ -98,7 +98,7 @@ const basePlugins = [
     __DEV__: isDev,
     process: {
       env: {
-        ONEKEY_PROXY: JSON.stringify(ONEKEY_PROXY),
+        UNIONKEY_PROXY: JSON.stringify(UNIONKEY_PROXY),
         NODE_ENV: JSON.stringify(NODE_ENV),
         TAMAGUI_TARGET: JSON.stringify('web'),
       },

@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IOnboardingParamList } from '@unionkey/shared/src/routes';
 import {
   EModalRoutes,
   EOnboardingPages,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 export const isOnboardingFromExtensionUrl = () => {
   // eslint-disable-next-line unicorn/prefer-global-this

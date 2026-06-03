@@ -3,7 +3,7 @@
 require('./setimmediateShim');
 require('./intlShim');
 require('react-native-url-polyfill/auto');
-const platformEnv = require('@onekeyhq/shared/src/platformEnv');
+const platformEnv = require('@unionkey/shared/src/platformEnv');
 
 const shimsInjectedLog = (str) => console.log(`Shims Injected log: ${str}`);
 

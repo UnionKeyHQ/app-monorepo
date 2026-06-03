@@ -3,8 +3,8 @@ import { TransactionBuilder } from '@alephium/web3';
 import {
   EAlphTxType,
   type IEncodedTxAlph,
-} from '@onekeyhq/core/src/chains/alph/types';
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+} from '@unionkey/core/src/chains/alph/types';
+import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
 
 import { Provider } from './provider';
 

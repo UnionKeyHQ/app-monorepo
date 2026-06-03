@@ -1,9 +1,9 @@
 import { memo, useEffect, useMemo } from 'react';
 
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useAppIsLockedAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import { useRouteIsFocused as useIsFocused } from '@unionkey/kit/src/hooks/useRouteIsFocused';
+import { useAppIsLockedAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';

@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect } from 'react';
 
 import { InputAccessoryView } from 'react-native';
 
-import { IconButton, SizableText, Stack, YStack } from '@onekeyhq/components';
+import { IconButton, SizableText, Stack, YStack } from '@unionkey/components';
 import {
   useSwapActions,
   useSwapFromTokenAmountAtom,
@@ -16,18 +16,18 @@ import {
   useSwapSelectedToTokenBalanceAtom,
   useSwapToTokenAmountAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/kit/src/states/jotai/contexts/swap';
+import { validateAmountInput } from '@unionkey/kit/src/utils/validateAmountInput';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   checkWrappedTokenPair,
   equalTokenNoCaseSensitive,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkey/shared/src/utils/tokenUtils';
 import {
   ESwapDirectionType,
   ESwapTabSwitchType,
   SwapAmountInputAccessoryViewID,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { useSwapFromAccountNetworkSync } from '../../hooks/useSwapAccount';
 import { useSwapApproving } from '../../hooks/useSwapApproving';

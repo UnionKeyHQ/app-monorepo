@@ -3,20 +3,20 @@ import { useCallback, useState } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { Dialog, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Dialog, Toast } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalAddressBookRoutes,
   IModalAddressBookParamList,
-} from '@onekeyhq/shared/src/routes/addressBook';
+} from '@unionkey/shared/src/routes/addressBook';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkey/shared/src/types/changeHistory';
 
 import { CreateOrEditContent } from '../../components/CreateOrEditContent';
 

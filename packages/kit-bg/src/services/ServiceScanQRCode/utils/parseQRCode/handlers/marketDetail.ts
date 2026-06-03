@@ -1,13 +1,13 @@
 import {
   WEB_APP_URL,
   WEB_APP_URL_DEV,
-} from '@onekeyhq/shared/src/config/appConfig';
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
+} from '@unionkey/shared/src/config/appConfig';
+import { EQRCodeHandlerType } from '@unionkey/shared/types/qrCode';
 
 import type { IMarketDetailValue, IQRCodeHandler } from '../type';
 
 /*
-https://app.onekeytest.com/market/tokens/bitcoin
+https://app.unionkeytest.com/market/tokens/bitcoin
 */
 const marketDetail: IQRCodeHandler<IMarketDetailValue> = async (
   value,

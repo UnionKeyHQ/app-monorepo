@@ -1,13 +1,13 @@
 import {
   WEB_APP_URL,
   WEB_APP_URL_DEV,
-} from '@onekeyhq/shared/src/config/appConfig';
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
+} from '@unionkey/shared/src/config/appConfig';
+import { EQRCodeHandlerType } from '@unionkey/shared/types/qrCode';
 
 import type { IQRCodeHandler, IUrlAccountValue } from '../type';
 
 /*
-https://app.onekeytest.com/btc/3EuKgMjxH8t3zEpMoobSeofXzQ64u2Sfpi
+https://app.unionkeytest.com/btc/3EuKgMjxH8t3zEpMoobSeofXzQ64u2Sfpi
 */
 const urlAccount: IQRCodeHandler<IUrlAccountValue> = async (value, options) => {
   const urlValue = options?.urlResult;

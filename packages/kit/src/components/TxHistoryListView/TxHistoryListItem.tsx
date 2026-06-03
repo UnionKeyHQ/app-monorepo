@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, XStack } from '@onekeyhq/components';
-import { TxActionsListView } from '@onekeyhq/kit/src/components/TxActionListView';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ETxActionComponentType } from '@onekeyhq/shared/types';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
-import { EDecodedTxStatus, EReplaceTxType } from '@onekeyhq/shared/types/tx';
+import { Button, XStack } from '@unionkey/components';
+import { TxActionsListView } from '@unionkey/kit/src/components/TxActionListView';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { ETxActionComponentType } from '@unionkey/shared/types';
+import type { IAccountHistoryTx } from '@unionkey/shared/types/history';
+import { EDecodedTxStatus, EReplaceTxType } from '@unionkey/shared/types/tx';
 
 import { useReplaceTx } from '../../hooks/useReplaceTx';
 

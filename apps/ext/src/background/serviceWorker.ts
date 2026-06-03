@@ -4,7 +4,7 @@
 
 // BG:
 // disable service-worker cache after extension reload.
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 function disableCacheInBackground() {
   // only service-worker background only (manifest v3)

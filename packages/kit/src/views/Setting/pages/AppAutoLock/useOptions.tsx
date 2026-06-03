@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { usePrimeCloudSyncPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ELockDuration } from '@onekeyhq/shared/src/consts/appAutoLockConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { usePrimeCloudSyncPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ELockDuration } from '@unionkey/shared/src/consts/appAutoLockConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import type { IListItemSelectOption } from '../../components/ListItemSelect';
 

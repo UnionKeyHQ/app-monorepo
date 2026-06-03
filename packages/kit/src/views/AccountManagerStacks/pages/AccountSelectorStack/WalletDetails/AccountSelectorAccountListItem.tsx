@@ -1,31 +1,31 @@
 import { useCallback, useMemo } from 'react';
 
-import type { IButtonProps } from '@onekeyhq/components';
-import { IconButton, SizableText, Stack, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
-import { AccountSelectorCreateAddressButton } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorCreateAddressButton';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import type { IButtonProps } from '@unionkey/components';
+import { IconButton, SizableText, Stack, XStack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountAvatar } from '@unionkey/kit/src/components/AccountAvatar';
+import { AccountSelectorCreateAddressButton } from '@unionkey/kit/src/components/AccountSelector/AccountSelectorCreateAddressButton';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   useAccountSelectorActions,
   useActiveAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import type {
   IDBAccount,
   IDBDevice,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 import type {
   IAccountSelectorAccountsListSectionData,
   IAccountSelectorSelectedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { useIndexedAccountAddressCreationStateAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { useIndexedAccountAddressCreationStateAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 import { AccountEditButton } from '../../../components/AccountEdit';
 

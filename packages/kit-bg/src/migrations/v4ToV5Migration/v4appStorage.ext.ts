@@ -1,4 +1,4 @@
-import extensionStorageInstance from '@onekeyhq/shared/src/storage/instance/extensionStorageInstance';
+import extensionStorageInstance from '@unionkey/shared/src/storage/instance/extensionStorageInstance';
 
 import type { AsyncStorageStatic } from '@react-native-async-storage/async-storage';
 

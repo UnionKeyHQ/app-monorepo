@@ -2,17 +2,17 @@
 import { isNil } from 'lodash';
 import { utils } from 'tronweb';
 
-import type { IEncodedTxTron } from '@onekeyhq/core/src/chains/tron/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxTron } from '@unionkey/core/src/chains/tron/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -40,7 +40,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -60,7 +60,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             coinName,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
             template,
           }) => {
             const buildFullPath = (p: { index: number }) =>
@@ -94,7 +94,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       '{index}',
             //       `${index}`,
             //     )}`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     chainId: Number(chainId),
             //   })),
             // });

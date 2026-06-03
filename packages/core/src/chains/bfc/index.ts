@@ -1,4 +1,4 @@
-import { IMPL_BFC } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_BFC } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

@@ -4,7 +4,7 @@ import { PureComponent } from 'react';
 
 import { SafeAreaView, Text } from 'react-native';
 
-import { captureException } from '@onekeyhq/shared/src/modules3rdParty/sentry';
+import { captureException } from '@unionkey/shared/src/modules3rdParty/sentry';
 
 type IErrorBoundaryProps = {
   children: React.ReactNode;

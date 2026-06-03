@@ -1,5 +1,5 @@
 /* eslint-disable spellcheck/spell-checker */
-import { Button, Toast, ToastContent, YStack } from '@onekeyhq/components';
+import { Button, Toast, ToastContent, YStack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 
@@ -41,7 +41,7 @@ const ToastGallery = () => (
                 Toast.success({
                   title: 'url!',
                   message:
-                    'look, <url>https://onekey.so<underline>here</underline></url>. OneKey.',
+                    'look, <url>https://unionkey.so<underline>here</underline></url>. UnionKey.',
                 });
               }}
             >
@@ -337,7 +337,7 @@ const ToastGallery = () => (
                   duration: ONE_HOUR,
                   title:
                     'A few weeks with the Daylight DC-1 tablet: rethinking screen time',
-                  message: `So far, this thing doesn’t seem like a very impressive tablet. But Daylight is more a display company than a tablet company — and the display is pretty great.`,
+                  message: `So far, this thing doesn’t seem like a very impressive tablet. But Daylight is more a display company than a tablet company �?and the display is pretty great.`,
                   actions: [
                     <Button key="1" variant="primary" size="small">
                       Primary
@@ -373,7 +373,7 @@ const ToastGallery = () => (
                 Toast.warning({
                   duration: ONE_HOUR,
                   title:
-                    'You can only transfer funds to accounts within the wallet or to allowlisted addresses in the address book. If you understand the risks, you can enable it in <url>https://app.onekey.so/send/protection<underline>Settings >> Protection</underline></url>',
+                    'You can only transfer funds to accounts within the wallet or to allowlisted addresses in the address book. If you understand the risks, you can enable it in <url>https://app.unionkey.so/send/protection<underline>Settings >> Protection</underline></url>',
                 });
               }}
             >
@@ -425,7 +425,7 @@ const ToastGallery = () => (
                     console.log('onClose');
                   },
                   duration: ONE_HOUR,
-                  title: 'OneKey Bridge test',
+                  title: 'UnionKey Bridge test',
                   actions: (
                     <Button
                       variant="primary"

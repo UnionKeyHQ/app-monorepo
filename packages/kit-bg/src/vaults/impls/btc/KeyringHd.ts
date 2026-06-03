@@ -1,7 +1,7 @@
-import { checkBtcAddressIsUsed } from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import { type ISignedTxPro } from '@onekeyhq/core/src/types';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { checkBtcAddressIsUsed } from '@unionkey/core/src/chains/btc/sdkBtc';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import { type ISignedTxPro } from '@unionkey/core/src/types';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 
@@ -40,7 +40,7 @@ export class KeyringHd extends KeyringHdBase {
       indexes: params.indexes,
     });
 
-    const sdkBtc = await import('@onekeyhq/core/src/chains/btc/sdkBtc');
+    const sdkBtc = await import('@unionkey/core/src/chains/btc/sdkBtc');
     sdkBtc.initBitcoinEcc();
     defaultLogger.account.accountCreatePerf.initBitcoinEccDone();
 

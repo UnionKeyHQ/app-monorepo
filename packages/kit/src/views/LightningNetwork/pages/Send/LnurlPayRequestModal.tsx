@@ -4,28 +4,28 @@ import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Page, Toast, useForm } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
-import DappOpenModalPage from '@onekeyhq/kit/src/views/DAppConnection/pages/DappOpenModalPage';
+import { Page, Toast, useForm } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkey/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkey/kit/src/hooks/useDappQuery';
+import { useSignatureConfirm } from '@unionkey/kit/src/hooks/useSignatureConfirm';
+import DappOpenModalPage from '@unionkey/kit/src/views/DAppConnection/pages/DappOpenModalPage';
 // TODO: Move lightning utils to shared module
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { isLightningAddress } from '@onekeyhq/kit-bg/src/vaults/impls/lightning/sdkLightning/lnurl';
-import type { ITransferInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { isLightningAddress } from '@unionkey/kit-bg/src/vaults/impls/lightning/sdkLightning/lnurl';
+import type { ITransferInfo } from '@unionkey/kit-bg/src/vaults/types';
+import { UnionKeyError } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalSignatureConfirmRoutes,
   IModalSignatureConfirmParamList,
-} from '@onekeyhq/shared/src/routes';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/routes';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import { EDAppModalPageStatus } from '@unionkey/shared/types/dappConnection';
 import {
   ELightningUnit,
   type ILNURLPaymentInfo,
-} from '@onekeyhq/shared/types/lightning';
+} from '@unionkey/shared/types/lightning';
 
 import {
   DAppAccountListStandAloneItem,
@@ -143,7 +143,7 @@ function LnurlPayRequestModal() {
         setIsLoading(false);
         dappApprove.reject();
         const message = (e as Error)?.message ?? e;
-        throw new OneKeyError({
+        throw new UnionKeyError({
           message,
           autoToast: true,
         });
@@ -202,7 +202,7 @@ function LnurlPayRequestModal() {
         console.log('lnurl withdraw error: ', e);
         dappApprove.reject();
         const message = (e as Error)?.message ?? e;
-        throw new OneKeyError({
+        throw new UnionKeyError({
           message,
           autoToast: true,
         });

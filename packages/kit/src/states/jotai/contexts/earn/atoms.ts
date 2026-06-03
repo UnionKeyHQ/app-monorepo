@@ -1,12 +1,12 @@
 import memoizee from 'memoizee';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   atom,
   createJotaiContext,
-} from '@onekeyhq/kit/src/states/jotai/utils/createJotaiContext';
-import type { IEarnPermitCache } from '@onekeyhq/shared/types/earn';
-import type { IEarnAtomData } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/kit/src/states/jotai/utils/createJotaiContext';
+import type { IEarnPermitCache } from '@unionkey/shared/types/earn';
+import type { IEarnAtomData } from '@unionkey/shared/types/staking';
 
 const {
   Provider: ProviderJotaiContextEarn,

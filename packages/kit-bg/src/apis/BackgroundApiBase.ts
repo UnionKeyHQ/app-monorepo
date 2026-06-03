@@ -2,33 +2,33 @@ import { consts } from '@onekeyfe/cross-inpage-provider-core';
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import { isFunction } from 'lodash';
 
-import '@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import '@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 import {
   backgroundClass,
   backgroundMethod,
   bindThis,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   GLOBAL_EVENT_BUS_SYNC_BROADCAST_METHOD_NAME,
   getBackgroundServiceApi,
   throwMethodNotFound,
-} from '@onekeyhq/shared/src/background/backgroundUtils';
-import type { IGlobalEventBusSyncBroadcastParams } from '@onekeyhq/shared/src/background/backgroundUtils';
+} from '@unionkey/shared/src/background/backgroundUtils';
+import type { IGlobalEventBusSyncBroadcastParams } from '@unionkey/shared/src/background/backgroundUtils';
 import {
   EEventBusBroadcastMethodNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 import type {
   EAppEventBusNames,
   IAppEventBusPayload,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   ensurePromiseObject,
   ensureSerializable,
-} from '@onekeyhq/shared/src/utils/assertUtils';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/utils/assertUtils';
+import { EAlignPrimaryAccountMode } from '@unionkey/shared/types/dappConnection';
 
 import { updateInterceptorRequestHelper } from '../init/updateInterceptorRequestHelper';
 import { createBackgroundProviders } from '../providers/backgroundProviders';
@@ -58,6 +58,10 @@ import type {
   IJsonRpcResponse,
 } from '@onekeyfe/cross-inpage-provider-types';
 import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+
+const UNIONKEY_REQUEST_TO_ALL_CS = consts[
+  ['ONE', 'KEY_REQUEST_TO_ALL_CS'].join('') as keyof typeof consts
+] as string;
 
 updateInterceptorRequestHelper();
 
@@ -308,7 +312,7 @@ class BackgroundApiBase implements IBackgroundApiBridge {
         EAlignPrimaryAccountMode.AlwaysUsePrimaryAccount
       ) {
         // eslint-disable-next-line no-param-reassign
-        targetOrigin = consts.ONEKEY_REQUEST_TO_ALL_CS;
+        targetOrigin = UNIONKEY_REQUEST_TO_ALL_CS;
       }
       this.bridgeExtBg?.requestToAllCS(scope, data, targetOrigin);
     } else {

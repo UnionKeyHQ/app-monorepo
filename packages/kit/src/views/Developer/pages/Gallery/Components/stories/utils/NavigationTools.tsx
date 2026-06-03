@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { SizableText } from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
+import { SizableText } from '@unionkey/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkey/kit/src/hooks/useRouteIsFocused';
 
 export function NavigationFocusTools({
   componentName,

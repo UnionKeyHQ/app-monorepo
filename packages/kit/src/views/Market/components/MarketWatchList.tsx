@@ -12,14 +12,14 @@ import {
   YStack,
   getSharedButtonStyles,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IMarketCategory } from '@onekeyhq/shared/types/market';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IMarketCategory } from '@unionkey/shared/types/market';
 
 import {
   useMarketWatchListAtom,
@@ -93,7 +93,7 @@ function RecommendItem({
   );
 }
 
-const maxSize = 8;
+const maxSize = 50;
 export function MarketWatchList({ category }: { category: IMarketCategory }) {
   const intl = useIntl();
   const [{ data: watchListCoingeckoIds, isMounted }] = useMarketWatchListAtom();

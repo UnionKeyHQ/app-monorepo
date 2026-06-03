@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { Alert, Badge, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+import type { ISizableTextProps } from '@unionkey/components';
+import { Alert, Badge, SizableText, XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale/enum/translations';
 
 export interface ICountDownCalendarAlertProps {
   effectiveTimeAt: number;

@@ -8,9 +8,9 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { IBadgeType } from '@onekeyhq/components';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/components';
+import type { IBadgeType } from '@unionkey/components';
+import type { IDApp } from '@unionkey/shared/types/discovery';
 
 export function ChunkedItem({
   item,

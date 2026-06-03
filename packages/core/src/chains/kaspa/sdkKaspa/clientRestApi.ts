@@ -1,9 +1,9 @@
 import Axios from 'axios';
 import { get } from 'lodash';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import sdk from './sdk';
 import { submitTransactionFromString } from './transaction';
@@ -129,20 +129,20 @@ export class RestAPIClient {
         const message: string = get(error, 'response.data.error', '');
 
         if (message.match(/payment of \d+ is dust/)) {
-          throw new OneKeyInternalError({
+          throw new UnionKeyInternalError({
             message,
             key: ETranslations.send_amount_too_small,
           });
         }
 
         if (message.toLowerCase().indexOf('insufficient balance') !== -1) {
-          throw new OneKeyInternalError({
+          throw new UnionKeyInternalError({
             message,
             key: ETranslations.earn_insufficient_balance,
           });
         }
 
-        throw new OneKeyInternalError(message);
+        throw new UnionKeyInternalError(message);
       });
   }
 

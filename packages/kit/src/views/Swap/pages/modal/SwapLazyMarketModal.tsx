@@ -2,16 +2,16 @@ import { useLayoutEffect } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, Spinner, Stack } from '@onekeyhq/components';
-import type { IPageScreenProps } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useLazyMarketTradeActions } from '@onekeyhq/kit/src/views/Market/components/tradeHook';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Page, Spinner, Stack } from '@unionkey/components';
+import type { IPageScreenProps } from '@unionkey/components';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { useLazyMarketTradeActions } from '@unionkey/kit/src/views/Market/components/tradeHook';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/routes/swap';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 function BaseSwapLazyMarketModal({
   route,

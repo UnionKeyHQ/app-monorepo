@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 
-import type { IYStackProps } from '@onekeyhq/components';
+import type { IYStackProps } from '@unionkey/components';
 import {
   Heading,
   Icon,
@@ -10,9 +10,9 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import NotificationsHelpCenterInstruction from '../../Setting/components/NotificationsHelpCenterInstruction';
 import NotificationsTestButton from '../../Setting/components/NotificationsTestButton';
@@ -70,7 +70,7 @@ function PlatformNotification({
             })}
           </Heading>
           <SizableText size="$bodySm" color="$textSubdued">
-            OneKey
+            UnionKey
           </SizableText>
         </Stack>
         <Switch value size="small" bg="$bgInfoStrong" />
@@ -99,7 +99,7 @@ function EnablePushNotificationsTutorial() {
       <PlatformNotification
         icon={
           <Image
-            source={require('@onekeyhq/kit/assets/logo-decorated.png')}
+            source={require('@unionkey/kit/assets/logo-decorated.png')}
             w="$8"
             h="$8"
           />

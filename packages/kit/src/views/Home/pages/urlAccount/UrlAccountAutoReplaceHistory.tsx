@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { usePrevious } from '@onekeyhq/kit/src/hooks/usePrevious';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
+import { usePrevious } from '@unionkey/kit/src/hooks/usePrevious';
+import { useRouteIsFocused as useIsFocused } from '@unionkey/kit/src/hooks/useRouteIsFocused';
 import {
   useAccountSelectorSceneInfo,
   useActiveAccount,
   useSelectedAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { replaceUrlAccountLandingRoute } from './urlAccountUtils';
 

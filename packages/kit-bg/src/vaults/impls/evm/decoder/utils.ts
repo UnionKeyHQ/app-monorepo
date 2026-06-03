@@ -1,8 +1,8 @@
 import { isNil, isString } from 'lodash';
 
-import { ethers } from '@onekeyhq/core/src/chains/evm/sdkEvm/ethers';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import { checkIsEmptyData } from '@onekeyhq/shared/src/utils/evmUtils';
+import { ethers } from '@unionkey/core/src/chains/evm/sdkEvm/ethers';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import { checkIsEmptyData } from '@unionkey/shared/src/utils/evmUtils';
 
 export const InfiniteAmountText = 'Infinite';
 export const InfiniteAmountHex =

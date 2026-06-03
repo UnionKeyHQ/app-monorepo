@@ -8,11 +8,11 @@ import {
   Stack,
   getTokenValue,
   useMedia,
-} from '@onekeyhq/components';
-import type { IScrollViewProps, IStackProps } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { ICategory, IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/components';
+import type { IScrollViewProps, IStackProps } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { ICategory, IDApp } from '@unionkey/shared/types/discovery';
 
 import { ChunkedItem } from '../../../components/ChunkedItem';
 

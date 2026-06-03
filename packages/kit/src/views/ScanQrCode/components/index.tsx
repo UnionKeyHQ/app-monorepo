@@ -13,15 +13,15 @@ import {
   SizableText,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import extUtils, { EXT_HTML_FILES } from '@onekeyhq/shared/src/utils/extUtils';
+} from '@unionkey/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkey/kit/src/hooks/useRouteIsFocused';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import extUtils, { EXT_HTML_FILES } from '@unionkey/shared/src/utils/extUtils';
 import {
   openSettings,
   openUrlExternal,
-} from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/shared/src/utils/openUrlUtils';
 
 import { ScanCamera } from './ScanCamera';
 

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ColorTokens, IKeyOfIcons } from '@onekeyhq/components';
+import type { ColorTokens, IKeyOfIcons } from '@unionkey/components';
 import {
   Badge,
   HeaderIconButton,
@@ -11,9 +11,9 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import type { IHyperlinkTextProps } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import type { IHyperlinkTextProps } from '@unionkey/kit/src/components/HyperlinkText';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { HyperlinkText } from '../HyperlinkText';
 

@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import { ProviderJotaiContextSwap } from '../../../states/jotai/contexts/swap';
 import { useJotaiContextRootStore } from '../../../states/jotai/utils/useJotaiContextRootStore';

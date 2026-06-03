@@ -1,5 +1,5 @@
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { EQRCodeHandlerType } from '@unionkey/shared/types/qrCode';
 
 import { parsePayUrl } from './utils';
 

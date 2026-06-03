@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IDBCustomRpc } from '@onekeyhq/shared/types/customRpc';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import type { IDBCustomRpc } from '@unionkey/shared/types/customRpc';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

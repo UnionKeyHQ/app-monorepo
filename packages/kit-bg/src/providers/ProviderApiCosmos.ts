@@ -7,26 +7,26 @@ import BigNumber from 'bignumber.js';
 import { PubKey } from 'cosmjs-types/cosmos/crypto/ed25519/keys';
 import { AuthInfo, TxBody } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
 
-import type { ICosmosStdSignDoc } from '@onekeyhq/core/src/chains/cosmos/sdkCosmos';
+import type { ICosmosStdSignDoc } from '@unionkey/core/src/chains/cosmos/sdkCosmos';
 import {
   TransactionWrapper,
   deserializeTx,
   encodeSecp256k1Pubkey,
   getAminoSignDoc,
-} from '@onekeyhq/core/src/chains/cosmos/sdkCosmos';
+} from '@unionkey/core/src/chains/cosmos/sdkCosmos';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { COINTYPE_COSMOS } from '@onekeyhq/shared/src/engine/engineConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import type { IConnectionAccountInfo } from '@onekeyhq/shared/types/dappConnection';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { COINTYPE_COSMOS } from '@unionkey/shared/src/engine/engineConsts';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import type { IConnectionAccountInfo } from '@unionkey/shared/types/dappConnection';
+import { EMessageTypesCommon } from '@unionkey/shared/types/message';
 
 import ProviderApiBase from './ProviderApiBase';
 
@@ -214,7 +214,7 @@ class ProviderApiCosmos extends ProviderApiBase {
           this._enableFailureCache[origin] = now;
         } else {
           const chainId = params?.[0] ?? '';
-          throw new Error(`OneKey does not support ${chainId}.`);
+          throw new Error(`UnionKey does not support ${chainId}.`);
         }
         return false;
       }
@@ -635,7 +635,7 @@ class ProviderApiCosmos extends ProviderApiBase {
       });
 
     const network = networks.find((n) => n.chainId === params);
-    if (!network) throw new Error(`OneKey does not support ${params}`);
+    if (!network) throw new Error(`UnionKey does not support ${params}`);
 
     return {
       chainId: network.chainId,

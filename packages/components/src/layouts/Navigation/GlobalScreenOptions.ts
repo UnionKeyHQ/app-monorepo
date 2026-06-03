@@ -2,7 +2,7 @@
 
 import { TransitionPresets } from '@react-navigation/stack';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { extAnimConfig } from './ExtAnimConfig';
 import { makeHeaderScreenOptions } from './Header';
@@ -49,7 +49,7 @@ export function clearStackNavigatorOptions(options?: {
     detachPreviousScreen: false,
     headerShown: false,
     animationEnabled: false,
-    // fix https://onekeyhq.atlassian.net/browse/OK-28686, you can use 100vh instead
+    // fix https://unionkey.atlassian.net/browse/OK-28686, you can use 100vh instead
     headerMode: 'float',
   };
 }

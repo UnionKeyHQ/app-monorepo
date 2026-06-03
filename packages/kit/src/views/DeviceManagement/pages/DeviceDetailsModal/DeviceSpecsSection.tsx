@@ -4,11 +4,11 @@ import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 import semver from 'semver';
 
-import { SizableText, XStack, YStack } from '@onekeyhq/components';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IHwQrWalletWithDevice } from '@onekeyhq/shared/types/account';
+import { SizableText, XStack, YStack } from '@unionkey/components';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import type { IHwQrWalletWithDevice } from '@unionkey/shared/types/account';
 
 const VERSION_PLACEHOLDER = '--';
 

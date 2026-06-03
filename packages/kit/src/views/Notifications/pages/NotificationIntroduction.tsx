@@ -2,11 +2,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Heading, Page, SizableText, Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { INotificationPermissionDetail } from '@onekeyhq/shared/types/notification';
-import { ENotificationPermission } from '@onekeyhq/shared/types/notification';
+import { Heading, Page, SizableText, Stack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { INotificationPermissionDetail } from '@unionkey/shared/types/notification';
+import { ENotificationPermission } from '@unionkey/shared/types/notification';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

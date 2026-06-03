@@ -4,7 +4,7 @@ import {
   NativeSectionList,
   YStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import type { IAddressBookSectionListProps } from './type';
 

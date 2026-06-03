@@ -2,7 +2,7 @@ import * as Sentry from '@sentry/electron/main';
 import isDev from 'electron-is-dev';
 import logger from 'electron-log/main';
 
-import { buildBasicOptions } from '@onekeyhq/shared/src/modules3rdParty/sentry/basicOptions';
+import { buildBasicOptions } from '@unionkey/shared/src/modules3rdParty/sentry/basicOptions';
 
 export const initSentry = () => {
   if (isDev) {

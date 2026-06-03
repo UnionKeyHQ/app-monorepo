@@ -2,7 +2,7 @@ import { startTransition, useEffect, useState } from 'react';
 
 import { View } from 'react-native';
 
-import { globalJotaiStorageReadyHandler } from '@onekeyhq/kit-bg/src/states/jotai/jotaiStorage';
+import { globalJotaiStorageReadyHandler } from '@unionkey/kit-bg/src/states/jotai/jotaiStorage';
 
 export function GlobalJotaiReady({ children }: { children: any }) {
   const [isReady, setIsReady] = useState(false);

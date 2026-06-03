@@ -1,91 +1,91 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { IModalSignatureConfirmParamList } from '@onekeyhq/shared/src/routes';
-import { EModalSignatureConfirmRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import type { IModalSignatureConfirmParamList } from '@unionkey/shared/src/routes';
+import { EModalSignatureConfirmRoutes } from '@unionkey/shared/src/routes';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 
 const TxConfirmFromDApp = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendConfirmFromDApp/SendConfirmFromDApp'
+      '@unionkey/kit/src/views/Send/pages/SendConfirmFromDApp/SendConfirmFromDApp'
     ),
 );
 
 const MessageConfirmFromDApp = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/SignatureConfirm/pages/MessageConfirm/MessageConfirmFromDapp'
+      '@unionkey/kit/src/views/SignatureConfirm/pages/MessageConfirm/MessageConfirmFromDapp'
     ),
 );
 const TxConfirmFromSwap = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendConfirmFromSwap/SendConfirmFromSwap'
+      '@unionkey/kit/src/views/Send/pages/SendConfirmFromSwap/SendConfirmFromSwap'
     ),
 );
 
 const TxTokenSelector = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AssetSelector/pages/TokenSelector'),
+  () => import('@unionkey/kit/src/views/AssetSelector/pages/TokenSelector'),
 );
 
 const TxDeriveTypesAddress = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkey/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 const TxDataInput = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendDataInput/SendDataInputContainer'
+      '@unionkey/kit/src/views/Send/pages/SendDataInput/SendDataInputContainer'
     ),
 );
 
 const TxReplace = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendReplaceTx/SendReplaceTxContainer'
+      '@unionkey/kit/src/views/Send/pages/SendReplaceTx/SendReplaceTxContainer'
     ),
 );
 
 const TxConfirm = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/SignatureConfirm/pages/TxConfirm/TxConfirm'
+      '@unionkey/kit/src/views/SignatureConfirm/pages/TxConfirm/TxConfirm'
     ),
 );
 
 const MessageConfirm = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/SignatureConfirm/pages/MessageConfirm/MessageConfirm'
+      '@unionkey/kit/src/views/SignatureConfirm/pages/MessageConfirm/MessageConfirm'
     ),
 );
 
 const LnurlPayRequestModal = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/LightningNetwork/pages/Send/LnurlPayRequestModal'
+      '@unionkey/kit/src/views/LightningNetwork/pages/Send/LnurlPayRequestModal'
     ),
 );
 
 const LnurlWithdrawModal = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/LightningNetwork/pages/Send/LnurlWithdrawModal'
+      '@unionkey/kit/src/views/LightningNetwork/pages/Send/LnurlWithdrawModal'
     ),
 );
 
 const LnurlAuthModal = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/LightningNetwork/pages/Send/LnurlAuthModal'
+      '@unionkey/kit/src/views/LightningNetwork/pages/Send/LnurlAuthModal'
     ),
 );
 
 const WeblnSendPaymentModal = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/LightningNetwork/pages/Webln/WeblnSendPaymentModal'
+      '@unionkey/kit/src/views/LightningNetwork/pages/Webln/WeblnSendPaymentModal'
     ),
 );
 

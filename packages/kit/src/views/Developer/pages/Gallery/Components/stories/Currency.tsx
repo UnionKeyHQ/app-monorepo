@@ -1,5 +1,5 @@
-import { Stack } from '@onekeyhq/components';
-import { Currency } from '@onekeyhq/kit/src/components/Currency';
+import { Stack } from '@unionkey/components';
+import { Currency } from '@unionkey/kit/src/components/Currency';
 
 import { Layout } from './utils/Layout';
 

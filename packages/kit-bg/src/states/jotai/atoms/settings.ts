@@ -1,10 +1,10 @@
-import type { ILocaleSymbol } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import { EHardwareTransportType, EOnekeyDomain } from '@onekeyhq/shared/types';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
-import { swapSlippageAutoValue } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import { ESwapSlippageSegmentKey } from '@onekeyhq/shared/types/swap/types';
+import type { ILocaleSymbol } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import { EHardwareTransportType, EUnionkeyDomain } from '@unionkey/shared/types';
+import { EAlignPrimaryAccountMode } from '@unionkey/shared/types/dappConnection';
+import { swapSlippageAutoValue } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import { ESwapSlippageSegmentKey } from '@unionkey/shared/types/swap/types';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';
@@ -34,7 +34,7 @@ export type ISettingsPersistAtom = {
   isFirstTimeSwap: boolean;
   swapBatchApproveAndSwap: boolean;
 
-  hardwareConnectSrc: EOnekeyDomain;
+  hardwareConnectSrc: EUnionkeyDomain;
   currencyInfo: {
     symbol: string;
     id: string;
@@ -66,7 +66,7 @@ export const settingsAtomInitialValue: ISettingsPersistAtom = {
   inscriptionProtection: true,
   isFirstTimeSwap: true,
   swapBatchApproveAndSwap: true,
-  hardwareConnectSrc: EOnekeyDomain.ONEKEY_SO,
+  hardwareConnectSrc: EUnionkeyDomain.UNIONKEY_SO,
   currencyInfo: {
     id: 'usd',
     symbol: '$',

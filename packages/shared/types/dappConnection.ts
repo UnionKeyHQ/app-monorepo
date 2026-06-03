@@ -1,5 +1,5 @@
-import type { IAccountSelectorAvailableNetworksMap } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import type { IAccountSelectorAvailableNetworksMap } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import type { IAccountSelectorSelectedAccount } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
 
 import type { INetworkAccount } from './account';
 import type { IInjectedProviderNamesStrings } from '@onekeyfe/cross-inpage-provider-types';

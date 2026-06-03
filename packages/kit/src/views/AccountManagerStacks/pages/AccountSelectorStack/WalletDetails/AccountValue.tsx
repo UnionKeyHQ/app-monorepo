@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import { Currency } from '@onekeyhq/kit/src/components/Currency';
-import NumberSizeableTextWrapper from '@onekeyhq/kit/src/components/NumberSizeableTextWrapper';
-import { useActiveAccountValueAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import { Currency } from '@unionkey/kit/src/components/Currency';
+import NumberSizeableTextWrapper from '@unionkey/kit/src/components/NumberSizeableTextWrapper';
+import { useActiveAccountValueAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 function AccountValue(accountValue: {
   accountId: string;

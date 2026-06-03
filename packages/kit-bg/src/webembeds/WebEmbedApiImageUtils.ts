@@ -1,4 +1,4 @@
-import imageUtils from '@onekeyhq/shared/src/utils/imageUtils';
+import imageUtils from '@unionkey/shared/src/utils/imageUtils';
 
 class WebEmbedApiImageUtils {
   async base64ImageToBitmap(params: {

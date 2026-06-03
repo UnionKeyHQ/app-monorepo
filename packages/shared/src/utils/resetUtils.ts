@@ -1,4 +1,4 @@
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 let isResetting = false;
 

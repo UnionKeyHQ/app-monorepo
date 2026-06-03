@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { Button } from '@onekeyhq/components';
+import { Button } from '@unionkey/components';
 
 import {
   useAccountSelectorContextData,
@@ -22,7 +22,7 @@ export function AccountSelectorTriggerLegacy({
   } = useSelectedAccount({ num });
 
   const { config } = contextData;
-  const title = `${config?.sceneName || ''} 账户选择器 🔗  ${num}`;
+  const title = `${config?.sceneName || ''} 账户选择�?🔗  ${num}`;
   const showAccountSelector = useCallback(() => {
     throw new Error('showAccountSelector legacy not implemented');
   }, []);

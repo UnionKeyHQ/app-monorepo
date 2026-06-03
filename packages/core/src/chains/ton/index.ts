@@ -1,4 +1,4 @@
-import { IMPL_TON } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_TON } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

@@ -1,7 +1,7 @@
-import type { IOneKeyAPIBaseResponse } from '@onekeyhq/shared/types/request';
+import type { IUnionKeyAPIBaseResponse } from '@unionkey/shared/types/request';
 
 /** Accounts */
-export type ICreateUserResponse = IOneKeyAPIBaseResponse<{
+export type ICreateUserResponse = IUnionKeyAPIBaseResponse<{
   id: number;
   login: string;
 }>;
@@ -12,7 +12,7 @@ export type IAuthParams = {
   refresh_token: string;
 };
 
-export type IAuthResponse = IOneKeyAPIBaseResponse<{
+export type IAuthResponse = IUnionKeyAPIBaseResponse<{
   accessToken: string;
   refreshToken: string;
 }>;

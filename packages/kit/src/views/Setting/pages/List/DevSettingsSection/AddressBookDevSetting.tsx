@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import { Dialog } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Dialog } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 
 import { SectionPressItem } from './SectionPressItem';
 

@@ -1,8 +1,8 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 

@@ -3,9 +3,9 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { IStackProps } from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/components';
+import type { IStackProps } from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 type IPriceLabelProps = {
   price: number | null;

@@ -1,18 +1,18 @@
 import { isNil } from 'lodash';
 
-import { decryptImportedCredential } from '@onekeyhq/core/src/secret';
+import { decryptImportedCredential } from '@unionkey/core/src/secret';
 import type {
   ICoreCredentialsInfo,
   ICoreHdCredentialEncryptHex,
   ICoreImportedCredentialEncryptHex,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkey/core/src/types';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import { noopObject } from '@unionkey/shared/src/utils/miscUtils';
 
 import localDb from '../../dbs/local/localDb';
 
@@ -380,7 +380,7 @@ export abstract class KeyringSoftwareBase extends KeyringBase {
           });
 
         if (addressesInfo.length !== usedIndexes.length) {
-          throw new OneKeyInternalError('Unable to get address');
+          throw new UnionKeyInternalError('Unable to get address');
         }
 
         defaultLogger.account.accountCreatePerf.getAddressesFromHdDone();

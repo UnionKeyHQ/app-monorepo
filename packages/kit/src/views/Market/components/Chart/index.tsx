@@ -13,11 +13,11 @@ import {
   YStack,
   useMedia,
   usePageType,
-} from '@onekeyhq/components';
-import useFormatDate from '@onekeyhq/kit/src/hooks/useFormatDate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IMarketTokenChart } from '@onekeyhq/shared/types/market';
+} from '@unionkey/components';
+import useFormatDate from '@unionkey/kit/src/hooks/useFormatDate';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IMarketTokenChart } from '@unionkey/shared/types/market';
 
 import ChartView from './ChartView';
 import { PriceLabel } from './PriceLabel';
@@ -36,8 +36,43 @@ type IOnHoverFunction = ({
   price,
 }: {
   time?: UTCTimestamp | BusinessDay | Date | string;
-  price?: number | string;
+  price?: number | string | { close?: number };
 }) => void;
+
+const getPointPrice = (point?: IMarketTokenChart[number]) => {
+  if (!point) {
+    return 0;
+  }
+  return point.length >= 5 ? point[4] : point[1];
+};
+
+const normalizeHoverPrice = (
+  value?: number | string | { close?: number },
+) => {
+  if (value && typeof value === 'object') {
+    return Number(value.close ?? 0);
+  }
+  if (typeof value === 'string') {
+    return +value;
+  }
+  return value;
+};
+
+const normalizeHoverTime = (
+  value?: UTCTimestamp | BusinessDay | Date | string,
+) => {
+  if (value instanceof Date) {
+    return value;
+  }
+  if (typeof value === 'number') {
+    return new Date(value > 10_000_000_000 ? value : value * 1000);
+  }
+  if (typeof value === 'string') {
+    const timestamp = +value;
+    return new Date(timestamp > 10_000_000_000 ? timestamp : timestamp * 1000);
+  }
+  return undefined;
+};
 
 export function PriceChart({
   data,
@@ -54,7 +89,7 @@ export function PriceChart({
   const { gtMd: gtMdMedia } = useMedia();
   const gtMd = pageType === EPageType.modal ? false : gtMdMedia;
   const basePrice = data?.length ? data[0][1] : 0;
-  const latestPrice = data?.length ? data[data.length - 1][1] : 0;
+  const latestPrice = data?.length ? getPointPrice(data[data.length - 1]) : 0;
   const currentPrice = useMemo(() => {
     if (!data) {
       return null;
@@ -62,10 +97,7 @@ export function PriceChart({
     if (price === 'undefined' || price === undefined) {
       return latestPrice;
     }
-    if (typeof price === 'string') {
-      return +price;
-    }
-    return price;
+    return normalizeHoverPrice(price);
   }, [data, latestPrice, price]);
 
   const onHover = useCallback<IOnHoverFunction>(
@@ -74,16 +106,8 @@ export function PriceChart({
       if (hoverData.price === '' && hoverData.time === '') {
         return;
       }
-      let displayTime;
-      if (hoverData.time instanceof Date) {
-        displayTime = formatDate(hoverData.time);
-      } else if (typeof hoverData.time === 'number') {
-        displayTime = formatDate(new Date(hoverData.time));
-      } else if (typeof hoverData.time === 'string') {
-        displayTime = formatDate(new Date(+hoverData.time));
-      } else {
-        displayTime = '';
-      }
+      const hoverDate = normalizeHoverTime(hoverData.time);
+      const displayTime = hoverDate ? formatDate(hoverDate) : '';
       setTime(displayTime);
       setPrice(hoverData.price);
     },

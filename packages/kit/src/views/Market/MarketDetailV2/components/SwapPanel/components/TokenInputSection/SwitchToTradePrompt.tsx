@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, YStack } from '@onekeyhq/components';
-import { useMarketTradeActions } from '@onekeyhq/kit/src/views/Market/components/tradeHook';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, YStack } from '@unionkey/components';
+import { useMarketTradeActions } from '@unionkey/kit/src/views/Market/components/tradeHook';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface ISwitchToTradePromptProps {
   onTradePress: () => void;

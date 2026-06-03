@@ -5,10 +5,10 @@ import { useCallback, useEffect, useRef } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Button, Dialog, useMedia } from '@onekeyhq/components';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/marketV2';
+import { Button, Dialog, useMedia } from '@unionkey/components';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IMarketTokenDetail } from '@unionkey/shared/types/marketV2';
 
 import { useSpeedSwapActions } from './hooks/useSpeedSwapActions';
 import { useSpeedSwapInit } from './hooks/useSpeedSwapInit';

@@ -1,5 +1,5 @@
-import { NumberSizeableText, SizableText, YStack } from '@onekeyhq/components';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
+import { NumberSizeableText, SizableText, YStack } from '@unionkey/components';
+import { numberFormat } from '@unionkey/shared/src/utils/numberUtils';
 
 import { Layout } from './utils/Layout';
 

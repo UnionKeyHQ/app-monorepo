@@ -1,10 +1,10 @@
 import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
-import type { IStackProps } from '@onekeyhq/components';
-import { Page, SizableText, Stack, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+import type { IStackProps } from '@unionkey/components';
+import { Page, SizableText, Stack, XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 import { DeviceAvatarWithColor } from '../../../components/DeviceAvatar';
 import useAppNavigation from '../../../hooks/useAppNavigation';

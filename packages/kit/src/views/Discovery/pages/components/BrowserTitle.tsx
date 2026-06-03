@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function BrowserTitle() {
   const intl = useIntl();

@@ -18,29 +18,29 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { calculateFeeForSend } from '@onekeyhq/kit/src/utils/gasFee';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { REPLACE_TX_FEE_UP_RATIO } from '@onekeyhq/shared/src/consts/walletConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { calculateFeeForSend } from '@unionkey/kit/src/utils/gasFee';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { REPLACE_TX_FEE_UP_RATIO } from '@unionkey/shared/src/consts/walletConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalSendRoutes,
   IModalSendParamList,
-} from '@onekeyhq/shared/src/routes';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import { calculateNativeAmountInActions } from '@onekeyhq/shared/src/utils/txActionUtils';
+} from '@unionkey/shared/src/routes';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import { calculateNativeAmountInActions } from '@unionkey/shared/src/utils/txActionUtils';
 import type {
   IFeeInfoUnit,
   ISendSelectedFeeInfo,
-} from '@onekeyhq/shared/types/fee';
-import { EFeeType } from '@onekeyhq/shared/types/fee';
-import { EReplaceTxType } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/fee';
+import { EFeeType } from '@unionkey/shared/types/fee';
+import { EReplaceTxType } from '@unionkey/shared/types/tx';
 
 import { FeeEditor } from '../../components/SendFee';
 import { usePreCheckFeeInfo } from '../../hooks/usePreCheckFeeInfo';

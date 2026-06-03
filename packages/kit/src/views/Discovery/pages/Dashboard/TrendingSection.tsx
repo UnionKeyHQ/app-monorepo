@@ -2,10 +2,10 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+import { Stack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
+import type { IDApp } from '@unionkey/shared/types/discovery';
 
 import { useWebSiteHandler } from '../../hooks/useWebSiteHandler';
 

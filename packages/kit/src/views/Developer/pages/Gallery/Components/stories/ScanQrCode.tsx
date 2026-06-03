@@ -1,16 +1,16 @@
 import { useCallback, useState } from 'react';
 
-import { Button, Stack } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { Button, Stack } from '@unionkey/components';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import {
   useAllTokenListAtom,
   useAllTokenListMapAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { HomeTokenListProviderMirror } from '@onekeyhq/kit/src/views/Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
-import { ScanQrCode } from '@onekeyhq/kit/src/views/ScanQrCode/components';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/kit/src/states/jotai/contexts/tokenList';
+import { HomeTokenListProviderMirror } from '@unionkey/kit/src/views/Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
+import { ScanQrCode } from '@unionkey/kit/src/views/ScanQrCode/components';
+import useScanQrCode from '@unionkey/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { Layout } from './utils/Layout';
 

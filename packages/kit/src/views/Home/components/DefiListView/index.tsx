@@ -3,9 +3,9 @@ import {
   ListView,
   Stack,
   renderNestedScrollView,
-} from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IAccountDefi } from '@onekeyhq/shared/types/defi';
+} from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IAccountDefi } from '@unionkey/shared/types/defi';
 
 import { DefiListHeader } from './DefiListHeader';
 import { DefiListItem } from './DefiListItem';

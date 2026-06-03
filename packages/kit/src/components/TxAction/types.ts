@@ -1,14 +1,14 @@
 import type { ComponentProps } from 'react';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import type { ETxActionComponentType } from '@onekeyhq/shared/types';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
+import type { IKeyOfIcons } from '@unionkey/components';
+import type { ETxActionComponentType } from '@unionkey/shared/types';
+import type { ISwapTxInfo } from '@unionkey/shared/types/swap/types';
 import type {
   EDecodedTxStatus,
   EReplaceTxType,
   IDecodedTx,
   IDecodedTxAction,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import type { ListItem } from '../ListItem';
 

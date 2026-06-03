@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import { type IPropsWithTestId, useClipboard } from '@onekeyhq/components';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import { type IPropsWithTestId, useClipboard } from '@unionkey/components';
+import type { IListItemProps } from '@unionkey/kit/src/components/ListItem';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
 
 interface ISectionPressItem {
   title: string;

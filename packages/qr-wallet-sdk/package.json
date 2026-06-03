@@ -1,5 +1,5 @@
 {
-    "name": "@onekeyhq/qr-wallet-sdk",
+    "name": "@unionkey/qr-wallet-sdk",
     "private": true,
     "version": "1.0.0",
     "description": "",
@@ -8,7 +8,7 @@
         "lint": "tsc --noEmit && eslint . --ext .ts,.tsx"
     },
     "author": "",
-    "license": "SEE https://github.com/OneKeyHQ/app-monorepo/blob/onekey/LICENSE.md",
+    "license": "SEE https://github.com/UnionKeyHQ/app-monorepo/blob/unionkey/LICENSE.md",
     "dependencies": {
         "@keystonehq/keystone-sdk": "^0.4.1"
     }

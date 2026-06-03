@@ -1,4 +1,4 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 
 import { KeyringWatching as KeyringWatchingBtc } from '../btc/KeyringWatching';
 

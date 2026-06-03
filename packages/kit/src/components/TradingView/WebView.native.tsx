@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { WebView as NativeWebView } from 'react-native-webview';
 
-import { Stack } from '@onekeyhq/components';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack } from '@unionkey/components';
+import { useDevSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { ViewStyle } from 'react-native';
 import type { ShouldStartLoadRequestEvent } from 'react-native-webview/lib/RNCWebViewNativeComponent';

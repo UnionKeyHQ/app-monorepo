@@ -2,32 +2,32 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { Dialog, SizableText } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { IPageNavigationProp } from '@unionkey/components';
+import { Dialog, SizableText } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import {
   EModalStakingRoutes,
   type IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/routes';
+import { EModalRoutes } from '@unionkey/shared/src/routes/modal';
+import { EModalSwapRoutes } from '@unionkey/shared/src/routes/swap';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import {
   isSupportStaking,
   normalizeToEarnSymbol,
-} from '@onekeyhq/shared/types/earn/earnProvider.constants';
-import type { IFiatCryptoType } from '@onekeyhq/shared/types/fiatCrypto';
+} from '@unionkey/shared/types/earn/earnProvider.constants';
+import type { IFiatCryptoType } from '@unionkey/shared/types/fiatCrypto';
 import type {
   IMarketDetailPlatformNetwork,
   IMarketTokenDetail,
-} from '@onekeyhq/shared/types/market';
-import { getNetworkIdBySymbol } from '@onekeyhq/shared/types/market/marketProvider.constants';
+} from '@unionkey/shared/types/market';
+import { getNetworkIdBySymbol } from '@unionkey/shared/types/market/marketProvider.constants';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';
@@ -58,8 +58,8 @@ export const useMarketTradeNetworkId = (
   symbol: string,
 ) =>
   useMemo(() => {
-    const { onekeyNetworkId } = network || {};
-    return onekeyNetworkId ?? getNetworkIdBySymbol(symbol);
+    const { unionkeyNetworkId } = network || {};
+    return unionkeyNetworkId ?? getNetworkIdBySymbol(symbol);
   }, [network, symbol]);
 
 export const useMarketTradeActions = (token: IMarketTokenDetail | null) => {
@@ -213,17 +213,17 @@ export const useMarketTradeActions = (token: IMarketTokenDetail | null) => {
         });
         return;
       }
-      const onekeyNetwork = await backgroundApiProxy.serviceNetwork.getNetwork({
+      const unionkeyNetwork = await backgroundApiProxy.serviceNetwork.getNetwork({
         networkId,
       });
       navigateToSwapPage({
         importFromToken: {
-          ...onekeyNetwork,
-          logoURI: isNative ? onekeyNetwork.logoURI : undefined,
+          ...unionkeyNetwork,
+          logoURI: isNative ? unionkeyNetwork.logoURI : undefined,
           contractAddress: realContractAddress,
           networkId,
           isNative,
-          networkLogoURI: onekeyNetwork.logoURI,
+          networkLogoURI: unionkeyNetwork.logoURI,
           symbol: symbol.toUpperCase(),
           name,
         },

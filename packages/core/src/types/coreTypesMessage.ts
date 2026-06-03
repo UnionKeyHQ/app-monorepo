@@ -7,15 +7,15 @@ import type {
   EMessageTypesEth,
   EMessageTypesSolana,
   EMessageTypesTon,
-} from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/types/message';
 
 import type { ISignMessageRequest } from '../chains/aptos/types';
 import type { SignatureOptions } from 'bitcoinjs-message';
 
-// dapp -> onekey -> external wallet
-// dapp -> onekey -> hd, hw, privateKey
-// onekey -> external wallet
-// onekey -> hd, hw, privateKey
+// dapp -> unionkey -> external wallet
+// dapp -> unionkey -> hd, hw, privateKey
+// unionkey -> external wallet
+// unionkey -> hd, hw, privateKey
 export type IUnsignedMessageEth = {
   type: EMessageTypesEth;
   message: string;

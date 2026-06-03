@@ -1,8 +1,8 @@
 import { atom } from 'jotai';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import type { IGlobalStatesSyncBroadcastParams } from '@onekeyhq/shared/src/background/backgroundUtils';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import type { IGlobalStatesSyncBroadcastParams } from '@unionkey/shared/src/background/backgroundUtils';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { JOTAI_RESET } from '../types';
 

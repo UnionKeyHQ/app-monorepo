@@ -1,17 +1,17 @@
 import { getSdkError } from '@walletconnect/utils';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { IMPL_ALGO, IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import { IMPL_ALGO, IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import {
   EDAppConnectionModal,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { EWalletConnectSessionEvents } from '@onekeyhq/shared/src/walletConnect/types';
-import type { IWalletConnectSessionProposalResult } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/routes';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
+import { EWalletConnectSessionEvents } from '@unionkey/shared/src/walletConnect/types';
+import type { IWalletConnectSessionProposalResult } from '@unionkey/shared/types/dappConnection';
 
 import walletConnectClient from '../../services/ServiceWalletConnect/walletConnectClient';
 import walletConnectStorage from '../../services/ServiceWalletConnect/walletConnectStorage';

@@ -1,7 +1,7 @@
 import {
   EAppUpdateStatus,
   type IAppUpdateInfo,
-} from '@onekeyhq/shared/src/appUpdate';
+} from '@unionkey/shared/src/appUpdate';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

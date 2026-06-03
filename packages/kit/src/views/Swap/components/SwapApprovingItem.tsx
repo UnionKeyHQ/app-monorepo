@@ -4,16 +4,16 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 import { Animated } from 'react-native';
 
-import { SizableText, XStack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, XStack, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   approvingIntervalSecondsDefault,
   approvingIntervalSecondsEth,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
 import {
   ESwapApproveTransactionStatus,
   type ISwapApproveTransaction,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { Token } from '../../../components/Token';
 import { useThemeVariant } from '../../../hooks/useThemeVariant';

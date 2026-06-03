@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { SizableText, YStack } from '@onekeyhq/components';
+import { SizableText, YStack } from '@unionkey/components';
 
 export function AlertSection({ alerts = [] }: { alerts?: string[] }) {
   return alerts.length ? (

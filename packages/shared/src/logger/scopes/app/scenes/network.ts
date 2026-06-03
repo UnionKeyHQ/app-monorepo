@@ -1,4 +1,4 @@
-import { ANALYTICS_EVENT_PATH } from '@onekeyhq/shared/src/analytics';
+import { ANALYTICS_EVENT_PATH } from '@unionkey/shared/src/analytics';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';

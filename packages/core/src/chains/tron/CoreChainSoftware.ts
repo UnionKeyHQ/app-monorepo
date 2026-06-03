@@ -1,9 +1,9 @@
 import { keccak256 } from '@ethersproject/keccak256';
 import TronWeb from 'tronweb';
 
-import { decryptAsync, uncompressPublicKey } from '@onekeyhq/core/src/secret';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { decryptAsync, uncompressPublicKey } from '@unionkey/core/src/secret';
+import { NotImplemented } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {

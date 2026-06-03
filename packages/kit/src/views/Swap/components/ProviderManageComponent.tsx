@@ -12,11 +12,11 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { ISwapProviderInfo } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapNetwork } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { ISwapProviderInfo } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { ISwapNetwork } from '@unionkey/shared/types/swap/types';
 
 interface IProviderFoldProps {
   providerInfo: ISwapProviderInfo;

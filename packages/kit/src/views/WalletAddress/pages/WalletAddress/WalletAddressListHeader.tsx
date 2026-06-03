@@ -2,17 +2,17 @@ import { memo, useCallback, useContext, useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Alert, Stack, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
-import { useEnabledNetworksCompatibleWithWalletIdInAllNetworks } from '@onekeyhq/kit/src/hooks/useAllNetwork';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { Alert, Stack, Toast } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useAccountSelectorCreateAddress } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+import { useEnabledNetworksCompatibleWithWalletIdInAllNetworks } from '@unionkey/kit/src/hooks/useAllNetwork';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { WalletAddressContext } from './WalletAddressContext';
 
@@ -59,7 +59,7 @@ function WalletAddressListHeader() {
         account: {
           walletId,
           indexedAccountId,
-          networkId: getNetworkIdsMap().onekeyall,
+          networkId: getNetworkIdsMap().unionkeyall,
           deriveType: 'default',
         },
         customNetworks: enabledNetworksWithoutAccountTemp,

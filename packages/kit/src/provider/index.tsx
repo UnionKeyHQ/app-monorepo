@@ -8,12 +8,12 @@ import { useFonts } from 'expo-font';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Toast } from '@onekeyhq/components';
-import { SyncHomeAccountToDappAccountProvider } from '@onekeyhq/kit/src/views/Discovery/components/SyncDappAccountToHomeProvider';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
+import { Toast } from '@unionkey/components';
+import { SyncHomeAccountToDappAccountProvider } from '@unionkey/kit/src/views/Discovery/components/SyncDappAccountToHomeProvider';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import LazyLoad from '@unionkey/shared/src/lazyLoad';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { useDebugComponentRemountLog } from '@unionkey/shared/src/utils/debug/debugUtils';
 
 import { GlobalJotaiReady } from '../components/GlobalJotaiReady';
 import PasswordVerifyPromptMount from '../components/Password/container/PasswordVerifyPromptMount';

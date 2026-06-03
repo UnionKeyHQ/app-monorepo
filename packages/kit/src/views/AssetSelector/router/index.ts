@@ -1,13 +1,13 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import { EAssetSelectorRoutes } from '@onekeyhq/shared/src/routes';
-import type { IAssetSelectorParamList } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import { EAssetSelectorRoutes } from '@unionkey/shared/src/routes';
+import type { IAssetSelectorParamList } from '@unionkey/shared/src/routes';
 
 const TokenSelector = LazyLoadPage(() => import('../pages/TokenSelector'));
 
 const DeriveTypesAddressSelector = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkey/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 export const AssetSelectorRouter: IModalFlowNavigatorConfig<

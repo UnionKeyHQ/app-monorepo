@@ -2,15 +2,15 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Image, Page, SizableText, Stack, YStack } from '@onekeyhq/components';
-import type { EMnemonicType } from '@onekeyhq/core/src/secret';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { BIP39_DOT_MAP_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Image, Page, SizableText, Stack, YStack } from '@unionkey/components';
+import type { EMnemonicType } from '@unionkey/core/src/secret';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { BIP39_DOT_MAP_URL } from '@unionkey/shared/src/config/appConfig';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import { PhaseInputArea } from '../../components/PhaseInputArea';
 
@@ -23,13 +23,13 @@ const KeyTagFooterComponent = () => {
     <YStack px="$5" mt="$10">
       <SizableText size="$headingSm" color="$textSubdued">
         {intl.formatMessage({
-          id: ETranslations.settings_how_to_import_from_onekey_keytag,
+          id: ETranslations.settings_how_to_import_from_unionkey_keytag,
         })}
       </SizableText>
       <SizableText size="$bodyMd" color="$textSubdued">
         {intl.formatMessage(
           {
-            id: ETranslations.settings_how_to_import_from_onekey_keytag_desc,
+            id: ETranslations.settings_how_to_import_from_unionkey_keytag_desc,
           },
           {
             dotmap: (
@@ -51,7 +51,7 @@ const KeyTagFooterComponent = () => {
           <Image
             width="100%"
             height="100%"
-            source={require('@onekeyhq/kit/assets/keytag/bip39-dotmap.png')}
+            source={require('@unionkey/kit/assets/keytag/bip39-dotmap.png')}
           />
         </Stack>
       </Stack>

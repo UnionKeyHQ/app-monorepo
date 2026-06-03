@@ -1,10 +1,10 @@
 import { useIntl } from 'react-intl';
 
-import type { ICheckedState } from '@onekeyhq/components';
-import { Checkbox, Page, useMedia } from '@onekeyhq/components';
-import type { IFooterActionsProps } from '@onekeyhq/components/src/layouts/Page/PageFooterActions';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
+import type { ICheckedState } from '@unionkey/components';
+import { Checkbox, Page, useMedia } from '@unionkey/components';
+import type { IFooterActionsProps } from '@unionkey/components/src/layouts/Page/PageFooterActions';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EHostSecurityLevel } from '@unionkey/shared/types/discovery';
 
 function DAppRequestFooter({
   continueOperate,

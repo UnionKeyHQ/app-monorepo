@@ -7,31 +7,31 @@ import {
   decodePrivateKeyByXprv,
   validBootstrapAddress,
   validShelleyAddress,
-} from '@onekeyhq/core/src/chains/ada/sdkAda';
+} from '@unionkey/core/src/chains/ada/sdkAda';
 import type {
   IAdaAccount,
   IAdaAmount,
   IAdaEncodeOutput,
   IAdaUTXO,
   IEncodedTxAda,
-} from '@onekeyhq/core/src/chains/ada/types';
+} from '@unionkey/core/src/chains/ada/types';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/secret';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkey/core/src/types';
 import {
   InvalidAddress,
   LowerTransactionAmountError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -39,17 +39,17 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
+} from '@unionkey/shared/types/customRpc';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
   type IDecodedTx,
   type IDecodedTxAction,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -108,10 +108,10 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTxAda> {
     const { transfersInfo } = params;
     if (!transfersInfo || isEmpty(transfersInfo)) {
-      throw new OneKeyInternalError('transfersInfo is required');
+      throw new UnionKeyInternalError('transfersInfo is required');
     }
     if (transfersInfo.length > 1) {
-      throw new OneKeyInternalError('Only one transfer is allowed');
+      throw new UnionKeyInternalError('Only one transfer is allowed');
     }
     const transferInfo = transfersInfo[0];
     if (!transferInfo.to) {
@@ -353,7 +353,7 @@ export default class Vault extends VaultBase {
         txSize: new BigNumber(encodedTx.totalFeeInNative).toNumber(),
       };
     }
-    throw new OneKeyInternalError('Failed to build unsigned tx');
+    throw new UnionKeyInternalError('Failed to build unsigned tx');
   }
 
   override updateUnsignedTx(
@@ -462,7 +462,7 @@ export default class Vault extends VaultBase {
           };
         });
       } catch (e) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           appLocale.intl.formatMessage({
             id: ETranslations.feedback_failed_to_get_utxos,
           }),
@@ -679,7 +679,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new ClientAda({ url: rpcUrl });
     try {

@@ -7,7 +7,7 @@ import type {
   IMnemonicToSeedAsyncParams,
   ISecretPublicKeyInfoSerialized,
   ISha512Params,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import {
   batchGetPublicKeysAsync,
   decryptAsync,
@@ -18,7 +18,7 @@ import {
   sha512Async,
   tonMnemonicToKeyPairFn,
   tonValidateMnemonicFn,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 
 class WebEmbedApiSecret {
   async encryptAsync(

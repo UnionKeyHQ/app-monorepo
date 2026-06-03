@@ -4,8 +4,8 @@ import {
   COINTYPE_DNX,
   IMPL_DNX,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

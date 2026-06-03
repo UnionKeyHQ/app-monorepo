@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkey/components';
 import {
   Icon,
   Image,
@@ -10,12 +10,12 @@ import {
   Stack,
   Video,
   XStack,
-} from '@onekeyhq/components';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { SHOW_NFT_AMOUNT_MAX } from '@onekeyhq/shared/src/consts/walletConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ENFTType, type IAccountNFT } from '@onekeyhq/shared/types/nft';
+} from '@unionkey/components';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { SHOW_NFT_AMOUNT_MAX } from '@unionkey/shared/src/consts/walletConsts';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { ENFTType, type IAccountNFT } from '@unionkey/shared/types/nft';
 
 type IProps = {
   nft: IAccountNFT;

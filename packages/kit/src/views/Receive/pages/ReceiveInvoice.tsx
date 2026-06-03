@@ -13,13 +13,13 @@ import {
   Stack,
   Toast,
   useClipboard,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalReceiveRoutes,
   IModalReceiveParamList,
-} from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/routes';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useAccountData } from '../../../hooks/useAccountData';

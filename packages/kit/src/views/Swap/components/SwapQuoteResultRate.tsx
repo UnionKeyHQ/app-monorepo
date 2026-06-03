@@ -12,9 +12,9 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ISwapToken } from '@unionkey/shared/types/swap/types';
 
 import SwapRefreshButton from './SwapRefreshButton';
 
@@ -167,7 +167,7 @@ const SwapQuoteResultRate = ({
           <XStack flex={1} justifyContent="flex-end">
             {quoting ? (
               <LottieView
-                source={require('@onekeyhq/kit/assets/animations/swap_loading.json')}
+                source={require('@unionkey/kit/assets/animations/swap_loading.json')}
                 autoPlay
                 loop
                 style={{

@@ -8,25 +8,25 @@ import type {
   IEncodedTx,
   IUnsignedMessage,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import type {
   IApproveInfo,
   ITransferInfo,
   ITransferPayload,
   IWrappedInfo,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { OneKeyPlainTextError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit-bg/src/vaults/types';
+import { UnionKeyPlainTextError } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EModalRoutes,
   EModalSignatureConfirmRoutes,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { IStakingInfo } from '@onekeyhq/shared/types/staking';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/src/routes';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IDappSourceInfo } from '@unionkey/shared/types';
+import type { IFeeInfoUnit } from '@unionkey/shared/types/fee';
+import type { IStakingInfo } from '@unionkey/shared/types/staking';
+import type { ISwapTxInfo } from '@unionkey/shared/types/swap/types';
+import type { ISendTxOnSuccessData } from '@unionkey/shared/types/tx';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 
@@ -337,7 +337,7 @@ function useSignatureConfirm(params: IParams) {
           onFail: (error) => reject(error),
           onCancel: () =>
             reject(
-              new OneKeyPlainTextError(
+              new UnionKeyPlainTextError(
                 intl.formatMessage({
                   id: ETranslations.feedback_user_rejected,
                 }),

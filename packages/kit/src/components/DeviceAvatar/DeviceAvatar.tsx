@@ -1,7 +1,7 @@
-import type { SizeTokens } from '@onekeyhq/components';
-import { getDeviceAvatarImage } from '@onekeyhq/shared/src/utils/avatarUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IOneKeyDeviceFeatures } from '@onekeyhq/shared/types/device';
+import type { SizeTokens } from '@unionkey/components';
+import { getDeviceAvatarImage } from '@unionkey/shared/src/utils/avatarUtils';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import type { IUnionKeyDeviceFeatures } from '@unionkey/shared/types/device';
 
 import { WalletAvatar } from '../WalletAvatar';
 
@@ -13,7 +13,7 @@ export function DeviceAvatarWithColor({
   size,
 }: {
   deviceType: IDeviceType;
-  features?: IOneKeyDeviceFeatures;
+  features?: IUnionKeyDeviceFeatures;
   size?: SizeTokens;
 }) {
   const img = getDeviceAvatarImage(

@@ -1,4 +1,4 @@
-import { EXT_UI_TO_BG_PORT_NAME } from '@onekeyhq/shared/types';
+import { EXT_UI_TO_BG_PORT_NAME } from '@unionkey/shared/types';
 
 const setupExtUIEventBase = (onDisconnect: () => void) => {
   chrome.runtime.onConnect.addListener((port) => {
@@ -12,8 +12,8 @@ export const setupExtUIEvent = () =>
   setupExtUIEventBase(() => {
     const backgroundApiProxy =
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      require('@onekeyhq/kit/src/background/instance/backgroundApiProxy')
-        .default as typeof import('@onekeyhq/kit/src/background/instance/backgroundApiProxy').default;
+      require('@unionkey/kit/src/background/instance/backgroundApiProxy')
+        .default as typeof import('@unionkey/kit/src/background/instance/backgroundApiProxy').default;
     void backgroundApiProxy.servicePassword.resetPasswordStatus();
   });
 

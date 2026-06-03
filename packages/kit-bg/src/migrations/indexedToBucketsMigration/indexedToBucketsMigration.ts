@@ -1,9 +1,9 @@
 import {
   DB_MAIN_CONTEXT_ID,
   DEFAULT_VERIFY_STRING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import type { IndexedDBPromised } from '@onekeyhq/shared/src/IndexedDBPromised';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import type { IndexedDBPromised } from '@unionkey/shared/src/IndexedDBPromised';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import {
   INDEXED_DB_BUCKET_PRESET_STORE_NAMES,
@@ -167,7 +167,7 @@ async function migrateBackupedDataToBucket({
   await timerUtils.wait(1000);
 }
 
-async function migrateOneKeyV5LegacyDBToBucket({
+async function migrateUnionKeyV5LegacyDBToBucket({
   isMigrated,
   accountBucket,
   addressBucket,
@@ -179,14 +179,14 @@ async function migrateOneKeyV5LegacyDBToBucket({
 }: ICheckCurrentDBIsMigratedToBucketResult) {
   if (isMigrated) {
     console.log(
-      'migrateOneKeyV5LegacyDBToBucket skipped:  bucketDB is migrated already',
+      'migrateUnionKeyV5LegacyDBToBucket skipped:  bucketDB is migrated already',
     );
     return;
   }
 
   if (!(await legacyDbExists())) {
     console.log(
-      'migrateOneKeyV5LegacyDBToBucket skipped:  legacyDb not exists',
+      'migrateUnionKeyV5LegacyDBToBucket skipped:  legacyDb not exists',
     );
     return;
   }
@@ -334,7 +334,7 @@ async function migrateOneKeyV5LegacyDBToBucket({
   // #endregion
 
   // TODO atom is init before localDB
-  console.log('migrateOneKeyV5LegacyDBToBucket result', {
+  console.log('migrateUnionKeyV5LegacyDBToBucket result', {
     _migrateResults: migrateResults,
 
     accountCount,
@@ -357,7 +357,7 @@ async function migrateOneKeyV5LegacyDBToBucket({
 
 export default {
   checkCurrentDBIsMigrated,
-  migrateOneKeyV5LegacyDBToBucket,
+  migrateUnionKeyV5LegacyDBToBucket,
   migrateBackupedDataToBucket,
   migrateAccountBucketRecords,
 };

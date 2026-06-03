@@ -2,9 +2,9 @@ import { memo } from 'react';
 
 import { StyleSheet } from 'react-native';
 
-import { Image, SizableText, XStack } from '@onekeyhq/components';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+import { Image, SizableText, XStack } from '@unionkey/components';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
+import type { ISwapToken } from '@unionkey/shared/types/swap/types';
 
 interface ISwapPopularTokenGroupProps {
   onSelectToken: (token: ISwapToken) => void;

@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 
-import { Page } from '@onekeyhq/components';
+import { Page } from '@unionkey/components';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateStepInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import type {
   EModalFirmwareUpdateRoutes,
   IModalFirmwareUpdateParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

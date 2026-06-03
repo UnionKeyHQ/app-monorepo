@@ -1,20 +1,20 @@
 import { isNil, isNumber } from 'lodash';
 
-import { LocalDBRecordNotFoundError } from '@onekeyhq/shared/src/errors';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+import { LocalDBRecordNotFoundError } from '@unionkey/shared/src/errors';
+import { EUnionKeyErrorClassNames } from '@unionkey/shared/src/errors/types/errorTypes';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 import type {
   IndexedDBObjectStorePromised,
   IndexedDBPromised,
   IndexedDBTransactionPromised,
-} from '@onekeyhq/shared/src/IndexedDBPromised';
-import dbPerfMonitor from '@onekeyhq/shared/src/utils/debug/dbPerfMonitor';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import resetUtils from '@onekeyhq/shared/src/utils/resetUtils';
+} from '@unionkey/shared/src/IndexedDBPromised';
+import dbPerfMonitor from '@unionkey/shared/src/utils/debug/dbPerfMonitor';
+import { noopObject } from '@unionkey/shared/src/utils/miscUtils';
+import resetUtils from '@unionkey/shared/src/utils/resetUtils';
 
 import { ALL_LOCAL_DB_STORE_NAMES } from '../consts';
 import { LocalDbAgentBase } from '../LocalDbAgentBase';
@@ -370,7 +370,7 @@ export class IndexedDBAgent extends LocalDbAgentBase implements ILocalDBAgent {
             error instanceof LocalDBRecordNotFoundError ||
             errorUtils.isErrorByClassName({
               error,
-              className: EOneKeyErrorClassNames.LocalDBRecordNotFoundError,
+              className: EUnionKeyErrorClassNames.LocalDBRecordNotFoundError,
             });
 
           if (!isRecordNotFoundError) {

@@ -1,12 +1,12 @@
 import { useCallback, useRef } from 'react';
 
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { IAccountSelectorActiveAccountInfo } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import type { IAccountSelectorActiveAccountInfo } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import {
   EModalRoutes,
   EModalWalletAddressRoutes,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/shared/src/routes';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 export const useAllNetworkCopyAddressHandler = ({
   activeAccount,

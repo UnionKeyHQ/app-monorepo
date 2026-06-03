@@ -4,17 +4,17 @@ import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyError } from '@unionkey/shared/src/errors';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 import type {
   ILNURLDetails,
   ILNURLError,
   ILNURLPaymentInfo,
-} from '@onekeyhq/shared/types/lightning';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/types/lightning';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 import { vaultFactory } from '../vaults/factory';
 import ClientLightning from '../vaults/impls/lightning/sdkLightning/ClientLightning';
@@ -252,11 +252,11 @@ class ServiceLightning extends ServiceBase {
         },
       );
       if (response.status >= 500) {
-        throw new OneKeyError('Recipient server error');
+        throw new UnionKeyError('Recipient server error');
       }
 
       if (!Object.prototype.hasOwnProperty.call(response.data, 'pr')) {
-        throw new OneKeyError((response.data as ILNURLError).reason);
+        throw new UnionKeyError((response.data as ILNURLError).reason);
       }
       return response.data as ILNURLPaymentInfo;
     } catch (e: any) {
@@ -319,7 +319,7 @@ class ServiceLightning extends ServiceBase {
       if (response.data.status.toUpperCase() === 'OK') {
         return response.data;
       }
-      throw new OneKeyError(response.data.reason);
+      throw new UnionKeyError(response.data.reason);
     } catch (e) {
       console.error(e);
       const error = e as AxiosError<ILNURLError>;

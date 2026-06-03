@@ -9,14 +9,14 @@ import {
   Toast,
   YStack,
   useForm,
-} from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
+} from '@unionkey/components';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
 import {
   AddressInput,
   type IAddressInputValue,
-} from '@onekeyhq/kit/src/components/AddressInput';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/kit/src/components/AddressInput';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { Layout } from './utils/Layout';
 

@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
+import type { ISizableTextProps } from '@unionkey/components';
 import {
   Dialog,
   Icon,
@@ -11,11 +11,11 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { IOnDialogConfirm } from '@onekeyhq/components/src/composite/Dialog/type';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IEarnEstimateFeeResp } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/components';
+import type { IOnDialogConfirm } from '@unionkey/components/src/composite/Dialog/type';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IEarnEstimateFeeResp } from '@unionkey/shared/types/staking';
 
 import { CalculationListItem } from '../CalculationList';
 

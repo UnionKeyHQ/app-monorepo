@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoFn } from '@unionkey/shared/src/utils/cacheUtils';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 

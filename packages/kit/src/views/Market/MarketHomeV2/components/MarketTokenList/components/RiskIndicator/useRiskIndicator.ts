@@ -1,4 +1,4 @@
-import type { IColorTokens, IIconProps } from '@onekeyhq/components';
+import type { IColorTokens, IIconProps } from '@unionkey/components';
 
 // Supported risk indicator types
 export type IRiskIndicatorType = 'unknown' | 'safe' | 'danger' | 'info';

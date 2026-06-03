@@ -3,8 +3,8 @@ import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 
 import { useWebViewBridge } from '@onekeyfe/onekey-cross-webview';
 
-import { Progress, Spinner, Stack } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Progress, Spinner, Stack } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { ESiteMode } from '../../views/Discovery/types';
 

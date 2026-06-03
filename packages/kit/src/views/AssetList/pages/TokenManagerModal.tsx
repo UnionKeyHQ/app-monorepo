@@ -3,20 +3,20 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { Page, SearchBar, Stack, Toast } from '@onekeyhq/components';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { Page, SearchBar, Stack, Toast } from '@unionkey/components';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalAssetListRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalAssetListParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalAssetListRoutes } from '@unionkey/shared/src/routes';
+import type { IModalAssetListParamList } from '@unionkey/shared/src/routes';
 import {
   ECustomTokenStatus,
   type IAccountToken,
   type ICustomTokenItem,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';
@@ -46,7 +46,7 @@ function TokenManagerModal() {
     accountId,
     deriveType,
   } = route.params;
-  const isAllNetwork = networkId === getNetworkIdsMap().onekeyall;
+  const isAllNetwork = networkId === getNetworkIdsMap().unionkeyall;
 
   const {
     sectionTokens,

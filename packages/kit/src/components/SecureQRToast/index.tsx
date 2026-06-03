@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IQRCodeProps, IShowToasterProps } from '@onekeyhq/components';
+import type { IQRCodeProps, IShowToasterProps } from '@unionkey/components';
 import {
   Button,
   HeightTransition,
@@ -13,10 +13,10 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { airGapUrUtils } from '@onekeyhq/qr-wallet-sdk';
-import { OneKeyRequestDeviceQR } from '@onekeyhq/qr-wallet-sdk/src/OneKeyRequestDeviceQR';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { airGapUrUtils } from '@unionkey/qr-wallet-sdk';
+import { UnionKeyRequestDeviceQR } from '@unionkey/qr-wallet-sdk/src/UnionKeyRequestDeviceQR';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface ISecureQRToastBaseProps {
   title?: string;
@@ -123,9 +123,9 @@ const SecureQRToastBase = ({
                 console.log(qrcodeDetails);
                 if (
                   valueUr &&
-                  qrcodeDetails.single?.startsWith('ur:onekey-app-call-device/')
+                  qrcodeDetails.single?.startsWith('ur:unionkey-app-call-device/')
                 ) {
-                  const data = OneKeyRequestDeviceQR.fromUR(valueUr);
+                  const data = UnionKeyRequestDeviceQR.fromUR(valueUr);
                   console.log(data);
                 }
               }

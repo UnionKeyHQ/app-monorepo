@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return,  @typescript-eslint/no-unsafe-member-access */
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
 

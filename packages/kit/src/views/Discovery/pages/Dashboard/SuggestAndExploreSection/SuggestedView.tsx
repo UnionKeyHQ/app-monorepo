@@ -9,10 +9,10 @@ import {
   Stack,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { ICategory, IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { ICategory, IDApp } from '@unionkey/shared/types/discovery';
 
 import { ChunkedItemsView, chunkArray } from './ChunkedItemsView';
 

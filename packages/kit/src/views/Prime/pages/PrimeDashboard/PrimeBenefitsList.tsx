@@ -1,12 +1,12 @@
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import { Badge, Icon, Stack, Toast, YStack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EPrimePages } from '@onekeyhq/shared/src/routes/prime';
+import type { IKeyOfIcons } from '@unionkey/components';
+import { Badge, Icon, Stack, Toast, YStack } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes } from '@unionkey/shared/src/routes/modal';
+import { EPrimePages } from '@unionkey/shared/src/routes/prime';
 
 import { usePrimeRequirements } from '../../hooks/usePrimeRequirements';
 
@@ -51,13 +51,13 @@ function PrimeBenefitsItem({
 export function PrimeBenefitsList() {
   const navigation = useAppNavigation();
   const intl = useIntl();
-  const { ensureOneKeyIDLoggedIn } = usePrimeRequirements();
+  const { ensureUnionKeyIDLoggedIn } = usePrimeRequirements();
 
   return (
     <Stack py="$2">
       <PrimeBenefitsItem
         icon="RepeatOutline"
-        title="OneKey Cloud"
+        title="UnionKey Cloud"
         subtitle="Automatically back up app usage data, sync across devices."
         onPress={() => {
           navigation.navigate(EPrimePages.PrimeCloudSync);
@@ -105,7 +105,7 @@ export function PrimeBenefitsList() {
           id: ETranslations.prime_device_management_desc,
         })}
         onPress={async () => {
-          await ensureOneKeyIDLoggedIn();
+          await ensureUnionKeyIDLoggedIn();
           navigation.pushFullModal(EModalRoutes.PrimeModal, {
             screen: EPrimePages.PrimeDeviceLimit,
           });

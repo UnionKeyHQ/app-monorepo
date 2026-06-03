@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { N, decryptAsync, sign, uncompressPublicKey, verify } from '../secret';
 

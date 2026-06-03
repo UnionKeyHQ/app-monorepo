@@ -11,13 +11,13 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { IEncodedTxAptos } from '@onekeyhq/core/src/chains/aptos/types';
-import type { IEncodedTxBtc } from '@onekeyhq/core/src/chains/btc/types';
-import type { IEncodedTxDot } from '@onekeyhq/core/src/chains/dot/types';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import type { IEncodedTxAptos } from '@unionkey/core/src/chains/aptos/types';
+import type { IEncodedTxBtc } from '@unionkey/core/src/chains/btc/types';
+import type { IEncodedTxDot } from '@unionkey/core/src/chains/dot/types';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   useCustomFeeAtom,
   useIsSinglePresetAtom,
@@ -29,35 +29,35 @@ import {
   useSendTxStatusAtom,
   useTxAdvancedSettingsAtom,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
+} from '@unionkey/kit/src/states/jotai/contexts/sendConfirm';
 import {
   calculateFeeForSend,
   getFeeIcon,
   getFeeLabel,
-} from '@onekeyhq/kit/src/utils/gasFee';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit/src/utils/gasFee';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   BATCH_SEND_TXS_FEE_DOWN_RATIO_FOR_TOTAL,
   BATCH_SEND_TXS_FEE_UP_RATIO_FOR_APPROVE,
   BATCH_SEND_TXS_FEE_UP_RATIO_FOR_SWAP,
-} from '@onekeyhq/shared/src/consts/walletConsts';
-import { IMPL_APTOS } from '@onekeyhq/shared/src/engine/engineConsts';
-import type { IOneKeyRpcError } from '@onekeyhq/shared/src/errors/types/errorTypes';
+} from '@unionkey/shared/src/consts/walletConsts';
+import { IMPL_APTOS } from '@unionkey/shared/src/engine/engineConsts';
+import type { IUnionKeyRpcError } from '@unionkey/shared/src/errors/types/errorTypes';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { ALGO_TX_MIN_FEE } from '@onekeyhq/shared/types/algo';
-import { EFeeType, ESendFeeStatus } from '@onekeyhq/shared/types/fee';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { ALGO_TX_MIN_FEE } from '@unionkey/shared/types/algo';
+import { EFeeType, ESendFeeStatus } from '@unionkey/shared/types/fee';
 import type {
   IFeeInfoUnit,
   IFeeSelectorItem,
   IMultiTxsFeeSelectorItem,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkey/shared/types/fee';
 
 import { FeeEditor, FeeSelectorTrigger } from '../../components/SendFee';
 
@@ -264,7 +264,7 @@ function TxFeeContainer(props: IProps) {
         updateSendFeeStatus({
           status: ESendFeeStatus.Error,
           errMessage:
-            (e as { data: { data: IOneKeyRpcError } }).data?.data?.res?.error
+            (e as { data: { data: IUnionKeyRpcError } }).data?.data?.res?.error
               ?.message ??
             (e as Error).message ??
             e,
@@ -1092,7 +1092,7 @@ function TxFeeContainer(props: IProps) {
         feeInfoEditable &&
         !sendFeeStatus.errMessage ? (
           <SizableText size="$bodyMd" color="$textSubdued">
-            â€¢
+            â€?
           </SizableText>
         ) : null}
         {renderFeeEditor()}

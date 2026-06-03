@@ -8,7 +8,7 @@ rm -rf ../mobile/android/app/src/main/assets/web-embed
 mkdir -p ../mobile/android/app/src/main/assets
 rsync -r -c -v ./web-build/ ../mobile/android/app/src/main/assets/web-embed/
 
-rm -rf ../mobile/ios/OneKeyWallet/web-embed/
-rsync -r -c -v ./web-build/ ../mobile/ios/OneKeyWallet/web-embed/
+rm -rf ../mobile/ios/UnionKeyWallet/web-embed/
+rsync -r -c -v ./web-build/ ../mobile/ios/UnionKeyWallet/web-embed/
 
 

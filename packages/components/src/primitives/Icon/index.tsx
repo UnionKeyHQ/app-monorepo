@@ -2,7 +2,7 @@ import { Suspense, forwardRef } from 'react';
 
 import { styled, withStaticProperties } from 'tamagui';
 
-import { createSuspender } from '@onekeyhq/shared/src/modules3rdParty/use-suspender';
+import { createSuspender } from '@unionkey/shared/src/modules3rdParty/use-suspender';
 
 import { useThemeValue } from '../../hooks/useStyle';
 import { OptimizationView } from '../../optimization';

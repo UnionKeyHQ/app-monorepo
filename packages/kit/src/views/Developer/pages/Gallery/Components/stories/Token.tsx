@@ -1,13 +1,13 @@
-import { YStack } from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
+import { YStack } from '@unionkey/components';
+import { Token } from '@unionkey/kit/src/components/Token';
 
 import { Layout } from './utils/Layout';
 
 const blackTokenImageUri =
   'https://coin-images.coingecko.com/coins/images/26580/large/ONDO.png';
-const tokenImageUri = 'https://uni.onekey-asset.com/static/chain/btc.png';
+const tokenImageUri = 'https://uni.unionkey-asset.com/static/chain/btc.png';
 const evmTokenImageUri =
-  'https://common.onekey-asset.com/token/evm-1/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0.jpg';
+  'https://common.unionkey-asset.com/token/evm-1/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0.jpg';
 const TokenGallery = () => (
   <Layout
     filePath={__CURRENT_FILE_PATH__}

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCallback } from 'react';
 
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import type { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

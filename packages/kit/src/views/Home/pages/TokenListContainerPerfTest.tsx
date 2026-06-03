@@ -2,12 +2,12 @@ import { useCallback, useEffect } from 'react';
 
 import { isEmpty } from 'lodash';
 
-import type { ISimpleDBLocalTokens } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+import type { ISimpleDBLocalTokens } from '@unionkey/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import type { IFetchAccountTokensResp } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
+import type { IFetchAccountTokensResp } from '@unionkey/shared/types/token';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useAllNetworkRequests } from '../../../hooks/useAllNetwork';

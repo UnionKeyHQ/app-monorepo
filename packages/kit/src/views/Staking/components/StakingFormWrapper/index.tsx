@@ -1,4 +1,4 @@
-import { type IYStackProps, YStack } from '@onekeyhq/components';
+import { type IYStackProps, YStack } from '@unionkey/components';
 
 export default function StakingFormWrapper({
   children,

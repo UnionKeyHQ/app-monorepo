@@ -1,4 +1,4 @@
-import type { EGalleryRoutes } from '@onekeyhq/shared/src/routes';
+import type { EGalleryRoutes } from '@unionkey/shared/src/routes';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

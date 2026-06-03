@@ -1,20 +1,20 @@
 import { StackActions } from '@react-navigation/native';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IAppNavigation } from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { WEB_APP_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import type { IAppNavigation } from '@unionkey/kit/src/hooks/useAppNavigation';
+import { WEB_APP_URL } from '@unionkey/shared/src/config/appConfig';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   ERootRoutes,
   ETabHomeRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
 
 type IUrlAccountRouteBuildParams = {
   account: INetworkAccount | undefined;
@@ -22,7 +22,7 @@ type IUrlAccountRouteBuildParams = {
   networkId: string | undefined;
 };
 
-const localStorageKey = '$onekeyPrevSelectedUrlAccount';
+const localStorageKey = '$unionkeyPrevSelectedUrlAccount';
 
 export function savePrevUrlAccount({
   address,

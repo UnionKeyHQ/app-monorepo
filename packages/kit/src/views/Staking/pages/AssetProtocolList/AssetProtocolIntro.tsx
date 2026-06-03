@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { ScrollView, SizableText, Stack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IStakeProviderInfo } from '@onekeyhq/shared/types/staking';
+import { ScrollView, SizableText, Stack, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IStakeProviderInfo } from '@unionkey/shared/types/staking';
 
 export const AssetProtocolContent = ({
   providerTypes,

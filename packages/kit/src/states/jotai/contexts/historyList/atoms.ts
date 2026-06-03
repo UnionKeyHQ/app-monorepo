@@ -1,4 +1,4 @@
-import type { IAddressBadge } from '@onekeyhq/shared/types/address';
+import type { IAddressBadge } from '@unionkey/shared/types/address';
 
 import { createJotaiContext } from '../../utils/createJotaiContext';
 

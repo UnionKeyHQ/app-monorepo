@@ -1,16 +1,16 @@
 import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
 
-import { jotaiUpdateFromUiByBgBroadcast } from '@onekeyhq/kit-bg/src/states/jotai/jotaiInitFromUi';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import { jotaiUpdateFromUiByBgBroadcast } from '@unionkey/kit-bg/src/states/jotai/jotaiInitFromUi';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 import type {
   IGlobalEventBusSyncBroadcastParams,
   IGlobalStatesSyncBroadcastParams,
-} from '@onekeyhq/shared/src/background/backgroundUtils';
+} from '@unionkey/shared/src/background/backgroundUtils';
 import {
   GLOBAL_EVENT_BUS_SYNC_BROADCAST_METHOD_NAME,
   GLOBAL_STATES_SYNC_BROADCAST_METHOD_NAME,
-} from '@onekeyhq/shared/src/background/backgroundUtils';
-import { appEventBus } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/background/backgroundUtils';
+import { appEventBus } from '@unionkey/shared/src/eventBus/appEventBus';
 
 import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
 import type {

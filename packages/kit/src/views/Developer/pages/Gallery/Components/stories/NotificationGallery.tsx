@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { Button } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ONEKEY_LOGO_ICON_URL } from '@onekeyhq/shared/src/consts';
+import { Button } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { UNIONKEY_LOGO_ICON_URL } from '@unionkey/shared/src/consts';
 
 import { Layout } from './utils/Layout';
 
@@ -25,7 +25,7 @@ function NotificationGallery() {
               <Button onPress={() => setIcon(sampleBase64Icon)}>
                 base64 icon
               </Button>
-              <Button onPress={() => setIcon(ONEKEY_LOGO_ICON_URL)}>
+              <Button onPress={() => setIcon(UNIONKEY_LOGO_ICON_URL)}>
                 url icon
               </Button>
               <Button
@@ -88,7 +88,7 @@ function NotificationGallery() {
                   // eslint-disable-next-line no-new
                   new Notification('1111', {
                     body: '2222',
-                    icon: 'https://uni.onekey-asset.com/static/logo/onekey.png',
+                    icon: 'https://uni.unionkey-asset.com/static/logo/unionkey.png',
                   });
                 }}
               >

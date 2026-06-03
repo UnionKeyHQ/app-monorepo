@@ -2,20 +2,20 @@
 import { AddressSecp256k1, Transaction } from '@zondax/izari-filecoin';
 import base32Decode from 'base32-decode';
 
-import type { IEncodedTxFil } from '@onekeyhq/core/src/chains/fil/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxFil } from '@unionkey/core/src/chains/fil/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -43,7 +43,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -64,7 +64,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathSuffix,
             coinName,
             template,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -98,7 +98,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       `${index}`,
             //     )}`,
 
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     isTestnet: network.isTestnet,
             //   })),
             // });
@@ -153,9 +153,9 @@ export class KeyringHardware extends KeyringHardwareBase {
       const protocolIndicator = address[1];
 
       if (!validateNetworkPrefix(networkPrefix))
-        throw new OneKeyInternalError('Invalid filecoin network.');
+        throw new UnionKeyInternalError('Invalid filecoin network.');
       if (parseInt(protocolIndicator, 10) !== EProtocolIndicator.SECP256K1)
-        throw new OneKeyInternalError('Invalid filecoin protocol indicator.');
+        throw new UnionKeyInternalError('Invalid filecoin protocol indicator.');
 
       const decodedData = Buffer.from(
         base32Decode(address.substring(2).toUpperCase(), 'RFC4648'),
@@ -168,7 +168,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         Buffer.from(newAddress.getChecksum()).toString('hex') !==
         Buffer.from(checksum).toString('hex')
       )
-        throw new OneKeyInternalError('Invalid filecoin checksum network.');
+        throw new UnionKeyInternalError('Invalid filecoin checksum network.');
 
       return newAddress;
     };

@@ -2,21 +2,21 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { Button, SizableText, XStack } from '@onekeyhq/components';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IModalSwapParamList } from '@onekeyhq/shared/src/routes';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import { getImportFromToken } from '@onekeyhq/shared/types/earn/earnProvider.constants';
+import type { IPageNavigationProp } from '@unionkey/components';
+import { Button, SizableText, XStack } from '@unionkey/components';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import type { IModalSwapParamList } from '@unionkey/shared/src/routes';
+import { EModalRoutes } from '@unionkey/shared/src/routes/modal';
+import { EModalSwapRoutes } from '@unionkey/shared/src/routes/swap';
+import { getImportFromToken } from '@unionkey/shared/types/earn/earnProvider.constants';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/swap/types';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

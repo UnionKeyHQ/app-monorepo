@@ -1,10 +1,10 @@
 import crypto from 'crypto';
 
-import { IncorrectPassword } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+import { IncorrectPassword } from '@unionkey/shared/src/errors';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
 
 import {
   AES256_IV_LENGTH,
@@ -136,10 +136,10 @@ async function encryptAsync({
     platformEnv.isNative &&
     !platformEnv.isJest &&
     !useRnJsCrypto &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     const webembedApiProxy = (
-      await import('@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy')
+      await import('@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy')
     ).default;
     const str = await webembedApiProxy.secret.encryptAsync({
       password,
@@ -207,10 +207,10 @@ async function decryptAsync({
     platformEnv.isNative &&
     !platformEnv.isJest &&
     !useRnJsCrypto &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     const webembedApiProxy = (
-      await import('@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy')
+      await import('@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy')
     ).default;
     const str = await webembedApiProxy.secret.decryptAsync({
       password,

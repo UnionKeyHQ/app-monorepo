@@ -1,4 +1,4 @@
-import { JsonRPCRequest } from '@onekeyhq/shared/src/request/JsonRPCRequest';
+import { JsonRPCRequest } from '@unionkey/shared/src/request/JsonRPCRequest';
 
 export class ClientRipple {
   readonly rpc: JsonRPCRequest;

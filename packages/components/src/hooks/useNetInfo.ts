@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { ONEKEY_HEALTH_CHECK_URL } from '@onekeyhq/shared/src/config/appConfig';
+import {
+  UNIONKEY_API_ENDPOINT,
+  UNIONKEY_HEALTH_CHECK_URL,
+  UNIONKEY_WALLET_API_ENDPOINT,
+} from '@unionkey/shared/src/config/appConfig';
 
 import { buildDeferredPromise } from './useDeferredPromise';
 import {
@@ -37,7 +41,7 @@ class NetInfo {
     reachabilityUrl: '',
     reachabilityMethod: 'GET',
     reachabilityTest: (response: { status: number }) =>
-      Promise.resolve(response.status === 200),
+      Promise.resolve(response.status === 200 || response.status === 204),
     reachabilityLongTimeout: 60 * 1000,
     reachabilityShortTimeout: 5 * 1000,
     reachabilityRequestTimeout: 10 * 1000,
@@ -107,17 +111,79 @@ class NetInfo {
       reachabilityRequestTimeout,
     );
 
-    try {
-      const response = await fetch(reachabilityUrl, {
-        method: reachabilityMethod,
-        signal: controller.signal,
-      });
+    const resolveReachabilityRequest = () => {
+      const endpoint = UNIONKEY_WALLET_API_ENDPOINT || UNIONKEY_API_ENDPOINT;
+      const isLocalDevUrl = (url: string) =>
+        url.includes('127.0.0.1') || url.includes('localhost');
 
+      if (/^https?:\/\//.test(reachabilityUrl)) {
+        if (isLocalDevUrl(reachabilityUrl)) {
+          const url = new URL(reachabilityUrl);
+          return {
+            resolvedUrl: `${url.pathname}${url.search}`,
+            devProxyEndpoint: `${url.protocol}//${url.host}`,
+          };
+        }
+        return {
+          resolvedUrl: reachabilityUrl,
+          devProxyEndpoint: '',
+        };
+      }
+
+      const isLocalDevEndpoint = endpoint && isLocalDevUrl(endpoint);
+      return {
+        resolvedUrl:
+          endpoint && !isLocalDevEndpoint
+            ? `${endpoint}${reachabilityUrl}`
+            : reachabilityUrl,
+        devProxyEndpoint: isLocalDevEndpoint ? endpoint : '',
+      };
+    };
+
+    const { resolvedUrl: resolvedReachabilityUrl, devProxyEndpoint } =
+      resolveReachabilityRequest();
+
+    try {
+      const fetchFn = globalThis.fetch;
+      const response =
+        typeof fetchFn === 'function'
+          ? await fetchFn(resolvedReachabilityUrl, {
+              method: reachabilityMethod,
+              signal: controller.signal,
+              headers: devProxyEndpoint
+                ? {
+                    'X-UnionKey-Dev-Proxy': devProxyEndpoint,
+                  }
+                : undefined,
+            })
+          : await new Promise<{ status: number }>((resolve, reject) => {
+              const xhr = new XMLHttpRequest();
+              xhr.open(reachabilityMethod, resolvedReachabilityUrl, true);
+              if (devProxyEndpoint) {
+                xhr.setRequestHeader(
+                  'X-UnionKey-Dev-Proxy',
+                  devProxyEndpoint,
+                );
+              }
+              xhr.timeout = reachabilityRequestTimeout;
+              xhr.onload = () => resolve({ status: xhr.status });
+              xhr.onerror = () =>
+                reject(new Error('Reachability request failed'));
+              xhr.ontimeout = () =>
+                reject(new Error('Reachability request timeout'));
+              xhr.onabort = () =>
+                reject(new Error('Reachability request aborted'));
+              controller.signal.addEventListener('abort', () => xhr.abort());
+              xhr.send();
+            });
       this.updateState({
         isInternetReachable: await reachabilityTest(response),
       });
     } catch (error) {
-      console.error('Failed to fetch reachability:', error);
+      console.error(
+        `Failed to fetch reachability: ${resolvedReachabilityUrl}`,
+        error,
+      );
       this.updateState({ isInternetReachable: false });
     } finally {
       clearTimeout(timeoutId);
@@ -148,7 +214,7 @@ class NetInfo {
 }
 
 export const globalNetInfo = new NetInfo({
-  reachabilityUrl: ONEKEY_HEALTH_CHECK_URL,
+  reachabilityUrl: UNIONKEY_HEALTH_CHECK_URL,
 });
 
 export const configureNetInfo = (configuration: IReachabilityConfiguration) => {

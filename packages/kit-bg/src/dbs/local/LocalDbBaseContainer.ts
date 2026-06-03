@@ -1,8 +1,8 @@
 import { cloneDeep, isString } from 'lodash';
 
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import cacheUtils, { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import cacheUtils, { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import indexedUtils from './indexed/indexedDBUtils';
 import { ELocalDBStoreNames } from './localDBStoreNames';

@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import type { IStackProps } from '@onekeyhq/components';
-import type { IDecodedTxExtraAlgo } from '@onekeyhq/core/src/chains/algo/types';
-import { useDecodedTxsAtom } from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import type { IStackProps } from '@unionkey/components';
+import type { IDecodedTxExtraAlgo } from '@unionkey/core/src/chains/algo/types';
+import { useDecodedTxsAtom } from '@unionkey/kit/src/states/jotai/contexts/signatureConfirm';
 
 import { SignatureConfirmItem } from '../../SignatureConfirmItem';
 

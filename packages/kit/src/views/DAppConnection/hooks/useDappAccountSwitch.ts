@@ -2,24 +2,24 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useAccountSelectorCreateAddress } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
 import {
   useActiveAccount,
   useSelectedAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getScopeFromImpl } from '@onekeyhq/shared/src/background/backgroundUtils';
+} from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { getScopeFromImpl } from '@unionkey/shared/src/background/backgroundUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import { EAlignPrimaryAccountMode } from '@unionkey/shared/types/dappConnection';
 
 import type { IExtensionActiveTabDAppInfo } from './useActiveTabDAppInfo';
 

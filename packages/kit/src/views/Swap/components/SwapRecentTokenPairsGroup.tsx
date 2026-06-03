@@ -4,12 +4,12 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import { Icon, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, SizableText, XStack, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   ESwapTabSwitchType,
   type ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { Token } from '../../../components/Token';
 import { useSwapTypeSwitchAtom } from '../../../states/jotai/contexts/swap';
@@ -118,7 +118,7 @@ const SwapRecentTokenPairsGroup = ({
               <SizableText
                 ml="$1"
                 size="$bodyMdMedium"
-              >{`${tokenPair.fromToken.symbol} â†’ ${tokenPair.toToken.symbol}`}</SizableText>
+              >{`${tokenPair.fromToken.symbol} â†?${tokenPair.toToken.symbol}`}</SizableText>
             </XStack>
           ))}
           {tokenPairsInCurrentType.length >= needFoldingMinCount ? (

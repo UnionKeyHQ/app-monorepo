@@ -1,4 +1,4 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

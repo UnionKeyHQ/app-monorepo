@@ -1,5 +1,5 @@
-import { locale as LocalizationLocale } from '@onekeyhq/shared/src/modules3rdParty/localization';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { locale as LocalizationLocale } from '@unionkey/shared/src/modules3rdParty/localization';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { ISystemLocaleMethods } from './type';
 

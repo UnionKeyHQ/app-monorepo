@@ -9,27 +9,27 @@ import {
   Toast,
   YStack,
   useInTabDialog,
-} from '@onekeyhq/components';
-import UpdateNotificationDark from '@onekeyhq/kit/assets/animations/update-notification-dark.json';
-import UpdateNotificationLight from '@onekeyhq/kit/assets/animations/update-notification-light.json';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
-import { useAppUpdatePersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/components';
+import UpdateNotificationDark from '@unionkey/kit/assets/animations/update-notification-dark.json';
+import UpdateNotificationLight from '@unionkey/kit/assets/animations/update-notification-light.json';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
+import { useAppUpdatePersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppUpdateStatus,
   isFirstLaunchAfterUpdated,
   isNeedUpdate,
-} from '@onekeyhq/shared/src/appUpdate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/appUpdate';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   downloadASC as NativeDownloadASC,
   downloadPackage as NativeDownloadPackage,
   manualInstallPackage as NativeManualInstallPackage,
   verifyASC as NativeVerifyASC,
   verifyPackage as NativeVerifyPackage,
-} from '@onekeyhq/shared/src/modules3rdParty/auto-update';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EAppUpdateRoutes, EModalRoutes } from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/modules3rdParty/auto-update';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EAppUpdateRoutes, EModalRoutes } from '@unionkey/shared/src/routes';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../hooks/useAppNavigation';

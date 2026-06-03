@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   IBabylonPortfolioItem,
   IBabylonPortfolioStatus,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/staking';
 
 export type IBabylonStatus = IBabylonPortfolioStatus | 'overflow';
 
@@ -36,7 +36,7 @@ export const useBabylonStatusMap = () => {
 export const getBabylonPortfolioTags = (
   item: IBabylonPortfolioItem,
 ): IBabylonStatus[] => {
-  // 正常状态
+  // 正常状�?
   if (!item.isOverflow) {
     switch (item.status) {
       case 'active':
@@ -53,7 +53,7 @@ export const getBabylonPortfolioTags = (
         return [];
     }
   }
-  // 溢出状态
+  // 溢出状�?
   switch (item.status) {
     case 'active':
       return ['overflow'];

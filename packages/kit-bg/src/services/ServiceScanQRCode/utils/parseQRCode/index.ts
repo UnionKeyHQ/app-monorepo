@@ -1,8 +1,8 @@
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import {
   EQRCodeHandlerType,
   PARSE_HANDLER_NAMES,
-} from '@onekeyhq/shared/types/qrCode';
+} from '@unionkey/shared/types/qrCode';
 
 import { PARSE_HANDLERS } from './handlers';
 import * as deeplinkHandler from './handlers/deeplink';

@@ -18,8 +18,8 @@ import {
   Stack,
   Unspaced,
   withStaticProperties,
-} from '@onekeyhq/components';
-import type { IIconButtonProps } from '@onekeyhq/components/src/actions';
+} from '@unionkey/components';
+import type { IIconButtonProps } from '@unionkey/components/src/actions';
 import type {
   IIconProps,
   IImageFallbackProps,
@@ -27,13 +27,13 @@ import type {
   IImageProps,
   ISizableTextProps,
   IStackProps,
-} from '@onekeyhq/components/src/primitives';
+} from '@unionkey/components/src/primitives';
 import type {
   IDBAccount,
   IDBIndexedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IFuseResultMatch } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { listItemPressStyle } from '@onekeyhq/shared/src/style';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import type { IFuseResultMatch } from '@unionkey/shared/src/modules3rdParty/fuse';
+import { listItemPressStyle } from '@unionkey/shared/src/style';
 
 import { AccountAvatar } from '../AccountAvatar';
 

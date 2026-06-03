@@ -3,25 +3,25 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { debounce } from 'lodash';
 
-import { EPageType, usePageType } from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { EPageType, usePageType } from '@unionkey/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkey/kit/src/hooks/useRouteIsFocused';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { useInAppNotificationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import type { IFuseResult } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { useFuse } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import type { IFuseResult } from '@unionkey/shared/src/modules3rdParty/fuse';
+import { useFuse } from '@unionkey/shared/src/modules3rdParty/fuse';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
 import type {
   ESwapCrossChainStatus,
   ESwapTxHistoryStatus,
   ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
-import { ESwapDirectionType } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
+import { ESwapDirectionType } from '@unionkey/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useListenTabFocusState from '../../../hooks/useListenTabFocusState';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { IEncodedTx, IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import type { IEncodedTx, IUnsignedTxPro } from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -8,8 +8,8 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/address';
+import type { IDecodedTx } from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 

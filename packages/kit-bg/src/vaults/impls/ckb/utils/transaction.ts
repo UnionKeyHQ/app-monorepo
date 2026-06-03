@@ -7,8 +7,8 @@ import {
 } from '@ckb-lumos/helpers';
 import { ResultFormatter } from '@ckb-lumos/rpc';
 
-import { ConvertTxError } from '@onekeyhq/shared/src/errors';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { ConvertTxError } from '@unionkey/shared/src/errors';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import type ClientCkb from '../sdkCkb/ClientCkb';
 import type { Cell, OutPoint, Transaction } from '@ckb-lumos/base';

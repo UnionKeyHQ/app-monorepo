@@ -1,6 +1,6 @@
-import type { IUnsignedTx } from '@onekeyhq/core/src/types';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { InfoItemGroup } from '@onekeyhq/kit/src/views/AssetDetails/pages/HistoryDetails/components/TxDetailsInfoItem';
+import type { IUnsignedTx } from '@unionkey/core/src/types';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { InfoItemGroup } from '@unionkey/kit/src/views/AssetDetails/pages/HistoryDetails/components/TxDetailsInfoItem';
 
 import { getTxSpecialInfo } from './TxSpecialInfo';
 

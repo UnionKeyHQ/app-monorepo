@@ -1,16 +1,16 @@
-import { Button, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Button, Stack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   BadAuthError,
   InvoiceExpiredError,
-  OneKeyError,
-} from '@onekeyhq/shared/src/errors';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
+  UnionKeyError,
+} from '@unionkey/shared/src/errors';
+import errorToastUtils from '@unionkey/shared/src/errors/utils/errorToastUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { Layout } from './utils/Layout';
 
@@ -18,7 +18,7 @@ function error10() {
   throw new BadAuthError();
 }
 function error00() {
-  throw new Error(`原生 new Error 不显示 toast: ${Date.now()}`);
+  throw new Error(`原生 new Error 不显�?toast: ${Date.now()}`);
 }
 function error11() {
   throw new BadAuthError({
@@ -26,15 +26,15 @@ function error11() {
   });
 }
 function error13() {
-  throw new OneKeyError({
+  throw new UnionKeyError({
     autoToast: true,
-    message: '使用基类 new OneKeyError + autoToast 显示 toast',
+    message: '使用基类 new UnionKeyError + autoToast 显示 toast',
   });
 }
 function error12() {
   throw new BadAuthError({
     autoToast: true,
-    message: '自定义 Error 类，显式传入自定义 message，不再使用内置 i18n',
+    message: '自定�?Error 类，显式传入自定�?message，不再使用内�?i18n',
   });
   // throw new Error(`demoErrorInSyncMethod: ${Date.now()}`);
 }
@@ -63,14 +63,14 @@ function Demo1() {
           error00();
         }}
       >
-        不显示 toast1
+        不显�?toast1
       </Button>
       <Button
         onPress={() => {
           error10();
         }}
       >
-        不显示 toast2
+        不显�?toast2
       </Button>
       <Button
         onPress={() => {
@@ -91,14 +91,14 @@ function Demo1() {
           error12();
         }}
       >
-        显示 toast 自定义 message
+        显示 toast 自定�?message
       </Button>
       <Button
         onPress={async () => {
           await error20();
         }}
       >
-        异步函数显示 toast （1s 后）
+        异步函数显示 toast �?s 后）
       </Button>
       <Button
         onPress={async () => {
@@ -133,7 +133,7 @@ function Demo1() {
           console.log(ctx);
         }}
       >
-        调用 background 不显示 toast2
+        调用 background 不显�?toast2
       </Button>
 
       <Button
@@ -183,7 +183,7 @@ function Demo1() {
           console.log(ctx);
         }}
       >
-        调用 background 不显示 toast5
+        调用 background 不显�?toast5
       </Button>
       <Button
         onPress={async () => {

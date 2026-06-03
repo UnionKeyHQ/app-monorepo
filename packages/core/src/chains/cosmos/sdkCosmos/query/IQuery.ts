@@ -1,4 +1,4 @@
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 
 import { CosmwasmQuery } from './CosmwasmQuery';
 import { MintScanQuery } from './MintScanQuery';

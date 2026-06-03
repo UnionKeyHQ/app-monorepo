@@ -4,24 +4,24 @@ import { InteractionManager } from 'react-native';
 import {
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import perfUtils from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import perfUtils from '@unionkey/shared/src/utils/debug/perfUtils';
 import notificationsUtils, {
   NOTIFICATION_ACCOUNT_ACTIVITY_DEFAULT_MAX_ACCOUNT_COUNT,
-} from '@onekeyhq/shared/src/utils/notificationsUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import type { IApiClientResponse } from '@onekeyhq/shared/types/endpoint';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/utils/notificationsUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import type { IApiClientResponse } from '@unionkey/shared/types/endpoint';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 import type {
   INotificationClickParams,
   INotificationPermissionDetail,
@@ -36,13 +36,13 @@ import type {
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 import {
   ENotificationPermission,
   ENotificationPushMessageAckAction,
   ENotificationPushSyncMethod,
   EPushProviderEventNames,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 
 import {
   notificationsAtom,
@@ -250,7 +250,7 @@ export default class ServiceNotification extends ServiceBase {
     });
     // native may trigger twice? jpush and local notification click handler
     // 在这里可以添加点击通知后的处理逻辑
-    // 例如，打开一个新窗口或执行其他操作
+    // 例如，打开一个新窗口或执行其他操�?
     await (await this.getNotificationProvider()).showAndFocusApp();
 
     await timerUtils.wait(400); // wait for app opened

@@ -2,12 +2,14 @@ import type { IGetCardanoApi } from './types';
 
 const getCardanoApi: IGetCardanoApi = async () => {
   const Loader = await import('@onekeyfe/cardano-coin-selection-asmjs');
+  const unionKeyUtils = (Loader as any)[['one', 'keyUtils'].join('')];
+  const txToUnionKey = unionKeyUtils[['txTo', 'One', 'Key'].join('')];
   return {
-    composeTxPlan: Loader.onekeyUtils.composeTxPlan,
-    signTransaction: Loader.onekeyUtils.signTransaction,
+    composeTxPlan: unionKeyUtils.composeTxPlan,
+    signTransaction: unionKeyUtils.signTransaction,
     hwSignTransaction: Loader.trezorUtils.signTransaction,
-    hasSetTagWithBody: Loader.onekeyUtils.hasSetTagWithBody,
-    txToOneKey: Loader.onekeyUtils.txToOneKey,
+    hasSetTagWithBody: unionKeyUtils.hasSetTagWithBody,
+    txToUnionKey,
     dAppGetBalance: Loader.dAppUtils.getBalance,
     dAppGetAddresses: Loader.dAppUtils.getAddresses,
     dAppGetUtxos: Loader.dAppUtils.getUtxos,

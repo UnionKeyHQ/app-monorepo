@@ -3,10 +3,10 @@ import {
   validateMnemonic as tonValidateMnemonicFn,
 } from 'tonweb-mnemonic';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { InvalidMnemonic } from '@onekeyhq/shared/src/errors';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import { InvalidMnemonic } from '@unionkey/shared/src/errors';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import type { IBip39RevealableSeed } from './bip39';
 
@@ -38,7 +38,7 @@ async function tonValidateMnemonic(mnemonicArray: string[]): Promise<boolean> {
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     return appGlobals.$webembedApiProxy.secret.tonValidateMnemonic(
       mnemonicArray,
@@ -53,7 +53,7 @@ async function tonMnemonicToKeyPair(
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     return appGlobals.$webembedApiProxy.secret.tonMnemonicToKeyPair(
       mnemonicArray,

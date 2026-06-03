@@ -1,7 +1,7 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IAccountManagerStacksParamList } from '@onekeyhq/shared/src/routes';
-import { EAccountManagerStacksRoutes } from '@onekeyhq/shared/src/routes/accountManagerStacks';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import type { IAccountManagerStacksParamList } from '@unionkey/shared/src/routes';
+import { EAccountManagerStacksRoutes } from '@unionkey/shared/src/routes/accountManagerStacks';
 
 const AccountSelectorStackPage = LazyLoadPage(
   () => import('../pages/AccountSelectorStack'),

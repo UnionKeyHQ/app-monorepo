@@ -1,9 +1,9 @@
 import {
   decodeAddress,
   encodeAddress,
-} from '@onekeyhq/core/src/chains/bch/sdkBch';
-import { validateBtcAddress } from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/bch/sdkBch';
+import { validateBtcAddress } from '@unionkey/core/src/chains/btc/sdkBtc';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 
 import VaultBtc from '../btc/Vault';
 

@@ -2,14 +2,14 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Toast } from '@onekeyhq/components';
-import { usePasswordPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Toast } from '@unionkey/components';
+import { usePasswordPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import extUtils, {
   EPassKeyWindowType,
-} from '@onekeyhq/shared/src/utils/extUtils';
-import { registerWebAuth, verifiedWebAuth } from '@onekeyhq/shared/src/webAuth';
+} from '@unionkey/shared/src/utils/extUtils';
+import { registerWebAuth, verifiedWebAuth } from '@unionkey/shared/src/webAuth';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

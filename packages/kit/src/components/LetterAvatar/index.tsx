@@ -1,8 +1,8 @@
 import memoizee from 'memoizee';
 
-import type { IStackProps } from '@onekeyhq/components';
-import { SizableText, Stack, getTokenValue } from '@onekeyhq/components';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import type { IStackProps } from '@unionkey/components';
+import { SizableText, Stack, getTokenValue } from '@unionkey/components';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import type { Token } from 'tamagui';
 

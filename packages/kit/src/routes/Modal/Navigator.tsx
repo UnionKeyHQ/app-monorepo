@@ -1,5 +1,5 @@
-import { RootModalNavigator } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import type { EModalRoutes } from '@onekeyhq/shared/src/routes';
+import { RootModalNavigator } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import type { EModalRoutes } from '@unionkey/shared/src/routes';
 
 import { modalRouter } from './router';
 

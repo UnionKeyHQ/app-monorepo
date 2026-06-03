@@ -1,18 +1,18 @@
 import { sha256 } from '@noble/hashes/sha256';
 
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { IMPL_BTC, IMPL_TBTC } from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkey/core/src/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { IMPL_BTC, IMPL_TBTC } from '@unionkey/shared/src/engine/engineConsts';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 import type {
   IEncodedTxLightning,
   ILnurlAuthParams,
   ISignApiMessageParams,
-} from '@onekeyhq/shared/types/lightning';
+} from '@unionkey/shared/types/lightning';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 
@@ -63,7 +63,7 @@ export class KeyringHd extends KeyringHdBase {
             });
 
           if (addressesInfo.length !== usedIndexes.length) {
-            throw new OneKeyInternalError('Unable to get address');
+            throw new UnionKeyInternalError('Unable to get address');
           }
           return addressesInfo;
         },
@@ -77,7 +77,7 @@ export class KeyringHd extends KeyringHdBase {
     );
     for (const account of nativeSegwitAccounts) {
       if (!account.address) {
-        throw new OneKeyInternalError('No address');
+        throw new UnionKeyInternalError('No address');
       }
       const accountExist = await client.checkAccountExist(account.address);
       if (!accountExist) {
@@ -165,7 +165,7 @@ export class KeyringHd extends KeyringHdBase {
       typeof signTemplate.nonce !== 'number' ||
       typeof signTemplate.randomSeed !== 'number'
     ) {
-      throw new OneKeyInternalError('Invalid signature');
+      throw new UnionKeyInternalError('Invalid signature');
     }
     const rawTx = {
       amount,
@@ -272,7 +272,7 @@ export class KeyringHd extends KeyringHdBase {
   async signApiMessage(params: ISignApiMessageParams) {
     const { password, msgPayload, address, path } = params;
     if (!password) {
-      throw new OneKeyInternalError('Password is required');
+      throw new UnionKeyInternalError('Password is required');
     }
     const credentials = await this.baseGetCredentialsInfo({
       password,

@@ -6,14 +6,14 @@ import type {
   IJotaiContextStoreData,
   IJotaiContextStoreMap,
   IJotaiContextStoreMapValue,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EJotaiContextStoreNames,
   getJotaiContextTrackerMap,
   useJotaiContextStoreMapAtom,
   useJotaiContextTrackerMap,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { useDebugComponentRemountLog } from '@unionkey/shared/src/utils/debug/debugUtils';
 
 import { AccountSelectorRootProvider } from '../../../components/AccountSelector/AccountSelectorRootProvider';
 import { DiscoveryBrowserRootProvider } from '../../../views/Discovery/components/DiscoveryBrowserRootProvider';

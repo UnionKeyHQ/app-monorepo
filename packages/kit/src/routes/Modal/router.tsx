@@ -1,8 +1,8 @@
-import type { IModalRootNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { ModalSettingStack } from '@onekeyhq/kit/src/views/Setting/router';
-import { v4migrationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalRootNavigatorConfig } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import { ModalSettingStack } from '@unionkey/kit/src/views/Setting/router';
+import { v4migrationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EModalRoutes } from '@unionkey/shared/src/routes';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { AccountManagerStacks } from '../../views/AccountManagerStacks/router';

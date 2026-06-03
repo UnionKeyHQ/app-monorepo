@@ -1,6 +1,6 @@
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import type { CoreChainApiBase } from '@unionkey/core/src/base/CoreChainApiBase';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 
 import { KeyringQrBase } from '../../base/KeyringQrBase';
 

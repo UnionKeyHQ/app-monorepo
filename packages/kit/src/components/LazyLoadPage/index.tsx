@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import { Stack } from '@onekeyhq/components';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack } from '@unionkey/components';
+import LazyLoad from '@unionkey/shared/src/lazyLoad';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export const LazyLoadPage = (
   factory: () => Promise<{ default: any }>,

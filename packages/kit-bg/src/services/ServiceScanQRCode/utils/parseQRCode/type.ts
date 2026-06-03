@@ -1,12 +1,12 @@
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import type { IAirGapUrJson } from '@onekeyhq/qr-wallet-sdk';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
+import type { IAirGapUrJson } from '@unionkey/qr-wallet-sdk';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
 import type {
   EQRCodeHandlerNames,
   EQRCodeHandlerType,
-} from '@onekeyhq/shared/types/qrCode';
-import type { ITokenData } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/qrCode';
+import type { ITokenData } from '@unionkey/shared/types/token';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IBaseValue {}

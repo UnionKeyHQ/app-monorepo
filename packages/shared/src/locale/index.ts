@@ -1,10 +1,10 @@
-import ISO6391 from 'iso-639-1';
+﻿import ISO6391 from 'iso-639-1';
 
 // must keep this platformEnv import, otherwise the IDE will be very laggy when linting, don't know why
 /*
 Linting file xxx.tsx took 14762ms. Please check the ESLint rules for performance issues.
 */
-import '@onekeyhq/shared/src/platformEnv';
+import '@unionkey/shared/src/platformEnv';
 
 import { LOCALES as _LOCALES } from './localeJsonMap';
 
@@ -17,10 +17,10 @@ export const LOCALES = _LOCALES as unknown as Record<
 >;
 
 const defaultLanguage: Record<string, string> = {
-  'zh-CN': '简体中文',
-  'zh-HK': '繁體中文（香港）',
-  'zh-TW': '繁體中文（臺灣）',
-  'pt-BR': 'Português(Brasil)',
+  'zh-CN': 'Chinese (Simplified)',
+  'zh-HK': 'Chinese (Hong Kong)',
+  'zh-TW': 'Chinese (Traditional)',
+  'pt-BR': 'Portugu锚s(Brasil)',
 };
 
 const getLanguage = (symbol: string): string => {

@@ -1,4 +1,4 @@
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 
 import coreTestsUtils from '../../../@tests/coreTestsUtils';
 import coreTestsFixtures from '../../../@tests/fixtures/coreTestsFixtures';

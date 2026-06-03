@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 
-import { useJotaiContextRootStore } from '@onekeyhq/kit/src/states/jotai/utils/useJotaiContextRootStore';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { useJotaiContextRootStore } from '@unionkey/kit/src/states/jotai/utils/useJotaiContextRootStore';
+import { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import { ProviderJotaiContextMarketWatchList } from '../../states/jotai/contexts/market';
 

@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-import { SizableText, Stack, XStack } from '@onekeyhq/components';
+import { SizableText, Stack, XStack } from '@unionkey/components';
 
 export type ITutorialsListItem = {
   title: string;

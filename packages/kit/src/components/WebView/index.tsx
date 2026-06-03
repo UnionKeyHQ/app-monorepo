@@ -1,10 +1,10 @@
 import type { ComponentProps, FC } from 'react';
 import { useCallback } from 'react';
 
-import { Button, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import extUtils from '@onekeyhq/shared/src/utils/extUtils';
+import { Button, Stack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import extUtils from '@unionkey/shared/src/utils/extUtils';
 
 import InpageProviderWebView from './InpageProviderWebView';
 
@@ -55,7 +55,7 @@ interface IWebViewProps extends IElectronWebViewEvents {
   /** @platform native
    * @description List of origin strings to allow being navigated to.
    * The strings allow wildcards and follow the same rules as the navigator.
-   * For example, ['https://*.onekey.so', 'https://*.onekey.com'] will allow any URL from these domains.
+   * For example, ['https://*.unionkey.so', 'https://*.unionkey.com'] will allow any URL from these domains.
    */
   originWhitelist?: string[];
   /** @platform native

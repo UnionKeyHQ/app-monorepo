@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { SizableText, YStack } from '@onekeyhq/components';
+import { SizableText, YStack } from '@unionkey/components';
 import {
   EHostSecurityLevel,
   type IHostSecurity,
-} from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/shared/types/discovery';
 
 export function DAppRiskyAlertDetail({
   urlSecurityInfo,

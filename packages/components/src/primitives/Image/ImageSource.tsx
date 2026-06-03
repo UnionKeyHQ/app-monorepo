@@ -2,8 +2,8 @@ import { useCallback, useContext, useRef, useState } from 'react';
 
 import { usePropsAndStyle } from '@tamagui/core';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { ImageContext } from './context';
 import { useImageComponent, useSource } from './hooks';

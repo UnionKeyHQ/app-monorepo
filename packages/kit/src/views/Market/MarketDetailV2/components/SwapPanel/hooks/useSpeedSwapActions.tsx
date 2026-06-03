@@ -3,35 +3,35 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Dialog } from '@onekeyhq/components';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
-import type { IAccountSelectorActiveAccountInfo } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { Dialog } from '@unionkey/components';
+import type { IEncodedTx } from '@unionkey/core/src/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useDebounce } from '@unionkey/kit/src/hooks/useDebounce';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useSignatureConfirm } from '@unionkey/kit/src/hooks/useSignatureConfirm';
+import type { IAccountSelectorActiveAccountInfo } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import {
   useInAppNotificationAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import type {
   IApproveInfo,
   ITransferInfo,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { presetNetworksMap } from '@onekeyhq/shared/src/config/presetNetworks';
+} from '@unionkey/kit-bg/src/vaults/types';
+import { presetNetworksMap } from '@unionkey/shared/src/config/presetNetworks';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { toBigIntHex } from '@onekeyhq/shared/src/utils/numberUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { toBigIntHex } from '@unionkey/shared/src/utils/numberUtils';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
 import type {
   ISwapApproveTransaction,
   ISwapTokenBase,
   ISwapTxHistory,
   ISwapTxInfo,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 import {
   EProtocolOfExchange,
   ESwapApproveTransactionStatus,
@@ -39,8 +39,8 @@ import {
   ESwapQuoteKind,
   ESwapTabSwitchType,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/swap/types';
+import type { ISendTxOnSuccessData } from '@unionkey/shared/types/tx';
 
 import { ESwapDirection } from './useTradeType';
 
@@ -197,7 +197,7 @@ export function useSpeedSwapActions({
               provider: swapInfo.swapBuildResData.result?.info,
               socketBridgeScanUrl:
                 swapInfo.swapBuildResData.socketBridgeScanUrl,
-              oneKeyFee:
+              unionKeyFee:
                 swapInfo.swapBuildResData.result?.fee?.percentageFee ?? 0,
               protocolFee:
                 swapInfo.swapBuildResData.result?.fee?.protocolFees ?? 0,
@@ -207,7 +207,8 @@ export function useSpeedSwapActions({
               supportUrl: swapInfo.swapBuildResData.result?.supportUrl,
               orderSupportUrl:
                 swapInfo.swapBuildResData.result?.orderSupportUrl,
-              oneKeyFeeExtraInfo:
+              unionKeyFeeExtraInfo:
+                swapInfo.swapBuildResData.result?.unionKeyFeeExtraInfo ??
                 swapInfo.swapBuildResData.result?.oneKeyFeeExtraInfo,
             },
             ctx: swapInfo.swapBuildResData.ctx,

@@ -5,7 +5,7 @@ import {
   openDB,
 } from 'idb';
 
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
 
 import {
   INDEXED_DB_VERSION,

@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, Divider, Empty, ListView, Page } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IConnectionStorageType } from '@onekeyhq/shared/types/dappConnection';
+import { Button, Divider, Empty, ListView, Page } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IConnectionStorageType } from '@unionkey/shared/types/dappConnection';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

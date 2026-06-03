@@ -1,5 +1,5 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

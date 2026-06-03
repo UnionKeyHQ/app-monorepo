@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 
 import { StyleSheet } from 'react-native';
 
-import { Group, SizableText, Stack } from '@onekeyhq/components';
+import { Group, SizableText, Stack } from '@unionkey/components';
 
 interface IContentItemProps {
   hasDivider?: boolean;

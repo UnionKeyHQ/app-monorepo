@@ -20,20 +20,20 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateResultVerifyAtom,
   useFirmwareUpdateStepInfoAtom,
   useHardwareUiStateAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EFirmwareUpdateTipMessages } from '@unionkey/shared/types/device';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 import { FirmwareUpdatePromptBootloaderWebDevice } from '../components/FirmwareUpdatePromptBootloaderWebDevice';
 import { useFirmwareVersionValid } from '../hooks/useFirmwareVersionValid';
@@ -150,7 +150,7 @@ function FirmwareUpdateVersionItem({
           {versionValid(fromVersion) ? fromVersion : unknownMessage}
         </SizableText>
         <SizableText size="$bodyMd" color="$textSubdued">
-          â†’
+          â†?
         </SizableText>
         {renderToVersion()}
       </XStack>

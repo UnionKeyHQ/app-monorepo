@@ -1,7 +1,7 @@
 import { MotiView } from 'moti';
 import { getTokenValue } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useThemeValue } from '../../hooks';
 import { Stack } from '../../primitives';

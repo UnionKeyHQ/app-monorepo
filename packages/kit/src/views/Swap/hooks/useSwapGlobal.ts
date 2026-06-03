@@ -2,22 +2,22 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { isNil } from 'lodash';
 
-import { EPageType, usePageType } from '@onekeyhq/components';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { ISwapProviderManager } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import { swapDefaultSetTokens } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+import { EPageType, usePageType } from '@unionkey/components';
+import { useInAppNotificationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { ISwapProviderManager } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import { swapDefaultSetTokens } from '@unionkey/shared/types/swap/SwapProvider.constants';
 import type {
   ISwapInitParams,
   ISwapNetwork,
   ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 import {
   ESwapDirectionType,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useListenTabFocusState from '../../../hooks/useListenTabFocusState';
@@ -451,7 +451,7 @@ export function useSwapInit(params?: ISwapInitParams) {
       void syncNetworksSort(
         params?.importFromToken?.networkId ??
           params?.importToToken?.networkId ??
-          getNetworkIdsMap().onekeyall,
+          getNetworkIdsMap().unionkeyall,
       );
       return;
     }
@@ -475,7 +475,7 @@ export function useSwapInit(params?: ISwapInitParams) {
     let netInfo = accountNetwork;
     let netId = accountNetwork?.networkId;
     if (isAllNet) {
-      netId = getNetworkIdsMap().onekeyall;
+      netId = getNetworkIdsMap().unionkeyall;
       const allNetDefaultToken = swapDefaultSetTokens[netId]?.fromToken;
       netInfo = swapNetworksRef.current.find(
         (net) => net.networkId === allNetDefaultToken?.networkId,

@@ -45,7 +45,7 @@ const baseElectronBuilderConfig = {
   'publish': {
     'provider': 'github',
     'repo': 'app-monorepo',
-    'owner': 'OneKeyHQ',
+    'owner': 'UnionKeyHQ',
   },
   'afterSign': getPath('scripts/afterSign.js'),
   'afterPack': getPath('scripts/afterPack.js'),

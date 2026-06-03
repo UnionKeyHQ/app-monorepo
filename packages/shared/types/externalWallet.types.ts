@@ -1,8 +1,8 @@
 import { type EIP1193Provider } from 'viem';
 
-import type { ExternalConnectorWalletConnect } from '@onekeyhq/kit-bg/src/connectors/chains/walletconnect/ExternalConnectorWalletConnect';
-import type { IDBAccountAddressesMap } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { WalletConnectDappSideProvider } from '@onekeyhq/kit-bg/src/services/ServiceWalletConnect/WalletConnectDappSideProvider';
+import type { ExternalConnectorWalletConnect } from '@unionkey/kit-bg/src/connectors/chains/walletconnect/ExternalConnectorWalletConnect';
+import type { IDBAccountAddressesMap } from '@unionkey/kit-bg/src/dbs/local/types';
+import type { WalletConnectDappSideProvider } from '@unionkey/kit-bg/src/services/ServiceWalletConnect/WalletConnectDappSideProvider';
 
 import type { Emitter } from '../src/eventBus/WagmiEventEmitter';
 import type {
@@ -71,7 +71,7 @@ export type IExternalConnectionInfoEvmEIP6963 = {
   info: IEvmEIP6963ProviderInfo;
 };
 export type IExternalConnectionInfoEvmInjected = {
-  global: 'ethereum'; // window.ethereum, nested object use `lodash.get(window, '$onekey.ethereum');`
+  global: 'ethereum'; // window.ethereum, nested object use `lodash.get(window, '$unionkey.ethereum');`
   icon?: string;
   name: string;
 };

@@ -1,6 +1,6 @@
-import { SizableText, Stack, YStack } from '@onekeyhq/components';
-import { RichSizeableText } from '@onekeyhq/components/src/content/RichSizeableText';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, Stack, YStack } from '@unionkey/components';
+import { RichSizeableText } from '@unionkey/components/src/content/RichSizeableText';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { Layout } from './utils/Layout';
 
@@ -44,7 +44,7 @@ const RichSizeableTextGallery = () => (
                 number: '10',
               }}
             >
-              {ETranslations.hardware_onekey_lite_pin_error_desc}
+              {ETranslations.hardware_unionkey_lite_pin_error_desc}
             </RichSizeableText>
           </Stack>
         ),

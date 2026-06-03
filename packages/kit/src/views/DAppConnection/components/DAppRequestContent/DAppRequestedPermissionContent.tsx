@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import { Icon, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, SizableText, XStack, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 function DAppRequestedPermissionContent({
   requestPermissions,

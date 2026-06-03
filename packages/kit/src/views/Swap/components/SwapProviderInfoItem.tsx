@@ -10,9 +10,9 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ISwapToken } from '@unionkey/shared/types/swap/types';
 
 import { SwapServiceFeeOverview } from './SwapServiceFeeOverview';
 
@@ -20,7 +20,7 @@ interface ISwapProviderInfoItemProps {
   fromToken?: ISwapToken;
   isBest?: boolean;
   toToken?: ISwapToken;
-  onekeyFee?: number;
+  unionkeyFee?: number;
   providerIcon: string;
   providerName: string;
   showLock?: boolean;
@@ -29,9 +29,9 @@ interface ISwapProviderInfoItemProps {
 }
 
 const SwapProviderInfoItemTitleContent = ({
-  onekeyFee,
+  unionkeyFee,
 }: {
-  onekeyFee?: number;
+  unionkeyFee?: number;
 }) => {
   const intl = useIntl();
 
@@ -47,7 +47,7 @@ const SwapProviderInfoItemTitleContent = ({
           id: ETranslations.swap_page_provider_provider,
         })}
       </SizableText>
-      <SwapServiceFeeOverview onekeyFee={onekeyFee} />
+      <SwapServiceFeeOverview unionkeyFee={unionkeyFee} />
     </XStack>
   );
 };
@@ -59,7 +59,7 @@ export const SwapProviderInfoItemTitleContentMemo = memo(
 const SwapProviderInfoItem = ({
   fromToken,
   isBest,
-  onekeyFee,
+  unionkeyFee,
   toToken,
   providerIcon,
   providerName,
@@ -70,7 +70,7 @@ const SwapProviderInfoItem = ({
   const intl = useIntl();
   return (
     <XStack justifyContent="space-between" alignItems="center">
-      <SwapProviderInfoItemTitleContentMemo onekeyFee={onekeyFee} />
+      <SwapProviderInfoItemTitleContentMemo unionkeyFee={unionkeyFee} />
       {isLoading ? (
         <Stack py="$1">
           <Skeleton h="$3" w="$24" />

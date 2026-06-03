@@ -2,11 +2,11 @@
 /* eslint-disable import/order */
 const {
   markJsBundleLoadedTime,
-} = require('@onekeyhq/shared/src/modules3rdParty/metrics');
+} = require('@unionkey/shared/src/modules3rdParty/metrics');
 
 markJsBundleLoadedTime();
 
-import '@onekeyhq/shared/src/polyfills';
+import '@unionkey/shared/src/polyfills';
 import { registerRootComponent } from 'expo';
 
 import App from './App';
@@ -14,8 +14,8 @@ import App from './App';
 import {
   initSentry,
   withSentryHOC,
-} from '@onekeyhq/shared/src/modules3rdParty/sentry';
-import { SentryErrorBoundaryFallback } from '@onekeyhq/kit/src/components/ErrorBoundary';
+} from '@unionkey/shared/src/modules3rdParty/sentry';
+import { SentryErrorBoundaryFallback } from '@unionkey/kit/src/components/ErrorBoundary';
 
 initSentry();
 

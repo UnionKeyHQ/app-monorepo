@@ -4,30 +4,30 @@ import type {
   AirGapUR,
   IAirGapMultiAccounts,
   IAirGapUrJson,
-} from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/qr-wallet-sdk';
 import {
   EAirGapURType,
   airGapUrUtils,
   getAirGapSdk,
-} from '@onekeyhq/qr-wallet-sdk';
-import { OneKeyRequestDeviceQR } from '@onekeyhq/qr-wallet-sdk/src/OneKeyRequestDeviceQR';
+} from '@unionkey/qr-wallet-sdk';
+import { UnionKeyRequestDeviceQR } from '@unionkey/qr-wallet-sdk/src/UnionKeyRequestDeviceQR';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { BTC_FIRST_TAPROOT_PATH } from '@onekeyhq/shared/src/consts/chainConsts';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyErrorAirGapInvalidQrCode } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { BTC_FIRST_TAPROOT_PATH } from '@unionkey/shared/src/consts/chainConsts';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
+import { UnionKeyErrorAirGapInvalidQrCode } from '@unionkey/shared/src/errors';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IQrWalletDevice } from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IQrWalletDevice } from '@unionkey/shared/types/device';
 
 import { vaultFactory } from '../../vaults/factory';
 import { buildDefaultAddAccountNetworksForQrWallet } from '../ServiceAccount/defaultNetworkAccountsConfig';
@@ -84,7 +84,7 @@ class ServiceQrWallet extends ServiceBase {
     }
 
     if (!responseUr && !allowPlainTextResponse) {
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
     return { raw, responseUr };
   }
@@ -257,7 +257,7 @@ class ServiceQrWallet extends ServiceBase {
       ),
     );
 
-    const request = new OneKeyRequestDeviceQR({
+    const request = new UnionKeyRequestDeviceQR({
       requestId: generateUUID(),
       xfp: byWallet.xfp || '',
       deviceId: byDevice?.deviceId || '',
@@ -283,7 +283,7 @@ class ServiceQrWallet extends ServiceBase {
     //   });
   }
 
-  // TODO build OneKeyRequestDeviceQR
+  // TODO build UnionKeyRequestDeviceQR
 
   // TODO startTwoWayQrcodeScan
 
@@ -334,7 +334,7 @@ class ServiceQrWallet extends ServiceBase {
 
     if (qrDevice.buildBy === 'hdkey') {
       // hdkey not supported
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
     return {
       qrDevice,

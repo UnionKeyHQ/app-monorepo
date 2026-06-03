@@ -7,7 +7,7 @@ const ensureSDKReady = async () => Promise.resolve(true);
 
 async function getMoneroApi(): Promise<IMoneroApi> {
   throw new Error('webembedApiProxy not ok');
-  // import webembedApiProxy from '@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy';
+  // import webembedApiProxy from '@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy';
   // const embedApi: IMoneroApiWebembed = await Promise.resolve(
   //   webembedApiProxy.chainXmrLegacy,
   // );

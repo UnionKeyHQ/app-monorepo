@@ -293,7 +293,7 @@ describe('messageUtils', () => {
           unexpectedChainId,
         ),
       ).toThrow(
-        `Cannot sign messages for chainId "${mockedCurrentChainId}", because OneKey is switching networks.`,
+        `Cannot sign messages for chainId "${mockedCurrentChainId}", because UnionKey is switching networks.`,
       );
     });
 

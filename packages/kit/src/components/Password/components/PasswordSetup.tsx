@@ -12,11 +12,11 @@ import {
   Input,
   Unspaced,
   useForm,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EPasswordMode } from '@onekeyhq/shared/types/password';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EPasswordMode } from '@unionkey/shared/types/password';
 
 import {
   PassCodeRegex,

@@ -1,4 +1,4 @@
-import { IMPL_APTOS } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_APTOS } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

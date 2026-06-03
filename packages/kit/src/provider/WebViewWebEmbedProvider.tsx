@@ -3,7 +3,7 @@ import { memo, useEffect, useState } from 'react';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 
 import { WebViewWebEmbedSingleton } from '../components/WebViewWebEmbed';
 

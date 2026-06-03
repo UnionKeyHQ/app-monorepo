@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 import * as crypto from 'crypto';
 
-import { Button, Divider, Input, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Button, Divider, Input, Stack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   AccountSelectorTriggerLegacy,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/kit/src/components/AccountSelector';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { Layout } from './utils/Layout';
 
@@ -72,7 +72,7 @@ function Demo() {
           console.log(c);
         }}
       >
-        重复添加 HD IndexedAccount 不报错
+        重复添加 HD IndexedAccount 不报�?
       </Button>
       <Button
         onPress={() => {
@@ -126,7 +126,7 @@ function Demo() {
           console.log(result);
         }}
       >
-        hw 批量创建地址 （sdk allNetwork api 方式）
+        hw 批量创建地址 （sdk allNetwork api 方式�?
       </Button>
     </Stack>
   );

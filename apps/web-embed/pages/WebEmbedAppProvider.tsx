@@ -1,5 +1,5 @@
-import { ConfigProvider } from '@onekeyhq/components';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
+import { ConfigProvider } from '@unionkey/components';
+import { HyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
 
 import webEmbedAppSettings from '../utils/webEmbedAppSettings';
 

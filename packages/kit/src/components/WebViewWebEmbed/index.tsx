@@ -1,22 +1,22 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { SizableText, Stack, View, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src//background/instance/backgroundApiProxy';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/settings';
-import { analytics } from '@onekeyhq/shared/src/analytics';
+import { SizableText, Stack, View, XStack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src//background/instance/backgroundApiProxy';
+import { useDevSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/devSettings';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/settings';
+import { analytics } from '@unionkey/shared/src/analytics';
 import {
   REVENUECAT_API_KEY_WEB,
   REVENUECAT_API_KEY_WEB_SANDBOX,
-} from '@onekeyhq/shared/src/consts/primeConsts';
-import { EWebEmbedRoutePath } from '@onekeyhq/shared/src/consts/webEmbedConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { captureException } from '@onekeyhq/shared/src/modules3rdParty/sentry';
-import { EWebEmbedPostMessageType } from '@onekeyhq/shared/src/modules3rdParty/webEmebd/postMessage';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import webEmbedConfig from '@onekeyhq/shared/src/storage/webEmbedConfig';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import type { IWebEmbedOnekeyAppSettings } from '@onekeyhq/web-embed/utils/webEmbedAppSettings';
+} from '@unionkey/shared/src/consts/primeConsts';
+import { EWebEmbedRoutePath } from '@unionkey/shared/src/consts/webEmbedConsts';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { captureException } from '@unionkey/shared/src/modules3rdParty/sentry';
+import { EWebEmbedPostMessageType } from '@unionkey/shared/src/modules3rdParty/webEmebd/postMessage';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import webEmbedConfig from '@unionkey/shared/src/storage/webEmbedConfig';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
+import type { IWebEmbedUnionkeyAppSettings } from '@unionkey/web-embed/utils/webEmbedAppSettings';
 
 import { useLocaleVariant } from '../../hooks/useLocaleVariant';
 import { useThemeVariant } from '../../hooks/useThemeVariant';
@@ -74,7 +74,7 @@ export function WebViewWebEmbed({
   }, []);
 
   const webEmbedAppSettings = useMemo<
-    IWebEmbedOnekeyAppSettings | undefined
+    IWebEmbedUnionkeyAppSettings | undefined
   >(() => {
     if (!themeVariant || !localeVariant || !revenuecatApiKey) {
       return undefined;
@@ -206,14 +206,14 @@ export function WebViewWebEmbed({
         onMessage={handleMessage}
         nativeInjectedJavaScriptBeforeContentLoaded={`
             window.location.hash = "${fullHash}";
-            const WEB_EMBED_ONEKEY_APP_SETTINGS = ${JSON.stringify(
+            const WEB_EMBED_UNIONKEY_APP_SETTINGS = ${JSON.stringify(
               webEmbedAppSettings,
             )};
-            window.WEB_EMBED_ONEKEY_APP_SETTINGS = WEB_EMBED_ONEKEY_APP_SETTINGS;
+            window.WEB_EMBED_UNIONKEY_APP_SETTINGS = WEB_EMBED_UNIONKEY_APP_SETTINGS;
             if (typeof window !== 'undefined' && 'wrappedJSObject' in window) {
               try {
-                window.wrappedJSObject.WEB_EMBED_ONEKEY_APP_SETTINGS = globalThis.cloneInto(
-                  WEB_EMBED_ONEKEY_APP_SETTINGS,
+                window.wrappedJSObject.WEB_EMBED_UNIONKEY_APP_SETTINGS = globalThis.cloneInto(
+                  WEB_EMBED_UNIONKEY_APP_SETTINGS,
                   window,
                   {
                     cloneFunctions: true

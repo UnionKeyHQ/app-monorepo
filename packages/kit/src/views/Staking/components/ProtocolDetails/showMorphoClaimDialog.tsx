@@ -1,4 +1,4 @@
-import { Dialog } from '@onekeyhq/components';
+import { Dialog } from '@unionkey/components';
 
 export function showMorphoClaimDialog({
   title,

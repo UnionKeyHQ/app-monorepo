@@ -1,7 +1,7 @@
 import { StackActions } from '@react-navigation/native';
 import { isNil } from 'lodash';
 
-import type { IAppNavigation } from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import type { IAppNavigation } from '@unionkey/kit/src/hooks/useAppNavigation';
 
 import {
   ENotificationPermission,

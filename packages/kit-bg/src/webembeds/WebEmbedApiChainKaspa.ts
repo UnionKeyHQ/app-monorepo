@@ -1,5 +1,5 @@
-import kaspaWebSdk from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/sdk/kaspaWebSdk';
-import type { IKaspaSdkApi } from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/types/sdk';
+import kaspaWebSdk from '@unionkey/core/src/chains/kaspa/sdkKaspa/sdk/kaspaWebSdk';
+import type { IKaspaSdkApi } from '@unionkey/core/src/chains/kaspa/sdkKaspa/types/sdk';
 
 class WebEmbedApiChainKaspa implements IKaspaSdkApi {
   async createKRC20RevealTxJSON(...args: any[]) {

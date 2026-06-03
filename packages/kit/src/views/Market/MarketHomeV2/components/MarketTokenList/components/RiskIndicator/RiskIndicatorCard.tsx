@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { SizableText, Stack } from '@onekeyhq/components';
+import { SizableText, Stack } from '@unionkey/components';
 
 import { RiskIndicatorIcon } from './RiskIndicatorIcon';
 import { useRiskIndicator } from './useRiskIndicator';

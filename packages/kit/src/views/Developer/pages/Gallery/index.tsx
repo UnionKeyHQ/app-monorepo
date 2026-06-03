@@ -1,578 +1,578 @@
 import type { ComponentType } from 'react';
 
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import { EGalleryRoutes } from '@onekeyhq/shared/src/routes';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import { EGalleryRoutes } from '@unionkey/shared/src/routes';
 
 const AnchorGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Anchor'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Anchor'
     ),
 );
 const ComponentsScreen = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Developer/pages/Gallery/Components'),
+  () => import('@unionkey/kit/src/views/Developer/pages/Gallery/Components'),
 );
 const AccountModelGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/AccountModelGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/AccountModelGallery'
     ),
 );
 const ActionListGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ActionList'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ActionList'
     ),
 );
 const AlertGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Alert'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Alert'
     ),
 );
 const BadgeGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Badge'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Badge'
     ),
 );
 const BlurViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/BlurView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/BlurView'
     ),
 );
 const ButtonGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Button'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Button'
     ),
 );
 const CheckboxGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Checkbox'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Checkbox'
     ),
 );
 const DialogGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Dialog'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Dialog'
     ),
 );
 const DividerGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Divider'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Divider'
     ),
 );
 const EmptyGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Empty'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Empty'
     ),
 );
 
 const SendGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SendGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SendGallery'
     ),
 );
 
 const ErrorToastGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ErrorToastGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ErrorToastGallery'
     ),
 );
 
 const FirmwareUpdateGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/FirmwareUpdateGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/FirmwareUpdateGallery'
     ),
 );
 
 const QRWalletGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/QRWalletGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/QRWalletGallery'
     ),
 );
 
 const FormGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Form'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Form'
     ),
 );
 const HardwareGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Hardware'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Hardware'
     ),
 );
 const IconGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Icon'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Icon'
     ),
 );
 const IconButtonGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/IconButton'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/IconButton'
     ),
 );
 const ImageGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Image'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Image'
     ),
 );
 const InputGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Input'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Input'
     ),
 );
 const JotaiContextGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/JotaiContextGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/JotaiContextGallery'
     ),
 );
 const JotaiGlobalGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/JotaiGlobalGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/JotaiGlobalGallery'
     ),
 );
 const LinearGradientGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/LinearGradient'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/LinearGradient'
     ),
 );
 const ListItemGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ListItem'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ListItem'
     ),
 );
 const ListViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ListView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ListView'
     ),
 );
 const AccountAvatarGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/AccountAvatar'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/AccountAvatar'
     ),
 );
 const WalletAvatarGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/WalletAvatar'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/WalletAvatar'
     ),
 );
 const LocalDBGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/LocalDBGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/LocalDBGallery'
     ),
 );
 const LottieViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/LottieView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/LottieView'
     ),
 );
 const DemoRootApp = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/NavigatorRoute'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/NavigatorRoute'
     ),
 );
 const PasswordDemoGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/PasswordDemo'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/PasswordDemo'
     ),
 );
 const PopoverGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Popover'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Popover'
     ),
 );
 const ProgressGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Progress'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Progress'
     ),
 );
 const QRCodeGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/QRCode'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/QRCode'
     ),
 );
 const SecureQRToastGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SecureQRToast'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SecureQRToast'
     ),
 );
 const RadioGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Radio'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Radio'
     ),
 );
 const RefreshControlGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/RefreshControl'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/RefreshControl'
     ),
 );
 const ScanQrCodeGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ScanQrCode'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ScanQrCode'
     ),
 );
 const ScrollViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ScrollView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ScrollView'
     ),
 );
 const SectionListGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SectionList'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SectionList'
     ),
 );
 const SegmentControlGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SegmentControl'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SegmentControl'
     ),
 );
 const SelectGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Select'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Select'
     ),
 );
 const ShortcutGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Shortcut'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Shortcut'
     ),
 );
 const SkeletonGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Skeleton'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Skeleton'
     ),
 );
 const SliderGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Slider'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Slider'
     ),
 );
 const SortableListViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SortableListView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SortableListView'
     ),
 );
 const SortableSectionListGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SortableSectionList'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SortableSectionList'
     ),
 );
 const SpotlightGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Spotlight'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Spotlight'
     ),
 );
 const SwipeableCellGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SwipeableCell'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SwipeableCell'
     ),
 );
 const SwitchGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Switch'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Switch'
     ),
 );
 const TabViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/TabView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/TabView'
     ),
 );
 const TextAreaGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/TextArea'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/TextArea'
     ),
 );
 const ToastGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Toast'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Toast'
     ),
 );
 const TooltipGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Tooltip'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Tooltip'
     ),
 );
 const TypographyGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Typography'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Typography'
     ),
 );
 const WebviewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/WebView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/WebView'
     ),
 );
 const AddressInputGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/AddressInput'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/AddressInput'
     ),
 );
 
 const SwiperGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Swiper'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Swiper'
     ),
 );
 
 const PortalGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Portal'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Portal'
     ),
 );
 
 const AmountInputGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/AmountInput'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/AmountInput'
     ),
 );
 
 const NumberSizeableTextGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/NumberSizeableTextGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/NumberSizeableTextGallery'
     ),
 );
 
 const TokenGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Token'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Token'
     ),
 );
 
 const LoggerGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Logger'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Logger'
     ),
 );
 
 const ChainSelectorGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ChainSelector'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ChainSelector'
     ),
 );
 
 const MarkdownGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Markdown'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Markdown'
     ),
 );
 
 const NotificationGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/NotificationGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/NotificationGallery'
     ),
 );
 
 const WebEmbedGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/WebEmbed'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/WebEmbed'
     ),
 );
 
 const DotMapGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/DotMap'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/DotMap'
     ),
 );
 
 const UsePromiseResultGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/UsePromiseResult'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/UsePromiseResult'
     ),
 );
 
 const ImageCropGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ImageCrop'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ImageCrop'
     ),
 );
 
 const CurrencyGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Currency'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Currency'
     ),
 );
 
 const PasswordKeyboardGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/PasswordKeyboard'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/PasswordKeyboard'
     ),
 );
 
 const TradingViewGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/TradingView'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/TradingView'
     ),
 );
 
 const LetterAvatarGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/LetterAvatar'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/LetterAvatar'
     ),
 );
 
 const SignatureConfirmationGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/SignatureConfirmation'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/SignatureConfirmation'
     ),
 );
 
 const HyperlinkTextGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/HyperlinkTextGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/HyperlinkTextGallery'
     ),
 );
 const HapticsGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Haptics'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Haptics'
     ),
 );
 
 const AccordionGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/AccordionGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/AccordionGallery'
     ),
 );
 
 const OTPInputGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/OTPInputGallery'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/OTPInputGallery'
     ),
 );
 
 const RichSizeableTextGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/RichSizeableText'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/RichSizeableText'
     ),
 );
 
 const BannerGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Banner/Banner'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Banner/Banner'
     ),
 );
 
 const StepperGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Stepper'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Stepper'
     ),
 );
 
 const ThemeColorsGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/ThemeColors'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/ThemeColors'
     ),
 );
 
 const PaginationGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Pagination'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Pagination'
     ),
 );
 
 const CountDownCalendarAlertGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/CountDownCalendarAlert'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/CountDownCalendarAlert'
     ),
 );
 
 const TriggerGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Trigger'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Trigger'
     ),
 );
 
 const RestartGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Restart'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Restart'
     ),
 );
 
 const FontGallery = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/Font'
+      '@unionkey/kit/src/views/Developer/pages/Gallery/Components/stories/Font'
     ),
 );
 

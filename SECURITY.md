@@ -1,10 +1,10 @@
-🙏 Please report bug directly to dev@onekey.so or just shoot it straight to our official page on [BugRap](https://bugrap.io/bounties/OneKey), where our pros got it covered.
+🙏 Please report bug directly to dev@unionkey.so or just shoot it straight to our official page on [BugRap](https://bugrap.io/bounties/UnionKey), where our pros got it covered.
 
 ---
 
 ## Scope
 
-This bug bounty program extends to all code within the [OneKey Github Repo](https://github.com/OneKeyHQ/app-monorepo).
+This bug bounty program extends to all code within the [UnionKey Github Repo](https://github.com/UnionKeyHQ/app-monorepo).
 
 Bounties for potential bugs include, but are not limited to:
 * Private keys, storage, forensics
@@ -12,33 +12,33 @@ Bounties for potential bugs include, but are not limited to:
 * Domain hijacking, Secrets compromise
 * Authorization and privilege issues
 
-More generally, if it lives in the repository* and affects OneKey's security, it's fair game.
+More generally, if it lives in the repository* and affects UnionKey's security, it's fair game.
 
-_\* There are some components of the OneKey repository that are not created by the OneKey team, but which still could be relevant to overall security. If a bug or exploit makes use of any external libraries or submodules, it will be considered on a case-by-case basis for elegibility._
+_\* There are some components of the UnionKey repository that are not created by the UnionKey team, but which still could be relevant to overall security. If a bug or exploit makes use of any external libraries or submodules, it will be considered on a case-by-case basis for elegibility._
 
 ## Rules
 
 
 ### Submission Guidelines
 
-All bugs reported must be done through the creation of an issue in the OneKey github repo, or _if the submitter wishes to disclose privately, or to remain anonymous_ by an email sent to dev@onekey.so . Private submissions are still eligible for a bounty.
+All bugs reported must be done through the creation of an issue in the UnionKey github repo, or _if the submitter wishes to disclose privately, or to remain anonymous_ by an email sent to dev@unionkey.so . Private submissions are still eligible for a bounty.
 
-Unless there is a specific reason for a private disclosure, bugs should be submitted as issues on the OneKey GitHub repository, and tagged with the 'bug' label.
+Unless there is a specific reason for a private disclosure, bugs should be submitted as issues on the UnionKey GitHub repository, and tagged with the 'bug' label.
 
-It is requested that all submissions follow the format defined in the [issue template](https://github.com/OneKeyHQ/app-monorepo/blob/onekey/docs/ISSUE_TEMPLATE.md) -- clarity of description and thoroughness of documentation will be a consideration for reward amount, in addition to impact and likelihood.
+It is requested that all submissions follow the format defined in the [issue template](https://github.com/UnionKeyHQ/app-monorepo/blob/unionkey/docs/ISSUE_TEMPLATE.md) -- clarity of description and thoroughness of documentation will be a consideration for reward amount, in addition to impact and likelihood.
 
-In the case of private bug disclosure, all relevant materials should be sent in email to `dev@onekey.so` -- and should follow the same template as a public issue.
+In the case of private bug disclosure, all relevant materials should be sent in email to `dev@unionkey.so` -- and should follow the same template as a public issue.
 
 Once submitted, the issue will be responded to, verified, accepted, and rewarded accordindly.
 
 ### Submission Branches
-Participants in the program are free to submit bugs on branches in the OneKey codebase:
+Participants in the program are free to submit bugs on branches in the UnionKey codebase:
 * against the `master` branch which will be tagged as the mainnet release for deployment
 
 ### Bug Severity and Bounties
-In the same manner as the [Ethereum Bug Bounty Program](https://bounty.ethereum.org/), submissions will be evaluated by the OneKey team according to the [OWASP risk rating methodology](https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology), which grades based on both _Impact_ and _Likelihood_.
+In the same manner as the [Ethereum Bug Bounty Program](https://bounty.ethereum.org/), submissions will be evaluated by the UnionKey team according to the [OWASP risk rating methodology](https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology), which grades based on both _Impact_ and _Likelihood_.
 
-It is at the *sole discretion of OneKey* to decide whether or not a bug report qualifies for a bounty, and to determine the severity of the issue
+It is at the *sole discretion of UnionKey* to decide whether or not a bug report qualifies for a bounty, and to determine the severity of the issue
 
 
 * *P0*: $10,000 USD
@@ -52,22 +52,22 @@ It is at the *sole discretion of OneKey* to decide whether or not a bug report q
 
 * The severity of the bug.
 * The likelihood that the bug will affect users.
-* The responsibility of the researcher — did the researcher take destructive action or otherwise harm the functioning of our systems.
-* The role of the researcher — was the researcher the first person to discover the bug, or is the bug based on some public information.
+* The responsibility of the researcher �?did the researcher take destructive action or otherwise harm the functioning of our systems.
+* The role of the researcher �?was the researcher the first person to discover the bug, or is the bug based on some public information.
 * How well the report was written and how easy it is to understand.
 
 
-Issues reported may or may not constitute a security risk for the OneKey contracts. A higher severity will be awarded to vulnerabilities submitted that could potentially result in either the loss of funds, or a situation in which the contracts arrive in an undesirable state that cannot be rectified through existing contract mechanisms, such as 'emergency mode' or through a network upgrade. However, all submitted bugs and vulnerabilities will be considered for prizes.
+Issues reported may or may not constitute a security risk for the UnionKey contracts. A higher severity will be awarded to vulnerabilities submitted that could potentially result in either the loss of funds, or a situation in which the contracts arrive in an undesirable state that cannot be rectified through existing contract mechanisms, such as 'emergency mode' or through a network upgrade. However, all submitted bugs and vulnerabilities will be considered for prizes.
 
 ### Ineligible Bugs
 
-Any vulnerabilities or flaws in other software tools created by OneKey (e.g. OneKeyJS, purser, tailor, etc.) are not eligible. Flaws in these software tools are welcome disclosures, but will not be awarded bounties for this bug bounty program.
+Any vulnerabilities or flaws in other software tools created by UnionKey (e.g. UnionKeyJS, purser, tailor, etc.) are not eligible. Flaws in these software tools are welcome disclosures, but will not be awarded bounties for this bug bounty program.
 
 When reporting vulnerabilities, please consider (1) attack scenario / exploitability, and (2) security impact of the bug. The following issues are considered out of scope:
 
-* Attacks and vulnerabilities that depend on compromised keys or other security flaws outside the OneKey codebase (keyloggers, intercepted communications, social engineering exploits, etc.).
-* Attacks that are accounted for in the system design, i.e. Ethereum network spamming, malicious reputation mining, malfeasance in OneKey administration.
-* Critiques of the OneKey and overall mechanism design. We welcome suggestions and constructive criticism, and ask that it be directed to dev@OneKey.so .
+* Attacks and vulnerabilities that depend on compromised keys or other security flaws outside the UnionKey codebase (keyloggers, intercepted communications, social engineering exploits, etc.).
+* Attacks that are accounted for in the system design, i.e. Ethereum network spamming, malicious reputation mining, malfeasance in UnionKey administration.
+* Critiques of the UnionKey and overall mechanism design. We welcome suggestions and constructive criticism, and ask that it be directed to dev@UnionKey.so .
 * Clickjacking on pages with no sensitive actions
 * Cross-Site Request Forgery (CSRF) on unauthenticated forms or forms with no sensitive actions
 * Attacks requiring MITM or physical access to a user's device.

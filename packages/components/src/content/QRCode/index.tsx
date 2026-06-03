@@ -15,7 +15,7 @@ import Svg, {
 } from 'react-native-svg';
 import { Theme, getTokenValue } from 'tamagui';
 
-import { type IAirGapUrJson, airGapUrUtils } from '@onekeyhq/qr-wallet-sdk';
+import { type IAirGapUrJson, airGapUrUtils } from '@unionkey/qr-wallet-sdk';
 
 import { Icon, Stack } from '../../primitives';
 
@@ -258,7 +258,7 @@ function BasicQRCode({
             ) : null}
             {logoSvg ? (
               <Icon
-                name="OnekeyBrand"
+                name="UnionkeyBrand"
                 width={logoSize}
                 height={logoSize}
                 color={logoSvgColor}

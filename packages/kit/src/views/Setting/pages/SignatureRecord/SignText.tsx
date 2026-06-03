@@ -14,15 +14,15 @@ import {
   XStack,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import utils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
-import type { ISignedMessage } from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import utils from '@unionkey/shared/src/utils/accountUtils';
+import { formatTime } from '@unionkey/shared/src/utils/dateUtils';
+import type { ISignedMessage } from '@unionkey/shared/types/signatureRecord';
 
 import { useGetSignatureSections } from './hooks';
 
@@ -105,7 +105,7 @@ const SignTextItem = ({ item }: { item: ISignedMessage }) => {
             </Stack>
             <SizableText color="$textSubdued" size="$bodySmMedium">
               {item.network.name}
-              {' â€¢ '}
+              {' â€?'}
               {utils.shortenAddress({ address: item.address })}
             </SizableText>
           </XStack>

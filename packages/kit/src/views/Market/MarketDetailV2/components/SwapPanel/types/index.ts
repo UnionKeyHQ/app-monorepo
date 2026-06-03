@@ -1,4 +1,4 @@
-import type { ISwapTokenBase } from '@onekeyhq/shared/types/swap/types';
+import type { ISwapTokenBase } from '@unionkey/shared/types/swap/types';
 
 export type IToken = ISwapTokenBase & {
   speedSwapDefaultAmount: number[];

@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EHardwareTransportType } from '@onekeyhq/shared/types';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EHardwareTransportType } from '@unionkey/shared/types';
 
 function useShouldRejectDappAction() {
   const [{ hardwareTransportType }] = useSettingsPersistAtom();

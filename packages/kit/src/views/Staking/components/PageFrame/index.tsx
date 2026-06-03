@@ -2,9 +2,9 @@ import type { ComponentType, PropsWithChildren } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Empty, Skeleton, Stack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Empty, Skeleton, Stack } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 const PageErrOccurred = ({ onPress }: { onPress?: () => void }) => {
   const intl = useIntl();

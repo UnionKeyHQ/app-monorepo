@@ -96,21 +96,21 @@ export interface ISuiSignMessageOutput {
   signature: string;
 }
 
-export type IOneKeySuiSignTransactionInput = Omit<
+export type IUnionKeySuiSignTransactionInput = Omit<
   SuiSignTransactionInput,
   'transaction' | 'signal'
 > & {
   transaction: string;
 };
 
-export type IOneKeySuiSignTransactionOutput = SignedTransaction;
+export type IUnionKeySuiSignTransactionOutput = SignedTransaction;
 
-export type IOneKeySuiSignAndExecuteTransactionInput = Omit<
+export type IUnionKeySuiSignAndExecuteTransactionInput = Omit<
   SuiSignAndExecuteTransactionInput,
   'transaction' | 'signal'
 > & {
   transaction: string;
 };
 
-export type IOneKeySuiSignAndExecuteTransactionOutput =
+export type IUnionKeySuiSignAndExecuteTransactionOutput =
   SuiSignAndExecuteTransactionBlockOutput;

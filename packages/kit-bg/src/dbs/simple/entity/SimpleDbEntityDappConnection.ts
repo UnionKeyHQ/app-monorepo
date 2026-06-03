@@ -1,12 +1,12 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { WalletConnectAccountSelectorNumStartAt } from '@onekeyhq/shared/src/walletConnect/constant';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { WalletConnectAccountSelectorNumStartAt } from '@unionkey/shared/src/walletConnect/constant';
 import type {
   IConnectionAccountInfo,
   IConnectionAccountInfoWithNum,
   IConnectionItem,
   IConnectionStorageType,
-} from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/types/dappConnection';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

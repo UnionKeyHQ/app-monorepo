@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import type { IButtonProps, IStackProps } from '@onekeyhq/components';
-import { Button, SizableText, XStack, YStack } from '@onekeyhq/components';
+import type { IButtonProps, IStackProps } from '@unionkey/components';
+import { Button, SizableText, XStack, YStack } from '@unionkey/components';
 
 function OptionButton({
   label,

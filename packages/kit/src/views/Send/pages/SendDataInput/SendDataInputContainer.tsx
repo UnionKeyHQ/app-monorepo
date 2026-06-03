@@ -12,7 +12,7 @@ import type {
   IFormMode,
   IReValidateMode,
   UseFormReturn,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -25,61 +25,61 @@ import {
   XStack,
   useForm,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
 import {
   AddressInputField,
   type IAddressInputValue,
-} from '@onekeyhq/kit/src/components/AddressInput';
-import { renderAddressSecurityHeaderRightButton } from '@onekeyhq/kit/src/components/AddressInput/AddressSecurityHeaderRightButton';
-import { AmountInput } from '@onekeyhq/kit/src/components/AmountInput';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+} from '@unionkey/kit/src/components/AddressInput';
+import { renderAddressSecurityHeaderRightButton } from '@unionkey/kit/src/components/AddressInput/AddressSecurityHeaderRightButton';
+import { AmountInput } from '@unionkey/kit/src/components/AmountInput';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
 import {
   PercentageStageOnKeyboard,
   calcPercentBalance,
-} from '@onekeyhq/kit/src/components/PercentageStageOnKeyboard';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { LightningUnitSwitch } from '@onekeyhq/kit/src/components/UnitSwitch';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
+} from '@unionkey/kit/src/components/PercentageStageOnKeyboard';
+import { Token } from '@unionkey/kit/src/components/Token';
+import { LightningUnitSwitch } from '@unionkey/kit/src/components/UnitSwitch';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useSignatureConfirm } from '@unionkey/kit/src/hooks/useSignatureConfirm';
 import {
   useAllTokenListAtom,
   useAllTokenListMapAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { getFormattedNumber } from '@onekeyhq/kit/src/utils/format';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { ITransferInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { OneKeyError, OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/kit/src/states/jotai/contexts/tokenList';
+import { getFormattedNumber } from '@unionkey/kit/src/utils/format';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import type { ITransferInfo } from '@unionkey/kit-bg/src/vaults/types';
+import { UnionKeyError, UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import errorToastUtils from '@unionkey/shared/src/errors/utils/errorToastUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EAssetSelectorRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 import type {
   EModalSignatureConfirmRoutes,
   IModalSignatureConfirmParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
 import {
   EDeriveAddressActionType,
   EInputAddressChangeType,
-} from '@onekeyhq/shared/types/address';
-import { ELightningUnit } from '@onekeyhq/shared/types/lightning';
-import type { IAccountNFT } from '@onekeyhq/shared/types/nft';
-import { ENFTType } from '@onekeyhq/shared/types/nft';
-import type { IToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/address';
+import { ELightningUnit } from '@unionkey/shared/types/lightning';
+import type { IAccountNFT } from '@unionkey/shared/types/nft';
+import { ENFTType } from '@unionkey/shared/types/nft';
+import type { IToken, ITokenFiat } from '@unionkey/shared/types/token';
 
 import { showBalanceDetailsDialog } from '../../../Home/components/BalanceDetailsDialog';
 import { HomeTokenListProviderMirror } from '../../../Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
@@ -223,7 +223,7 @@ function SendDataInputContainer() {
     async () => {
       if (!account || !network) return;
       if (!token && !nft) {
-        throw new OneKeyInternalError('token and nft info are both missing.');
+        throw new UnionKeyInternalError('token and nft info are both missing.');
       }
 
       let nftResp: IAccountNFT[] | undefined;
@@ -638,7 +638,7 @@ function SendDataInputContainer() {
           if (
             accountUtils.isWatchingAccount({ accountId: account?.id ?? '' })
           ) {
-            throw new OneKeyError({
+            throw new UnionKeyError({
               message: intl.formatMessage({
                 id: ETranslations.wallet_error_trade_with_watched_acocunt,
               }),

@@ -1,5 +1,5 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { EDecodedTxStatus } from '@onekeyhq/shared/types/tx';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import type { EDecodedTxStatus } from '@unionkey/shared/types/tx';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

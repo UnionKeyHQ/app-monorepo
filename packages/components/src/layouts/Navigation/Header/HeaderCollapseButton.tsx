@@ -3,11 +3,11 @@ import { memo, useCallback, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { AnimatePresence } from 'tamagui';
 
-import { Stack } from '@onekeyhq/components/src/primitives';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import { Stack } from '@unionkey/components/src/primitives';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
 
 import { Tooltip } from '../../../actions';
 import useProviderSideBarValue from '../../../hocs/Provider/hooks/useProviderSideBarValue';

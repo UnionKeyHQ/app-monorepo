@@ -3,21 +3,21 @@ import { useCallback, useMemo } from 'react';
 import { HardwareErrorCode } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
-import { Button, SizableText, YStack } from '@onekeyhq/components';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import type { IFirmwareUpdateRetry } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { Button, SizableText, YStack } from '@unionkey/components';
+import { HyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
+import type { IFirmwareUpdateRetry } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateStepInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
-  ECustomOneKeyHardwareError,
-  type IOneKeyError,
-} from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { isHardwareErrorByCode } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+  ECustomUnionKeyHardwareError,
+  type IUnionKeyError,
+} from '@unionkey/shared/src/errors/types/errorTypes';
+import { isHardwareErrorByCode } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EFirmwareUpdateTipMessages } from '@unionkey/shared/types/device';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 
@@ -45,7 +45,7 @@ export function useFirmwareUpdateErrors({
   error,
   lastFirmwareTipMessage,
 }: {
-  error: IOneKeyError | undefined;
+  error: IUnionKeyError | undefined;
   lastFirmwareTipMessage: EFirmwareUpdateTipMessages | undefined;
 }) {
   const intl = useIntl();
@@ -147,7 +147,7 @@ export function useFirmwareUpdateErrors({
         error,
         code: [
           HardwareErrorCode.BridgeNotInstalled,
-          ECustomOneKeyHardwareError.NeedOneKeyBridge,
+          ECustomUnionKeyHardwareError.NeedUnionKeyBridge,
         ],
       })
     ) {

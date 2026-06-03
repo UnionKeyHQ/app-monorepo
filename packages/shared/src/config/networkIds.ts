@@ -4,7 +4,7 @@ import { memoFn } from '../utils/cacheUtils';
 import { getPresetNetworks } from './presetNetworks';
 
 export type INetworkShortCode =
-  | 'onekeyall'
+  | 'unionkeyall'
   | 'eth'
   | 'goerli'
   | 'arbitrum'

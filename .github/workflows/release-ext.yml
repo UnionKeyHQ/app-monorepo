@@ -47,7 +47,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkey'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -77,19 +77,19 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-extension-rn
+          name: unionkey-extension-rn
           path: |
             ./apps/ext/build/_dist/*.zip
 
       - name: 'Notify to Slack'
         if: ${{ github.event.workflow_run }}
-        uses: onekeyhq/actions/slack-notify-webhook@main
+        uses: unionkey/actions/slack-notify-webhook@main
         with:
           web-hook-url: ${{ secrets.SLACK_NOTIFICATION_WEBHOOK }}
           secret-key: ${{ secrets.ACTION_SIGN_SECERT_KEY }}
           artifact-type: Extension
-          artifact-name: OneKey-Extension-RN
-          artifact-bundle-id: 'so.onekey.wallet.extension'
+          artifact-name: UnionKey-Extension-RN
+          artifact-bundle-id: 'so.unionkey.wallet.extension'
           artifact-version-name: '${{ env.BUILD_APP_VERSION }}@${{ env.BUILD_NUMBER }}'
           artifact-version-code: '${{ env.BUILD_NUMBER }}'
           artifact-download-url: '${{ env.ARTIFACTS_URL }}'

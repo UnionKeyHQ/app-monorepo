@@ -10,24 +10,24 @@ import { decode, methods } from '@substrate/txwrapper-polkadot';
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil, isObject } from 'lodash';
 
-import { serializeSignedTransaction } from '@onekeyhq/core/src/chains/dot/sdkDot';
-import type { IEncodedTxDot } from '@onekeyhq/core/src/chains/dot/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import { serializeSignedTransaction } from '@unionkey/core/src/chains/dot/sdkDot';
+import type { IEncodedTxDot } from '@unionkey/core/src/chains/dot/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   BalanceLowerMinimum,
   InvalidTransferValue,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import numberUtils from '@onekeyhq/shared/src/utils/numberUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import numberUtils from '@unionkey/shared/src/utils/numberUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -35,23 +35,23 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
+} from '@unionkey/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkey/shared/types/fee';
+import { ESendPreCheckTimingEnum } from '@unionkey/shared/types/send';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -423,7 +423,7 @@ export default class VaultDot extends VaultBase {
         encodedTx,
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   override async attachFeeInfoToDAppEncodedTx(params: {
@@ -739,7 +739,7 @@ export default class VaultDot extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const provider = new HttpProvider(rpcUrl);
     const client = await ApiPromise.create({ provider, initWasm: false });

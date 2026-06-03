@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 // import { useIntl } from 'react-intl';
 
-// import { ETranslations } from '@onekeyhq/shared/src/locale';
+// import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { ButtonFrame, SizableText, XStack } from '../../primitives';
 import { IconButton } from '../IconButton';

@@ -17,16 +17,16 @@ import {
   type IEncodedTxAptos,
   type ISignMessagePayload,
   type ISignMessageResponse,
-} from '@onekeyhq/core/src/chains/aptos/types';
+} from '@unionkey/core/src/chains/aptos/types';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { EMessageTypesAptos } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import { EMessageTypesAptos } from '@unionkey/shared/types/message';
 
 import { vaultFactory } from '../vaults/factory';
 import { deserializeTransactionPayload } from '../vaults/impls/aptos/sdkAptos/serializer';

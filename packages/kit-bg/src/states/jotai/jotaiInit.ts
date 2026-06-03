@@ -1,6 +1,6 @@
 import { cloneDeep, isNil, isPlainObject } from 'lodash';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 
 import localDb from '../../dbs/local/localDb';
 import dbBackupTools from '../../services/ServiceDBBackup/dbBackupTools';
@@ -9,7 +9,7 @@ import { EAtomNames } from './atomNames';
 import {
   buildJotaiStorageKey,
   globalJotaiStorageReadyHandler,
-  onekeyJotaiStorage,
+  unionkeyJotaiStorage,
 } from './jotaiStorage';
 import { JotaiCrossAtom } from './utils/JotaiCrossAtom';
 import { jotaiDefaultStore } from './utils/jotaiDefaultStore';
@@ -72,7 +72,7 @@ export async function jotaiInit() {
         return;
       }
 
-      let storageValue = await onekeyJotaiStorage.getItem(
+      let storageValue = await unionkeyJotaiStorage.getItem(
         storageKey,
         undefined,
       );
@@ -123,8 +123,8 @@ export async function jotaiInit() {
           }
         }
 
-        await onekeyJotaiStorage.setItem(storageKey, initValue);
-        storageValue = await onekeyJotaiStorage.getItem(storageKey, initValue);
+        await unionkeyJotaiStorage.setItem(storageKey, initValue);
+        storageValue = await unionkeyJotaiStorage.getItem(storageKey, initValue);
       }
       const currentValue = await jotaiDefaultStore.get(atomObj);
       if (currentValue !== storageValue) {

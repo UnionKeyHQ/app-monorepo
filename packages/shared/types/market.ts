@@ -57,7 +57,7 @@ export interface IMarketPerformance {
 
 export interface IMarketDetailPlatformNetwork {
   contract_address: string;
-  onekeyNetworkId?: string;
+  unionkeyNetworkId?: string;
   hideContractAddress?: boolean;
   coingeckoNetworkId?: string;
   isNative?: true;
@@ -71,7 +71,7 @@ export interface IMarketDetailPlatform {
 export interface IMarketResponsePool {
   data: IMarketDetailPool[];
   contract_address: string;
-  onekeyNetworkId?: string | undefined;
+  unionkeyNetworkId?: string | undefined;
 }
 
 export interface IMarketDetailStats {
@@ -146,7 +146,9 @@ export interface IMarketTokenDetail {
   tickers?: IMarketDetailTicker[];
 }
 
-export type IMarketTokenChart = [number, number][];
+export type IMarketTokenChart =
+  | [number, number][]
+  | [number, number, number, number, number, number][];
 
 export interface IMarketDetailPoolPriceChangePercentage {
   m5: string;
@@ -217,7 +219,7 @@ export interface IMarketDetailPool {
   dexLogoUrl: string;
   dexName: string;
   baseTokenImageUrl: string;
-  onekeyNetworkId: string;
+  unionkeyNetworkId: string;
   quoteTokenImageUrl: string;
   type: EMarketDetailDatumType;
   attributes: IMarketDetailPoolAttributes;

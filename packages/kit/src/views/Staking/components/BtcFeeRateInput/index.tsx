@@ -15,9 +15,9 @@ import {
   XStack,
   YStack,
   useDialogInstance,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IFeeUTXO } from '@onekeyhq/shared/types/fee';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IFeeUTXO } from '@unionkey/shared/types/fee';
 
 import { CalculationListItem } from '../CalculationList';
 

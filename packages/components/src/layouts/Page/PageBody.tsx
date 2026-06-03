@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { Stack } from '../../primitives';
 

@@ -7,12 +7,12 @@ import {
   Stack,
   Switch,
   YStack,
-} from '@onekeyhq/components';
-import type { ISelectRenderTriggerProps } from '@onekeyhq/components/src/forms/Select/type';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/components';
+import type { ISelectRenderTriggerProps } from '@unionkey/components/src/forms/Select/type';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { useDevSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
 
 export const AutoJumpSetting = memo(() => {
   const [devSettings, setDevSettings] = useDevSettingsPersistAtom();

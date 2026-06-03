@@ -12,18 +12,18 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   ChainFlipLogo,
   ChainFlipName,
   EExplorerType,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 import type {
   IExplorersInfo,
   ISwapTxHistory,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { usePromiseResult } from '../../../hooks/usePromiseResult';
 

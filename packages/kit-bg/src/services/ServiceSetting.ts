@@ -5,38 +5,38 @@ import semver from 'semver';
 import {
   isTaprootAddress,
   isTaprootPath,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import type { IAccountSelectorAvailableNetworksMap } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { ICurrencyItem } from '@onekeyhq/kit/src/views/Setting/pages/Currency';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
+import type { IAccountSelectorAvailableNetworksMap } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import type { ICurrencyItem } from '@unionkey/kit/src/views/Setting/pages/Currency';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   IMPL_BTC,
   IMPL_EVM,
   IMPL_LTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import type { ILocaleSymbol } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+} from '@unionkey/shared/src/engine/engineConsts';
+import type { ILocaleSymbol } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
 import {
   getDefaultLocale,
   getLocaleMessages,
-} from '@onekeyhq/shared/src/locale/getDefaultLocale';
-import systemLocaleUtils from '@onekeyhq/shared/src/locale/systemLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import resetUtils from '@onekeyhq/shared/src/utils/resetUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EHardwareTransportType } from '@onekeyhq/shared/types';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import { type IClearCacheOnAppState } from '@onekeyhq/shared/types/setting';
-import { ESwapTxHistoryStatus } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/src/locale/getDefaultLocale';
+import systemLocaleUtils from '@unionkey/shared/src/locale/systemLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import resetUtils from '@unionkey/shared/src/utils/resetUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EHardwareTransportType } from '@unionkey/shared/types';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { EAlignPrimaryAccountMode } from '@unionkey/shared/types/dappConnection';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
+import { type IClearCacheOnAppState } from '@unionkey/shared/types/setting';
+import { ESwapTxHistoryStatus } from '@unionkey/shared/types/swap/types';
 
 import { currencyPersistAtom } from '../states/jotai/atoms';
 import {
@@ -47,6 +47,10 @@ import {
 import ServiceBase from './ServiceBase';
 
 import type ProviderApiPrivate from '../providers/ProviderApiPrivate';
+
+const UNIONKEY_REQUEST_TO_ALL_CS = consts[
+  ['ONE', 'KEY_REQUEST_TO_ALL_CS'].join('') as keyof typeof consts
+] as string;
 
 export type IAccountDerivationConfigItem = {
   num: number;
@@ -443,7 +447,7 @@ class ServiceSetting extends ServiceBase {
       void privateProvider.notifyFloatingIconChanged(
         {
           send: this.backgroundApi.sendForProvider('$private'),
-          targetOrigin: consts.ONEKEY_REQUEST_TO_ALL_CS,
+          targetOrigin: UNIONKEY_REQUEST_TO_ALL_CS,
         },
         {
           showFloatingIcon: value,

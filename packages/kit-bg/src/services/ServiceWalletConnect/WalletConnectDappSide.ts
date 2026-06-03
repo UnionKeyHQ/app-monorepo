@@ -1,14 +1,14 @@
 import { omitBy } from 'lodash';
 import { Linking } from 'react-native';
 
-import { WALLET_TYPE_EXTERNAL } from '@onekeyhq/shared/src/consts/dbConsts';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
+import { WALLET_TYPE_EXTERNAL } from '@unionkey/shared/src/consts/dbConsts';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import {
   DAPP_SIDE_SINGLE_WALLET_MODE,
   WALLET_CONNECT_CLIENT_META,
@@ -16,7 +16,7 @@ import {
   WC_DAPP_SIDE_EVENTS_EVM,
   WC_DAPP_SIDE_METHODS_EVM,
   implToNamespaceMap,
-} from '@onekeyhq/shared/src/walletConnect/constant';
+} from '@unionkey/shared/src/walletConnect/constant';
 import type {
   IWalletConnectConnectParams,
   IWalletConnectConnectToWalletParams,
@@ -25,11 +25,11 @@ import type {
   IWalletConnectEventSessionUpdateParams,
   IWalletConnectNamespaces,
   IWalletConnectSignClient,
-} from '@onekeyhq/shared/src/walletConnect/types';
+} from '@unionkey/shared/src/walletConnect/types';
 import {
   EWalletConnectNamespaceType,
   EWalletConnectSessionEvents,
-} from '@onekeyhq/shared/src/walletConnect/types';
+} from '@unionkey/shared/src/walletConnect/types';
 
 import externalWalletFactory from '../../connectors/externalWalletFactory';
 import localDb from '../../dbs/local/localDb';

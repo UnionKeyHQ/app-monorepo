@@ -1,9 +1,9 @@
-import '@onekeyhq/shared/src/polyfills';
+import '@unionkey/shared/src/polyfills';
 import React, { lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { EWebEmbedRoutePath } from '@onekeyhq/shared/src/consts/webEmbedConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { EWebEmbedRoutePath } from '@unionkey/shared/src/consts/webEmbedConsts';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import { init } from './utils/init';
 
 const PageIndex = lazy(() => import('./pages/PageIndex'));

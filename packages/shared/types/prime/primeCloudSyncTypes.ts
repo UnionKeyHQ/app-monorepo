@@ -1,5 +1,5 @@
-import type { IAddressItem } from '@onekeyhq/kit/src/views/AddressBook/type';
-import type { IBrowserBookmark } from '@onekeyhq/kit/src/views/Discovery/types';
+import type { IAddressItem } from '@unionkey/kit/src/views/AddressBook/type';
+import type { IBrowserBookmark } from '@unionkey/kit/src/views/Discovery/types';
 import type {
   IDBAccount,
   IDBCloudSyncItem,
@@ -7,7 +7,7 @@ import type {
   IDBIndexedAccount,
   IDBWallet,
   IDBWalletType,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 
 import type { IServerNetwork } from '..';
 import type { EPrimeCloudSyncDataType } from '../../src/consts/primeConsts';

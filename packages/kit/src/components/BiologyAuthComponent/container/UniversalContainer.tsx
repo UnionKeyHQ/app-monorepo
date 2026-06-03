@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import {
   usePasswordBiologyAuthInfoAtom,
   usePasswordWebAuthInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms/password';
+} from '@unionkey/kit-bg/src/states/jotai/atoms/password';
 
 import BiologyAuthSwitchContainer from './BiologyAuthSwitchContainer';
 import WebAuthSwitchContainer from './WebAuthSwitchContainer';

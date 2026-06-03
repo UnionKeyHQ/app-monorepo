@@ -7,12 +7,12 @@ import {
   Stack,
   Stepper,
   YStack,
-} from '@onekeyhq/components';
-import type { IStepItemProps } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/components';
+import type { IStepItemProps } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
+import earnUtils from '@unionkey/shared/src/utils/earnUtils';
+import type { IStakeProtocolDetails } from '@unionkey/shared/types/staking';
 
 import { useEarnEventActive } from '../../hooks/useEarnEventActive';
 

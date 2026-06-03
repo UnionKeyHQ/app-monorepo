@@ -1,8 +1,8 @@
-import { sha512Sync } from '@onekeyhq/core/src/secret/hash';
-import type { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import { PRIME_CLOUD_SYNC_CREATE_GENESIS_TIME } from '@onekeyhq/shared/src/consts/primeConsts';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import cloudSyncUtils from '@onekeyhq/shared/src/utils/cloudSyncUtils';
+import { sha512Sync } from '@unionkey/core/src/secret/hash';
+import type { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
+import { PRIME_CLOUD_SYNC_CREATE_GENESIS_TIME } from '@unionkey/shared/src/consts/primeConsts';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
+import cloudSyncUtils from '@unionkey/shared/src/utils/cloudSyncUtils';
 import type {
   ICloudSyncCredential,
   ICloudSyncDBRecord,
@@ -14,7 +14,7 @@ import type {
   ICloudSyncRawDataJson,
   ICloudSyncTargetMap,
   IExistingSyncItemsInfo,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 
 import { IS_DB_BUCKET_SUPPORT } from '../../../dbs/local/consts';
 import { ELocalDBStoreNames } from '../../../dbs/local/localDBStoreNames';

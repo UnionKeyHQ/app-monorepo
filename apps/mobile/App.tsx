@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, import/first, import/order */
-import '@onekeyhq/shared/src/polyfills';
+import '@unionkey/shared/src/polyfills';
 
-import { KitProvider } from '@onekeyhq/kit';
-import { withSentryHOC } from '@onekeyhq/shared/src/modules3rdParty/sentry';
-import { SentryErrorBoundaryFallback } from '@onekeyhq/kit/src/components/ErrorBoundary';
+import { KitProvider } from '@unionkey/kit';
+import { withSentryHOC } from '@unionkey/shared/src/modules3rdParty/sentry';
+import { SentryErrorBoundaryFallback } from '@unionkey/kit/src/components/ErrorBoundary';
 
 export default withSentryHOC(KitProvider, SentryErrorBoundaryFallback);

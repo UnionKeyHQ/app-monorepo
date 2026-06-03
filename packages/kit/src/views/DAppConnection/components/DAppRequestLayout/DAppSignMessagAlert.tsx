@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import type { IAlertProps } from '@onekeyhq/components';
-import { Alert } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IAlertProps } from '@unionkey/components';
+import { Alert } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 function DAppSignMessageAlert({
   signMessageAlertProps,

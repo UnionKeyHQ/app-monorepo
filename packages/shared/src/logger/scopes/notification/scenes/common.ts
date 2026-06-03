@@ -1,4 +1,4 @@
-import { devOnlyData } from '@onekeyhq/shared/src/utils/devModeUtils';
+import { devOnlyData } from '@unionkey/shared/src/utils/devModeUtils';
 import type {
   ENotificationPushTopicTypes,
   INotificationPermissionDetail,
@@ -7,7 +7,7 @@ import type {
   INotificationPushRegisterParams,
   INotificationSetBadgeParams,
   INotificationShowParams,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToConsole, LogToLocal } from '../../../base/decorators';

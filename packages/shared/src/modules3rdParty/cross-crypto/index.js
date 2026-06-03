@@ -21,8 +21,8 @@ if (global.crypto) {
   crypto.getRandomValues =
     crypto.getRandomValues || global.crypto.getRandomValues;
 }
-crypto.$$isOneKeyShim = true;
-global.crypto.$$isOneKeyShim = true;
+crypto.$$isUnionKeyShim = true;
+global.crypto.$$isUnionKeyShim = true;
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('crypto-browserify polyfilled', crypto, global.crypto);

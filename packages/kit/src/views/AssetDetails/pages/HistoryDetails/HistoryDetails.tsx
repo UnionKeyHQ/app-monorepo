@@ -14,47 +14,47 @@ import {
   Spinner,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import NumberSizeableTextWrapper from '@onekeyhq/kit/src/components/NumberSizeableTextWrapper';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { SpeedUpAction } from '@onekeyhq/kit/src/components/TxHistoryListView/SpeedUpAction';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useReplaceTx } from '@onekeyhq/kit/src/hooks/useReplaceTx';
-import { openTransactionDetailsUrl } from '@onekeyhq/kit/src/utils/explorerUtils';
-import { withBrowserProvider } from '@onekeyhq/kit/src/views/Discovery/pages/Browser/WithBrowserProvider';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { POLLING_INTERVAL_FOR_HISTORY } from '@onekeyhq/shared/src/consts/walletConsts';
-import { IMPL_DOT } from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AddressInfo } from '@unionkey/kit/src/components/AddressInfo';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import NumberSizeableTextWrapper from '@unionkey/kit/src/components/NumberSizeableTextWrapper';
+import { Token } from '@unionkey/kit/src/components/Token';
+import { SpeedUpAction } from '@unionkey/kit/src/components/TxHistoryListView/SpeedUpAction';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useReplaceTx } from '@unionkey/kit/src/hooks/useReplaceTx';
+import { openTransactionDetailsUrl } from '@unionkey/kit/src/utils/explorerUtils';
+import { withBrowserProvider } from '@unionkey/kit/src/views/Discovery/pages/Browser/WithBrowserProvider';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { POLLING_INTERVAL_FOR_HISTORY } from '@unionkey/shared/src/consts/walletConsts';
+import { IMPL_DOT } from '@unionkey/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IModalAssetDetailsParamList } from '@onekeyhq/shared/src/routes/assetDetails';
-import { EModalAssetDetailRoutes } from '@onekeyhq/shared/src/routes/assetDetails';
-import { getHistoryTxDetailInfo } from '@onekeyhq/shared/src/utils/historyUtils';
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IModalAssetDetailsParamList } from '@unionkey/shared/src/routes/assetDetails';
+import { EModalAssetDetailRoutes } from '@unionkey/shared/src/routes/assetDetails';
+import { getHistoryTxDetailInfo } from '@unionkey/shared/src/utils/historyUtils';
+import type { IAddressInfo } from '@unionkey/shared/types/address';
+import type { IAccountHistoryTx } from '@unionkey/shared/types/history';
 import {
   EHistoryTxDetailsBlock,
   EOnChainHistoryTxStatus,
   EOnChainHistoryTxType,
-} from '@onekeyhq/shared/types/history';
-import { ENotificationPushMessageAckAction } from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/history';
+import { ENotificationPushMessageAckAction } from '@unionkey/shared/types/notification';
 import type {
   IDecodedTxActionTokenApprove,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 import {
   EDecodedTxDirection,
   EDecodedTxStatus,
   EReplaceTxType,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { getHistoryTxMeta } from '../../utils';
 

@@ -1,16 +1,16 @@
 import { injected } from '@wagmi/core';
 import { createStore as createMipd } from 'mipd';
 
-import type { EventData } from '@onekeyhq/shared/src/eventBus/WagmiEventEmitter';
-import { createEmitter } from '@onekeyhq/shared/src/eventBus/WagmiEventEmitter';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { uidForWagmi } from '@onekeyhq/shared/src/utils/miscUtils';
+import type { EventData } from '@unionkey/shared/src/eventBus/WagmiEventEmitter';
+import { createEmitter } from '@unionkey/shared/src/eventBus/WagmiEventEmitter';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import { uidForWagmi } from '@unionkey/shared/src/utils/miscUtils';
 import type {
   IExternalConnectionInfo,
   IExternalConnectionInfoEvmEIP6963,
   IExternalConnectorEvm,
   IExternalWalletProviderEvm,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/types/externalWallet.types';
 
 import type { ConnectorEventMap, CreateConnectorFn } from '@wagmi/core';
 import type { Store } from 'mipd';
@@ -50,10 +50,10 @@ export class EvmConnectorManager {
         (item) => item.info.uuid === info.uuid && item.info.rdns === info.rdns,
       );
       if (!detail) {
-        const uuidOneKeyInjectAsMetamask = '7677b54f-3486-46e2-4e37-bf8747814f';
+        const uuidUnionKeyInjectAsMetamask = '7677b54f-3486-46e2-4e37-bf8747814f';
         detail = allProvidersDetail.find(
           (item) =>
-            item.info.uuid !== uuidOneKeyInjectAsMetamask &&
+            item.info.uuid !== uuidUnionKeyInjectAsMetamask &&
             item.info.rdns === info.rdns,
         );
       }

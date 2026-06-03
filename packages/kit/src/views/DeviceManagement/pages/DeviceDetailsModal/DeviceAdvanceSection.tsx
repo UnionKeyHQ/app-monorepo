@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, Switch, XStack, YStack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, Switch, XStack, YStack } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 function DeviceAdvanceSection({
   passphraseEnabled,

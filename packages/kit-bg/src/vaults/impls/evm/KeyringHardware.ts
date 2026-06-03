@@ -4,10 +4,10 @@ import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
 import { TypedDataUtils } from 'eth-sig-util';
 import { omit } from 'lodash';
 
-import { buildSignedTxFromSignatureEvm } from '@onekeyhq/core/src/chains/evm/sdkEvm';
-import type { UnsignedTransaction } from '@onekeyhq/core/src/chains/evm/sdkEvm/ethers';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import { buildSignedTxFromSignatureEvm } from '@unionkey/core/src/chains/evm/sdkEvm';
+import type { UnsignedTransaction } from '@unionkey/core/src/chains/evm/sdkEvm/ethers';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
@@ -15,21 +15,21 @@ import type {
   IUnsignedMessage,
   IUnsignedMessageEth,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/core/src/types';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import numberUtils from '@onekeyhq/shared/src/utils/numberUtils';
+} from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import numberUtils from '@unionkey/shared/src/utils/numberUtils';
 import type {
   IDeviceResponseResult,
   IDeviceSharedCallParams,
-} from '@onekeyhq/shared/types/device';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/types/device';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -283,7 +283,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -302,7 +302,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             deviceId,
             template,
             coinName,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -338,7 +338,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //     /**
             //      * Search accounts not show detail at device.Only show on device when add accounts into wallet.
             //      */
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     chainId: Number(chainId),
             //   })),
             // });

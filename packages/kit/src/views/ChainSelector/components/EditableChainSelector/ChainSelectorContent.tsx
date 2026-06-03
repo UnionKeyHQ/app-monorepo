@@ -10,7 +10,7 @@ import {
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { ISortableSectionListRef } from '@onekeyhq/components';
+import type { ISortableSectionListRef } from '@unionkey/components';
 import {
   Empty,
   Icon,
@@ -20,12 +20,12 @@ import {
   SortableSectionList,
   Stack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { usePrevious } from '@onekeyhq/kit/src/hooks/usePrevious';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { usePrevious } from '@unionkey/kit/src/hooks/usePrevious';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 import { useFuseSearch } from '../../hooks/useFuseSearch';
 import RecentNetworks from '../RecentNetworks';

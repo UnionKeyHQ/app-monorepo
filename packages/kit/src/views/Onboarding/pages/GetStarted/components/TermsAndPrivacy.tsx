@@ -2,11 +2,11 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Anchor, SizableText, View } from '@onekeyhq/components';
-import { useHelpLink } from '@onekeyhq/kit/src/hooks/useHelpLink';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Anchor, SizableText, View } from '@unionkey/components';
+import { useHelpLink } from '@unionkey/kit/src/hooks/useHelpLink';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import type { FormatXMLElementFn } from 'intl-messageformat';
 

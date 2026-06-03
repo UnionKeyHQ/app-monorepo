@@ -5,8 +5,8 @@ import {
   COINTYPE_TBTC,
   IMPL_BTC,
   IMPL_TBTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/shared/src/engine/engineConsts';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
 
 import { batchGetPublicKeys } from '../../../secret';
 import { EAddressEncodings, type ICurveName } from '../../../types';
@@ -39,7 +39,7 @@ export const generateNativeSegwitAccounts = async ({
   );
 
   if (pubkeyInfos.length !== indexes.length) {
-    throw new OneKeyInternalError('Unable to get publick key.');
+    throw new UnionKeyInternalError('Unable to get publick key.');
   }
 
   const networkChainCode = isTestnet ? IMPL_TBTC : IMPL_BTC;

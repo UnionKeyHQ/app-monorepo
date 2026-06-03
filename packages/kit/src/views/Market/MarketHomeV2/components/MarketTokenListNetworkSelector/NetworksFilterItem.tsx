@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { Image, SizableText, Tooltip, XStack } from '@onekeyhq/components';
-import type { IXStackProps } from '@onekeyhq/components';
+import { Image, SizableText, Tooltip, XStack } from '@unionkey/components';
+import type { IXStackProps } from '@unionkey/components';
 
 export type INetworksFilterItemProps = {
   networkImageUri?: string;

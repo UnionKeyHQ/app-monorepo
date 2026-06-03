@@ -8,7 +8,7 @@ import type { IStatus } from './BaseProcess';
 
 class BridgeProcess extends BaseProcess {
   constructor() {
-    super('bridge', 'onekeyd', {
+    super('bridge', 'unionkeyd', {
       startupThrottleTime: 3,
     });
   }
@@ -18,7 +18,7 @@ class BridgeProcess extends BaseProcess {
       const resp = await fetch(`http://127.0.0.1:21320/`, {
         method: 'POST',
         headers: {
-          Origin: 'https://electron.onekey.so',
+          Origin: 'https://electron.unionkey.so',
         },
       });
       logger.debug(`Checking status (${resp.status})`);
@@ -70,7 +70,7 @@ export const BridgeHeart = {
         const resp = await fetchWithTimeout(localBridgeUrl, {
           method: 'POST',
           headers: {
-            Origin: 'https://electron.onekey.so',
+            Origin: 'https://electron.unionkey.so',
           },
           timeout: 3000,
         });

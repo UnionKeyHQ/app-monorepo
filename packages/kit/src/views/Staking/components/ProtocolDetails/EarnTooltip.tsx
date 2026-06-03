@@ -8,12 +8,12 @@ import {
   XStack,
   YStack,
   usePopoverContext,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import type {
   IEarnHistoryActionIcon,
   IEarnRebateTooltip,
   IEarnTooltip,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/staking';
 
 import { EarnText } from './EarnText';
 import { useShareEvents } from './ShareEventsProvider';

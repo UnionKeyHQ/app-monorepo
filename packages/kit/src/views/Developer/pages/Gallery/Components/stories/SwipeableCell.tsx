@@ -5,7 +5,7 @@ import {
   SizableText,
   Stack,
   SwipeableCell,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import { mapIndexToData } from './SortableListView';
 

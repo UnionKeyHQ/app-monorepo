@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useHandleAppStateActive } from '@onekeyhq/kit/src/hooks/useHandleAppStateActive';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useHandleAppStateActive } from '@unionkey/kit/src/hooks/useHandleAppStateActive';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 let extSpecialChecked = false;
 /**

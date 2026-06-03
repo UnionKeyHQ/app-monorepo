@@ -8,10 +8,10 @@ import {
   Select,
   SizableText,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
+import { useDebugComponentRemountLog } from '@unionkey/shared/src/utils/debug/debugUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';
@@ -63,7 +63,7 @@ export function NetworkSelectorTriggerLegacyCmp({ num }: { num: number }) {
   return (
     <>
       <SizableText size="$headingXl">
-        网络选择器 {selectedAccount.networkId}
+        网络选择�?{selectedAccount.networkId}
       </SizableText>
       <Select
         items={items}

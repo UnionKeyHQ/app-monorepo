@@ -1,9 +1,9 @@
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapNetwork } from '@onekeyhq/shared/types/swap/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ISwapNetwork } from '@unionkey/shared/types/swap/types';
 import {
   ESwapCrossChainStatus,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import type { ColorValue } from 'react-native';
 

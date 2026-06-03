@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { Stack, XStack } from '@onekeyhq/components';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { IAccountToken } from '@onekeyhq/shared/types/token';
+import { Stack, XStack } from '@unionkey/components';
+import type { IListItemProps } from '@unionkey/kit/src/components/ListItem';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import type { IAccountToken } from '@unionkey/shared/types/token';
 
 import { CreateAccountView } from './CreateAccountView';
 import { TokenBalanceView } from './TokenBalanceView';

@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Icon, SizableText, Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, SizableText, Stack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function FirmwareLatestVersionInstalled() {
   const intl = useIntl();

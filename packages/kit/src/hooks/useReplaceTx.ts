@@ -2,15 +2,15 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Toast, useMedia } from '@onekeyhq/components';
-import { useBrowserAction } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EModalSendRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
-import { EDecodedTxStatus, EReplaceTxType } from '@onekeyhq/shared/types/tx';
+import { Toast, useMedia } from '@unionkey/components';
+import { useBrowserAction } from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes, EModalSendRoutes } from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IAccountHistoryTx } from '@unionkey/shared/types/history';
+import type { ISendTxOnSuccessData } from '@unionkey/shared/types/tx';
+import { EDecodedTxStatus, EReplaceTxType } from '@unionkey/shared/types/tx';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { showBtcSpeedUpTxDialog } from '../components/TxHistoryListView/showBtcSpeedUpTxDialog';
@@ -134,13 +134,13 @@ function useReplaceTx({
             id: ETranslations.tx_accelerate_speed_up_with_accelerator_dialog_desc,
           }),
           onConfirm: async () => {
-            // https://www.f2pool.com/user/tx-acc?from=onekey&txid={txid}
+            // https://www.f2pool.com/user/tx-acc?from=unionkey&txid={txid}
             handleOpenWebSite({
               switchToMultiTabBrowser: gtMd,
               navigation,
               useCurrentWindow: false,
               webSite: {
-                url: `https://www.f2pool.com/user/tx-acc?from=onekey&txid=${decodedTx.txid}`,
+                url: `https://www.f2pool.com/user/tx-acc?from=unionkey&txid=${decodedTx.txid}`,
                 title: 'F2Pool',
                 logo: undefined,
                 sortIndex: undefined,
@@ -180,7 +180,7 @@ function useReplaceTx({
     if (!networkUtils.isBTCNetwork(networkId)) {
       return;
     }
-    // https://www.f2pool.com/user/tx-acc?from=onekey&txid={txid}
+    // https://www.f2pool.com/user/tx-acc?from=unionkey&txid={txid}
     handleOpenWebSite({
       switchToMultiTabBrowser: gtMd,
       navigation,

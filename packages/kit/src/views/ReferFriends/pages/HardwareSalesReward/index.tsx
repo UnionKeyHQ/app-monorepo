@@ -15,16 +15,16 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { Currency } from '@onekeyhq/kit/src/components/Currency';
-import { useSpotlight } from '@onekeyhq/kit/src/components/Spotlight';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IHardwareSalesRecord } from '@onekeyhq/shared/src/referralCode/type';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import { formatDate, formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { Currency } from '@unionkey/kit/src/components/Currency';
+import { useSpotlight } from '@unionkey/kit/src/components/Spotlight';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IHardwareSalesRecord } from '@unionkey/shared/src/referralCode/type';
+import { ESpotlightTour } from '@unionkey/shared/src/spotlight';
+import { formatDate, formatTime } from '@unionkey/shared/src/utils/dateUtils';
 
 type ISectionListItem = {
   title?: string;

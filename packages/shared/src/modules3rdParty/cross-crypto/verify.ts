@@ -4,9 +4,9 @@ import * as crypto from 'crypto';
 const globalCrypto = globalThis.crypto;
 
 // @ts-ignore
-assert.ok(globalCrypto?.$$isOneKeyShim, 'global crypto is not polyfilled');
+assert.ok(globalCrypto?.$$isUnionKeyShim, 'global crypto is not polyfilled');
 // @ts-ignore
-assert.ok(crypto?.$$isOneKeyShim, 'crypto is not polyfilled');
+assert.ok(crypto?.$$isUnionKeyShim, 'crypto is not polyfilled');
 
 assert.equal(
   // eslint-disable-next-line @typescript-eslint/unbound-method

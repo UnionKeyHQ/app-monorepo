@@ -7,24 +7,24 @@ import { URDecoder, UREncoder } from '@ngraveio/bc-ur';
 import { networks as BitcoinJsNetworks, Psbt } from 'bitcoinjs-lib';
 import { isEqual } from 'lodash';
 
-import { Button, Dialog, Input, QRCode } from '@onekeyhq/components';
+import { Button, Dialog, Input, QRCode } from '@unionkey/components';
 import {
   buildPsbt,
   decodedPsbt,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc/providerUtils';
-import type { IEncodedTxBtc } from '@onekeyhq/core/src/chains/btc/types';
-import { packUnsignedTxForSignEvm } from '@onekeyhq/core/src/chains/evm/sdkEvm';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/chains/btc/sdkBtc/providerUtils';
+import type { IEncodedTxBtc } from '@unionkey/core/src/chains/btc/types';
+import { packUnsignedTxForSignEvm } from '@unionkey/core/src/chains/evm/sdkEvm';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import { EAddressEncodings } from '@unionkey/core/src/types';
 import {
   AirGapEthSignRequestEvm,
   EAirGapDataTypeEvm,
   airGapUrUtils,
   getAirGapSdk,
-} from '@onekeyhq/qr-wallet-sdk';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkey/qr-wallet-sdk';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
 
 import type { FeeMarketEIP1559TxData } from '@ethereumjs/tx';
 

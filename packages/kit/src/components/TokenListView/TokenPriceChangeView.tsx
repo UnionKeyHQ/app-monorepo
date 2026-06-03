@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { NumberSizeableText } from '@onekeyhq/components';
-import { getTokenPriceChangeStyle } from '@onekeyhq/shared/src/utils/tokenUtils';
+import type { ISizableTextProps } from '@unionkey/components';
+import { NumberSizeableText } from '@unionkey/components';
+import { getTokenPriceChangeStyle } from '@unionkey/shared/src/utils/tokenUtils';
 
 import { useTokenListMapAtom } from '../../states/jotai/contexts/tokenList';
 

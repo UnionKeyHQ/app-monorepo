@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { SizableText } from '@onekeyhq/components';
+import { SizableText } from '@unionkey/components';
 
 export function useFreezeProbe(
   componentName: string,

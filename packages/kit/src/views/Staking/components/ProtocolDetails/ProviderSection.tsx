@@ -8,14 +8,14 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
+} from '@unionkey/components';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import earnUtils from '@unionkey/shared/src/utils/earnUtils';
 import type {
   IEarnTokenItem,
   IStakeProtocolDetails,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/staking';
 
 import { capitalizeString } from '../../utils/utils';
 

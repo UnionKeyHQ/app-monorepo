@@ -1,20 +1,20 @@
-import type { IResponseAppUpdateInfo } from '@onekeyhq/shared/src/appUpdate';
+import type { IResponseAppUpdateInfo } from '@unionkey/shared/src/appUpdate';
 import {
   EAppUpdateStatus,
   isFirstLaunchAfterUpdated,
-} from '@onekeyhq/shared/src/appUpdate';
+} from '@unionkey/shared/src/appUpdate';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   type IUpdateDownloadedEvent,
   clearPackage,
-} from '@onekeyhq/shared/src/modules3rdParty/auto-update';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/modules3rdParty/auto-update';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 
 import { appUpdatePersistAtom } from '../states/jotai/atoms';
 

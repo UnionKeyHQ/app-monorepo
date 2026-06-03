@@ -6,7 +6,7 @@ import { Header } from '@react-navigation/elements';
 import { get } from 'lodash';
 import { useMedia, useTheme } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { Stack, XStack } from '../../../primitives';
 import { DesktopDragZoneBox } from '../../DesktopDragZoneBox';
@@ -14,7 +14,7 @@ import { DesktopDragZoneBox } from '../../DesktopDragZoneBox';
 import HeaderBackButton from './HeaderBackButton';
 import HeaderSearchBar from './HeaderSearchBar';
 
-import type { IOnekeyStackHeaderProps } from './HeaderScreenOptions';
+import type { IUnionkeyStackHeaderProps } from './HeaderScreenOptions';
 import type { IStackHeaderProps } from '../ScreenProps';
 import type { Layout } from '@react-navigation/elements';
 import type {
@@ -41,7 +41,7 @@ function HeaderView({
   navigation,
   isModelScreen = false,
   isRootScreen = false,
-}: IStackHeaderProps & IOnekeyStackHeaderProps) {
+}: IStackHeaderProps & IUnionkeyStackHeaderProps) {
   const {
     headerLeft,
     headerRight,

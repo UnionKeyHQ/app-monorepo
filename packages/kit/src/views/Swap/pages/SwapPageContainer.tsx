@@ -1,7 +1,7 @@
-import { Page } from '@onekeyhq/components';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import { Page } from '@unionkey/components';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
+import { useDebugComponentRemountLog } from '@unionkey/shared/src/utils/debug/debugUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { TabPageHeader } from '../../../components/TabPageHeader';
 

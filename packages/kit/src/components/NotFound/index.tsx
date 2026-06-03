@@ -1,4 +1,4 @@
-import { SizableText } from '@onekeyhq/components';
+import { SizableText } from '@unionkey/components';
 
 function NotFound() {
   return <SizableText color="red">Not Found Page</SizableText>;

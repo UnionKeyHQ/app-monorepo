@@ -11,19 +11,19 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
+} from '@unionkey/components';
+import { HeaderIconButton } from '@unionkey/components/src/layouts/Navigation/Header';
 import {
   ENABLE_SEARCH_TOKEN_LIST_MIN_LENGTH,
   SEARCH_DEBOUNCE_INTERVAL,
-} from '@onekeyhq/shared/src/consts/walletConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/consts/walletConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalAssetListRoutes,
   IModalAssetListParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EModalAssetDetailRoutes } from '@onekeyhq/shared/src/routes';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/src/routes';
+import { EModalAssetDetailRoutes } from '@unionkey/shared/src/routes';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import { TokenListView } from '../../../components/TokenListView';
 import { perfTokenListView } from '../../../components/TokenListView/perfTokenListView';

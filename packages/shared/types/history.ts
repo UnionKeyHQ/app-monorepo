@@ -1,4 +1,4 @@
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ETranslations } from '@unionkey/shared/src/locale';
 
 import type { IAddressBadge, IAddressInfo } from './address';
 import type { IAccountNFT } from './nft';

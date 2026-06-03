@@ -1,11 +1,18 @@
-import type { IDesktopOpenUrlEventData } from '@onekeyhq/desktop/app/app';
-import { ipcMessageKeys } from '@onekeyhq/desktop/app/config';
+import type { IDesktopOpenUrlEventData } from '@unionkey/desktop/app/app';
+import { ipcMessageKeys } from '@unionkey/desktop/app/config';
 
 import type { IRegisterHandler } from './handler.type';
 
 export const registerHandler: IRegisterHandler = (
   handleDeepLinkUrl: (e: IDesktopOpenUrlEventData) => void,
 ) => {
+  if (
+    !globalThis.desktopApi?.addIpcEventListener ||
+    !globalThis.desktopApi?.removeIpcEventListener
+  ) {
+    return;
+  }
+
   const desktopLinkingHandler = (
     event: Event,
     data: IDesktopOpenUrlEventData,

@@ -1,8 +1,8 @@
 import type { ComponentProps, ReactNode } from 'react';
 
-import { Stack } from '@onekeyhq/components';
-import { MultipleClickStack } from '@onekeyhq/kit/src/components/MultipleClickStack';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack } from '@unionkey/components';
+import { MultipleClickStack } from '@unionkey/kit/src/components/MultipleClickStack';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useV4MigrationActions } from '../hooks/useV4MigrationActions';
 

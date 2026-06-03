@@ -16,37 +16,37 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { AssetItem } from '@onekeyhq/kit/src/views/AssetDetails/pages/HistoryDetails';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { AddressInfo } from '@unionkey/kit/src/components/AddressInfo';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { AssetItem } from '@unionkey/kit/src/views/AssetDetails/pages/HistoryDetails';
 import {
   useInAppNotificationAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getPresetNetworks } from '@onekeyhq/shared/src/config/presetNetworks';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { getPresetNetworks } from '@unionkey/shared/src/config/presetNetworks';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
-import { formatBalance } from '@onekeyhq/shared/src/utils/numberUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/routes/swap';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
+import { formatBalance } from '@unionkey/shared/src/utils/numberUtils';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 import {
   defaultSupportUrl,
   limitOrderEstimationFeePercent,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { IFetchLimitOrderRes } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { IFetchLimitOrderRes } from '@unionkey/shared/types/swap/types';
 import {
   ESwapCancelLimitOrderSource,
   ESwapLimitOrderStatus,
   ESwapQuoteKind,
-} from '@onekeyhq/shared/types/swap/types';
-import { EDecodedTxDirection } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/swap/types';
+import { EDecodedTxDirection } from '@unionkey/shared/types/tx';
 
 import {
   InfoItem,

@@ -1,6 +1,6 @@
-import type { IElement } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+import type { IElement } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
 
 import type { IBrowserType } from '../types';
 import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
@@ -100,8 +100,8 @@ export function dismissWebviewKeyboard(id?: string) {
 export const injectToPauseWebsocket = `
 (function(){
   if (window.WebSocket) {
-    if (!window.$$onekeyWebSocketSend) {
-      window.$$onekeyWebSocketSend = window.WebSocket.prototype.send;
+    if (!window.$$unionkeyWebSocketSend) {
+      window.$$unionkeyWebSocketSend = window.WebSocket.prototype.send;
     }
     window.WebSocket.prototype.send = () => {};
   }
@@ -112,9 +112,9 @@ export const injectToResumeWebsocket = `
 (function(){
   if (
     window.WebSocket &&
-    window.$$onekeyWebSocketSend
+    window.$$unionkeyWebSocketSend
   ) {
-    window.WebSocket.prototype.send = window.$$onekeyWebSocketSend;
+    window.WebSocket.prototype.send = window.$$unionkeyWebSocketSend;
   }
 })()
 `;
@@ -125,9 +125,9 @@ export function processWebSiteUrl(url?: string): string | undefined {
   try {
     const urlObj = new URL(uriUtils.validateUrl(url));
 
-    // add fp=onekey to searchParams when visit babylon
+    // add fp=unionkey to searchParams when visit babylon
     if (urlObj.hostname === 'btcstaking.babylonlabs.io') {
-      urlObj.searchParams.set('fp', 'onekey');
+      urlObj.searchParams.set('fp', 'unionkey');
       return urlObj.toString();
     }
 

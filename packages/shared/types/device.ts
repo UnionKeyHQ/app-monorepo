@@ -1,8 +1,8 @@
 import type {
   IDBDevice,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { ILocaleSymbol } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import type { ILocaleSymbol } from '@unionkey/shared/src/locale';
 
 import type {
   BleReleaseInfoPayload,
@@ -17,10 +17,10 @@ import type {
 } from '@onekeyfe/hd-core';
 import type { Features as FeaturesTransport } from '@onekeyfe/hd-transport';
 
-export type IOneKeyDeviceType = IDeviceType;
+export type IUnionKeyDeviceType = IDeviceType;
 
-export type IOneKeyDeviceFeatures = FeaturesTransport;
-export type IOneKeyDeviceFeaturesCore = FeaturesCore;
+export type IUnionKeyDeviceFeatures = FeaturesTransport;
+export type IUnionKeyDeviceFeaturesCore = FeaturesCore;
 
 export type IFirmwareChangeLog = {
   [key in ILocaleSymbol]?: string;
@@ -49,7 +49,7 @@ export type IFirmwareUpdatesDetectStatus = Partial<{
 }>;
 
 export type IFirmwareReleasePayload = Omit<ReleaseInfoPayload, 'device'> & {
-  features: IOneKeyDeviceFeatures | undefined;
+  features: IUnionKeyDeviceFeatures | undefined;
   connectId: string | undefined;
 };
 
@@ -57,7 +57,7 @@ export type IBleFirmwareReleasePayload = Omit<
   BleReleaseInfoPayload,
   'device'
 > & {
-  features: IOneKeyDeviceFeatures | undefined;
+  features: IUnionKeyDeviceFeatures | undefined;
   connectId: string | undefined;
 };
 // TODO should export sdk type CheckBootloaderReleaseResponse
@@ -94,7 +94,7 @@ export type IBootloaderUpdateInfo =
 
 export type ICheckAllFirmwareReleaseResult = {
   hasUpgrade: boolean | undefined;
-  features: IOneKeyDeviceFeatures | undefined;
+  features: IUnionKeyDeviceFeatures | undefined;
   isBootloaderMode: boolean;
   deviceType: IDeviceType | undefined;
   deviceUUID: string;
@@ -131,7 +131,7 @@ export type IGetDeviceAccountDataParams = {
   pathSuffix: string;
   template: string;
   coinName: string | undefined;
-  showOnOnekeyFn: (index: number) => boolean | undefined;
+  showOnUnionkeyFn: (index: number) => boolean | undefined;
 };
 
 export enum EConfirmOnDeviceType {
@@ -149,7 +149,7 @@ export type IDeviceSharedCallParams = {
 
 export type IHardwareUiEventPayload = {
   type?: string;
-  deviceType?: IOneKeyDeviceType;
+  deviceType?: IUnionKeyDeviceType;
   deviceId: string;
   deviceConnectId: string;
   deviceBootLoaderMode?: boolean;
@@ -195,7 +195,7 @@ export type IResourceUpdateInfo = {
 };
 
 export type IQrWalletDevice = {
-  name: string; // device name like: 'OneKey Pro'
+  name: string; // device name like: 'UnionKey Pro'
   // TODO deviceType
   deviceId: string;
   version: string;
@@ -209,8 +209,8 @@ export const CUSTOM_UI_RESPONSE = {
   // monorepo custom
   CUSTOM_CANCEL: 'ui-custom_cancel',
   CUSTOM_REQUEST_PIN_ON_DEVICE: 'ui-custom_request_pin_on_device',
-  CUSTOM_NEED_ONEKEY_BRIDGE: 'ui-custom_need_onekey_bridge',
-  CUSTOM_FORCE_UPGRADE_FIRMWARE: 'ui-custom_force_onekey_bridge',
+  CUSTOM_NEED_UNIONKEY_BRIDGE: 'ui-custom_need_unionkey_bridge',
+  CUSTOM_FORCE_UPGRADE_FIRMWARE: 'ui-custom_force_unionkey_bridge',
   CUSTOM_NEED_UPGRADE_FIRMWARE: 'ui-custom_need_upgrade_firmware',
   CUSTOM_NEED_OPEN_PASSPHRASE: 'ui-custom_need_open_passphrase',
   CUSTOM_NEED_CLOSE_PASSPHRASE: 'ui-custom_need_close_passphrase',
@@ -234,7 +234,7 @@ export const UI_REQUEST = {
   FIRMWARE_PROGRESS: 'ui-firmware-progress',
 } as const;
 
-export enum EOneKeyDeviceMode {
+export enum EUnionKeyDeviceMode {
   bootloader = 'bootloader',
   notInitialized = 'notInitialized',
   // initialize = 'initialize',
@@ -367,10 +367,10 @@ export interface IDeviceVerifyVersionCompareResult {
 }
 
 export type IDeviceVersionCacheInfo = {
-  onekey_firmware_version: string | undefined;
-  onekey_ble_version: string | undefined;
+  unionkey_firmware_version: string | undefined;
+  unionkey_ble_version: string | undefined;
   ble_ver: string | undefined;
-  onekey_boot_version: string | undefined;
+  unionkey_boot_version: string | undefined;
   bootloader_version: string | undefined;
 };
 

@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import { useIsFocused } from '@react-navigation/core';
 
-import { rootNavigationRef } from '@onekeyhq/components';
-import { useAppIsLockedAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { rootNavigationRef } from '@unionkey/components';
+import { useAppIsLockedAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 const getRootRoutersLength = () =>
   rootNavigationRef.current?.getRootState()?.routes?.length || 1;

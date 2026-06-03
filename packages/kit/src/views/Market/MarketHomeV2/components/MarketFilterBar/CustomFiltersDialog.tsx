@@ -7,7 +7,7 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 interface ICustomFiltersDialogProps {
   onClose: () => void;

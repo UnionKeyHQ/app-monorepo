@@ -1,9 +1,9 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { DEFAULT_VERIFY_STRING } from '@onekeyhq/shared/src/consts/dbConsts';
-import { InvalidMnemonic } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import { DEFAULT_VERIFY_STRING } from '@unionkey/shared/src/consts/dbConsts';
+import { InvalidMnemonic } from '@unionkey/shared/src/errors';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { BaseBip32KeyDeriver, ED25519Bip32KeyDeriver } from './bip32';
 import {
@@ -437,7 +437,7 @@ async function batchGetPublicKeysAsync(
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     const keys = await appGlobals.$webembedApiProxy.secret.batchGetPublicKeys(
       params,
@@ -581,7 +581,7 @@ async function mnemonicFromEntropyAsync(
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     return appGlobals.$webembedApiProxy.secret.mnemonicFromEntropyAsync(params);
   }
@@ -600,7 +600,7 @@ async function mnemonicToSeedAsync(
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     const hex = await appGlobals.$webembedApiProxy.secret.mnemonicToSeedAsync(
       params,
@@ -627,7 +627,7 @@ async function generateRootFingerprintHexAsync(
   if (
     platformEnv.isNative &&
     !platformEnv.isJest &&
-    !globalThis.$onekeyAppWebembedApiWebviewInitFailed
+    !globalThis.$unionkeyAppWebembedApiWebviewInitFailed
   ) {
     return appGlobals.$webembedApiProxy.secret.generateRootFingerprintHexAsync(
       params,

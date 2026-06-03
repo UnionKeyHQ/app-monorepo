@@ -1,9 +1,9 @@
 import { memo, useEffect } from 'react';
 
-import { setBgSensitiveTextEncodeKey } from '@onekeyhq/core/src/secret';
-import type { IBackgroundApiWebembedCallMessage } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import webembedApi from '@onekeyhq/kit-bg/src/webembeds/instance/webembedApi';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { setBgSensitiveTextEncodeKey } from '@unionkey/core/src/secret';
+import type { IBackgroundApiWebembedCallMessage } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
+import webembedApi from '@unionkey/kit-bg/src/webembeds/instance/webembedApi';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 
 import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
 
@@ -44,7 +44,7 @@ const handler = async (payload: IJsBridgeMessagePayload) =>
 const init = (times = 0) => {
   defaultLogger.app.webembed.callPageInit();
 
-  if (!globalThis.$onekey && times < 5000) {
+  if (!globalThis.$unionkey && times < 5000) {
     setTimeout(() => {
       init(times + 1);
     }, 15);
@@ -77,11 +77,11 @@ const init = (times = 0) => {
     );
   });
 
-  globalThis.$onekey.$private.webembedReceiveHandler = handler;
+  globalThis.$unionkey.$private.webembedReceiveHandler = handler;
 
   defaultLogger.app.webembed.callPageGetEncodeKey();
 
-  void globalThis.$onekey.$private
+  void globalThis.$unionkey.$private
     .request({
       method: 'getSensitiveEncodeKey',
     })
@@ -93,7 +93,7 @@ const init = (times = 0) => {
 
         defaultLogger.app.webembed.callPageApiReady();
 
-        void globalThis.$onekey.$private.request({
+        void globalThis.$unionkey.$private.request({
           method: 'webEmbedApiReady',
         });
         printMessageToBody('web-embed init success! 73765183');

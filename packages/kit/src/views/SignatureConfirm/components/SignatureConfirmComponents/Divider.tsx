@@ -1,7 +1,7 @@
-import { Divider as OneKeyDivider } from '@onekeyhq/components';
+import { Divider as UnionKeyDivider } from '@unionkey/components';
 
 function Divider() {
-  return <OneKeyDivider />;
+  return <UnionKeyDivider />;
 }
 
 export { Divider };

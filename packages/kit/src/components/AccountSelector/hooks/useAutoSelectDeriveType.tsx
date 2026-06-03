@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import {

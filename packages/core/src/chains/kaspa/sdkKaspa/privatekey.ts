@@ -1,7 +1,7 @@
 import { bytesToHex } from '@noble/hashes/utils';
 import { PrivateKey } from '@onekeyfe/kaspa-core-lib';
 
-import { tapTweakHash } from '@onekeyhq/core/src/secret/bip340';
+import { tapTweakHash } from '@unionkey/core/src/secret/bip340';
 
 import ecc from '../../../secret/nobleSecp256k1Wrapper';
 

@@ -3,12 +3,12 @@ import { useCallback, useRef } from 'react';
 import pRetry from 'p-retry';
 import { useIntl } from 'react-intl';
 
-import { Dialog, Form, Input, Stack, useForm } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorageKeys';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
+import { Dialog, Form, Input, Stack, useForm } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import appStorage from '@unionkey/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkey/shared/src/storage/syncStorageKeys';
+import stringUtils from '@unionkey/shared/src/utils/stringUtils';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 import { PrimeLoginEmailCodeDialogV2 } from '../PrimeLoginEmailCodeDialogV2';
@@ -24,8 +24,8 @@ export function PrimeLoginEmailDialogV2(props: {
 }) {
   const { onComplete, onLoginSuccess, title, description, onConfirm } = props;
 
-  const lastOneKeyIdLoginEmail = appStorage.syncStorage.getString(
-    EAppSyncStorageKeys.last_onekey_id_login_email,
+  const lastUnionKeyIdLoginEmail = appStorage.syncStorage.getString(
+    EAppSyncStorageKeys.last_unionkey_id_login_email,
   );
 
   // const isReady = false;
@@ -50,7 +50,7 @@ export function PrimeLoginEmailDialogV2(props: {
   const intl = useIntl();
 
   const form = useForm<{ email: string }>({
-    defaultValues: { email: lastOneKeyIdLoginEmail || '' },
+    defaultValues: { email: lastUnionKeyIdLoginEmail || '' },
   });
 
   const submit = useCallback(
@@ -64,7 +64,7 @@ export function PrimeLoginEmailDialogV2(props: {
       const data = form.getValues();
 
       appStorage.syncStorage.set(
-        EAppSyncStorageKeys.last_onekey_id_login_email,
+        EAppSyncStorageKeys.last_unionkey_id_login_email,
         data.email,
       );
 
@@ -121,7 +121,7 @@ export function PrimeLoginEmailDialogV2(props: {
         <Dialog.Description>
           {description ||
             intl.formatMessage({
-              id: ETranslations.prime_onekeyid_continue_description,
+              id: ETranslations.prime_unionkeyid_continue_description,
             })}
         </Dialog.Description>
       </Dialog.Header>
@@ -136,7 +136,7 @@ export function PrimeLoginEmailDialogV2(props: {
                 }
                 if (!stringUtils.isValidEmail(value)) {
                   return intl.formatMessage({
-                    id: ETranslations.prime_onekeyid_email_error,
+                    id: ETranslations.prime_unionkeyid_email_error,
                   });
                 }
                 return true;

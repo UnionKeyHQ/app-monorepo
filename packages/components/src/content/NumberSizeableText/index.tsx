@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import { isString } from 'lodash';
 
-import type { INumberFormatProps } from '@onekeyhq/shared/src/utils/numberUtils';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
+import type { INumberFormatProps } from '@unionkey/shared/src/utils/numberUtils';
+import { numberFormat } from '@unionkey/shared/src/utils/numberUtils';
 
 import { SizableText } from '../../primitives';
 import { getFontSize } from '../../utils';

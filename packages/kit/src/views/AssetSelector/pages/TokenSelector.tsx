@@ -4,22 +4,22 @@ import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Page } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { TokenListView } from '@onekeyhq/kit/src/components/TokenListView';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useTokenListActions } from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import type { IVaultSettings } from '@onekeyhq/kit-bg/src/vaults/types';
-import { SEARCH_KEY_MIN_LENGTH } from '@onekeyhq/shared/src/consts/walletConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Page } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { TokenListView } from '@unionkey/kit/src/components/TokenListView';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useTokenListActions } from '@unionkey/kit/src/states/jotai/contexts/tokenList';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import type { IVaultSettings } from '@unionkey/kit-bg/src/vaults/types';
+import { SEARCH_KEY_MIN_LENGTH } from '@unionkey/shared/src/consts/walletConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EAssetSelectorRoutes,
   IAssetSelectorParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IAccountToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import type { IAccountToken } from '@unionkey/shared/types/token';
 
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
 import { useAccountSelectorCreateAddress } from '../../../components/AccountSelector/hooks/useAccountSelectorCreateAddress';

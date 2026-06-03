@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 
-import { check } from '@onekeyhq/shared/src/utils/assertUtils';
+import { check } from '@unionkey/shared/src/utils/assertUtils';
 
 import { appLocale, fallbackAppLocaleIntl } from '../locale/appLocale';
 import platformEnv from '../platformEnv';

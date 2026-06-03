@@ -2,22 +2,22 @@ import { TransactionBlock } from '@benfen/bfc.js/transactions';
 import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 
-import type { IEncodedTxBfc } from '@onekeyhq/core/src/chains/bfc/types';
-import type IVaultBfc from '@onekeyhq/kit-bg/src/vaults/impls/bfc/Vault';
+import type { IEncodedTxBfc } from '@unionkey/core/src/chains/bfc/types';
+import type IVaultBfc from '@unionkey/kit-bg/src/vaults/impls/bfc/Vault';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { EMessageTypesCommon } from '@unionkey/shared/types/message';
 import type {
   ISignAndExecuteTransactionBlockInput,
   ISignMessageInput,
   ISignTransactionBlockInput,
   ISignTransactionBlockOutput,
   ISuiSignMessageOutput,
-} from '@onekeyhq/shared/types/ProviderApis/ProviderApiSui.type';
+} from '@unionkey/shared/types/ProviderApis/ProviderApiSui.type';
 
 import { vaultFactory } from '../vaults/factory';
 

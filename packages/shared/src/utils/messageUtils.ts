@@ -3,15 +3,15 @@ import { TYPED_MESSAGE_SCHEMA, typedSignatureHash } from 'eth-sig-util';
 import { addHexPrefix, isHexString, isValidAddress } from 'ethereumjs-util';
 import { validate } from 'jsonschema';
 
-import { conflux } from '@onekeyhq/core/src/chains/cfx/sdkCfx';
+import { conflux } from '@unionkey/core/src/chains/cfx/sdkCfx';
 import type {
   IUnsignedMessage,
   IUnsignedMessageEth,
-} from '@onekeyhq/core/src/types';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkey/core/src/types';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 
 import { IMPL_CFX } from '../engine/engineConsts';
-import { OneKeyError } from '../errors';
+import { UnionKeyError } from '../errors';
 
 const solidityTypes = () => {
   const types = [
@@ -221,7 +221,7 @@ export function validateSignMessageData(
     impl,
   });
   if (!message || typeof message !== 'string') {
-    throw new OneKeyError(
+    throw new UnionKeyError(
       `Invalid message: ${String(message)} must be a valid string.`,
     );
   }
@@ -243,7 +243,7 @@ export function validateTypedSignMessageDataV1(
   });
 
   if (!message || !Array.isArray(message)) {
-    throw new OneKeyError(
+    throw new UnionKeyError(
       `Invalid message: ${String(message)} must be a valid array.`,
     );
   }
@@ -294,11 +294,11 @@ export function validateTypedSignMessageDataV3V4(
 
   const validation = validate(messageObject, TYPED_MESSAGE_SCHEMA);
   if (validation.errors.length > 0) {
-    throw new OneKeyError('Message Data must conform to EIP-712 schema.');
+    throw new UnionKeyError('Message Data must conform to EIP-712 schema.');
   }
 
   if (!currentChainId) {
-    throw new OneKeyError('Current chainId cannot be null or undefined.');
+    throw new UnionKeyError('Current chainId cannot be null or undefined.');
   }
 
   const { chainId } = messageObject.domain;
@@ -307,13 +307,13 @@ export function validateTypedSignMessageDataV3V4(
     const chainIdBN = new BigNumber(chainId);
 
     if (activeChainIdBN.isNaN()) {
-      throw new OneKeyError(
-        `Cannot sign messages for chainId "${chainIdBN.toFixed()}", because OneKey is switching networks.`,
+      throw new UnionKeyError(
+        `Cannot sign messages for chainId "${chainIdBN.toFixed()}", because UnionKey is switching networks.`,
       );
     }
 
     if (!activeChainIdBN.isEqualTo(chainIdBN)) {
-      throw new OneKeyError(
+      throw new UnionKeyError(
         `Provided chainId "${chainIdBN.toFixed()}" must match the active chainId "${activeChainIdBN.toFixed()}"`,
       );
     }

@@ -1,20 +1,20 @@
 import BigNumber from 'bignumber.js';
 import { isNil, isString, uniqBy } from 'lodash';
 
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkey/core/src/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import externalWalletLogoUtils from '@onekeyhq/shared/src/utils/externalWalletLogoUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import externalWalletLogoUtils from '@unionkey/shared/src/utils/externalWalletLogoUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 import type {
   IExternalConnectResultEvm,
   IExternalConnectWalletResult,
@@ -24,7 +24,7 @@ import type {
   IExternalListWalletsResult,
   IExternalWalletInfo,
   IWagmiConnectorEventMap,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/types/externalWallet.types';
 
 import localDb from '../../../dbs/local/localDb';
 import { WalletConnectDappSideProvider } from '../../../services/ServiceWalletConnect/WalletConnectDappSideProvider';
@@ -162,11 +162,11 @@ export class ExternalControllerEvm extends ExternalControllerBase {
   }
 
   override async listWallets(): Promise<IExternalListWalletsResult> {
-    const uuidOneKeyInjectAsMetamask = '7677b54f-3486-46e2-4e37-bf8747814f';
-    // const uuidOneKeyInjectAsMetamask = '';
+    const uuidUnionKeyInjectAsMetamask = '7677b54f-3486-46e2-4e37-bf8747814f';
+    // const uuidUnionKeyInjectAsMetamask = '';
     const allProvidersDetail = this.manager
       .getProviders()
-      .filter((item) => item.info.uuid !== uuidOneKeyInjectAsMetamask);
+      .filter((item) => item.info.uuid !== uuidUnionKeyInjectAsMetamask);
 
     const icon = externalWalletLogoUtils.getLogoInfo('injected').logo;
     let evmInjectedWallet: IExternalWalletInfo | undefined;

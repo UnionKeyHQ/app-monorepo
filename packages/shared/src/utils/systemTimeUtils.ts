@@ -2,7 +2,7 @@ import axios from 'axios';
 import { isNaN, isNil, isNumber, throttle } from 'lodash';
 
 import { EServiceEndpointEnum } from '../../types/endpoint';
-import { ONEKEY_HEALTH_CHECK_URL } from '../config/appConfig';
+import { UNIONKEY_HEALTH_CHECK_URL } from '../config/appConfig';
 import { getEndpointByServiceName } from '../config/endpointsMap';
 import { EAppEventBusNames, appEventBus } from '../eventBus/appEventBus';
 import requestHelper from '../request/requestHelper';
@@ -113,7 +113,7 @@ class SystemTimeUtils {
       const endpoint = await getEndpointByServiceName(
         EServiceEndpointEnum.Wallet,
       );
-      const url = `${endpoint}${ONEKEY_HEALTH_CHECK_URL}`;
+      const url = `${endpoint}${UNIONKEY_HEALTH_CHECK_URL}`;
       axios
         .get(url, {
           params: {
@@ -271,8 +271,8 @@ class SystemTimeUtils {
       if (!this.isTimeValid({ time: serverTimestamp })) {
         return;
       }
-      const isOneKeyDomain = await requestHelper.checkIsOneKeyDomain(url ?? '');
-      if (!isOneKeyDomain) {
+      const isUnionKeyDomain = await requestHelper.checkIsUnionKeyDomain(url ?? '');
+      if (!isUnionKeyDomain) {
         return;
       }
       let localTimestamp: number = Date.now();

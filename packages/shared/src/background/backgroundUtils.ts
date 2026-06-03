@@ -12,7 +12,7 @@ import {
   isUndefined,
 } from 'lodash';
 
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 
 import {
   IMPL_ADA,
@@ -41,7 +41,7 @@ import { NotAutoPrintError } from '../errors';
 import errorUtils from '../errors/utils/errorUtils';
 import platformEnv from '../platformEnv';
 
-import type { OneKeyError } from '../errors';
+import type { UnionKeyError } from '../errors';
 import type { IInjectedProviderNamesStrings } from '@onekeyfe/cross-inpage-provider-types';
 import type { Method } from 'axios';
 
@@ -187,7 +187,7 @@ export function makeTimeoutPromise<T, TParams = undefined>({
 }: {
   asyncFunc: (params: TParams) => Promise<T>;
   timeout: number;
-  timeoutRejectError: OneKeyError | Error;
+  timeoutRejectError: UnionKeyError | Error;
 }) {
   return (params: TParams) =>
     new Promise<T>((resolve, reject) => {

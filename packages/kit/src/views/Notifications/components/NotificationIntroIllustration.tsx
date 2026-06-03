@@ -1,4 +1,4 @@
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkey/components';
 import {
   Heading,
   Image,
@@ -7,7 +7,7 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 const DATA = [
   {
@@ -23,7 +23,7 @@ const DATA = [
   },
   {
     title: 'Approved USDC',
-    description: 'Account 3 â€¢ Polygon',
+    description: 'Account 3 â€?Polygon',
     time: '1h ago',
   },
 ];
@@ -78,7 +78,7 @@ function Item({
         }}
       >
         <Image
-          source={require('@onekeyhq/kit/assets/logo-press.png')}
+          source={require('@unionkey/kit/assets/logo-press.png')}
           w="$10"
           h="$10"
         />

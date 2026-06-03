@@ -6,9 +6,9 @@ import { RouterCtrl } from '@walletconnect/modal-core';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { WALLET_CONNECT_V2_PROJECT_ID } from '@onekeyhq/shared/src/walletConnect/constant';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { WALLET_CONNECT_V2_PROJECT_ID } from '@unionkey/shared/src/walletConnect/constant';
 
 import type { IWalletConnectModalShared } from './types';
 

@@ -3,20 +3,20 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { Page, SizableText, YStack } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Page, SizableText, YStack } from '@unionkey/components';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { useAccountSelectorCreateAddress } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+import type { IAllNetworkAccountInfo } from '@unionkey/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EChainSelectorPages,
   IChainSelectorParamList,
-} from '@onekeyhq/shared/src/routes';
-import { isEnabledNetworksInAllNetworks } from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/routes';
+import { isEnabledNetworksInAllNetworks } from '@unionkey/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';
@@ -168,7 +168,7 @@ function AllNetworksManager() {
       await backgroundApiProxy.serviceAllNetwork.getAllNetworkAccounts({
         accountId: accountId ?? '',
         indexedAccountId,
-        networkId: getNetworkIdsMap().onekeyall,
+        networkId: getNetworkIdsMap().unionkeyall,
         deriveType: undefined,
         excludeTestNetwork: true,
       });
@@ -212,7 +212,7 @@ function AllNetworksManager() {
           num: 0,
           account: {
             walletId,
-            networkId: getNetworkIdsMap().onekeyall,
+            networkId: getNetworkIdsMap().unionkeyall,
             indexedAccountId,
             deriveType: 'default',
           },

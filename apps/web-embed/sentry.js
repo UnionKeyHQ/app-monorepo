@@ -1,3 +1,3 @@
-import { initSentry } from '@onekeyhq/shared/src/modules3rdParty/sentry';
+import { initSentry } from '@unionkey/shared/src/modules3rdParty/sentry';
 
 initSentry();

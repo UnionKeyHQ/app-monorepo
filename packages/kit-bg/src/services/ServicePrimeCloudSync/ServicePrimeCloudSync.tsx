@@ -1,38 +1,38 @@
 import { debounce, isNil, throttle, uniqBy } from 'lodash';
 
-import type { IBrowserBookmark } from '@onekeyhq/kit/src/views/Discovery/types';
+import type { IBrowserBookmark } from '@unionkey/kit/src/views/Discovery/types';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   ALWAYS_VERIFY_PASSCODE_WHEN_CHANGE_SET_MASTER_PASSWORD,
   EPrimeCloudSyncDataType,
   RESET_CLOUD_SYNC_MASTER_PASSWORD_UUID,
-} from '@onekeyhq/shared/src/consts/primeConsts';
+} from '@unionkey/shared/src/consts/primeConsts';
 import {
-  OneKeyError,
-  OneKeyErrorPrimeMasterPasswordInvalid,
-  OneKeyErrorPrimePaidMembershipRequired,
-} from '@onekeyhq/shared/src/errors';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+  UnionKeyError,
+  UnionKeyErrorPrimeMasterPasswordInvalid,
+  UnionKeyErrorPrimePaidMembershipRequired,
+} from '@unionkey/shared/src/errors';
+import { EUnionKeyErrorClassNames } from '@unionkey/shared/src/errors/types/errorTypes';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 import systemTimeUtils, {
   ELocalSystemTimeStatus,
-} from '@onekeyhq/shared/src/utils/systemTimeUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { IDBCustomRpc } from '@onekeyhq/shared/types/customRpc';
-import type { IApiClientResponse } from '@onekeyhq/shared/types/endpoint';
-import type { IMarketWatchListItem } from '@onekeyhq/shared/types/market';
+} from '@unionkey/shared/src/utils/systemTimeUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { IDBCustomRpc } from '@unionkey/shared/types/customRpc';
+import type { IApiClientResponse } from '@unionkey/shared/types/endpoint';
+import type { IMarketWatchListItem } from '@unionkey/shared/types/market';
 import type {
   ICloudSyncCredential,
   ICloudSyncCredentialForLock,
@@ -41,14 +41,14 @@ import type {
   ICloudSyncServerItem,
   ICloudSyncServerItemByDownloaded,
   IStartServerSyncFlowParams,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
-import type { IPrimeServerUserInfo } from '@onekeyhq/shared/types/prime/primeTypes';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
+import type { IPrimeServerUserInfo } from '@unionkey/shared/types/prime/primeTypes';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 import type {
   IPrimeConfigFlushInfo,
   IPrimeLockChangedInfo,
-} from '@onekeyhq/shared/types/socket';
-import type { ICloudSyncCustomToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/socket';
+import type { ICloudSyncCustomToken } from '@unionkey/shared/types/token';
 
 import localDb from '../../dbs/local/localDb';
 import { ELocalDBStoreNames } from '../../dbs/local/localDBStoreNames';
@@ -332,10 +332,10 @@ class ServicePrimeCloudSync extends ServiceBase {
     encryptedSecurityPasswordR1ForServer: string | undefined;
   }): Promise<IDBCloudSyncItem | undefined> {
     if (!syncCredential) {
-      throw new OneKeyError('syncCredential is required for build flush lock');
+      throw new UnionKeyError('syncCredential is required for build flush lock');
     }
     if (!encryptedSecurityPasswordR1ForServer) {
-      throw new OneKeyError(
+      throw new UnionKeyError(
         'encryptedSecurityPasswordR1ForServer is required for build flush lock',
       );
     }
@@ -351,7 +351,7 @@ class ServicePrimeCloudSync extends ServiceBase {
       dataTime: await this.timeNow(),
     });
     if (!lockItem?.data) {
-      throw new OneKeyError('lockItem.data is not found');
+      throw new UnionKeyError('lockItem.data is not found');
     }
     return lockItem;
   }
@@ -1060,23 +1060,23 @@ class ServicePrimeCloudSync extends ServiceBase {
     const primeAvailable =
       prime.isEnablePrime === true || devSettings.settings?.showPrimeTest;
     if (!primeAvailable) {
-      throw new OneKeyError(`Prime DevSettings is not enabled: ${callerName}`);
+      throw new UnionKeyError(`Prime DevSettings is not enabled: ${callerName}`);
     }
 
     const primeCloudSyncConfig = await primeCloudSyncPersistAtom.get();
     if (!primeCloudSyncConfig.isCloudSyncEnabled) {
-      throw new OneKeyError(`Cloud sync is not enabled: ${callerName}`);
+      throw new UnionKeyError(`Cloud sync is not enabled: ${callerName}`);
     }
 
     const isPrimeLoggedIn = await this.backgroundApi.servicePrime.isLoggedIn();
     if (!isPrimeLoggedIn) {
-      throw new OneKeyError(`Prime is not logged in: ${callerName}`);
+      throw new UnionKeyError(`Prime is not logged in: ${callerName}`);
     }
 
     const isPrimeSubscriptionActive =
       await this.backgroundApi.servicePrime.isPrimeSubscriptionActive();
     if (!isPrimeSubscriptionActive) {
-      throw new OneKeyError(`Prime subscription is not active: ${callerName}`);
+      throw new UnionKeyError(`Prime subscription is not active: ${callerName}`);
     }
   }
 
@@ -1174,14 +1174,14 @@ class ServicePrimeCloudSync extends ServiceBase {
       const password =
         await this.backgroundApi.servicePassword.getCachedPassword();
       if (!password) {
-        throw new OneKeyError('No password in memory');
+        throw new UnionKeyError('No password in memory');
       }
 
       const { masterPasswordUUID, encryptedSecurityPasswordR1 } =
         await primeMasterPasswordPersistAtom.get();
       if (!masterPasswordUUID || !encryptedSecurityPasswordR1) {
         void this.showAlertDialogIfLocalPasswordNotSet();
-        throw new OneKeyError(
+        throw new UnionKeyError(
           'No masterPasswordUUID or encryptedSecurityPasswordR1 in atom',
         );
       }
@@ -1197,10 +1197,10 @@ class ServicePrimeCloudSync extends ServiceBase {
       const primeUserId = securityPasswordR1Info?.primeUserId;
 
       if (!securityPasswordR1) {
-        throw new OneKeyError('Failed to decrypt securityPasswordR1');
+        throw new UnionKeyError('Failed to decrypt securityPasswordR1');
       }
       if (!accountSalt) {
-        throw new OneKeyError('Failed to get accountSalt');
+        throw new UnionKeyError('Failed to get accountSalt');
       }
 
       return {
@@ -1320,11 +1320,11 @@ class ServicePrimeCloudSync extends ServiceBase {
   async showAlertDialogIfLocalPasswordInvalid({
     error,
   }: {
-    error: OneKeyErrorPrimeMasterPasswordInvalid;
+    error: UnionKeyErrorPrimeMasterPasswordInvalid;
   }) {
     if (
       error.className !==
-      EOneKeyErrorClassNames.OneKeyErrorPrimeMasterPasswordInvalid
+      EUnionKeyErrorClassNames.UnionKeyErrorPrimeMasterPasswordInvalid
     ) {
       return;
     }
@@ -1345,7 +1345,7 @@ class ServicePrimeCloudSync extends ServiceBase {
     const { masterPasswordUUID } = await primeMasterPasswordPersistAtom.get();
     if (masterPasswordUUID && masterPasswordUUID !== payload.pwdHash) {
       await this.showAlertDialogIfLocalPasswordInvalid({
-        error: new OneKeyErrorPrimeMasterPasswordInvalid(),
+        error: new UnionKeyErrorPrimeMasterPasswordInvalid(),
       });
     }
   }
@@ -1618,7 +1618,7 @@ class ServicePrimeCloudSync extends ServiceBase {
     serverDiffItems?: ICloudSyncServerDiffItem[];
   }> {
     if (systemTimeUtils.systemTimeStatus === ELocalSystemTimeStatus.INVALID) {
-      throw new OneKeyError(
+      throw new UnionKeyError(
         appLocale.intl.formatMessage({
           id: ETranslations.prime_time_error_description,
         }),
@@ -1627,12 +1627,12 @@ class ServicePrimeCloudSync extends ServiceBase {
 
     const isPrimeLoggedIn = await this.backgroundApi.servicePrime.isLoggedIn();
     if (!isPrimeLoggedIn) {
-      throw new OneKeyError('Prime is not logged in');
+      throw new UnionKeyError('Prime is not logged in');
     }
     const isPrimeSubscriptionActive =
       await this.backgroundApi.servicePrime.isPrimeSubscriptionActive();
     if (!isPrimeSubscriptionActive) {
-      throw new OneKeyErrorPrimePaidMembershipRequired();
+      throw new UnionKeyErrorPrimePaidMembershipRequired();
     }
     const { password } =
       await this.backgroundApi.servicePassword.promptPasswordVerify({
@@ -1641,7 +1641,7 @@ class ServicePrimeCloudSync extends ServiceBase {
           : undefined,
         dialogProps: {
           // custom title not working
-          title: 'Enable OneKey Cloud',
+          title: 'Enable UnionKey Cloud',
           description: appLocale.intl.formatMessage({
             id: ETranslations.prime_verify_passcode_enable_cloud,
           }),
@@ -1668,7 +1668,7 @@ class ServicePrimeCloudSync extends ServiceBase {
         syncCredential = await this.getSyncCredentialSafe();
         // verify local password match with server master password
         if (!syncCredential) {
-          throw new OneKeyError('Master password set failed');
+          throw new UnionKeyError('Master password set failed');
         }
         await this.initLocalSyncItemsDB({ password, syncCredential });
         let status:

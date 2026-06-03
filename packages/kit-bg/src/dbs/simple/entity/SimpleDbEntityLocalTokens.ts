@@ -1,19 +1,19 @@
 import { keyBy, merge } from 'lodash';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { buildFuse } from '@onekeyhq/shared/src/modules3rdParty/fuse';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { buildFuse } from '@unionkey/shared/src/modules3rdParty/fuse';
 import accountUtils, {
   buildAccountLocalAssetsKey,
-} from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/utils/accountUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
 import type {
   IAccountToken,
   IToken,
   ITokenFiat,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 
@@ -142,7 +142,7 @@ export class SimpleDbEntityLocalTokens extends SimpleDbEntityBase<ISimpleDBLocal
     tokenListValue: string;
   }) {
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
 
     const perf = perfUtils.createPerf({
@@ -232,7 +232,7 @@ export class SimpleDbEntityLocalTokens extends SimpleDbEntityBase<ISimpleDBLocal
     simpleDbLocalTokensRawData: ISimpleDBLocalTokens | null | undefined;
   }) {
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
     const perf = perfUtils.createPerf({
       name: EPerformanceTimerLogNames.simpleDB__getAccountTokenList,

@@ -1,22 +1,22 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IAppUpdatePagesParamList } from '@onekeyhq/shared/src/routes';
-import { EAppUpdateRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import type { IAppUpdatePagesParamList } from '@unionkey/shared/src/routes';
+import { EAppUpdateRoutes } from '@unionkey/shared/src/routes';
 
 const UpdatePreview = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AppUpdate/pages/UpdatePreview'),
+  () => import('@unionkey/kit/src/views/AppUpdate/pages/UpdatePreview'),
 );
 
 const WhatsNew = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AppUpdate/pages/WhatsNew'),
+  () => import('@unionkey/kit/src/views/AppUpdate/pages/WhatsNew'),
 );
 
 const DownloadVerify = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AppUpdate/pages/DownloadVerify'),
+  () => import('@unionkey/kit/src/views/AppUpdate/pages/DownloadVerify'),
 );
 
 const ManualInstall = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AppUpdate/pages/ManualInstall'),
+  () => import('@unionkey/kit/src/views/AppUpdate/pages/ManualInstall'),
 );
 
 export const AppUpdateRouter: IModalFlowNavigatorConfig<

@@ -5,17 +5,17 @@ import {
   XStack,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { MarketTokenPrice } from '@onekeyhq/kit/src/views/Market/components/MarketTokenPrice';
-import { EWatchlistFrom } from '@onekeyhq/shared/src/logger/scopes/market/scenes/token';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/marketV2';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { Token } from '@unionkey/kit/src/components/Token';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { MarketTokenPrice } from '@unionkey/kit/src/views/Market/components/MarketTokenPrice';
+import { EWatchlistFrom } from '@unionkey/shared/src/logger/scopes/market/scenes/token';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { numberFormat } from '@unionkey/shared/src/utils/numberUtils';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { IMarketTokenDetail } from '@unionkey/shared/types/marketV2';
 
 import { MarketStar } from '../../../components/MarketStar';
 

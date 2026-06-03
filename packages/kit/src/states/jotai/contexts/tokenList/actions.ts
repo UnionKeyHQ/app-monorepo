@@ -3,15 +3,15 @@ import { useRef } from 'react';
 import BigNumber from 'bignumber.js';
 import { isEqual, uniqBy } from 'lodash';
 
-import { TOKEN_LIST_HIGH_VALUE_MAX } from '@onekeyhq/shared/src/consts/walletConsts';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { TOKEN_LIST_HIGH_VALUE_MAX } from '@unionkey/shared/src/consts/walletConsts';
+import { memoFn } from '@unionkey/shared/src/utils/cacheUtils';
 import {
   mergeDeriveTokenList,
   mergeDeriveTokenListMap,
   sortTokensByFiatValue,
   sortTokensByOrder,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { IAccountToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/src/utils/tokenUtils';
+import type { IAccountToken, ITokenFiat } from '@unionkey/shared/types/token';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 

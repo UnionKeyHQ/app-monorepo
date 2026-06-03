@@ -1,6 +1,6 @@
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { FormatHyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import type { IEarnText } from '@onekeyhq/shared/types/staking';
+import type { ISizableTextProps } from '@unionkey/components';
+import { FormatHyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
+import type { IEarnText } from '@unionkey/shared/types/staking';
 
 export function EarnText({
   text,

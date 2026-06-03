@@ -1,6 +1,6 @@
-import { useOnRouterChange } from '@onekeyhq/components';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { ETabHomeRoutes } from '@onekeyhq/shared/src/routes';
+import { useOnRouterChange } from '@unionkey/components';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { ETabHomeRoutes } from '@unionkey/shared/src/routes';
 
 import type { NavigationState, PartialState } from '@react-navigation/routers';
 

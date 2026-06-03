@@ -4,10 +4,10 @@ import { merge } from 'lodash';
 
 import {
   Expect24WordsMnemonicError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {
@@ -240,7 +240,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     });
 
     if (publicKeys.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get public key.');
+      throw new UnionKeyInternalError('Unable to get public key.');
     }
 
     const addresses = await Promise.all(

@@ -10,13 +10,13 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import utils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
-import type { IConnectedSite } from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import utils from '@unionkey/shared/src/utils/accountUtils';
+import { formatTime } from '@unionkey/shared/src/utils/dateUtils';
+import type { IConnectedSite } from '@unionkey/shared/types/signatureRecord';
 
 import { useGetSignatureSections } from './hooks';
 
@@ -75,7 +75,7 @@ const ConnectedSiteItem = ({ item }: { item: IConnectedSite }) => (
             </Stack>
             <SizableText color="$textSubdued" size="$bodySmMedium">
               {item.networks[i].name}
-              {' â€¢ '}
+              {' â€?'}
               {utils.shortenAddress({ address: item.addresses[i] })}
             </SizableText>
           </XStack>

@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import RNCanvas from 'react-native-canvas';
 
-import { Stack } from '@onekeyhq/components';
+import { Stack } from '@unionkey/components';
 
 export const Canvas = forwardRef(
   ({ height, width }: { height: number; width: number }, ref: any) => (

@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
 import {
   EModalAssetListRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 // import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

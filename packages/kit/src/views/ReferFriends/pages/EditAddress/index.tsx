@@ -7,7 +7,7 @@ import type {
   IFormMode,
   IReValidateMode,
   UseFormReturn,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Form,
   Page,
@@ -15,29 +15,29 @@ import {
   YStack,
   useForm,
   useFormWatch,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   ControlledNetworkSelectorTrigger,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import type { IAddressInputValue } from '@onekeyhq/kit/src/components/AddressInput';
+} from '@unionkey/kit/src/components/AccountSelector';
+import type { IAddressInputValue } from '@unionkey/kit/src/components/AddressInput';
 import {
   AddressInput,
   createValidateAddressRule,
-} from '@onekeyhq/kit/src/components/AddressInput';
-import { AddressInputContext } from '@onekeyhq/kit/src/components/AddressInput/AddressInputContext';
-import { renderAddressInputHyperlinkText } from '@onekeyhq/kit/src/components/AddressInput/AddressInputHyperlinkText';
-import { renderAddressSecurityHeaderRightButton } from '@onekeyhq/kit/src/components/AddressInput/AddressSecurityHeaderRightButton';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useLoginOneKeyId } from '@onekeyhq/kit/src/hooks/useLoginOneKeyId';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit/src/components/AddressInput';
+import { AddressInputContext } from '@unionkey/kit/src/components/AddressInput/AddressInputContext';
+import { renderAddressInputHyperlinkText } from '@unionkey/kit/src/components/AddressInput/AddressInputHyperlinkText';
+import { renderAddressSecurityHeaderRightButton } from '@unionkey/kit/src/components/AddressInput/AddressSecurityHeaderRightButton';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useLoginUnionKeyId } from '@unionkey/kit/src/hooks/useLoginUnionKeyId';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalReferFriendsRoutes,
   IModalReferFriendsParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import type { RouteProp } from '@react-navigation/native';
 
@@ -64,7 +64,7 @@ function BasicEditAddress() {
 
   const accountId = route.params?.accountId ?? '';
 
-  const { sendEmailOTP } = useLoginOneKeyId();
+  const { sendEmailOTP } = useLoginUnionKeyId();
 
   const { result: networksResp } = usePromiseResult(
     async () => {

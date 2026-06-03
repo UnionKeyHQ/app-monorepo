@@ -3,15 +3,15 @@ import { forwardRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance, IDialogShowProps } from '@onekeyhq/components';
-import { DialogContainer, SizableText, YStack } from '@onekeyhq/components';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
+import type { IDialogInstance, IDialogShowProps } from '@unionkey/components';
+import { DialogContainer, SizableText, YStack } from '@unionkey/components';
+import { HyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
 import {
   openBLEPermissionsSettings,
   openBLESettings,
-} from '@onekeyhq/shared/src/hardware/blePermissions';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/hardware/blePermissions';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { IntlShape } from 'react-intl';
 

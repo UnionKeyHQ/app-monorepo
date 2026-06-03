@@ -6,34 +6,34 @@ import * as ethUtils from 'ethereumjs-util';
 import stringify from 'fast-json-stable-stringify';
 import { get, isNil } from 'lodash';
 
-import { hashMessage } from '@onekeyhq/core/src/chains/evm/message';
-import { autoFixPersonalSignMessage } from '@onekeyhq/core/src/chains/evm/sdkEvm/signMessage';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
+import { hashMessage } from '@unionkey/core/src/chains/evm/message';
+import { autoFixPersonalSignMessage } from '@unionkey/core/src/chains/evm/sdkEvm/signMessage';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EVM_SAFE_RPC_METHODS } from '@onekeyhq/shared/src/rpcCache/constants';
-import { RpcCache } from '@onekeyhq/shared/src/rpcCache/RpcCache';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { check } from '@onekeyhq/shared/src/utils/assertUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { EVM_SAFE_RPC_METHODS } from '@unionkey/shared/src/rpcCache/constants';
+import { RpcCache } from '@unionkey/shared/src/rpcCache/RpcCache';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { check } from '@unionkey/shared/src/utils/assertUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 import type {
   IAccountToken,
   IEthWatchAssetParameter,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import ProviderApiBase from './ProviderApiBase';
 

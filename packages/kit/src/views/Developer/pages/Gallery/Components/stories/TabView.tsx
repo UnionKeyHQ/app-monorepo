@@ -9,9 +9,9 @@ import {
   Stack,
   Tab,
   Toast,
-} from '@onekeyhq/components';
-import type { ITabHeaderInstance } from '@onekeyhq/components/src/layouts/TabView/Header';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import type { ITabHeaderInstance } from '@unionkey/components/src/layouts/TabView/Header';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { Layout } from './utils/Layout';
 

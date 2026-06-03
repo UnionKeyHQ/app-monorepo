@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { manipulateAsync } from 'expo-image-manipulator';
 import { captureRef } from 'react-native-view-shot';
 
-import { useBrowserTabActions } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
+import { useBrowserTabActions } from '@unionkey/kit/src/states/jotai/contexts/discovery';
 
 import { THUMB_CROP_SIZE } from '../config/TabList.constants';
 import { captureViewRefs } from '../utils/explorerUtils';

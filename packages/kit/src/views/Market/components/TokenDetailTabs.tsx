@@ -10,11 +10,11 @@ import {
   Tab,
   useMedia,
   usePageType,
-} from '@onekeyhq/components';
-import type { IDeferredPromise, ITabPageProps } from '@onekeyhq/components';
-import type { ITabInstance } from '@onekeyhq/components/src/layouts/TabView/StickyTabComponent/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/market';
+} from '@unionkey/components';
+import type { IDeferredPromise, ITabPageProps } from '@unionkey/components';
+import type { ITabInstance } from '@unionkey/components/src/layouts/TabView/StickyTabComponent/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IMarketTokenDetail } from '@unionkey/shared/types/market';
 
 import { MarketDetailLinks } from './MarketDetailLinks';
 import { MarketDetailOverview } from './MarketDetailOverview';

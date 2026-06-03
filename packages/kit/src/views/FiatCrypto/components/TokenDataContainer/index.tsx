@@ -6,9 +6,9 @@ import {
   useSmallBalanceTokenListMapAtom,
   useTokenListAtom,
   useTokenListMapAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IAccountToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+} from '@unionkey/kit/src/states/jotai/contexts/tokenList';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IAccountToken, ITokenFiat } from '@unionkey/shared/types/token';
 
 const buildAccountTokenIndexKey = ({
   networkId,

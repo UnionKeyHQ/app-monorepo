@@ -1,4 +1,4 @@
-import type { IConnectionAccountInfoWithNum } from '@onekeyhq/shared/types/dappConnection';
+import type { IConnectionAccountInfoWithNum } from '@unionkey/shared/types/dappConnection';
 
 export interface IExtensionActiveTabDAppInfo {
   url: string;

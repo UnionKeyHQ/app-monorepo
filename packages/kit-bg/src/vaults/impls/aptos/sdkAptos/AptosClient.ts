@@ -1,8 +1,8 @@
 /* eslint-disable spellcheck/spell-checker */
 import { Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
 
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import { InvalidAccount } from '@onekeyhq/shared/src/errors';
+import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
+import { InvalidAccount } from '@unionkey/shared/src/errors';
 
 import type {
   AccountAddressInput,

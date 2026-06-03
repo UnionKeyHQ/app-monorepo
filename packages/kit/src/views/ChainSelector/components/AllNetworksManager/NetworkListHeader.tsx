@@ -2,9 +2,9 @@ import { memo, useContext, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Checkbox, Divider, Stack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Checkbox, Divider, Stack } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { AllNetworksManagerContext } from './AllNetworksManagerContext';
 

@@ -11,15 +11,15 @@ import {
   Toast,
   usePageUnMounted,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import useShouldRejectDappAction from '@onekeyhq/kit/src/hooks/useShouldRejectDappAction';
+} from '@unionkey/components';
+import type { IPageNavigationProp } from '@unionkey/components';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import type { IUnsignedTxPro } from '@unionkey/core/src/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import useDappApproveAction from '@unionkey/kit/src/hooks/useDappApproveAction';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import useShouldRejectDappAction from '@unionkey/kit/src/hooks/useShouldRejectDappAction';
 import {
   useDecodedTxsAtom,
   useNativeTokenInfoAtom,
@@ -31,23 +31,23 @@ import {
   useSignatureConfirmActions,
   useTxAdvancedSettingsAtom,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import type { ITransferPayload } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IModalSendParamList } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsEmptyData } from '@onekeyhq/shared/src/utils/evmUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { getTxnType } from '@onekeyhq/shared/src/utils/txActionUtils';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
-import type { IEncodedTxLightning } from '@onekeyhq/shared/types/lightning';
-import { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
+} from '@unionkey/kit/src/states/jotai/contexts/signatureConfirm';
+import type { ITransferPayload } from '@unionkey/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import type { IModalSendParamList } from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsEmptyData } from '@unionkey/shared/src/utils/evmUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import { getTxnType } from '@unionkey/shared/src/utils/txActionUtils';
+import type { IDappSourceInfo } from '@unionkey/shared/types';
+import type { IEncodedTxLightning } from '@unionkey/shared/types/lightning';
+import { ESendPreCheckTimingEnum } from '@unionkey/shared/types/send';
 import {
   EReplaceTxType,
   type IReplaceTxInfo,
   type ISendTxOnSuccessData,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { usePreCheckFeeInfo } from '../../hooks/usePreCheckFeeInfo';
 import TxFeeInfo from '../TxFee';

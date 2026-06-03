@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { isEmpty } from 'lodash';
 
-import type { IKaspaUnspentOutputInfo } from '@onekeyhq/core/src/chains/kaspa/sdkKaspa';
+import type { IKaspaUnspentOutputInfo } from '@unionkey/core/src/chains/kaspa/sdkKaspa';
 import {
   BASE_KAS_TO_P2SH_ADDRESS,
   CONFIRMATION_COUNT,
@@ -15,29 +15,29 @@ import {
   privateKeyFromWIF,
   selectUTXOs,
   toTransaction,
-} from '@onekeyhq/core/src/chains/kaspa/sdkKaspa';
-import { RestAPIClient as ClientKaspa } from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/clientRestApi';
-import sdk from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/sdk';
-import type { IEncodedTxKaspa } from '@onekeyhq/core/src/chains/kaspa/types';
-import { MAX_UINT64_VALUE } from '@onekeyhq/core/src/consts';
+} from '@unionkey/core/src/chains/kaspa/sdkKaspa';
+import { RestAPIClient as ClientKaspa } from '@unionkey/core/src/chains/kaspa/sdkKaspa/clientRestApi';
+import sdk from '@unionkey/core/src/chains/kaspa/sdkKaspa/sdk';
+import type { IEncodedTxKaspa } from '@unionkey/core/src/chains/kaspa/types';
+import { MAX_UINT64_VALUE } from '@unionkey/core/src/consts';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import {
   EAddressEncodings,
   type ISignedTxPro,
   type IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -45,19 +45,19 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import { EOnChainHistoryTxStatus } from '@onekeyhq/shared/types/history';
-import type { IAfterSendTxActionParams } from '@onekeyhq/shared/types/signatureConfirm';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/customRpc';
+import { EOnChainHistoryTxStatus } from '@unionkey/shared/types/history';
+import type { IAfterSendTxActionParams } from '@unionkey/shared/types/signatureConfirm';
+import type { IToken } from '@unionkey/shared/types/token';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
-import type { IDecodedTx, IDecodedTxAction } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
+import type { IDecodedTx, IDecodedTxAction } from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -114,10 +114,10 @@ export default class Vault extends VaultBase {
     const { transfersInfo, specifiedFeeRate } = params;
 
     if (!transfersInfo || isEmpty(transfersInfo)) {
-      throw new OneKeyInternalError('transfersInfo is required');
+      throw new UnionKeyInternalError('transfersInfo is required');
     }
     if (transfersInfo.length > 1) {
-      throw new OneKeyInternalError('Batch transfer is not supported');
+      throw new UnionKeyInternalError('Batch transfer is not supported');
     }
     const transferInfo = transfersInfo[0];
     if (!transferInfo.to) {
@@ -187,7 +187,7 @@ export default class Vault extends VaultBase {
         const totalAmountStr = totalAmount
           .shiftedBy(-tokenInfo.decimals)
           .toFixed(0, BigNumber.ROUND_DOWN);
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           appLocale.intl.formatMessage(
             {
               id: ETranslations.feedback_kaspa_utxo_limit_exceeded_text,
@@ -517,7 +517,7 @@ export default class Vault extends VaultBase {
             withUTXOList: true,
           });
         if (!utxos || isEmpty(utxos)) {
-          throw new OneKeyInternalError(
+          throw new UnionKeyInternalError(
             appLocale.intl.formatMessage({
               id: ETranslations.feedback_failed_to_get_utxos,
             }),
@@ -558,7 +558,7 @@ export default class Vault extends VaultBase {
           blockDaaScore: new BigNumber(utxo.confirmations).toNumber(),
         }));
       } catch (e) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           appLocale.intl.formatMessage({
             id: ETranslations.feedback_failed_to_get_utxos,
           }),
@@ -641,7 +641,7 @@ export default class Vault extends VaultBase {
       .toFixed();
 
     if (new BigNumber(amountValue).isLessThan(DUST_AMOUNT)) {
-      throw new OneKeyInternalError('Amount is too small');
+      throw new UnionKeyInternalError('Amount is too small');
     }
     const feeRate = specifiedFeeRate ?? DEFAULT_FEE_RATE.toString();
 
@@ -689,7 +689,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new ClientKaspa(rpcUrl);
     const txId = await client.sendRawTransaction(signedTx.rawTx);

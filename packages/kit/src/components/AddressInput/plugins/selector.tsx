@@ -2,14 +2,14 @@ import { type FC, useCallback, useContext, useEffect, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ActionList, IconButton } from '@onekeyhq/components';
-import { useAccountSelectorTrigger } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector/actions';
-import { useAddressBookPick } from '@onekeyhq/kit/src/views/AddressBook/hooks/useAddressBook';
-import type { IAddressItem } from '@onekeyhq/kit/src/views/AddressBook/type';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EInputAddressChangeType } from '@onekeyhq/shared/types/address';
+import { ActionList, IconButton } from '@unionkey/components';
+import { useAccountSelectorTrigger } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
+import { useAccountSelectorActions } from '@unionkey/kit/src/states/jotai/contexts/accountSelector/actions';
+import { useAddressBookPick } from '@unionkey/kit/src/views/AddressBook/hooks/useAddressBook';
+import type { IAddressItem } from '@unionkey/kit/src/views/AddressBook/type';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EInputAddressChangeType } from '@unionkey/shared/types/address';
 
 import { AddressInputContext } from '../AddressInputContext';
 

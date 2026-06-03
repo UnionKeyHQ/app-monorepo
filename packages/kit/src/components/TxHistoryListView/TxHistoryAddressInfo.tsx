@@ -9,8 +9,8 @@ import {
   YStack,
   useClipboard,
   useMedia,
-} from '@onekeyhq/components';
-import type { IAddressBadge } from '@onekeyhq/shared/types/address';
+} from '@unionkey/components';
+import type { IAddressBadge } from '@unionkey/shared/types/address';
 
 import type { GestureResponderEvent } from 'react-native';
 

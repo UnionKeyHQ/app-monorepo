@@ -10,7 +10,7 @@ export function devOnlyData<T>(
   return fallback;
 }
 
-export const WEB_DAPP_MODE_STORAGE_KEY = '$onekey_web_dapp_mode';
+export const WEB_DAPP_MODE_STORAGE_KEY = '$unionkey_web_dapp_mode';
 export function isWebInDappMode() {
   if (localStorage.getItem(WEB_DAPP_MODE_STORAGE_KEY) === 'wallet') {
     return false; // wallet mode

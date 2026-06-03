@@ -1,6 +1,6 @@
-import type { INostrEvent } from '@onekeyhq/core/src/chains/nostr/types';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import type { IAddEthereumChainParameter } from '@onekeyhq/kit-bg/src/providers/ProviderApiEthereum';
+import type { INostrEvent } from '@unionkey/core/src/chains/nostr/types';
+import type { IUnsignedMessage } from '@unionkey/core/src/types';
+import type { IAddEthereumChainParameter } from '@unionkey/kit-bg/src/providers/ProviderApiEthereum';
 
 import type { EAccountSelectorSceneName } from '../../types';
 import type {

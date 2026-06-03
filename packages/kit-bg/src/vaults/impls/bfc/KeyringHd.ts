@@ -1,6 +1,6 @@
-import type { IEncodedTxBfc } from '@onekeyhq/core/src/chains/bfc/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
+import type { IEncodedTxBfc } from '@unionkey/core/src/chains/bfc/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkey/core/src/types';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 

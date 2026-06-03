@@ -14,26 +14,26 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { Token } from '@onekeyhq/kit/src/components/Token';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import { Token } from '@unionkey/kit/src/components/Token';
 import {
   openExplorerAddressUrl,
   openTransactionDetailsUrl,
-} from '@onekeyhq/kit/src/utils/explorerUtils';
-import { useEarnTxLabel } from '@onekeyhq/kit/src/views/Staking/hooks/useEarnTxLabel';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import utils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
-import { ETransactionType } from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkey/kit/src/utils/explorerUtils';
+import { useEarnTxLabel } from '@unionkey/kit/src/views/Staking/hooks/useEarnTxLabel';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import utils from '@unionkey/shared/src/utils/accountUtils';
+import { formatTime } from '@unionkey/shared/src/utils/dateUtils';
+import { ETransactionType } from '@unionkey/shared/types/signatureRecord';
 import type {
   IApproveTransactionData,
   IEarnTransactionData,
   ISendTransactionData,
   ISignedTransaction,
   ISwapTransactionData,
-} from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkey/shared/types/signatureRecord';
 
 import { useGetSignatureSections } from './hooks';
 
@@ -286,7 +286,7 @@ const TransactionItem = ({ item }: { item: ISignedTransaction }) => {
         <XStack justifyContent="space-between" pt="$3" px="$3" pb="$1">
           <SizableText size="$bodyMd">
             {formatTime(new Date(item.createdAt), { hideSeconds: true })}
-            {' â€¢ '}
+            {' â€?'}
             {item.title}
           </SizableText>
           {!vaultSettings.hideBlockExplorer ? (

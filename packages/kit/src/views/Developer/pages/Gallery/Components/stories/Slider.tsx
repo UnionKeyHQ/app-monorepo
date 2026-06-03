@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button, Dialog, Slider, Stack } from '@onekeyhq/components';
+import { Button, Dialog, Slider, Stack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

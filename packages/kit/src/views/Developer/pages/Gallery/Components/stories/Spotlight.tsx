@@ -1,7 +1,7 @@
-import { Button, SizableText, YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { Spotlight } from '@onekeyhq/kit/src/components/Spotlight';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
+import { Button, SizableText, YStack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { Spotlight } from '@unionkey/kit/src/components/Spotlight';
+import { ESpotlightTour } from '@unionkey/shared/src/spotlight';
 
 import { Layout } from './utils/Layout';
 

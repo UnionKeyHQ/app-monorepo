@@ -6,8 +6,8 @@ import {
   ActionList,
   IconButton,
   Tooltip,
-} from '@onekeyhq/components/src/actions';
-import type { IActionListSection } from '@onekeyhq/components/src/actions';
+} from '@unionkey/components/src/actions';
+import type { IActionListSection } from '@unionkey/components/src/actions';
 import {
   Icon,
   Image,
@@ -15,12 +15,12 @@ import {
   Skeleton,
   XStack,
   YStack,
-} from '@onekeyhq/components/src/primitives';
-import type { IKeyOfIcons, Stack } from '@onekeyhq/components/src/primitives';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkey/components/src/primitives';
+import type { IKeyOfIcons, Stack } from '@unionkey/components/src/primitives';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
 
 import type {
   Animated,

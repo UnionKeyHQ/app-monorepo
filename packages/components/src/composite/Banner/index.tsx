@@ -5,7 +5,7 @@ import { isNil } from 'lodash';
 import { useProps } from 'tamagui';
 import { useDebouncedCallback } from 'use-debounce';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useHoverOpacity } from '../../hooks/useHoverOpacity';
 import { type IRenderPaginationParams, Swiper } from '../../layouts';

@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, XStack } from '@onekeyhq/components';
-import type { IHistoryListSectionGroup } from '@onekeyhq/shared/types/history';
+import { SizableText, XStack } from '@unionkey/components';
+import type { IHistoryListSectionGroup } from '@unionkey/shared/types/history';
 
 function TxHistorySectionHeader(props: IHistoryListSectionGroup) {
   const { title, titleKey } = props;

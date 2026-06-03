@@ -41,11 +41,11 @@ jobs:
           node-version: 20.x
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkey'
 
       - name: Setup keys secret
         run: |
-          echo ${{ secrets.GOOGLE_SERVICE_IOS }} | base64 -d > apps/mobile/ios/OneKeyWallet/GoogleService-Info.plist
+          echo ${{ secrets.GOOGLE_SERVICE_IOS }} | base64 -d > apps/mobile/ios/UnionKeyWallet/GoogleService-Info.plist
           echo ${{ secrets.ASC_API_KEY }} | base64 -d > apps/mobile/AscApiKey.p8
 
       - name: Setup EAS
@@ -62,16 +62,16 @@ jobs:
           echo ${{ secrets.ADHOC_PROFILE }} | base64 -d > apps/mobile/ios/certs/profile.mobileprovision
           echo ${{ secrets.ADHOC_SERVICE_EXTENSION_PROFILE }} | base64 -d > apps/mobile/ios/certs/serviceextension-profile.mobileprovision
 
-      # - name: Modify OneKeyWallet info.plist
-      #   uses: OneKeyHQ/actions/build-plist-edit@main
+      # - name: Modify UnionKeyWallet info.plist
+      #   uses: UnionKeyHQ/actions/build-plist-edit@main
       #   with:
       #     buildNumber: ${{ env.BUILD_NUMBER }}
       #     versionName: ${{ env.BUILD_APP_VERSION }}
-      #     projectName: OneKeyWallet
+      #     projectName: UnionKeyWallet
       #     dir: ./apps/mobile
 
       # - name: Modify ServiceExtension info.plist
-      #   uses: OneKeyHQ/actions/build-plist-edit@main
+      #   uses: UnionKeyHQ/actions/build-plist-edit@main
       #   with:
       #     buildNumber: ${{ env.BUILD_NUMBER }}
       #     versionName: ${{ env.BUILD_APP_VERSION }}

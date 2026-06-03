@@ -1,4 +1,4 @@
-import type { IEarnBabylonTrackingItem } from '@onekeyhq/shared/types/staking';
+import type { IEarnBabylonTrackingItem } from '@unionkey/shared/types/staking';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

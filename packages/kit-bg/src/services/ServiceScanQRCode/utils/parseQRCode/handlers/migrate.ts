@@ -1,9 +1,9 @@
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
+import { EQRCodeHandlerType } from '@unionkey/shared/types/qrCode';
 
 import type { IMigrateValue, IQRCodeHandler } from '../type';
 
-// onekey://migrate/192.168.1.2
-// onekey-wallet://migrate/192.168.1.2
+// unionkey://migrate/192.168.1.2
+// unionkey-wallet://migrate/192.168.1.2
 const migrate: IQRCodeHandler<IMigrateValue> = async (value, options) => {
   const deeplinkValue = options?.deeplinkResult;
   if (deeplinkValue) {

@@ -1,8 +1,8 @@
 import { sha256 } from '@noble/hashes/sha256';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { decryptAsync } from '../../secret';
@@ -90,7 +90,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     const [signature] = await signer.sign(txBytes);
     const senderPublicKey = await signer.getPubkeyHex(true);
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
     const rawTxBytes = serializeSignedTx({
       txWrapper,

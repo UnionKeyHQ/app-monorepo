@@ -6,7 +6,7 @@ import type {
   IFormMode,
   IReValidateMode,
   UseFormReturn,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Checkbox,
   Form,
@@ -18,20 +18,20 @@ import {
   XStack,
   YStack,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   AddressInput,
   type IAddressInputValue,
-} from '@onekeyhq/kit/src/components/AddressInput';
-import { ChainSelectorInput } from '@onekeyhq/kit/src/components/ChainSelectorInput';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/kit/src/components/AddressInput';
+import { ChainSelectorInput } from '@unionkey/kit/src/components/ChainSelectorInput';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkey/shared/src/types/changeHistory';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
 
 import { buildChangeHistoryInputAddon } from '../../../components/ChangeHistoryDialog/ChangeHistoryDialog';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

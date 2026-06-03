@@ -4,7 +4,7 @@ export interface IJsonRpcResponsePro<T> extends IJsonRpcResponse<T> {
   error?: any;
 }
 
-export type IOneKeyAPIBaseResponse<T = any> = {
+export type IUnionKeyAPIBaseResponse<T = any> = {
   code: number;
   message: string;
   messageId?: string;

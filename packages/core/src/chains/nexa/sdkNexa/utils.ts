@@ -19,11 +19,11 @@ import {
   writeUInt32LE,
   writeUInt64LEBN,
   writeUInt8,
-} from '@onekeyhq/core/src/chains/nexa/sdkNexa/sdk';
-import { InvalidAddress } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkey/core/src/chains/nexa/sdkNexa/sdk';
+import { InvalidAddress } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
 
 import { hash160, sha256 } from '../../../secret';
 import { ENexaSignature } from '../types';

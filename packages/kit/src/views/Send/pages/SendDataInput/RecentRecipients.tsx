@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Divider, SizableText, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IAddressQueryResult } from '@onekeyhq/kit/src/components/AddressInput';
-import { AddressListItem } from '@onekeyhq/kit/src/components/AddressList';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Divider, SizableText, Stack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import type { IAddressQueryResult } from '@unionkey/kit/src/components/AddressInput';
+import { AddressListItem } from '@unionkey/kit/src/components/AddressList';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { useDebounce } from '@unionkey/kit/src/hooks/useDebounce';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface IRecentRecipientsProps {
   accountId?: string;

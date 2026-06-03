@@ -1,5 +1,5 @@
-import type { IWalletAvatarProps } from '@onekeyhq/kit/src/components/WalletAvatar';
-import type { IDBIndexedAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+import type { IWalletAvatarProps } from '@unionkey/kit/src/components/WalletAvatar';
+import type { IDBIndexedAccount } from '@unionkey/kit-bg/src/dbs/local/types';
 
 import type { AvatarImageProps } from 'tamagui';
 

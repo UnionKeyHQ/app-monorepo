@@ -15,18 +15,18 @@ import {
   usePageType,
   useSafeAreaInsets,
   useTabBarHeight,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import type {
   IDeferredPromise,
   ISegmentControlProps,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   IMarketDetailTicker,
   IMarketTokenChart,
   IMarketTokenDetail,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkey/shared/types/market';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { TradingView } from '../../../components/TradingView';
@@ -97,6 +97,7 @@ function NativeTokenPriceChart({
     const response = await backgroundApiProxy.serviceMarket.fetchTokenChart(
       coinGeckoId,
       days,
+      !platformEnv.isNative || platformEnv.isNativeIOSPad ? 64 : 80,
     );
     if (md) {
       setTimeout(() => {

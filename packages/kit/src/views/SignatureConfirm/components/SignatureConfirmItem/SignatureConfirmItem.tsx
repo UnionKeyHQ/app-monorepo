@@ -1,5 +1,5 @@
-import type { ISizableTextProps, IYStackProps } from '@onekeyhq/components';
-import { SizableText, YStack } from '@onekeyhq/components';
+import type { ISizableTextProps, IYStackProps } from '@unionkey/components';
+import { SizableText, YStack } from '@unionkey/components';
 
 function SignatureConfirmItemLabel(props: ISizableTextProps) {
   return <SizableText size="$bodyMd" color="$textSubdued" {...props} />;

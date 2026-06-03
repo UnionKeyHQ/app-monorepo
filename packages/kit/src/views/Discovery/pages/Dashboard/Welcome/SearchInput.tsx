@@ -11,19 +11,19 @@ import {
   View,
   XStack,
   useShortcuts,
-} from '@onekeyhq/components';
-import type { IScrollViewRef } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useListenTabFocusState from '@onekeyhq/kit/src/hooks/useListenTabFocusState';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import type { IScrollViewRef } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import useListenTabFocusState from '@unionkey/kit/src/hooks/useListenTabFocusState';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { shortcutsKeys } from '@onekeyhq/shared/src/shortcuts/shortcutsKeys.enum';
+} from '@unionkey/shared/src/routes';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
+import { shortcutsKeys } from '@unionkey/shared/src/shortcuts/shortcutsKeys.enum';
 
 import { SearchResultContent } from '../../../components/SearchResultContent';
 import { useSearchModalData } from '../../../hooks/useSearchModalData';

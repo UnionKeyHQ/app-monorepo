@@ -1,6 +1,6 @@
 import { Image as RNImage } from 'react-native';
 
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import type { IPreloadImageFunc, IPreloadImagesFunc } from './type';
 

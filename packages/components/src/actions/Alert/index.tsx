@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 import { createStyledContext, styled, useThemeName } from 'tamagui';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import {
   Button,

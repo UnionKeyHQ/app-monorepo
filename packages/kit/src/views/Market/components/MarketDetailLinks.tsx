@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 
-import type { ITabPageProps } from '@onekeyhq/components';
+import type { ITabPageProps } from '@unionkey/components';
 import {
   Button,
   IconButton,
@@ -8,10 +8,10 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/market';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { IMarketTokenDetail } from '@unionkey/shared/types/market';
 
 export function MarketDetailLinks({
   token: {

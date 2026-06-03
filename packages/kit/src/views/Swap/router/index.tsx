@@ -1,7 +1,7 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import type { IModalSwapParamList } from '@onekeyhq/shared/src/routes/swap';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalSwapRoutes } from '@unionkey/shared/src/routes/swap';
+import type { IModalSwapParamList } from '@unionkey/shared/src/routes/swap';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 import LimitOrderDetailModal from '../pages/modal/LimitOrderDetailModal';

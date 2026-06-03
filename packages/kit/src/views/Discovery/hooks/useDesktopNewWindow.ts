@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react';
 
-import { useMedia } from '@onekeyhq/components';
-import { ipcMessageKeys } from '@onekeyhq/desktop/app/config';
-import { useBrowserAction } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
+import { useMedia } from '@unionkey/components';
+import { ipcMessageKeys } from '@unionkey/desktop/app/config';
+import { useBrowserAction } from '@unionkey/kit/src/states/jotai/contexts/discovery';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 

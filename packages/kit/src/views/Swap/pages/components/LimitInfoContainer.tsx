@@ -10,19 +10,19 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   useSwapLimitPriceMarketPriceAtom,
   useSwapLimitPriceUseRateAtom,
   useSwapSelectFromTokenAtom,
   useSwapSelectToTokenAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit/src/states/jotai/contexts/swap';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   ESwapTabSwitchType,
   LimitMarketUpPercentages,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import LimitRateInput from '../../components/LimitRateInput';
 import { useSwapLimitRate } from '../../hooks/useSwapLimitRate';

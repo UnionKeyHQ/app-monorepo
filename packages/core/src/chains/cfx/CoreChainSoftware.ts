@@ -5,10 +5,10 @@ import {
   decryptAsync,
   secp256k1,
   uncompressPublicKey,
-} from '@onekeyhq/core/src/secret';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkey/core/src/secret';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {

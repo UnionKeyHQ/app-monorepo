@@ -2,19 +2,19 @@ import { useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ActionList, Dialog } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import type { IAccountSelectorContextData } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { ActionList, Dialog } from '@unionkey/components';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import type { IAccountSelectorContextData } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import {
   useAccountSelectorActions,
   useAccountSelectorContextData,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import type {
   IDBAccount,
   IDBIndexedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 
 export function AccountRemoveDialog({
   indexedAccount,

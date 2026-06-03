@@ -6,50 +6,50 @@ import { isObject, isString } from 'lodash';
 import type {
   ETranslations,
   ETranslationsMock,
-} from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/locale';
 
-import { EOneKeyErrorClassNames } from '../types/errorTypes';
+import { EUnionKeyErrorClassNames } from '../types/errorTypes';
 import { normalizeErrorProps } from '../utils/errorUtils';
 
-import type { IOneKeyAPIBaseResponse } from '../../../types/request';
+import type { IUnionKeyAPIBaseResponse } from '../../../types/request';
 import type {
-  IOneKeyError,
-  IOneKeyErrorI18nInfo,
-  IOneKeyHardwareErrorPayload,
-  IOneKeyJsError,
+  IUnionKeyError,
+  IUnionKeyErrorI18nInfo,
+  IUnionKeyHardwareErrorPayload,
+  IUnionKeyJsError,
 } from '../types/errorTypes';
 
 // const fakeMessage = 'FAKE_MESSAGE:F43E2460-AB7F-4EA5-9651-7D38C189AB45';
 
-export class OneKeyWeb3RpcError<T = IOneKeyJsError> extends Web3RpcError<T> {}
+export class UnionKeyWeb3RpcError<T = IUnionKeyJsError> extends Web3RpcError<T> {}
 
-export class OneKeyError<
-    I18nInfoT = IOneKeyErrorI18nInfo | any,
-    DataT = IOneKeyJsError | any,
+export class UnionKeyError<
+    I18nInfoT = IUnionKeyErrorI18nInfo | any,
+    DataT = IUnionKeyJsError | any,
   >
-  extends OneKeyWeb3RpcError<DataT>
-  implements IOneKeyError<I18nInfoT, DataT>
+  extends UnionKeyWeb3RpcError<DataT>
+  implements IUnionKeyError<I18nInfoT, DataT>
 {
-  className?: EOneKeyErrorClassNames;
+  className?: EUnionKeyErrorClassNames;
 
   // i18n key
   readonly key?: ETranslations | ETranslationsMock =
-    'onekey_error' as ETranslations;
+    'unionkey_error' as ETranslations;
 
   // i18n params
   readonly info?: I18nInfoT;
 
   // raw payload from hardware sdk error response
-  payload: IOneKeyHardwareErrorPayload | undefined;
+  payload: IUnionKeyHardwareErrorPayload | undefined;
 
   autoToast?: boolean | undefined;
 
   requestId?: string | undefined;
 
-  override name = 'OneKeyError';
+  override name = 'UnionKeyError';
 
   constructor(
-    errorProps?: IOneKeyError<I18nInfoT, DataT> | string,
+    errorProps?: IUnionKeyError<I18nInfoT, DataT> | string,
     info?: I18nInfoT,
   ) {
     let msg;
@@ -57,10 +57,10 @@ export class OneKeyError<
     let data;
     let key;
     let infoData: I18nInfoT | undefined;
-    let hardwareErrorPayload: IOneKeyHardwareErrorPayload | undefined;
+    let hardwareErrorPayload: IUnionKeyHardwareErrorPayload | undefined;
     let autoToast: boolean | undefined;
     let requestId: string | undefined;
-    let className: EOneKeyErrorClassNames | undefined;
+    let className: EUnionKeyErrorClassNames | undefined;
     let name: string | undefined;
     let disableFallbackMessage: boolean | undefined;
 
@@ -90,7 +90,7 @@ export class OneKeyError<
       msg ||
         (disableFallbackMessage
           ? ''
-          : `Unknown Onekey Internal Error. ${[key]
+          : `Unknown Unionkey Internal Error. ${[key]
               .filter(Boolean)
               .join(':')}`),
       data,
@@ -147,19 +147,19 @@ export class OneKeyError<
   }
 }
 
-export class OneKeyServerApiError extends OneKeyError<
+export class UnionKeyServerApiError extends UnionKeyError<
   any,
-  IOneKeyAPIBaseResponse
+  IUnionKeyAPIBaseResponse
 > {
-  constructor(props?: IOneKeyError | string) {
+  constructor(props?: IUnionKeyError | string) {
     super(
       normalizeErrorProps(props, {
-        defaultMessage: 'OneKeyServerApiError',
+        defaultMessage: 'UnionKeyServerApiError',
         // defaultKey: ETranslations.auth_error_passcode_incorrect,
       }),
     );
   }
 
-  override className?: EOneKeyErrorClassNames | undefined =
-    EOneKeyErrorClassNames.OneKeyServerApiError;
+  override className?: EUnionKeyErrorClassNames | undefined =
+    EUnionKeyErrorClassNames.UnionKeyServerApiError;
 }

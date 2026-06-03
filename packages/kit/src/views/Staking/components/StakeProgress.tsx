@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { Icon, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EApproveType } from '@onekeyhq/shared/types/staking';
+import { Icon, SizableText, XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EApproveType } from '@unionkey/shared/types/staking';
 
 interface IStakeProgressProps {
   /** Current step in the staking process (1 or 2) */

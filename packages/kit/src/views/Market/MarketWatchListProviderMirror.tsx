@@ -1,8 +1,8 @@
 import { type PropsWithChildren, memo } from 'react';
 
-import { jotaiContextStore } from '@onekeyhq/kit/src/states/jotai/utils/jotaiContextStore';
-import { JotaiContextStoreMirrorTracker } from '@onekeyhq/kit/src/states/jotai/utils/JotaiContextStoreMirrorTracker';
-import type { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { jotaiContextStore } from '@unionkey/kit/src/states/jotai/utils/jotaiContextStore';
+import { JotaiContextStoreMirrorTracker } from '@unionkey/kit/src/states/jotai/utils/JotaiContextStoreMirrorTracker';
+import type { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import { ProviderJotaiContextMarketWatchList } from '../../states/jotai/contexts/market';
 

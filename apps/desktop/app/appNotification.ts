@@ -3,13 +3,13 @@ import logger from 'electron-log/main';
 import TaskBarBadgeWindows from 'electron-taskbar-badge';
 import { isNil } from 'lodash';
 
-import type { IDesktopSubModuleInitParams } from '@onekeyhq/shared/types/desktop';
+import type { IDesktopSubModuleInitParams } from '@unionkey/shared/types/desktop';
 import type {
   INotificationPermissionDetail,
   INotificationSetBadgeParams,
   INotificationShowParams,
-} from '@onekeyhq/shared/types/notification';
-import { ENotificationPermission } from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
+import { ENotificationPermission } from '@unionkey/shared/types/notification';
 
 import { ipcMessageKeys } from './config';
 
@@ -58,7 +58,7 @@ async function getElectronNotificationPermission() {
       );
       if (notificationCenter === 'true') {
         // 通知中心已启用，但这并不意味着我们的应用被允许发送通知
-        // 我们可以尝试创建一个测试通知来进一步确认
+        // 我们可以尝试创建一个测试通知来进一步确�?
         notificationStatus = ENotificationPermission.granted;
       } else {
         notificationStatus = ENotificationPermission.denied;

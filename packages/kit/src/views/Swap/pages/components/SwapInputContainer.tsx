@@ -3,9 +3,9 @@ import { memo, useCallback, useMemo, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Dialog, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { AmountInput } from '@onekeyhq/kit/src/components/AmountInput';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
+import { Dialog, SizableText, XStack, YStack } from '@unionkey/components';
+import { AmountInput } from '@unionkey/kit/src/components/AmountInput';
+import { useDebounce } from '@unionkey/kit/src/hooks/useDebounce';
 import {
   useRateDifferenceAtom,
   useSwapAlertsAtom,
@@ -15,23 +15,23 @@ import {
   useSwapSelectToTokenAtom,
   useSwapSelectedFromTokenBalanceAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
+} from '@unionkey/kit/src/states/jotai/contexts/swap';
 import {
   useInAppNotificationAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkWrappedTokenPair } from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkWrappedTokenPair } from '@unionkey/shared/src/utils/tokenUtils';
+import type { ISwapToken } from '@unionkey/shared/types/swap/types';
 import {
   ESwapDirectionType,
   ESwapQuoteKind,
   ESwapRateDifferenceUnit,
   ESwapTabSwitchType,
   SwapAmountInputAccessoryViewID,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { useSwapAddressInfo } from '../../hooks/useSwapAccount';
 import { useSwapSelectedTokenInfo } from '../../hooks/useSwapTokens';

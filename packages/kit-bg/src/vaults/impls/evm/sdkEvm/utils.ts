@@ -1,8 +1,8 @@
 import B from 'bignumber.js';
 import { Contract } from 'js-conflux-sdk';
 
-import type { IServerFiatTokenInfo } from '@onekeyhq/shared/types/serverToken';
-import type { IToken } from '@onekeyhq/shared/types/token';
+import type { IServerFiatTokenInfo } from '@unionkey/shared/types/serverToken';
+import type { IToken } from '@unionkey/shared/types/token';
 
 export function safeNumberString(n: string | B | number, fallback?: string) {
   const res = new B(n);

@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import natsort from 'natsort';
 
-import { Input, ListView, Page, View } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { useGalleryPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EGalleryRoutes } from '@onekeyhq/shared/src/routes';
+import { Input, ListView, Page, View } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { useGalleryPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EGalleryRoutes } from '@unionkey/shared/src/routes';
 
 if (platformEnv.isDev && platformEnv.isNative) {
   globalThis.__CURRENT_FILE_PATH__ = '';

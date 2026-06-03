@@ -1,7 +1,7 @@
 import RNRestart from 'react-native-restart';
 
-import { Button } from '@onekeyhq/components';
-import { exitApp } from '@onekeyhq/shared/src/modules3rdParty/react-native-exit';
+import { Button } from '@unionkey/components';
+import { exitApp } from '@unionkey/shared/src/modules3rdParty/react-native-exit';
 
 import { Layout } from './utils/Layout';
 

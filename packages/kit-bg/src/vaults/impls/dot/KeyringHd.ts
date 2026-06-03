@@ -1,8 +1,8 @@
-import { serializeUnsignedTransaction } from '@onekeyhq/core/src/chains/dot/sdkDot';
-import type { IEncodedTxDot } from '@onekeyhq/core/src/chains/dot/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { serializeUnsignedTransaction } from '@unionkey/core/src/chains/dot/sdkDot';
+import type { IEncodedTxDot } from '@unionkey/core/src/chains/dot/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkey/core/src/types';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 

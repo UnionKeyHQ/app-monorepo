@@ -2,10 +2,10 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, Page, SizableText, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import { Button, Page, SizableText, Stack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 import { downloadAsFile } from './downloadAsFile';
 

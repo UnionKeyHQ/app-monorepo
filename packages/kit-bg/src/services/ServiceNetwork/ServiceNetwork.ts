@@ -3,22 +3,22 @@ import { uniq, uniqBy } from 'lodash';
 import {
   type EAddressEncodings,
   ECoreApiExportedSecretKeyType,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { getPresetNetworks } from '@onekeyhq/shared/src/config/presetNetworks';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { getPresetNetworks } from '@unionkey/shared/src/config/presetNetworks';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/utils/debug/perfUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 import { vaultFactory } from '../../vaults/factory';
 import {
@@ -96,7 +96,7 @@ class ServiceNetwork extends ServiceBase {
       const uniqByImpl = params?.uniqByImpl ?? false;
       const excludeNetworkIds = params?.excludeNetworkIds ?? [];
       if (params.excludeAllNetworkItem) {
-        excludeNetworkIds.push(getNetworkIdsMap().onekeyall);
+        excludeNetworkIds.push(getNetworkIdsMap().unionkeyall);
       }
       const presetNetworks = getPresetNetworks();
       perf.markEnd('getPresetNetworks');
@@ -537,7 +537,7 @@ class ServiceNetwork extends ServiceBase {
   @backgroundMethod()
   async getNetworkSelectorPinnedNetworks(): Promise<IServerNetwork[]> {
     let networkIds = await this.getNetworkSelectorPinnedNetworkIds();
-    networkIds = networkIds.filter((id) => id !== getNetworkIdsMap().onekeyall);
+    networkIds = networkIds.filter((id) => id !== getNetworkIdsMap().unionkeyall);
     const networkIdsIndex = networkIds.reduce((result, item, index) => {
       result[item] = index;
       return result;
@@ -827,7 +827,7 @@ class ServiceNetwork extends ServiceBase {
     currentNetworkId: string;
   }) {
     const settings = await this._getNetworkVaultSettings();
-    const allNetworkId = getNetworkIdsMap().onekeyall;
+    const allNetworkId = getNetworkIdsMap().unionkeyall;
     return settings
       .filter((o) => {
         if (o.network.id === allNetworkId) {
@@ -1038,7 +1038,7 @@ class ServiceNetwork extends ServiceBase {
 
     const allNetworkItem =
       await this.backgroundApi.serviceNetwork.getNetworkSafe({
-        networkId: getNetworkIdsMap().onekeyall,
+        networkId: getNetworkIdsMap().unionkeyall,
       });
 
     if (allNetworkItem) {

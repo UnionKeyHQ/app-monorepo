@@ -1,15 +1,15 @@
 import { useCallback } from 'react';
 
-import { SizableText, Stack, XStack } from '@onekeyhq/components';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useUniversalSearchActions } from '@onekeyhq/kit/src/states/jotai/contexts/universalSearch';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IUniversalSearchAddress } from '@onekeyhq/shared/types/search';
+import { SizableText, Stack, XStack } from '@unionkey/components';
+import { AccountAvatar } from '@unionkey/kit/src/components/AccountAvatar';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useAccountSelectorActions } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { useUniversalSearchActions } from '@unionkey/kit/src/states/jotai/contexts/universalSearch';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import type { IUniversalSearchAddress } from '@unionkey/shared/types/search';
 
 import { AccountAddress } from '../../../AccountManagerStacks/pages/AccountSelectorStack/WalletDetails/AccountAddress';
 import { AccountValueWithSpotlight } from '../../../AccountManagerStacks/pages/AccountSelectorStack/WalletDetails/AccountValue';

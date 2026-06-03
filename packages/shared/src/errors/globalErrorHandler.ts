@@ -3,7 +3,7 @@ import platformEnv from '../platformEnv';
 import nativePromiseRejectionTracker from './nativePromiseRejectionTracker';
 import { toPlainErrorObject } from './utils/errorUtils';
 
-import type { IOneKeyError } from './types/errorTypes';
+import type { IUnionKeyError } from './types/errorTypes';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const noop = (error: Error) => undefined;
@@ -23,7 +23,7 @@ class GlobalErrorHandler {
   listenersMap = new Map<any, IGlobalErrorListenerInfo>();
 
   // handle autoToast error here by BackgroundApiProxyBase
-  addListener(listener: (error: IOneKeyError) => void) {
+  addListener(listener: (error: IUnionKeyError) => void) {
     const map: IGlobalErrorListenerInfo = {
       nativeErrorListener: (error: Error) => {
         listener(error);

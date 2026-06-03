@@ -2,7 +2,7 @@ import {
   COINTYPE_LIGHTNING_TESTNET,
   IMPL_LIGHTNING_TESTNET,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/engine/engineConsts';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

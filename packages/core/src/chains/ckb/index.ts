@@ -1,4 +1,4 @@
-import { IMPL_CKB } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_CKB } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

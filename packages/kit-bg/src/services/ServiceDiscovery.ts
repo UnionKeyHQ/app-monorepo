@@ -7,29 +7,29 @@ import WebViewCleaner from 'react-native-webview-cleaner';
 import type {
   IBrowserBookmark,
   IBrowserHistory,
-} from '@onekeyhq/kit/src/views/Discovery/types';
+} from '@unionkey/kit/src/views/Discovery/types';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { buildFuse } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IChangeHistoryUpdateItem } from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { buildFuse } from '@unionkey/shared/src/modules3rdParty/fuse';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IChangeHistoryUpdateItem } from '@unionkey/shared/src/types/changeHistory';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import imageUtils from '@onekeyhq/shared/src/utils/imageUtils';
-import sortUtils from '@onekeyhq/shared/src/utils/sortUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+} from '@unionkey/shared/src/types/changeHistory';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import imageUtils from '@unionkey/shared/src/utils/imageUtils';
+import sortUtils from '@unionkey/shared/src/utils/sortUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
 import {
   EHostSecurityLevel,
   type ICategory,
@@ -37,8 +37,8 @@ import {
   type IDiscoveryHomePageData,
   type IDiscoveryListParams,
   type IHostSecurity,
-} from '@onekeyhq/shared/types/discovery';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/types/discovery';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 
 import { type IDBCloudSyncItem } from '../dbs/local/types';
 import { getEndpoints } from '../endpoints';

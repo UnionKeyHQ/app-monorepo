@@ -1,8 +1,8 @@
 import {
   getBtcForkNetwork,
   getPublicKeyFromXpub,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 
 import { KeyringWatchingBase } from '../../base/KeyringWatchingBase';
 

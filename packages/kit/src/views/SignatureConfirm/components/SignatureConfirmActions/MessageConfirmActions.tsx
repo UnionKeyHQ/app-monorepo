@@ -3,25 +3,25 @@ import { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { isEmpty } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Checkbox, Page, Toast, usePageUnMounted } from '@onekeyhq/components';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Checkbox, Page, Toast, usePageUnMounted } from '@unionkey/components';
+import type { IUnsignedMessage } from '@unionkey/core/src/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import useDappApproveAction from '@unionkey/kit/src/hooks/useDappApproveAction';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import {
   validateSignMessageData,
   validateTypedSignMessageDataV1,
   validateTypedSignMessageDataV3V4,
-} from '@onekeyhq/shared/src/utils/messageUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
-import type { IHostSecurity } from '@onekeyhq/shared/types/discovery';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import type { ISignatureConfirmDisplay } from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkey/shared/src/utils/messageUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IDappSourceInfo } from '@unionkey/shared/types';
+import { EDAppModalPageStatus } from '@unionkey/shared/types/dappConnection';
+import type { IHostSecurity } from '@unionkey/shared/types/discovery';
+import { EHostSecurityLevel } from '@unionkey/shared/types/discovery';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
+import type { ISignatureConfirmDisplay } from '@unionkey/shared/types/signatureConfirm';
 
 type IProps = {
   accountId: string;

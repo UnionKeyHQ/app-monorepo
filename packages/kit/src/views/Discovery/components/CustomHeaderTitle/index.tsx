@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Icon, Popover, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, Popover, SizableText, XStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { useUrlRiskConfig } from '../../hooks/useUrlRiskConfig';
 import { useActiveTabId, useWebTabDataById } from '../../hooks/useWebTabs';

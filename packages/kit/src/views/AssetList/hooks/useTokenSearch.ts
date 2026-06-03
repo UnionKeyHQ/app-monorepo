@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { debounce } from 'lodash';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { ICustomTokenItem } from '@onekeyhq/shared/types/token';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import type { ICustomTokenItem } from '@unionkey/shared/types/token';
 
 export function useTokenSearch({
   walletId,

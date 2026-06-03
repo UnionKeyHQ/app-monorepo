@@ -1,5 +1,5 @@
-import { Button, Select, SizableText, Stack } from '@onekeyhq/components';
-import { getPresetNetworks } from '@onekeyhq/shared/src/config/presetNetworks';
+import { Button, Select, SizableText, Stack } from '@unionkey/components';
+import { getPresetNetworks } from '@unionkey/shared/src/config/presetNetworks';
 
 import { useSpeedSwapInit } from '../../hooks/useSpeedSwapInit';
 

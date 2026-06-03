@@ -3,16 +3,16 @@ import { useCallback, useMemo, useState } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { ListView, Page, SizableText } from '@onekeyhq/components';
-import { ControlledNetworkSelectorIconTrigger } from '@onekeyhq/kit/src/components/AccountSelector';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+import { ListView, Page, SizableText } from '@unionkey/components';
+import { ControlledNetworkSelectorIconTrigger } from '@unionkey/kit/src/components/AccountSelector';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { ETranslations } from '@unionkey/shared/src/locale/enum/translations';
 import type {
   EModalReferFriendsRoutes,
   IModalReferFriendsParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
 
 import type { RouteProp } from '@react-navigation/core';
 

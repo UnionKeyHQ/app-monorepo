@@ -12,18 +12,18 @@ import {
   Stack,
   Switch,
   XStack,
-} from '@onekeyhq/components';
-import { useKeyboardHeight } from '@onekeyhq/components/src/hooks';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import { useKeyboardHeight } from '@unionkey/components/src/hooks';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   ERootRoutes,
   ETabDeveloperRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/shared/src/routes';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 const FormattedText = ({ text }: { text: string | string[] }) => {
   if (typeof text === 'string') {

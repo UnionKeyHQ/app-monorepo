@@ -7,7 +7,7 @@ import { syncStorage } from '../../storage/instance/syncStorageInstance';
 import { EAppSyncStorageKeys } from '../../storage/syncStorageKeys';
 import dateUtils from '../dateUtils';
 
-type IOneKeyDBPerfMonitorSettings = {
+type IUnionKeyDBPerfMonitorSettings = {
   isEnabled?: boolean;
   toastWarningEnabled: boolean | undefined;
   toastWarningSize: number;
@@ -20,7 +20,7 @@ const maxIndexedDbCallDetailsSize = 50;
 const maxRecentCallsSize = 2000;
 const resetThreshold = 3000;
 
-const defaultSettings: IOneKeyDBPerfMonitorSettings = {
+const defaultSettings: IUnionKeyDBPerfMonitorSettings = {
   toastWarningEnabled: true,
   toastWarningSize: 70,
   consoleLogEnabled: false,
@@ -28,10 +28,10 @@ const defaultSettings: IOneKeyDBPerfMonitorSettings = {
 };
 
 const shouldDbTxCreatedDebuggerRule: Record<string, boolean> = {
-  'OneKeyStorage_readonly': false,
-  'OneKeyStorage_readwrite': false,
-  'OneKeyV5_readonly': false,
-  'OneKeyV5_readwrite': false,
+  'UnionKeyStorage_readonly': false,
+  'UnionKeyStorage_readwrite': false,
+  'UnionKeyV5_readonly': false,
+  'UnionKeyV5_readwrite': false,
 };
 
 const shouldLocalDbDebuggerRule: Record<string, number> = {
@@ -52,15 +52,15 @@ const shouldLocalDbDebuggerRule: Record<string, number> = {
 const IS_ENABLED =
   platformEnv.isDev ||
   Boolean(
-    syncStorage?.getBoolean(EAppSyncStorageKeys.onekey_developer_mode_enabled),
+    syncStorage?.getBoolean(EAppSyncStorageKeys.unionkey_developer_mode_enabled),
   );
 
-let settings: IOneKeyDBPerfMonitorSettings | undefined = (() => {
+let settings: IUnionKeyDBPerfMonitorSettings | undefined = (() => {
   if (!IS_ENABLED) {
     return undefined;
   }
   const savedSettings = syncStorage?.getObject(
-    EAppSyncStorageKeys.onekey_db_perf_monitor,
+    EAppSyncStorageKeys.unionkey_db_perf_monitor,
   );
   return merge(
     {
@@ -80,14 +80,14 @@ function getSettings() {
   return settings;
 }
 
-function updateSettings(newSettings: Partial<IOneKeyDBPerfMonitorSettings>) {
+function updateSettings(newSettings: Partial<IUnionKeyDBPerfMonitorSettings>) {
   if (!IS_ENABLED) {
     return undefined;
   }
   settings = merge(settings, newSettings, {
     isEnabled: IS_ENABLED,
   });
-  syncStorage?.setObject(EAppSyncStorageKeys.onekey_db_perf_monitor, settings);
+  syncStorage?.setObject(EAppSyncStorageKeys.unionkey_db_perf_monitor, settings);
 }
 
 // ----------------------------------------------
@@ -272,7 +272,7 @@ function toastWarningAndReset(key: string) {
         item?.[1]?.startsWith('appStorage.getItem__g_states_v5:'),
       );
       if (
-        key === 'OneKeyStorage-simpleDB_readonly' &&
+        key === 'UnionKeyStorage-simpleDB_readonly' &&
         atomInitCalls &&
         atomInitCalls?.length >= 30
       ) {

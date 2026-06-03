@@ -1,6 +1,6 @@
-import { Button, Stack, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Button, Stack, Toast } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { Layout } from './utils/Layout';
 
@@ -331,7 +331,7 @@ function LocalDBDemo1() {
           })();
         }}
       >
-        getAllConnectedSites -ã€‹ getAllAccounts time
+        getAllConnectedSites -ã€?getAllAccounts time
       </Button>
 
       <Button
@@ -392,7 +392,7 @@ function LocalDBDemo1() {
           })();
         }}
       >
-        simpleDB browserHistory -ã€‹ accountValue time
+        simpleDB browserHistory -ã€?accountValue time
       </Button>
 
       <Button

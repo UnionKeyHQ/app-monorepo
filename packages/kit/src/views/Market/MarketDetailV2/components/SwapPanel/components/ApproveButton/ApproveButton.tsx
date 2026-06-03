@@ -2,9 +2,9 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button } from '@onekeyhq/components';
-import type { IButtonProps } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Button } from '@unionkey/components';
+import type { IButtonProps } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export interface IApproveButtonProps extends IButtonProps {
   onApprove: () => void;

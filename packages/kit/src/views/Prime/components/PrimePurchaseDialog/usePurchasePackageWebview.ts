@@ -2,10 +2,10 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EWebEmbedRoutePath } from '@onekeyhq/shared/src/consts/webEmbedConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import openUrlUtils from '@onekeyhq/shared/src/utils/openUrlUtils';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { EWebEmbedRoutePath } from '@unionkey/shared/src/consts/webEmbedConsts';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import openUrlUtils from '@unionkey/shared/src/utils/openUrlUtils';
 
 import { getPrimePaymentApiKey } from '../../hooks/getPrimePaymentApiKey';
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';

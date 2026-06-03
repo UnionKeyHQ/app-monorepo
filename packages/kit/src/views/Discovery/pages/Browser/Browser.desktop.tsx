@@ -2,15 +2,15 @@ import { memo, useEffect, useMemo, useRef } from 'react';
 
 import { useRoute } from '@react-navigation/native';
 
-import { Page } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useBrowserTabActions } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Page } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useBrowserTabActions } from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EMultiTabBrowserRoutes,
   IMultiTabBrowserParamList,
-} from '@onekeyhq/shared/src/routes';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
 
 import HeaderRightToolBar from '../../components/HeaderRightToolBar';
 import { useDAppNotifyChanges } from '../../hooks/useDAppNotifyChanges';

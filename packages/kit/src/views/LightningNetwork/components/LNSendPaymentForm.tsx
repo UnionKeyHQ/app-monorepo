@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Form, Input, TextArea } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import { ELightningUnit } from '@onekeyhq/shared/types/lightning';
+import { Form, Input, TextArea } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import { ELightningUnit } from '@unionkey/shared/types/lightning';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { LightningUnitSwitch } from '../../../components/UnitSwitch';

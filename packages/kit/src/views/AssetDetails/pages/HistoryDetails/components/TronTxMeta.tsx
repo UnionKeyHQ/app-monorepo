@@ -4,9 +4,9 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IOnChainHistoryTx } from '@onekeyhq/shared/types/history';
-import { type IDecodedTx } from '@onekeyhq/shared/types/tx';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IOnChainHistoryTx } from '@unionkey/shared/types/history';
+import { type IDecodedTx } from '@unionkey/shared/types/tx';
 
 import { InfoItem } from './TxDetailsInfoItem';
 

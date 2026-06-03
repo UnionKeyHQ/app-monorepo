@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance } from '@onekeyhq/components';
+import type { IDialogInstance } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -16,25 +16,25 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useOnboardingConnectWalletLoadingAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { WALLET_TYPE_EXTERNAL } from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkey/components';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { useOnboardingConnectWalletLoadingAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { WALLET_TYPE_EXTERNAL } from '@unionkey/shared/src/consts/dbConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import type {
   EOnboardingPages,
   IOnboardingParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import externalWalletLogoUtils from '@onekeyhq/shared/src/utils/externalWalletLogoUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IConnectExternalWalletPayload } from '@onekeyhq/shared/types/analytics/onboarding';
-import type { IExternalConnectionInfo } from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import externalWalletLogoUtils from '@unionkey/shared/src/utils/externalWalletLogoUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import type { IConnectExternalWalletPayload } from '@unionkey/shared/types/analytics/onboarding';
+import type { IExternalConnectionInfo } from '@unionkey/shared/types/externalWallet.types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';

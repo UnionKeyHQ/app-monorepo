@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from 'react';
 
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 
 import { HomeTokenListProviderMirror } from './HomeTokenListProviderMirror';
 import { UrlAccountHomeTokenListProviderMirror } from './UrlAccountHomeTokenListProviderMirror';

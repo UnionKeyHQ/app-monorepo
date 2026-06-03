@@ -4,9 +4,9 @@ import * as necc from '@noble/secp256k1';
 import { Transaction, crypto } from '@onekeyfe/kaspa-core-lib';
 import BigNumber from 'bignumber.js';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import ecc from '../../../secret/nobleSecp256k1Wrapper';
 
@@ -50,7 +50,7 @@ export function toTransaction(tx: IEncodedTxKaspa): Transaction {
   }
 
   if (sendAmount.isLessThan(0)) {
-    throw new OneKeyInternalError({
+    throw new UnionKeyInternalError({
       message: 'Insufficient Balance.',
       key: ETranslations.swap_page_button_insufficient_balance,
     });

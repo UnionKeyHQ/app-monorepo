@@ -1,9 +1,9 @@
 // @ts-expect-error ts-migrate(7016) FIXME: Could not find a declaration file for module 'eth-... Remove this comment to see the full error message
 import { parse as ethParser } from 'eth-url-parser';
 
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
+import { IMPL_EVM } from '@unionkey/shared/src/engine/engineConsts';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import { EQRCodeHandlerType } from '@unionkey/shared/types/qrCode';
 
 import type { IEthereumValue, IQRCodeHandler } from '../type';
 

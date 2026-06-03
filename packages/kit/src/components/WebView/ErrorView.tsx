@@ -3,8 +3,8 @@ import { type FC, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { ERROR_CODE } from 'react-native-webview/lib/WebViewShared';
 
-import { Empty, Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Empty, Stack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 interface IErrorViewProps {
   errorCode?: number;

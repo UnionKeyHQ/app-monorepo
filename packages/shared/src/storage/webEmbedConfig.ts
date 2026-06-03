@@ -1,5 +1,5 @@
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
+import appStorage from '@unionkey/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkey/shared/src/storage/syncStorage';
 
 export type IWebEmbedConfig = {
   debug: boolean | undefined;
@@ -13,7 +13,7 @@ function getWebEmbedConfig(): IWebEmbedConfig | undefined {
   // yarn app:web-embed:build
 
   const config = appStorage.syncStorage.getObject<IWebEmbedConfig>(
-    EAppSyncStorageKeys.onekey_webembed_config,
+    EAppSyncStorageKeys.unionkey_webembed_config,
   );
   if (!config) {
     return undefined;
@@ -28,7 +28,7 @@ function getWebEmbedConfig(): IWebEmbedConfig | undefined {
 
 function setWebEmbedConfig(config: IWebEmbedConfig) {
   appStorage.syncStorage.setObject(
-    EAppSyncStorageKeys.onekey_webembed_config,
+    EAppSyncStorageKeys.unionkey_webembed_config,
     config,
   );
 }

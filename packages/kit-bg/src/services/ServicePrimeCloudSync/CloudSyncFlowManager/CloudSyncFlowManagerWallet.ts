@@ -1,9 +1,9 @@
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 import type {
   ICloudSyncPayloadWallet,
   ICloudSyncTargetWallet,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 
 import cloudSyncItemBuilder from '../cloudSyncItemBuilder';
 

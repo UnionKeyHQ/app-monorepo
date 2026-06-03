@@ -1,7 +1,7 @@
-import { WEB_APP_URL } from '@onekeyhq/shared/src/config/appConfig';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabMarketRoutes, ETabRoutes } from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { WEB_APP_URL } from '@unionkey/shared/src/config/appConfig';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { ETabMarketRoutes, ETabRoutes } from '@unionkey/shared/src/routes';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import type { IAppNavigation } from '../../hooks/useAppNavigation';
 

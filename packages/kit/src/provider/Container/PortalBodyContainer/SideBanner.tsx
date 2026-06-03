@@ -14,27 +14,27 @@ import {
   YStack,
   useIsIpadLandscape,
   useMedia,
-} from '@onekeyhq/components';
-import { DesktopTabItem } from '@onekeyhq/components/src/layouts/Navigation/Tab/TabBar/DesktopTabItem';
-import SidebarBannerImage from '@onekeyhq/kit/assets/sidebar-banner.png';
-import { useSpotlight } from '@onekeyhq/kit/src/components/Spotlight';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useNotificationsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/notifications';
-import { DOWNLOAD_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalRoutes, EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalNotificationsRoutes } from '@onekeyhq/shared/src/routes/notifications';
-import { shortcutsKeys } from '@onekeyhq/shared/src/shortcuts/shortcutsKeys.enum';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/components';
+import { DesktopTabItem } from '@unionkey/components/src/layouts/Navigation/Tab/TabBar/DesktopTabItem';
+import SidebarBannerImage from '@unionkey/kit/assets/sidebar-banner.png';
+import { useSpotlight } from '@unionkey/kit/src/components/Spotlight';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useNotificationsAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/notifications';
+import { DOWNLOAD_URL } from '@unionkey/shared/src/config/appConfig';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EModalRoutes, EModalSettingRoutes } from '@unionkey/shared/src/routes';
+import { EModalNotificationsRoutes } from '@unionkey/shared/src/routes/notifications';
+import { shortcutsKeys } from '@unionkey/shared/src/shortcuts/shortcutsKeys.enum';
+import { ESpotlightTour } from '@unionkey/shared/src/spotlight';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import type { GestureResponderEvent } from 'react-native';
 
 function BasicSidebarBanner() {
   const intl = useIntl();
   const { isFirstVisit, tourVisited } = useSpotlight(
-    ESpotlightTour.oneKeyProBanner,
+    ESpotlightTour.unionKeyProBanner,
   );
 
   const openUrl = useCallback(() => {
@@ -86,7 +86,7 @@ function BasicSidebarBanner() {
       </Stack>
       {/* <Stack px="$3" py="$2.5">
         <Heading size="$bodySmMedium" pb="$0.5">
-          OneKey Pro1
+          UnionKey Pro1
         </Heading>
         <SizableText size="$bodySm" color="$textSubdued">
           {intl.formatMessage({ id: ETranslations.hw_banner_description })}

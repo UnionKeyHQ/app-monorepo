@@ -9,12 +9,12 @@ import {
   XStack,
   YStack,
   useDialogInstance,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { formatDistanceToNow } from '@onekeyhq/shared/src/utils/dateUtils';
-import { openUrlInApp } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IMarketDetailTicker } from '@onekeyhq/shared/types/market';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { formatDistanceToNow } from '@unionkey/shared/src/utils/dateUtils';
+import { openUrlInApp } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { IMarketDetailTicker } from '@unionkey/shared/types/market';
 
 import { MarketPoolIcon } from './MarketPoolIcon';
 import { PoolDetailsItem } from './PoolDetailDialog';

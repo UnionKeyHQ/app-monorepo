@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+import { Stack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 import { useFirmwareUpdateActions } from '../hooks/useFirmwareUpdateActions';
 

@@ -2,10 +2,10 @@ import { memo, useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IActionListItemProps, IStackProps } from '@onekeyhq/components';
-import { ActionList, IconButton } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { IActionListItemProps, IStackProps } from '@unionkey/components';
+import { ActionList, IconButton } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 
 import { useReviewControl } from '../../../components/ReviewControl';
 

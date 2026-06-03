@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, import/first, import/order */
-import '@onekeyhq/shared/src/polyfills';
-import '@onekeyhq/shared/src/web/index.css';
+import '@unionkey/shared/src/polyfills';
+import '@unionkey/shared/src/web/index.css';
 
-import { KitProvider } from '@onekeyhq/kit';
+import { KitProvider } from '@unionkey/kit';
 
 import {
   initSentry,
   withSentryHOC,
-} from '@onekeyhq/shared/src/modules3rdParty/sentry';
-import { SentryErrorBoundaryFallback } from '@onekeyhq/kit/src/components/ErrorBoundary';
+} from '@unionkey/shared/src/modules3rdParty/sentry';
+import { SentryErrorBoundaryFallback } from '@unionkey/kit/src/components/ErrorBoundary';
 
 initSentry();
 

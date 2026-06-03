@@ -7,13 +7,13 @@ import {
   useNativeTokenTransferAmountToUpdateAtom,
   useSendTxStatusAtom,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
+} from '@unionkey/kit/src/states/jotai/contexts/signatureConfirm';
+import type { IApproveInfo } from '@unionkey/kit-bg/src/vaults/types';
 import type {
   IDisplayComponent,
   IDisplayComponentAssets,
-} from '@onekeyhq/shared/types/signatureConfirm';
-import { EParseTxComponentType } from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkey/shared/types/signatureConfirm';
+import { EParseTxComponentType } from '@unionkey/shared/types/signatureConfirm';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

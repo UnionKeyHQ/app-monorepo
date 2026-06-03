@@ -5,17 +5,17 @@ import { Semaphore } from 'async-mutex';
 import type {
   INostrEvent,
   INostrRelays,
-} from '@onekeyhq/core/src/chains/nostr/types';
+} from '@unionkey/core/src/chains/nostr/types';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import {
   EDAppConnectionModal,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 
 import ProviderApiBase from './ProviderApiBase';
 

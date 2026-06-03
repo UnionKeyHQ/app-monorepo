@@ -3,27 +3,27 @@ import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { AuthenticationType } from 'expo-local-authentication';
 import { useIntl } from 'react-intl';
 
-import { SizableText, Spinner, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePrimeAuthV2 } from '@onekeyhq/kit/src/views/Prime/hooks/usePrimeAuthV2';
+import { SizableText, Spinner, Stack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePrimeAuthV2 } from '@unionkey/kit/src/views/Prime/hooks/usePrimeAuthV2';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import {
   biologyAuthNativeError,
   biologyAuthUtils,
-} from '@onekeyhq/kit-bg/src/services/ServicePassword/biologyAuthUtils';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/services/ServicePassword/biologyAuthUtils';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   usePasswordAtom,
   usePasswordBiologyAuthInfoAtom,
   usePasswordModeAtom,
   usePasswordPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms/password';
-import { dismissKeyboard } from '@onekeyhq/shared/src/keyboard';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import resetUtils from '@onekeyhq/shared/src/utils/resetUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/kit-bg/src/states/jotai/atoms/password';
+import { dismissKeyboard } from '@unionkey/shared/src/keyboard';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import resetUtils from '@unionkey/shared/src/utils/resetUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import {
   BIOLOGY_AUTH_ATTEMPTS_FACE,
   BIOLOGY_AUTH_ATTEMPTS_FINGERPRINT,
@@ -33,7 +33,7 @@ import {
   PASSCODE_PROTECTION_ATTEMPTS,
   PASSCODE_PROTECTION_ATTEMPTS_MESSAGE_SHOW_MAX,
   PASSCODE_PROTECTION_ATTEMPTS_PER_MINUTE_MAP,
-} from '@onekeyhq/shared/types/password';
+} from '@unionkey/shared/types/password';
 
 import { useBiometricAuthInfo } from '../../../hooks/useBiometricAuthInfo';
 import { useResetApp } from '../../../views/Setting/hooks';

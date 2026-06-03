@@ -1,7 +1,7 @@
 import { getConfig } from '@tamagui/core';
 import { getFontSizeToken } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { FontSizeTokens, FontTokens } from '@tamagui/core';
 import type { Variable } from '@tamagui/web/types/createVariable';

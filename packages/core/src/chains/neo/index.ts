@@ -1,4 +1,4 @@
-import { IMPL_NEO } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_NEO } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

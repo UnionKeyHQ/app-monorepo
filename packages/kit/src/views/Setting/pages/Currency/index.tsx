@@ -3,16 +3,16 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { INavSearchBarProps } from '@onekeyhq/components';
-import { Empty, Page, SectionList } from '@onekeyhq/components';
-import {} from '@onekeyhq/components/src/layouts/SectionList';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import type { INavSearchBarProps } from '@unionkey/components';
+import { Empty, Page, SectionList } from '@unionkey/components';
+import {} from '@unionkey/components/src/layouts/SectionList';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
 import {
   useCurrencyPersistAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export type ICurrencyType = 'crypto' | 'fiat' | 'popular';
 

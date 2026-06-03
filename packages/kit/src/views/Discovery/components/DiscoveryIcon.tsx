@@ -2,8 +2,8 @@ import { memo } from 'react';
 
 import { StyleSheet } from 'react-native';
 
-import type { IImageProps } from '@onekeyhq/components';
-import { Icon, Image, Skeleton, Stack } from '@onekeyhq/components';
+import type { IImageProps } from '@unionkey/components';
+import { Icon, Image, Skeleton, Stack } from '@unionkey/components';
 
 function BasicDiscoveryIcon({
   uri,

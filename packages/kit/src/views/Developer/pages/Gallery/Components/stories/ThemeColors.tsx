@@ -4,8 +4,8 @@ import {
   XStack,
   YStack,
   useTheme,
-} from '@onekeyhq/components';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
+} from '@unionkey/components';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
 
 import { Layout } from './utils/Layout';
 

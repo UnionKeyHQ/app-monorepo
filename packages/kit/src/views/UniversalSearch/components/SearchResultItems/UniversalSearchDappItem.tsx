@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 
 import { StyleSheet } from 'react-native';
 
-import { Icon, Image, Skeleton } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { useUniversalSearchActions } from '@onekeyhq/kit/src/states/jotai/contexts/universalSearch';
-import { isGoogleSearchItem } from '@onekeyhq/shared/src/consts/discovery';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import type { IUniversalSearchDapp } from '@onekeyhq/shared/types/search';
+import { Icon, Image, Skeleton } from '@unionkey/components';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { useUniversalSearchActions } from '@unionkey/kit/src/states/jotai/contexts/universalSearch';
+import { isGoogleSearchItem } from '@unionkey/shared/src/consts/discovery';
+import { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
+import type { IUniversalSearchDapp } from '@unionkey/shared/types/search';
 
 import { useWebSiteHandler } from '../../../Discovery/hooks/useWebSiteHandler';
 
@@ -27,7 +27,7 @@ export function UniversalSearchDappItem({
 
   // Format text content based on display rules
   const formatDisplayText = useCallback((text: string): string => {
-    // Short content (â‰¤12 characters): show all
+    // Short content (â‰?2 characters): show all
     if (text.length <= 12) {
       return text;
     }

@@ -15,19 +15,19 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import HeaderIconButton from '@onekeyhq/components/src/layouts/Navigation/Header/HeaderIconButton';
-import type { IKeyOfIcons } from '@onekeyhq/components/src/primitives';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import HeaderIconButton from '@unionkey/components/src/layouts/Navigation/Header/HeaderIconButton';
+import type { IKeyOfIcons } from '@unionkey/components/src/primitives';
+import appGlobals from '@unionkey/shared/src/appGlobals';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EScanQrCodeModalPages,
   IScanQrCodeModalParamList,
-} from '@onekeyhq/shared/src/routes';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
+} from '@unionkey/shared/src/routes';
+import appStorage from '@unionkey/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkey/shared/src/storage/syncStorage';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import { ScanQrCode } from '../components';

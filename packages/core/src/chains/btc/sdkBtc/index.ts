@@ -10,16 +10,16 @@ import bs58check from 'bs58check';
 import { ECPairFactory } from 'ecpair';
 import { cloneDeep, isNil, omit } from 'lodash';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 import type {
   IAddressValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
-import type { ISignPsbtOptions } from '@onekeyhq/shared/types/ProviderApis/ProviderApiBtc.type';
+} from '@unionkey/shared/types/address';
+import type { ISignPsbtOptions } from '@unionkey/shared/types/ProviderApis/ProviderApiBtc.type';
 
 import {
   CKDPub,
@@ -430,7 +430,7 @@ export function getBtcXpubFromXprvt({
     }
   }
   if (xpub === '') {
-    throw new OneKeyInternalError('Invalid X Private Key.');
+    throw new UnionKeyInternalError('Invalid X Private Key.');
   }
   return { xpub };
 }

@@ -10,23 +10,23 @@ import {
   YStack,
   useMedia,
   usePopoverContext,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountAvatar } from '@unionkey/kit/src/components/AccountAvatar';
 import {
   AccountSelectorProviderMirror,
   NetworkSelectorTriggerBrowserSingle,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { AccountSelectorTriggerBrowserSingle } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IDBIndexedAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit/src/components/AccountSelector';
+import { AccountSelectorTriggerBrowserSingle } from '@unionkey/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import type { IDBIndexedAccount } from '@unionkey/kit-bg/src/dbs/local/types';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IConnectionAccountInfoWithNum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import type { IConnectionAccountInfoWithNum } from '@unionkey/shared/types/dappConnection';
 
 import { DAppAccountListItem } from '../../../DAppConnection/components/DAppAccountList';
 import { useHandleDiscoveryAccountChanged } from '../../../DAppConnection/hooks/useHandleAccountChanged';

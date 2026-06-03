@@ -10,11 +10,11 @@ import {
   YStack,
   useClipboard,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IClearCacheOnAppState } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IClearCacheOnAppState } from '@unionkey/shared/types/setting';
 
 export default function ClearAppCache() {
   const intl = useIntl();

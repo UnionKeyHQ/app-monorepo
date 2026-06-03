@@ -1,11 +1,11 @@
 import { isArray } from 'lodash';
 
-import { decryptAsync, ed25519 } from '@onekeyhq/core/src/secret';
+import { decryptAsync, ed25519 } from '@unionkey/core/src/secret';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {
@@ -136,7 +136,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     const { privateKeyRaw } = query;
     const privateKey = bufferUtils.toBuffer(privateKeyRaw);
     if (privateKey.length !== 32) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
     const pub = ed25519.publicFromPrivate(privateKey);
     return this.getAddressFromPublic({

@@ -5,7 +5,7 @@ import { forwardRef, useCallback, useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { ICheckedState } from '@onekeyhq/components';
+import type { ICheckedState } from '@unionkey/components';
 import {
   Dialog as BaseDialog,
   Button,
@@ -24,23 +24,23 @@ import {
   useDialogInstance,
   useForm,
   useInTabDialog,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import type {
   IDialogContainerProps,
   IDialogInstance,
-} from '@onekeyhq/components/src/composite/Dialog/type';
-import UpdateNotificationDark from '@onekeyhq/kit/assets/animations/update-notification-dark.json';
-import UpdateNotificationLight from '@onekeyhq/kit/assets/animations/update-notification-light.json';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components/src/composite/Dialog/type';
+import UpdateNotificationDark from '@unionkey/kit/assets/animations/update-notification-dark.json';
+import UpdateNotificationLight from '@unionkey/kit/assets/animations/update-notification-light.json';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EGalleryRoutes,
   EModalRoutes,
   ETestModalPages,
-} from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/routes';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { Layout } from './utils/Layout';
 
@@ -221,10 +221,10 @@ const DialogGallery = () => {
       componentName="Dialog"
       description="需要用户处理事务，又不希望跳转路由以致打断工作流程时，可以使用 Dialog 组件"
       suggestions={[
-        'Dialog 的呈现层级高于页面，但低于 Toast',
+        'Dialog 的呈现层级高于页面，但低�?Toast',
         '需要避免在 Dialog 显示需要滚动操作的内容',
       ]}
-      boundaryConditions={['禁止将 Dialog 作为路由页面使用']}
+      boundaryConditions={['禁止�?Dialog 作为路由页面使用']}
       elements={[
         {
           title: 'Variants',
@@ -556,7 +556,7 @@ const DialogGallery = () => {
           ),
         },
         {
-          title: '命令式 API, Confirm Button Loading',
+          title: '命令�?API, Confirm Button Loading',
           element: (
             <YStack>
               <Button
@@ -763,7 +763,7 @@ const DialogGallery = () => {
           ),
         },
         {
-          title: '命令式 API, Close Dialog ',
+          title: '命令�?API, Close Dialog ',
           element: (
             <YStack>
               <Button

@@ -7,8 +7,8 @@ import { throttle } from 'lodash';
 import { View } from 'react-native';
 import { runOnJS, useAnimatedReaction } from 'react-native-reanimated';
 
-import { YStack } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { YStack } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 // import ExtremeLabels from './ExtremeLabels';
 

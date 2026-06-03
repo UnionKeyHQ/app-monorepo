@@ -4,21 +4,21 @@ import { io } from 'socket.io-client';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 import type {
   INotificationPushMessageAckParams,
   INotificationPushMessageInfo,
-} from '@onekeyhq/shared/types/notification';
-import { EPushProviderEventNames } from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
+import { EPushProviderEventNames } from '@unionkey/shared/types/notification';
 import type {
   IPrimeConfigChangedInfo,
   IPrimeConfigFlushInfo,
   IPrimeDeviceLogoutInfo,
   IPrimeLockChangedInfo,
-} from '@onekeyhq/shared/types/socket';
-import { EAppSocketEventNames } from '@onekeyhq/shared/types/socket';
+} from '@unionkey/shared/types/socket';
+import { EAppSocketEventNames } from '@unionkey/shared/types/socket';
 
 import { getEndpointInfo } from '../../../endpoints';
 import { notificationStatusAtom } from '../../../states/jotai/atoms/notifications';

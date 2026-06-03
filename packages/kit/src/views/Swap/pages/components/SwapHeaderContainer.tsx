@@ -2,19 +2,19 @@ import { memo, useEffect, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { EPageType, IStackProps } from '@onekeyhq/components';
-import { SizableText, Stack, XStack } from '@onekeyhq/components';
+import type { EPageType, IStackProps } from '@unionkey/components';
+import { SizableText, Stack, XStack } from '@unionkey/components';
 import {
   useSwapActions,
   useSwapSelectFromTokenAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/kit/src/states/jotai/contexts/swap';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   ESwapDirectionType,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { useSwapAddressInfo } from '../../hooks/useSwapAccount';
 

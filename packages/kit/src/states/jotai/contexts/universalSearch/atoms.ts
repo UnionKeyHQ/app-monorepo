@@ -1,6 +1,6 @@
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { createJotaiContext } from '@onekeyhq/kit/src/states/jotai/utils/createJotaiContext';
-import type { IUniversalSearchAtomData } from '@onekeyhq/shared/types/search';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { createJotaiContext } from '@unionkey/kit/src/states/jotai/utils/createJotaiContext';
+import type { IUniversalSearchAtomData } from '@unionkey/shared/types/search';
 
 const {
   Provider: ProviderJotaiContextUniversalSearch,

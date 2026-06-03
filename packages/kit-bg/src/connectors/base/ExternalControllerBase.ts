@@ -1,12 +1,12 @@
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import type { IWalletConnectChainInfo } from '@onekeyhq/shared/src/walletConnect/types';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkey/core/src/types';
+import type { IWalletConnectChainInfo } from '@unionkey/shared/src/walletConnect/types';
 import type {
   IExternalConnectWalletResult,
   IExternalConnectionInfo,
   IExternalConnector,
   IExternalCreateConnectorResult,
   IExternalListWalletsResult,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkey/shared/types/externalWallet.types';
 
 import type { IBackgroundApi } from '../../apis/IBackgroundApi';
 import type { IDBExternalAccount } from '../../dbs/local/types';

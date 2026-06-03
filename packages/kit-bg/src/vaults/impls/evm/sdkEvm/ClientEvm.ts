@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 
-import { JsonRPCRequest } from '@onekeyhq/shared/src/request/JsonRPCRequest';
-import type { IRpcClientInfo } from '@onekeyhq/shared/types/customRpc';
+import { JsonRPCRequest } from '@unionkey/shared/src/request/JsonRPCRequest';
+import type { IRpcClientInfo } from '@unionkey/shared/types/customRpc';
 
 export class ClientEvm extends JsonRPCRequest {
   async getInfo(): Promise<IRpcClientInfo> {

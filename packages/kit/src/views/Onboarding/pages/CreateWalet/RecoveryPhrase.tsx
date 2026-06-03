@@ -5,7 +5,7 @@ import wordLists from 'bip39/src/wordlists/english.json';
 import { shuffle } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IPropsWithTestId } from '@onekeyhq/components';
+import type { IPropsWithTestId } from '@unionkey/components';
 import {
   ActionList,
   Dialog,
@@ -16,18 +16,18 @@ import {
   Toast,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
+} from '@unionkey/components';
+import { HeaderIconButton } from '@unionkey/components/src/layouts/Navigation/Header';
 import {
   ensureSensitiveTextEncoded,
   generateMnemonic,
-} from '@onekeyhq/core/src/secret';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/core/src/secret';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IOnboardingParamList } from '@unionkey/shared/src/routes';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
 
 import type { RouteProp } from '@react-navigation/core';
 

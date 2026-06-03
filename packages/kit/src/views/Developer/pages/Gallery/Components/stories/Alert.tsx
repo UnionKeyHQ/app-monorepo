@@ -1,4 +1,4 @@
-import { Alert, YStack } from '@onekeyhq/components';
+import { Alert, YStack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

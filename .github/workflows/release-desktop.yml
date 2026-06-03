@@ -48,7 +48,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkey'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -99,28 +99,28 @@ jobs:
       - name: Upload Artifacts latest.yml
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-desktop-yml
+          name: unionkey-desktop-yml
           path: |
             ./apps/desktop/build-electron/*.yml
 
       - name: Upload Artifacts Mac
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-desktop-mac
+          name: unionkey-desktop-mac
           path: |
             ./apps/desktop/build-electron/*.dmg
 
       - name: Upload Artifacts Windows
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-desktop-windows
+          name: unionkey-desktop-windows
           path: |
             ./apps/desktop/build-electron/*.exe
 
       - name: Upload Artifacts Linux
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-desktop-linux
+          name: unionkey-desktop-linux
           path: |
             ./apps/desktop/build-electron/*.AppImage
 
@@ -140,13 +140,13 @@ jobs:
 
       - name: 'Notify to Slack'
         if: ${{ github.event.workflow_run }}
-        uses: onekeyhq/actions/slack-notify-webhook@main
+        uses: unionkey/actions/slack-notify-webhook@main
         with:
           web-hook-url: ${{ secrets.SLACK_NOTIFICATION_WEBHOOK }}
           secret-key: ${{ secrets.ACTION_SIGN_SECERT_KEY }}
           artifact-type: Desktop
-          artifact-name: OneKey-Desktop-RN
-          artifact-bundle-id: 'so.onekey.wallet.desktop'
+          artifact-name: UnionKey-Desktop-RN
+          artifact-bundle-id: 'so.unionkey.wallet.desktop'
           artifact-version-name: '${{ env.BUILD_APP_VERSION }}@${{ env.BUILD_NUMBER }}'
           artifact-version-code: '${{ env.BUILD_NUMBER }}'
           artifact-download-url: '${{ env.ARTIFACTS_URL }}'

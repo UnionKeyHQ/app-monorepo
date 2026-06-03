@@ -1,4 +1,4 @@
-import type { IUtxoInfo } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IUtxoInfo } from '@unionkey/kit-bg/src/vaults/types';
 
 import type { EAddressEncodings, ITxInputToSign } from '../../types';
 import type BigNumber from 'bignumber.js';

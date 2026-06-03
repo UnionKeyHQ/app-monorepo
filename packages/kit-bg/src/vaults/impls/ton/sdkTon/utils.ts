@@ -2,13 +2,13 @@
 import BigNumber from 'bignumber.js';
 import TonWeb, { type StateInit } from 'tonweb';
 
-import type { IEncodedTxTon } from '@onekeyhq/core/src/chains/ton/types';
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import { SEPERATOR } from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { EDecodedTxActionType } from '@onekeyhq/shared/types/tx';
+import type { IEncodedTxTon } from '@unionkey/core/src/chains/ton/types';
+import type { IBackgroundApi } from '@unionkey/kit-bg/src/apis/IBackgroundApi';
+import { SEPERATOR } from '@unionkey/shared/src/engine/engineConsts';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { EDecodedTxActionType } from '@unionkey/shared/types/tx';
 
 import { Provider } from './provider';
 
@@ -152,7 +152,7 @@ export interface IWallet extends IV4R2 {
 
 export function getWalletContractClass(version: string) {
   if (!(version in TonWeb.Wallets.all)) {
-    throw new OneKeyInternalError(`Wallet ${version} not found`);
+    throw new UnionKeyInternalError(`Wallet ${version} not found`);
   }
   return TonWeb.Wallets.all[version as keyof typeof TonWeb.Wallets.all];
 }

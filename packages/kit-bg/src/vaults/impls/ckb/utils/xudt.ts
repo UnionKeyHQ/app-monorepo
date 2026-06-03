@@ -12,8 +12,8 @@ import {
 import BigNumber from 'bignumber.js';
 import { List, Set } from 'immutable';
 
-import { MinimumTransferBalanceRequiredForSendingAssetError } from '@onekeyhq/shared/src/errors';
-import type { IToken } from '@onekeyhq/shared/types/token';
+import { MinimumTransferBalanceRequiredForSendingAssetError } from '@unionkey/shared/src/errors';
+import type { IToken } from '@unionkey/shared/types/token';
 
 import { addCellDep } from './script';
 

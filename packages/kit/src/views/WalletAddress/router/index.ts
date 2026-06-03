@@ -1,15 +1,15 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import { EModalWalletAddressRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalWalletAddressParamList } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import LazyLoad from '@unionkey/shared/src/lazyLoad';
+import { EModalWalletAddressRoutes } from '@unionkey/shared/src/routes';
+import type { IModalWalletAddressParamList } from '@unionkey/shared/src/routes';
 
 const DeriveTypesAddress = LazyLoad(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkey/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 const WalletAddress = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/WalletAddress/pages/WalletAddress'),
+  () => import('@unionkey/kit/src/views/WalletAddress/pages/WalletAddress'),
 );
 
 export const WalletAddressModalRouter: IModalFlowNavigatorConfig<

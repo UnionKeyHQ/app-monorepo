@@ -4,17 +4,17 @@ import { ContractParam } from '@cityofzion/neon-core/lib/sc';
 import BigNumber from 'bignumber.js';
 import { isEmpty } from 'lodash';
 
-import type { IEncodedTxNeoN3 } from '@onekeyhq/core/src/chains/neo/types';
+import type { IEncodedTxNeoN3 } from '@unionkey/core/src/chains/neo/types';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   InvalidAddress,
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -22,21 +22,21 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
+} from '@unionkey/shared/types/customRpc';
 import type {
   IArgument,
   IInvokeArguments,
-} from '@onekeyhq/shared/types/ProviderApis/ProviderApiNeo.type';
+} from '@unionkey/shared/types/ProviderApis/ProviderApiNeo.type';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
   type IDecodedTx,
   type IDecodedTxAction,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -101,7 +101,7 @@ export default class Vault extends VaultBase {
       typeof tokenInfo.decimals !== 'number' ||
       tokenInfo.decimals < 0
     ) {
-      throw new OneKeyInternalError('Token decimals is required');
+      throw new UnionKeyInternalError('Token decimals is required');
     }
     const dbAccount = await this.getAccount();
     const scriptHash = wallet.getScriptHashFromAddress(dbAccount.address);
@@ -169,10 +169,10 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTxNeoN3> {
     const { transfersInfo } = params;
     if (!transfersInfo || isEmpty(transfersInfo)) {
-      throw new OneKeyInternalError('transfersInfo is required');
+      throw new UnionKeyInternalError('transfersInfo is required');
     }
     if (transfersInfo.length > 1) {
-      throw new OneKeyInternalError('Batch transfer is not supported');
+      throw new UnionKeyInternalError('Batch transfer is not supported');
     }
     const transferInfo = transfersInfo[0];
     if (!transferInfo.to) {
@@ -223,7 +223,7 @@ export default class Vault extends VaultBase {
         token?.decimals === null ||
         Number.isNaN(token?.decimals)
       ) {
-        throw new OneKeyInternalError('Token decimals is required');
+        throw new UnionKeyInternalError('Token decimals is required');
       }
 
       const action = await this.buildTxTransferAssetAction({
@@ -295,7 +295,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo,
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   override async updateUnsignedTx(
@@ -312,7 +312,7 @@ export default class Vault extends VaultBase {
       const dbAccount = await this.getAccount();
 
       if (!tokenInfo) {
-        throw new OneKeyInternalError('Token info is required');
+        throw new UnionKeyInternalError('Token info is required');
       }
 
       const maxAmount = new BigNumber(nativeAmountInfo.maxSendAmount)
@@ -431,19 +431,19 @@ export default class Vault extends VaultBase {
           returnRawData: true,
         });
       if (blockCount.result === undefined || blockCount.result === null) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           'Invalid block count: result is null or undefined',
         );
       }
       const blockCountBN = new BigNumber(blockCount.result);
       if (blockCountBN.isNaN() || blockCountBN.isNegative()) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           'Invalid block count: expected a non-negative number',
         );
       }
       return blockCountBN.toNumber();
     } catch (error) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `Failed to get block count: ${
           error instanceof Error ? error.message : 'Unknown error'
         }`,
@@ -482,7 +482,7 @@ export default class Vault extends VaultBase {
     try {
       script = sc.createScript(...params.invokeArgs);
     } catch (error) {
-      throw new OneKeyInternalError('Failed to create script');
+      throw new UnionKeyInternalError('Failed to create script');
     }
 
     const currentHeight = await this.getBlockCount();
@@ -517,7 +517,7 @@ export default class Vault extends VaultBase {
 
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     if (!rawTx) {
       throw new Error('rawTx is empty');

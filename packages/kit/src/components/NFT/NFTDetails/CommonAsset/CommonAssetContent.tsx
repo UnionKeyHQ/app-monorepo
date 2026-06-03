@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { isNil, isObject } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IImageProps, IKeyOfIcons } from '@onekeyhq/components';
+import type { IImageProps, IKeyOfIcons } from '@unionkey/components';
 import {
   DescriptionList,
   Divider,
@@ -13,15 +13,15 @@ import {
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkey/components';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { formatDate } from '@unionkey/shared/src/utils/dateUtils';
 import {
   ETraitsDisplayType,
   type IAccountNFT,
-} from '@onekeyhq/shared/types/nft';
+} from '@unionkey/shared/types/nft';
 
 type IProps = {
   networkId: string;
@@ -163,7 +163,7 @@ function CommonAssetContent(props: IProps) {
           </XStack>
         ) : (
           <SizableText size="$bodyMd" mt="$2" color="$textSubdued">
-            {`🤷‍♂️ ${intl.formatMessage({
+            {`🤷‍♂�?${intl.formatMessage({
               id: ETranslations.nft_no_attributes_found,
             })}`}
           </SizableText>

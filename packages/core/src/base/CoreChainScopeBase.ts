@@ -1,12 +1,12 @@
 import { isString } from 'lodash';
 
-// import flowLogger from '@onekeyhq/shared/src/logger/flowLogger/flowLogger';
+// import flowLogger from '@unionkey/shared/src/logger/flowLogger/flowLogger';
 
 import {
   ensurePromiseObject,
   ensureSerializable,
-} from '@onekeyhq/shared/src/utils/assertUtils';
-import { isPromiseObject } from '@onekeyhq/shared/src/utils/promiseUtils';
+} from '@unionkey/shared/src/utils/assertUtils';
+import { isPromiseObject } from '@unionkey/shared/src/utils/promiseUtils';
 
 import type { CoreChainApiBase } from './CoreChainApiBase';
 

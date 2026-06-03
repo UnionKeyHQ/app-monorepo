@@ -1,4 +1,4 @@
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
+import type { IEncodedTx } from '@unionkey/core/src/types';
 
 export enum ESendFeeStatus {
   Loading = 'Loading',

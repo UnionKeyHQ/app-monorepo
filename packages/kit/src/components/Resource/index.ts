@@ -1,6 +1,6 @@
-import type { IDialogShowProps } from '@onekeyhq/components';
-import { IMPL_TRON } from '@onekeyhq/shared/src/engine/engineConsts';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import type { IDialogShowProps } from '@unionkey/components';
+import { IMPL_TRON } from '@unionkey/shared/src/engine/engineConsts';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 import { showTronResourceDetailsDialog } from './TronResource';
 

@@ -11,12 +11,12 @@ import {
   SizableText,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import { ImageSource } from '@onekeyhq/components/src/primitives/Image/ImageSource';
-import useConfigurableChainSelector from '@onekeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { ICategory, IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkey/components';
+import { ImageSource } from '@unionkey/components/src/primitives/Image/ImageSource';
+import useConfigurableChainSelector from '@unionkey/kit/src/views/ChainSelector/hooks/useChainSelector';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { ICategory, IDApp } from '@unionkey/shared/types/discovery';
 
 import { ChunkedItemsSkeletonView } from './ChunkedItemsSkeletonView';
 import { ChunkedItemsView, chunkArray } from './ChunkedItemsView';

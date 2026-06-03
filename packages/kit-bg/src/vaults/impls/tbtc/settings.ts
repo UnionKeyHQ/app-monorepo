@@ -1,13 +1,13 @@
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { EMPTY_NATIVE_TOKEN_ADDRESS } from '@onekeyhq/shared/src/consts/addresses';
+import { EAddressEncodings } from '@unionkey/core/src/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { EMPTY_NATIVE_TOKEN_ADDRESS } from '@unionkey/shared/src/consts/addresses';
 import {
   COINNAME_TBTC,
   COINTYPE_TBTC,
   IMPL_TBTC,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
+} from '@unionkey/shared/src/engine/engineConsts';
+import { EEarnProviderEnum } from '@unionkey/shared/types/earn';
 
 import settingsBtc from '../btc/settings';
 

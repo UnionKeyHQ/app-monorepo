@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Popover, Stack } from '@onekeyhq/components';
+import { Popover, Stack } from '@unionkey/components';
 
 import { RiskIndicatorCard } from './RiskIndicatorCard';
 import { RiskIndicatorIcon } from './RiskIndicatorIcon';

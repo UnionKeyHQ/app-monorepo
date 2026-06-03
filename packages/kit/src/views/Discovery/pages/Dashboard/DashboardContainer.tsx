@@ -1,9 +1,9 @@
-import { Page } from '@onekeyhq/components';
-import { TabPageHeader } from '@onekeyhq/kit/src//components/TabPageHeader';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorProvider';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import { Page } from '@unionkey/components';
+import { TabPageHeader } from '@unionkey/kit/src//components/TabPageHeader';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector/AccountSelectorProvider';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { HandleRebuildBrowserData } from '../../components/HandleData/HandleRebuildBrowserTabData';
 import MobileBrowserBottomBar from '../../components/MobileBrowser/MobileBrowserBottomBar';

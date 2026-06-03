@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ELiteCardRoutes, EModalRoutes } from '@onekeyhq/shared/src/routes';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ELiteCardRoutes, EModalRoutes } from '@unionkey/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 

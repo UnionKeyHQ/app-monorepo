@@ -3,7 +3,7 @@
 import type {
   ISecretPrivateKeyInfo,
   ISecretPublicKeyInfo,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 
 import type { EAddressEncodings } from './coreEnums';
 import type { ICurveName } from './coreTypesBase';

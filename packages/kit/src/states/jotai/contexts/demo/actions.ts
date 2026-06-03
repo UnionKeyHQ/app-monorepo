@@ -1,5 +1,5 @@
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { memoFn } from '@unionkey/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 

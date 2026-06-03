@@ -2,12 +2,12 @@ import { useRef } from 'react';
 
 import { isEqual } from 'lodash';
 
-import { Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { handleDeepLinkUrl } from '@onekeyhq/kit/src/routes/config/deeplink';
-import { ContextJotaiActionsBase } from '@onekeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
-import { MaximumNumberOfTabs } from '@onekeyhq/kit/src/views/Discovery/config/Discovery.constants';
+import { Toast } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import type useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { handleDeepLinkUrl } from '@unionkey/kit/src/routes/config/deeplink';
+import { ContextJotaiActionsBase } from '@unionkey/kit/src/states/jotai/utils/ContextJotaiActionsBase';
+import { MaximumNumberOfTabs } from '@unionkey/kit/src/views/Discovery/config/Discovery.constants';
 import type {
   ESiteMode,
   IBrowserBookmark,
@@ -16,7 +16,7 @@ import type {
   IMatchDAppItemType,
   IOnWebviewNavigationFnParams,
   IWebTab,
-} from '@onekeyhq/kit/src/views/Discovery/types';
+} from '@unionkey/kit/src/views/Discovery/types';
 import {
   browserTypeHandler,
   crossWebviewLoadUrl,
@@ -24,18 +24,18 @@ import {
   injectToResumeWebsocket,
   processWebSiteUrl,
   webviewRefs,
-} from '@onekeyhq/kit/src/views/Discovery/utils/explorerUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import { openUrlInApp } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import sortUtils from '@onekeyhq/shared/src/utils/sortUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { EValidateUrlEnum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkey/kit/src/views/Discovery/utils/explorerUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkey/shared/src/routes';
+import { memoFn } from '@unionkey/shared/src/utils/cacheUtils';
+import { generateUUID } from '@unionkey/shared/src/utils/miscUtils';
+import { openUrlInApp } from '@unionkey/shared/src/utils/openUrlUtils';
+import sortUtils from '@unionkey/shared/src/utils/sortUtils';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
+import { EValidateUrlEnum } from '@unionkey/shared/types/dappConnection';
 
 import {
   activeTabIdAtom,

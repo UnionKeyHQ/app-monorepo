@@ -1,17 +1,17 @@
 import {
   EAddressEncodings,
   ECoreApiExportedSecretKeyType,
-} from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { EMPTY_NATIVE_TOKEN_ADDRESS } from '@onekeyhq/shared/src/consts/addresses';
+} from '@unionkey/core/src/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { EMPTY_NATIVE_TOKEN_ADDRESS } from '@unionkey/shared/src/consts/addresses';
 import {
   COINNAME_BTC,
   COINTYPE_BTC,
   IMPL_BTC,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
+} from '@unionkey/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EEarnProviderEnum } from '@unionkey/shared/types/earn';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
-import { type IDecodedTx } from '@onekeyhq/shared/types/tx';
+import { AddressInfo } from '@unionkey/kit/src/components/AddressInfo';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IAddressInfo } from '@unionkey/shared/types/address';
+import { type IDecodedTx } from '@unionkey/shared/types/tx';
 
 import { InfoItem } from './TxDetailsInfoItem';
 

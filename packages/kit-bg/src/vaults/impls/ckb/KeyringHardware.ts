@@ -6,22 +6,22 @@ import {
 } from '@ckb-lumos/helpers';
 import { bytesToHex } from '@noble/hashes/utils';
 
-import { getConfig } from '@onekeyhq/core/src/chains/ckb/sdkCkb';
-import type { IEncodedTxCkb } from '@onekeyhq/core/src/chains/ckb/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import { getConfig } from '@unionkey/core/src/chains/ckb/sdkCkb';
+import type { IEncodedTxCkb } from '@unionkey/core/src/chains/ckb/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+  UnionKeyInternalError,
+} from '@unionkey/shared/src/errors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -51,7 +51,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
       chainName: 'ckb',
     };
   }
@@ -71,7 +71,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             template,
             pathSuffix,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -105,7 +105,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       '{index}',
             //       `${index}`,
             //     )}`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     network: config.PREFIX,
             //   })),
             // });
@@ -159,7 +159,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const witnessHex = txSkeleton.witnesses.get(0);
     if (!witnessHex) {
-      throw new OneKeyInternalError('Transaction serialization failure');
+      throw new UnionKeyInternalError('Transaction serialization failure');
     }
 
     const transaction = createTransactionFromSkeleton(txSkeleton);

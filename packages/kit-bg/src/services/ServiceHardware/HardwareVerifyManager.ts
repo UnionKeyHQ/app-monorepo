@@ -1,26 +1,26 @@
 import {
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyServerApiError } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyServerApiError } from '@unionkey/shared/src/errors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import stringUtils from '@unionkey/shared/src/utils/stringUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import type {
   IDeviceVerifyVersionCompareResult,
   IFetchFirmwareVerifyHashParams,
   IFirmwareVerifyInfo,
-  IOneKeyDeviceFeatures,
-} from '@onekeyhq/shared/types/device';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+  IUnionKeyDeviceFeatures,
+} from '@unionkey/shared/types/device';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 
 import localDb from '../../dbs/local/localDb';
 import { settingsPersistAtom } from '../../states/jotai/atoms';
@@ -34,7 +34,7 @@ import type {
 import type {
   DeviceVerifySignature,
   IDeviceType,
-  OnekeyFeatures,
+  UnionkeyFeatures,
   SearchDevice,
 } from '@onekeyfe/hd-core';
 
@@ -117,14 +117,14 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
         const data = `${settings.instanceId}_${ts}_${stringUtils.randomString(12)}`;
         const dataHex = bufferUtils.textToHex(data, 'utf-8');
   
-        // 调用设备 SDK 获取证书和签名
+        // 调用设备 SDK 获取证书和签�?
         const verifySig: DeviceVerifySignature = await this.getDeviceCertWithSig({
           connectId,
           dataHex,
         });
         const { cert, signature } = verifySig;
   
-        // 关闭硬件弹窗（只是 UI）
+        // 关闭硬件弹窗（只�?UI�?
         await this.backgroundApi.serviceHardwareUI.closeHardwareUiStateDialog({
           skipDeviceCancel: true,
           connectId,
@@ -132,7 +132,7 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
   
         appEventBus.emit(EAppEventBusNames.HardwareVerifyAfterDeviceConfirm, undefined);
   
-        // --- 调用本地服务器 ---
+        // --- 调用本地服务�?---
         let result: { code?: number; message?: string; data?: string } = {};
         try {
           const resp = await fetch("https://api.unionkey.io/hardware/verify", {
@@ -190,14 +190,14 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
   async shouldAuthenticateFirmwareByHash({
     features,
   }: {
-    features: IOneKeyDeviceFeatures | undefined;
+    features: IUnionKeyDeviceFeatures | undefined;
   }) {
-    // onekey_firmware_version
-    // onekey_firmware_hash
-    // onekey_ble_version
-    // onekey_ble_hash
-    // onekey_boot_version
-    // onekey_boot_hash
+    // unionkey_firmware_version
+    // unionkey_firmware_hash
+    // unionkey_ble_version
+    // unionkey_ble_hash
+    // unionkey_boot_version
+    // unionkey_boot_hash
     if (!features) {
       return false;
     }
@@ -287,28 +287,28 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
   @backgroundMethod()
   async verifyFirmwareHash({
     deviceType,
-    onekeyFeatures,
+    unionkeyFeatures,
   }: {
     deviceType: IDeviceType;
-    onekeyFeatures: OnekeyFeatures | undefined;
+    unionkeyFeatures: UnionkeyFeatures | undefined;
   }): Promise<IDeviceVerifyVersionCompareResult> {
     const defaultResult = {
       certificate: {
         isMatch: true,
-        format: onekeyFeatures?.onekey_serial_no ?? '',
+        format: unionkeyFeatures?.unionkey_serial_no ?? '',
       },
       firmware: { isMatch: false, format: '' },
       bluetooth: { isMatch: false, format: '' },
       bootloader: { isMatch: false, format: '' },
     };
 
-    if (!onekeyFeatures) {
+    if (!unionkeyFeatures) {
       return defaultResult;
     }
 
     const verifyVersions =
       await deviceUtils.getDeviceVerifyVersionsFromFeatures({
-        features: onekeyFeatures,
+        features: unionkeyFeatures,
         deviceType,
       });
     if (!verifyVersions) {
@@ -323,7 +323,7 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
       serverVerifyInfos: result,
     });
     const localVerifyInfos = deviceUtils.parseLocalDeviceVersions({
-      onekeyFeatures,
+      unionkeyFeatures,
     });
 
     const firmwareMatch = deviceUtils.compareDeviceVersions({
@@ -349,7 +349,7 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
     return {
       certificate: {
         isMatch: true,
-        format: onekeyFeatures?.onekey_serial_no ?? '',
+        format: unionkeyFeatures?.unionkey_serial_no ?? '',
       },
       firmware: {
         isMatch: firmwareMatch,

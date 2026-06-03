@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkey/components';
 import {
   Icon,
   Input,
@@ -10,8 +10,8 @@ import {
   Toast,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import Icons from '@onekeyhq/components/src/primitives/Icon/Icons';
+} from '@unionkey/components';
+import Icons from '@unionkey/components/src/primitives/Icon/Icons';
 
 import { Layout } from './utils/Layout';
 

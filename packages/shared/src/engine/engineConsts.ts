@@ -1,4 +1,4 @@
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { getNetworkIdsMap } from '../config/networkIds';
 
@@ -114,7 +114,7 @@ const COINTYPE_BFC = '728';
 const IMPL_NEO = 'neo';
 const COINTYPE_NEO = '888';
 
-const IMPL_ALLNETWORKS = 'onekeyall';
+const IMPL_ALLNETWORKS = 'unionkeyall';
 const COINTYPE_ALLNETWORKS = '0000';
 
 const SUPPORTED_IMPLS = new Set([
@@ -207,7 +207,7 @@ export const getEnabledAccountDynamicNetworkIds = (): string[] => [
 
 // TODO move to networkUtils
 export const getEnabledNFTNetworkIds = (): string[] => [
-  getNetworkIdsMap().onekeyall,
+  getNetworkIdsMap().unionkeyall,
   getNetworkIdsMap().eth,
   getNetworkIdsMap().optimism,
   getNetworkIdsMap().bsc,
@@ -299,7 +299,7 @@ export {
   getSupportedImpls,
 };
 
-// switch network default rpc to onekey rpc node
+// switch network default rpc to unionkey rpc node
 export const AUTO_SWITCH_DEFAULT_RPC_AT_VERSION = '3.21.0';
 
 export const PRICE_EXPIRED_TIME = timerUtils.getTimeDurationMs({ minute: 15 });

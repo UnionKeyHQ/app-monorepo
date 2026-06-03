@@ -1,5 +1,5 @@
-import { Stack, TextArea, TextAreaInput } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack, TextArea, TextAreaInput } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { Layout } from './utils/Layout';
 

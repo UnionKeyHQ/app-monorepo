@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import type { IPrimeUserInfo } from '@onekeyhq/shared/types/prime/primeTypes';
+import type { IPrimeUserInfo } from '@unionkey/shared/types/prime/primeTypes';
 
 import { usePrimeAuthV2 } from './usePrimeAuthV2';
 import { usePrimePaymentMethods } from './usePrimePaymentMethods';

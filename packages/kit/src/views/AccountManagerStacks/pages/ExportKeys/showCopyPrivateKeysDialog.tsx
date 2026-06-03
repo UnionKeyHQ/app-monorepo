@@ -2,9 +2,9 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ICheckedState } from '@onekeyhq/components';
-import { Checkbox, Dialog, Stack, useClipboard } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ICheckedState } from '@unionkey/components';
+import { Checkbox, Dialog, Stack, useClipboard } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function CopyPrivateKeysDialog({
   defaultValue,

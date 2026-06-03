@@ -6,36 +6,36 @@ import { cloneDeep, has } from 'lodash';
 import {
   getBtcForkNetwork,
   validateBtcAddress,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import EventSource from '@onekeyhq/shared/src/eventSource';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { getRequestHeaders } from '@onekeyhq/shared/src/request/Interceptor';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import EventSource from '@unionkey/shared/src/eventSource';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { getRequestHeaders } from '@unionkey/shared/src/request/Interceptor';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 import {
   formatBalance,
   numberFormat,
-} from '@onekeyhq/shared/src/utils/numberUtils';
-import { equalsIgnoreCase } from '@onekeyhq/shared/src/utils/stringUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import type { ESigningScheme } from '@onekeyhq/shared/types/message';
+} from '@unionkey/shared/src/utils/numberUtils';
+import { equalsIgnoreCase } from '@unionkey/shared/src/utils/stringUtils';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
+import type { ESigningScheme } from '@unionkey/shared/types/message';
 import type {
   ISwapProviderManager,
   ISwapServiceProvider,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
 import {
   maxRecentTokenPairs,
   swapApprovingStateFetchInterval,
@@ -43,7 +43,7 @@ import {
   swapHistoryStateFetchRiceIntervalCount,
   swapQuoteEventTimeout,
   swapSpeedSwapApprovingStateFetchInterval,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
 import type {
   ESwapQuoteKind,
   IFetchBuildTxParams,
@@ -67,7 +67,7 @@ import type {
   ISwapToken,
   ISwapTokenBase,
   ISwapTxHistory,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 import {
   EProtocolOfExchange,
   ESwapApproveTransactionStatus,
@@ -78,7 +78,7 @@ import {
   ESwapLimitOrderUpdateInterval,
   ESwapTabSwitchType,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import {
   inAppNotificationAtom,
@@ -252,11 +252,11 @@ export default class ServiceSwap extends ServiceBase {
         protocol === ESwapTabSwitchType.LIMIT
           ? EProtocolOfExchange.LIMIT
           : EProtocolOfExchange.SWAP,
-      networkId: networkId ?? getNetworkIdsMap().onekeyall,
+      networkId: networkId ?? getNetworkIdsMap().unionkeyall,
       keywords,
       limit,
       accountAddress: !networkUtils.isAllNetwork({
-        networkId: networkId ?? getNetworkIdsMap().onekeyall,
+        networkId: networkId ?? getNetworkIdsMap().unionkeyall,
       })
         ? accountAddress
         : undefined,
@@ -355,7 +355,7 @@ export default class ServiceSwap extends ServiceBase {
         const { accountsInfo } =
           await this.backgroundApi.serviceAllNetwork.getAllNetworkAccounts({
             accountId: allNetAccountId,
-            networkId: getNetworkIdsMap().onekeyall,
+            networkId: getNetworkIdsMap().unionkeyall,
           });
         const noBtcAccounts = accountsInfo.filter(
           (networkDataString) =>
@@ -670,7 +670,7 @@ export default class ServiceSwap extends ServiceBase {
       ...headers,
       ...(accountId
         ? {
-            'X-OneKey-Wallet-Type': walletType,
+            'X-UnionKey-Wallet-Type': walletType,
           }
         : {}),
     };
@@ -1434,7 +1434,7 @@ export default class ServiceSwap extends ServiceBase {
             numberFormat(item.baseInfo.fromAmount, {
               formatter: 'balance',
             }) as string
-          } ${item.baseInfo.fromToken.symbol} â†’ ${
+          } ${item.baseInfo.fromToken.symbol} â†?${
             numberFormat(item.baseInfo.toAmount, {
               formatter: 'balance',
             }) as string
@@ -2177,7 +2177,7 @@ export default class ServiceSwap extends ServiceBase {
       ...headers,
       ...(accountId
         ? {
-            'X-OneKey-Wallet-Type': walletType,
+            'X-UnionKey-Wallet-Type': walletType,
           }
         : {}),
     };

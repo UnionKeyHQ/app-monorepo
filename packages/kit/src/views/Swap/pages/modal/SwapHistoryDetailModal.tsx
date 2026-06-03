@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -17,32 +17,32 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useFormatDate from '@onekeyhq/kit/src/hooks/useFormatDate';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AddressInfo } from '@unionkey/kit/src/components/AddressInfo';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import useFormatDate from '@unionkey/kit/src/hooks/useFormatDate';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   useInAppNotificationAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { IExplorersInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/src/routes/swap';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import { equalTokenNoCaseSensitive } from '@unionkey/shared/src/utils/tokenUtils';
+import type { IExplorersInfo } from '@unionkey/shared/types/swap/types';
 import {
   EExplorerType,
   ESwapCleanHistorySource,
   ESwapCrossChainStatus,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
-import { EDecodedTxDirection } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/swap/types';
+import { EDecodedTxDirection } from '@unionkey/shared/types/tx';
 
 import { AssetItem } from '../../../AssetDetails/pages/HistoryDetails';
 import {
@@ -532,11 +532,14 @@ const SwapHistoryDetailModal = () => {
                 }
               />
             ) : null}
-            {txHistory?.swapInfo?.oneKeyFeeExtraInfo?.oneKeyFeeUsd ? (
+            {txHistory?.swapInfo?.unionKeyFeeExtraInfo?.unionKeyFeeUsd ||
+            txHistory?.swapInfo?.unionKeyFeeExtraInfo?.oneKeyFeeUsd ||
+            txHistory?.swapInfo?.oneKeyFeeExtraInfo?.unionKeyFeeUsd ||
+            txHistory?.swapInfo?.oneKeyFeeExtraInfo?.oneKeyFeeUsd ? (
               <InfoItem
                 disabledCopy
                 label={intl.formatMessage({
-                  id: ETranslations.provider_ios_popover_onekey_fee,
+                  id: ETranslations.provider_ios_popover_unionkey_fee,
                 })}
                 renderContent={
                   <NumberSizeableText
@@ -547,7 +550,13 @@ const SwapHistoryDetailModal = () => {
                       currency: '$',
                     }}
                   >
-                    {txHistory?.swapInfo?.oneKeyFeeExtraInfo?.oneKeyFeeUsd}
+                    {txHistory?.swapInfo?.unionKeyFeeExtraInfo
+                      ?.unionKeyFeeUsd ??
+                      txHistory?.swapInfo?.unionKeyFeeExtraInfo
+                        ?.oneKeyFeeUsd ??
+                      txHistory?.swapInfo?.oneKeyFeeExtraInfo
+                        ?.unionKeyFeeUsd ??
+                      txHistory?.swapInfo?.oneKeyFeeExtraInfo?.oneKeyFeeUsd}
                   </NumberSizeableText>
                 }
               />

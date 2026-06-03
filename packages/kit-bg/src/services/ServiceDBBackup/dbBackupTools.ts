@@ -1,9 +1,9 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IInstanceMetaBackup } from '@onekeyhq/shared/types/desktop';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IInstanceMetaBackup } from '@unionkey/shared/types/desktop';
 import {
   EDesktopStoreKeys,
   INSTANCE_META_BACKUP_KEY,
-} from '@onekeyhq/shared/types/desktop';
+} from '@unionkey/shared/types/desktop';
 
 async function backupInstanceMeta(instanceMeta: IInstanceMetaBackup) {
   try {

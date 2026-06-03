@@ -18,7 +18,7 @@ import type {
 } from '@react-native-async-storage/async-storage/lib/typescript/types';
 
 // localforage.config({
-//   name: 'OneKeyStorage',
+//   name: 'UnionKeyStorage',
 // });
 
 if (process.env.NODE_ENV !== 'production') {
@@ -134,7 +134,7 @@ class WebStorage implements AsyncStorageStatic {
   // localforage = localforage;
 
   checkDiskFull(payload?: any) {
-    if (globalThis.$onekeySystemDiskIsFull) {
+    if (globalThis.$unionkeySystemDiskIsFull) {
       appEventBus.emit(EAppEventBusNames.ShowSystemDiskFullWarning, undefined);
       console.error('WebStorage==>checkDiskFull ', payload);
       throw new SystemDiskFullError();

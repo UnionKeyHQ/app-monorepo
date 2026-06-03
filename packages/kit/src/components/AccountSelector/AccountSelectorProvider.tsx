@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 import {
   AccountSelectorJotaiProvider,

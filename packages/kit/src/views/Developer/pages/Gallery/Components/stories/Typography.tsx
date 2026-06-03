@@ -1,6 +1,6 @@
-import { RichSizeableText, SizableText, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { RichSizeableText, SizableText, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import { Layout } from './utils/Layout';
 
@@ -80,13 +80,13 @@ const TypographyGallery = () => (
         element: (
           <YStack gap="$2">
             <RichSizeableText
-              linkList={{ a: { url: 'https://app.onekey.so' } }}
+              linkList={{ a: { url: 'https://app.unionkey.so' } }}
             >
-              {'Hello<a> OneKey </a>World'}
+              {'Hello<a> UnionKey </a>World'}
             </RichSizeableText>
             <RichSizeableText
               linkList={{
-                url0: { url: 'https://app.onekey.so', color: 'orange' },
+                url0: { url: 'https://app.unionkey.so', color: 'orange' },
                 url1: {
                   url: 'https://google.com',
                   color: 'pink',
@@ -103,7 +103,7 @@ const TypographyGallery = () => (
               }}
             >
               {
-                'Hello<url0> OneKey </url0><url1> Google </url1><url2> ChatGPT </url2>World'
+                'Hello<url0> UnionKey </url0><url1> Google </url1><url2> ChatGPT </url2>World'
               }
             </RichSizeableText>
             <RichSizeableText
@@ -115,7 +115,7 @@ const TypographyGallery = () => (
                 number: '10',
               }}
             >
-              {ETranslations.hardware_onekey_lite_pin_error_desc}
+              {ETranslations.hardware_unionkey_lite_pin_error_desc}
             </RichSizeableText>
           </YStack>
         ),

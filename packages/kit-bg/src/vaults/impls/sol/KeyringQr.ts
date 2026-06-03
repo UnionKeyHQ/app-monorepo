@@ -1,34 +1,34 @@
 import { PublicKey, VersionedTransaction } from '@solana/web3.js';
 import bs58 from 'bs58';
 
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
-import { OffchainMessage } from '@onekeyhq/core/src/chains/sol/sdkSol/OffchainMessage';
-import { parseToNativeTx } from '@onekeyhq/core/src/chains/sol/sdkSol/parse';
-import { verifySolSignedTxMatched } from '@onekeyhq/core/src/chains/sol/sdkSol/verify';
+import type { CoreChainApiBase } from '@unionkey/core/src/base/CoreChainApiBase';
+import { OffchainMessage } from '@unionkey/core/src/chains/sol/sdkSol/OffchainMessage';
+import { parseToNativeTx } from '@unionkey/core/src/chains/sol/sdkSol/parse';
+import { verifySolSignedTxMatched } from '@unionkey/core/src/chains/sol/sdkSol/verify';
 import {
   type IEncodedTxSol,
   type INativeTxSol,
-} from '@onekeyhq/core/src/chains/sol/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/sol/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import type {
   AirGapUR,
   IAirGapGenerateSignRequestParamsSol,
   IAirGapSignatureSol,
-} from '@onekeyhq/qr-wallet-sdk';
-import { EAirGapDataTypeSol, getAirGapSdk } from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/qr-wallet-sdk';
+import { EAirGapDataTypeSol, getAirGapSdk } from '@unionkey/qr-wallet-sdk';
 import {
-  OneKeyErrorAirGapAccountNotFound,
-  OneKeyErrorAirGapInvalidQrCode,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { EMessageTypesSolana } from '@onekeyhq/shared/types/message';
+  UnionKeyErrorAirGapAccountNotFound,
+  UnionKeyErrorAirGapInvalidQrCode,
+} from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import { EMessageTypesSolana } from '@unionkey/shared/types/message';
 
 import localDb from '../../../dbs/local/localDb';
 import { UR_DEFAULT_ORIGIN } from '../../../services/ServiceQrWallet/qrWalletConsts';
@@ -78,7 +78,7 @@ export class KeyringQr extends KeyringQrBase {
             });
 
           if (!airGapAccount) {
-            throw new OneKeyErrorAirGapAccountNotFound();
+            throw new UnionKeyErrorAirGapAccountNotFound();
           }
 
           const publicKey = airGapAccount?.publicKey;
@@ -213,7 +213,7 @@ export class KeyringQr extends KeyringQrBase {
   }): Promise<void> {
     if (requestId && requestId !== requestIdOfSig) {
       console.error('Solana tx requestId not match');
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
     return verifySolSignedTxMatched({
       signerAddress: from,
@@ -235,7 +235,7 @@ export class KeyringQr extends KeyringQrBase {
       const sig = sdk.sol.parseSignature(ur);
       return Promise.resolve(sig);
     } catch (error) {
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
   }
 

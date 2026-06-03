@@ -1,11 +1,11 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
 import type {
   EChangeHistoryContentType,
   IChangeHistoryItem,
   IChangeHistoryUpdateItem,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import { EChangeHistoryEntityType } from '@onekeyhq/shared/src/types/changeHistory';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkey/shared/src/types/changeHistory';
+import { EChangeHistoryEntityType } from '@unionkey/shared/src/types/changeHistory';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

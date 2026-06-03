@@ -3,19 +3,19 @@ import { useCallback, useEffect, useRef } from 'react';
 import { StackActions, useNavigation } from '@react-navigation/native';
 import { AppState } from 'react-native';
 
-import { Page, Spinner, Stack } from '@onekeyhq/components';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import type { ITransferInfo } from '@onekeyhq/kit-bg/src/vaults/types';
+import { Page, Spinner, Stack } from '@unionkey/components';
+import type { IEncodedTx } from '@unionkey/core/src/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkey/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkey/kit/src/hooks/useDappQuery';
+import type { ITransferInfo } from '@unionkey/kit-bg/src/vaults/types';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EModalSignatureConfirmRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalSignatureConfirmParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { EModalSignatureConfirmRoutes } from '@unionkey/shared/src/routes';
+import type { IModalSignatureConfirmParamList } from '@unionkey/shared/src/routes';
 
 import type {
   NavigationAction,

@@ -9,29 +9,29 @@ import {
   Page,
   SizableText,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { IWalletAvatarProps } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import type { IWalletAvatarProps } from '@unionkey/kit/src/components/WalletAvatar';
+import { WalletAvatar } from '@unionkey/kit/src/components/WalletAvatar';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   EModalDeviceManagementRoutes,
   EModalRoutes,
   EOnboardingPages,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IHwQrWalletWithDevice } from '@onekeyhq/shared/types/account';
+} from '@unionkey/shared/src/routes';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import type { IHwQrWalletWithDevice } from '@unionkey/shared/types/account';
 
-import { useBuyOneKeyHeaderRightButton } from '../../hooks/useBuyOneKeyHeaderRightButton';
+import { useBuyUnionKeyHeaderRightButton } from '../../hooks/useBuyUnionKeyHeaderRightButton';
 
 function DeviceManagementListModal() {
   const intl = useIntl();
@@ -150,7 +150,7 @@ function DeviceManagementListModal() {
     [intl, onAddDevice],
   );
 
-  const { headerRight } = useBuyOneKeyHeaderRightButton({
+  const { headerRight } = useBuyUnionKeyHeaderRightButton({
     inDeviceManagementStack: true,
   });
 
@@ -182,7 +182,7 @@ function DeviceManagementListModal() {
         >
           <SizableText size="$bodyMd" color="$textSubdued">
             {intl.formatMessage({
-              id: ETranslations.global_onekey_prompt_dont_have_yet,
+              id: ETranslations.global_unionkey_prompt_dont_have_yet,
             })}
           </SizableText>
           <Anchor

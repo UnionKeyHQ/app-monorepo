@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { AppState } from 'react-native';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export const getCurrentVisibilityState = () => {
   if (platformEnv.isNative) {
@@ -11,7 +11,7 @@ export const getCurrentVisibilityState = () => {
     return AppState.currentState === 'active' || AppState.currentState === null;
   }
   if (platformEnv.isDesktop) {
-    return globalThis.desktopApi.isFocused();
+    return globalThis.desktopApi?.isFocused?.() ?? true;
   }
   return document.visibilityState === 'visible';
 };
@@ -28,6 +28,9 @@ export const onVisibilityStateChange = (
   }
 
   if (platformEnv.isDesktop) {
+    if (!globalThis.desktopApi?.onAppState) {
+      return () => {};
+    }
     const removeSubscription = globalThis.desktopApi.onAppState((state) => {
       callback(state === 'active');
     });

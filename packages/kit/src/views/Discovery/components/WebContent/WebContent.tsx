@@ -1,8 +1,8 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useMemo } from 'react';
 
-import WebView from '@onekeyhq/kit/src/components/WebView';
-import { useBrowserTabActions } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
+import WebView from '@unionkey/kit/src/components/WebView';
+import { useBrowserTabActions } from '@unionkey/kit/src/states/jotai/contexts/discovery';
 
 import { webviewRefs } from '../../utils/explorerUtils';
 

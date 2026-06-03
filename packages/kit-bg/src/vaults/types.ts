@@ -1,4 +1,4 @@
-import type { IAdaAmount } from '@onekeyhq/core/src/chains/ada/types';
+import type { IAdaAmount } from '@unionkey/core/src/chains/ada/types';
 import type {
   EAddressEncodings,
   ECoreApiExportedSecretKeyType,
@@ -11,31 +11,31 @@ import type {
   ISignedTxPro,
   IUnsignedMessage,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import type { ICoinSelectAlgorithm } from '@onekeyhq/core/src/utils/coinSelectUtils';
-import type { IAirGapAccount } from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/core/src/types';
+import type { ICoinSelectAlgorithm } from '@unionkey/core/src/utils/coinSelectUtils';
+import type { IAirGapAccount } from '@unionkey/qr-wallet-sdk';
 import type {
   ETranslations,
   ETranslationsMock,
-} from '@onekeyhq/shared/src/locale';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
-import type { IDBCustomRpc } from '@onekeyhq/shared/types/customRpc';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
-import type { IStakingConfig } from '@onekeyhq/shared/types/earn';
+} from '@unionkey/shared/src/locale';
+import type { IDappSourceInfo } from '@unionkey/shared/types';
+import type { IDBCustomRpc } from '@unionkey/shared/types/customRpc';
+import type { IDeviceSharedCallParams } from '@unionkey/shared/types/device';
+import type { IStakingConfig } from '@unionkey/shared/types/earn';
 import type {
   IFeeInfoUnit,
   ISendSelectedFeeInfo,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkey/shared/types/fee';
 import type {
   IAccountHistoryTx,
   IAllNetworkHistoryExtraItem,
   IOnChainHistoryTx,
   IOnChainHistoryTxNFT,
   IOnChainHistoryTxToken,
-} from '@onekeyhq/shared/types/history';
-import type { ILNURLPaymentInfo } from '@onekeyhq/shared/types/lightning';
-import type { ENFTType } from '@onekeyhq/shared/types/nft';
-import type { IStakingInfo } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/history';
+import type { ILNURLPaymentInfo } from '@unionkey/shared/types/lightning';
+import type { ENFTType } from '@unionkey/shared/types/nft';
+import type { IStakingInfo } from '@unionkey/shared/types/staking';
 import type {
   ESwapTabSwitchType,
   EWrappedType,
@@ -43,9 +43,9 @@ import type {
   IOKXTransactionObject,
   ISwapTokenBase,
   ISwapTxInfo,
-} from '@onekeyhq/shared/types/swap/types';
-import type { IToken } from '@onekeyhq/shared/types/token';
-import type { IReplaceTxInfo } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/swap/types';
+import type { IToken } from '@unionkey/shared/types/token';
+import type { IReplaceTxInfo } from '@unionkey/shared/types/tx';
 
 import type {
   IAccountDeriveInfoMapBtc,
@@ -411,7 +411,7 @@ export type IHwAllNetworkPrepareAccountsItem =
       address?: string;
 
       pub?: string;
-      publicKey?: string; // cosmos, sui, aptos ç¼º
+      publicKey?: string; // cosmos, sui, aptos ç¼?
       publickey?: string; // nostr
 
       npub?: string; // nostr
@@ -435,7 +435,7 @@ export type IExportAccountSecretKeysResult = string;
 // GetAddress ----------------------------------------------
 export type IHardwareGetAddressParams = {
   path: string;
-  showOnOneKey: boolean;
+  showOnUnionKey: boolean;
   /**
    * for btc like chain, when isTemplatePath is true, param path is whole path
    * e.g., isTemplatePath = false, then the path is m/44'/0'/0'

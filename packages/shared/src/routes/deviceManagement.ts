@@ -4,7 +4,7 @@ export enum EModalDeviceManagementRoutes {
   GuideModal = 'GuideModal',
   DeviceListModal = 'DeviceListModal',
   DeviceDetailModal = 'DeviceDetailModal',
-  BuyOneKeyHardwareWallet = 'BuyOneKeyHardwareWallet',
+  BuyUnionKeyHardwareWallet = 'BuyUnionKeyHardwareWallet',
   HardwareTroubleshootingModal = 'HardwareTroubleshootingModal',
 }
 
@@ -14,7 +14,7 @@ export type IModalDeviceManagementParamList = {
   [EModalDeviceManagementRoutes.DeviceDetailModal]: {
     walletId: string;
   };
-  [EModalDeviceManagementRoutes.BuyOneKeyHardwareWallet]: undefined;
+  [EModalDeviceManagementRoutes.BuyUnionKeyHardwareWallet]: undefined;
   [EModalDeviceManagementRoutes.HardwareTroubleshootingModal]: {
     walletWithDevice: IHwQrWalletWithDevice;
   };

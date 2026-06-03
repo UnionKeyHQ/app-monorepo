@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import type { IDecodedTxExtraDnx } from '@onekeyhq/core/src/chains/dnx/types';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { type IDecodedTx } from '@onekeyhq/shared/types/tx';
+import type { IDecodedTxExtraDnx } from '@unionkey/core/src/chains/dnx/types';
+import { AddressInfo } from '@unionkey/kit/src/components/AddressInfo';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { type IDecodedTx } from '@unionkey/shared/types/tx';
 
 import { InfoItem } from './TxDetailsInfoItem';
 

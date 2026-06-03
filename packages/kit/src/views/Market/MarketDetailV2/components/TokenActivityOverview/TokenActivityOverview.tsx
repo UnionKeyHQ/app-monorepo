@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { Stack } from '@onekeyhq/components';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/marketV2';
+import { Stack } from '@unionkey/components';
+import type { IMarketTokenDetail } from '@unionkey/shared/types/marketV2';
 
 import { ActivityRow } from './ActivityRow';
 import { TimeRangeSelector } from './TimeRangeSelector';
@@ -62,14 +62,11 @@ export function TokenActivityOverview({
     }
   }, [timeRangeOptions, selectedTimeRange]);
 
-  const { buys, sells, buyVolume, sellVolume } = formatTokenActivityData(
-    tokenDetail,
-    selectedTimeRange,
-  );
+  const { buys, sells, buyVolume, sellVolume, buyers, sellers } =
+    formatTokenActivityData(tokenDetail, selectedTimeRange);
 
-  // Simplified: assuming each buy/sell action is a unique buyer/seller for this period
-  const buyersCount = buys;
-  const sellersCount = sells;
+  const buyersCount = buyers;
+  const sellersCount = sellers;
 
   const totalTransactions = buys + sells;
   const totalTurnover = buyVolume + sellVolume;

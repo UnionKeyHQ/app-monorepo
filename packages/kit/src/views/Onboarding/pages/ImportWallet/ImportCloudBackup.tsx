@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import { Empty, Page } from '@onekeyhq/components';
-import BackupDeviceList from '@onekeyhq/kit/src/views/CloudBackup/components/BackupDeviceList';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Empty, Page } from '@unionkey/components';
+import BackupDeviceList from '@unionkey/kit/src/views/CloudBackup/components/BackupDeviceList';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export default function ImportCloudBackup() {
   const intl = useIntl();

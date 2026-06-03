@@ -2,13 +2,13 @@ import {
   EServiceEndpointEnum,
   type IEndpointEnv,
   type IServiceEndpoint,
-} from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/types/endpoint';
 
 import requestHelper from '../request/requestHelper';
 
 import { buildServiceEndpoint } from './appConfig';
 
-// Only OneKey endpoints are allowed here.
+// Only UnionKey endpoints are allowed here.
 export const endpointsMap: Record<IEndpointEnv, IServiceEndpoint> = {
   test: {
     wallet: buildServiceEndpoint({

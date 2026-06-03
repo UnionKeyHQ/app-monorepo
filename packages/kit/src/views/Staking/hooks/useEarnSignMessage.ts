@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import { autoFixPersonalSignMessage } from '@onekeyhq/core/src/chains/evm/sdkEvm/signMessage';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+import { autoFixPersonalSignMessage } from '@unionkey/core/src/chains/evm/sdkEvm/signMessage';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
+import type { IStakeProtocolDetails } from '@unionkey/shared/types/staking';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

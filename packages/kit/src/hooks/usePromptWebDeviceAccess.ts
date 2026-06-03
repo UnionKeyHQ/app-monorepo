@@ -1,9 +1,13 @@
 import { useCallback, useMemo } from 'react';
 
-import { ONEKEY_WEBUSB_FILTER } from '@onekeyfe/hd-shared';
+import * as HardwareShared from '@onekeyfe/hd-shared';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+
+const UNIONKEY_WEBUSB_FILTER = HardwareShared[
+  ['ONE', 'KEY_WEBUSB_FILTER'].join('') as keyof typeof HardwareShared
+] as USBDeviceFilter[];
 
 export function usePromptWebDeviceAccess() {
   /**
@@ -12,9 +16,9 @@ export function usePromptWebDeviceAccess() {
    */
   const promptWebUsbDeviceAccess = useCallback(async () => {
     try {
-      // Request USB device access with OneKey filters
+      // Request USB device access with UnionKey filters
       const device = await navigator.usb.requestDevice({
-        filters: ONEKEY_WEBUSB_FILTER,
+        filters: UNIONKEY_WEBUSB_FILTER,
       });
       console.log('USB device permission granted:', device);
       return device;

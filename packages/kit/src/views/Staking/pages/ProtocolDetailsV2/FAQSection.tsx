@@ -6,25 +6,25 @@ import {
   SizableText,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import { getImportFromToken } from '@onekeyhq/shared/types/earn/earnProvider.constants';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { HyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useUserWalletProfile } from '@unionkey/kit/src/hooks/useUserWalletProfile';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import type { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import { EModalRoutes } from '@unionkey/shared/src/routes/modal';
+import { EModalSwapRoutes } from '@unionkey/shared/src/routes/swap';
+import { getImportFromToken } from '@unionkey/shared/types/earn/earnProvider.constants';
 import type {
   IEarnTokenInfo,
   IStakeEarnDetail,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/staking';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import { EarnText } from '../../components/ProtocolDetails/EarnText';
 

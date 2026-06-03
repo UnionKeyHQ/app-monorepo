@@ -8,14 +8,14 @@ import {
   Stack,
   Toast,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import type { IV4MigrationImportedCredential } from '@onekeyhq/kit-bg/src/migrations/v4ToV5Migration/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import type { IV4MigrationImportedCredential } from '@unionkey/kit-bg/src/migrations/v4ToV5Migration/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { Layout } from './utils/Layout';
 
@@ -154,7 +154,7 @@ function SendTestButton() {
           console.log('demoSend done:', r);
         }}
       >
-        测试发送流程(使用首页的账户选择器)
+        测试发送流�?使用首页的账户选择�?
       </Button>
       <SizableText>
         {activeAccount.network?.id}, {activeAccount.account?.id},

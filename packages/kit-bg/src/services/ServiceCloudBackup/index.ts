@@ -6,40 +6,40 @@ import {
   encryptImportedCredential,
   encryptRevealableSeed,
   mnemonicFromEntropy,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import {
   decryptAsync,
   encryptAsync,
-} from '@onekeyhq/core/src/secret/encryptors/aes256';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { cloudBackupPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/core/src/secret/encryptors/aes256';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
+import { cloudBackupPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import * as CloudFs from '@onekeyhq/shared/src/cloudfs';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import * as CloudFs from '@unionkey/shared/src/cloudfs';
 import {
   WALLET_TYPE_HD,
   WALLET_TYPE_HW,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import RNFS from '@onekeyhq/shared/src/modules3rdParty/react-native-fs';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import RNFS from '@unionkey/shared/src/modules3rdParty/react-native-fs';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 import {
   generateUUID,
   getContactUUID,
   getHDAccountUUID,
   getImportedAccountUUID,
   getWatchingAccountUUID,
-} from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkey/shared/src/utils/miscUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EReasonForNeedPassword } from '@unionkey/shared/types/setting';
 
 import ServiceBase from '../ServiceBase';
 
@@ -60,7 +60,7 @@ import type {
 
 const { shortenAddress } = accountUtils;
 
-const CLOUD_FLODER_NAME = 'onekey_backup_V5/';
+const CLOUD_FLODER_NAME = 'unionkey_backup_V5/';
 const CLOUD_METADATA_FILE_NAME = 'metadata.json';
 
 export const HDWALLET_BACKUP_VERSION = 1;

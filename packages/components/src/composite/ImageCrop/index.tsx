@@ -6,8 +6,8 @@ import { Cropper } from 'react-mobile-cropper';
 import 'react-mobile-cropper/dist/style.css';
 import { withStaticProperties } from 'tamagui';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
 
 import { Stack } from '../../primitives';
 import { Dialog } from '../Dialog';
@@ -104,7 +104,7 @@ function BasicImageCrop({
           stencilProps={{
             aspectRatio: defaultSize.width / defaultSize.height,
           }}
-          className="onekey-img-cropper"
+          className="unionkey-img-cropper"
         />
       </Stack>
       <Dialog.Footer

@@ -6,8 +6,8 @@ import {
 } from '@walletconnect/sign-client';
 import { isEmpty, isNil } from 'lodash';
 
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import type { IWalletConnectSession } from '@onekeyhq/shared/src/walletConnect/types';
+import appStorage from '@unionkey/shared/src/storage/appStorage';
+import type { IWalletConnectSession } from '@unionkey/shared/src/walletConnect/types';
 
 import type { IKeyValueStorage } from '@walletconnect/keyvaluestorage';
 

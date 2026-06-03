@@ -7,14 +7,14 @@ import {
   Tooltip,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   HeaderButtonGroup,
   HeaderIconButton,
-} from '@onekeyhq/components/src/layouts/Navigation/Header';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkey/components/src/layouts/Navigation/Header';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EShortcutEvents } from '@unionkey/shared/src/shortcuts/shortcuts.enum';
 
 import { useUrlRiskConfig } from '../../hooks/useUrlRiskConfig';
 

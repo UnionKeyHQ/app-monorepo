@@ -1,8 +1,8 @@
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 import {
   ECustomTokenStatus,
   type ICloudSyncCustomToken,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkey/shared/types/token';
 
 import { V4MigrationManagerBase } from './V4MigrationManagerBase';
 

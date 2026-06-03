@@ -1,12 +1,12 @@
 import {
   EAddressEncodings,
   ECoreApiExportedSecretKeyType,
-} from '@onekeyhq/core/src/types';
+} from '@unionkey/core/src/types';
 import {
   COINTYPE_TON,
   IMPL_TON,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/engine/engineConsts';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

@@ -1,7 +1,7 @@
 import { isNil, isNumber } from 'lodash';
 
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
+import { noopObject } from '@unionkey/shared/src/utils/miscUtils';
 
 import { V4LocalDbAgentBase } from '../V4LocalDbAgentBase';
 import { V4_ALL_LOCAL_DB_STORE_NAMES } from '../v4localDBConsts';

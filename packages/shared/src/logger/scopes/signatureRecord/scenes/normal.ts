@@ -1,9 +1,9 @@
-import { devOnlyData } from '@onekeyhq/shared/src/utils/devModeUtils';
+import { devOnlyData } from '@unionkey/shared/src/utils/devModeUtils';
 import type {
   IBaseConnectedSite,
   ICreateSignedMessageParams,
   ICreateSignedTransactionParams,
-} from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkey/shared/types/signatureRecord';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';

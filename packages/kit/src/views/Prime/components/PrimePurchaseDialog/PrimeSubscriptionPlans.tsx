@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IXStackProps } from '@onekeyhq/components';
-import { Badge, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IXStackProps } from '@unionkey/components';
+import { Badge, SizableText, XStack, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import type {
   IPackage,

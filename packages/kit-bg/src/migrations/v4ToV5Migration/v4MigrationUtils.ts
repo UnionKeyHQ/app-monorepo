@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import {
   COINTYPE_STC,
   COINTYPE_XMR,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkey/shared/src/engine/engineConsts';
 
 import type { IV4EIP1559Fee, IV4FeeInfo, IV4FeeInfoUnit } from './v4types';
 
@@ -15,13 +15,13 @@ const notSupportedNetworksInfo: Partial<{
   };
 }> = {
   'stc--1': {
-    logo: 'https://uni.onekey-asset.com/static/chain/stc.png',
+    logo: 'https://uni.unionkey-asset.com/static/chain/stc.png',
   },
   'stc--251': {
-    logo: 'https://uni.onekey-asset.com/static/chain/tstc.png',
+    logo: 'https://uni.unionkey-asset.com/static/chain/tstc.png',
   },
   'xmr--0': {
-    logo: 'https://common.onekey-asset.com/chain/monero.png',
+    logo: 'https://common.unionkey-asset.com/chain/monero.png',
   },
 };
 

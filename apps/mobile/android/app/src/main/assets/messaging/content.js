@@ -23,8 +23,8 @@ const webembedReceiveHandler = (payload) => {
   });
 };
 const bindWebembedReceiveHandler = () => {
-  if (globalThis?.$onekey?.$private) {
-    globalThis.$onekey.$private.webembedReceiveHandler = webembedReceiveHandler;
+  if (globalThis?.$unionkey?.$private) {
+    globalThis.$unionkey.$private.webembedReceiveHandler = webembedReceiveHandler;
   }
 };
 
@@ -62,11 +62,11 @@ window.wrappedJSObject.ReactNativeWebView = cloneInto(
 
 window.ReactNativeWebView = ReactNativeWebView;
 
-const onekeyUtils = {
+const unionkeyUtils = {
   $private: {
     request: (...args) => {
       return new window.Promise((resolve, reject) => {
-        globalThis.$onekey.$private
+        globalThis.$unionkey.$private
           .request(...args)
           .then((result) => {
             resolve(cloneInto(result, window));
@@ -79,12 +79,12 @@ const onekeyUtils = {
   },
   jsBridge: {
     receive: (...args) => {
-      globalThis.$onekey.jsBridge.receive(...args);
+      globalThis.$unionkey.jsBridge.receive(...args);
     },
   },
 };
 
-window.wrappedJSObject.$onekey = cloneInto(onekeyUtils, window, {
+window.wrappedJSObject.$unionkey = cloneInto(unionkeyUtils, window, {
   cloneFunctions: true,
 });
 

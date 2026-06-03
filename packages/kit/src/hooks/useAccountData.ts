@@ -1,14 +1,14 @@
 import { noop } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
   IVaultSettings,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkey/kit-bg/src/vaults/types';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

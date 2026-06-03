@@ -3,7 +3,7 @@ import uuid from 'react-native-uuid';
 import type {
   IDBAccount,
   IDBUtxoAccount,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 
 export function generateUUID() {
   return uuid.v4() as string;

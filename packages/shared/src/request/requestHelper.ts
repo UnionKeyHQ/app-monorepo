@@ -2,11 +2,11 @@ import type {
   IDevSettingsPersistAtom,
   ISettingsPersistAtom,
   ISettingsValuePersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 
 class RequestHelper {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  checkIsOneKeyDomain: (url: string) => Promise<boolean> = async (url) => {
+  checkIsUnionKeyDomain: (url: string) => Promise<boolean> = async (url) => {
     // TODO: OK-35681
     if (url.includes('api.revenuecat.com')) {
       return Promise.resolve(false);
@@ -29,12 +29,12 @@ class RequestHelper {
     };
 
   overrideMethods(methods: {
-    checkIsOneKeyDomain: (url: string) => Promise<boolean>;
+    checkIsUnionKeyDomain: (url: string) => Promise<boolean>;
     getDevSettingsPersistAtom: () => Promise<IDevSettingsPersistAtom>;
     getSettingsPersistAtom: () => Promise<ISettingsPersistAtom>;
     getSettingsValuePersistAtom: () => Promise<ISettingsValuePersistAtom>;
   }) {
-    this.checkIsOneKeyDomain = methods.checkIsOneKeyDomain;
+    this.checkIsUnionKeyDomain = methods.checkIsUnionKeyDomain;
     this.getDevSettingsPersistAtom = methods.getDevSettingsPersistAtom;
     this.getSettingsPersistAtom = methods.getSettingsPersistAtom;
     this.getSettingsValuePersistAtom = methods.getSettingsValuePersistAtom;

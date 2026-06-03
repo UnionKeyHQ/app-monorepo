@@ -3,19 +3,19 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Page, useForm } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
-import DappOpenModalPage from '@onekeyhq/kit/src/views/DAppConnection/pages/DappOpenModalPage';
-import type { ITransferInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
-import { ELightningUnit } from '@onekeyhq/shared/types/lightning';
+import { Page, useForm } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkey/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkey/kit/src/hooks/useDappQuery';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useSignatureConfirm } from '@unionkey/kit/src/hooks/useSignatureConfirm';
+import DappOpenModalPage from '@unionkey/kit/src/views/DAppConnection/pages/DappOpenModalPage';
+import type { ITransferInfo } from '@unionkey/kit-bg/src/vaults/types';
+import { UnionKeyError } from '@unionkey/shared/src/errors';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import chainValueUtils from '@unionkey/shared/src/utils/chainValueUtils';
+import { EDAppModalPageStatus } from '@unionkey/shared/types/dappConnection';
+import { ELightningUnit } from '@unionkey/shared/types/lightning';
 
 import { DAppAccountListStandAloneItem } from '../../../DAppConnection/components/DAppAccountList';
 import {
@@ -147,7 +147,7 @@ function WeblnSendPaymentModal() {
         console.log('lnurl withdraw error: ', e);
         dappApprove.reject();
         const message = (e as Error)?.message ?? e;
-        throw new OneKeyError({
+        throw new UnionKeyError({
           message,
           autoToast: true,
         });

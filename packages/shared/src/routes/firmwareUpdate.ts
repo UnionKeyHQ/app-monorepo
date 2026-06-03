@@ -1,4 +1,4 @@
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 export enum EModalFirmwareUpdateRoutes {
   ChangeLog = 'ChangeLog',

@@ -1,15 +1,15 @@
 import { cloneDeep } from 'lodash';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import accountSelectorUtils from '@onekeyhq/shared/src/utils/accountSelectorUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EGlobalDeriveTypesScopes } from '@onekeyhq/shared/types/account';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import accountSelectorUtils from '@unionkey/shared/src/utils/accountSelectorUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import { EGlobalDeriveTypesScopes } from '@unionkey/shared/types/account';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

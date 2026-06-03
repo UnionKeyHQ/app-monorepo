@@ -9,7 +9,7 @@ import {
   SizableText,
   Skeleton,
   Stack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   EFirmwareUpdateSteps,
   EHardwareUiStateAction,
@@ -17,15 +17,15 @@ import {
   useFirmwareUpdateStepInfoAtom,
   useHardwareUiStateAtom,
   useHardwareUiStateCompletedAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IDeviceFirmwareType } from '@onekeyhq/shared/types/device';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import type { IDeviceFirmwareType } from '@unionkey/shared/types/device';
+import { EFirmwareUpdateTipMessages } from '@unionkey/shared/types/device';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePrevious } from '../../../hooks/usePrevious';

@@ -1,10 +1,10 @@
 import { useIntl } from 'react-intl';
 
-import { XStack } from '@onekeyhq/components';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IDisplayComponentNetwork } from '@onekeyhq/shared/types/signatureConfirm';
+import { XStack } from '@unionkey/components';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IDisplayComponentNetwork } from '@unionkey/shared/types/signatureConfirm';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

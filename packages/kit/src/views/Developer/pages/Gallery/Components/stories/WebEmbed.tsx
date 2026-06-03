@@ -9,10 +9,10 @@ import {
   Stack,
   Switch,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import webembedApiProxy from '@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy';
-import webEmbedConfig from '@onekeyhq/shared/src/storage/webEmbedConfig';
+import webembedApiProxy from '@unionkey/kit-bg/src/webembeds/instance/webembedApiProxy';
+import webEmbedConfig from '@unionkey/shared/src/storage/webEmbedConfig';
 
 import { Layout } from './utils/Layout';
 

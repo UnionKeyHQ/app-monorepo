@@ -2,10 +2,10 @@ import { useCallback, useContext, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IListViewRef } from '@onekeyhq/components';
-import { Empty, SearchBar, SectionList, Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import type { IListViewRef } from '@unionkey/components';
+import { Empty, SearchBar, SectionList, Stack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { usePureChainSelectorSections } from '../../hooks/usePureChainSelectorSections';
 

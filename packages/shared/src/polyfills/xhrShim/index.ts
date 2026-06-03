@@ -3,7 +3,7 @@ import './xhrShimV1';
 
 /*
 xhr = new XMLHttpRequest();
-xhr.open("GET", "https://node.onekey.so/algo/v2/status");
+xhr.open("GET", "https://node.unionkey.so/algo/v2/status");
 xhr.setRequestHeader('content-type', 'application/json');
 xhr.send();
 

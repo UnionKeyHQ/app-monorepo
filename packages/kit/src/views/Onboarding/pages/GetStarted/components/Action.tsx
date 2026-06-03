@@ -1,5 +1,5 @@
-import type { IKeyOfIcons, IXStackProps } from '@onekeyhq/components';
-import { Icon, SizableText, Spinner, XStack } from '@onekeyhq/components';
+import type { IKeyOfIcons, IXStackProps } from '@unionkey/components';
+import { Icon, SizableText, Spinner, XStack } from '@unionkey/components';
 
 type IAction = {
   iconName?: IKeyOfIcons;

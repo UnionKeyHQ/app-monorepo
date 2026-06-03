@@ -1,5 +1,5 @@
-import { Badge, Icon, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { listItemPressStyle } from '@onekeyhq/shared/src/style';
+import { Badge, Icon, SizableText, XStack, YStack } from '@unionkey/components';
+import { listItemPressStyle } from '@unionkey/shared/src/style';
 
 export interface IAddressListItemProps {
   address: string;

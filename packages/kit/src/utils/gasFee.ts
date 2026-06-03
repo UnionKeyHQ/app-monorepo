@@ -1,15 +1,15 @@
 import BigNumber from 'bignumber.js';
 
-import type { IDecodedTxExtraSol } from '@onekeyhq/core/src/chains/sol/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EFeeType } from '@onekeyhq/shared/types/fee';
+import type { IDecodedTxExtraSol } from '@unionkey/core/src/chains/sol/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EFeeType } from '@unionkey/shared/types/fee';
 import type {
   IEstimateFeeParams,
   IFeeInfoUnit,
   IGasEIP1559,
   IGasLegacy,
-} from '@onekeyhq/shared/types/fee';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/fee';
+import type { IDecodedTx } from '@unionkey/shared/types/tx';
 
 const PRESET_FEE_ICON = ['🐢', '🚗', '🚀'];
 const PRESET_FEE_LABEL = [

@@ -12,10 +12,10 @@ import {
   XStack,
   useForm,
   useMedia,
-} from '@onekeyhq/components';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/components';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 import type { UseFormReturn } from 'react-hook-form';
 
@@ -231,7 +231,7 @@ export function BatchCreateAccountFormBase({
           disabled={networkReadyOnly}
           editable={!networkReadyOnly}
         />
-        {networkIdValue === getNetworkIdsMap().onekeyall ? (
+        {networkIdValue === getNetworkIdsMap().unionkeyall ? (
           <Form.FieldDescription>
             {intl.formatMessage({
               id: ETranslations.global_networks_information,

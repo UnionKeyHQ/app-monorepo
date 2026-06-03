@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 
-import { useMedia } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useBrowserAction } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+import { useMedia } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useBrowserAction } from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import type { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import type { IDApp } from '@unionkey/shared/types/discovery';
 
 import { useActiveTabId } from './useWebTabs';
 

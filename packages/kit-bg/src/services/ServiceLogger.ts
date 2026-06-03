@@ -1,8 +1,8 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import ServiceBase from './ServiceBase';
 

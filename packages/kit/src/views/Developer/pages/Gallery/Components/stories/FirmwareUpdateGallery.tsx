@@ -9,48 +9,48 @@ import {
   Stack,
   Toast,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { FirmwareChangeLogView } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareChangeLogView';
-import { FirmwareCheckingLoading } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareCheckingLoading';
-import { FirmwareInstallingViewBase } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareInstallingView';
-import { FirmwareLatestVersionInstalled } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareLatestVersionInstalled';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkey/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { FirmwareChangeLogView } from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareChangeLogView';
+import { FirmwareCheckingLoading } from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareCheckingLoading';
+import { FirmwareInstallingViewBase } from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareInstallingView';
+import { FirmwareLatestVersionInstalled } from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareLatestVersionInstalled';
 import {
   EnterBootModeGuide,
   useFirmwareUpdateErrors,
-} from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareUpdateErrors';
-import { FirmwareUpdateProgressBarView } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareUpdateProgressBar';
-import { FirmwareUpdateWarningMessage } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/FirmwareUpdateWarningMessage';
-import { FirmwareUpdateReminderAlert } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/HomeFirmwareUpdateReminder';
-import { useFirmwareUpdateActions } from '@onekeyhq/kit/src/views/FirmwareUpdate/hooks/useFirmwareUpdateActions';
+} from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareUpdateErrors';
+import { FirmwareUpdateProgressBarView } from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareUpdateProgressBar';
+import { FirmwareUpdateWarningMessage } from '@unionkey/kit/src/views/FirmwareUpdate/components/FirmwareUpdateWarningMessage';
+import { FirmwareUpdateReminderAlert } from '@unionkey/kit/src/views/FirmwareUpdate/components/HomeFirmwareUpdateReminder';
+import { useFirmwareUpdateActions } from '@unionkey/kit/src/views/FirmwareUpdate/hooks/useFirmwareUpdateActions';
 import {
   EFirmwareAuthenticationDialogContentType,
   EnumBasicDialogContentContainer,
-} from '@onekeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/FirmwareVerifyDialog';
+} from '@unionkey/kit/src/views/Onboarding/pages/ConnectHardwareWallet/FirmwareVerifyDialog';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE } from '@onekeyhq/kit-bg/src/services/ServiceFirmwareUpdate/firewareUpdateFixtures';
+import { FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE } from '@unionkey/kit-bg/src/services/ServiceFirmwareUpdate/firewareUpdateFixtures';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateRetryAtom,
   useFirmwareUpdateStepInfoAtom,
   useFirmwareUpdatesDetectStatusPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import * as AllErrors from '@onekeyhq/shared/src/errors';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import * as AllErrors from '@unionkey/shared/src/errors';
+import type { IUnionKeyError } from '@unionkey/shared/src/errors/types/errorTypes';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EModalFirmwareUpdateRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+} from '@unionkey/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import { EFirmwareUpdateTipMessages } from '@unionkey/shared/types/device';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkey/shared/types/device';
 
 import { Layout } from './utils/Layout';
 
@@ -161,7 +161,7 @@ function FirmwareUpdateErrorDemo({
   result,
 }: {
   onRetry?: () => void;
-  error: IOneKeyError;
+  error: IUnionKeyError;
   result: ICheckAllFirmwareReleaseResult | undefined;
 }) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -314,7 +314,7 @@ function FirmwareUpdateGalleryStaticUI() {
         <SizableText size="$heading2xl">** 需要手动升级 bridge</SizableText>
         <FirmwareUpdateErrorDemo
           result={FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE as any}
-          error={new AllErrors.NeedOneKeyBridgeUpgrade()}
+          error={new AllErrors.NeedUnionKeyBridgeUpgrade()}
         />
         <SizableText size="$heading2xl">** 需要在网页端升级</SizableText>
         <FirmwareUpdateErrorDemo

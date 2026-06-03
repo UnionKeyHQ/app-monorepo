@@ -1,4 +1,4 @@
-import type { IAllDeviceVerifyVersions } from '@onekeyhq/shared/types/device';
+import type { IAllDeviceVerifyVersions } from '@unionkey/shared/types/device';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal } from '../../../base/decorators';

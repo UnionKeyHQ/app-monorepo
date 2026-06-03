@@ -10,10 +10,10 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import { Image, Stack, useThemeValue } from '@onekeyhq/components';
-import { useWebSiteHandler } from '@onekeyhq/kit/src/views/Discovery/hooks/useWebSiteHandler';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Image, Stack, useThemeValue } from '@unionkey/components';
+import { useWebSiteHandler } from '@unionkey/kit/src/views/Discovery/hooks/useWebSiteHandler';
+import { EEnterMethod } from '@unionkey/shared/src/logger/scopes/discovery/scenes/dapp';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { ImageSourcePropType, ImageURISource } from 'react-native';
 

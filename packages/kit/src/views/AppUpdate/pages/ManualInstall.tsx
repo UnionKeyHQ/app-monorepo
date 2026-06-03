@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Image, Page, SizableText, YStack } from '@onekeyhq/components';
-import { useDownloadPackage } from '@onekeyhq/kit/src/components/UpdateReminder/hooks';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Image, Page, SizableText, YStack } from '@unionkey/components';
+import { useDownloadPackage } from '@unionkey/kit/src/components/UpdateReminder/hooks';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export default function ManualInstall() {
   const intl = useIntl();
@@ -31,7 +31,7 @@ export default function ManualInstall() {
       return (
         <Image
           h="$96"
-          source={require('@onekeyhq/kit/assets/manual_install_mac.png')}
+          source={require('@unionkey/kit/assets/manual_install_mac.png')}
         />
       );
     }
@@ -39,7 +39,7 @@ export default function ManualInstall() {
       <Image
         h="$100"
         mt="$5"
-        source={require('@onekeyhq/kit/assets/manual_install_win.png')}
+        source={require('@unionkey/kit/assets/manual_install_win.png')}
       />
     );
   }, []);

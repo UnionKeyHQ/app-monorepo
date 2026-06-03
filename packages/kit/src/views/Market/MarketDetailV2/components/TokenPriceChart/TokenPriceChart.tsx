@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/market';
+import type { IMarketTokenDetail } from '@unionkey/shared/types/market';
 
 import { TokenPriceChart as TokenPriceChartBase } from '../../../components/TokenPriceChart';
 

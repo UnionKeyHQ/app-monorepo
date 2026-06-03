@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { HeaderIconButton, Stack, Toast } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EPrimePages } from '@onekeyhq/shared/src/routes/prime';
+import { HeaderIconButton, Stack, Toast } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
+import { EModalRoutes } from '@unionkey/shared/src/routes';
+import { EPrimePages } from '@unionkey/shared/src/routes/prime';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 
@@ -23,8 +23,8 @@ export function PrimeHeaderIconButton({
   const icon = useMemo(() => {
     if (isPrime && user?.privyUserId) {
       return themeVariant === 'light'
-        ? 'OnekeyPrimeLightColored'
-        : 'OnekeyPrimeDarkColored';
+        ? 'UnionkeyPrimeLightColored'
+        : 'UnionkeyPrimeDarkColored';
     }
     return 'PrimeOutline';
   }, [isPrime, themeVariant, user?.privyUserId]);

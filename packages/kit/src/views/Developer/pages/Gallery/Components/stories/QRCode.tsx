@@ -1,5 +1,5 @@
-import { QRCode, YStack } from '@onekeyhq/components';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { QRCode, YStack } from '@unionkey/components';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { Layout } from './utils/Layout';
 
@@ -12,7 +12,7 @@ const QRCodeGallery = () => (
         title: 'this logo is came from internet.',
         element: (
           <YStack justifyContent="center" flex={1} gap="$4">
-            <QRCode value="https://onekey.so/" size={200} />
+            <QRCode value="https://unionkey.so/" size={200} />
           </YStack>
         ),
       },
@@ -24,7 +24,7 @@ const QRCodeGallery = () => (
               logo={{
                 uri: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/128/color/btc.png',
               }}
-              value="https://onekey.so/"
+              value="https://unionkey.so/"
               size={200}
             />
             <QRCode
@@ -32,7 +32,7 @@ const QRCodeGallery = () => (
                 uri: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/128/color/btc.png',
               }}
               logoBackgroundColor="bgStrongActive"
-              value="https://onekey.so/"
+              value="https://unionkey.so/"
               size={200}
             />
           </YStack>
@@ -43,12 +43,12 @@ const QRCodeGallery = () => (
         element: (
           <YStack justifyContent="center" flex={1} gap="$4">
             <QRCode
-              logo={require('@onekeyhq/kit/assets/logo.png')}
+              logo={require('@unionkey/kit/assets/logo.png')}
               value="https://unionkey.io/"
               size={200}
             />
             <QRCode
-              logo={require('@onekeyhq/kit/assets/logo.png')}
+              logo={require('@unionkey/kit/assets/logo.png')}
               logoBackgroundColor="bgStrongActive"
               value="https://unionkey.io/"
               size={200}
@@ -62,12 +62,12 @@ const QRCodeGallery = () => (
           <YStack justifyContent="center" flex={1} gap="$4">
             <QRCode
               value="https://unionkey.io/"
-              logoSvg="OnekeyBrand"
+              logoSvg="UnionkeyBrand"
               size={200}
             />
             <QRCode
               value="https://unionkey.io/"
-              logoSvg="OnekeyBrand"
+              logoSvg="UnionkeyBrand"
               logoSvgColor="$bgCriticalStrong"
               size={200}
             />
@@ -78,8 +78,8 @@ const QRCodeGallery = () => (
         title: 'DrawType',
         element: (
           <YStack justifyContent="center" flex={1} gap="$4">
-            <QRCode drawType="line" value="https://onekey.so/" size={200} />
-            <QRCode drawType="line" value="https://onekey.so/" size={200} />
+            <QRCode drawType="line" value="https://unionkey.so/" size={200} />
+            <QRCode drawType="line" value="https://unionkey.so/" size={200} />
           </YStack>
         ),
       },

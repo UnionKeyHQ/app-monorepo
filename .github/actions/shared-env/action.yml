@@ -63,7 +63,7 @@ runs:
 
     - name: Dotenv Action
       id: dotenv
-      uses: OneKeyHQ/actions/dotenv-action@main
+      uses: UnionKeyHQ/actions/dotenv-action@main
       with:
         path: .env.version
 

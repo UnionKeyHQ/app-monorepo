@@ -1,6 +1,6 @@
 import { Base64 } from 'js-base64';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export const base64Encode = function (arraybuffer: ArrayBuffer): string {
   const uint8Array = new Uint8Array(arraybuffer);
@@ -90,12 +90,12 @@ export const registerWebAuth = async (credId?: string) => {
     const createCredentialOptions: CredentialCreationOptions = {
       publicKey: {
         rp: {
-          name: 'onekey.so',
+          name: 'unionkey.so',
         },
         user: {
           id: new Uint8Array(16),
-          name: 'OneKey Extension',
-          displayName: 'OneKey Extension',
+          name: 'UnionKey Extension',
+          displayName: 'UnionKey Extension',
         },
         pubKeyCredParams: [
           {

@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
-import { SegmentControl } from '@onekeyhq/components';
-import type { ISegmentControlProps } from '@onekeyhq/components';
+import { SegmentControl } from '@unionkey/components';
+import type { ISegmentControlProps } from '@unionkey/components';
 
 function UnitSwitch(props: ISegmentControlProps) {
   const { value, onChange } = props;

@@ -3,11 +3,11 @@ import { useCallback, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { Share } from 'react-native';
 
-import { Dialog, Input, Toast } from '@onekeyhq/components';
-import { useBrowserTabActions } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import type { IWebTab } from '@onekeyhq/kit/src/views/Discovery/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Dialog, Input, Toast } from '@unionkey/components';
+import { useBrowserTabActions } from '@unionkey/kit/src/states/jotai/contexts/discovery';
+import type { IWebTab } from '@unionkey/kit/src/views/Discovery/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 function useBrowserOptionsAction() {
   const handleShareUrl = useCallback((url: string) => {

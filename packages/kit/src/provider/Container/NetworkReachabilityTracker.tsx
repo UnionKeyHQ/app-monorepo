@@ -1,21 +1,25 @@
 import { useEffect, useMemo } from 'react';
 
-import { configureNetInfo, refreshNetInfo } from '@onekeyhq/components';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ONEKEY_HEALTH_CHECK_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { getEndpointsMapByDevSettings } from '@onekeyhq/shared/src/config/endpointsMap';
+import { configureNetInfo, refreshNetInfo } from '@unionkey/components';
+import { useDevSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { UNIONKEY_HEALTH_CHECK_URL } from '@unionkey/shared/src/config/appConfig';
+import { getEndpointsMapByDevSettings } from '@unionkey/shared/src/config/endpointsMap';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 
 const REACHABILITY_LONG_TIMEOUT = 60 * 1000;
 const REACHABILITY_SHORT_TIMEOUT = 5 * 1000;
 const REACHABILITY_REQUEST_TIMEOUT = 10 * 1000;
 
 const checkNetInfo = async (endpoint: string) => {
+  const isLocalDevEndpoint =
+    endpoint.includes('127.0.0.1') || endpoint.includes('localhost');
   configureNetInfo({
-    reachabilityUrl: `${endpoint}${ONEKEY_HEALTH_CHECK_URL}`,
+    reachabilityUrl: isLocalDevEndpoint
+      ? UNIONKEY_HEALTH_CHECK_URL
+      : `${endpoint}${UNIONKEY_HEALTH_CHECK_URL}`,
     reachabilityLongTimeout: REACHABILITY_LONG_TIMEOUT,
     reachabilityShortTimeout: REACHABILITY_SHORT_TIMEOUT,
     reachabilityRequestTimeout: REACHABILITY_REQUEST_TIMEOUT,

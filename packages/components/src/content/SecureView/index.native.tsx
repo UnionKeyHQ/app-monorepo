@@ -1,7 +1,7 @@
 import { SecureWindow } from '@bufgix/react-native-secure-window';
 import { Stack } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import type { ISecureViewProps } from './type';
 

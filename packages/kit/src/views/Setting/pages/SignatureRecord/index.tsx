@@ -2,11 +2,11 @@ import { memo, useCallback, useContext, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, SearchBar, Stack, Tab, XStack } from '@onekeyhq/components';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import useConfigurableChainSelector from '@onekeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Page, SearchBar, Stack, Tab, XStack } from '@unionkey/components';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import useConfigurableChainSelector from '@unionkey/kit/src/views/ChainSelector/hooks/useChainSelector';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { ConnectedSites } from './ConnectedSites';
 import { SignatureContext } from './Context';
@@ -68,7 +68,7 @@ const ChainSelector = memo(ChainSelectorCmp);
 const PageView = () => {
   const intl = useIntl();
   const [networkId, setNetworkId] = useState<string>(
-    getNetworkIdsMap().onekeyall,
+    getNetworkIdsMap().unionkeyall,
   );
   const [searchContent, setSearchContent] = useState<string>('');
 

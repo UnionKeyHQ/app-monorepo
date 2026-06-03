@@ -3,14 +3,14 @@ import { useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, Page } from '@onekeyhq/components';
+import { Button, Page } from '@unionkey/components';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 import { EditableChainSelectorContent } from './ChainSelectorContent';
 

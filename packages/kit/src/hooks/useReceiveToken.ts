@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalReceiveRoutes, EModalRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalReceiveParamList } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
-import type { IToken, ITokenData } from '@onekeyhq/shared/types/token';
+import type { IPageNavigationProp } from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalReceiveRoutes, EModalRoutes } from '@unionkey/shared/src/routes';
+import type { IModalReceiveParamList } from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import { EDeriveAddressActionType } from '@unionkey/shared/types/address';
+import type { IToken, ITokenData } from '@unionkey/shared/types/token';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

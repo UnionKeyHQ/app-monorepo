@@ -9,8 +9,8 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/components';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 export function GridItem({
   title,

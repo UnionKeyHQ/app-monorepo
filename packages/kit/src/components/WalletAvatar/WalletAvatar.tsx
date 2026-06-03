@@ -1,11 +1,11 @@
 import { isNil } from 'lodash';
 
-import type { SizeTokens } from '@onekeyhq/components';
-import { Icon, Image, SizableText, Stack } from '@onekeyhq/components';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IAllWalletAvatarImageNames } from '@onekeyhq/shared/src/utils/avatarUtils';
-import { AllWalletAvatarImages } from '@onekeyhq/shared/src/utils/avatarUtils';
+import type { SizeTokens } from '@unionkey/components';
+import { Icon, Image, SizableText, Stack } from '@unionkey/components';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import type { IAllWalletAvatarImageNames } from '@unionkey/shared/src/utils/avatarUtils';
+import { AllWalletAvatarImages } from '@unionkey/shared/src/utils/avatarUtils';
 
 import type { IWalletProps } from '../../views/AccountManagerStacks/type';
 import type { IDeviceType } from '@onekeyfe/hd-core';

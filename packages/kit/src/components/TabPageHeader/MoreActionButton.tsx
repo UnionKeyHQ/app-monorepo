@@ -8,7 +8,7 @@ import type {
   IButtonProps,
   IIconButtonProps,
   IStackStyle,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Divider,
   HeaderIconButton,
@@ -24,34 +24,34 @@ import {
   useIsHorizontalLayout,
   useMedia,
   usePopoverContext,
-} from '@onekeyhq/components';
-import GiftExpandOnDark from '@onekeyhq/kit/assets/animations/gift-expand-on-dark.json';
-import GiftExpandOnLight from '@onekeyhq/kit/assets/animations/gift-expand-on-light.json';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useShowAddressBook } from '@onekeyhq/kit/src/hooks/useShowAddressBook';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkey/components';
+import GiftExpandOnDark from '@unionkey/kit/assets/animations/gift-expand-on-dark.json';
+import GiftExpandOnLight from '@unionkey/kit/assets/animations/gift-expand-on-light.json';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useShowAddressBook } from '@unionkey/kit/src/hooks/useShowAddressBook';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
 import {
   useAllTokenListAtom,
   useAllTokenListMapAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { useToMyOneKeyModal } from '@onekeyhq/kit/src/views/DeviceManagement/hooks/useToMyOneKeyModal';
-import { HomeTokenListProviderMirror } from '@onekeyhq/kit/src/views/Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
+} from '@unionkey/kit/src/states/jotai/contexts/tokenList';
+import { useToMyUnionKeyModal } from '@unionkey/kit/src/views/DeviceManagement/hooks/useToMyUnionKeyModal';
+import { HomeTokenListProviderMirror } from '@unionkey/kit/src/views/Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
 import {
   useFirmwareUpdatesDetectStatusPersistAtom,
   useHardwareWalletXfpStatusAtom,
   useNotificationsAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalRoutes, EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalNotificationsRoutes } from '@onekeyhq/shared/src/routes/notifications';
-import extUtils from '@onekeyhq/shared/src/utils/extUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { useDevSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/devSettings';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import { EModalRoutes, EModalSettingRoutes } from '@unionkey/shared/src/routes';
+import { EModalNotificationsRoutes } from '@unionkey/shared/src/routes/notifications';
+import extUtils from '@unionkey/shared/src/utils/extUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
-import { useLoginOneKeyId } from '../../hooks/useLoginOneKeyId';
+import { useLoginUnionKeyId } from '../../hooks/useLoginUnionKeyId';
 import { usePromiseResult } from '../../hooks/usePromiseResult';
 import { useReferFriends } from '../../hooks/useReferFriends';
 import { useThemeVariant } from '../../hooks/useThemeVariant';
@@ -95,14 +95,14 @@ function MoreActionContentHeader() {
   const { closePopover } = usePopoverContext();
   const { isPrimeAvailable } = usePrimeAvailable();
 
-  const { loginOneKeyId } = useLoginOneKeyId();
+  const { loginUnionKeyId } = useLoginUnionKeyId();
 
   const handleLogin = useCallback(async () => {
     await closePopover?.();
-    await loginOneKeyId({
-      toOneKeyIdPageOnLoginSuccess: true,
+    await loginUnionKeyId({
+      toUnionKeyIdPageOnLoginSuccess: true,
     });
-  }, [closePopover, loginOneKeyId]);
+  }, [closePopover, loginUnionKeyId]);
   return (
     <XStack
       px="$5"
@@ -383,10 +383,10 @@ function MoreActionContentGrid() {
     useNewModal: true,
   });
   const { gtMd } = useMedia();
-  const toMyOneKeyModal = useToMyOneKeyModal();
+  const toMyUnionKeyModal = useToMyUnionKeyModal();
   const handleDeviceManagement = useCallback(async () => {
-    await toMyOneKeyModal();
-  }, [toMyOneKeyModal]);
+    await toMyUnionKeyModal();
+  }, [toMyUnionKeyModal]);
 
   const navigation = useAppNavigation();
   const handleSettings = useCallback(() => {
@@ -438,11 +438,11 @@ function MoreActionContentGrid() {
       },
       {
         title: intl.formatMessage({
-          id: ETranslations.global_my_onekey,
+          id: ETranslations.global_my_unionkey,
         }),
-        icon: 'OnekeyDeviceCustom',
+        icon: 'UnionkeyDeviceCustom',
         onPress: handleDeviceManagement,
-        testID: 'my-onekey',
+        testID: 'my-unionkey',
       },
       // {
       //   title: intl.formatMessage({ id: ETranslations.sidebar_refer_a_friend }),

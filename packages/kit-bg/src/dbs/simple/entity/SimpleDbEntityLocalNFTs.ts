@@ -1,7 +1,7 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { buildAccountLocalAssetsKey } from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IAccountNFT } from '@onekeyhq/shared/types/nft';
+import { backgroundMethod } from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { buildAccountLocalAssetsKey } from '@unionkey/shared/src/utils/accountUtils';
+import type { IAccountNFT } from '@unionkey/shared/types/nft';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 
@@ -27,7 +27,7 @@ export class SimpleDbEntityLocalNFTs extends SimpleDbEntityBase<ILocalNFTs> {
     nfts: IAccountNFT[];
   }) {
     if (!accountAddress && !xpub) {
-      throw new OneKeyInternalError('accountAddress or xpub is required');
+      throw new UnionKeyInternalError('accountAddress or xpub is required');
     }
 
     const key = buildAccountLocalAssetsKey({

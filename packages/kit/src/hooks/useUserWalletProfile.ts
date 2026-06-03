@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

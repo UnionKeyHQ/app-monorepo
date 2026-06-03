@@ -1,32 +1,32 @@
-# OneKey - Open Source Crypto Wallet
+# UnionKey - Open Source Crypto Wallet
 
-[![Github Stars](https://img.shields.io/github/stars/OneKeyHQ/app-monorepo?t&logo=github&style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/stargazers)
-[![Version](https://img.shields.io/github/release/OneKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/releases)
-[![](https://img.shields.io/github/contributors-anon/OneKeyHQ/app-monorepo?style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/graphs/contributors)
-[![Last commit](https://img.shields.io/github/last-commit/OneKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/commits/onekey)
-[![Issues](https://img.shields.io/github/issues-raw/OneKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/issues?q=is%3Aissue+is%3Aopen)
-[![Pull Requests](https://img.shields.io/github/issues-pr-raw/OneKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aopen)
-[![Twitter Follow](https://img.shields.io/twitter/follow/OneKeyHQ?style=for-the-badge&labelColor=000)](https://twitter.com/OneKeyHQ)
+[![Github Stars](https://img.shields.io/github/stars/UnionKeyHQ/app-monorepo?t&logo=github&style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/stargazers)
+[![Version](https://img.shields.io/github/release/UnionKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/releases)
+[![](https://img.shields.io/github/contributors-anon/UnionKeyHQ/app-monorepo?style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/graphs/contributors)
+[![Last commit](https://img.shields.io/github/last-commit/UnionKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/commits/unionkey)
+[![Issues](https://img.shields.io/github/issues-raw/UnionKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/issues?q=is%3Aissue+is%3Aopen)
+[![Pull Requests](https://img.shields.io/github/issues-pr-raw/UnionKeyHQ/app-monorepo.svg?style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aopen)
+[![Twitter Follow](https://img.shields.io/twitter/follow/UnionKeyHQ?style=for-the-badge&labelColor=000)](https://twitter.com/UnionKeyHQ)
 
 
-[![Appstore](https://github.com/rayston92/graph_bed/blob/275d053220d5b54b32b01ce4c4985210951043c5/img/app_store.svg)](https://apps.apple.com/us/app/onekey-open-source-wallet/id1609559473)
+[![Appstore](https://github.com/rayston92/graph_bed/blob/275d053220d5b54b32b01ce4c4985210951043c5/img/app_store.svg)](https://apps.apple.com/us/app/unionkey-open-source-wallet/id1609559473)
 [![Playstore](https://github.com/rayston92/graph_bed/blob/275d053220d5b54b32b01ce4c4985210951043c5/img/play.svg
 )](https://play.google.com/store/apps/details?id=so.unionkey.app.wallet)
 
-- [Desktop clients: macOS, Windows & Linux](https://onekey.so/zh_CN/download?client=desktop)
-- [Browser extensions: Chrome, Firefox, Edge & Brave](https://onekey.so/zh_CN/download?client=browserExtension)
-- [Bridge](https://onekey.so/zh_CN/download?client=bridge)
+- [Desktop clients: macOS, Windows & Linux](https://unionkey.so/zh_CN/download?client=desktop)
+- [Browser extensions: Chrome, Firefox, Edge & Brave](https://unionkey.so/zh_CN/download?client=browserExtension)
+- [Bridge](https://unionkey.so/zh_CN/download?client=bridge)
 
 ## Document
 
-[Deepwiki](https://deepwiki.com/OneKeyHQ/app-monorepo)
+[Deepwiki](https://deepwiki.com/UnionKeyHQ/app-monorepo)
 
 ![CleanShot 2025-04-27 at 15 43 53@2x](https://github.com/user-attachments/assets/7e1a9c12-f79d-49da-be8e-9a8de8252563)
 
 
 ## Community & Enterprise Edition
 
-- 🏡 🧔🏻‍♂️ For Community Edition. It will always remain FREE FOREVER for open-source projects by individuals and communities.
+- 🏡 🧔🏻‍♂�?For Community Edition. It will always remain FREE FOREVER for open-source projects by individuals and communities.
 - 🏦 💼 For Enterprise Edition. We've got this plan on the radar, but we're not quite ready yet. Just star our repo, and you'll be pinged as soon as we're all set.
 
 
@@ -37,16 +37,16 @@
 
 ## Support
 
-- [Community Forum](https://github.com/orgs/OneKeyHQ/discussions). Best for: help with building, discussion about best practices.
-- [GitHub Issues](https://github.com/OneKeyHQ/app-monorepo/issues). Best for: bugs and errors you encounter using OneKey.
+- [Community Forum](https://github.com/orgs/UnionKeyHQ/discussions). Best for: help with building, discussion about best practices.
+- [GitHub Issues](https://github.com/UnionKeyHQ/app-monorepo/issues). Best for: bugs and errors you encounter using UnionKey.
 
 ## Repo Status
 
-- ✅ Public: Production-ready
+- �?Public: Production-ready
 
 We really need your support, star or watch this repo for latest updates.
 
-<kbd><img src="https://github.com/rayston92/graph_bed/blob/e3b2c938fc5b17d68531f69178908afb16266e6a/img/onekey_monorepo_star.gif?raw=true" alt="Star this repo"/></kbd>
+<kbd><img src="https://github.com/rayston92/graph_bed/blob/e3b2c938fc5b17d68531f69178908afb16266e6a/img/unionkey_monorepo_star.gif?raw=true" alt="Star this repo"/></kbd>
 
 
 ## 🚀 Getting Onboard
@@ -63,7 +63,7 @@ After pulling the latest code via the git command line tool, install the project
 yarn
 ```
 
-## 🧑‍💻 Develop
+## 🧑‍�?Develop
 
 Execute the following commands in the root directory to develop different business code
 
@@ -90,8 +90,8 @@ Execute the following commands in the root directory to develop different busine
 
 ## 🔰 Security
 
-- Please read [Bug Bunty Rules](https://github.com/OneKeyHQ/app-monorepo/blob/onekey/docs/BUG_RULES.md), we have detailed the exact plan in this article.
-- Please report suspected security vulnerabilities in private to dev@onekey.so
+- Please read [Bug Bunty Rules](https://github.com/UnionKeyHQ/app-monorepo/blob/unionkey/docs/BUG_RULES.md), we have detailed the exact plan in this article.
+- Please report suspected security vulnerabilities in private to dev@unionkey.so
 - Please do NOT create publicly viewable issues for suspected security vulnerabilities.
 - As an open source project, although we are not yet profitable, we try to give some rewards to white hat hackers who disclose vulnerabilities to us in a timely manner.
 
@@ -101,7 +101,7 @@ Execute the following commands in the root directory to develop different busine
     <thead>
         <tr>
             <th colspan="2"> We are hiring many roles (Remote)
-            <a href="https://onekeyhq.atlassian.net/wiki/spaces/OC/overview">👉 Click here to check all open positions</a>
+            <a href="https://unionkey.atlassian.net/wiki/spaces/OC/overview">👉 Click here to check all open positions</a>
             </th>
         </tr>
     </thead>
@@ -117,18 +117,18 @@ Execute the following commands in the root directory to develop different busine
             <td>
             <li>远程 (生活在哪个城市都可以)</li>
             <li>全球一致的薪酬 (真的)</li>
-            <li>全员持股计划 (每个人都有)</li>
-            <li>开源 (如你所见)</li>
+            <li>全员持股计划 (每个人都�?</li>
+            <li>开�?(如你所�?</li>
             <li>超级棒的同事 (爽呆!)</li>
             </td>
         </tr>
     </tbody>
 </table>
 
-## ✨ Salute!
+## �?Salute!
 
-[![](https://img.shields.io/github/contributors-anon/OneKeyHQ/app-monorepo?style=for-the-badge&labelColor=000)](https://github.com/OneKeyHQ/app-monorepo/graphs/contributors)
+[![](https://img.shields.io/github/contributors-anon/UnionKeyHQ/app-monorepo?style=for-the-badge&labelColor=000)](https://github.com/UnionKeyHQ/app-monorepo/graphs/contributors)
 
-<a href="https://github.com/onekeyhq/app-monorepo/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=onekeyhq/app-monorepo&max=240&columns=24"/>
+<a href="https://github.com/unionkey/app-monorepo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=unionkey/app-monorepo&max=240&columns=24"/>
 </a>

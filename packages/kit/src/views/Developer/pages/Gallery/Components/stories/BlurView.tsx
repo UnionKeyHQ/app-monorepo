@@ -8,7 +8,7 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

@@ -4,7 +4,7 @@ import { useCallback, useContext } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import { Button, Stack, XStack } from '../../primitives';
 

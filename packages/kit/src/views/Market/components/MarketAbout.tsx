@@ -2,9 +2,9 @@ import { useCallback, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { Button, SizableText, Stack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ISizableTextProps } from '@unionkey/components';
+import { Button, SizableText, Stack, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 import type { LayoutChangeEvent } from 'react-native';
 

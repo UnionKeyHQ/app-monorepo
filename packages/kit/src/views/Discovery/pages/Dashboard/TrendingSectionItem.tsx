@@ -1,4 +1,4 @@
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+import type { IDApp } from '@unionkey/shared/types/discovery';
 
 import { DiscoveryItemCard } from '../../components/DiscoveryItemCard';
 

@@ -2,15 +2,15 @@ import { useEffect, useRef } from 'react';
 
 import { debounce } from 'lodash';
 
-import type { IDialogInstance } from '@onekeyhq/components';
-import { Dialog } from '@onekeyhq/components';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+import type { IDialogInstance } from '@unionkey/components';
+import { Dialog } from '@unionkey/components';
+import type { IAppEventBusPayload } from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkey/shared/src/locale/enum/translations';
 
 export function DiskFullWarningDialogContainer() {
   const dialogRef = useRef<IDialogInstance | null>(null);

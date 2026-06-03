@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { View } from 'react-native';
 
-import { Dialog, XStack } from '@onekeyhq/components';
+import { Dialog, XStack } from '@unionkey/components';
 
 import {
   DiscoveryFilterControl,

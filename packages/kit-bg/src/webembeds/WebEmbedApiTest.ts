@@ -1,4 +1,4 @@
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 
 class WebEmbedApiTest {
   test1(...params: string[]) {
@@ -8,7 +8,7 @@ class WebEmbedApiTest {
   }
 
   test2() {
-    return Promise.resolve(globalThis.WEB_EMBED_ONEKEY_APP_SETTINGS);
+    return Promise.resolve(globalThis.WEB_EMBED_UNIONKEY_APP_SETTINGS);
   }
 
   trackEvent() {

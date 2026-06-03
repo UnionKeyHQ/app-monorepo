@@ -1,8 +1,8 @@
 import type { ComponentProps, FC } from 'react';
 import { useCallback } from 'react';
 
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 type IUrlExternalListItemProps = {
   icon: ComponentProps<typeof ListItem>['icon'];

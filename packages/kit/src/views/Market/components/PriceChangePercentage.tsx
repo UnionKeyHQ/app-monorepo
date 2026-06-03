@@ -2,8 +2,8 @@ import {
   type INumberSizeableTextProps,
   NumberSizeableText,
   SizableText,
-} from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export function PriceChangePercentage({
   children,

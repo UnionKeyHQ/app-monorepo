@@ -11,12 +11,12 @@ import {
   Spinner,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EModalAssetDetailRoutes,
   IModalAssetDetailsParamList,
-} from '@onekeyhq/shared/src/routes/assetDetails';
+} from '@unionkey/shared/src/routes/assetDetails';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useAccountData } from '../../../hooks/useAccountData';
@@ -149,7 +149,7 @@ function UTXODetails() {
             {intl.formatMessage({
               id: ETranslations.global_inputs,
             })}{' '}
-            â€¢ {result?.inputs.length ?? 0}
+            â€?{result?.inputs.length ?? 0}
           </Heading>
           {renderUTXOList(result?.inputs ?? [])}
         </Stack>
@@ -182,7 +182,7 @@ function UTXODetails() {
             {intl.formatMessage({
               id: ETranslations.global_outputs,
             })}{' '}
-            â€¢ {result?.outputs.length ?? 0}
+            â€?{result?.outputs.length ?? 0}
           </Heading>
           {renderUTXOList(result?.outputs ?? [])}
         </Stack>

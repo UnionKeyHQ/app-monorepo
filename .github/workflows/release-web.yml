@@ -12,7 +12,7 @@ jobs:
   test-web:
     runs-on: ubuntu-latest
     env:
-      TEST_ENDPOINT: app.onekeytest.com
+      TEST_ENDPOINT: app.unionkeytest.com
     if: ${{ !github.event.workflow_run || (github.event.workflow_run && github.event.workflow_run.conclusion == 'success') }}
     steps:
       - name: Checkout Source Code
@@ -33,7 +33,7 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkey'
           node-version: '20.x'
 
       - name: Setup ENV
@@ -47,7 +47,7 @@ jobs:
           echo "ARTIFACTS_URL=$artifacts_url" >> $GITHUB_ENV
 
           echo "HOST_PATH=${{ github.event.repository.name }}/${{ github.sha }}-${{ env.BUILD_NUMBER }}/" >> $GITHUB_ENV
-          echo "PUBLIC_URL=https://asset.onekey-asset.com/${{ github.event.repository.name }}/${{ github.sha }}-${{ env.BUILD_NUMBER }}/" >> $GITHUB_ENV
+          echo "PUBLIC_URL=https://asset.unionkey-asset.com/${{ github.event.repository.name }}/${{ github.sha }}-${{ env.BUILD_NUMBER }}/" >> $GITHUB_ENV
 
       - name: Install Dependency
         env:
@@ -64,7 +64,7 @@ jobs:
           yarn app:web:build
 
       - name: Deploy to CDN
-        uses: OneKeyHQ/actions/s3-upload@main
+        uses: UnionKeyHQ/actions/s3-upload@main
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -80,7 +80,7 @@ jobs:
             ./apps/web/web-build/
 
       - name: Deploy Github Pages
-        uses: OneKeyHQ/actions/gh-pages@main
+        uses: UnionKeyHQ/actions/gh-pages@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./apps/web/web-build
@@ -89,13 +89,13 @@ jobs:
 
       - name: 'Notify to Slack'
         if: ${{ github.event.workflow_run }}
-        uses: onekeyhq/actions/slack-notify-webhook@main
+        uses: unionkey/actions/slack-notify-webhook@main
         with:
           web-hook-url: ${{ secrets.SLACK_NOTIFICATION_WEBHOOK }}
           secret-key: ${{ secrets.ACTION_SIGN_SECERT_KEY }}
           artifact-type: Web
-          artifact-name: OneKey-Web
-          artifact-bundle-id: 'so.onekey.wallet.web'
+          artifact-name: UnionKey-Web
+          artifact-bundle-id: 'so.unionkey.wallet.web'
           artifact-version-name: '${{ env.BUILD_APP_VERSION }}@${{ env.BUILD_NUMBER }}'
           artifact-version-code: '${{ env.BUILD_NUMBER }}'
           artifact-download-url: '${{ env.ARTIFACTS_URL }}'

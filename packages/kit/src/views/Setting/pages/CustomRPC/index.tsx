@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { IBadgeType } from '@onekeyhq/components';
+import type { IBadgeType } from '@unionkey/components';
 import {
   ActionList,
   Badge,
@@ -24,21 +24,21 @@ import {
   XStack,
   YStack,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import useConfigurableChainSelector from '@onekeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { NetworkAvatar } from '@unionkey/kit/src/components/NetworkAvatar';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import useConfigurableChainSelector from '@unionkey/kit/src/views/ChainSelector/hooks/useChainSelector';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { ICustomRpcItem } from '@onekeyhq/shared/types/customRpc';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
+import type { IServerNetwork } from '@unionkey/shared/types';
+import type { ICustomRpcItem } from '@unionkey/shared/types/customRpc';
 
 type IEditRpcParams = {
   network: IServerNetwork;

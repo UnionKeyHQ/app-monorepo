@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import errorToastUtils from '../errors/utils/errorToastUtils';
 import { formatDateFns } from '../utils/dateUtils';
@@ -46,8 +46,8 @@ function backgroundClass() {
 export function isCorrectDevOnlyPassword(
   password: string | undefined,
 ): boolean {
-  // 20240625-onekey-debug
-  const correctPwd = `${formatDateFns(new Date(), 'yyyyMMdd')}-onekey-debug`;
+  // 20240625-unionkey-debug
+  const correctPwd = `${formatDateFns(new Date(), 'yyyyMMdd')}-unionkey-debug`;
   return password === correctPwd;
 }
 

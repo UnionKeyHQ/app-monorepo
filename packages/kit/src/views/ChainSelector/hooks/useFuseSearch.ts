@@ -3,8 +3,8 @@ import { useCallback, useMemo } from 'react';
 import {
   type IFuseExpression,
   buildBaseFuse,
-} from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/modules3rdParty/fuse';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 const implArr = ['evm', 'dot', 'cosmos'];
 

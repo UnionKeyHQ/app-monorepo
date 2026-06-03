@@ -1,11 +1,11 @@
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import { NotImplemented } from '@unionkey/shared/src/errors';
 import type {
   INotificationPermissionDetail,
   INotificationRemoveParams,
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 
 import NotificationProviderBase from './NotificationProviderBase';
 

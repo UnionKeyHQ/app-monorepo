@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IIconProps } from '@onekeyhq/components';
+import type { IIconProps } from '@unionkey/components';
 import {
   Badge,
   Button,
@@ -14,18 +14,18 @@ import {
   SizableText,
   Stack,
   Switch,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePasswordPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { usePrimeCloudSyncPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/prime';
-import { ELockDuration } from '@onekeyhq/shared/src/consts/appAutoLockConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EPrimePages } from '@onekeyhq/shared/src/routes/prime';
-import { formatDistanceToNow } from '@onekeyhq/shared/src/utils/dateUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { Section } from '@unionkey/kit/src/components/Section';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePasswordPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { usePrimeCloudSyncPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms/prime';
+import { ELockDuration } from '@unionkey/shared/src/consts/appAutoLockConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EPrimePages } from '@unionkey/shared/src/routes/prime';
+import { formatDistanceToNow } from '@unionkey/shared/src/utils/dateUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 
 import { AppAutoLockSettingsView } from '../../../Setting/pages/AppAutoLock';
 import { usePrimeRequirements } from '../../hooks/usePrimeRequirements';
@@ -86,7 +86,7 @@ function AutoLockUpdateDialogContent({
   );
 }
 
-function EnableOneKeyCloudSwitchListItem() {
+function EnableUnionKeyCloudSwitchListItem() {
   const [config] = usePrimeCloudSyncPersistAtom();
 
   const isSubmittingRef = useRef(false);
@@ -111,7 +111,7 @@ function EnableOneKeyCloudSwitchListItem() {
 
   return (
     <ListItem
-      title="OneKey Cloud"
+      title="UnionKey Cloud"
       icon="CloudOutline"
       subtitle={`${intl.formatMessage({
         id: ETranslations.prime_last_update,
@@ -362,7 +362,7 @@ function AppDataSection() {
 
   return (
     <Section title={intl.formatMessage({ id: ETranslations.prime_app_data })}>
-      <EnableOneKeyCloudSwitchListItem />
+      <EnableUnionKeyCloudSwitchListItem />
 
       {config?.isCloudSyncEnabled ? (
         <ListItem
@@ -420,7 +420,7 @@ export default function PagePrimeCloudSync() {
 
   return (
     <Page scrollEnabled>
-      <Page.Header title="OneKey Cloud" />
+      <Page.Header title="UnionKey Cloud" />
       <Page.Body>
         <AppDataSection />
         <Divider mt="$5" mb="$2" />

@@ -11,18 +11,18 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EOnChainHistoryTxType } from '@onekeyhq/shared/types/history';
+} from '@unionkey/components';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { EOnChainHistoryTxType } from '@unionkey/shared/types/history';
 import {
   EDecodedTxDirection,
   EDecodedTxStatus,
   type IDecodedTxActionAssetTransfer,
   type IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/tx';
 
 import { useFeeInfoInDecodedTx } from '../../hooks/useTxFeeInfo';
 import {

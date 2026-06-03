@@ -1,6 +1,6 @@
-import type { IImageProps, IXStackProps } from '@onekeyhq/components';
-import { Icon, Image, XStack } from '@onekeyhq/components';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import type { IImageProps, IXStackProps } from '@unionkey/components';
+import { Icon, Image, XStack } from '@unionkey/components';
+import type { IServerNetwork } from '@unionkey/shared/types';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../hooks/usePromiseResult';

@@ -4,7 +4,7 @@ import { UNSTABLE_usePreventRemove as usePreventRemove } from '@react-navigation
 import noop from 'lodash/noop';
 import { useIntl } from 'react-intl';
 
-import type { IButtonProps, IPageScreenProps } from '@onekeyhq/components';
+import type { IButtonProps, IPageScreenProps } from '@unionkey/components';
 import {
   Button,
   EStepItemStatus,
@@ -13,20 +13,20 @@ import {
   Stepper,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate/type';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { EAppUpdateStatus } from '@unionkey/shared/src/appUpdate/type';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   installPackage,
   useDownloadProgress,
-} from '@onekeyhq/shared/src/modules3rdParty/auto-update';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/modules3rdParty/auto-update';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import type {
   EAppUpdateRoutes,
   IAppUpdatePagesParamList,
-} from '@onekeyhq/shared/src/routes';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/shared/src/routes';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 import { HyperlinkText } from '../../../components/HyperlinkText';
 import {

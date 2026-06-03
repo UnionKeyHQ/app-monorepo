@@ -7,22 +7,22 @@ import TonWeb from 'tonweb';
 import {
   ETonSendMode,
   genAddressFromPublicKey,
-} from '@onekeyhq/core/src/chains/ton/sdkTon';
-import type { IEncodedTxTon } from '@onekeyhq/core/src/chains/ton/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/ton/sdkTon';
+import type { IEncodedTxTon } from '@unionkey/core/src/chains/ton/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
   IUnsignedMessageTon,
-} from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkey/core/src/types';
+import { UnionKeyInternalError } from '@unionkey/shared/src/errors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -60,7 +60,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     return {
       network: this.hwSdkNetwork,
       path: params.path,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
@@ -79,7 +79,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             template,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -113,7 +113,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       '{index}',
             //       `${index}`,
             //     )}`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //     walletVersion: TonWalletVersion.V4R2,
             //     isBounceable: false,
             //     isTestnetOnly: false,
@@ -242,7 +242,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       return res;
     });
     if (!result.signature) {
-      throw new OneKeyInternalError('Failed to sign message');
+      throw new UnionKeyInternalError('Failed to sign message');
     }
     const signature = bufferUtils.hexToBytes(result.signature);
     // classic1s return signning_message is message hash
@@ -304,11 +304,11 @@ export class KeyringHardware extends KeyringHardwareBase {
     const account = await this.vault.getAccount();
     const { messages, deviceParams } = params;
     if (messages.length !== 1) {
-      throw new OneKeyInternalError('Unsupported message count');
+      throw new UnionKeyInternalError('Unsupported message count');
     }
     const msg = messages[0] as IUnsignedMessageTon;
     if (!msg.payload.isProof) {
-      throw new OneKeyInternalError('Unsupported message type');
+      throw new UnionKeyInternalError('Unsupported message type');
     }
     const { dbDevice, deviceCommonParams } = checkIsDefined(deviceParams);
     const result = await convertDeviceResponse(async () => {
@@ -327,7 +327,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       return res;
     });
     if (!result.signature) {
-      throw new OneKeyInternalError('Failed to sign message');
+      throw new UnionKeyInternalError('Failed to sign message');
     }
     return [result.signature];
   }

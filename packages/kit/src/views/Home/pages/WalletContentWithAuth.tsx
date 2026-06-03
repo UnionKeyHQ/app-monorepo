@@ -1,8 +1,8 @@
 import type { PropsWithChildren } from 'react';
 
-import LNHardwareWalletAuth from '@onekeyhq/kit/src/views/LightningNetwork/components/LNHardwareWalletAuth';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import LNHardwareWalletAuth from '@unionkey/kit/src/views/LightningNetwork/components/LNHardwareWalletAuth';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 
 function WalletContentWithAuth({
   networkId,

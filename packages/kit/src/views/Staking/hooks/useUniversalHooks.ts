@@ -2,18 +2,18 @@ import { useCallback } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import type { IEncodedTxBtc } from '@onekeyhq/core/src/chains/btc/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
-import { type IModalSendParamList } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+import type { IEncodedTxBtc } from '@unionkey/core/src/chains/btc/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useSignatureConfirm } from '@unionkey/kit/src/hooks/useSignatureConfirm';
+import { type IModalSendParamList } from '@unionkey/shared/src/routes';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 import type {
   EApproveType,
   IStakeTxResponse,
   IStakingInfo,
-} from '@onekeyhq/shared/types/staking';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/staking';
+import type { ISendTxOnSuccessData } from '@unionkey/shared/types/tx';
 
 import { useShowClaimEstimateGasAlert } from '../components/EstimateNetworkFee';
 

@@ -1,30 +1,30 @@
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
+import type { IUnsignedTxPro } from '@unionkey/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
 import {
   convertAddressToSignatureConfirmAddress,
   convertDecodedTxActionsToSignatureConfirmTxDisplayComponents,
   convertDecodedTxActionsToSignatureConfirmTxDisplayTitle,
   convertNetworkToSignatureConfirmNetwork,
-} from '@onekeyhq/shared/src/utils/txActionUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkey/shared/src/utils/txActionUtils';
+import { EServiceEndpointEnum } from '@unionkey/shared/types/endpoint';
 import {
   EParseTxComponentRole,
   EParseTxComponentType,
   EParseTxType,
-} from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkey/shared/types/signatureConfirm';
 import type {
   IAfterSendTxActionParams,
   IParseMessageParams,
   IParseMessageResp,
   IParseTransactionParams,
   IParseTransactionResp,
-} from '@onekeyhq/shared/types/signatureConfirm';
-import { ESwapProvider } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { IDecodedTx, ISendTxBaseParams } from '@onekeyhq/shared/types/tx';
+} from '@unionkey/shared/types/signatureConfirm';
+import { ESwapProvider } from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { IDecodedTx, ISendTxBaseParams } from '@unionkey/shared/types/tx';
 
 import { vaultFactory } from '../vaults/factory';
 

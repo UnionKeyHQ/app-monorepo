@@ -1,4 +1,4 @@
-import type { IMarketTokenChart } from '@onekeyhq/shared/types/market';
+import type { IMarketTokenChart } from '@unionkey/shared/types/market';
 
 import type {
   BusinessDay,
@@ -24,7 +24,7 @@ export type IOnHoverFunction = ({
   price,
 }: {
   time?: UTCTimestamp | BusinessDay | Date | string;
-  price?: number | string;
+  price?: number | string | { close?: number };
 }) => void;
 export interface IChartViewProps {
   data: IMarketTokenChart;
@@ -39,9 +39,13 @@ export interface IChartViewAdapterProps extends IChartViewProps {
   bottomColor: string;
 }
 
-interface IOnekeyChartApi extends IChartApi {
+interface IUnionkeyChartApi extends IChartApi {
   // eslint-disable-next-line camelcase
-  _onekey_series?: ISeriesApi<'Area'>;
+  _unionkey_series?: ISeriesApi<'Area'> | any;
+  // eslint-disable-next-line camelcase
+  _unionkey_volume_series?: any;
+  // eslint-disable-next-line camelcase
+  _unionkey_series_type?: 'area' | 'candlestick';
 }
 export function createChartDom(
   createChartFunc: (
@@ -65,16 +69,20 @@ export function createChartDom(
     },
     grid: {
       vertLines: { visible: false },
-      horzLines: { visible: false },
+      horzLines: { color: 'rgba(160, 167, 174, 0.12)' },
     },
     timeScale: {
       visible: false,
+      rightOffset: 6,
+      barSpacing: 8,
+      minBarSpacing: 4,
       fixLeftEdge: true,
       fixRightEdge: true,
       lockVisibleTimeRangeOnResize: true,
     },
     rightPriceScale: {
-      visible: false,
+      visible: true,
+      borderVisible: false,
     },
     handleScale: {
       pinch: false,
@@ -90,9 +98,28 @@ export function createChartDom(
   chart.timeScale().fitContent();
   window.addEventListener('resize', handleResize);
   // @ts-ignore
-  globalThis._onekey_chart = chart;
+  globalThis._unionkey_chart = chart;
   return { chart, handleResize };
 }
+
+const isCandleChartData = (
+  data: IMarketTokenChart,
+): data is [number, number, number, number, number, number][] =>
+  Array.isArray(data[0]) && data[0].length >= 5;
+
+const normalizeChartTime = (time: number) =>
+  Math.floor(time > 10_000_000_000 ? time / 1000 : time) as UTCTimestamp;
+
+const removeExistingSeries = (chart: IUnionkeyChartApi) => {
+  if (chart._unionkey_series) {
+    chart.removeSeries(chart._unionkey_series);
+    chart._unionkey_series = undefined;
+  }
+  if (chart._unionkey_volume_series) {
+    chart.removeSeries(chart._unionkey_volume_series);
+    chart._unionkey_volume_series = undefined;
+  }
+};
 
 export function updateChartDom({
   lineColor,
@@ -105,15 +132,67 @@ export function updateChartDom({
   bottomColor: string;
   data: IMarketTokenChart;
 }) {
-  const formattedData = (data as [UTCTimestamp, number][]).map(
+  // @ts-ignore
+  const chart = globalThis._unionkey_chart as IUnionkeyChartApi;
+
+  if (isCandleChartData(data)) {
+    const candleData = data.map(([time, open, high, low, close]) => ({
+      time: normalizeChartTime(time),
+      open,
+      high,
+      low,
+      close,
+    }));
+    const volumeData = data.map(([time, open, , , close, volume]) => ({
+      time: normalizeChartTime(time),
+      value: volume || 0,
+      color:
+        close >= open ? 'rgba(0, 113, 63, 0.35)' : 'rgba(196, 0, 6, 0.35)',
+    }));
+
+    if (chart._unionkey_series_type !== 'candlestick') {
+      removeExistingSeries(chart);
+      chart._unionkey_series = chart.addCandlestickSeries({
+        upColor: 'rgba(0, 113, 63, 0.95)',
+        downColor: 'rgba(196, 0, 6, 0.95)',
+        wickUpColor: 'rgba(0, 113, 63, 0.95)',
+        wickDownColor: 'rgba(196, 0, 6, 0.95)',
+        borderVisible: false,
+        priceScaleId: 'right',
+      });
+      chart._unionkey_volume_series = chart.addHistogramSeries({
+        priceFormat: { type: 'volume' },
+        priceScaleId: 'volume',
+      });
+      chart.priceScale('volume').applyOptions({
+        scaleMargins: {
+          top: 0.78,
+          bottom: 0,
+        },
+      });
+      chart._unionkey_series_type = 'candlestick';
+    }
+
+    chart._unionkey_series?.setData(candleData);
+    chart._unionkey_volume_series?.setData(volumeData);
+
+    if (data.length > 2) {
+      chart.timeScale().setVisibleLogicalRange({
+        from: Math.max(0, data.length - 64),
+        to: data.length + 5,
+      });
+    }
+    return;
+  }
+
+  const formattedData = (data as [number, number][]).map(
     ([time, value]) => ({
-      time,
+      time: normalizeChartTime(time),
       value,
     }),
   );
-  // @ts-ignore
-  const chart = globalThis._onekey_chart as IOnekeyChartApi;
-  if (!chart._onekey_series) {
+  if (!chart._unionkey_series || chart._unionkey_series_type !== 'area') {
+    removeExistingSeries(chart);
     const newSeries = chart.addAreaSeries({
       lineColor,
       topColor,
@@ -123,10 +202,11 @@ export function updateChartDom({
       crosshairMarkerRadius: 5,
     });
     newSeries.setData(formattedData);
-    chart._onekey_series = newSeries;
+    chart._unionkey_series = newSeries;
+    chart._unionkey_series_type = 'area';
     return;
   }
-  const series = chart._onekey_series;
+  const series = chart._unionkey_series as ISeriesApi<'Area'>;
   series.applyOptions({ lineColor, topColor, bottomColor });
   series.setData(formattedData);
 

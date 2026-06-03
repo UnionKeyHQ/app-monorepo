@@ -1,7 +1,7 @@
 import type {
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkey/kit-bg/src/dbs/local/types';
 
 import type { IServerNetwork } from '.';
 import type { INetworkAccount } from './account';

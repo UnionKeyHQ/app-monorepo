@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkey/components';
 import {
   Empty,
   Icon,
@@ -18,22 +18,22 @@ import {
   View,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { ITabHeaderInstance } from '@onekeyhq/components/src/layouts/TabView/Header';
-import { DiscoveryBrowserProviderMirror } from '@onekeyhq/kit/src/views/Discovery/components/DiscoveryBrowserProviderMirror';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { isGoogleSearchItem } from '@onekeyhq/shared/src/consts/discovery';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import type { ITabHeaderInstance } from '@unionkey/components/src/layouts/TabView/Header';
+import { DiscoveryBrowserProviderMirror } from '@unionkey/kit/src/views/Discovery/components/DiscoveryBrowserProviderMirror';
+import { EJotaiContextStoreNames } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { isGoogleSearchItem } from '@unionkey/shared/src/consts/discovery';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EUniversalSearchPages,
   IUniversalSearchParamList,
-} from '@onekeyhq/shared/src/routes/universalSearch';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IUniversalSearchResultItem } from '@onekeyhq/shared/types/search';
+} from '@unionkey/shared/src/routes/universalSearch';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import type { IUniversalSearchResultItem } from '@unionkey/shared/types/search';
 import {
   ESearchStatus,
   EUniversalSearchType,
-} from '@onekeyhq/shared/types/search';
+} from '@unionkey/shared/types/search';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';

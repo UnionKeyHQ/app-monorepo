@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js';
 
-import { YStack } from '@onekeyhq/components';
-import type { useSwapPanel } from '@onekeyhq/kit/src/views/Market/MarketDetailV2/components/SwapPanel/hooks/useSwapPanel';
-import type { IToken } from '@onekeyhq/kit/src/views/Market/MarketDetailV2/components/SwapPanel/types';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { YStack } from '@unionkey/components';
+import type { useSwapPanel } from '@unionkey/kit/src/views/Market/MarketDetailV2/components/SwapPanel/hooks/useSwapPanel';
+import type { IToken } from '@unionkey/kit/src/views/Market/MarketDetailV2/components/SwapPanel/types';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { ActionButton } from './components/ActionButton';
 import { AntiMEVToggle } from './components/AntiMEVToggle';

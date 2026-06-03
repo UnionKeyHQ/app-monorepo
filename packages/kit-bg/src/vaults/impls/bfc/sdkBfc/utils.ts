@@ -1,10 +1,10 @@
 import { TransactionBlock } from '@benfen/bfc.js/transactions';
 import { BFC_TYPE_ARG, normalizeHexAddress } from '@benfen/bfc.js/utils';
 
-import type { IEncodedTxBfc } from '@onekeyhq/core/src/chains/bfc/types';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
+import type { IEncodedTxBfc } from '@unionkey/core/src/chains/bfc/types';
+import { UnionKeyError } from '@unionkey/shared/src/errors';
 
-import type { OneKeyBfcClient } from './ClientBfc';
+import type { UnionKeyBfcClient } from './ClientBfc';
 import type {
   BenfenTransactionBlockResponse,
   BenfenTransactionBlockResponseOptions,
@@ -27,7 +27,7 @@ export function normalizeBfcCoinType(coinType: string): string {
 }
 
 export async function toTransaction(
-  client: OneKeyBfcClient,
+  client: UnionKeyBfcClient,
   sender: string,
   tx: IEncodedTxBfc | Uint8Array,
 ) {
@@ -50,7 +50,7 @@ export async function toTransaction(
 const POLL_INTERVAL = 2000;
 type IPollFn<T> = (time?: number, index?: number) => T;
 export function waitPendingTransaction(
-  client: OneKeyBfcClient,
+  client: UnionKeyBfcClient,
   txId: string,
   options?: BenfenTransactionBlockResponseOptions,
   right = true,
@@ -77,7 +77,7 @@ export function waitPendingTransaction(
         // ignore transaction not found
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         if (error.code !== -32_000 && error.code !== -32_602) {
-          return Promise.reject(new OneKeyError(error));
+          return Promise.reject(new UnionKeyError(error));
         }
       }
     }
@@ -89,7 +89,7 @@ export function waitPendingTransaction(
     }
 
     if (retry > retryCount) {
-      return Promise.reject(new OneKeyError('transaction timeout'));
+      return Promise.reject(new UnionKeyError('transaction timeout'));
     }
 
     return new Promise(

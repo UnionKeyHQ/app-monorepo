@@ -2,15 +2,15 @@ import type { ReactNode } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IStackProps, IXStackProps } from '@onekeyhq/components';
+import type { IStackProps, IXStackProps } from '@unionkey/components';
 import {
   IconButton,
   SizableText,
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export function InfoItemGroup({ children, ...rest }: IXStackProps) {
   return (

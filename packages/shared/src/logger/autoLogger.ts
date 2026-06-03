@@ -1,4 +1,4 @@
-import { toPlainErrorObject } from '@onekeyhq/shared/src/errors/utils/errorUtils';
+import { toPlainErrorObject } from '@unionkey/shared/src/errors/utils/errorUtils';
 
 let prevErrorStack: string | undefined;
 

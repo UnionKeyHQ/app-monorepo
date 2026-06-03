@@ -1,11 +1,11 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { Button, Dialog, Input, Page, YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import { ETransactionType } from '@onekeyhq/shared/types/signatureRecord';
+import { Button, Dialog, Input, Page, YStack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
+import { ETransactionType } from '@unionkey/shared/types/signatureRecord';
 
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
 
@@ -44,7 +44,7 @@ const SignTransactionButton = () => {
         ref.current += 1;
         void backgroundApiProxy.serviceSignature.addSignedTransaction({
           networkId: 'evm--1',
-          title: `OneKey Wallet ${ref.current}`,
+          title: `UnionKey Wallet ${ref.current}`,
           hash: '0x866c4749db18695e4359f4e3f121a835d7715638315427e5521bcd078724d0d1',
           address: '0x76f3f64cb3cD19debEE51436dF630a342B736C24',
           data: {
@@ -103,7 +103,7 @@ const CustomSignMessage = ({ num }: { num: number }) => {
         await backgroundApiProxy.serviceDApp.openSignMessageModal({
           accountId: account.id,
           networkId: network.id,
-          request: { origin: 'https://www.onekey.so', scope: 'ethereum' },
+          request: { origin: 'https://www.unionkey.so', scope: 'ethereum' },
           unsignedMessage: {
             type: EMessageTypesEth.PERSONAL_SIGN,
             message,

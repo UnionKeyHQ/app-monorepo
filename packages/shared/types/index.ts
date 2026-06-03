@@ -17,7 +17,7 @@ export enum ENetworkStatus {
   LISTED = 'LISTED',
 }
 
-export const EXT_UI_TO_BG_PORT_NAME = 'onekey@EXT_PORT_UI_TO_BG';
+export const EXT_UI_TO_BG_PORT_NAME = 'unionkey@EXT_PORT_UI_TO_BG';
 
 export interface INetworkFeeInfo {
   symbol: string;
@@ -69,8 +69,8 @@ export type IServerNetwork = {
   isCustomNetwork?: boolean;
 };
 
-export enum EOnekeyDomain {
-  ONEKEY_SO = 'onekey.so',
+export enum EUnionkeyDomain {
+  UNIONKEY_SO = 'unionkey.so',
 }
 
 export enum EAccountSelectorSceneName {

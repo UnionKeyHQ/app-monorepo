@@ -6,7 +6,7 @@ import {
   EDesktopStoreKeys,
   type IDesktopStoreMap,
   type IDesktopStoreUpdateSettings,
-} from '@onekeyhq/shared/types/desktop';
+} from '@unionkey/shared/types/desktop';
 
 const store = new Store<IDesktopStoreMap>({ name: 'UnionKey' });
 

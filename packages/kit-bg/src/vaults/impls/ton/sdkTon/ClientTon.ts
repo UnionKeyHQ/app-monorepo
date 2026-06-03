@@ -1,5 +1,5 @@
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { JsonRPCRequest } from '@onekeyhq/shared/src/request/JsonRPCRequest';
+import { UnionKeyError } from '@unionkey/shared/src/errors';
+import { JsonRPCRequest } from '@unionkey/shared/src/request/JsonRPCRequest';
 
 export class ClientTon {
   readonly rpc: JsonRPCRequest;
@@ -16,7 +16,7 @@ export class ClientTon {
     }>('getMasterchainInfo', []);
     const sequenceNumber = masterChainResponse.last?.seqno;
     if (typeof sequenceNumber !== 'number') {
-      throw new OneKeyError('Invalid masterchain response');
+      throw new UnionKeyError('Invalid masterchain response');
     }
     return {
       blockHeight: sequenceNumber,
@@ -30,7 +30,7 @@ export class ClientTon {
 
     const { hash } = result ?? {};
     if (!hash) {
-      throw new OneKeyError('Invalid hash');
+      throw new UnionKeyError('Invalid hash');
     }
     const txId = this.convertHashToTxId(hash);
     return txId;

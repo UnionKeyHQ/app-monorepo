@@ -51,7 +51,7 @@ Die Repositories sind nach dem Monorepo-Modell organisiert, um den Code auf vers
 
 Jedes Unterverzeichnis unter dem Verzeichnis `packages/` ist ein separates Projekt, dessen Name dem Wert des Feldes `name` im Verzeichnis **package.json** in monorepo entspricht.
 
-Wenn Sie eine Abhängigkeit für ein Unterverzeichnis installieren müssen, verwenden Sie einfach `yarn workspace @onekeyhq/web add axios`. Mit einem Präfix wie `yarn workspace @onekeyhq/web` kann das axios-Modul schließlich im Stammverzeichnis des Web-Unterprojekts installiert werden.
+Wenn Sie eine Abhängigkeit für ein Unterverzeichnis installieren müssen, verwenden Sie einfach `yarn workspace @unionkey/web add axios`. Mit einem Präfix wie `yarn workspace @unionkey/web` kann das axios-Modul schließlich im Stammverzeichnis des Web-Unterprojekts installiert werden.
 
 Einige der Abhängigkeiten haben native Teile, daher müssen Sie in das Verzeichnis `apps/ios` gehen und `pod install` ausführen, nachdem Sie die JS-Abhängigkeiten installiert haben.
 
@@ -63,4 +63,4 @@ Bei allen Umgebungs-, Modul- und Abhängigkeitsproblemen in der Startphase wird 
 
 2. Während der Installation von Abhängigkeiten oder beim Hinzufügen neuer Abhängigkeiten zeigt Garn **Fehler an. Ein unerwarteter Fehler ist aufgetreten: "expected workspace package to exist for**
 
-Siehe https://github.com/yarnpkg/yarn/issues/7807, setzen Sie die aktuelle Garnversion der Umgebung auf 1.18.0 durch den Befehl „yarn policies set-version 1.18.0“.
+Siehe https://github.com/yarnpkg/yarn/issues/7807, setzen Sie die aktuelle Garnversion der Umgebung auf 1.18.0 durch den Befehl „yarn policies set-version 1.18.0�?

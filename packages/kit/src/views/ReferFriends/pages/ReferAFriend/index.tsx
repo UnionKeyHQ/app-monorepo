@@ -11,24 +11,24 @@ import {
   Video,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useReferFriends } from '@onekeyhq/kit/src/hooks/useReferFriends';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
-import { EOneKeyDeepLinkPath } from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IInvitePostConfig } from '@onekeyhq/shared/src/referralCode/type';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useReferFriends } from '@unionkey/kit/src/hooks/useReferFriends';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
+import { EUnionKeyDeepLinkPath } from '@unionkey/shared/src/consts/deeplinkConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import type { IInvitePostConfig } from '@unionkey/shared/src/referralCode/type';
 import {
   EModalReferFriendsRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { referralLink } from '@onekeyhq/shared/src/utils/referralUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+} from '@unionkey/shared/src/routes';
+import { ESpotlightTour } from '@unionkey/shared/src/spotlight';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
+import { referralLink } from '@unionkey/shared/src/utils/referralUtils';
+import uriUtils from '@unionkey/shared/src/utils/uriUtils';
 
 enum EPhaseState {
   next = 'next',
@@ -75,8 +75,8 @@ function ReferAFriendPage({ postConfig }: { postConfig: IInvitePostConfig }) {
           muted
           source={
             themeName === 'dark'
-              ? require('@onekeyhq/kit/assets/OP-Dark.mp4')
-              : require('@onekeyhq/kit/assets/OP-Light.mp4')
+              ? require('@unionkey/kit/assets/OP-Dark.mp4')
+              : require('@unionkey/kit/assets/OP-Light.mp4')
           }
           resizeMode={EVideoResizeMode.COVER}
           controls={false}
@@ -302,7 +302,7 @@ export default function ReferAFriend() {
         const parsedURL = new URL(globalThis?.location.href);
         const code = parsedURL.searchParams.get('code');
         const url = uriUtils.buildDeepLinkUrl({
-          path: EOneKeyDeepLinkPath.invite_share,
+          path: EUnionKeyDeepLinkPath.invite_share,
           query: {
             utm_source: 'web_share',
             code: code || '',

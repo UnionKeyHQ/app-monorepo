@@ -20,7 +20,7 @@ const warningAtGB = 0.936;
 function handleDiskFullError(error: unknown) {
   const err = error as Error | undefined;
   if (err && err?.message && err?.message.includes(diskFullErrorMessage)) {
-    globalThis.$onekeySystemDiskIsFull = true;
+    globalThis.$unionkeySystemDiskIsFull = true;
     appGlobals?.$appEventBus?.emit(
       EAppEventBusNames.ShowSystemDiskFullWarning,
       undefined,
@@ -29,7 +29,7 @@ function handleDiskFullError(error: unknown) {
 }
 
 function checkIfDiskIsFullSync() {
-  if (globalThis.$onekeySystemDiskIsFull) {
+  if (globalThis.$unionkeySystemDiskIsFull) {
     appGlobals?.$appEventBus?.emit(
       EAppEventBusNames.ShowSystemDiskFullWarning,
       undefined,
@@ -54,7 +54,7 @@ async function checkIfDiskIsFull() {
             availableInGB,
           });
           if (availableInGB < warningAtGB) {
-            globalThis.$onekeySystemDiskIsFull = true;
+            globalThis.$unionkeySystemDiskIsFull = true;
           }
         }
       }

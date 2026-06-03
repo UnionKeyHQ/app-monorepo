@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { MorphoBundlerContract } from '@onekeyhq/shared/src/consts/addresses';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { MorphoBundlerContract } from '@unionkey/shared/src/consts/addresses';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
 import {
   EOnChainHistoryTxStatus,
   type IFetchHistoryTxDetailsResp,
-} from '@onekeyhq/shared/types/history';
-import { EApproveType } from '@onekeyhq/shared/types/staking';
+} from '@unionkey/shared/types/history';
+import { EApproveType } from '@unionkey/shared/types/staking';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

@@ -2,8 +2,8 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Checkbox, Dialog, Input } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Checkbox, Dialog, Input } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 export default function useOperationDialog() {
   const intl = useIntl();
@@ -54,10 +54,10 @@ export default function useOperationDialog() {
         Dialog.show({
           icon: 'GiroCardOutline',
           title: intl.formatMessage({
-            id: ETranslations.hardware_reset_onekey_lite,
+            id: ETranslations.hardware_reset_unionkey_lite,
           }),
           description: intl.formatMessage({
-            id: ETranslations.hardware_reset_onekey_lite_desc,
+            id: ETranslations.hardware_reset_unionkey_lite_desc,
           }),
           renderContent: (
             <Dialog.Form
@@ -118,10 +118,10 @@ export default function useOperationDialog() {
       icon: 'CheckRadioOutline',
       tone: 'success',
       title: intl.formatMessage({
-        id: ETranslations.hardware_onekey_lite_pin_changed,
+        id: ETranslations.hardware_unionkey_lite_pin_changed,
       }),
       description: intl.formatMessage({
-        id: ETranslations.hardware_onekey_lite_pin_changed_desc,
+        id: ETranslations.hardware_unionkey_lite_pin_changed_desc,
       }),
       onConfirmText: intl.formatMessage({
         id: ETranslations.global_i_got_it,
@@ -133,7 +133,7 @@ export default function useOperationDialog() {
       icon: 'CheckRadioOutline',
       tone: 'success',
       title: intl.formatMessage({
-        id: ETranslations.hardware_onekey_lite_reset,
+        id: ETranslations.hardware_unionkey_lite_reset,
       }),
       description: intl.formatMessage({
         id: ETranslations.hardware_data_erased_use_as_new,

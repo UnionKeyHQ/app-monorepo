@@ -1,44 +1,44 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { SendConfirmWithProvider } from '@onekeyhq/kit/src/views/Send';
-import type { IModalSendParamList } from '@onekeyhq/shared/src/routes';
-import { EModalSendRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import { SendConfirmWithProvider } from '@unionkey/kit/src/views/Send';
+import type { IModalSendParamList } from '@unionkey/shared/src/routes';
+import { EModalSendRoutes } from '@unionkey/shared/src/routes';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 
 const SendDataInput = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendDataInput/SendDataInputContainer'
+      '@unionkey/kit/src/views/Send/pages/SendDataInput/SendDataInputContainer'
     ),
 );
 
 const SendReplaceTx = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendReplaceTx/SendReplaceTxContainer'
+      '@unionkey/kit/src/views/Send/pages/SendReplaceTx/SendReplaceTxContainer'
     ),
 );
 
 const TokenSelector = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AssetSelector/pages/TokenSelector'),
+  () => import('@unionkey/kit/src/views/AssetSelector/pages/TokenSelector'),
 );
 
 const DeriveTypesAddress = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkey/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 const SendConfirmFromDApp = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendConfirmFromDApp/SendConfirmFromDApp'
+      '@unionkey/kit/src/views/Send/pages/SendConfirmFromDApp/SendConfirmFromDApp'
     ),
 );
 
 const SendConfirmFromSwap = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendConfirmFromSwap/SendConfirmFromSwap'
+      '@unionkey/kit/src/views/Send/pages/SendConfirmFromSwap/SendConfirmFromSwap'
     ),
 );
 

@@ -1,4 +1,4 @@
-import { EModalRoutes, EModalStakingRoutes } from '@onekeyhq/shared/src/routes';
+import { EModalRoutes, EModalStakingRoutes } from '@unionkey/shared/src/routes';
 
 import type { IAppNavigation } from '../../hooks/useAppNavigation';
 

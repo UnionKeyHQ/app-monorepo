@@ -1,6 +1,6 @@
-import { Stack, useOrientation, usePropsAndStyle } from '@onekeyhq/components';
-import type { IStackStyle } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack, useOrientation, usePropsAndStyle } from '@unionkey/components';
+import type { IStackStyle } from '@unionkey/components';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { useTradingViewProps } from './useTradingViewProps';
 import { WebView } from './WebView';

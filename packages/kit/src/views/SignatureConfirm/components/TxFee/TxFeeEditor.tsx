@@ -5,7 +5,7 @@ import { isEqual, isNaN, isNil, omit, pickBy } from 'lodash';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IXStackProps } from '@onekeyhq/components';
+import type { IXStackProps } from '@unionkey/components';
 import {
   Alert,
   Button,
@@ -21,33 +21,33 @@ import {
   YStack,
   useDialogInstance,
   useForm,
-} from '@onekeyhq/components';
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkey/components';
+import type { IUnsignedTxPro } from '@unionkey/core/src/types';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
 import {
   calculateCkbTotalFee,
   calculateNeoN3TotalFee,
   calculateSolTotalFee,
   calculateSuiTotalFee,
   calculateTotalFeeNative,
-} from '@onekeyhq/kit/src/utils/gasFee';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { REPLACE_TX_FEE_UP_RATIO } from '@onekeyhq/shared/src/consts/walletConsts';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/kit/src/utils/gasFee';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { REPLACE_TX_FEE_UP_RATIO } from '@unionkey/shared/src/consts/walletConsts';
+import type { IAppEventBusPayload } from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ALGO_TX_MIN_FEE } from '@onekeyhq/shared/types/algo';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { ALGO_TX_MIN_FEE } from '@unionkey/shared/types/algo';
 import type {
   IEstimateFeeParams,
   IFeeInfoUnit,
   IFeeSelectorItem,
   ISendSelectedFeeInfo,
-} from '@onekeyhq/shared/types/fee';
-import { EFeeType } from '@onekeyhq/shared/types/fee';
+} from '@unionkey/shared/types/fee';
+import { EFeeType } from '@unionkey/shared/types/fee';
 
 type IFeeInfoItem = {
   label: string;

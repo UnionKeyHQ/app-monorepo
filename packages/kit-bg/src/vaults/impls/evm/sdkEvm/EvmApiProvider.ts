@@ -5,18 +5,18 @@ import { defaultAbiCoder } from 'ethers/lib/utils';
 import { ethers } from 'ethersV6';
 import { isNil, keyBy, orderBy, pick, uniq } from 'lodash';
 
-import { validateEvmAddress } from '@onekeyhq/core/src/chains/evm/sdkEvm';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
+import { validateEvmAddress } from '@unionkey/core/src/chains/evm/sdkEvm';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import type { IEncodedTx } from '@unionkey/core/src/types';
 import type {
   IJsonRpcBatchParams,
   IJsonRpcParams,
-} from '@onekeyhq/shared/src/request/JsonRPCRequest';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/request/JsonRPCRequest';
+import type { IServerNetwork } from '@unionkey/shared/types';
 import type {
   IFetchServerAccountDetailsParams,
   IServerFetchNonceResponse,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkey/shared/types/address';
 import type {
   IEstimateGasParams,
   IEstimateGasResp,
@@ -27,19 +27,19 @@ import type {
   IServerGasLimitResponse,
   IServerGasPriceParams,
   IServerGasPriceResponse,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkey/shared/types/fee';
 import {
   EOnChainHistoryTxStatus,
   type IFetchHistoryTxDetailsResp,
   type IOnChainHistoryTxTransfer,
   type IServerFetchAccountHistoryDetailParams,
-} from '@onekeyhq/shared/types/history';
+} from '@unionkey/shared/types/history';
 import type {
   IAmountUnit,
   IFetchServerTokenListApiParams,
   IServerAccountTokenItem,
   IServerTokenListQuery,
-} from '@onekeyhq/shared/types/serverToken';
+} from '@unionkey/shared/types/serverToken';
 
 import { BaseApiProvider } from './BaseApiProvider';
 import {

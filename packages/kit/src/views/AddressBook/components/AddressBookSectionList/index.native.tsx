@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { SectionList } from '@onekeyhq/components';
+import { SectionList } from '@unionkey/components';
 
 import type { IAddressBookSectionListProps } from './type';
 

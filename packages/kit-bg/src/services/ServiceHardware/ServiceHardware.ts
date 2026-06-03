@@ -7,42 +7,42 @@ import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { makeTimeoutPromise } from '@onekeyhq/shared/src/background/backgroundUtils';
-import { HARDWARE_SDK_VERSION } from '@onekeyhq/shared/src/config/appConfig';
-import { BTC_FIRST_TAPROOT_PATH } from '@onekeyhq/shared/src/consts/chainConsts';
-import * as deviceErrors from '@onekeyhq/shared/src/errors/errors/hardwareErrors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { makeTimeoutPromise } from '@unionkey/shared/src/background/backgroundUtils';
+import { HARDWARE_SDK_VERSION } from '@unionkey/shared/src/config/appConfig';
+import { BTC_FIRST_TAPROOT_PATH } from '@unionkey/shared/src/consts/chainConsts';
+import * as deviceErrors from '@unionkey/shared/src/errors/errors/hardwareErrors';
+import { convertDeviceResponse } from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import type { IAppEventBusPayload } from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkey/shared/src/eventBus/appEventBus';
 import {
   CoreSDKLoader,
   getHardwareSDKInstance,
-} from '@onekeyhq/shared/src/hardware/instance';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import cacheUtils, { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkey/shared/src/hardware/instance';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
+import platformEnv from '@unionkey/shared/src/platformEnv';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import cacheUtils, { memoizee } from '@unionkey/shared/src/utils/cacheUtils';
 import deviceHomeScreenUtils, {
   DEFAULT_T1_HOME_SCREEN_INFORMATION,
   T1_HOME_SCREEN_DEFAULT_IMAGES,
-} from '@onekeyhq/shared/src/utils/deviceHomeScreenUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import numberUtils from '@onekeyhq/shared/src/utils/numberUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EHardwareTransportType } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/utils/deviceHomeScreenUtils';
+import deviceUtils from '@unionkey/shared/src/utils/deviceUtils';
+import numberUtils from '@unionkey/shared/src/utils/numberUtils';
+import timerUtils from '@unionkey/shared/src/utils/timerUtils';
+import { EHardwareTransportType } from '@unionkey/shared/types';
 import type {
   IBleFirmwareReleasePayload,
   IDeviceVerifyVersionCompareResult,
   IDeviceVersionCacheInfo,
   IFirmwareReleasePayload,
-  IOneKeyDeviceFeatures,
-} from '@onekeyhq/shared/types/device';
-import { EOneKeyDeviceMode } from '@onekeyhq/shared/types/device';
+  IUnionKeyDeviceFeatures,
+} from '@unionkey/shared/types/device';
+import { EUnionKeyDeviceMode } from '@unionkey/shared/types/device';
 
 import localDb from '../../dbs/local/localDb';
 import simpleDb from '../../dbs/simple/simpleDb';
@@ -83,7 +83,7 @@ import type {
   Features,
   IDeviceType,
   KnownDevice,
-  OnekeyFeatures,
+  UnionkeyFeatures,
   Response,
   SearchDevice,
   UiEvent,
@@ -254,8 +254,8 @@ class ServiceHardware extends ServiceBase {
     try {
       const instance = await getHardwareSDKInstance({
         hardwareTransportType,
-        // https://data.onekey.so/pre-config.json?noCache=1714090312200
-        // https://data.onekey.so/config.json?nocache=0.8336416330053136
+        // https://data.unionkey.so/pre-config.json?noCache=1714090312200
+        // https://data.unionkey.so/config.json?nocache=0.8336416330053136
         isPreRelease: isPreRelease === true,
         hardwareConnectSrc,
         debugMode,
@@ -357,7 +357,7 @@ class ServiceHardware extends ServiceBase {
         const deviceMode = await this.getDeviceModeFromFeatures({
           features: features || {},
         });
-        const isBootloaderMode = deviceMode === EOneKeyDeviceMode.bootloader;
+        const isBootloaderMode = deviceMode === EUnionKeyDeviceMode.bootloader;
 
         const usedPayload: IHardwareUiPayload = {
           uiRequestType,
@@ -474,9 +474,9 @@ class ServiceHardware extends ServiceBase {
             messages.payload.length > 0 ? messages.payload[0] : '';
 
           if (
-            messageType.includes('@onekey/hd-core') ||
-            messageType.includes('@onekey/hd-transport') ||
-            messageType.includes('@onekey/hd-ble-transport')
+            messageType.includes('@unionkey/hd-core') ||
+            messageType.includes('@unionkey/hd-transport') ||
+            messageType.includes('@unionkey/hd-ble-transport')
           ) {
             defaultLogger.hardware.sdkLog.log(
               messages.event,
@@ -522,11 +522,11 @@ class ServiceHardware extends ServiceBase {
     });
 
   private handlerConnectError = (e: any) => {
-    const error: deviceErrors.OneKeyHardwareError | undefined =
-      e as deviceErrors.OneKeyHardwareError;
+    const error: deviceErrors.UnionKeyHardwareError | undefined =
+      e as deviceErrors.UnionKeyHardwareError;
 
     if (
-      error instanceof deviceErrors.OneKeyHardwareError &&
+      error instanceof deviceErrors.UnionKeyHardwareError &&
       !error?.reconnect
     ) {
       throw error;
@@ -576,7 +576,7 @@ class ServiceHardware extends ServiceBase {
         connectId,  
       });  
         
-      // 重新获取特性确认解锁成功  
+      // 重新获取特性确认解锁成�? 
       features = await this.getFeaturesWithoutCache({  
         connectId,  
       });  
@@ -658,15 +658,15 @@ class ServiceHardware extends ServiceBase {
   async getDeviceModeFromFeatures({
     features,
   }: {
-    features: IOneKeyDeviceFeatures;
-  }): Promise<EOneKeyDeviceMode> {
+    features: IUnionKeyDeviceFeatures;
+  }): Promise<EUnionKeyDeviceMode> {
     return deviceUtils.getDeviceModeFromFeatures({ features });
   }
 
   async getConnectIdFromFeatures({
     features,
   }: {
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
   }): Promise<string | undefined> {
     if (features) {
       const dbDevice = await localDb.getDeviceByQuery({
@@ -691,7 +691,7 @@ class ServiceHardware extends ServiceBase {
   async getDeviceTypeFromFeatures({
     features,
   }: {
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
   }): Promise<IDeviceType> {
     return deviceUtils.getDeviceTypeFromFeatures({ features });
   }
@@ -728,7 +728,7 @@ class ServiceHardware extends ServiceBase {
 
   _getFeaturesWithMutex = async (
     options: IDeviceGetFeaturesOptions,
-  ): Promise<IOneKeyDeviceFeatures> => {
+  ): Promise<IUnionKeyDeviceFeatures> => {
     const fn = async () => {
       const features = await this.getFeaturesMutex.runExclusive(async () => {
         const r = await this._getFeaturesWithTimeout(options);
@@ -944,7 +944,7 @@ class ServiceHardware extends ServiceBase {
 
   @backgroundMethod()
   async shouldAuthenticateFirmwareByHash(params: {
-    features: IOneKeyDeviceFeatures | undefined;
+    features: IUnionKeyDeviceFeatures | undefined;
   }) {
     return this.hardwareVerifyManager.shouldAuthenticateFirmwareByHash(params);
   }
@@ -952,14 +952,14 @@ class ServiceHardware extends ServiceBase {
   @backgroundMethod()
   async verifyFirmwareHash({
     deviceType,
-    onekeyFeatures,
+    unionkeyFeatures,
   }: {
     deviceType: IDeviceType;
-    onekeyFeatures: OnekeyFeatures | undefined;
+    unionkeyFeatures: UnionkeyFeatures | undefined;
   }): Promise<IDeviceVerifyVersionCompareResult> {
     return this.hardwareVerifyManager.verifyFirmwareHash({
       deviceType,
-      onekeyFeatures,
+      unionkeyFeatures,
     });
   }
 
@@ -985,25 +985,25 @@ class ServiceHardware extends ServiceBase {
   }
 
   @backgroundMethod()
-  async getOneKeyFeatures({
+  async getUnionKeyFeatures({
     connectId,
     deviceType,
   }: {
     connectId: string;
     deviceType: IDeviceType;
-  }): Promise<OnekeyFeatures> {
+  }): Promise<UnionkeyFeatures> {
     const hardwareSDK = await this.getSDKInstance();
     return convertDeviceResponse(() => {
-      // classic1s does not support getOnekeyFeatures method
+      // classic1s does not support getUnionkeyFeatures method
       if (
         deviceType === EDeviceType.Classic1s ||
         deviceType === EDeviceType.ClassicPure
       ) {
         return hardwareSDK?.getFeatures(
           connectId,
-        ) as unknown as Response<OnekeyFeatures>;
+        ) as unknown as Response<UnionkeyFeatures>;
       }
-      return hardwareSDK?.getOnekeyFeatures(connectId);
+      return hardwareSDK?.getUnionkeyFeatures(connectId);
     });
   }
 
@@ -1018,25 +1018,25 @@ class ServiceHardware extends ServiceBase {
       return;
     }
     const versionInfo: IDeviceVersionCacheInfo = {
-      onekey_firmware_version: undefined,
-      onekey_ble_version: undefined,
+      unionkey_firmware_version: undefined,
+      unionkey_ble_version: undefined,
       ble_ver: undefined,
-      onekey_boot_version: undefined,
+      unionkey_boot_version: undefined,
       bootloader_version: undefined,
     };
     if (params?.releaseResult?.updateInfos?.bootloader?.hasUpgrade) {
       const bootVersion =
         params.releaseResult.updateInfos.bootloader?.toVersion;
-      versionInfo.onekey_boot_version = bootVersion;
+      versionInfo.unionkey_boot_version = bootVersion;
       versionInfo.bootloader_version = bootVersion;
     }
     if (params?.releaseResult?.updateInfos?.firmware?.hasUpgrade) {
-      versionInfo.onekey_firmware_version =
+      versionInfo.unionkey_firmware_version =
         params.releaseResult.updateInfos.firmware?.toVersion;
     }
     if (params?.releaseResult?.updateInfos?.ble?.hasUpgrade) {
       const bleVersion = params.releaseResult.updateInfos.ble?.toVersion;
-      versionInfo.onekey_ble_version = bleVersion;
+      versionInfo.unionkey_ble_version = bleVersion;
       versionInfo.ble_ver = bleVersion;
     }
 
@@ -1065,7 +1065,7 @@ class ServiceHardware extends ServiceBase {
       const evmAddressResponse = await convertDeviceResponse(() =>
         hardwareSDK?.evmGetAddress(params.connectId, params.deviceId, {
           path: params.path,
-          showOnOneKey: false,
+          showOnUnionKey: false,
           useEmptyPassphrase: true,
         }),
       );
@@ -1102,7 +1102,7 @@ class ServiceHardware extends ServiceBase {
       const result = await convertDeviceResponse(() => {
         return hardwareSDK.btcGetPublicKey(connectId, deviceId || '', {
           path: BTC_FIRST_TAPROOT_PATH,
-          showOnOneKey: false,
+          showOnUnionKey: false,
           useEmptyPassphrase: passphraseState ? undefined : true,
           passphraseState: passphraseState || undefined,
         });

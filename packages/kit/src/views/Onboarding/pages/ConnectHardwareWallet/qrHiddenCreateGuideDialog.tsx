@@ -1,11 +1,11 @@
-import { Dialog, Stack } from '@onekeyhq/components';
-import type { ITutorialsListItem } from '@onekeyhq/kit/src/components/TutorialsList';
-import { TutorialsList } from '@onekeyhq/kit/src/components/TutorialsList';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import { Dialog, Stack } from '@unionkey/components';
+import type { ITutorialsListItem } from '@unionkey/kit/src/components/TutorialsList';
+import { TutorialsList } from '@unionkey/kit/src/components/TutorialsList';
+import type { IUnionKeyError } from '@unionkey/shared/src/errors/types/errorTypes';
+import { EUnionKeyErrorClassNames } from '@unionkey/shared/src/errors/types/errorTypes';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
 
 function showDialog() {
   const tutorials: ITutorialsListItem[] = [
@@ -42,12 +42,12 @@ function showDialog() {
   });
 }
 
-function showDialogIfErrorMatched(error: IOneKeyError | unknown) {
+function showDialogIfErrorMatched(error: IUnionKeyError | unknown) {
   if (
     errorUtils.isErrorByClassName({
       error,
       className: [
-        EOneKeyErrorClassNames.OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
+        EUnionKeyErrorClassNames.UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
       ],
     })
   ) {

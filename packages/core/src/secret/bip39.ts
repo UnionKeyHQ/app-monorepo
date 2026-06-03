@@ -9,9 +9,9 @@ import {
   wordlists,
 } from 'bip39';
 
-import { InvalidMnemonic } from '@onekeyhq/shared/src/errors';
-import { check } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { InvalidMnemonic } from '@unionkey/shared/src/errors';
+import { check } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import type { ICoreHdCredentialEncryptHex } from '../types';
 

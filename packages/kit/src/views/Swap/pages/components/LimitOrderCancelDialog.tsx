@@ -1,7 +1,7 @@
-import { YStack, useMedia } from '@onekeyhq/components';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IFetchLimitOrderRes } from '@onekeyhq/shared/types/swap/types';
+import { YStack, useMedia } from '@unionkey/components';
+import { HyperlinkText } from '@unionkey/kit/src/components/HyperlinkText';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IFetchLimitOrderRes } from '@unionkey/shared/types/swap/types';
 
 import LimitOrderCard from '../../components/LimitOrderCard';
 

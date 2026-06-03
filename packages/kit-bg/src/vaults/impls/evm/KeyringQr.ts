@@ -1,40 +1,40 @@
 import { TransactionTypes } from '@ethersproject/transactions';
 import HDKey from 'hdkey';
 
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
+import type { CoreChainApiBase } from '@unionkey/core/src/base/CoreChainApiBase';
 import {
   buildSignedTxFromSignatureEvm,
   packUnsignedTxForSignEvm,
-} from '@onekeyhq/core/src/chains/evm/sdkEvm';
-import { verifyEvmSignedTxMatched } from '@onekeyhq/core/src/chains/evm/sdkEvm/verify';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkey/core/src/chains/evm/sdkEvm';
+import { verifyEvmSignedTxMatched } from '@unionkey/core/src/chains/evm/sdkEvm/verify';
+import type { IEncodedTxEvm } from '@unionkey/core/src/chains/evm/types';
+import coreChainApi from '@unionkey/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
   IUnsignedMessage,
   IUnsignedMessageEth,
-} from '@onekeyhq/core/src/types';
-import type { AirGapUR } from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/core/src/types';
+import type { AirGapUR } from '@unionkey/qr-wallet-sdk';
 import {
   EAirGapAccountNoteEvm,
   EAirGapDataTypeEvm,
   getAirGapSdk,
-} from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkey/qr-wallet-sdk';
 import type {
   IAirGapGenerateSignRequestParamsEvm,
   IAirGapSignatureEvm,
-} from '@onekeyhq/qr-wallet-sdk/src/types';
+} from '@unionkey/qr-wallet-sdk/src/types';
 import {
-  OneKeyErrorAirGapAccountNotFound,
-  OneKeyErrorAirGapInvalidQrCode,
-} from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+  UnionKeyErrorAirGapAccountNotFound,
+  UnionKeyErrorAirGapInvalidQrCode,
+} from '@unionkey/shared/src/errors';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
+import { EMessageTypesEth } from '@unionkey/shared/types/message';
 
 import localDb from '../../../dbs/local/localDb';
 import { UR_DEFAULT_ORIGIN } from '../../../services/ServiceQrWallet/qrWalletConsts';
@@ -76,7 +76,7 @@ export class KeyringQr extends KeyringQrBase {
   }): Promise<void> {
     if (requestId && requestId !== requestIdOfSig) {
       console.error('EVM tx requestId not match');
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
     return verifyEvmSignedTxMatched({
       signerAddress: from,
@@ -137,7 +137,7 @@ export class KeyringQr extends KeyringQrBase {
       // eslint-disable-next-line spellcheck/spell-checker
       // ERROR throw from node_modules/@keystonehq/keystone-sdk/dist/chains/ethereum.js
       //        throw new Error('type not match');
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
   }
 
@@ -317,7 +317,7 @@ export class KeyringQr extends KeyringQrBase {
             });
 
           if (!airGapAccount) {
-            throw new OneKeyErrorAirGapAccountNotFound();
+            throw new UnionKeyErrorAirGapAccountNotFound();
           }
 
           let publicKey = airGapAccount?.publicKey;

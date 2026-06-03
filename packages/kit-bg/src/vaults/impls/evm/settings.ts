@@ -1,5 +1,5 @@
-import { ECoreApiExportedSecretKeyType } from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { ECoreApiExportedSecretKeyType } from '@unionkey/core/src/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
   EMPTY_NATIVE_TOKEN_ADDRESS,
   EthereumCbBTC,
@@ -11,18 +11,18 @@ import {
   EthereumWBTC,
   EthereumWETH,
   SepoliaMatic,
-} from '@onekeyhq/shared/src/consts/addresses';
+} from '@unionkey/shared/src/consts/addresses';
 import {
   COINTYPE_ETH,
   IMPL_EVM,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   IStakingConfig,
   IStakingFlowConfig,
-} from '@onekeyhq/shared/types/earn';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
+} from '@unionkey/shared/types/earn';
+import { EEarnProviderEnum } from '@unionkey/shared/types/earn';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 
@@ -197,7 +197,7 @@ const accountDeriveInfo: IAccountDeriveInfoMapEvm = {
     labelKey: ETranslations.bip44__standard,
     template: `m/44'/${COINTYPE_ETH}'/0'/0/${INDEX_PLACEHOLDER}`,
     coinType: COINTYPE_ETH,
-    desc: `OneKey, MetaMask, Trezor, imToken, m/44'/60'/0'/0/*`,
+    desc: `UnionKey, MetaMask, Trezor, imToken, m/44'/60'/0'/0/*`,
   },
   // TODO
   // etcNative: {

@@ -21,7 +21,7 @@ const earnTradeDefaultSetETH = {
   'symbol': 'ETH',
   'decimals': 18,
   'isNative': true,
-  'networkLogoURI': 'https://uni.onekey-asset.com/static/chain/eth.png',
+  'networkLogoURI': 'https://uni.unionkey-asset.com/static/chain/eth.png',
 };
 
 const earnTradeDefaultSetUSDC = {
@@ -32,7 +32,7 @@ const earnTradeDefaultSetUSDC = {
   'decimals': 6,
   'isNative': false,
   'isPopular': true,
-  'networkLogoURI': 'https://uni.onekey-asset.com/static/chain/eth.png',
+  'networkLogoURI': 'https://uni.unionkey-asset.com/static/chain/eth.png',
 };
 
 const earnTradeDefaultSetSOL = {
@@ -42,7 +42,7 @@ const earnTradeDefaultSetSOL = {
   'symbol': 'USDC',
   'decimals': 6,
   'isNative': false,
-  'networkLogoURI': 'https://uni.onekey-asset.com/static/chain/sol.png',
+  'networkLogoURI': 'https://uni.unionkey-asset.com/static/chain/sol.png',
 };
 
 export const isSupportStaking = (symbol: string) =>

@@ -8,8 +8,8 @@ import elliptic from 'elliptic';
 import {
   IncorrectPassword,
   InvalidMnemonic,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { decryptAsync, encryptAsync } from './encryptors/aes256';
 import { sha256 } from './hash';
@@ -575,7 +575,7 @@ const bip39TestVectors = [
   },
 ];
 
-const password = 'onekey';
+const password = 'unionkey';
 
 const createXPrvTestAsync = async () => ({
   chainCode: Buffer.alloc(32),
@@ -695,16 +695,16 @@ test('sha256', () => {
   );
 });
 
-test('sha512Async - iterations = 1 (默认值) 无 iterationSalt', async () => {
+test('sha512Async - iterations = 1 (默认�? �?iterationSalt', async () => {
   const { sha512Async } = await import('./hash');
   const testData = 'hello world';
   const result = await sha512Async({ data: testData });
 
   // console.log('result', result);
 
-  // 验证结果是否为有效的 SHA-512 哈希（128个十六进制字符）
+  // 验证结果是否为有效的 SHA-512 哈希�?28个十六进制字符）
   expect(result).toHaveLength(128);
-  // 验证结果是否一致（与已知输入的预期输出比较）
+  // 验证结果是否一致（与已知输入的预期输出比较�?
   expect(result).toBe(
     '309ecc489c12d6eb4cc40f50c902f2b4d0ed77ee511a7c7a9bcd3ca86d4cd86f989dd35bc5ff499670da34255b45b0cfd830e81f605dcf7dc5542e93ae9cd76f',
   );
@@ -717,7 +717,7 @@ test('sha512Async - iterations = 0 应该抛出错误', async () => {
   ).rejects.toThrow('iterations must be greater than 0');
 });
 
-test('sha512Async - iterations = 5 无 iterationSalt', async () => {
+test('sha512Async - iterations = 5 �?iterationSalt', async () => {
   const { sha512Async } = await import('./hash');
   const testData = 'hello world';
   const iterations = 5;
@@ -731,17 +731,17 @@ test('sha512Async - iterations = 5 无 iterationSalt', async () => {
   );
 });
 
-test('sha512Async - iterations = 1 有 iterationSalt', async () => {
+test('sha512Async - iterations = 1 �?iterationSalt', async () => {
   const { sha512Async } = await import('./hash');
   const testData = 'test data';
   const iterationSalt = 'salt123';
 
   const result = await sha512Async({ data: testData, iterationSalt });
-  // 由于只有一次迭代，结果应该与无 salt 的情况相同
+  // 由于只有一次迭代，结果应该与无 salt 的情况相�?
   expect(result).toBe(bufferUtils.bytesToHex(sha512noble(testData)));
 });
 
-test('sha512Async - iterations = 3 有 iterationSalt', async () => {
+test('sha512Async - iterations = 3 �?iterationSalt', async () => {
   const { sha512Async } = await import('./hash');
   const testData = 'test data';
   const iterations = 3;
@@ -768,7 +768,7 @@ test('sha512Async - iterations = 3 有 iterationSalt', async () => {
   expect(result).toBe(expectedHash);
 });
 
-test('sha512Async - 空数据应该抛出错误', async () => {
+test('sha512Async - 空数据应该抛出错�?, async () => {
   const { sha512Async } = await import('./hash');
   await expect(sha512Async({ data: '' })).rejects.toThrow('data is required');
 });

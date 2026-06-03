@@ -1,7 +1,7 @@
 export const bannerTestData = [
   {
     'src':
-      'https://dev.onekey-asset.com/dashboard/banner/upload_1706683116708.0.6327129942895648.0.jpeg',
+      'https://dev.unionkey-asset.com/dashboard/banner/upload_1706683116708.0.6327129942895648.0.jpeg',
     'hrefType': 'internal',
     'href':
       'https://unionkey.io/Home',

@@ -1,11 +1,11 @@
 import { cloneDeep } from 'lodash';
 
-import type { IBrowserBookmark } from '@onekeyhq/kit/src/views/Discovery/types';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+import type { IBrowserBookmark } from '@unionkey/kit/src/views/Discovery/types';
+import { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
 import type {
   ICloudSyncPayloadBrowserBookmark,
   ICloudSyncTargetBrowserBookmark,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 
 import simpleDb from '../../../dbs/simple/simpleDb';
 

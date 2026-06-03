@@ -6,10 +6,10 @@ import {
   LinearGradient,
   SizableText,
   XStack,
-} from '@onekeyhq/components';
-import { LITE_CARD_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/components';
+import { LITE_CARD_URL } from '@unionkey/shared/src/config/appConfig';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 
 export function Header() {
   const intl = useIntl();
@@ -36,14 +36,14 @@ export function Header() {
             height: '100%',
             resizeMode: 'cover',
           }}
-          source={require('@onekeyhq/kit/assets/litecard/home_buy.png')}
+          source={require('@unionkey/kit/assets/litecard/home_buy.png')}
         />
       </XStack>
       {/* <SizableText size="$headingXl" color="rgba(0, 0, 0, 0.95)">
-        {intl.formatMessage({ id: ETranslations.global_onekey_lite })}
+        {intl.formatMessage({ id: ETranslations.global_unionkey_lite })}
       </SizableText> */}
       <SizableText size="$bodyMd" color="rgba(0, 0, 0, 0.6)" pr={130}>
-        {intl.formatMessage({ id: ETranslations.settings_onekey_lite_desc })}
+        {intl.formatMessage({ id: ETranslations.settings_unionkey_lite_desc })}
       </SizableText>
       <Button
         bg="rgba(0, 0, 0, 0.95)"

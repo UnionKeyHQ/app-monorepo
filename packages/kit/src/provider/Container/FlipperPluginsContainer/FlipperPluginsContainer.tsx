@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkey/shared/src/appGlobals';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export function FlipperPluginsContainer() {
   const [realmReady, setRealmReady] = useState(false);
@@ -27,7 +27,7 @@ export function FlipperPluginsContainer() {
       if (realmReady && appGlobals.$$realm && platformEnv.isNative) {
         console.log('FlipperPluginsContainer render realm plugin');
         const RealmFlipperPlugin = (
-          require('@onekeyhq/shared/src/modules3rdParty/realm-flipper-plugin-device') as typeof import('@onekeyhq/shared/src/modules3rdParty/realm-flipper-plugin-device')
+          require('@unionkey/shared/src/modules3rdParty/realm-flipper-plugin-device') as typeof import('@unionkey/shared/src/modules3rdParty/realm-flipper-plugin-device')
         ).default;
         return <RealmFlipperPlugin realms={[appGlobals.$$realm]} />;
       }

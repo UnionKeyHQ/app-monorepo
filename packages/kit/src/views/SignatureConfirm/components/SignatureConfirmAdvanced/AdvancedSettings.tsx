@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import { Accordion, Icon, SizableText, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Accordion, Icon, SizableText, YStack } from '@unionkey/components';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 type IProps = {
   children: React.ReactNode;

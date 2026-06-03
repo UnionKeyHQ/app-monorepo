@@ -1,12 +1,12 @@
 import { useIntl } from 'react-intl';
 
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import type { IDBDevice } from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   EAccountManagerStacksRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkey/shared/src/routes';
 
 import { WalletOptionItem } from './WalletOptionItem';
 

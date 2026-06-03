@@ -2,11 +2,11 @@ import { memo, useCallback, useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Empty, Stack } from '@onekeyhq/components';
-import { AccountSelectorCreateAddressButton } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorCreateAddressButton';
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import debugUtils from '@onekeyhq/shared/src/utils/debug/debugUtils';
+import { Empty, Stack } from '@unionkey/components';
+import { AccountSelectorCreateAddressButton } from '@unionkey/kit/src/components/AccountSelector/AccountSelectorCreateAddressButton';
+import type { IDBAccount } from '@unionkey/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import debugUtils from '@unionkey/shared/src/utils/debug/debugUtils';
 
 import TokenDetailsHeader from './TokenDetailsHeader';
 import TokenDetailsHistory from './TokenDetailsHistory';

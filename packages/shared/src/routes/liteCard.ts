@@ -1,4 +1,4 @@
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
+import type { IDBWallet } from '@unionkey/kit-bg/src/dbs/local/types';
 
 export enum ELiteCardRoutes {
   LiteCardHome = 'LiteCardHome',

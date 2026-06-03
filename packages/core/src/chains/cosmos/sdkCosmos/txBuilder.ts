@@ -22,7 +22,7 @@ import { Any } from 'cosmjs-types/google/protobuf/any';
 import { MsgTransfer } from 'cosmjs-types/ibc/applications/transfer/v1/tx';
 import Long from 'long';
 
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import hexUtils from '@unionkey/shared/src/utils/hexUtils';
 
 import {
   getAminoSignDoc,

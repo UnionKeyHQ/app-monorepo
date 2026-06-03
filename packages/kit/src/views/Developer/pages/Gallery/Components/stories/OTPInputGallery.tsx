@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button, OTPInput, SizableText, YStack } from '@onekeyhq/components';
+import { Button, OTPInput, SizableText, YStack } from '@unionkey/components';
 
 import { Layout } from './utils/Layout';
 

@@ -6,12 +6,12 @@ import { Tooltip as TMTooltip } from 'tamagui';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 import {
   type EShortcutEvents,
   shortcutsMap,
-} from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkey/shared/src/shortcuts/shortcuts.enum';
 
 import { SizableText, XStack } from '../../primitives';
 import { Shortcut } from '../Shortcut';

@@ -1,4 +1,4 @@
-import type { IDisplayComponentDefault } from '@onekeyhq/shared/types/signatureConfirm';
+import type { IDisplayComponentDefault } from '@unionkey/shared/types/signatureConfirm';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

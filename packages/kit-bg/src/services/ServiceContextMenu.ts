@@ -1,18 +1,18 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyPlainTextError } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/shared/src/background/backgroundDecorators';
+import { UnionKeyPlainTextError } from '@unionkey/shared/src/errors';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   getDefaultLocale,
   getLocaleMessages,
-} from '@onekeyhq/shared/src/locale/getDefaultLocale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkey/shared/src/locale/getDefaultLocale';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import ServiceBase from './ServiceBase';
 
@@ -22,7 +22,7 @@ import type {
 } from '../dbs/simple/entity/SimpleDbEntityDefaultWalletSettings';
 import type ProviderApiPrivate from '../providers/ProviderApiPrivate';
 
-const MenuId = 'OneKeyDefaultWalletItem';
+const MenuId = 'UnionKeyDefaultWalletItem';
 @backgroundClass()
 class ServiceContextMenu extends ServiceBase {
   constructor({ backgroundApi }: { backgroundApi: any }) {
@@ -233,7 +233,7 @@ class ServiceContextMenu extends ServiceBase {
   @backgroundMethod()
   async addExcludedDApp(origin: string) {
     if (!origin) {
-      throw new OneKeyPlainTextError('origin is required');
+      throw new UnionKeyPlainTextError('origin is required');
     }
     return this.backgroundApi.simpleDb.defaultWalletSettings.addExcludeDapp(
       origin,
@@ -243,7 +243,7 @@ class ServiceContextMenu extends ServiceBase {
   @backgroundMethod()
   async removeExcludedDApp(origin: string) {
     if (!origin) {
-      throw new OneKeyPlainTextError('origin is required');
+      throw new UnionKeyPlainTextError('origin is required');
     }
     return this.backgroundApi.simpleDb.defaultWalletSettings.removeExcludeDapp(
       origin,

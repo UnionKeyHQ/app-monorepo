@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react';
 import { useState } from 'react';
 
-import { Stack } from '@onekeyhq/components';
+import { Stack } from '@unionkey/components';
 
 import type { GestureResponderEvent } from 'react-native';
 

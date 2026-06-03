@@ -32,7 +32,7 @@ function getPerformanceTimerLogConfigMap() {
   try {
     return (
       appStorage.syncStorage.getObject<Record<string, boolean>>(
-        EAppSyncStorageKeys.onekey_perf_timer_log_config,
+        EAppSyncStorageKeys.unionkey_perf_timer_log_config,
       ) ?? {}
     );
   } catch (error) {
@@ -49,7 +49,7 @@ function updatePerformanceTimerLogConfig(
     const configMap = getPerformanceTimerLogConfigMap();
 
     appStorage.syncStorage.setObject(
-      EAppSyncStorageKeys.onekey_perf_timer_log_config,
+      EAppSyncStorageKeys.unionkey_perf_timer_log_config,
       {
         ...configMap,
         [logName]: value,

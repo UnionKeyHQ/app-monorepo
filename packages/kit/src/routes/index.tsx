@@ -1,6 +1,6 @@
-import type { IRootStackNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { RootStackNavigator } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import type { ERootRoutes } from '@onekeyhq/shared/src/routes';
+import type { IRootStackNavigatorConfig } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import { RootStackNavigator } from '@unionkey/components/src/layouts/Navigation/Navigator';
+import type { ERootRoutes } from '@unionkey/shared/src/routes';
 
 export function RootNavigator({
   config,

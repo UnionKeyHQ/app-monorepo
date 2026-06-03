@@ -1,6 +1,6 @@
 import { DefaultTheme } from '@react-navigation/native';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 export const hasNativeHeaderView = platformEnv.isNativeIOS;
 

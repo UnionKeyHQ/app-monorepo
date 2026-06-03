@@ -4,22 +4,22 @@ import { isNil } from 'lodash';
 import {
   decryptStringAsync,
   encryptStringAsync,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkey/core/src/secret';
 import {
   WALLET_TYPE_HW,
   WALLET_TYPE_QR,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import { IncorrectMasterPassword } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import cloudSyncUtils from '@onekeyhq/shared/src/utils/cloudSyncUtils';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
+} from '@unionkey/shared/src/consts/dbConsts';
+import { EPrimeCloudSyncDataType } from '@unionkey/shared/src/consts/primeConsts';
+import { IncorrectMasterPassword } from '@unionkey/shared/src/errors';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
+import cloudSyncUtils from '@unionkey/shared/src/utils/cloudSyncUtils';
+import stringUtils from '@unionkey/shared/src/utils/stringUtils';
 import type {
   ICloudSyncCredential,
   ICloudSyncCredentialForLock,
   ICloudSyncPayloadDbWalletFields,
   ICloudSyncRawDataJson,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkey/shared/types/prime/primeCloudSyncTypes';
 
 import type {
   IDBCloudSyncItem,

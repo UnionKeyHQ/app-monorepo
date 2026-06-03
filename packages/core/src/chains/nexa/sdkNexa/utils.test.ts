@@ -1,4 +1,4 @@
-import { sign, verify } from '@onekeyhq/core/src/chains/nexa/sdkNexa/sdk';
+import { sign, verify } from '@unionkey/core/src/chains/nexa/sdkNexa/sdk';
 
 import {
   decodeScriptBufferToNexaAddress,
@@ -420,7 +420,7 @@ describe('Nexa Utils Tests', () => {
         'tokenIdOnNetwork': '',
         'symbol': 'NEX',
         'decimals': 2,
-        'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+        'logoURI': 'https://uni.unionkey-asset.com/static/chain/nexa.png',
         'impl': 'nexa',
         'chainId': '0',
         'address': '',
@@ -538,7 +538,7 @@ describe('Nexa Utils Tests', () => {
         'tokenIdOnNetwork': '',
         'symbol': 'NEX',
         'decimals': 2,
-        'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+        'logoURI': 'https://uni.unionkey-asset.com/static/chain/nexa.png',
         'impl': 'nexa',
         'chainId': '0',
         'address': '',
@@ -641,7 +641,7 @@ describe('Nexa Utils Tests', () => {
         'tokenIdOnNetwork': '',
         'symbol': 'NEX',
         'decimals': 2,
-        'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+        'logoURI': 'https://uni.unionkey-asset.com/static/chain/nexa.png',
         'impl': 'nexa',
         'chainId': '0',
         'address': '',
@@ -724,7 +724,7 @@ describe('Nexa Utils Tests', () => {
         'tokenIdOnNetwork': '',
         'symbol': 'NEX',
         'decimals': 2,
-        'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+        'logoURI': 'https://uni.unionkey-asset.com/static/chain/nexa.png',
         'impl': 'nexa',
         'chainId': '0',
         'address': '',
@@ -827,7 +827,7 @@ describe('Nexa Utils Tests', () => {
         'tokenIdOnNetwork': '',
         'symbol': 'NEX',
         'decimals': 2,
-        'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+        'logoURI': 'https://uni.unionkey-asset.com/static/chain/nexa.png',
         'impl': 'nexa',
         'chainId': '0',
         'address': '',

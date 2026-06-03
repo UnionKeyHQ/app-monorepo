@@ -7,14 +7,14 @@ import {
   SizableText,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import type { IInputAddOnProps } from '@onekeyhq/components/src/forms/Input/InputAddOnItem';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+} from '@unionkey/components';
+import type { IInputAddOnProps } from '@unionkey/components/src/forms/Input/InputAddOnItem';
+import { appLocale } from '@unionkey/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkey/shared/src/locale/enum/translations';
 import type {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkey/shared/src/types/changeHistory';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../hooks/usePromiseResult';

@@ -3,17 +3,17 @@
   <head>
     <script>
       for (let i = 0; i < 20; i++) {
-        fetch('https://fiat.onekeycn.com/swap/config/?i=' + i);
+        fetch('https://fiat.unionkeycn.com/swap/config/?i=' + i);
       }
 
-      if (window.$onekey && window.$onekey.ethereum) {
-        window.$onekey.ethereum
+      if (window.$unionkey && window.$unionkey.ethereum) {
+        window.$unionkey.ethereum
           .request({ method: 'net_version' })
           .then((res) => {
             console.log('>>>>>>>>>>>>>>>> HEAD onload check:   EVM net_version=', res);
           });
       } else {
-        console.log('>>>>>>>>>>>>>>>> HEAD script: window.$onekey.ethereum not found');
+        console.log('>>>>>>>>>>>>>>>> HEAD script: window.$unionkey.ethereum not found');
       }
     </script>
     <meta charset="UTF-8" />
@@ -23,14 +23,14 @@
     <p>Check console, search</p>
     <pre>onload check</pre>
     <script>
-      if (window.$onekey && window.$onekey.ethereum) {
-        window.$onekey.ethereum
+      if (window.$unionkey && window.$unionkey.ethereum) {
+        window.$unionkey.ethereum
           .request({ method: 'net_version' })
           .then((res) => {
             console.log('>>>>>>>>>>>>>>>> Dom onload check:   EVM net_version=', res);
           });
       } else {
-        console.log('>>>>>>>>>>>>>>>> body script: window.$onekey.ethereum not found');
+        console.log('>>>>>>>>>>>>>>>> body script: window.$unionkey.ethereum not found');
       }
     </script>
   </body>

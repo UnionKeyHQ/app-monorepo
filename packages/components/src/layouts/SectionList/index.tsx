@@ -9,7 +9,7 @@ import {
 
 import { getTokenValue, withStaticProperties } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkey/shared/src/platformEnv';
 
 import { SizableText, Stack, XStack } from '../../primitives';
 import { ListView } from '../ListView/list';

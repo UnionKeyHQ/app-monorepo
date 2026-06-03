@@ -3,31 +3,31 @@
 import BigNumber from 'bignumber.js';
 import * as BitcoinJS from 'bitcoinjs-lib';
 
-import type CoreChainSoftwareBtc from '@onekeyhq/core/src/chains/btc/CoreChainSoftware';
+import type CoreChainSoftwareBtc from '@unionkey/core/src/chains/btc/CoreChainSoftware';
 import {
   checkBtcAddressIsUsed,
   getBtcForkNetwork,
   isTaprootPath,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
+} from '@unionkey/core/src/chains/btc/sdkBtc';
 import type {
   IBtcInput,
   IBtcOutput,
   IEncodedTxBtc,
-} from '@onekeyhq/core/src/chains/btc/types';
+} from '@unionkey/core/src/chains/btc/types';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { AddressNotSupportSignMethodError } from '@onekeyhq/shared/src/errors';
+} from '@unionkey/core/src/types';
+import { AddressNotSupportSignMethodError } from '@unionkey/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkey/shared/src/errors/utils/deviceErrorUtils';
+import { CoreSDKLoader } from '@unionkey/shared/src/hardware/instance';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkey/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkey/shared/src/utils/bufferUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -220,7 +220,7 @@ export abstract class KeyringHardwareBtcBase extends KeyringHardwareBase {
       sdk.btcGetPublicKey(connectId, deviceId, {
         ...deviceCommonParams,
         path: dbAccount.path,
-        showOnOneKey: false,
+        showOnUnionKey: false,
       }),
     );
 
@@ -372,7 +372,7 @@ export abstract class KeyringHardwareBtcBase extends KeyringHardwareBase {
             deviceId,
             template,
             coinName,
-            showOnOnekeyFn,
+            showOnUnionkeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -409,7 +409,7 @@ export abstract class KeyringHardwareBtcBase extends KeyringHardwareBase {
             //   bundle: usedIndexes.map((index, arrIndex) => ({
             //     path: `${pathPrefix}/${index}'`,
             //     coin: coinName?.toLowerCase(),
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnUnionKey: showOnUnionkeyFn(arrIndex),
             //   })),
             // });
             // defaultLogger.account.accountCreatePerf.sdkBtcGetPublicKeyDone({
@@ -465,7 +465,7 @@ export abstract class KeyringHardwareBtcBase extends KeyringHardwareBase {
         pathPrefix,
         pathSuffix,
         coinName,
-        showOnOnekeyFn,
+        showOnUnionkeyFn,
       }) => {
         const sdk = await this.getHardwareSDKInstance();
 
@@ -474,7 +474,7 @@ export abstract class KeyringHardwareBtcBase extends KeyringHardwareBase {
           bundle: indexes.map((index, arrIndex) => ({
             path: `${pathPrefix}/${pathSuffix.replace('{index}', `${index}`)}`,
             coin: coinName?.toLowerCase(),
-            showOnOneKey: showOnOnekeyFn(arrIndex),
+            showOnUnionKey: showOnUnionkeyFn(arrIndex),
           })),
         });
         return response;

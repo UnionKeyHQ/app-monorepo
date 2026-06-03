@@ -6,38 +6,38 @@ import { EAppEventBusNames, appEventBus } from '../../eventBus/appEventBus';
 import { ETranslations } from '../../locale';
 import platformEnv from '../../platformEnv';
 import {
-  ECustomOneKeyHardwareError,
-  EOneKeyErrorClassNames,
+  ECustomUnionKeyHardwareError,
+  EUnionKeyErrorClassNames,
 } from '../types/errorTypes';
 import { normalizeErrorProps } from '../utils/errorUtils';
 
-import { OneKeyError } from './baseErrors';
+import { UnionKeyError } from './baseErrors';
 
 import type {
-  IOneKeyError,
-  IOneKeyErrorI18nInfo,
-  IOneKeyHardwareErrorPayload,
-  IOneKeyJsError,
+  IUnionKeyError,
+  IUnionKeyErrorI18nInfo,
+  IUnionKeyHardwareErrorPayload,
+  IUnionKeyJsError,
 } from '../types/errorTypes';
 
-export type IOneKeyErrorHardwareProps = Omit<IOneKeyError, 'payload'> & {
-  payload: IOneKeyHardwareErrorPayload; // raw payload from hardware sdk error response
+export type IUnionKeyErrorHardwareProps = Omit<IUnionKeyError, 'payload'> & {
+  payload: IUnionKeyHardwareErrorPayload; // raw payload from hardware sdk error response
 };
-export class OneKeyHardwareError<
-  I18nInfoT = IOneKeyErrorI18nInfo | any,
-  DataT = IOneKeyJsError | any,
-> extends OneKeyError<I18nInfoT, DataT> {
-  override className = EOneKeyErrorClassNames.OneKeyHardwareError;
+export class UnionKeyHardwareError<
+  I18nInfoT = IUnionKeyErrorI18nInfo | any,
+  DataT = IUnionKeyJsError | any,
+> extends UnionKeyError<I18nInfoT, DataT> {
+  override className = EUnionKeyErrorClassNames.UnionKeyHardwareError;
 
-  override name = 'OneKeyHardwareError';
+  override name = 'UnionKeyHardwareError';
 
   $isHardwareError = true;
 
   reconnect: boolean | undefined; // TODO move to $$config
 }
 
-export class InvalidPIN extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class InvalidPIN extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'HardwareInvalidPIN',
@@ -52,8 +52,8 @@ export class InvalidPIN extends OneKeyHardwareError {
   // override key: ETranslations = 'msg__hardware_invalid_pin_error';
 }
 
-export class InvalidPassphrase extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class InvalidPassphrase extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'InvalidPassphrase',
@@ -65,8 +65,8 @@ export class InvalidPassphrase extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceCheckPassphraseStateError;
 }
 
-export class DeviceNotOpenedPassphrase extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceNotOpenedPassphrase extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceNotOpenedPassphrase',
@@ -79,8 +79,8 @@ export class DeviceNotOpenedPassphrase extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceNotOpenedPassphrase;
 }
 
-export class DeviceOpenedPassphrase extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceOpenedPassphrase extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceOpenedPassphrase',
@@ -92,8 +92,8 @@ export class DeviceOpenedPassphrase extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceOpenedPassphrase;
 }
 
-export class PinCancelled extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class PinCancelled extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'PinCancelled',
@@ -106,8 +106,8 @@ export class PinCancelled extends OneKeyHardwareError {
   override code = HardwareErrorCode.PinCancelled;
 }
 
-export class UserCancel extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class UserCancel extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'UserCancel',
@@ -120,8 +120,8 @@ export class UserCancel extends OneKeyHardwareError {
   override code = HardwareErrorCode.ActionCancelled;
 }
 
-export class UserCancelFromOutside extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class UserCancelFromOutside extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'UserCancelFromOutside',
@@ -133,11 +133,11 @@ export class UserCancelFromOutside extends OneKeyHardwareError {
 
   override code = HardwareErrorCode.DeviceInterruptedFromOutside;
 
-  override className = EOneKeyErrorClassNames.HardwareUserCancelFromOutside;
+  override className = EUnionKeyErrorClassNames.HardwareUserCancelFromOutside;
 }
 
-export class UnknownMethod extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class UnknownMethod extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'UnknownMethod',
@@ -149,11 +149,11 @@ export class UnknownMethod extends OneKeyHardwareError {
   override code = HardwareErrorCode.RuntimeError;
 }
 
-export class NeedOneKeyBridge extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NeedUnionKeyBridge extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
-        defaultMessage: 'NeedOneKeyBridge',
+        defaultMessage: 'NeedUnionKeyBridge',
         defaultKey: platformEnv.isSupportWebUSB
           ? ETranslations.device_communication_failed
           : ETranslations.device_communication_failed_with_no_web_usb_supported,
@@ -161,23 +161,23 @@ export class NeedOneKeyBridge extends OneKeyHardwareError {
     );
   }
 
-  override code = ECustomOneKeyHardwareError.NeedOneKeyBridge;
+  override code = ECustomUnionKeyHardwareError.NeedUnionKeyBridge;
 }
 
-export class NeedOneKeyBridgeUpgrade extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NeedUnionKeyBridgeUpgrade extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
-        defaultMessage: 'NeedOneKeyBridgeUpgrade',
+        defaultMessage: 'NeedUnionKeyBridgeUpgrade',
       }),
     );
   }
 
-  override code = ECustomOneKeyHardwareError.NeedOneKeyBridgeUpgrade;
+  override code = ECustomUnionKeyHardwareError.NeedUnionKeyBridgeUpgrade;
 }
 
-export class NeedFirmwareUpgradeFromWeb extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NeedFirmwareUpgradeFromWeb extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NeedFirmwareUpgradeFromWeb',
@@ -186,11 +186,11 @@ export class NeedFirmwareUpgradeFromWeb extends OneKeyHardwareError {
     );
   }
 
-  override code = ECustomOneKeyHardwareError.NeedFirmwareUpgradeFromWeb;
+  override code = ECustomUnionKeyHardwareError.NeedFirmwareUpgradeFromWeb;
 }
 
-export class FirmwareUpdateBatteryTooLow extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareUpdateBatteryTooLow extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultKey: ETranslations.update_insufficient_battery_power,
@@ -198,11 +198,11 @@ export class FirmwareUpdateBatteryTooLow extends OneKeyHardwareError {
     );
   }
 
-  override code = ECustomOneKeyHardwareError.FirmwareUpdateBatteryTooLow;
+  override code = ECustomUnionKeyHardwareError.FirmwareUpdateBatteryTooLow;
 }
 
-export class BridgeNetworkError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BridgeNetworkError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BridgeNetworkError',
@@ -214,8 +214,8 @@ export class BridgeNetworkError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BridgeNetworkError;
 }
 
-export class BridgeTimeoutError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BridgeTimeoutError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BridgeTimeoutError',
@@ -227,8 +227,8 @@ export class BridgeTimeoutError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BridgeTimeoutError;
 }
 
-export class BridgeTimeoutErrorForDesktop extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BridgeTimeoutErrorForDesktop extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BridgeTimeoutErrorForDesktop',
@@ -240,9 +240,9 @@ export class BridgeTimeoutErrorForDesktop extends OneKeyHardwareError {
   override code = HardwareErrorCode.BridgeTimeoutError;
 }
 
-export class ConnectTimeoutError extends OneKeyHardwareError {
+export class ConnectTimeoutError extends UnionKeyHardwareError {
   // defaultKey: 'msg__hardware_connect_timeout_error',
-  constructor(props?: IOneKeyErrorHardwareProps) {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'ConnectTimeoutError',
@@ -255,8 +255,8 @@ export class ConnectTimeoutError extends OneKeyHardwareError {
   override code = HardwareErrorCode.PollingTimeout;
 }
 
-export class DeviceMethodCallTimeout extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceMethodCallTimeout extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceMethodCallTimeout',
@@ -264,11 +264,11 @@ export class DeviceMethodCallTimeout extends OneKeyHardwareError {
     );
   }
 
-  override code = ECustomOneKeyHardwareError.DeviceMethodCallTimeout;
+  override code = ECustomUnionKeyHardwareError.DeviceMethodCallTimeout;
 }
 
-export class ConnectPollingStopError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class ConnectPollingStopError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'ConnectPollingStopError',
@@ -282,8 +282,8 @@ export class ConnectPollingStopError extends OneKeyHardwareError {
 }
 
 // 设备没有配对成功
-export class DeviceNotBonded extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceNotBonded extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceNotBonded',
@@ -296,8 +296,8 @@ export class DeviceNotBonded extends OneKeyHardwareError {
 }
 
 // 设备没有配对成功
-export class BleDeviceBondedCanceled extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BleDeviceBondedCanceled extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BleDeviceBondedCanceled',
@@ -310,8 +310,8 @@ export class BleDeviceBondedCanceled extends OneKeyHardwareError {
 }
 
 // 设备配对失败
-export class DeviceBondError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceBondError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceBondError',
@@ -324,8 +324,8 @@ export class DeviceBondError extends OneKeyHardwareError {
 }
 
 // 设备没有打开蓝牙
-export class NeedBluetoothTurnedOn extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NeedBluetoothTurnedOn extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NeedBluetoothTurnedOn',
@@ -337,9 +337,9 @@ export class NeedBluetoothTurnedOn extends OneKeyHardwareError {
   override code = HardwareErrorCode.BlePermissionError;
 }
 
-// 没有使用蓝牙的权限
-export class NeedBluetoothPermissions extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+// 没有使用蓝牙的权�?
+export class NeedBluetoothPermissions extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NeedBluetoothPermissions',
@@ -351,8 +351,8 @@ export class NeedBluetoothPermissions extends OneKeyHardwareError {
   override code = HardwareErrorCode.BleLocationError;
 }
 
-export class BleLocationServiceError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BleLocationServiceError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BleLocationServiceError',
@@ -364,8 +364,8 @@ export class BleLocationServiceError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BleLocationServicesDisabled;
 }
 
-export class BleWriteCharacteristicError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BleWriteCharacteristicError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BleWriteCharacteristicError',
@@ -377,8 +377,8 @@ export class BleWriteCharacteristicError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BleWriteCharacteristicError;
 }
 
-export class BleScanError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BleScanError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BleScanError',
@@ -390,8 +390,8 @@ export class BleScanError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BleScanError;
 }
 
-export class BleAlreadyConnectedError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BleAlreadyConnectedError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BleAlreadyConnectedError',
@@ -403,8 +403,8 @@ export class BleAlreadyConnectedError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BleAlreadyConnected;
 }
 
-export class BleCharacteristicNotifyChangeFailure extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BleCharacteristicNotifyChangeFailure extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'BleCharacteristicNotifyChangeFailure',
@@ -416,8 +416,8 @@ export class BleCharacteristicNotifyChangeFailure extends OneKeyHardwareError {
   override code = HardwareErrorCode.BleCharacteristicNotifyChangeFailure;
 }
 
-export class OpenBlindSign extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class OpenBlindSign extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'OpenBlindSign',
@@ -429,8 +429,8 @@ export class OpenBlindSign extends OneKeyHardwareError {
   override code = HardwareErrorCode.BlindSignDisabled;
 }
 
-export class ForbiddenKeyPathError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class ForbiddenKeyPathError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'ForbiddenKeyPath',
@@ -442,8 +442,8 @@ export class ForbiddenKeyPathError extends OneKeyHardwareError {
   override code = HardwareErrorCode.RuntimeError;
 }
 
-export class BTCPsbtTooManyUtxos extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class BTCPsbtTooManyUtxos extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(
         {
@@ -461,8 +461,8 @@ export class BTCPsbtTooManyUtxos extends OneKeyHardwareError {
   override code = HardwareErrorCode.BTCPsbtTooManyUtxos;
 }
 
-export class ResponseUnexpectTypeError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class ResponseUnexpectTypeError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'ResponseUnexpectTypeError',
@@ -474,8 +474,8 @@ export class ResponseUnexpectTypeError extends OneKeyHardwareError {
   override code = HardwareErrorCode.ResponseUnexpectTypeError;
 }
 
-export class StringOverflowError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class StringOverflowError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'StringOverflowError',
@@ -487,8 +487,8 @@ export class StringOverflowError extends OneKeyHardwareError {
   override code = HardwareErrorCode.RuntimeError;
 }
 
-export class FirmwareVersionTooLow extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareVersionTooLow extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(
         {
@@ -504,13 +504,13 @@ export class FirmwareVersionTooLow extends OneKeyHardwareError {
 
   override code = HardwareErrorCode.CallMethodNeedUpgradeFirmware;
 
-  // constructor(errorPayload?: IOneKeyHardwareErrorPayload) {
+  // constructor(errorPayload?: IUnionKeyHardwareErrorPayload) {
   //   super(errorPayload, { 0: 'require' });
   // }
 }
 
-export class DeviceInitializeFailed extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceInitializeFailed extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceInitializeFailed',
@@ -523,8 +523,8 @@ export class DeviceInitializeFailed extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceInitializeFailed;
 }
 
-export class NotInBootLoaderMode extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NotInBootLoaderMode extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NotInBootLoaderMode',
@@ -542,8 +542,8 @@ export class NotInBootLoaderMode extends OneKeyHardwareError {
   override code = HardwareErrorCode.NotAllowInBootloaderMode;
 }
 
-export class DeviceDetectInBootloaderMode extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceDetectInBootloaderMode extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceDetectInBootloaderMode',
@@ -554,8 +554,8 @@ export class DeviceDetectInBootloaderMode extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceDetectInBootloaderMode;
 }
 
-export class FirmwareDownloadFailed extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareDownloadFailed extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'FirmwareDownloadFailed',
@@ -569,8 +569,8 @@ export class FirmwareDownloadFailed extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class FirmwareUpdateManuallyEnterBoot extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareUpdateManuallyEnterBoot extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       // You need to manually enter boot.
       normalizeErrorProps(props, {
@@ -586,8 +586,8 @@ export class FirmwareUpdateManuallyEnterBoot extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class FirmwareUpdateAutoEnterBootFailure extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareUpdateAutoEnterBootFailure extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'FirmwareUpdateAutoEnterBootFailure',
@@ -601,8 +601,8 @@ export class FirmwareUpdateAutoEnterBootFailure extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class FirmwareUpdateLimitOneDevice extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareUpdateLimitOneDevice extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'FirmwareUpdateLimitOneDevice',
@@ -618,8 +618,8 @@ export class FirmwareUpdateLimitOneDevice extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class UseDesktopToUpdateFirmware extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class UseDesktopToUpdateFirmware extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'UseDesktopToUpdateFirmware',
@@ -630,8 +630,8 @@ export class UseDesktopToUpdateFirmware extends OneKeyHardwareError {
   override code = HardwareErrorCode.UseDesktopToUpdateFirmware;
 }
 
-export class NewFirmwareUnRelease extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NewFirmwareUnRelease extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NewFirmwareUnRelease',
@@ -647,8 +647,8 @@ export class NewFirmwareUnRelease extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class NewFirmwareForceUpdate extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NewFirmwareForceUpdate extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NewFirmwareForceUpdate',
@@ -660,8 +660,8 @@ export class NewFirmwareForceUpdate extends OneKeyHardwareError {
   override code = HardwareErrorCode.NewFirmwareForceUpdate;
 }
 
-export class DeviceNotSame extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceNotSame extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceNotSame',
@@ -674,8 +674,8 @@ export class DeviceNotSame extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceCheckDeviceIdError;
 }
 
-export class DeviceNotFound extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceNotFound extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     // props?.message
     super(
       normalizeErrorProps(props, {
@@ -692,8 +692,8 @@ export class DeviceNotFound extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class InitIframeLoadFail extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class InitIframeLoadFail extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       // Hardware SDK initialization failed. Please check your network or switch the proxy then try again.
       normalizeErrorProps(props, {
@@ -707,8 +707,8 @@ export class InitIframeLoadFail extends OneKeyHardwareError {
   override code = HardwareErrorCode.IFrameLoadFail;
 }
 
-export class InitIframeTimeout extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class InitIframeTimeout extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'InitIframeTimeout',
@@ -720,8 +720,8 @@ export class InitIframeTimeout extends OneKeyHardwareError {
   override code = HardwareErrorCode.IframeTimeout;
 }
 
-export class NetworkError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NetworkError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NetworkError',
@@ -735,8 +735,8 @@ export class NetworkError extends OneKeyHardwareError {
   override reconnect = true;
 }
 
-export class NotSupportPassphraseError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NotSupportPassphraseError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(
         {
@@ -754,13 +754,13 @@ export class NotSupportPassphraseError extends OneKeyHardwareError {
   override code = HardwareErrorCode.DeviceNotSupportPassphrase;
 
   // TODO use Passphrase, need to upgrade firmware to {0} or later.
-  // constructor(errorPayload?: IOneKeyHardwareErrorPayload) {
+  // constructor(errorPayload?: IUnionKeyHardwareErrorPayload) {
   //   super(errorPayload, { 0: 'require' });
   // }
 }
 
-export class FileAlreadyExistError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FileAlreadyExistError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'FileAlreadyExistError',
@@ -772,8 +772,8 @@ export class FileAlreadyExistError extends OneKeyHardwareError {
   override code = HardwareErrorCode.FileAlreadyExists;
 }
 
-export class IncompleteFileError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class IncompleteFileError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'IncompleteFileError',
@@ -785,8 +785,8 @@ export class IncompleteFileError extends OneKeyHardwareError {
   override code = HardwareErrorCode.CheckDownloadFileError;
 }
 
-export class NotInSigningModeError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class NotInSigningModeError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'NotInSigningModeError',
@@ -799,8 +799,8 @@ export class NotInSigningModeError extends OneKeyHardwareError {
   override code = HardwareErrorCode.NotInSigningMode;
 }
 
-export class DeviceDataOverload extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceDataOverload extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DataOverloadError',
@@ -812,8 +812,8 @@ export class DeviceDataOverload extends OneKeyHardwareError {
   override code = HardwareErrorCode.DataOverload;
 }
 
-export class DeviceDisconnectedError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class DeviceDisconnectedError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'DeviceDisconnectedError',
@@ -825,8 +825,8 @@ export class DeviceDisconnectedError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BridgeDeviceDisconnected;
 }
 
-export class UnsupportedAddressTypeError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class UnsupportedAddressTypeError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'UnsupportedAddressTypeError',
@@ -840,11 +840,11 @@ export class UnsupportedAddressTypeError extends OneKeyHardwareError {
 }
 
 // Communication exception 通信异常
-export class HardwareCommunicationError extends OneKeyHardwareError {
-  override className: EOneKeyErrorClassNames =
-    EOneKeyErrorClassNames.UnknownHardwareError;
+export class HardwareCommunicationError extends UnionKeyHardwareError {
+  override className: EUnionKeyErrorClassNames =
+    EUnionKeyErrorClassNames.UnknownHardwareError;
 
-  constructor(props?: IOneKeyErrorHardwareProps) {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'CommunicationError',
@@ -856,8 +856,8 @@ export class HardwareCommunicationError extends OneKeyHardwareError {
   override code = HardwareErrorCode.BridgeNetworkError;
 }
 
-export class HardwareWebDeviceCommunicationError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class HardwareWebDeviceCommunicationError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'CommunicationError',
@@ -870,13 +870,13 @@ export class HardwareWebDeviceCommunicationError extends OneKeyHardwareError {
   override code = HardwareErrorCode.WebDevicePromptAccessError;
 
   override className =
-    EOneKeyErrorClassNames.WebDeviceNotFoundOrNeedsPermission;
+    EUnionKeyErrorClassNames.WebDeviceNotFoundOrNeedsPermission;
 
   override autoToast = false;
 }
 
-export class FirmwareUpdateTransferInterruptedError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareUpdateTransferInterruptedError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'FirmwareUpdateTransferInterruptedError',
@@ -888,8 +888,8 @@ export class FirmwareUpdateTransferInterruptedError extends OneKeyHardwareError 
   override code = HardwareErrorCode.EmmcFileWriteFirmwareError;
 }
 
-export class FirmwareUpdateVersionMismatchError extends OneKeyHardwareError {
-  constructor(props?: IOneKeyErrorHardwareProps) {
+export class FirmwareUpdateVersionMismatchError extends UnionKeyHardwareError {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     super(
       normalizeErrorProps(props, {
         defaultMessage: 'FirmwareUpdateVersionMismatch',
@@ -900,11 +900,11 @@ export class FirmwareUpdateVersionMismatchError extends OneKeyHardwareError {
 }
 
 // UnknownHardware
-export class UnknownHardwareError extends OneKeyHardwareError {
-  override className: EOneKeyErrorClassNames =
-    EOneKeyErrorClassNames.UnknownHardwareError;
+export class UnknownHardwareError extends UnionKeyHardwareError {
+  override className: EUnionKeyErrorClassNames =
+    EUnionKeyErrorClassNames.UnknownHardwareError;
 
-  constructor(props?: IOneKeyErrorHardwareProps) {
+  constructor(props?: IUnionKeyErrorHardwareProps) {
     const message = uniq([
       props?.payload?.error,
       props?.payload?.message, // use device raw error message as UnknownHardwareError message
@@ -928,13 +928,13 @@ export class UnknownHardwareError extends OneKeyHardwareError {
 // super(errorPayload, { 0: 'require' });
 // override data = { reconnect: true }; // TODO merge with autoToast to config={ autoToast, reconnect }
 
-// export class OneKeyAlreadyExistWalletError extends OneKeyHardwareError<
+// export class UnionKeyAlreadyExistWalletError extends UnionKeyHardwareError<
 //   {
 //     walletId: string;
 //     walletName: string | undefined;
-//   } & OneKeyHardwareErrorData
+//   } & UnionKeyHardwareErrorData
 // > {
-//   override className = OneKeyErrorClassNames.OneKeyAlreadyExistWalletError;
+//   override className = UnionKeyErrorClassNames.UnionKeyAlreadyExistWalletError;
 
 //   override key: LocaleIds = 'msg__wallet_already_exist';
 

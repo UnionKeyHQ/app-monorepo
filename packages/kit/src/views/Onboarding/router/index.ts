@@ -1,7 +1,7 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkey/components';
+import { LazyLoadPage } from '@unionkey/kit/src/components/LazyLoadPage';
+import type { IOnboardingParamList } from '@unionkey/shared/src/routes';
+import { EOnboardingPages } from '@unionkey/shared/src/routes';
 
 const ActivateDevice = LazyLoadPage(
   () => import('../pages/ConnectHardwareWallet/ActivateDevice'),
@@ -11,8 +11,8 @@ const ConnectYourDevice = LazyLoadPage(
   () => import('../pages/ConnectHardwareWallet/ConnectYourDevice'),
 );
 
-const OneKeyHardwareWallet = LazyLoadPage(
-  () => import('../pages/ConnectHardwareWallet/OneKeyHardwareWallet'),
+const UnionKeyHardwareWallet = LazyLoadPage(
+  () => import('../pages/ConnectHardwareWallet/UnionKeyHardwareWallet'),
 );
 
 const BeforeShowRecoveryPhrase = LazyLoadPage(
@@ -113,8 +113,8 @@ export const OnboardingRouter: IModalFlowNavigatorConfig<
     component: ConnectYourDevice,
   },
   {
-    name: EOnboardingPages.OneKeyHardwareWallet,
-    component: OneKeyHardwareWallet,
+    name: EOnboardingPages.UnionKeyHardwareWallet,
+    component: UnionKeyHardwareWallet,
     options: {
       headerShown: false,
     },

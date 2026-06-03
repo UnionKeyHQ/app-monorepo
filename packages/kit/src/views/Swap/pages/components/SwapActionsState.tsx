@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 import { Keyboard } from 'react-native';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkey/components';
 import {
   Button,
   Dialog,
@@ -19,9 +19,9 @@ import {
   useIsKeyboardShown,
   useMedia,
   usePageType,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
+} from '@unionkey/components';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useThemeVariant } from '@unionkey/kit/src/hooks/useThemeVariant';
 import {
   useSwapActions,
   useSwapFromTokenAmountAtom,
@@ -32,14 +32,14 @@ import {
   useSwapSelectToTokenAtom,
   useSwapToTokenAmountAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
+} from '@unionkey/kit/src/states/jotai/contexts/swap';
 import {
   useInAppNotificationAtom,
   useSettingsAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes, EOnboardingPages } from '@unionkey/shared/src/routes';
+import { openUrlExternal } from '@unionkey/shared/src/utils/openUrlUtils';
 import {
   EProtocolOfExchange,
   ESwapDirectionType,
@@ -47,7 +47,7 @@ import {
   ESwapTabSwitchType,
   LIMIT_PRICE_DEFAULT_DECIMALS,
   SwapPercentageInputStageForNative,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import SwapPercentageStageBadge from '../../components/SwapPercentageStageBadge';
 import TransactionLossNetworkFeeExceedDialog from '../../components/TransactionLossNetworkFeeExceedDialog';
@@ -570,8 +570,8 @@ const SwapActionsState = ({
             <LottieView
               source={
                 themeVariant === 'light'
-                  ? require('@onekeyhq/kit/assets/animations/swap_quote_loading_light.json')
-                  : require('@onekeyhq/kit/assets/animations/swap_quote_loading_dark.json')
+                  ? require('@unionkey/kit/assets/animations/swap_quote_loading_light.json')
+                  : require('@unionkey/kit/assets/animations/swap_quote_loading_dark.json')
               }
               autoPlay
               loop

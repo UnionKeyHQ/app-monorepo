@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, Input } from '@onekeyhq/components';
-import { getPasswordKeyboardType } from '@onekeyhq/kit/src/components/Password/utils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Dialog, Input } from '@unionkey/components';
+import { getPasswordKeyboardType } from '@unionkey/kit/src/components/Password/utils';
+import { ETranslations } from '@unionkey/shared/src/locale';
 
 function RestorePasswordVerify() {
   const intl = useIntl();

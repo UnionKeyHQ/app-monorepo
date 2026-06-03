@@ -2,7 +2,7 @@ import { type ComponentProps, useCallback, useMemo, useState } from 'react';
 
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Image, Stack, useMedia } from '@onekeyhq/components';
+import { Image, Stack, useMedia } from '@unionkey/components';
 
 import type { LayoutChangeEvent } from 'react-native';
 

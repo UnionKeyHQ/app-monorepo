@@ -8,7 +8,7 @@ import type {
   IPageScreenProps,
   IPropsWithTestId,
   ITextAreaInputProps,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import {
   Form,
   Page,
@@ -18,32 +18,32 @@ import {
   useClipboard,
   useForm,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   ControlledNetworkSelectorTrigger,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { DeriveTypeSelectorFormField } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkey/kit/src/components/AccountSelector';
+import { DeriveTypeSelectorFormField } from '@unionkey/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkey/kit/src/hooks/usePromiseResult';
+import { useActiveAccount } from '@unionkey/kit/src/states/jotai/contexts/accountSelector';
+import type { IAccountDeriveTypes } from '@unionkey/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
 import {
-  EOneKeyErrorClassNames,
-  type IOneKeyError,
-} from '@onekeyhq/shared/src/errors/types/errorTypes';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+  EUnionKeyErrorClassNames,
+  type IUnionKeyError,
+} from '@unionkey/shared/src/errors/types/errorTypes';
+import errorUtils from '@unionkey/shared/src/errors/utils/errorUtils';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import type {
   EAccountManagerStacksRoutes,
   IAccountManagerStacksParamList,
   IExportAccountSecretKeysRouteParams,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import { noopObject } from '@unionkey/shared/src/utils/miscUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 
 import { showCopyPrivateKeysDialog } from './showCopyPrivateKeysDialog';
 
@@ -197,10 +197,10 @@ function ExportPrivateKeysPage({
           form.setValue('rawKeyContent', key);
         }
       } catch (error) {
-        const ignoreErrorClasses: Array<EOneKeyErrorClassNames | undefined> = [
-          EOneKeyErrorClassNames.PasswordPromptDialogCancel,
+        const ignoreErrorClasses: Array<EUnionKeyErrorClassNames | undefined> = [
+          EUnionKeyErrorClassNames.PasswordPromptDialogCancel,
         ];
-        if (!ignoreErrorClasses.includes((error as IOneKeyError)?.className)) {
+        if (!ignoreErrorClasses.includes((error as IUnionKeyError)?.className)) {
           form.setError(
             'rawKeyContent',
             // form.setError use {...error} which will lose error.message

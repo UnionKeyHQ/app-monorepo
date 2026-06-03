@@ -2,7 +2,7 @@ import { type FC, useCallback, useContext, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkey/components';
 import {
   Badge,
   Empty,
@@ -15,23 +15,23 @@ import {
   XStack,
   YStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IModalFiatCryptoParamList } from '@onekeyhq/shared/src/routes';
-import { EModalFiatCryptoRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
-import type { IFiatCryptoToken } from '@onekeyhq/shared/types/fiatCrypto';
+} from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useAccountSelectorCreateAddress } from '@unionkey/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+import { ListItem } from '@unionkey/kit/src/components/ListItem';
+import { Token } from '@unionkey/kit/src/components/Token';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import useAppNavigation from '@unionkey/kit/src/hooks/useAppNavigation';
+import { useSettingsPersistAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { getNetworkIdsMap } from '@unionkey/shared/src/config/networkIds';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { IModalFiatCryptoParamList } from '@unionkey/shared/src/routes';
+import { EModalFiatCryptoRoutes } from '@unionkey/shared/src/routes';
+import accountUtils from '@unionkey/shared/src/utils/accountUtils';
+import networkUtils from '@unionkey/shared/src/utils/networkUtils';
+import type { INetworkAccount } from '@unionkey/shared/types/account';
+import { EDeriveAddressActionType } from '@unionkey/shared/types/address';
+import type { IFiatCryptoToken } from '@unionkey/shared/types/fiatCrypto';
 
 import { useGetNetwork } from '../NetworkContainer';
 import { TokenDataContext, useTokenDataContext } from '../TokenDataContainer';

@@ -2,11 +2,11 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Accordion, Button, YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapProviderManager } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+import { Accordion, Button, YStack } from '@unionkey/components';
+import backgroundApiProxy from '@unionkey/kit/src/background/instance/backgroundApiProxy';
+import { useInAppNotificationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import type { ISwapProviderManager } from '@unionkey/shared/types/swap/SwapProvider.constants';
 
 import ProviderManageComponent, {
   ProviderSwitch,

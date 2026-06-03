@@ -1,4 +1,4 @@
-import { IMPL_BTC } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_BTC } from '@unionkey/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

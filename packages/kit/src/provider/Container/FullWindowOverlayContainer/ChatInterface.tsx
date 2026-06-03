@@ -1,4 +1,4 @@
-// OneKeyChatInterface.tsx
+// UnionKeyChatInterface.tsx
 import React, { useState, useRef, useEffect } from 'react';
 import {
   Stack,
@@ -9,21 +9,21 @@ import {
   ScrollView,
   Spinner,
   useTheme,
-} from '@onekeyhq/components';
+} from '@unionkey/components';
 import { Message } from './types';
 import { getAgentResponse, generateMessageId, testAPIConnection } from './agentService';
 
-interface OneKeyChatInterfaceProps {
+interface UnionKeyChatInterfaceProps {
   title?: string;
   onBack?: () => void;
   initialMessages?: Message[];
 }
 
-export function OneKeyChatInterface({
-  title = 'OneKey AI助手',
+export function UnionKeyChatInterface({
+  title = 'UnionKey AI Assistant',
   onBack,
   initialMessages = [],
-}: OneKeyChatInterfaceProps) {
+}: UnionKeyChatInterfaceProps) {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -31,12 +31,12 @@ export function OneKeyChatInterface({
   const scrollViewRef = useRef<any>(null);
   const theme = useTheme();
 
-  // 初始化欢迎消息
+  // 初始化欢迎消�?
   useEffect(() => {
     if (messages.length === 0) {
       const welcomeMessage: Message = {
         id: generateMessageId(),
-        content: '你好！我是OneKey AI助手。有什么可以帮助你的吗？',
+        content: 'Hello! I am the UnionKey AI assistant. How can I help you?',
         role: 'assistant',
         timestamp: new Date(),
       };
@@ -90,7 +90,7 @@ export function OneKeyChatInterface({
       
       setMessages(prev => [...prev, assistantMessage]);
       
-      // 更新API状态
+      // 更新API状�?
       if (apiStatus === 'disconnected') {
         setApiStatus('connected');
       }
@@ -100,7 +100,7 @@ export function OneKeyChatInterface({
       // 添加错误消息
       const errorMessage: Message = {
         id: generateMessageId(),
-        content: '抱歉，暂时无法处理您的请求。请稍后重试。',
+        content: '抱歉，暂时无法处理您的请求。请稍后重试�?,
         role: 'assistant',
         timestamp: new Date(),
       };
@@ -112,7 +112,7 @@ export function OneKeyChatInterface({
     }
   };
 
-  // 滚动到底部
+  // 滚动到底�?
   const scrollToBottom = () => {
     setTimeout(() => {
       scrollViewRef.current?.scrollToEnd({ animated: true });
@@ -169,7 +169,7 @@ export function OneKeyChatInterface({
               <Stack bg="$bgStrong" p="$3" borderRadius="$3">
                 <Stack flexDirection="row" alignItems="center" space="$2">
                   <Spinner size="small" />
-                  <Text color="$textSubdued">AI正在思考...</Text>
+                  <Text color="$textSubdued">AI正在思�?..</Text>
                 </Stack>
               </Stack>
             </Stack>
@@ -204,12 +204,12 @@ export function OneKeyChatInterface({
         
         <Stack flexDirection="row" justifyContent="space-between" mt="$2">
           <Text fontSize="$1" color="$textSubdued">
-            {apiStatus === 'connected' ? '✅ 已连接' : 
-             apiStatus === 'disconnected' ? '❌ 未连接' : 
-             '🔄 检查连接...'}
+            {apiStatus === 'connected' ? '�?已连�? : 
+             apiStatus === 'disconnected' ? '�?未连�? : 
+             '🔄 检查连�?..'}
           </Text>
           <Text fontSize="$1" color="$textSubdued">
-            按 Enter 发送
+            �?Enter 发�?
           </Text>
         </Stack>
       </Stack>

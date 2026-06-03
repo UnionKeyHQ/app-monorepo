@@ -1,15 +1,15 @@
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { defaultLogger } from '@unionkey/shared/src/logger/logger';
 import type {
   INotificationPermissionDetail,
   INotificationRemoveParams,
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 import {
   ENotificationPermission,
   EPushProviderEventNames,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkey/shared/types/notification';
 
 import NotificationProviderBase from './NotificationProviderBase';
 

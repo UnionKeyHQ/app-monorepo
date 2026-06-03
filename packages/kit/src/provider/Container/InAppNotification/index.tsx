@@ -8,20 +8,20 @@ import {
   SizableText,
   Toast,
   rootNavigationRef,
-} from '@onekeyhq/components';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkey/components';
+import { useInAppNotificationAtom } from '@unionkey/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EModalSwapRoutes } from '@onekeyhq/shared/src/routes';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkey/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkey/shared/src/locale';
+import { EModalRoutes, EModalSwapRoutes } from '@unionkey/shared/src/routes';
+import { noopObject } from '@unionkey/shared/src/utils/miscUtils';
+import { EAccountSelectorSceneName } from '@unionkey/shared/types';
 import {
   ESwapApproveTransactionStatus,
   ESwapSource,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
@@ -108,14 +108,14 @@ const InAppNotification = () => {
       ({ isInSwapTab, isHasSwapModal, isSwapModalOnTheTop, hasModal }) => {
         if (isInSwapTab) {
           if (hasModal) {
-            // 2.swap tab have modal   关闭当前的所有 modal  通知 swap 进行询价
+            // 2.swap tab have modal   关闭当前的所�?modal  通知 swap 进行询价
             rootNavigationRef.current?.goBack();
             setTimeout(async () => {
               await approvingSuccessActionConfirm();
             }, 50);
           } else if (swapApprovingTransactionRef.current) {
             // 1.swap tab no modal
-            // 不用做任何动作，直接给 swap 发 event 进行询价
+            // 不用做任何动作，直接�?swap �?event 进行询价
             appEventBus.emit(EAppEventBusNames.SwapApprovingSuccess, {
               approvedSwapInfo: swapApprovingTransactionRef.current,
               enableFilled: true,
@@ -123,7 +123,7 @@ const InAppNotification = () => {
           }
         } else if (isHasSwapModal) {
           if (isSwapModalOnTheTop) {
-            // 4.no swap tab have swap modal no other modal    最外层是 swap modal 不需要做任何动作通知 swap modal 进行询价
+            // 4.no swap tab have swap modal no other modal    最外层�?swap modal 不需要做任何动作通知 swap modal 进行询价
             if (swapApprovingTransactionRef.current) {
               appEventBus.emit(EAppEventBusNames.SwapApprovingSuccess, {
                 approvedSwapInfo: swapApprovingTransactionRef.current,

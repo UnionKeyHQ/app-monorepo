@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
+import type { ISizableTextProps } from '@unionkey/components';
 import {
   Divider,
   Image,
@@ -12,14 +12,14 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkey/components';
+import { useAccountData } from '@unionkey/kit/src/hooks/useAccountData';
+import { ETranslations } from '@unionkey/shared/src/locale';
 import {
   swapServiceFeeDefault,
   swapSlippageDecimal,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkey/shared/types/swap/SwapProvider.constants';
+import type { ISwapTxInfo } from '@unionkey/shared/types/swap/types';
 
 import { SwapServiceFeeOverview } from '../../../Swap/components/SwapServiceFeeOverview';
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
@@ -103,7 +103,7 @@ function SwapInfo(props: IProps) {
       return (
         <XStack alignItems="center" gap="$1">
           <SizableText {...textStyle}>{fee.percentageFee}%</SizableText>
-          <SwapServiceFeeOverview onekeyFee={fee.percentageFee} />
+          <SwapServiceFeeOverview unionkeyFee={fee.percentageFee} />
         </XStack>
       );
     }
@@ -116,7 +116,7 @@ function SwapInfo(props: IProps) {
         <SizableText textDecorationLine="line-through" {...textStyle}>
           {swapServiceFeeDefault}%
         </SizableText>
-        <SwapServiceFeeOverview onekeyFee={fee.percentageFee} />
+        <SwapServiceFeeOverview unionkeyFee={fee.percentageFee} />
       </XStack>
     );
   }, [fee]);

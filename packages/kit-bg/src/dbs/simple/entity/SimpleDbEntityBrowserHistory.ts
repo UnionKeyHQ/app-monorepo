@@ -1,4 +1,4 @@
-import type { IBrowserHistory } from '@onekeyhq/kit/src/views/Discovery/types';
+import type { IBrowserHistory } from '@unionkey/kit/src/views/Discovery/types';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 
