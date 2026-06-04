@@ -1,3 +1,3 @@
-const EventSource = require('./eventSource');
+import EventSource from './eventSource';
 
-module.exports = EventSource;
+export default EventSource;

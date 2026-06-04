@@ -70,6 +70,26 @@ const baseResolve = ({ platform, configName, basePath }) => ({
       basePath,
       '../../node_modules/@react-aria/utils/src/index.ts',
     ),
+    '@unionkeyfe/hd-shared$': path.join(
+      basePath,
+      '../../packages/unionkeyfe/hd-shared/src/index.ts',
+    ),
+    '@unionkeyfe/hd-web-sdk$': path.join(
+      basePath,
+      '../../packages/unionkeyfe/hd-web-sdk/src/index.ts',
+    ),
+    '@unionkeyfe/hd-transport$': path.join(
+      basePath,
+      '../../packages/unionkeyfe/hd-transport/src/index.ts',
+    ),
+    '@unionkeyfe/hd-core$': path.join(
+      basePath,
+      '../../packages/unionkeyfe/hd-core/src/index.ts',
+    ),
+    '@unionkeyfe/cross-inpage-provider-events$': path.join(
+      basePath,
+      '../../packages/unionkeyfe/cross-inpage-provider-events/esm.js',
+    ),
   },
   fallback: {
     'crypto': require.resolve(
@@ -249,6 +269,24 @@ module.exports = ({ platform, basePath, configName }) => {
         {
           'oneOf': [
             {
+              test:
+                /packages[\\/]unionkeyfe[\\/]coinselect[\\/]third-party[\\/]utxo-lib[\\/].*\.js$/,
+              type: 'javascript/auto',
+              use: [
+                path.join(
+                  __dirname,
+                  'loaders/commonjs-exports-loader.js',
+                ),
+              ],
+              resolve: { fullySpecified: false },
+            },
+            {
+              test:
+                /packages[\\/]unionkeyfe[\\/]kaspa-core-lib[\\/]lib[\\/].*\.js$/,
+              type: 'javascript/auto',
+              resolve: { fullySpecified: false },
+            },
+            {
               test: /\.wasm$/,
               type: 'webassembly/async',
             },
@@ -354,6 +392,21 @@ module.exports = ({ platform, basePath, configName }) => {
         {
           test: /\.mjs$/,
           include: /node_modules/,
+          type: 'javascript/auto',
+        },
+        {
+          test:
+            /packages[\\/]unionkeyfe[\\/]cross-inpage-provider-events[\\/]cross-events\.js$/,
+          type: 'javascript/auto',
+        },
+        {
+          test:
+            /packages[\\/]unionkeyfe[\\/]coinselect[\\/]third-party[\\/]utxo-lib[\\/].*\.js$/,
+          type: 'javascript/auto',
+        },
+        {
+          test:
+            /packages[\\/]unionkeyfe[\\/]kaspa-core-lib[\\/]lib[\\/].*\.js$/,
           type: 'javascript/auto',
         },
         {
