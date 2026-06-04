@@ -24,11 +24,11 @@ import { HardwareSDK } from '@unionkeyfe/hd-web-sdk';
 function init() {
   HardwareSDK.init({
     debug: false,
-    connectSrc: 'https://jssdk.onekey.so/'
+    connectSrc: 'https://jssdk.unionkeycn.com/'
   });
 }
 ```
 
 ## Docs
 
-Documentation is available [hardware-js-sdk](https://developer.onekey.so/connect-to-hardware/hardware-sdk/start)
+Documentation is available at [UnionKey hardware-js-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk).
