@@ -1,4 +1,4 @@
-
+﻿
 ## 🌍 环境配置
 
 1. 安装 [node.js LTS 版本（>= 16）](https://nodejs.org/en/)
@@ -51,7 +51,7 @@ yarn
 
 `packages/` 目录下的每一个子目录即一个独立的项目，对应在 monorepo 名称即为对应目录中 **package.json** 的 `name` 字段的值。
 
-当需要给某一个子目录安装依赖时，只需要使用 `yarn workspace @onekeyhq/web add axios`。通过 `yarn workspace @onekeyhq/web` 这样的前缀，最终可以在根目录把 axios 模块安装到 web 这个子项目当中。
+当需要给某一个子目录安装依赖时，只需要使用 `yarn workspace @unionkey/web add axios`。通过 `yarn workspace @unionkey/web` 这样的前缀，最终可以在根目录把 axios 模块安装到 web 这个子项目当中。
 
 部分依赖有原生部分，所以执行安装完 JS 依赖后需要进入 `apps/ios` 目录下执行 `pod install`。
 

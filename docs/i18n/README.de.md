@@ -1,4 +1,4 @@
-
+﻿
 ## 🌍 Konfiguration der Umgebung
 
 1. installieren Sie [node.js LTS Version (>= 16)](https://nodejs.org/en/)
@@ -51,7 +51,7 @@ Die Repositories sind nach dem Monorepo-Modell organisiert, um den Code auf vers
 
 Jedes Unterverzeichnis unter dem Verzeichnis `packages/` ist ein separates Projekt, dessen Name dem Wert des Feldes `name` im Verzeichnis **package.json** in monorepo entspricht.
 
-Wenn Sie eine Abhängigkeit für ein Unterverzeichnis installieren müssen, verwenden Sie einfach `yarn workspace @onekeyhq/web add axios`. Mit einem Präfix wie `yarn workspace @onekeyhq/web` kann das axios-Modul schließlich im Stammverzeichnis des Web-Unterprojekts installiert werden.
+Wenn Sie eine Abhängigkeit für ein Unterverzeichnis installieren müssen, verwenden Sie einfach `yarn workspace @unionkey/web add axios`. Mit einem Präfix wie `yarn workspace @unionkey/web` kann das axios-Modul schließlich im Stammverzeichnis des Web-Unterprojekts installiert werden.
 
 Einige der Abhängigkeiten haben native Teile, daher müssen Sie in das Verzeichnis `apps/ios` gehen und `pod install` ausführen, nachdem Sie die JS-Abhängigkeiten installiert haben.
 

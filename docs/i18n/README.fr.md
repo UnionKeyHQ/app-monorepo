@@ -1,4 +1,4 @@
-
+﻿
 ## 🌍 Configuration de l'environnement
 
 1. installer [node.js LTS version (>= 16)](https://nodejs.org/en/)
@@ -51,7 +51,7 @@ Les dépôts sont organisés selon le modèle monorepo afin de centraliser et de
 
 Chaque sous-répertoire sous le répertoire `packages/` est un projet séparé, dont le nom est la valeur du champ `name` dans le répertoire **package.json** de monorepo.
 
-Lorsque vous avez besoin d'installer une dépendance pour un sous-répertoire, utilisez simplement `yarn workspace @onekeyhq/web add axios`. Avec un préfixe comme `yarn workspace @onekeyhq/web`, le module axios peut éventuellement être installé dans le répertoire racine du sous-projet web.
+Lorsque vous avez besoin d'installer une dépendance pour un sous-répertoire, utilisez simplement `yarn workspace @unionkey/web add axios`. Avec un préfixe comme `yarn workspace @unionkey/web`, le module axios peut éventuellement être installé dans le répertoire racine du sous-projet web.
 
 Certaines des dépendances ont des parties natives, vous devrez donc aller dans le répertoire `apps/ios` et lancer `pod install` après avoir installé les dépendances JS.
 

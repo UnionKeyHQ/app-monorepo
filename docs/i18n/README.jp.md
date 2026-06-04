@@ -1,4 +1,4 @@
-
+﻿
 ## 🌍 環境設定
 
 1. [node.js LTS バージョン (>= 16)] をインストールする(https://nodejs.org/en/)
@@ -51,7 +51,7 @@ yarn
 
 packages/` ディレクトリの下のサブディレクトリはそれぞれ別のプロジェクトで、その名前は monorepo の **package.json** ディレクトリにある `name` フィールドの値になります。
 
-サブディレクトリの依存関係をインストールする必要があるときは、`yarn workspace @onekeyhq/web add axios`とすればよいでしょう。 yarn workspace @onekeyhq/web` のような接頭辞をつけると、最終的に axios モジュールは web サブプロジェクトのルートディレクトリにインストールされるようになります。
+サブディレクトリの依存関係をインストールする必要があるときは、`yarn workspace @unionkey/web add axios`とすればよいでしょう。 yarn workspace @unionkey/web` のような接頭辞をつけると、最終的に axios モジュールは web サブプロジェクトのルートディレクトリにインストールされるようになります。
 
 依存関係の中にはネイティブな部分もあるので、JSの依存関係をインストールした後に、`apps/ios`ディレクトリに移動して、`pod install`を実行する必要があります。
 
