@@ -11,6 +11,48 @@ const { isDev, PUBLIC_URL, NODE_ENV, ONEKEY_PROXY } = require('./constant');
 
 const IS_EAS_BUILD = !!process.env.EAS_BUILD;
 
+const unionKeyFeModulesPath = path.join(
+  __dirname,
+  '../../node_modules/@unionkeyfe',
+);
+const oneKeyFeModulesPath = path.join(
+  __dirname,
+  '../../node_modules/@onekeyfe',
+);
+
+const resolveUnionKeyFeModulePath = (moduleName) => {
+  const modulePath = path.join(unionKeyFeModulesPath, moduleName);
+  const distPath = path.join(modulePath, 'dist');
+  return fs.existsSync(distPath) ? distPath : modulePath;
+};
+
+const createUnionKeyFeAliases = () => {
+  if (!fs.existsSync(unionKeyFeModulesPath)) {
+    return {};
+  }
+
+  return fs
+    .readdirSync(unionKeyFeModulesPath, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() || entry.isSymbolicLink())
+    .reduce((aliases, entry) => {
+      const modulePath = resolveUnionKeyFeModulePath(entry.name);
+      const oneKeyFeModulePath = path.join(oneKeyFeModulesPath, entry.name);
+      if (!fs.existsSync(oneKeyFeModulePath)) {
+        aliases[`@onekeyfe/${entry.name}`] = modulePath;
+        aliases[`@onekeyfe/${entry.name}/package.json`] = path.join(
+          __dirname,
+          '../../packages/shared/src/modules3rdParty/unionkeyfePackageJsonStub.json',
+        );
+      }
+      aliases[`@unionkeyfe/${entry.name}`] = modulePath;
+      aliases[`@unionkeyfe/${entry.name}/package.json`] = path.join(
+        __dirname,
+        '../../packages/shared/src/modules3rdParty/unionkeyfePackageJsonStub.json',
+      );
+      return aliases;
+    }, {});
+};
+
 class BuildDoneNotifyPlugin {
   apply(compiler) {
     compiler.hooks.done.tap('BuildDoneNotifyPlugin', (compilation) => {
@@ -43,6 +85,25 @@ const baseResolve = ({ platform, configName, basePath }) => ({
   extensions: createResolveExtensions({ platform, configName }),
   symlinks: true,
   alias: {
+    ...createUnionKeyFeAliases(),
+    '@onekeyhq/components': path.join(basePath, '../../packages/components'),
+    '@onekeyhq/core': path.join(basePath, '../../packages/core'),
+    '@onekeyhq/kit': path.join(basePath, '../../packages/kit'),
+    '@onekeyhq/kit-bg': path.join(basePath, '../../packages/kit-bg'),
+    '@onekeyhq/qr-wallet-sdk': path.join(
+      basePath,
+      '../../packages/qr-wallet-sdk',
+    ),
+    '@onekeyhq/shared': path.join(basePath, '../../packages/shared'),
+    '@onekeyhq/desktop': path.join(basePath, '../../apps/desktop'),
+    '@unionkeyfe/onekey-cross-webview': path.join(
+      basePath,
+      '../../packages/unionkeyfe/onekey-cross-webview/dist',
+    ),
+    'react-native-webview/lib/WebViewShared': path.join(
+      basePath,
+      '../../packages/kit/src/components/WebView/WebViewShared.web.ts',
+    ),
     'react-native$': 'react-native-web',
     'react-native/Libraries/Components/View/ViewStylePropTypes$':
       'react-native-web/dist/exports/View/ViewStylePropTypes',
@@ -72,8 +133,9 @@ const baseResolve = ({ platform, configName, basePath }) => ({
     ),
   },
   fallback: {
-    'crypto': require.resolve(
-      '@onekeyhq/shared/src/modules3rdParty/cross-crypto/index.js',
+    'crypto': path.join(
+      basePath,
+      '../../packages/shared/src/modules3rdParty/cross-crypto/index.js',
     ),
     stream: require.resolve('stream-browserify'),
     path: false,

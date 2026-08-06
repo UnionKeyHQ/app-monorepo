@@ -6,6 +6,13 @@ import type { IRegisterHandler } from './handler.type';
 export const registerHandler: IRegisterHandler = (
   handleDeepLinkUrl: (e: IDesktopOpenUrlEventData) => void,
 ) => {
+  const desktopApi = globalThis.desktopApi;
+  if (
+    !desktopApi?.addIpcEventListener ||
+    !desktopApi?.removeIpcEventListener
+  ) {
+    return;
+  }
   const desktopLinkingHandler = (
     event: Event,
     data: IDesktopOpenUrlEventData,
@@ -14,7 +21,7 @@ export const registerHandler: IRegisterHandler = (
   };
 
   try {
-    globalThis.desktopApi.removeIpcEventListener(
+    desktopApi.removeIpcEventListener(
       ipcMessageKeys.EVENT_OPEN_URL,
       desktopLinkingHandler,
     );
@@ -22,7 +29,7 @@ export const registerHandler: IRegisterHandler = (
     // noop
   }
 
-  globalThis.desktopApi.addIpcEventListener(
+  desktopApi.addIpcEventListener(
     ipcMessageKeys.EVENT_OPEN_URL,
     desktopLinkingHandler,
   );

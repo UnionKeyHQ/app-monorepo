@@ -19,8 +19,10 @@ import type {
   IVerifyPackage,
 } from './type';
 
+const desktopApi = globalThis.desktopApi;
+
 const updateCheckingTasks: (() => void)[] = [];
-globalThis.desktopApi?.on?.(ipcMessageKeys.UPDATE_CHECKING, () => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_CHECKING, () => {
   defaultLogger.update.app.log('checking');
   while (updateCheckingTasks.length) {
     updateCheckingTasks.pop()?.();
@@ -28,24 +30,24 @@ globalThis.desktopApi?.on?.(ipcMessageKeys.UPDATE_CHECKING, () => {
 });
 
 const updateAvailableTasks: (() => void)[] = [];
-globalThis.desktopApi?.on?.(ipcMessageKeys.UPDATE_AVAILABLE, ({ version }) => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_AVAILABLE, ({ version }) => {
   defaultLogger.update.app.log('available', version);
   while (updateAvailableTasks.length) {
     updateAvailableTasks.pop()?.();
   }
 });
 
-globalThis.desktopApi?.on?.(ipcMessageKeys.UPDATE_NOT_AVAILABLE, (params) => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_NOT_AVAILABLE, (params) => {
   console.log('update/not-available', params);
   defaultLogger.update.app.log('not-available');
 });
 
-globalThis.desktopApi?.on?.(ipcMessageKeys.UPDATE_DOWNLOAD, ({ version }) => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_DOWNLOAD, ({ version }) => {
   defaultLogger.update.app.log('download', version);
 });
 
 const updateVerifyTasks: (() => void)[] = [];
-globalThis.desktopApi.on(ipcMessageKeys.UPDATE_VERIFIED, () => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_VERIFIED, () => {
   defaultLogger.update.app.log('update/verified');
   while (updateVerifyTasks.length) {
     updateVerifyTasks.pop()?.();
@@ -53,7 +55,7 @@ globalThis.desktopApi.on(ipcMessageKeys.UPDATE_VERIFIED, () => {
 });
 
 const updateDownloadASCTasks: (() => void)[] = [];
-globalThis.desktopApi.on(ipcMessageKeys.UPDATE_DOWNLOAD_ASC_DONE, () => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_DOWNLOAD_ASC_DONE, () => {
   defaultLogger.update.app.log('update/download-asc');
   while (updateDownloadASCTasks.length) {
     updateDownloadASCTasks.pop()?.();
@@ -61,7 +63,7 @@ globalThis.desktopApi.on(ipcMessageKeys.UPDATE_DOWNLOAD_ASC_DONE, () => {
 });
 
 const updateVerifyASCTasks: (() => void)[] = [];
-globalThis.desktopApi.on(ipcMessageKeys.UPDATE_VERIFY_ASC_DONE, () => {
+desktopApi?.on?.(ipcMessageKeys.UPDATE_VERIFY_ASC_DONE, () => {
   defaultLogger.update.app.log('update/verify-asc');
   while (updateVerifyASCTasks.length) {
     updateVerifyASCTasks.pop()?.();
@@ -75,7 +77,7 @@ let updateDownloadingTasks: ((params: {
   percent: number;
   bytesPerSecond: number;
 }) => void)[] = [];
-globalThis.desktopApi?.on?.(
+desktopApi?.on?.(
   ipcMessageKeys.UPDATE_DOWNLOADING,
   (params: {
     percent: number;
@@ -91,7 +93,7 @@ globalThis.desktopApi?.on?.(
 );
 
 const updateDownloadedTasks: ((event: IUpdateDownloadedEvent) => void)[] = [];
-globalThis.desktopApi.on(
+desktopApi?.on?.(
   ipcMessageKeys.UPDATE_DOWNLOADED,
   (event: IUpdateDownloadedEvent) => {
     defaultLogger.update.app.log('download');
@@ -103,7 +105,7 @@ globalThis.desktopApi.on(
 );
 
 const updateErrorTasks: ((error: { message: string }) => void)[] = [];
-globalThis.desktopApi?.on?.(
+desktopApi?.on?.(
   ipcMessageKeys.UPDATE_ERROR,
   ({
     err,
@@ -125,43 +127,63 @@ globalThis.desktopApi?.on?.(
 
 export const downloadPackage: IDownloadPackage = () =>
   new Promise<IUpdateDownloadedEvent>((resolve, reject) => {
+    if (!desktopApi) {
+      reject(new Error('Desktop update API is unavailable.'));
+      return;
+    }
     updateAvailableTasks.push(() => {
-      globalThis.desktopApi.downloadUpdate();
+      desktopApi.downloadUpdate();
     });
     updateDownloadedTasks.push((event: IUpdateDownloadedEvent) => {
       resolve(event);
     });
     updateErrorTasks.push(reject);
-    globalThis.desktopApi.checkForUpdates();
+    desktopApi.checkForUpdates();
   });
 
 export const downloadASC: IDownloadASC = async (params) =>
   new Promise((resolve, reject) => {
+    if (!desktopApi) {
+      reject(new Error('Desktop update API is unavailable.'));
+      return;
+    }
     updateDownloadASCTasks.push(resolve);
     updateErrorTasks.push(reject);
-    globalThis.desktopApi.downloadASC(params);
+    desktopApi.downloadASC(params);
   });
 
 export const verifyASC: IVerifyASC = async (params) =>
   new Promise((resolve, reject) => {
+    if (!desktopApi) {
+      reject(new Error('Desktop update API is unavailable.'));
+      return;
+    }
     updateVerifyASCTasks.push(resolve);
     updateErrorTasks.push(reject);
-    globalThis.desktopApi.verifyASC(params);
+    desktopApi.verifyASC(params);
   });
 
 export const verifyPackage: IVerifyPackage = async (params) =>
   new Promise((resolve, reject) => {
+    if (!desktopApi) {
+      reject(new Error('Desktop update API is unavailable.'));
+      return;
+    }
     updateVerifyTasks.push(resolve);
     updateErrorTasks.push(reject);
-    globalThis.desktopApi.verifyUpdate(params);
+    desktopApi.verifyUpdate(params);
   });
 
 export const installPackage: IInstallPackage = async ({ downloadedEvent }) =>
   new Promise((_, reject) => {
+    if (!desktopApi) {
+      reject(new Error('Desktop update API is unavailable.'));
+      return;
+    }
     defaultLogger.update.app.log('install');
     updateErrorTasks.push(reject);
     // verifyUpdate will be called by default in the electron module when calling to installUpdate
-    globalThis.desktopApi.installUpdate({
+    desktopApi.installUpdate({
       ...downloadedEvent,
       buildNumber: String(platformEnv.buildNumber || 1),
     });
@@ -198,13 +220,17 @@ export const useDownloadProgress: IUseDownloadProgress = (
 };
 
 export const clearPackage: IClearPackage = async () => {
-  globalThis.desktopApi.clearUpdate();
+  desktopApi?.clearUpdate?.();
 };
 
 export const manualInstallPackage: IManualInstallPackage = async (params) =>
   new Promise((resolve, reject) => {
+    if (!desktopApi) {
+      reject(new Error('Desktop update API is unavailable.'));
+      return;
+    }
     updateErrorTasks.push(reject);
-    globalThis.desktopApi.manualInstallPackage(params);
+    desktopApi.manualInstallPackage(params);
     setTimeout(() => {
       resolve();
     }, 3500);

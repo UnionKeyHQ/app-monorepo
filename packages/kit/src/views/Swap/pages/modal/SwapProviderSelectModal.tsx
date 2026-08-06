@@ -1,7 +1,6 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { useRoute } from '@react-navigation/core';
-import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
 import type { IKeyOfIcons, IPageNavigationProp } from '@onekeyhq/components';
@@ -34,8 +33,17 @@ import type {
   EModalSwapRoutes,
   IModalSwapParamList,
 } from '@onekeyhq/shared/src/routes/swap';
+import {
+  canCompareSwapQuoteNetCost,
+  getLowestCostSwapQuote,
+  isSameSwapQuote,
+  isSwapQuoteAvailable,
+} from '@onekeyhq/shared/src/utils/unionKeySwapQuoteUtils';
 import { ESwapProviderSort } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { IFetchQuoteResult } from '@onekeyhq/shared/types/swap/types';
+import {
+  ESwapQuoteKind,
+  type IFetchQuoteResult,
+} from '@onekeyhq/shared/types/swap/types';
 
 import SwapProviderListItem from '../../components/SwapProviderListItem';
 import { SwapProviderMirror } from '../SwapProviderMirror';
@@ -74,6 +82,8 @@ const SwapProviderSelectModal = () => {
   const [providerSort, setProviderSort] = useSwapProviderSortAtom();
   const [settingsPersist] = useSettingsPersistAtom();
   const [currentSelectQuote] = useSwapQuoteCurrentSelectAtom();
+  const [pendingSelectQuote, setPendingSelectQuote] =
+    useState<IFetchQuoteResult>();
 
   const onSelectSortChange = useCallback(
     (value: ESwapProviderSort) => {
@@ -107,18 +117,26 @@ const SwapProviderSelectModal = () => {
     ],
     [intl],
   );
+  const availableList = useMemo(
+    () =>
+      swapSortedList.filter((item) =>
+        isSwapQuoteAvailable(item, fromTokenAmount.value),
+      ),
+    [fromTokenAmount.value, swapSortedList],
+  );
+  const unavailableList = useMemo(
+    () =>
+      swapSortedList.filter(
+        (item) => !isSwapQuoteAvailable(item, fromTokenAmount.value),
+      ),
+    [fromTokenAmount.value, swapSortedList],
+  );
   const sectionData = useMemo(() => {
-    const availableList = swapSortedList.filter(
-      (item) => item.toAmount && !item.limit?.min && !item.limit?.max,
-    );
-    const unavailableList = swapSortedList.filter(
-      (item) => !item.toAmount || item.limit?.min || item.limit?.max,
-    );
     return [
       ...(availableList?.length > 0
         ? [
             {
-              title: 'Available',
+              title: '可用报价',
               type: ESwapProviderStatus.AVAILABLE,
               data: availableList,
             },
@@ -136,48 +154,71 @@ const SwapProviderSelectModal = () => {
           ]
         : []),
     ];
-  }, [intl, swapSortedList]);
-  const onSelectQuote = useCallback(
-    (item: IFetchQuoteResult) => {
-      setSwapManualSelect(item);
-      defaultLogger.swap.providerChange.providerChange({
-        changeFrom: currentSelectQuote?.info.provider ?? '-',
-        changeTo: item.info.provider,
-      });
-      navigation.pop();
-    },
-    [navigation, setSwapManualSelect, currentSelectQuote?.info.provider],
+  }, [availableList, intl, unavailableList]);
+
+  const lowestCostQuote = useMemo(
+    () =>
+      getLowestCostSwapQuote({
+        quotes: availableList,
+        fromTokenPrice: fromToken?.price,
+        toTokenPrice: toToken?.price,
+      }),
+    [availableList, fromToken?.price, toToken?.price],
   );
+  const canCompareNetCost = canCompareSwapQuoteNetCost({
+    quoteKind: lowestCostQuote?.kind ?? ESwapQuoteKind.SELL,
+    fromTokenPrice: fromToken?.price,
+    toTokenPrice: toToken?.price,
+  });
+  const bestValueLabel = canCompareNetCost ? '最便宜' : '到账最多';
+
+  const confirmedQuote = useMemo(() => {
+    const selectedQuote = pendingSelectQuote ?? currentSelectQuote;
+    if (!selectedQuote) {
+      return undefined;
+    }
+    return availableList.find(
+      (item) =>
+        item.info.provider === selectedQuote.info.provider &&
+        item.info.providerName === selectedQuote.info.providerName,
+    );
+  }, [availableList, currentSelectQuote, pendingSelectQuote]);
+
+  const onConfirmQuote = useCallback(() => {
+    if (!confirmedQuote) {
+      return;
+    }
+    setSwapManualSelect(confirmedQuote);
+    defaultLogger.swap.providerChange.providerChange({
+      changeFrom: currentSelectQuote?.info.provider ?? '-',
+      changeTo: confirmedQuote.info.provider,
+    });
+    navigation.pop();
+  }, [
+    confirmedQuote,
+    currentSelectQuote?.info.provider,
+    navigation,
+    setSwapManualSelect,
+  ]);
+
+  const onChooseQuote = useCallback((item: IFetchQuoteResult) => {
+    setPendingSelectQuote(item);
+  }, []);
   const renderItem = useCallback(
     ({ item }: { item: IFetchQuoteResult; index: number }) => {
-      let disabled = !item.toAmount;
-      const fromTokenAmountBN = new BigNumber(fromTokenAmount.value ?? 0);
-      if (item.limit) {
-        if (item.limit.min) {
-          const minBN = new BigNumber(item.limit.min);
-          if (fromTokenAmountBN.lt(minBN)) {
-            disabled = false;
-          }
-        }
-        if (item.limit.max) {
-          const maxBN = new BigNumber(item.limit.max);
-          if (fromTokenAmountBN.gt(maxBN)) {
-            disabled = false;
-          }
-        }
-      }
+      const disabled = !isSwapQuoteAvailable(item, fromTokenAmount.value);
       return (
         <SwapProviderListItem
           onPress={
             !disabled
               ? () => {
-                  onSelectQuote(item);
+                  onChooseQuote(item);
                 }
               : undefined
           }
           selected={Boolean(
-            item.info.provider === currentSelectQuote?.info.provider &&
-              item.info.providerName === currentSelectQuote?.info.providerName,
+            item.info.provider === confirmedQuote?.info.provider &&
+              item.info.providerName === confirmedQuote?.info.providerName,
           )}
           fromTokenAmount={fromTokenAmount.value}
           fromToken={fromToken}
@@ -185,15 +226,20 @@ const SwapProviderSelectModal = () => {
           providerResult={item}
           currencySymbol={settingsPersist.currencyInfo.symbol}
           disabled={disabled}
+          bestValueLabel={
+            isSameSwapQuote(item, lowestCostQuote) ? bestValueLabel : undefined
+          }
         />
       );
     },
     [
-      currentSelectQuote?.info.provider,
-      currentSelectQuote?.info.providerName,
+      bestValueLabel,
+      confirmedQuote?.info.provider,
+      confirmedQuote?.info.providerName,
       fromToken,
       fromTokenAmount,
-      onSelectQuote,
+      lowestCostQuote,
+      onChooseQuote,
       settingsPersist.currencyInfo.symbol,
       toToken,
     ],
@@ -268,6 +314,44 @@ const SwapProviderSelectModal = () => {
         estimatedItemSize="$10"
         renderItem={renderItem}
         sections={sectionData}
+        ListHeaderComponent={
+          <Stack
+            mb="$3"
+            p="$4"
+            borderRadius="$4"
+            borderWidth="$px"
+            borderColor="$borderSubdued"
+            bg="$bgSubdued"
+          >
+            <XStack alignItems="center" justifyContent="space-between" gap="$3">
+              <XStack alignItems="center" gap="$2" flex={1}>
+                <Icon name="FilterSortSolid" size="$5" color="$iconActive" />
+                <Stack flex={1}>
+                  <SizableText size="$bodyLgMedium" color="$text">
+                    实时报价比较
+                  </SizableText>
+                  <SizableText size="$bodySm" color="$textSubdued">
+                    {availableList.length} 家可用路由商
+                  </SizableText>
+                </Stack>
+              </XStack>
+              {lowestCostQuote?.info.providerName ? (
+                <Button
+                  size="small"
+                  variant="primary"
+                  onPress={() => onChooseQuote(lowestCostQuote)}
+                >
+                  选择
+                </Button>
+              ) : null}
+            </XStack>
+            <SizableText size="$bodyMd" color="$textSubdued" mt="$3">
+              {lowestCostQuote?.info.providerName
+                ? `${bestValueLabel}：${lowestCostQuote.info.providerName}`
+                : '输入兑换数量后显示各路由商的实时可执行报价。'}
+            </SizableText>
+          </Stack>
+        }
         renderSectionHeader={({ section: { type, title } }) => {
           if (type === ESwapProviderStatus.AVAILABLE) {
             return (
@@ -295,6 +379,13 @@ const SwapProviderSelectModal = () => {
             );
           }
           return <SectionList.SectionHeader title={title} px="$0" />;
+        }}
+      />
+      <Page.Footer
+        onConfirmText="确定"
+        onConfirm={onConfirmQuote}
+        confirmButtonProps={{
+          disabled: !confirmedQuote,
         }}
       />
     </Page>

@@ -235,7 +235,7 @@ export function ImportWalletOptions() {
         //         onPress: liteCard.importWallet,
         //       } as IOptionItem,
         //     ]
-        //   : []),
+        //   : []),//zyf
         {
           icon: 'OnekeyKeytagOutline',
           title: 'UnionKey KeyTag',

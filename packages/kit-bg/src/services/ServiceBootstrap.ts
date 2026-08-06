@@ -28,6 +28,7 @@ class ServiceBootstrap extends ServiceBase {
         this.backgroundApi.walletConnect.initializeOnStart(),
         this.backgroundApi.serviceWalletConnect.dappSide.cleanupInactiveSessions(),
         this.backgroundApi.serviceSwap.syncSwapHistoryPendingList(),
+        this.backgroundApi.serviceUnionKeyTrade.resumeAssistTasks(),
         this.backgroundApi.serviceSetting.fetchReviewControl(),
         this.backgroundApi.servicePassword.addExtIntervalCheckLockStatusListener(),
         this.backgroundApi.serviceNotification.init(),

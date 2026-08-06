@@ -9,18 +9,23 @@ export const useShortcuts = (
   callback: (event: EShortcutEvents) => void,
 ) => {
   useEffect(() => {
-    if (platformEnv.isDesktop) {
+    const desktopApi = globalThis.desktopApi;
+    if (
+      platformEnv.isDesktop &&
+      desktopApi?.addIpcEventListener &&
+      desktopApi?.removeIpcEventListener
+    ) {
       const handleCallback = (_: unknown, e: EShortcutEvents) => {
         if (eventName === undefined || e === eventName) {
           callback(e);
         }
       };
-      globalThis.desktopApi.addIpcEventListener(
+      desktopApi.addIpcEventListener(
         ipcMessageKeys.APP_SHORCUT,
         handleCallback,
       );
       return () => {
-        globalThis.desktopApi.removeIpcEventListener(
+        desktopApi.removeIpcEventListener(
           ipcMessageKeys.APP_SHORCUT,
           handleCallback,
         );

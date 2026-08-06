@@ -43,6 +43,7 @@ import type { SimpleDbEntityServerNetwork } from '../entity/SimpleDbEntityServer
 import type { SimpleDbEntitySwapConfigs } from '../entity/SimpleDbEntitySwapConfigs';
 import type { SimpleDbEntitySwapHistory } from '../entity/SimpleDbEntitySwapHistory';
 import type { SimpleDbEntitySwapNetworksSort } from '../entity/SimpleDbEntitySwapNetworksSort';
+import type { SimpleDbEntityUnionKeyTrade } from '../entity/SimpleDbEntityUnionKeyTrade';
 import type { SimpleDbEntityUniversalSearch } from '../entity/SimpleDbEntityUniversalSearch';
 import type { SimpleDbEntityV4MigrationResult } from '../entity/SimpleDbEntityV4MigrationResult';
 
@@ -109,6 +110,10 @@ export class SimpleDbProxy
   swapConfigs = this._createProxyService(
     'swapConfigs',
   ) as SimpleDbEntitySwapConfigs;
+
+  unionKeyTrade = this._createProxyService(
+    'unionKeyTrade',
+  ) as SimpleDbEntityUnionKeyTrade;
 
   localTokens = this._createProxyService(
     'localTokens',

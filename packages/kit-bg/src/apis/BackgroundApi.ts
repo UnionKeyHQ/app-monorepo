@@ -158,6 +158,16 @@ class BackgroundApi extends BackgroundApiBase implements IBackgroundApi {
     return value;
   }
 
+  get serviceUnionKeyTrade() {
+    const ServiceUnionKeyTrade =
+      require('../services/ServiceUnionKeyTrade') as typeof import('../services/ServiceUnionKeyTrade');
+    const value = new ServiceUnionKeyTrade.default({
+      backgroundApi: this,
+    });
+    Object.defineProperty(this, 'serviceUnionKeyTrade', { value });
+    return value;
+  }
+
   get serviceBootstrap() {
     const Service =
       require('../services/ServiceBootstrap') as typeof import('../services/ServiceBootstrap');

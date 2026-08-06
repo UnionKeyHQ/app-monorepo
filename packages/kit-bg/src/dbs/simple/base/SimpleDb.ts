@@ -39,6 +39,7 @@ import { SimpleDbEntityServerNetwork } from '../entity/SimpleDbEntityServerNetwo
 import { SimpleDbEntitySwapConfigs } from '../entity/SimpleDbEntitySwapConfigs';
 import { SimpleDbEntitySwapHistory } from '../entity/SimpleDbEntitySwapHistory';
 import { SimpleDbEntitySwapNetworksSort } from '../entity/SimpleDbEntitySwapNetworksSort';
+import { SimpleDbEntityUnionKeyTrade } from '../entity/SimpleDbEntityUnionKeyTrade';
 import { SimpleDbEntityUniversalSearch } from '../entity/SimpleDbEntityUniversalSearch';
 import { SimpleDbEntityV4MigrationResult } from '../entity/SimpleDbEntityV4MigrationResult';
 
@@ -68,6 +69,8 @@ export class SimpleDb {
   swapHistory = new SimpleDbEntitySwapHistory();
 
   swapConfigs = new SimpleDbEntitySwapConfigs();
+
+  unionKeyTrade = new SimpleDbEntityUnionKeyTrade();
 
   localTokens = new SimpleDbEntityLocalTokens();
 

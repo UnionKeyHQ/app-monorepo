@@ -138,10 +138,7 @@ export const buildAllowList = (screens: IScreenPathConfig) => {
         showUrl: true,
         showParams: true,
       },
-    [pagePath`${ERootRoutes.Main}${ETabRoutes.Earn}`]: {
-      showUrl: true,
-      showParams: true,
-    },
+    // Earn tab is currently disabled in the UnionKey desktop tab router.
     [pagePath`${ERootRoutes.Modal}${EModalRoutes.StakingModal}${EModalStakingRoutes.ProtocolDetails}`]:
       {
         showUrl: true,

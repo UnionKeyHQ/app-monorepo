@@ -37,6 +37,7 @@ export type ISwapProviderListItemProps = {
   toToken?: ISwapToken;
   selected?: boolean;
   disabled?: boolean;
+  bestValueLabel?: string;
 } & IListItemProps;
 const SwapProviderListItem = ({
   providerResult,
@@ -46,6 +47,7 @@ const SwapProviderListItem = ({
   toToken,
   selected,
   disabled,
+  bestValueLabel,
   ...rest
 }: ISwapProviderListItemProps) => {
   const intl = useIntl();
@@ -312,9 +314,17 @@ const SwapProviderListItem = ({
           />
         </Stack>
         <Stack px="$3" flex={1}>
-          <SizableText color="$text" size="$bodyLgMedium">
-            {leftMainLabel}
-          </SizableText>
+          <XStack alignItems="center" gap="$2" flexWrap="wrap">
+            <SizableText color="$text" size="$bodyLgMedium">
+              {leftMainLabel}
+            </SizableText>
+            {!disabled && bestValueLabel ? (
+              <Badge badgeType="success">{bestValueLabel}</Badge>
+            ) : null}
+            {selected ? (
+              <Icon name="CheckRadioSolid" size="$4" color="$iconSuccess" />
+            ) : null}
+          </XStack>
 
           <SizableText color="$textSubdued" size="$bodyMdMedium" pt="$1">
             {providerResult.info.providerName}

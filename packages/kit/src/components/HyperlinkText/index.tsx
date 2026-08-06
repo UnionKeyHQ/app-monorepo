@@ -37,7 +37,7 @@ export type IHyperlinkTextProps = {
 } & ISizableTextProps;
 
 const defaultIntl = createIntl({
-  locale: '',
+  locale: 'en',
 });
 
 export function HyperlinkText({

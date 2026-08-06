@@ -468,12 +468,9 @@ function createMainWindow() {
     });
   }
 
-  if (isDev) {
-    browserWindow.webContents.openDevTools();
-  }
-
+  const devServerPort = process.env.WEB_PORT || '3002';
   const src = isDev
-    ? 'http://localhost:3001/'
+    ? `http://127.0.0.1:${devServerPort}/`
     : formatUrl({
         pathname: 'index.html',
         protocol: 'file',
@@ -1087,6 +1084,7 @@ app.on('window-all-closed', () => {
 app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy');
 
 if (isDev) {
+  app.commandLine.appendSwitch('remote-debugging-port', '9223');
   app.commandLine.appendSwitch('ignore-certificate-errors');
   app.commandLine.appendSwitch('allow-insecure-localhost', 'true');
   app.commandLine.appendSwitch('disable-site-isolation-trials');

@@ -73,11 +73,17 @@ function CustomTabItem({
 interface ISwapHeaderContainerProps {
   pageType?: EPageType;
   defaultSwapType?: ESwapTabSwitchType;
+  activeUnionKeyBranch?: 'normal' | 'assist' | 'privacy' | 'nft';
+  onUnionKeyBranchChange?: (
+    branch: 'normal' | 'assist' | 'privacy' | 'nft',
+  ) => void;
 }
 
 const SwapHeaderContainer = ({
   pageType,
   defaultSwapType,
+  activeUnionKeyBranch = 'normal',
+  onUnionKeyBranchChange,
 }: ISwapHeaderContainerProps) => {
   const intl = useIntl();
   const [swapTypeSwitch] = useSwapTypeSwitchAtom();
@@ -108,20 +114,36 @@ const SwapHeaderContainer = ({
   return (
     <XStack justifyContent="space-between">
       <XStack gap="$3">
-        {/* <CustomTabItem
-          isSelected={swapTypeSwitch === ESwapTabSwitchType.SWAP}
+        <CustomTabItem
+          isSelected={activeUnionKeyBranch === 'normal'}
           onPress={() => {
+            onUnionKeyBranchChange?.('normal');
             if (swapTypeSwitch !== ESwapTabSwitchType.SWAP) {
               void swapTypeSwitchAction(ESwapTabSwitchType.SWAP, networkId);
             }
           }}
         >
-          {intl.formatMessage({ id: ETranslations.swap_page_swap })}
-        </CustomTabItem> */}
+          {intl.formatMessage({
+            id: ETranslations.swap_page_tab_normal_swap,
+          })}
+        </CustomTabItem>
 
         <CustomTabItem
-          isSelected={swapTypeSwitch === ESwapTabSwitchType.BRIDGE}
+          isSelected={activeUnionKeyBranch === 'assist'}
+          onPress={() => onUnionKeyBranchChange?.('assist')}
+        >
+          {intl.formatMessage({
+            id: ETranslations.swap_page_tab_smart_assist,
+          })}
+        </CustomTabItem>
+
+        <CustomTabItem
+          isSelected={Boolean(
+            activeUnionKeyBranch === 'nft' &&
+              swapTypeSwitch === ESwapTabSwitchType.BRIDGE,
+          )}
           onPress={() => {
+            onUnionKeyBranchChange?.('nft');
             if (swapTypeSwitch !== ESwapTabSwitchType.BRIDGE) {
               void swapTypeSwitchAction(ESwapTabSwitchType.BRIDGE, networkId);
             }
@@ -129,7 +151,6 @@ const SwapHeaderContainer = ({
         >
           {intl.formatMessage({ id: ETranslations.swap_page_nftshow })}
         </CustomTabItem>
-      
       </XStack>
       <SwapHeaderRightActionContainer pageType={pageType} />
     </XStack>

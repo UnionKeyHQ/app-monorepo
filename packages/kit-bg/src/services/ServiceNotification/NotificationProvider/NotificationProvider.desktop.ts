@@ -23,7 +23,7 @@ export default class NotificationProvider extends NotificationProviderBase {
 
   override async getPermission(): Promise<INotificationPermissionDetail> {
     const mainProcessPermission =
-      globalThis.desktopApi.getNotificationPermission();
+      globalThis.desktopApi?.getNotificationPermission?.();
     const permission: NotificationPermission = Notification.permission;
     console.log('Desktop -- Notification.permission', permission);
 
@@ -35,7 +35,7 @@ export default class NotificationProvider extends NotificationProviderBase {
       // permission: notificationsUtils.convertWebPermissionToEnum(permission),
 
       permission: ENotificationPermission.default,
-      isSupported: mainProcessPermission.isSupported,
+      isSupported: mainProcessPermission?.isSupported ?? false,
     };
 
     console.log('Desktop -- getPermission() result', result);
@@ -51,7 +51,7 @@ export default class NotificationProvider extends NotificationProviderBase {
   }
 
   override async openPermissionSettings(): Promise<void> {
-    globalThis.desktopApi.openPreferences('notification');
+    globalThis.desktopApi?.openPreferences?.('notification');
   }
 
   override async showNotification(
@@ -63,7 +63,7 @@ export default class NotificationProvider extends NotificationProviderBase {
 
     if (params.showByElectronMainProcess) {
       // use main process Electron Notification
-      globalThis.desktopApi.showNotification({
+      globalThis.desktopApi?.showNotification?.({
         notificationId,
         title,
         description,
@@ -137,11 +137,11 @@ export default class NotificationProvider extends NotificationProviderBase {
   }
 
   override async setBadge(params: INotificationSetBadgeParams): Promise<void> {
-    globalThis.desktopApi.setBadge(params);
+    globalThis.desktopApi?.setBadge?.(params);
   }
 
   override async showAndFocusApp(): Promise<void> {
-    globalThis.desktopApi.restore();
+    globalThis.desktopApi?.restore?.();
   }
 
   override async clearNotificationCache(): Promise<void> {

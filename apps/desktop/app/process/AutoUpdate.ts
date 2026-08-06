@@ -10,12 +10,10 @@ import logger from 'electron-log/main';
 import { CancellationToken, autoUpdater } from 'electron-updater';
 import { readCleartextMessage, readKey } from 'openpgp';
 
-import { buildServiceEndpoint } from '@onekeyhq/shared/src/config/appConfig';
 import type { IDesktopStoreUpdateSettings } from '@onekeyhq/shared/types/desktop';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
 
 import { ipcMessageKeys } from '../config';
-import { PUBLIC_KEY } from '../constant/gpg';
+import { TRUSTED_PUBLIC_KEYS } from '../constant/gpg';
 import { ETranslations, i18nText } from '../i18n';
 import {
   clearASCFile,
@@ -35,6 +33,14 @@ interface ILatestVersion {
   version: string;
   releaseDate: string;
   isManualCheck: boolean;
+}
+
+const UPDATE_CACHE_DIR_NAME = '@unionkeydesktop-updater';
+const MAX_SIGNATURE_FILE_SIZE = 256 * 1024;
+
+interface ISignedChecksum {
+  fileName?: string;
+  sha256: string;
 }
 
 function isNetworkError(errorObject: Error) {
@@ -85,21 +91,40 @@ const init = ({ mainWindow, store }: IDependencies) => {
   const getSha256 = async () => {
     try {
       const ascFileMessage = getASCFile();
-      logger.info('auto-updater', `signatureFileContent: ${ascFileMessage}`);
+      logger.info(
+        'auto-updater',
+        `signature file size: ${ascFileMessage.length}`,
+      );
 
       const signedMessage = await readCleartextMessage({
         cleartextMessage: ascFileMessage,
       });
-      const publicKey = await readKey({ armoredKey: PUBLIC_KEY });
-      const result = await signedMessage.verify([publicKey]);
+      const publicKeys = await Promise.all(
+        TRUSTED_PUBLIC_KEYS.map((armoredKey) => readKey({ armoredKey })),
+      );
+      const result = await signedMessage.verify(publicKeys);
       // Get result (validity of the signature)
-      const valid = await result[0].verified;
+      const valid = await Promise.any(
+        result.map(async (signature) => {
+          await signature.verified;
+          return true;
+        }),
+      ).catch(() => false);
       logger.info('auto-updater', `file valid: ${String(valid)}`);
       if (valid) {
-        const texts = signedMessage.getText().split(' ');
-        const sha256 = texts[0];
+        const checksumLine = signedMessage.getText().trim();
+        const checksumMatch = /^([a-f\d]{64})(?:\s+\*?([^\r\n]+))?$/i.exec(
+          checksumLine,
+        );
+        if (!checksumMatch) {
+          throw new Error('Invalid signed checksum format');
+        }
+        const sha256 = checksumMatch[1].toLowerCase();
         logger.info('auto-updater', `getSha256 from asc file: ${sha256}`);
-        return sha256;
+        return {
+          sha256,
+          fileName: checksumMatch[2]?.trim(),
+        } as ISignedChecksum;
       }
     } catch (error) {
       logger.error(
@@ -123,11 +148,15 @@ const init = ({ mainWindow, store }: IDependencies) => {
     }
   };
 
-  const verifySha256 = (downloadedFile: string, sha256: string) => {
+  const verifySha256 = async (downloadedFile: string, sha256: string) => {
     logger.info('auto-updater', `sha256: ${sha256}`);
     const hash = crypto.createHash('sha256');
-    const fileContent = fs.readFileSync(downloadedFile);
-    hash.update(fileContent);
+    await new Promise<void>((resolve, reject) => {
+      const input = fs.createReadStream(downloadedFile);
+      input.on('data', (chunk) => hash.update(chunk));
+      input.on('error', reject);
+      input.on('end', resolve);
+    });
     const fileSha256 = hash.digest('hex');
     logger.info('auto-updater', `file sha256: ${fileSha256}`);
     return fileSha256 === sha256;
@@ -140,8 +169,8 @@ const init = ({ mainWindow, store }: IDependencies) => {
   };
 
   const verifyASC = async () => {
-    const sha256 = await getSha256();
-    return !!sha256;
+    const checksum = await getSha256();
+    return !!checksum;
   };
 
   const downloadASC = async ({
@@ -164,7 +193,11 @@ const init = ({ mainWindow, store }: IDependencies) => {
       return false;
     }
     try {
-      const ascFileUrl = `${downloadUrl}.SHA256SUMS.asc`;
+      const parsedDownloadUrl = new URL(downloadUrl);
+      if (parsedDownloadUrl.protocol !== 'https:') {
+        throw new Error('Update downloads must use HTTPS');
+      }
+      const ascFileUrl = `${parsedDownloadUrl.toString()}.SHA256SUMS.asc`;
       const ascFileResponse = await fetch(ascFileUrl);
 
       if (!ascFileResponse.ok) {
@@ -178,8 +211,17 @@ const init = ({ mainWindow, store }: IDependencies) => {
         return false;
       }
 
+      const contentLength = Number(
+        ascFileResponse.headers.get('content-length') || '0',
+      );
+      if (contentLength > MAX_SIGNATURE_FILE_SIZE) {
+        throw new Error('Update signature file is too large');
+      }
       const ascFileMessage = await ascFileResponse.text();
-      if (ascFileMessage.length === 0) {
+      if (
+        ascFileMessage.length === 0 ||
+        ascFileMessage.length > MAX_SIGNATURE_FILE_SIZE
+      ) {
         sendUpdateError({
           message: '',
         });
@@ -201,14 +243,23 @@ const init = ({ mainWindow, store }: IDependencies) => {
   }: IVerifyUpdateParams) => {
     logger.info('auto-updater', `verifyFile ${downloadedFile} ${downloadUrl}`);
 
-    const sha256 = await getSha256();
-    if (!sha256) {
+    const checksum = await getSha256();
+    if (!checksum) {
       sendValidError();
       return false;
     }
 
     try {
-      const verified = verifySha256(downloadedFile, sha256);
+      if (!fs.existsSync(downloadedFile)) {
+        throw new Error('Downloaded update file does not exist');
+      }
+      if (
+        checksum.fileName &&
+        path.basename(checksum.fileName) !== path.basename(downloadedFile)
+      ) {
+        throw new Error('Signed checksum filename does not match update file');
+      }
+      const verified = await verifySha256(downloadedFile, checksum.sha256);
       if (!verified) {
         sendValidError();
         return false;
@@ -344,7 +395,7 @@ const init = ({ mainWindow, store }: IDependencies) => {
       // @ts-ignore
       const baseCachePath = autoUpdater?.app?.baseCachePath;
       if (baseCachePath) {
-        const cachePath = path.join(baseCachePath, '@onekeyhqdesktop-updater');
+        const cachePath = path.join(baseCachePath, UPDATE_CACHE_DIR_NAME);
         logger.info('auto-updater', `cachePath: ${cachePath}`);
         const isExist = fs.existsSync(cachePath);
         if (isExist) {
@@ -366,13 +417,14 @@ const init = ({ mainWindow, store }: IDependencies) => {
       `Update checking request (manual: ${b2t(isManualCheck)})`,
     );
 
-    // const feedUrl = `${buildServiceEndpoint({
-    //   serviceName: EServiceEndpointEnum.Utility,
-    //   env: updateSettings.useTestFeedUrl ? 'test' : 'prod',
-    // })}/utility/v1/app-update/electron-feed-url`;
-    const feedUrl = updateSettings.useTestFeedUrl   
-    ? 'https://api.unionkey.io/download-desktop'  
-    : 'https://api.unionkey.io/download-desktop';  
+    const feedUrl = updateSettings.useTestFeedUrl
+      ? process.env.DESKTOP_UPDATE_TEST_FEED_URL
+      : process.env.DESKTOP_UPDATE_FEED_URL;
+
+    if (!feedUrl) {
+      logger.error('auto-updater', 'Update feed URL is not configured');
+      return;
+    }
 
     autoUpdater.setFeedURL(feedUrl);
     logger.info('current feed url: ', feedUrl);
@@ -438,7 +490,7 @@ const init = ({ mainWindow, store }: IDependencies) => {
         });
       })
       .finally(() => {
-        isDownloading = false;g
+        isDownloading = false;
       });
   });
 

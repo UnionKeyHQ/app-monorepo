@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+﻿import { useCallback, useEffect, useRef } from 'react';
 
 import { debounce, isEqual, noop } from 'lodash';
 import { useIntl } from 'react-intl';
@@ -225,19 +225,23 @@ const useDesktopEvents = platformEnv.isDesktop
       );
 
       useEffect(() => {
-        globalThis.desktopApi.on(ipcMessageKeys.CHECK_FOR_UPDATES, () => {
+        const desktopApi = globalThis.desktopApi;
+        if (!desktopApi?.on) {
+          return;
+        }
+        desktopApi.on(ipcMessageKeys.CHECK_FOR_UPDATES, () => {
           void onCheckUpdateRef.current();
         });
 
         const debounceOpenSettings = debounce((isVisible: boolean) => {
           openSettingsRef.current(isVisible);
         }, 250);
-        globalThis.desktopApi.on(
+        desktopApi.on(
           ipcMessageKeys.APP_OPEN_SETTINGS,
           debounceOpenSettings,
         );
 
-        globalThis.desktopApi.on(ipcMessageKeys.APP_LOCK_NOW, () => {
+        desktopApi.on(ipcMessageKeys.APP_LOCK_NOW, () => {
           void useOnLockRef.current();
         });
       }, []);
@@ -313,6 +317,10 @@ const useAboutVersion =
     ? () => {
         const intl = useIntl();
         useEffect(() => {
+          const desktopApi = globalThis.desktopApi;
+          if (!desktopApi?.on) {
+            return;
+          }
           desktopApi.on(ipcMessageKeys.SHOW_ABOUT_WINDOW, () => {
             const versionString = intl.formatMessage(
               {
@@ -336,12 +344,12 @@ const useAboutVersion =
                   <YStack gap="$2" pt="$4" alignItems="center">
                     <SizableText size="$heading2xl">UnionKey</SizableText>
                     <SizableText size="$bodySm">
-                      {`${globalThis.desktopApi.platform}-${
-                        globalThis.desktopApi.arch || 'unknown'
+                      {`${desktopApi.platform || 'browser'}-${
+                        desktopApi.arch || 'unknown'
                       }`}
                     </SizableText>
                     <SizableText size="$bodySm">{versionString}</SizableText>
-                    <SizableText size="$bodySm">Copyright © UnionKey</SizableText>
+                    <SizableText size="$bodySm">Copyright UnionKey</SizableText>
                   </YStack>
                 </YStack>
               ),
@@ -458,7 +466,11 @@ export const useCheckUpdateOnDesktop =
   !platformEnv.isDesktopWinMsStore
     ? () => {
         useEffect(() => {
-          globalThis.desktopApi.on(
+          const desktopApi = globalThis.desktopApi;
+          if (!desktopApi?.on) {
+            return;
+          }
+          desktopApi.on(
             ipcMessageKeys.UPDATE_DOWNLOAD_FILE_INFO,
             (downloadUrl) => {
               defaultLogger.update.app.log(
@@ -472,7 +484,7 @@ export const useCheckUpdateOnDesktop =
           );
           setTimeout(() => {
             const previousBuildNumber =
-              globalThis.desktopApi.getPreviousUpdateBuildNumber();
+              desktopApi.getPreviousUpdateBuildNumber?.();
             if (
               previousBuildNumber &&
               getBuilderNumber(previousBuildNumber) >=

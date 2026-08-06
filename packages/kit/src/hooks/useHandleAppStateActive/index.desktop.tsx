@@ -11,6 +11,10 @@ export const useHandleAppStateActive: IUseHandleAppStateActive = (
   const appState = useRef<IDesktopAppState>();
   useEffect(() => {
     if (!onHandler) return;
+    const desktopApi = globalThis.desktopApi;
+    if (!desktopApi?.onAppState) {
+      return;
+    }
     const handleAppStateChange = (nextState: IDesktopAppState) => {
       if (appState.current === 'background' && nextState === 'active') {
         onHandler?.();
@@ -24,6 +28,6 @@ export const useHandleAppStateActive: IUseHandleAppStateActive = (
       }
       appState.current = nextState;
     };
-    return globalThis.desktopApi.onAppState(handleAppStateChange);
+    return desktopApi.onAppState(handleAppStateChange);
   }, [handlers, onHandler]);
 };

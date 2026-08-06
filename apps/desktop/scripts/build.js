@@ -56,6 +56,15 @@ build({
       process.env.NODE_ENV || 'development',
     ),
     'process.env.DESK_CHANNEL': JSON.stringify(process.env.DESK_CHANNEL || ''),
+    'process.env.DESKTOP_UPDATE_FEED_URL': JSON.stringify(
+      process.env.DESKTOP_UPDATE_FEED_URL ||
+        'https://api.unionkey.io/download-desktop',
+    ),
+    'process.env.DESKTOP_UPDATE_TEST_FEED_URL': JSON.stringify(
+      process.env.DESKTOP_UPDATE_TEST_FEED_URL ||
+        process.env.DESKTOP_UPDATE_FEED_URL ||
+        'https://api.unionkey.io/download-desktop',
+    ),
     'process.env.COMMITHASH': JSON.stringify(gitRevision),
   },
 })
