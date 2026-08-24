@@ -5,7 +5,7 @@ import { useLoginWithEmail } from '@privy-io/expo';
 import { Button, Input, OTPInput, Toast, YStack } from '@unionkeyhq/components';
 
 export function PrimeSignupTest() {
-  const [email, setEmail] = useState('limichange@hotmail.com');
+  const [email, setEmail] = useState('test@example.com');
   const { sendCode, loginWithCode } = useLoginWithEmail({
     onSendCodeSuccess() {
       Toast.message({
