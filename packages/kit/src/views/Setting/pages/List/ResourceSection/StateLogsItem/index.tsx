@@ -4,6 +4,7 @@ import { useIntl } from 'react-intl';
 
 import { Dialog, SizableText, Stack, useClipboard } from '@unionkeyhq/components';
 import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { SUPPORT_EMAIL } from '@unionkeyhq/shared/src/config/appConfig';
 import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { exportLogs } from './logs';
@@ -35,9 +36,9 @@ export const StateLogsItem = () => {
                   <SizableText
                     size="$bodyLg"
                     textDecorationLine="underline"
-                    onPress={() => copyText('support@unionkey.io')}
+                    onPress={() => copyText(SUPPORT_EMAIL)}
                   >
-                    support@unionkey.io
+                    {SUPPORT_EMAIL}
                   </SizableText>
                 ),
               },

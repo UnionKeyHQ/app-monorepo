@@ -3,8 +3,7 @@
 import type { EServiceEndpointEnum, IEndpointEnv } from '../../types/endpoint';
 
 export const HARDWARE_SDK_IFRAME_SRC_UNIONKEY =
-  process.env.HARDWARE_SDK_CONNECT_SRC ||
-  'https://api.unionkey.io/hardware-sdk/connect';
+  process.env.HARDWARE_SDK_CONNECT_SRC || '';
 
 export const HARDWARE_SDK_VERSION: string =
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -15,7 +14,9 @@ export const HARDWARE_BRIDGE_DOWNLOAD_URL =
 
 export const FIRMWARE_UPDATE_WEB_TOOLS_URL =
   'https://unionkey.io/school.html';
-export const FIRMWARE_CONTACT_US_URL = 'https://unionkey.io/school.html';
+export const SUPPORT_EMAIL = 'support@unionkey.io';
+export const SUPPORT_URL = `mailto:${SUPPORT_EMAIL}`;
+export const FIRMWARE_CONTACT_US_URL = SUPPORT_URL;
 export const FIRMWARE_MANUAL_ENTERING_BOOTLOADER_MODE_GUIDE =
   'https://unionkey.io/school.html';
 export const FIRMWARE_UPDATE_FULL_RES_GUIDE =
@@ -46,7 +47,8 @@ export const UNIONKEY_API_HOST = new URL(UNIONKEY_API_BASE_URL).host;
 export const UNIONKEY_TEST_API_HOST = new URL(
   UNIONKEY_TEST_API_BASE_URL,
 ).host;
-export const WEB_APP_URL = 'https://app.unionkey.io';
+export const WEB_APP_URL =
+  process.env.UNIONKEY_WEB_APP_URL || 'https://unionkey.io';
 export const WEB_APP_URL_DEV = 'https://unionkey.io';
 
 export const EXT_RATE_URL = {
@@ -55,13 +57,15 @@ export const EXT_RATE_URL = {
   'edge': 'https://unionkey.io',
 };
 
-export const APP_STORE_LINK = `itms-apps://apps.apple.com/app/id1609559473?action=write-review`;
-export const PLAY_STORE_LINK = `market://details?id=so.unionkey.app.wallet`;
+export const APP_STORE_LINK = process.env.UNIONKEY_APP_STORE_LINK || '';
+export const PLAY_STORE_LINK = process.env.UNIONKEY_PLAY_STORE_LINK || '';
 
 export const UNIONKEY_KEY_TAG_PURCHASE_URL =
   'https://unionkey-wallet.myshopify.com/';
 
-export const BIP39_DOT_MAP_URL = 'https://github.com/UnionKeyHQ/bip39-dotmap';
+export const BIP39_DOT_MAP_URL =
+  process.env.UNIONKEY_BIP39_DOT_MAP_URL ||
+  'https://unionkey.io/school.html';
 
 export const buildServiceEndpoint = ({
   serviceName,

@@ -69,7 +69,7 @@ import { StartTimePanel } from './StartTimePanel';
 let correctDevOnlyPwd = '';
 
 if (process.env.NODE_ENV !== 'production') {
-  correctDevOnlyPwd = `${formatDateFns(new Date(), 'yyyyMMdd')}-onekey-debug`;
+  correctDevOnlyPwd = `${formatDateFns(new Date(), 'yyyyMMdd')}-unionkey-debug`;
 }
 
 const APP_VERSION = platformEnv.version ?? '1.0.0';

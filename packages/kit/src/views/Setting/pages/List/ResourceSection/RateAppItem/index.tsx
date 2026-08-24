@@ -14,8 +14,8 @@ import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 const show =
   platformEnv.isExtension ||
-  platformEnv.isNativeAndroidGooglePlay ||
-  platformEnv.isNativeIOS;
+  (platformEnv.isNativeAndroidGooglePlay && Boolean(PLAY_STORE_LINK)) ||
+  (platformEnv.isNativeIOS && Boolean(APP_STORE_LINK));
 
 export const RateAppItem = () => {
   const intl = useIntl();
@@ -27,9 +27,9 @@ export const RateAppItem = () => {
         url,
         intl.formatMessage({ id: ETranslations.settings_rate_app }),
       );
-    } else if (platformEnv.isNativeAndroidGooglePlay) {
+    } else if (platformEnv.isNativeAndroidGooglePlay && PLAY_STORE_LINK) {
       openUrlExternal(PLAY_STORE_LINK);
-    } else if (platformEnv.isNativeIOS) {
+    } else if (platformEnv.isNativeIOS && APP_STORE_LINK) {
       openUrlExternal(APP_STORE_LINK);
     }
   }, [intl]);

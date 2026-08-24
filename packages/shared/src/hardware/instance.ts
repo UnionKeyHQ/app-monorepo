@@ -21,8 +21,8 @@ let HardwareSDK: CoreApi;
 let HardwareLowLevelSDK: LowLevelCoreApi;
 
 export const generateConnectSrc = () => {
-  const connectSrc = `${HARDWARE_SDK_IFRAME_SRC_UNIONKEY}/${HARDWARE_SDK_VERSION}/`;
-  return connectSrc;
+  const connectSrc = HARDWARE_SDK_IFRAME_SRC_UNIONKEY.replace(/\/$/, '');
+  return connectSrc ? `${connectSrc}/${HARDWARE_SDK_VERSION}/` : '';
 };
 
 export const getHardwareSDKInstance = memoizee(
@@ -61,6 +61,11 @@ export const getHardwareSDKInstance = memoizee(
           if (sdkConnectSrc) {
             connectSrc = sdkConnectSrc;
           }
+        }
+        if (!connectSrc) {
+          throw new Error(
+            'HARDWARE_SDK_CONNECT_SRC must be configured for desktop, web, and extension builds',
+          );
         }
         settings.connectSrc = connectSrc;
         HardwareLowLevelSDK = await importHardwareSDKLowLevel();
