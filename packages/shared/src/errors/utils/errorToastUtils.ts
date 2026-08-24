@@ -1,45 +1,45 @@
 import axios from 'axios';
 import { isPlainObject } from 'lodash';
 
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { EAppEventBusNames, appEventBus } from '../../eventBus/appEventBus';
-import { EOneKeyErrorClassNames, type IOneKeyError } from '../types/errorTypes';
+import { EUnionKeyErrorClassNames, type IUnionKeyError } from '../types/errorTypes';
 
 function fixAxiosAbortCancelError(error: unknown) {
   if (error && axios.isCancel(error)) {
-    (error as IOneKeyError).className =
-      (error as IOneKeyError).className ||
-      EOneKeyErrorClassNames.AxiosAbortCancelError;
+    (error as IUnionKeyError).className =
+      (error as IUnionKeyError).className ||
+      EUnionKeyErrorClassNames.AxiosAbortCancelError;
   }
 }
 
-let lastToastErrorInstance: IOneKeyError | undefined;
-function showToastOfError(error: IOneKeyError | unknown | undefined) {
+let lastToastErrorInstance: IUnionKeyError | undefined;
+function showToastOfError(error: IUnionKeyError | unknown | undefined) {
   fixAxiosAbortCancelError(error);
-  const err = error as IOneKeyError | undefined;
+  const err = error as IUnionKeyError | undefined;
   if (
     err?.className &&
     [
       // ignore auto toast errors
-      EOneKeyErrorClassNames.HardwareUserCancelFromOutside,
-      EOneKeyErrorClassNames.PrimeLoginDialogCancelError,
-      EOneKeyErrorClassNames.SecureQRCodeDialogCancel,
-      EOneKeyErrorClassNames.PasswordPromptDialogCancel,
-      EOneKeyErrorClassNames.OneKeyErrorScanQrCodeCancel,
-      EOneKeyErrorClassNames.FirmwareUpdateExit,
-      EOneKeyErrorClassNames.FirmwareUpdateTasksClear,
-      EOneKeyErrorClassNames.WebDeviceNotFoundOrNeedsPermission,
-      EOneKeyErrorClassNames.OneKeyErrorAirGapAccountNotFound,
-      EOneKeyErrorClassNames.OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
-      EOneKeyErrorClassNames.AxiosAbortCancelError,
+      EUnionKeyErrorClassNames.HardwareUserCancelFromOutside,
+      EUnionKeyErrorClassNames.PrimeLoginDialogCancelError,
+      EUnionKeyErrorClassNames.SecureQRCodeDialogCancel,
+      EUnionKeyErrorClassNames.PasswordPromptDialogCancel,
+      EUnionKeyErrorClassNames.UnionKeyErrorScanQrCodeCancel,
+      EUnionKeyErrorClassNames.FirmwareUpdateExit,
+      EUnionKeyErrorClassNames.FirmwareUpdateTasksClear,
+      EUnionKeyErrorClassNames.WebDeviceNotFoundOrNeedsPermission,
+      EUnionKeyErrorClassNames.UnionKeyErrorAirGapAccountNotFound,
+      EUnionKeyErrorClassNames.UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
+      EUnionKeyErrorClassNames.AxiosAbortCancelError,
     ].includes(err?.className)
   ) {
     return;
   }
   let shouldMuteToast = false;
   if (
-    err?.className === EOneKeyErrorClassNames.OneKeyServerApiError &&
+    err?.className === EUnionKeyErrorClassNames.UnionKeyServerApiError &&
     !err?.message
   ) {
     shouldMuteToast = true;
@@ -71,7 +71,7 @@ function toastIfError(error: unknown) {
   // Some third-party libraries or external wallets return not an Error object, but a normal JSON object. Here we need to use isPlainObject to do a compatible processing.
 
   if (error instanceof Error || isPlainObject(error)) {
-    const e = error as IOneKeyError | undefined;
+    const e = error as IUnionKeyError | undefined;
 
     if (e) {
       // handle autoToast error by BackgroundApiProxyBase
@@ -85,7 +85,7 @@ function toastIfErrorDisable(error: unknown) {
   // Some third-party libraries or external wallets return not an Error object, but a normal JSON object. Here we need to use isPlainObject to do a compatible processing.
 
   if (error instanceof Error || isPlainObject(error)) {
-    const e = error as IOneKeyError | undefined;
+    const e = error as IUnionKeyError | undefined;
     if (e) {
       e.autoToast = false;
     }

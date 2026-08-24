@@ -1,4 +1,4 @@
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import { TradingViewV1 } from './TradingViewV1';
 import { TradingViewV2 } from './TradingViewV2';

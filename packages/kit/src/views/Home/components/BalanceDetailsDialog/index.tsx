@@ -15,23 +15,23 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
+} from '@unionkeyhq/components';
+import type { IDialogShowProps } from '@unionkeyhq/components/src/composite/Dialog/type';
 import {
   isTaprootAddress,
   isTaprootPath,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useHelpLink } from '@onekeyhq/kit/src/hooks/useHelpLink';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveInfoItems } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IFetchAccountDetailsResp } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/core/src/chains/btc/sdkBtc';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useHelpLink } from '@unionkeyhq/kit/src/hooks/useHelpLink';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveInfoItems } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import type { IFetchAccountDetailsResp } from '@unionkeyhq/shared/types/address';
 
 const detailsBlockStyles: ComponentProps<typeof Stack> = {
   borderRadius: '$2',

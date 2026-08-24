@@ -3,15 +3,15 @@ import { useIntl } from 'react-intl';
 import type {
   IActionListItemProps,
   IActionListSection,
-} from '@onekeyhq/components';
-import { ActionList, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import { ActionList, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import { Action } from './Action';
 
 export function Actions() {

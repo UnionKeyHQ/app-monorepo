@@ -1,16 +1,16 @@
 import { isObject, isString, isUndefined, omitBy } from 'lodash';
 
-import type { ETranslationsMock } from '@onekeyhq/shared/src/locale';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ETranslationsMock } from '@unionkeyhq/shared/src/locale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import appGlobals from '../../appGlobals';
 import { appLocale } from '../../locale/appLocale';
 import platformEnv from '../../platformEnv';
 
 import type {
-  EOneKeyErrorClassNames,
-  IOneKeyError,
-  IOneKeyHardwareErrorPayload,
+  EUnionKeyErrorClassNames,
+  IUnionKeyError,
+  IUnionKeyHardwareErrorPayload,
 } from '../types/errorTypes';
 import type { MessageDescriptor } from 'react-intl';
 
@@ -18,10 +18,10 @@ import type { MessageDescriptor } from 'react-intl';
 /**
  * Converts an error object into a plain object with specific properties.
  *
- * @param {Object} error - The error object to convert. It may have properties such as name, message, stack (js native Error), code, data (Web3RpcError), className, info, key (OneKeyError).
+ * @param {Object} error - The error object to convert. It may have properties such as name, message, stack (js native Error), code, data (Web3RpcError), className, info, key (UnionKeyError).
  * @returns {Object} A plain object with properties: name, message, code, data, className, info, key, stack. If the platform is Android hermes engine, the stack property will be a specific error message.
  */
-export function toPlainErrorObject(error: IOneKeyError) {
+export function toPlainErrorObject(error: IUnionKeyError) {
   if (!error) {
     return error;
   }
@@ -67,7 +67,7 @@ export function interceptConsoleErrorWithExtraInfo() {
   const oldConsoleError = console.error;
   // @ts-ignore
   console.logErrorOriginal = oldConsoleError;
-  console.error = function (...errors: IOneKeyError[]) {
+  console.error = function (...errors: IUnionKeyError[]) {
     const extraInfoErrors = errors
       .filter((e) => e?.constructorName)
       .map((error) => ({
@@ -99,20 +99,20 @@ export const errorsIntlFormatter: {
 };
 
 export function getDeviceErrorPayloadMessage(
-  payload: IOneKeyHardwareErrorPayload,
+  payload: IUnionKeyHardwareErrorPayload,
 ) {
   return payload.error || payload.message || '';
 }
 
 export function normalizeErrorProps(
-  props?: IOneKeyError | string,
+  props?: IUnionKeyError | string,
   config?: {
     defaultMessage?: string | ETranslations;
     defaultKey?: ETranslations | ETranslationsMock;
     defaultAutoToast?: boolean;
     alwaysAppendDefaultMessage?: boolean;
   },
-): IOneKeyError {
+): IUnionKeyError {
   // props.message
   let msg: string | undefined = isString(props) ? props : props?.message;
 
@@ -129,7 +129,7 @@ export function normalizeErrorProps(
   if (!msg && key && appLocale.intl.formatMessage && !platformEnv.isJest) {
     msg = appLocale.intl.formatMessage(
       { id: key },
-      (props as IOneKeyError)?.info,
+      (props as IUnionKeyError)?.info,
     );
     if (key === ETranslations.auth_error_passcode_incorrect) {
       // console.log('IncorrectPasswordI18nKey', key, msg);
@@ -160,14 +160,14 @@ export function normalizeErrorProps(
   return {
     message: msg,
     key,
-    autoToast: (props as IOneKeyError)?.autoToast ?? config?.defaultAutoToast,
-    requestId: (props as IOneKeyError)?.requestId,
+    autoToast: (props as IUnionKeyError)?.autoToast ?? config?.defaultAutoToast,
+    requestId: (props as IUnionKeyError)?.requestId,
     ...(isString(props) ? {} : props),
   };
 }
 
 function autoPrintErrorIgnore(error: unknown | undefined) {
-  const e = error as IOneKeyError | undefined;
+  const e = error as IUnionKeyError | undefined;
   if (e) {
     // disable autoLogger Error in DEV
     e.$$autoPrintErrorIgnore = true;
@@ -179,12 +179,12 @@ function isErrorByClassName({
   className,
 }: {
   error: unknown;
-  className: EOneKeyErrorClassNames | EOneKeyErrorClassNames[];
+  className: EUnionKeyErrorClassNames | EUnionKeyErrorClassNames[];
 }): boolean {
-  const classNames: EOneKeyErrorClassNames[] = (
-    [] as EOneKeyErrorClassNames[]
+  const classNames: EUnionKeyErrorClassNames[] = (
+    [] as EUnionKeyErrorClassNames[]
   ).concat(className);
-  const errorClassName = (error as IOneKeyError)?.className;
+  const errorClassName = (error as IUnionKeyError)?.className;
   return Boolean(errorClassName && classNames.includes(errorClassName));
 }
 
@@ -193,7 +193,7 @@ function getCurrentCallStackV1() {
     throw new Error();
   } catch (e) {
     autoPrintErrorIgnore(e);
-    return (e as IOneKeyError)?.stack;
+    return (e as IUnionKeyError)?.stack;
   }
 }
 

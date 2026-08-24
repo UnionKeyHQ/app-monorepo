@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { trim } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IFormMode, IReValidateMode } from '@onekeyhq/components';
+import type { IFormMode, IReValidateMode } from '@unionkeyhq/components';
 import {
   Form,
   Icon,
@@ -15,22 +15,22 @@ import {
   useForm,
   useFormWatch,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ControlledNetworkSelectorTrigger } from '@onekeyhq/kit/src/components/AccountSelector';
-import { DeriveTypeSelectorFormInput } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import { useAccountSelectorTrigger } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
-import { MAX_LENGTH_ACCOUNT_NAME } from '@onekeyhq/kit/src/components/RenameDialog/renameConsts';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ControlledNetworkSelectorTrigger } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { DeriveTypeSelectorFormInput } from '@unionkeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import { useAccountSelectorTrigger } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
+import { MAX_LENGTH_ACCOUNT_NAME } from '@unionkeyhq/kit/src/components/RenameDialog/renameConsts';
+import { useDebounce } from '@unionkeyhq/kit/src/hooks/useDebounce';
+import useScanQrCode from '@unionkeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
 import type {
   IAccountDeriveTypes,
   IValidateGeneralInputParams,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { WALLET_TYPE_IMPORTED } from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IGeneralInputValidation } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { WALLET_TYPE_IMPORTED } from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IGeneralInputValidation } from '@unionkeyhq/shared/types/address';
 
 import type { UseFormReturn } from 'react-hook-form';
 
@@ -79,7 +79,7 @@ export function ImportSingleChainBase({
     () => ({
       values: {
         networkId:
-          network?.id && network.id !== getNetworkIdsMap().onekeyall
+          network?.id && network.id !== getNetworkIdsMap().unionkeyall
             ? network?.id
             : getNetworkIdsMap().btc,
         input: '',

@@ -9,15 +9,15 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { NetworkAvatar } from '../../../components/NetworkAvatar';
 

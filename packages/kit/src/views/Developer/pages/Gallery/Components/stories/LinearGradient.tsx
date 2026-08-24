@@ -1,4 +1,4 @@
-import { LinearGradient, SizableText, Stack } from '@onekeyhq/components';
+import { LinearGradient, SizableText, Stack } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

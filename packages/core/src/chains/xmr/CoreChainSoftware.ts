@@ -1,9 +1,9 @@
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 
@@ -57,7 +57,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     const rawPrivateKey = await signer.getPrvkey();
 
     if (!rawPrivateKey) {
-      throw new OneKeyInternalError('Unable to get raw private key.');
+      throw new UnionKeyInternalError('Unable to get raw private key.');
     }
 
     const { publicSpendKey, privateViewKey, privateSpendKey } =
@@ -125,7 +125,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
         index,
       });
     if (!publicSpendKey || !publicViewKey) {
-      throw new OneKeyInternalError('Unable to get public spend/view key.');
+      throw new UnionKeyInternalError('Unable to get public spend/view key.');
     }
 
     const address = moneroApi.pubKeysToAddress(

@@ -1,18 +1,18 @@
 import { useEffect } from 'react';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   IconButton,
   Page,
   View,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EOnboardingPages,
   IOnboardingParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import { Actions, TermsAndPrivacy, Welcome } from './components';
 

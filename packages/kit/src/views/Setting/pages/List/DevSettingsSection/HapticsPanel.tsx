@@ -4,7 +4,7 @@ import {
   ImpactFeedbackStyle,
   NotificationFeedbackType,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 export function HapticsPanel() {
   return (

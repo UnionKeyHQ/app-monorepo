@@ -1,8 +1,8 @@
 import { Semaphore } from 'async-mutex';
 import { debounce, isEmpty, isNil, uniq, uniqBy } from 'lodash';
 
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { IBip39RevealableSeedEncryptHex } from '@onekeyhq/core/src/secret';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { IBip39RevealableSeedEncryptHex } from '@unionkeyhq/core/src/secret';
 import {
   EMnemonicType,
   decodeSensitiveTextAsync,
@@ -17,83 +17,83 @@ import {
   tonMnemonicFromEntropy,
   tonValidateMnemonic,
   validateMnemonic,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import type {
   EAddressEncodings,
   IExportKeyType,
-} from '@onekeyhq/core/src/types';
-import { ECoreApiExportedSecretKeyType } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
+import { ECoreApiExportedSecretKeyType } from '@unionkeyhq/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ALL_NETWORK_ACCOUNT_MOCK_ADDRESS } from '@onekeyhq/shared/src/consts/addresses';
-import { BTC_FIRST_TAPROOT_PATH } from '@onekeyhq/shared/src/consts/chainConsts';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { ALL_NETWORK_ACCOUNT_MOCK_ADDRESS } from '@unionkeyhq/shared/src/consts/addresses';
+import { BTC_FIRST_TAPROOT_PATH } from '@unionkeyhq/shared/src/consts/chainConsts';
 import {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_HD,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
 import {
   COINTYPE_ALLNETWORKS,
   FIRST_EVM_ADDRESS_PATH,
   IMPL_ALLNETWORKS,
   IMPL_EVM,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   InvalidMnemonic,
-  OneKeyError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { DeviceNotOpenedPassphrase } from '@onekeyhq/shared/src/errors/errors/hardwareErrors';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+  UnionKeyError,
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { DeviceNotOpenedPassphrase } from '@unionkeyhq/shared/src/errors/errors/hardwareErrors';
+import { EUnionKeyErrorClassNames } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import errorUtils from '@unionkeyhq/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   IChangeHistoryItem,
   IChangeHistoryUpdateItem,
-} from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkeyhq/shared/src/types/changeHistory';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import cloudSyncUtils from '@onekeyhq/shared/src/utils/cloudSyncUtils';
+} from '@unionkeyhq/shared/src/types/changeHistory';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import cloudSyncUtils from '@unionkeyhq/shared/src/utils/cloudSyncUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IAvatarInfo } from '@onekeyhq/shared/src/utils/emojiUtils';
-import { randomAvatar } from '@onekeyhq/shared/src/utils/emojiUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/utils/debug/perfUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import type { IAvatarInfo } from '@unionkeyhq/shared/src/utils/emojiUtils';
+import { randomAvatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import stringUtils from '@unionkeyhq/shared/src/utils/stringUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 import type {
   IBatchCreateAccount,
   IHwQrWalletWithDevice,
   INetworkAccount,
   IQrWalletAirGapAccount,
-} from '@onekeyhq/shared/types/account';
-import type { IGeneralInputValidation } from '@onekeyhq/shared/types/address';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
-import { EConfirmOnDeviceType } from '@onekeyhq/shared/types/device';
-import type { IExternalConnectWalletResult } from '@onekeyhq/shared/types/externalWallet.types';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkeyhq/shared/types/account';
+import type { IGeneralInputValidation } from '@unionkeyhq/shared/types/address';
+import type { IDeviceSharedCallParams } from '@unionkeyhq/shared/types/device';
+import { EConfirmOnDeviceType } from '@unionkeyhq/shared/types/device';
+import type { IExternalConnectWalletResult } from '@unionkeyhq/shared/types/externalWallet.types';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import { EDBAccountType } from '../../dbs/local/consts';
 import localDb from '../../dbs/local/localDb';
@@ -528,12 +528,12 @@ class ServiceAccount extends ServiceBase {
       usedIndexes.unshift(indexedAccount.index);
     }
     if (usedIndexes.some((index) => index >= 2 ** 31)) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'addHDAccounts ERROR: Invalid child index, should be less than 2^31.',
       );
     }
     if (usedIndexes.length <= 0) {
-      throw new OneKeyInternalError({
+      throw new UnionKeyInternalError({
         message: 'addHDAccounts ERROR: indexed is empty',
       });
     }
@@ -704,15 +704,15 @@ class ServiceAccount extends ServiceBase {
         errorUtils.isErrorByClassName({
           error,
           className: [
-            EOneKeyErrorClassNames.VaultKeyringNotDefinedError,
-            EOneKeyErrorClassNames.OneKeyErrorNotImplemented,
+            EUnionKeyErrorClassNames.VaultKeyringNotDefinedError,
+            EUnionKeyErrorClassNames.UnionKeyErrorNotImplemented,
           ],
         })
       ) {
         const network = await this.backgroundApi.serviceNetwork.getNetworkSafe({
           networkId,
         });
-        throw new OneKeyError({
+        throw new UnionKeyError({
           message: appLocale.intl.formatMessage(
             {
               id: ETranslations.wallet_unsupported_network_title,
@@ -1744,7 +1744,7 @@ class ServiceAccount extends ServiceBase {
     const { index } = accountUtils.parseIndexedAccountId({ indexedAccountId });
     const realDBAccountId = await this.getDbAccountIdFromIndexedAccountId({
       indexedAccountId,
-      networkId: getNetworkIdsMap().onekeyall,
+      networkId: getNetworkIdsMap().unionkeyall,
       deriveType: 'default',
     });
     return {
@@ -1766,7 +1766,7 @@ class ServiceAccount extends ServiceBase {
       addressDetail: {
         isValid: true,
         allowEmptyAddress: true,
-        networkId: getNetworkIdsMap().onekeyall,
+        networkId: getNetworkIdsMap().unionkeyall,
         address: mockAllNetworkAccountAddress,
         baseAddress: mockAllNetworkAccountAddress,
         normalizedAddress: mockAllNetworkAccountAddress,
@@ -1801,7 +1801,7 @@ class ServiceAccount extends ServiceBase {
           account: dbAccountUsed,
           networkId: undefined,
         });
-        if (realNetworkId === getNetworkIdsMap().onekeyall) {
+        if (realNetworkId === getNetworkIdsMap().unionkeyall) {
           throw new Error(
             'getAccount ERROR: realNetworkId can not be allnetwork',
           );
@@ -1871,7 +1871,7 @@ class ServiceAccount extends ServiceBase {
       }
       throw new Error(`indexedAccounts not found: ${indexedAccountId}`);
     }
-    throw new OneKeyInternalError({
+    throw new UnionKeyInternalError({
       message: 'accountId or indexedAccountId missing',
     });
   }

@@ -4,8 +4,8 @@ import { memo, useCallback, useMemo, useState } from 'react';
 import { useChartData } from '@onekeyfe/react-native-animated-charts';
 import { Text, View } from 'react-native';
 
-import { NumberSizeableText } from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { NumberSizeableText } from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import type { LayoutChangeEvent } from 'react-native';
 

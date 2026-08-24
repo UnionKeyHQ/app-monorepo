@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef } from 'react';
 import type { PropsWithChildren } from 'react';
 
-import { markFPTime } from '@onekeyhq/shared/src/modules3rdParty/metrics';
+import { markFPTime } from '@unionkeyhq/shared/src/modules3rdParty/metrics';
 
 import { Stack } from '../../primitives';
 

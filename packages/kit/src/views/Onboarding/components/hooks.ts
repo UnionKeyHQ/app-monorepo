@@ -4,11 +4,11 @@ import wordLists from 'bip39/src/wordlists/english.json';
 import { shuffle } from 'lodash';
 import { InteractionManager } from 'react-native';
 
-import type { useForm } from '@onekeyhq/components';
-import { Haptics, useClipboard, useKeyboardEvent } from '@onekeyhq/components';
-import { dismissKeyboard } from '@onekeyhq/shared/src/keyboard';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import type { useForm } from '@unionkeyhq/components';
+import { Haptics, useClipboard, useKeyboardEvent } from '@unionkeyhq/components';
+import { dismissKeyboard } from '@unionkeyhq/shared/src/keyboard';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 const isValidWord = (word: string) => wordLists.includes(word);
 

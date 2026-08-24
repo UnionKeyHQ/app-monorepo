@@ -1,10 +1,10 @@
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
+import { EAddressEncodings } from '@unionkeyhq/core/src/types';
 import {
   COINNAME_NEURAI,
   COINTYPE_NEURAI,
   IMPL_NEURAI,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import settingsBtc from '../btc/settings';
 

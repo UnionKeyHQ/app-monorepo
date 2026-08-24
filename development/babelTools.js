@@ -21,7 +21,7 @@ const moduleResolverAliasForAllWebPlatform = {
 };
 
 function normalizeConfig({ platform, config }) {
-  process.env.ONEKEY_PLATFORM = platform;
+  process.env.UNIONKEY_PLATFORM = platform;
   let moduleResolver = null;
   if (platform === developmentConsts.platforms.ext) {
     moduleResolver = {
@@ -169,7 +169,7 @@ function normalizeConfig({ platform, config }) {
       !isNative && [
         'babel-plugin-catch-logger',
         {
-          source: '@onekeyhq/shared/src/logger/autoLogger',
+          source: '@unionkeyhq/shared/src/logger/autoLogger',
           name: 'autoLogger',
           methodName: 'error',
           catchPromise: false,

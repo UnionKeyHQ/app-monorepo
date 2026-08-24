@@ -1,7 +1,7 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IModalWebViewParamList } from '@onekeyhq/shared/src/routes';
-import { EModalWebViewRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import type { IModalWebViewParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalWebViewRoutes } from '@unionkeyhq/shared/src/routes';
 
 const WebViewModal = LazyLoadPage(() => import('../pages/WebViewModal'));
 

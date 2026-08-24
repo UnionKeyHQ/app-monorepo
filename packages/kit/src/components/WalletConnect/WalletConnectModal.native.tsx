@@ -13,13 +13,13 @@ import { StorageUtil } from '@walletconnect/modal-react-native/lib/module/utils/
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import {
   WALLET_CONNECT_CLIENT_META,
   WALLET_CONNECT_V2_PROJECT_ID,
-} from '@onekeyhq/shared/src/walletConnect/constant';
+} from '@unionkeyhq/shared/src/walletConnect/constant';
 
 import type { IWalletConnectModalShared } from './types';
 

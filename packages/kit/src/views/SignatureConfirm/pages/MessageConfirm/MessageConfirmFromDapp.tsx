@@ -3,16 +3,16 @@ import { useCallback, useEffect, useRef } from 'react';
 import { StackActions, useNavigation } from '@react-navigation/native';
 import { AppState } from 'react-native';
 
-import { Page, Spinner, Stack } from '@onekeyhq/components';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
+import { Page, Spinner, Stack } from '@unionkeyhq/components';
+import type { IUnsignedMessage } from '@unionkeyhq/core/src/types';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkeyhq/kit/src/hooks/useDappQuery';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { EModalSignatureConfirmRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalSignatureConfirmParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { EModalSignatureConfirmRoutes } from '@unionkeyhq/shared/src/routes';
+import type { IModalSignatureConfirmParamList } from '@unionkeyhq/shared/src/routes';
 
 import type {
   NavigationAction,

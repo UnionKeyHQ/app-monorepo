@@ -10,9 +10,9 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { ISwapToken } from '@unionkeyhq/shared/types/swap/types';
 
 import { SwapServiceFeeOverview } from './SwapServiceFeeOverview';
 

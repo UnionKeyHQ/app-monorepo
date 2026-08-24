@@ -1,13 +1,13 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import extUtils from '@onekeyhq/shared/src/utils/extUtils';
-import { sidePanelState } from '@onekeyhq/shared/src/utils/sidePanelUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import extUtils from '@unionkeyhq/shared/src/utils/extUtils';
+import { sidePanelState } from '@unionkeyhq/shared/src/utils/sidePanelUtils';
 
-const SIDE_PANEL_PORT_NAME = 'ONEKEY_SIDE_PANEL';
+const SIDE_PANEL_PORT_NAME = 'UNIONKEY_SIDE_PANEL';
 export const setupSidePanelPortInBg = () => {
   chrome.runtime.onConnect.addListener((port) => {
     if (port.name === SIDE_PANEL_PORT_NAME) {
@@ -23,9 +23,9 @@ export const setupSidePanelPortInBg = () => {
       let dappRejectId: string | number | undefined;
       const closeSidePanel = () => {
         sidePanelState.isOpen = false;
-        const backgroundApiProxy: typeof import('@onekeyhq/kit/src/background/instance/backgroundApiProxy').default =
+        const backgroundApiProxy: typeof import('@unionkeyhq/kit/src/background/instance/backgroundApiProxy').default =
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          require('@onekeyhq/kit/src/background/instance/backgroundApiProxy').default;
+          require('@unionkeyhq/kit/src/background/instance/backgroundApiProxy').default;
         if (dappRejectId) {
           void backgroundApiProxy.servicePromise.rejectCallback({
             id: dappRejectId,

@@ -12,8 +12,8 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
+} from '@unionkeyhq/components';
+import { useDebounce } from '@unionkeyhq/kit/src/hooks/useDebounce';
 import {
   useSwapFromTokenAmountAtom,
   useSwapLimitExpirationTimeAtom,
@@ -24,14 +24,14 @@ import {
   useSwapSelectToTokenAtom,
   useSwapTokenMetadataAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
 import {
   useInAppNotificationAtom,
   useSettingsAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { numberFormat } from '@unionkeyhq/shared/src/utils/numberUtils';
 import {
   EProtocolOfExchange,
   ESwapLimitOrderExpiryStep,
@@ -40,7 +40,7 @@ import {
   type IFetchQuoteResult,
   type ISwapToken,
   type ISwapTokenMetadata,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import LimitExpirySelect from '../../components/LimitExpirySelect';
 import LimitPartialFillSelect from '../../components/LimitPartialFillSelect';
@@ -239,19 +239,19 @@ const SwapQuoteResult = ({
   );
 
   const allCostFeeFormatValue = useMemo(() => {
-    const oneKeyFeeAmountBN = new BigNumber(
-      quoteResult?.oneKeyFeeExtraInfo?.oneKeyFeeAmount ?? '0',
+    const unionKeyFeeAmountBN = new BigNumber(
+      quoteResult?.unionKeyFeeExtraInfo?.unionKeyFeeAmount ?? '0',
     );
     const tokenPriceBN = new BigNumber(
       quoteResult?.kind === ESwapQuoteKind.SELL
         ? toToken?.price ?? '0'
         : fromToken?.price ?? '0',
     );
-    const oneKeyFeeFiatValue = oneKeyFeeAmountBN.multipliedBy(tokenPriceBN);
+    const unionKeyFeeFiatValue = unionKeyFeeAmountBN.multipliedBy(tokenPriceBN);
     const estimatedFeeFiatValue = new BigNumber(
       quoteResult?.fee?.estimatedFeeFiatValue ?? '0',
     );
-    const allFeeFiatValue = estimatedFeeFiatValue.plus(oneKeyFeeFiatValue);
+    const allFeeFiatValue = estimatedFeeFiatValue.plus(unionKeyFeeFiatValue);
     const allFeeFiatValueFormat = numberFormat(allFeeFiatValue.toFixed(), {
       formatter: 'value',
       formatterOptions: { currency: settingsPersistAtom.currencyInfo.symbol },
@@ -259,7 +259,7 @@ const SwapQuoteResult = ({
     return `${allFeeFiatValueFormat as string}`;
   }, [
     quoteResult?.fee?.estimatedFeeFiatValue,
-    quoteResult?.oneKeyFeeExtraInfo,
+    quoteResult?.unionKeyFeeExtraInfo,
     toToken?.price,
     quoteResult?.kind,
     fromToken?.price,
@@ -271,8 +271,8 @@ const SwapQuoteResult = ({
       quoteResult?.networkCostBuyAmount ?? '0',
       { formatter: 'balance' },
     );
-    const oneKeyFeeCostFormat = numberFormat(
-      quoteResult?.oneKeyFeeExtraInfo?.oneKeyFeeAmount ?? '0',
+    const unionKeyFeeCostFormat = numberFormat(
+      quoteResult?.unionKeyFeeExtraInfo?.unionKeyFeeAmount ?? '0',
       {
         formatter: 'balance',
       },
@@ -293,13 +293,13 @@ const SwapQuoteResult = ({
         <XStack justifyContent="space-between">
           <SizableText size="$bodyMdMedium" color="$textSubdued">
             {intl.formatMessage({
-              id: ETranslations.provider_ios_popover_onekey_fee,
+              id: ETranslations.provider_ios_popover_unionkey_fee,
             })}
           </SizableText>
           <SizableText size="$bodyMdMedium">{`${
-            oneKeyFeeCostFormat as string
+            unionKeyFeeCostFormat as string
           } ${
-            quoteResult?.oneKeyFeeExtraInfo?.oneKeyFeeSymbol ?? ''
+            quoteResult?.unionKeyFeeExtraInfo?.unionKeyFeeSymbol ?? ''
           }`}</SizableText>
         </XStack>
         <Divider />
@@ -316,7 +316,7 @@ const SwapQuoteResult = ({
       </YStack>
     );
   }, [
-    quoteResult?.oneKeyFeeExtraInfo,
+    quoteResult?.unionKeyFeeExtraInfo,
     quoteResult?.networkCostBuyAmount,
     quoteResult?.toTokenInfo?.symbol,
     intl,
@@ -359,7 +359,7 @@ const SwapQuoteResult = ({
           </XStack>
           <XStack flex={1} justifyContent="flex-end">
             <LottieView
-              source={require('@onekeyhq/kit/assets/animations/swap_loading.json')}
+              source={require('@unionkeyhq/kit/assets/animations/swap_loading.json')}
               autoPlay
               loop
               style={{

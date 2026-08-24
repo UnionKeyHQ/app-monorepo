@@ -9,14 +9,14 @@ import {
   Stack,
   Switch,
   Toast,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useCloudBackupPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useCloudBackupPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import BackupDeviceList from '../../components/BackupDeviceList';
 import { useBackupToggleDialog } from '../../components/useBackupToggleDialog';

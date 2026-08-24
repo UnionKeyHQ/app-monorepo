@@ -2,7 +2,7 @@ import { hexToBytes } from '@noble/hashes/utils';
 import { Address, Transaction } from '@onekeyfe/kaspa-core-lib';
 import BigNumber from 'bignumber.js';
 
-import { MAX_UINT64_VALUE } from '@onekeyhq/core/src/consts';
+import { MAX_UINT64_VALUE } from '@unionkeyhq/core/src/consts';
 
 import { RestAPIClient } from './clientRestApi';
 import { privateKeyFromOriginPrivateKey } from './privatekey';

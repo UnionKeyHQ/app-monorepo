@@ -1,10 +1,10 @@
-import { Button, Page, SizableText, YStack } from '@onekeyhq/components';
+import { Button, Page, SizableText, YStack } from '@unionkeyhq/components';
 import type {
   IPageNavigationProp,
   IPageScreenProps,
-} from '@onekeyhq/components/src/layouts/Navigation';
-import type { ITabDeveloperParamList } from '@onekeyhq/shared/src/routes';
-import { ETabDeveloperRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/components/src/layouts/Navigation';
+import type { ITabDeveloperParamList } from '@unionkeyhq/shared/src/routes';
+import { ETabDeveloperRoutes } from '@unionkeyhq/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 

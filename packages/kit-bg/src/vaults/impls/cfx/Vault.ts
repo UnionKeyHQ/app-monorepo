@@ -3,24 +3,24 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil } from 'lodash';
 
-import { pubkeyToCfxAddress } from '@onekeyhq/core/src/chains/cfx/sdkCfx';
-import type { IEncodedTxCfx } from '@onekeyhq/core/src/chains/cfx/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import { uncompressPublicKey } from '@onekeyhq/core/src/secret';
+import { pubkeyToCfxAddress } from '@unionkeyhq/core/src/chains/cfx/sdkCfx';
+import type { IEncodedTxCfx } from '@unionkeyhq/core/src/chains/cfx/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import { uncompressPublicKey } from '@unionkeyhq/core/src/secret';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
+} from '@unionkeyhq/core/src/types';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
 import numberUtils, {
   toBigIntHex,
-} from '@onekeyhq/shared/src/utils/numberUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { mergeAssetTransferActions } from '@onekeyhq/shared/src/utils/txActionUtils';
+} from '@unionkeyhq/shared/src/utils/numberUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { mergeAssetTransferActions } from '@unionkeyhq/shared/src/utils/txActionUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -28,22 +28,22 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 import { EErc20MethodSelectors } from '../evm/decoder/abi';
@@ -170,14 +170,14 @@ export default class Vault extends VaultBase {
           transferInfo: transfersInfo[0],
         });
       }
-      throw new OneKeyInternalError('Batch transfers not supported');
+      throw new UnionKeyInternalError('Batch transfers not supported');
     }
 
     if (approveInfo) {
       return this._buildEncodeTxFromApprove(params);
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   _buildEncodedTxFromTransfer(params: {
@@ -498,7 +498,7 @@ export default class Vault extends VaultBase {
     if (encodedTx) {
       return this._buildUnsignedTxFromEncodedTx(encodedTx as IEncodedTxCfx);
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildUnsignedTxFromEncodedTx(
@@ -793,7 +793,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const chainId = await this.getNetworkChainId();
     const client = new sdkCfx.Conflux({

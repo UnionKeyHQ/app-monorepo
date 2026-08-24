@@ -1,3 +1,3 @@
 import { BenfenClient } from '@benfen/bfc.js/client';
 
-export class OneKeyBfcClient extends BenfenClient {}
+export class UnionKeyBfcClient extends BenfenClient {}

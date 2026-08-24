@@ -12,7 +12,7 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 
-import type { IThemeableStackProps } from '@onekeyhq/components';
+import type { IThemeableStackProps } from '@unionkeyhq/components';
 import {
   Button,
   DesktopDragZoneBox,
@@ -24,13 +24,13 @@ import {
   updateHeightWhenKeyboardShown,
   useKeyboardEvent,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import Logo from '@onekeyhq/kit/assets/logo_round_decorated.png';
-import { useResetApp } from '@onekeyhq/kit/src/views/Setting/hooks';
-import { useV4migrationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { APP_STATE_LOCK_Z_INDEX } from '@onekeyhq/shared/src/utils/overlayUtils';
+} from '@unionkeyhq/components';
+import Logo from '@unionkeyhq/kit/assets/logo_round_decorated.png';
+import { useResetApp } from '@unionkeyhq/kit/src/views/Setting/hooks';
+import { useV4migrationAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { APP_STATE_LOCK_Z_INDEX } from '@unionkeyhq/shared/src/utils/overlayUtils';
 
 import { AppStateContainer } from './AppStateContainer';
 

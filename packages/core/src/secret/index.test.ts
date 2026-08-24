@@ -8,8 +8,8 @@ import elliptic from 'elliptic';
 import {
   IncorrectPassword,
   InvalidMnemonic,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { decryptAsync, encryptAsync } from './encryptors/aes256';
 import { sha256 } from './hash';
@@ -575,7 +575,7 @@ const bip39TestVectors = [
   },
 ];
 
-const password = 'onekey';
+const password = 'unionkey';
 
 const createXPrvTestAsync = async () => ({
   chainCode: Buffer.alloc(32),

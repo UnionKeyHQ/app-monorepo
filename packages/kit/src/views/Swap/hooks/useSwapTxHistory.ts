@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
 
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EProtocolOfExchange,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import type {
   ISwapTxHistory,
   ISwapTxInfo,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import {
@@ -95,7 +95,7 @@ export function useSwapTxHistoryActions() {
             provider: swapTxInfo.swapBuildResData.result?.info,
             socketBridgeScanUrl:
               swapTxInfo.swapBuildResData.socketBridgeScanUrl,
-            oneKeyFee:
+            unionKeyFee:
               swapTxInfo.swapBuildResData.result?.fee?.percentageFee ?? 0,
             protocolFee:
               swapTxInfo.swapBuildResData.result?.fee?.protocolFees ?? 0,
@@ -105,8 +105,8 @@ export function useSwapTxHistoryActions() {
             supportUrl: swapTxInfo.swapBuildResData.result?.supportUrl,
             orderSupportUrl:
               swapTxInfo.swapBuildResData.result?.orderSupportUrl,
-            oneKeyFeeExtraInfo:
-              swapTxInfo.swapBuildResData.result?.oneKeyFeeExtraInfo,
+            unionKeyFeeExtraInfo:
+              swapTxInfo.swapBuildResData.result?.unionKeyFeeExtraInfo,
           },
           ctx: swapTxInfo.swapBuildResData.ctx,
         };

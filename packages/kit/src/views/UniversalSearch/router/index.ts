@@ -1,6 +1,6 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { ITestModalPagesParam } from '@onekeyhq/shared/src/routes';
-import { EUniversalSearchPages } from '@onekeyhq/shared/src/routes/universalSearch';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import type { ITestModalPagesParam } from '@unionkeyhq/shared/src/routes';
+import { EUniversalSearchPages } from '@unionkeyhq/shared/src/routes/universalSearch';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 

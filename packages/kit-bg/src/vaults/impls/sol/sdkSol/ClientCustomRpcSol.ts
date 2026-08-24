@@ -1,5 +1,5 @@
-import { JsonRPCRequest } from '@onekeyhq/shared/src/request/JsonRPCRequest';
-import type { IRpcClientInfo } from '@onekeyhq/shared/types/customRpc';
+import { JsonRPCRequest } from '@unionkeyhq/shared/src/request/JsonRPCRequest';
+import type { IRpcClientInfo } from '@unionkeyhq/shared/types/customRpc';
 
 import { EParamsEncodings, ERpcMethods } from './ClientSol';
 

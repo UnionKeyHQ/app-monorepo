@@ -5,15 +5,15 @@ import { base58Decode } from '@polkadot/util-crypto';
 import { addressEq } from '@polkadot/util-crypto/address';
 import { Semaphore } from 'async-mutex';
 
-import type { IEncodedTxDot } from '@onekeyhq/core/src/chains/dot/types';
+import type { IEncodedTxDot } from '@unionkeyhq/core/src/chains/dot/types';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EMessageTypesCommon } from '@unionkeyhq/shared/types/message';
 
 import settings from '../vaults/impls/dot/settings';
 import { getVaultSettings } from '../vaults/settings';

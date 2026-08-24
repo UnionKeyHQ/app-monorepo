@@ -27,7 +27,7 @@ class LocalStorageMock {
 }
 
 globalThis.localStorage = new LocalStorageMock();
-globalThis.$$onekeyAppStorage = new LocalStorageMock();
+globalThis.$$unionkeyAppStorage = new LocalStorageMock();
 globalThis.addEventListener = jest.fn;
 globalThis.fetch = require('node-fetch');
 globalThis.WebSocket = require('isomorphic-ws');

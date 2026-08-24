@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { ONEKEY_HEALTH_CHECK_URL } from '@onekeyhq/shared/src/config/appConfig';
+import { UNIONKEY_HEALTH_CHECK_URL } from '@unionkeyhq/shared/src/config/appConfig';
 
 import { buildDeferredPromise } from './useDeferredPromise';
 import {
@@ -148,7 +148,7 @@ class NetInfo {
 }
 
 export const globalNetInfo = new NetInfo({
-  reachabilityUrl: ONEKEY_HEALTH_CHECK_URL,
+  reachabilityUrl: UNIONKEY_HEALTH_CHECK_URL,
 });
 
 export const configureNetInfo = (configuration: IReachabilityConfiguration) => {

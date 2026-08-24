@@ -5,7 +5,7 @@ import type {
   IBadgeType,
   ISizableTextProps,
   IYStackProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Accordion,
   Alert,
@@ -16,7 +16,7 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 import { NetworkAvatar } from '../../../../../../components/NetworkAvatar';
 import { Token } from '../../../../../../components/Token';
@@ -85,7 +85,7 @@ const MOCK_DATA = {
         decimals: 18,
         totalSupply: '',
         logoURI:
-          'https://uni.onekey-asset.com/server-service-indexer/evm--1/tokens/address--1721282106924.png',
+          'https://uni.unionkey.io/server-service-indexer/evm--1/tokens/address--1721282106924.png',
       },
       amount: '100',
       amountParsed: '1.000000000000000000',
@@ -105,7 +105,7 @@ const MOCK_DATA = {
         decimals: 6,
         totalSupply: '',
         logoURI:
-          'https://uni.onekey-asset.com/server-service-indexer/evm--1/tokens/address-0xdac17f958d2ee523a2206206994597c13d831ec7-1722246302921.png',
+          'https://uni.unionkey.io/server-service-indexer/evm--1/tokens/address-0xdac17f958d2ee523a2206206994597c13d831ec7-1722246302921.png',
       },
       amount: '100000',
       amountParsed: '0.100000',

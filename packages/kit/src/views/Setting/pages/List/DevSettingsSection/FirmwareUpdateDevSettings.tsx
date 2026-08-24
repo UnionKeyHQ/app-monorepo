@@ -1,13 +1,13 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 import { Children, cloneElement, useCallback } from 'react';
 
-import type { IPropsWithTestId } from '@onekeyhq/components';
-import { ESwitchSize, SizableText, Switch, YStack } from '@onekeyhq/components';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { FirmwareUpdateGalleryDemo } from '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/FirmwareUpdateGallery';
-import { useFirmwareUpdateDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IFirmwareUpdateDevSettingsKeys } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IPropsWithTestId } from '@unionkeyhq/components';
+import { ESwitchSize, SizableText, Switch, YStack } from '@unionkeyhq/components';
+import type { IListItemProps } from '@unionkeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { FirmwareUpdateGalleryDemo } from '@unionkeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/FirmwareUpdateGallery';
+import { useFirmwareUpdateDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { IFirmwareUpdateDevSettingsKeys } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 interface IFirmwareUpdateSectionFieldItem extends PropsWithChildren {
   name?: IFirmwareUpdateDevSettingsKeys;

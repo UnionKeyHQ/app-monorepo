@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react';
 
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import type { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import type { IActionListSection } from '../../../actions';
 import type { IKeyOfIcons } from '../../../primitives';

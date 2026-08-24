@@ -11,13 +11,13 @@ import {
   Skeleton,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { IEncodedTxAptos } from '@onekeyhq/core/src/chains/aptos/types';
-import type { IEncodedTxBtc } from '@onekeyhq/core/src/chains/btc/types';
-import type { IEncodedTxDot } from '@onekeyhq/core/src/chains/dot/types';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import type { IEncodedTxAptos } from '@unionkeyhq/core/src/chains/aptos/types';
+import type { IEncodedTxBtc } from '@unionkeyhq/core/src/chains/btc/types';
+import type { IEncodedTxDot } from '@unionkeyhq/core/src/chains/dot/types';
+import type { IEncodedTxEvm } from '@unionkeyhq/core/src/chains/evm/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useCustomFeeAtom,
   useIsSinglePresetAtom,
@@ -29,35 +29,35 @@ import {
   useSendTxStatusAtom,
   useTxAdvancedSettingsAtom,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/sendConfirm';
 import {
   calculateFeeForSend,
   getFeeIcon,
   getFeeLabel,
-} from '@onekeyhq/kit/src/utils/gasFee';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/utils/gasFee';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   BATCH_SEND_TXS_FEE_DOWN_RATIO_FOR_TOTAL,
   BATCH_SEND_TXS_FEE_UP_RATIO_FOR_APPROVE,
   BATCH_SEND_TXS_FEE_UP_RATIO_FOR_SWAP,
-} from '@onekeyhq/shared/src/consts/walletConsts';
-import { IMPL_APTOS } from '@onekeyhq/shared/src/engine/engineConsts';
-import type { IOneKeyRpcError } from '@onekeyhq/shared/src/errors/types/errorTypes';
+} from '@unionkeyhq/shared/src/consts/walletConsts';
+import { IMPL_APTOS } from '@unionkeyhq/shared/src/engine/engineConsts';
+import type { IUnionKeyRpcError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { ALGO_TX_MIN_FEE } from '@onekeyhq/shared/types/algo';
-import { EFeeType, ESendFeeStatus } from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { ALGO_TX_MIN_FEE } from '@unionkeyhq/shared/types/algo';
+import { EFeeType, ESendFeeStatus } from '@unionkeyhq/shared/types/fee';
 import type {
   IFeeInfoUnit,
   IFeeSelectorItem,
   IMultiTxsFeeSelectorItem,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/fee';
 
 import { FeeEditor, FeeSelectorTrigger } from '../../components/SendFee';
 
@@ -264,7 +264,7 @@ function TxFeeContainer(props: IProps) {
         updateSendFeeStatus({
           status: ESendFeeStatus.Error,
           errMessage:
-            (e as { data: { data: IOneKeyRpcError } }).data?.data?.res?.error
+            (e as { data: { data: IUnionKeyRpcError } }).data?.data?.res?.error
               ?.message ??
             (e as Error).message ??
             e,

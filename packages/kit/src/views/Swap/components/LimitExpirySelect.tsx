@@ -2,9 +2,9 @@ import { memo, useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem } from '@onekeyhq/components';
-import { Icon, Select, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ISelectItem } from '@unionkeyhq/components';
+import { Icon, Select, SizableText, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 interface ISwapLimitExpirySelectItem extends ISelectItem {
   value: string;

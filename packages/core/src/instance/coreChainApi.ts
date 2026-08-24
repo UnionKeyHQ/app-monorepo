@@ -4,7 +4,7 @@ import {
   IMPL_BTC,
   IMPL_CKB,
   IMPL_TBTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainApiHub } from '../base/CoreChainApiHub';
 import { CoreChainScopeBase } from '../base/CoreChainScopeBase';

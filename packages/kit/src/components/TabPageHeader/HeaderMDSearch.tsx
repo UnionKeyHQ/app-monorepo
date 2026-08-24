@@ -1,4 +1,4 @@
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { MDUniversalSearchInput } from './UniversalSearchInput';
 

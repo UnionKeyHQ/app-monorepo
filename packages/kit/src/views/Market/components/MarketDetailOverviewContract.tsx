@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, SizableText, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketDetailPlatform } from '@onekeyhq/shared/types/market';
+import { Button, SizableText, YStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IMarketDetailPlatform } from '@unionkeyhq/shared/types/market';
 
 import { MarketTokenAddress } from './MarketTokenAddress';
 

@@ -2,13 +2,13 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, YStack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+import { Page, YStack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IOnboardingParamList } from '@unionkeyhq/shared/src/routes';
+import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
 
 import { NetworkAvatarGroup } from '../../../components/NetworkAvatar';
 import useAppNavigation from '../../../hooks/useAppNavigation';

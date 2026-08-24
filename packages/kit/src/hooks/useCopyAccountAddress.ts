@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
-import { useClipboard } from '@onekeyhq/components';
-import { EModalReceiveRoutes, EModalRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IToken } from '@onekeyhq/shared/types/token';
+import { useClipboard } from '@unionkeyhq/components';
+import { EModalReceiveRoutes, EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 

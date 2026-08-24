@@ -1,7 +1,7 @@
 import { useRoute } from '@react-navigation/native';
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Alert,
   Badge,
@@ -10,19 +10,19 @@ import {
   SizableText,
   Spinner,
   Stack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useFormatDate from '@onekeyhq/kit/src/hooks/useFormatDate';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import useFormatDate from '@unionkeyhq/kit/src/hooks/useFormatDate';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EPrimePages,
   IPrimeParamList,
-} from '@onekeyhq/shared/src/routes/prime';
-import type { IPrimeDeviceInfo } from '@onekeyhq/shared/types/prime/primeTypes';
+} from '@unionkeyhq/shared/src/routes/prime';
+import type { IPrimeDeviceInfo } from '@unionkeyhq/shared/types/prime/primeTypes';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 

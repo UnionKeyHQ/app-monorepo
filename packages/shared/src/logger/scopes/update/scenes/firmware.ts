@@ -1,5 +1,5 @@
-import type { EHardwareTransportType } from '@onekeyhq/shared/types';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+import type { EHardwareTransportType } from '@unionkeyhq/shared/types';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkeyhq/shared/types/device';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';

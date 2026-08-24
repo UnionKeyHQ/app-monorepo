@@ -2,11 +2,11 @@ import { useRef } from 'react';
 
 import { cloneDeep } from 'lodash';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ContextJotaiActionsBase } from '@onekeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import sortUtils from '@onekeyhq/shared/src/utils/sortUtils';
-import type { IMarketWatchListItem } from '@onekeyhq/shared/types/market';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ContextJotaiActionsBase } from '@unionkeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import sortUtils from '@unionkeyhq/shared/src/utils/sortUtils';
+import type { IMarketWatchListItem } from '@unionkeyhq/shared/types/market';
 
 import { contextAtomMethod, marketWatchListAtom } from './atoms';
 

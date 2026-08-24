@@ -4,8 +4,8 @@ import {
   Dialog,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import { shortcutsKeys } from '@onekeyhq/shared/src/shortcuts/shortcutsKeys.enum';
+} from '@unionkeyhq/components';
+import { shortcutsKeys } from '@unionkeyhq/shared/src/shortcuts/shortcutsKeys.enum';
 
 import { Layout } from './utils/Layout';
 

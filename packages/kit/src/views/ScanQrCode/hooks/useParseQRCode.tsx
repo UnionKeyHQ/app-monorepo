@@ -10,9 +10,9 @@ import {
   ToastContent,
   rootNavigationRef,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import type {
   IBaseValue,
   IChainValue,
@@ -20,17 +20,17 @@ import type {
   IQRCodeHandlerParse,
   IUrlAccountValue,
   IWalletConnectValue,
-} from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EModalRoutes,
   EModalSettingRoutes,
   EModalSignatureConfirmRoutes,
   EOnboardingPages,
-} from '@onekeyhq/shared/src/routes';
-import { EConnectDeviceChannel } from '@onekeyhq/shared/types/connectDevice';
-import { EQRCodeHandlerType } from '@onekeyhq/shared/types/qrCode';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/src/routes';
+import { EConnectDeviceChannel } from '@unionkeyhq/shared/types/connectDevice';
+import { EQRCodeHandlerType } from '@unionkeyhq/shared/types/qrCode';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import { urlAccountNavigation } from '../../Home/pages/urlAccount/urlAccountUtils';
 import { marketNavigation } from '../../Market/marketUtils';

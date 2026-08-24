@@ -1,14 +1,14 @@
 import { useIntl } from 'react-intl';
 
-import type { IDecodedTxExtraLightning } from '@onekeyhq/core/src/chains/lightning/types';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IOnChainHistoryTx } from '@onekeyhq/shared/types/history';
+import type { IDecodedTxExtraLightning } from '@unionkeyhq/core/src/chains/lightning/types';
+import { AddressInfo } from '@unionkeyhq/kit/src/components/AddressInfo';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IOnChainHistoryTx } from '@unionkeyhq/shared/types/history';
 import {
   EDecodedTxActionType,
   type IDecodedTx,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { InfoItem } from './TxDetailsInfoItem';
 

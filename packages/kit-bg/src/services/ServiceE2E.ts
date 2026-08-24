@@ -1,17 +1,17 @@
 import { uniq } from 'lodash';
 import natsort from 'natsort';
 
-import type { IBackgroundMethodWithDevOnlyPassword } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import type { IBackgroundMethodWithDevOnlyPassword } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
   backgroundClass,
   backgroundMethodForDev,
   checkDevOnlyPassword,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import localDb from '../dbs/local/localDb';
 import { ELocalDBStoreNames } from '../dbs/local/localDBStoreNames';

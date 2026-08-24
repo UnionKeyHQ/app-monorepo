@@ -5,7 +5,7 @@ import {
   ScrollView,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

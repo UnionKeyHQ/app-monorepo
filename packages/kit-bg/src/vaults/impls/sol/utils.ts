@@ -9,7 +9,7 @@ import {
 } from '@solana/web3.js';
 import bs58 from 'bs58';
 
-import type { INativeTxSol } from '@onekeyhq/core/src/chains/sol/types';
+import type { INativeTxSol } from '@unionkeyhq/core/src/chains/sol/types';
 
 import { EParamsEncodings } from './sdkSol/ClientSol';
 

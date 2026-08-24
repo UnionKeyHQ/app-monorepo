@@ -1,19 +1,19 @@
 import { useCallback, useRef } from 'react';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { useClipboard, useShortcuts } from '@onekeyhq/components';
-import type { IElectronWebView } from '@onekeyhq/kit/src/components/WebView/types';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useListenTabFocusState from '@onekeyhq/kit/src/hooks/useListenTabFocusState';
-import { useBrowserTabActions } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import type { IDiscoveryModalParamList } from '@onekeyhq/shared/src/routes';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { useClipboard, useShortcuts } from '@unionkeyhq/components';
+import type { IElectronWebView } from '@unionkeyhq/kit/src/components/WebView/types';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import useListenTabFocusState from '@unionkeyhq/kit/src/hooks/useListenTabFocusState';
+import { useBrowserTabActions } from '@unionkeyhq/kit/src/states/jotai/contexts/discovery';
+import type { IDiscoveryModalParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EUniversalSearchPages } from '@onekeyhq/shared/src/routes/universalSearch';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkeyhq/shared/src/routes';
+import { EUniversalSearchPages } from '@unionkeyhq/shared/src/routes/universalSearch';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import { webviewRefs } from '../utils/explorerUtils';
 

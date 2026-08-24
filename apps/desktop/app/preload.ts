@@ -13,12 +13,12 @@ import type {
   IDesktopStoreUpdateSettings,
   IMediaType,
   IPrefType,
-} from '@onekeyhq/shared/types/desktop';
+} from '@unionkeyhq/shared/types/desktop';
 import type {
   INotificationPermissionDetail,
   INotificationSetBadgeParams,
   INotificationShowParams,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 
 import { ipcMessageKeys } from './config';
 
@@ -147,7 +147,7 @@ declare global {
 }
 
 ipcRenderer.on(
-  ipcMessageKeys.SET_ONEKEY_DESKTOP_GLOBALS,
+  ipcMessageKeys.SET_UNIONKEY_DESKTOP_GLOBALS,
   (
     _,
     globals: {
@@ -155,20 +155,20 @@ ipcRenderer.on(
     },
   ) => {
     // for DesktopWebView:
-    //    const { preloadJsUrl } = window.ONEKEY_DESKTOP_GLOBALS;
-    globalThis.ONEKEY_DESKTOP_GLOBALS = globals;
-    // contextBridge.exposeInMainWorld('ONEKEY_DESKTOP_GLOBALS', globals);
+    //    const { preloadJsUrl } = window.UNIONKEY_DESKTOP_GLOBALS;
+    globalThis.UNIONKEY_DESKTOP_GLOBALS = globals;
+    // contextBridge.exposeInMainWorld('UNIONKEY_DESKTOP_GLOBALS', globals);
   },
 );
 
-globalThis.ONEKEY_DESKTOP_DEEP_LINKS =
-  globalThis.ONEKEY_DESKTOP_DEEP_LINKS || [];
+globalThis.UNIONKEY_DESKTOP_DEEP_LINKS =
+  globalThis.UNIONKEY_DESKTOP_DEEP_LINKS || [];
 ipcRenderer.on(ipcMessageKeys.OPEN_DEEP_LINK_URL, (event, data) => {
-  if (globalThis.ONEKEY_DESKTOP_DEEP_LINKS) {
-    globalThis.ONEKEY_DESKTOP_DEEP_LINKS.push(data);
+  if (globalThis.UNIONKEY_DESKTOP_DEEP_LINKS) {
+    globalThis.UNIONKEY_DESKTOP_DEEP_LINKS.push(data);
   }
-  globalThis.ONEKEY_DESKTOP_DEEP_LINKS =
-    globalThis.ONEKEY_DESKTOP_DEEP_LINKS.slice(-5);
+  globalThis.UNIONKEY_DESKTOP_DEEP_LINKS =
+    globalThis.UNIONKEY_DESKTOP_DEEP_LINKS.slice(-5);
 });
 
 const validChannels = [
@@ -226,7 +226,7 @@ const updateGlobalTitleBarBackgroundColor = () => {
   if (globalTitleBar) {
     setTimeout(() => {
       let color = lightColor;
-      const theme = localStorage.getItem('ONEKEY_THEME_PRELOAD');
+      const theme = localStorage.getItem('UNIONKEY_THEME_PRELOAD');
       if (theme === 'dark') {
         color = darkColor;
       } else if (theme === 'light') {

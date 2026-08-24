@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import { SearchBar, Shortcut, View, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import { SearchBar, Shortcut, View, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import { withBrowserProvider } from '../../pages/Browser/WithBrowserProvider';
 

@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { FormattedMessage } from 'react-intl';
 
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import type { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import { SizableText } from '../../primitives';
 
@@ -21,7 +21,7 @@ type ILinkItemType = ISizableTextProps & {
 
 /**
  * @deprecated This component is deprecated. Please use HyperlinkText instead.
- * @see HyperlinkText in @onekeyhq/kit/src/components/HyperlinkText
+ * @see HyperlinkText in @unionkeyhq/kit/src/components/HyperlinkText
  */
 export function RichSizeableText({
   children,

@@ -2,12 +2,12 @@ import { memo, useCallback, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance, IStackProps } from '@onekeyhq/components';
-import { Icon, SizableText, XStack } from '@onekeyhq/components';
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { showResourceDetailsDialog } from '@onekeyhq/kit/src/components/Resource';
-import { useSendSelectedFeeInfoAtom } from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IDialogInstance, IStackProps } from '@unionkeyhq/components';
+import { Icon, SizableText, XStack } from '@unionkeyhq/components';
+import type { IUnsignedTxPro } from '@unionkeyhq/core/src/types';
+import { showResourceDetailsDialog } from '@unionkeyhq/kit/src/components/Resource';
+import { useSendSelectedFeeInfoAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { SignatureConfirmItem } from '../../SignatureConfirmItem';
 

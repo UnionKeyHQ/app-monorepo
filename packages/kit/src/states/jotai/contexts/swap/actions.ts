@@ -2,22 +2,22 @@ import { useRef } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { useSwapAddressInfo } from '@onekeyhq/kit/src/views/Swap/hooks/useSwapAccount';
-import { moveNetworkToFirst } from '@onekeyhq/kit/src/views/Swap/utils/utils';
-import type { IEventSourceMessageEvent } from '@onekeyhq/shared/src/eventSource';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
-import { equalsIgnoreCase } from '@onekeyhq/shared/src/utils/stringUtils';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { useSwapAddressInfo } from '@unionkeyhq/kit/src/views/Swap/hooks/useSwapAccount';
+import { moveNetworkToFirst } from '@unionkeyhq/kit/src/views/Swap/utils/utils';
+import type { IEventSourceMessageEvent } from '@unionkeyhq/shared/src/eventSource';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { numberFormat } from '@unionkeyhq/shared/src/utils/numberUtils';
+import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
 import {
   checkWrappedTokenPair,
   equalTokenNoCaseSensitive,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkeyhq/shared/src/utils/tokenUtils';
 import {
   swapBridgeDefaultTokenConfigs,
   swapBridgeDefaultTokenExtraConfigs,
@@ -25,7 +25,7 @@ import {
   swapRateDifferenceMax,
   swapRateDifferenceMin,
   swapTokenCatchMapMaxCount,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import type {
   IFetchQuotesParams,
   IFetchTokensParams,
@@ -38,7 +38,7 @@ import type {
   ISwapQuoteEventInfo,
   ISwapQuoteEventQuoteResult,
   ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import {
   EProtocolOfExchange,
   ESwapAlertActionType,
@@ -50,7 +50,7 @@ import {
   ESwapRateDifferenceUnit,
   ESwapSlippageSegmentKey,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 

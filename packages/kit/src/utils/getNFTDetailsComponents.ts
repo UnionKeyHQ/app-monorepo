@@ -1,4 +1,4 @@
-import { IMPL_BTC, IMPL_SOL } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_BTC, IMPL_SOL } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CommonAssetContent } from '../components/NFT/NFTDetails/CommonAsset/CommonAssetContent';
 import { CommonAssetImage } from '../components/NFT/NFTDetails/CommonAsset/CommonAssetImage';

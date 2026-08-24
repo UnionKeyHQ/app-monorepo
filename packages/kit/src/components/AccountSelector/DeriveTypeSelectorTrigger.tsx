@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem, ISelectProps } from '@onekeyhq/components';
+import type { ISelectItem, ISelectProps } from '@unionkeyhq/components';
 import {
   Form,
   Icon,
@@ -13,17 +13,17 @@ import {
   Stack,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveInfoItems,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { noopObject } from '@unionkeyhq/shared/src/utils/miscUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { usePrevious } from '../../hooks/usePrevious';

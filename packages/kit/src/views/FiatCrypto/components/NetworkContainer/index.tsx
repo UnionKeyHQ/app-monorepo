@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 const NetworkContainerContext = createContext<Record<string, IServerNetwork>>(
   {},

@@ -6,8 +6,8 @@ import {
   SizableText,
   Skeleton,
   Stack,
-} from '@onekeyhq/components';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/components';
+import type { IDApp } from '@unionkeyhq/shared/types/discovery';
 
 import type { IMatchDAppItemType } from '../types';
 

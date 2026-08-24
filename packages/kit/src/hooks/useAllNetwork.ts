@@ -2,22 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isEmpty } from 'lodash';
 
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { ICustomTokenDBStruct } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
-import type { ISimpleDBLocalTokens } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { useAppIsLockedAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { POLLING_DEBOUNCE_INTERVAL } from '@onekeyhq/shared/src/consts/walletConsts';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import type { IDBAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { ICustomTokenDBStruct } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityCustomTokens';
+import type { ISimpleDBLocalTokens } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityLocalTokens';
+import type { IAllNetworkAccountInfo } from '@unionkeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { useAppIsLockedAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { POLLING_DEBOUNCE_INTERVAL } from '@unionkeyhq/shared/src/consts/walletConsts';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkeyhq/shared/src/utils/debug/perfUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 import networkUtils, {
   isEnabledNetworksInAllNetworks,
-} from '@onekeyhq/shared/src/utils/networkUtils';
-import { promiseAllSettledEnhanced } from '@onekeyhq/shared/src/utils/promiseUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/utils/networkUtils';
+import { promiseAllSettledEnhanced } from '@unionkeyhq/shared/src/utils/promiseUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { perfTokenListView } from '../components/TokenListView/perfTokenListView';

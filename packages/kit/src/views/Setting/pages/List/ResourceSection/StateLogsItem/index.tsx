@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, SizableText, Stack, useClipboard } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Dialog, SizableText, Stack, useClipboard } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { exportLogs } from './logs';
 

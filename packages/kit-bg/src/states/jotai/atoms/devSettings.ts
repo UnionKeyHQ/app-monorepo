@@ -1,5 +1,5 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

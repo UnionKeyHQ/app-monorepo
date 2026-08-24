@@ -1,27 +1,27 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { IModalFirmwareUpdateParamList } from '@onekeyhq/shared/src/routes';
-import { EModalFirmwareUpdateRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import type { IModalFirmwareUpdateParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalFirmwareUpdateRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 
 const PageFirmwareUpdateChangeLog = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/FirmwareUpdate/pages/PageFirmwareUpdateChangeLog'
+      '@unionkeyhq/kit/src/views/FirmwareUpdate/pages/PageFirmwareUpdateChangeLog'
     ),
 );
 
 const PageFirmwareUpdateInstall = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/FirmwareUpdate/pages/PageFirmwareUpdateInstall'
+      '@unionkeyhq/kit/src/views/FirmwareUpdate/pages/PageFirmwareUpdateInstall'
     ),
 );
 
 const PageFirmwareUpdateInstallV2 = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/FirmwareUpdate/pages/PageFirmwareUpdateInstallV2'
+      '@unionkeyhq/kit/src/views/FirmwareUpdate/pages/PageFirmwareUpdateInstallV2'
     ),
 );
 export const ModalFirmwareUpdateStack: IModalFlowNavigatorConfig<

@@ -6,9 +6,9 @@ import type {
   IListViewProps,
   IListViewRef,
   IStackProps,
-} from '@onekeyhq/components';
-import { useTabScrollViewRef } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { useTabScrollViewRef } from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 export function useTabListScroll<T>({ inTabList }: { inTabList: boolean }) {
   const isMac = useMemo(() => platformEnv.isRuntimeMacOSBrowser, []);

@@ -17,16 +17,16 @@ import {
   Tab,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { Currency } from '@onekeyhq/kit/src/components/Currency';
-import { useSpotlight } from '@onekeyhq/kit/src/components/Spotlight';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IEarnRewardItem } from '@onekeyhq/shared/src/referralCode/type';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Currency } from '@unionkeyhq/kit/src/components/Currency';
+import { useSpotlight } from '@unionkeyhq/kit/src/components/Spotlight';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IEarnRewardItem } from '@unionkeyhq/shared/src/referralCode/type';
+import { ESpotlightTour } from '@unionkeyhq/shared/src/spotlight';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 interface ISectionData {
   title: string;

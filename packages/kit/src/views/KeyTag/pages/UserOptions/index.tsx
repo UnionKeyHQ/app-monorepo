@@ -11,20 +11,20 @@ import {
   Stack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ONEKEY_KEY_TAG_PURCHASE_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { UNIONKEY_KEY_TAG_PURCHASE_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EModalKeyTagRoutes,
   EModalRoutes,
   EOnboardingPages,
-} from '@onekeyhq/shared/src/routes';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 const UserOptions = () => {
   const md = useMedia();
@@ -43,11 +43,11 @@ const UserOptions = () => {
     });
   }, [navigation]);
   const onGetOne = useCallback(() => {
-    openUrlExternal(ONEKEY_KEY_TAG_PURCHASE_URL);
+    openUrlExternal(UNIONKEY_KEY_TAG_PURCHASE_URL);
   }, []);
   return (
     <Page>
-      <Page.Header title="OneKey KeyTag" />
+      <Page.Header title="UnionKey KeyTag" />
       <Page.Body>
         <Stack mx="$5" mt="$2" mb="$5" borderRadius="$3">
           <Stack borderRadius={12} overflow="hidden">
@@ -55,19 +55,19 @@ const UserOptions = () => {
               resizeMode="stretch"
               source={
                 md.md
-                  ? require('@onekeyhq/kit/assets/keytag/keytag_banner1.png')
-                  : require('@onekeyhq/kit/assets/keytag/keytag_banner0.png')
+                  ? require('@unionkeyhq/kit/assets/keytag/keytag_banner1.png')
+                  : require('@unionkeyhq/kit/assets/keytag/keytag_banner0.png')
               }
             >
               <Stack px="$5" pt="$9" pb="$6">
                 <SizableText size="$headingXl" color="rgba(0, 0, 0, 0.95)">
                   {intl.formatMessage({
-                    id: ETranslations.global_onekey_keytag,
+                    id: ETranslations.global_unionkey_keytag,
                   })}
                 </SizableText>
                 <SizableText size="$bodyMd" color="rgba(0, 0, 0, 0.6)" pr={130}>
                   {intl.formatMessage({
-                    id: ETranslations.settings_onekey_keytag_desc,
+                    id: ETranslations.settings_unionkey_keytag_desc,
                   })}
                 </SizableText>
                 <Button
@@ -94,7 +94,7 @@ const UserOptions = () => {
               icon="FolderUploadOutline"
               title={intl.formatMessage({ id: ETranslations.global_backup })}
               subtitle={intl.formatMessage({
-                id: ETranslations.settings_backup_recovery_phrase_to_onekey_keytag,
+                id: ETranslations.settings_backup_recovery_phrase_to_unionkey_keytag,
               })}
               drillIn
               onPress={onBackup}
@@ -108,7 +108,7 @@ const UserOptions = () => {
               icon="FolderDownloadOutline"
               title={intl.formatMessage({ id: ETranslations.global_import })}
               subtitle={intl.formatMessage({
-                id: ETranslations.settings_import_recovery_phrase_from_onekey_keytag,
+                id: ETranslations.settings_import_recovery_phrase_from_unionkey_keytag,
               })}
               drillIn
               onPress={onImport}

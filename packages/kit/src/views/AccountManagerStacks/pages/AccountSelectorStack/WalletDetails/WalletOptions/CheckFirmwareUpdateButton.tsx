@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { useFirmwareUpdateActions } from '@onekeyhq/kit/src/views/FirmwareUpdate/hooks/useFirmwareUpdateActions';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { useFirmwareUpdateActions } from '@unionkeyhq/kit/src/views/FirmwareUpdate/hooks/useFirmwareUpdateActions';
+import type { IDBDevice } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { WalletOptionItem } from './WalletOptionItem';
 

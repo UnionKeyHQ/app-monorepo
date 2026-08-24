@@ -1,15 +1,15 @@
 import { cloneDeep } from 'lodash';
 
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import { NATIVE_TOKEN_MOCK_ADDRESS } from '@onekeyhq/shared/src/consts/tokenConsts';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
+import { NATIVE_TOKEN_MOCK_ADDRESS } from '@unionkeyhq/shared/src/consts/tokenConsts';
 import type {
   ICloudSyncPayloadCustomToken,
   ICloudSyncTargetCustomToken,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkeyhq/shared/types/prime/primeCloudSyncTypes';
 import {
   ECustomTokenStatus,
   type ICloudSyncCustomToken,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 import { CloudSyncFlowManagerBase } from './CloudSyncFlowManagerBase';
 

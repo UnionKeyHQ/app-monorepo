@@ -1,4 +1,4 @@
-import { addBreadcrumb } from '@onekeyhq/shared/src/modules3rdParty/sentry';
+import { addBreadcrumb } from '@unionkeyhq/shared/src/modules3rdParty/sentry';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';

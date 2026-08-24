@@ -3,8 +3,8 @@ import { useCallback, useLayoutEffect, useMemo } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { EPageType, usePageType } from '../../hocs';
 import { useThemeValue } from '../../hooks';

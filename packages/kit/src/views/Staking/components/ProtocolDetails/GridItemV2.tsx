@@ -1,9 +1,9 @@
-import { Alert, XStack, YStack } from '@onekeyhq/components';
+import { Alert, XStack, YStack } from '@unionkeyhq/components';
 import type {
   IEarnActionIcon,
   IEarnText,
   IEarnTooltip,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { EarnActionIcon } from './EarnActionIcon';
 import { EarnText } from './EarnText';

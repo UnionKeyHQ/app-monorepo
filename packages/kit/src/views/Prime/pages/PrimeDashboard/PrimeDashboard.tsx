@@ -15,15 +15,15 @@ import {
   Theme,
   YStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import { useLoginOneKeyId } from '@onekeyhq/kit/src/hooks/useLoginOneKeyId';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import { useLoginUnionKeyId } from '@unionkeyhq/kit/src/hooks/useLoginUnionKeyId';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 import { usePrimeRequirements } from '../../hooks/usePrimeRequirements';
@@ -44,9 +44,9 @@ function PrimeBanner() {
 
   return (
     <YStack pt="$5" gap="$2" alignItems="center">
-      <Icon size="$20" name="OnekeyPrimeDarkColored" />
+      <Icon size="$20" name="UnionKeyPrimeDarkColored" />
       <SizableText size="$heading3xl" mt="$-1" textAlign="center">
-        OneKey Prime
+        UnionKey Prime
       </SizableText>
       <SizableText
         size="$bodyLg"
@@ -73,7 +73,7 @@ function PrimeTerms() {
           openUrlExternal('https://unionkey.io/school.html');
         }}
       >
-        OneKey Prime Terms
+        UnionKey Prime Terms
       </SizableText>
     ),
     [],

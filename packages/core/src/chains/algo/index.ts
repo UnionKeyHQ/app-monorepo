@@ -1,4 +1,4 @@
-import { IMPL_ALGO } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_ALGO } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

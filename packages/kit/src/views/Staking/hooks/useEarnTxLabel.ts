@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export function useEarnTxLabel() {
   const intl = useIntl();

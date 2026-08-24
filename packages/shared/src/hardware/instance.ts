@@ -1,15 +1,15 @@
 import {
-  HARDWARE_SDK_IFRAME_SRC_ONEKEYSO,
+  HARDWARE_SDK_IFRAME_SRC_UNIONKEY,
   HARDWARE_SDK_VERSION,
-} from '@onekeyhq/shared/src/config/appConfig';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkeyhq/shared/src/config/appConfig';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import { EHardwareTransportType } from '../../types';
 
 import { importHardwareSDK, importHardwareSDKLowLevel } from './sdk-loader';
 
-import type { EOnekeyDomain } from '../../types';
+import type { EUnionKeyDomain } from '../../types';
 import type {
   ConnectSettings,
   CoreApi,
@@ -21,14 +21,14 @@ let HardwareSDK: CoreApi;
 let HardwareLowLevelSDK: LowLevelCoreApi;
 
 export const generateConnectSrc = () => {
-  const connectSrc = `${HARDWARE_SDK_IFRAME_SRC_ONEKEYSO}/${HARDWARE_SDK_VERSION}/`;
+  const connectSrc = `${HARDWARE_SDK_IFRAME_SRC_UNIONKEY}/${HARDWARE_SDK_VERSION}/`;
   return connectSrc;
 };
 
 export const getHardwareSDKInstance = memoizee(
   async (params: {
     isPreRelease: boolean;
-    hardwareConnectSrc?: EOnekeyDomain;
+    hardwareConnectSrc?: EUnionKeyDomain;
     debugMode?: boolean;
     hardwareTransportType?: EHardwareTransportType;
   }) =>
@@ -46,7 +46,7 @@ export const getHardwareSDKInstance = memoizee(
 
       const settings: Partial<ConnectSettings> = {
         debug: params.debugMode,
-        fetchConfig: true,//zyfshr
+        fetchConfig: true,
         env,
       };
 
@@ -57,7 +57,7 @@ export const getHardwareSDKInstance = memoizee(
       if (!platformEnv.isNative) {
         let connectSrc = generateConnectSrc();
         if (platformEnv.isDesktop) {
-          const { sdkConnectSrc } = globalThis.ONEKEY_DESKTOP_GLOBALS ?? {};
+          const { sdkConnectSrc } = globalThis.UNIONKEY_DESKTOP_GLOBALS ?? {};
           if (sdkConnectSrc) {
             connectSrc = sdkConnectSrc;
           }

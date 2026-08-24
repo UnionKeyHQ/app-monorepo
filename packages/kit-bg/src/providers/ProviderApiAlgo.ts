@@ -5,9 +5,9 @@ import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { SEPERATOR } from '@onekeyhq/shared/src/engine/engineConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { SEPERATOR } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import ProviderApiBase from './ProviderApiBase';
 

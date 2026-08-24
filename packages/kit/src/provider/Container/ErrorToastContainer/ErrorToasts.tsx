@@ -1,10 +1,10 @@
 import { useIntl } from 'react-intl';
 
-import { Button, useClipboard } from '@onekeyhq/components';
-import { ECustomOneKeyHardwareError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { isRequestIdMessage } from '@onekeyhq/shared/src/request/utils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Button, useClipboard } from '@unionkeyhq/components';
+import { ECustomUnionKeyHardwareError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { isRequestIdMessage } from '@unionkeyhq/shared/src/request/utils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 function CopyButton({ message }: { message: string }) {
   const intl = useIntl();
@@ -31,7 +31,7 @@ function NeedFirmwareUpgradeFromWebButton() {
     <Button
       size="small"
       onPress={() => {
-        openUrlExternal('https://firmware.onekey.so/');
+        openUrlExternal('https://unionkey.io/');
       }}
     >
       {intl.formatMessage({ id: ETranslations.update_update_now })}
@@ -44,7 +44,7 @@ export function getErrorAction(code: number | undefined, message: string) {
     return <CopyButton message={message} />;
   }
 
-  if (code === ECustomOneKeyHardwareError.NeedFirmwareUpgradeFromWeb) {
+  if (code === ECustomUnionKeyHardwareError.NeedFirmwareUpgradeFromWeb) {
     return <NeedFirmwareUpgradeFromWebButton />;
   }
 

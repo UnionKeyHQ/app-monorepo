@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/require-await */
 
-import { slicePathTemplate } from '@onekeyhq/core/src/utils';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import { slicePathTemplate } from '@unionkeyhq/core/src/utils';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
-  OneKeyInternalError,
+  UnionKeyInternalError,
   UnsupportedAddressTypeError,
-} from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { HardwareSDK } from '@onekeyhq/shared/src/hardware/instance';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { HardwareSDK } from '@unionkeyhq/shared/src/hardware/instance';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EConfirmOnDeviceType,
   type IDeviceResponse,
   type IGetDeviceAccountDataParams,
-} from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/types/device';
 
 import { EVaultKeyringTypes } from '../types';
 
@@ -72,7 +72,7 @@ export abstract class KeyringHardwareBase extends KeyringBase {
     const { template, coinName } = deriveInfo;
     const { pathPrefix, pathSuffix } = slicePathTemplate(template);
 
-    const showOnOnekeyFn = (arrIndex: number) => {
+    const showOnOneKeyFn = (arrIndex: number) => {
       if (confirmOnDevice === EConfirmOnDeviceType.EveryItem) {
         return true;
       }
@@ -92,12 +92,12 @@ export abstract class KeyringHardwareBase extends KeyringBase {
         pathSuffix,
         template,
         coinName,
-        showOnOnekeyFn,
+        showOnOneKeyFn,
       }),
     );
 
     if (!result || result.length !== usedIndexes.length) {
-      throw new OneKeyInternalError(errorMessage);
+      throw new UnionKeyInternalError(errorMessage);
     }
     return result;
   }
@@ -201,9 +201,9 @@ export abstract class KeyringHardwareBase extends KeyringBase {
           throw new UnsupportedAddressTypeError();
         }
         throw convertDeviceError(hasErrorItem.payload);
-        // throw new OneKeyInternalError(hasErrorItem.payload.error);
+        // throw new UnionKeyInternalError(hasErrorItem.payload.error);
       }
-      throw new OneKeyInternalError('SDK GetAllNetworkAccounts Failed');
+      throw new UnionKeyInternalError('SDK GetAllNetworkAccounts Failed');
     }
   }
 }

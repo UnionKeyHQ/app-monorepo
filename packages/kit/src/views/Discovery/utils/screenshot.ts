@@ -1,5 +1,5 @@
-import RNFS from '@onekeyhq/shared/src/modules3rdParty/react-native-fs/index.native';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import RNFS from '@unionkeyhq/shared/src/modules3rdParty/react-native-fs/index.native';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { SCREENSHOT_FOLDER } from '../config/Screenshot.constants';
 

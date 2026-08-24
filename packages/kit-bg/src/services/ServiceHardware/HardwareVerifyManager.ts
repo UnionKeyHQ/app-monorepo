@@ -1,26 +1,26 @@
 import {
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyServerApiError } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { UnionKeyServerApiError } from '@unionkeyhq/shared/src/errors';
+import { convertDeviceResponse } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import stringUtils from '@unionkeyhq/shared/src/utils/stringUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IDeviceVerifyVersionCompareResult,
   IFetchFirmwareVerifyHashParams,
   IFirmwareVerifyInfo,
-  IOneKeyDeviceFeatures,
-} from '@onekeyhq/shared/types/device';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+  IUnionKeyDeviceFeatures,
+} from '@unionkeyhq/shared/types/device';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 
 import localDb from '../../dbs/local/localDb';
 import { settingsPersistAtom } from '../../states/jotai/atoms';
@@ -34,7 +34,7 @@ import type {
 import type {
   DeviceVerifySignature,
   IDeviceType,
-  OnekeyFeatures,
+  OnekeyFeatures as UnionKeyFeatures,
   SearchDevice,
 } from '@onekeyfe/hd-core';
 
@@ -190,7 +190,7 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
   async shouldAuthenticateFirmwareByHash({
     features,
   }: {
-    features: IOneKeyDeviceFeatures | undefined;
+    features: IUnionKeyDeviceFeatures | undefined;
   }) {
     // onekey_firmware_version
     // onekey_firmware_hash
@@ -290,7 +290,7 @@ export class HardwareVerifyManager extends ServiceHardwareManagerBase {
     onekeyFeatures,
   }: {
     deviceType: IDeviceType;
-    onekeyFeatures: OnekeyFeatures | undefined;
+    onekeyFeatures: UnionKeyFeatures | undefined;
   }): Promise<IDeviceVerifyVersionCompareResult> {
     const defaultResult = {
       certificate: {

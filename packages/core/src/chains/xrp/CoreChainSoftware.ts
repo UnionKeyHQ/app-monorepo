@@ -2,8 +2,8 @@ import BigNumber from 'bignumber.js';
 import { sign } from 'ripple-keypairs';
 import { deriveAddress, encode, encodeForSigning, hashes } from 'xrpl';
 
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { decryptAsync } from '../../secret';

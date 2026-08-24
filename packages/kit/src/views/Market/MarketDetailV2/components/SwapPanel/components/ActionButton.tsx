@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { Button } from '@onekeyhq/components';
-import type { IButtonProps } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Button } from '@unionkeyhq/components';
+import type { IButtonProps } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import type { ITradeType } from '../hooks/useTradeType';
 

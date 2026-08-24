@@ -14,37 +14,37 @@ import {
   XStack,
   YStack,
   useTabIsRefreshingFocused,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import NumberSizeableTextWrapper from '@onekeyhq/kit/src/components/NumberSizeableTextWrapper';
-import { ReviewControl } from '@onekeyhq/kit/src/components/ReviewControl';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useCopyAccountAddress } from '@onekeyhq/kit/src/hooks/useCopyAccountAddress';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useReceiveToken } from '@onekeyhq/kit/src/hooks/useReceiveToken';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { RawActions } from '@onekeyhq/kit/src/views/Home/components/WalletActions/RawActions';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import NumberSizeableTextWrapper from '@unionkeyhq/kit/src/components/NumberSizeableTextWrapper';
+import { ReviewControl } from '@unionkeyhq/kit/src/components/ReviewControl';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useCopyAccountAddress } from '@unionkeyhq/kit/src/hooks/useCopyAccountAddress';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useReceiveToken } from '@unionkeyhq/kit/src/hooks/useReceiveToken';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { RawActions } from '@unionkeyhq/kit/src/views/Home/components/WalletActions/RawActions';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   WALLET_TYPE_HD,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EModalRoutes,
   EModalSignatureConfirmRoutes,
   EModalSwapRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { listItemPressStyle } from '@onekeyhq/shared/src/style';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { listItemPressStyle } from '@unionkeyhq/shared/src/style';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { WalletActionEarn } from '../../../Home/components/WalletActions/WalletActionEarn';
 

@@ -1,5 +1,5 @@
-import { SizableText } from '@onekeyhq/components';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import { SizableText } from '@unionkeyhq/components';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 
 import { Layout } from './utils/Layout';
 

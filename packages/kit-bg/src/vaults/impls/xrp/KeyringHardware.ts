@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { hashes } from 'xrpl';
 
-import type { IEncodedTxXrp } from '@onekeyhq/core/src/chains/xrp/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxXrp } from '@unionkeyhq/core/src/chains/xrp/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   NotImplemented,
   UnknownHardwareError,
-} from '@onekeyhq/shared/src/errors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkeyhq/shared/src/errors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -57,7 +57,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             coinName,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
             template,
           }) => {
             const buildFullPath = (p: { index: number }) =>
@@ -88,7 +88,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //   ...params.deviceParams.deviceCommonParams,
             //   bundle: usedIndexes.map((index, arrIndex) => ({
             //     path: `${pathPrefix}/${index}'/0/0`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnOneKey: showOnOneKeyFn(arrIndex),
             //   })),
             // });
             // return response;

@@ -8,17 +8,17 @@ import {
   Progress,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IAppNavigation } from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/components';
+import type { IDialogShowProps } from '@unionkeyhq/components/src/composite/Dialog/type';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IAppNavigation } from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 export type IBatchCreateAccountAllNetworkInfo = {
   count: number;

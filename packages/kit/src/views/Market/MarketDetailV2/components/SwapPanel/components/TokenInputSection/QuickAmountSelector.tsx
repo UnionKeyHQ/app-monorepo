@@ -1,4 +1,4 @@
-import { Button, Divider, XStack } from '@onekeyhq/components';
+import { Button, Divider, XStack } from '@unionkeyhq/components';
 
 import { ESwapDirection, type ITradeType } from '../../hooks/useTradeType';
 

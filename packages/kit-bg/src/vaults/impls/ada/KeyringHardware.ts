@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import {
-  transformToOneKeyInputs,
-  transformToOneKeyOutputs,
-} from '@onekeyhq/core/src/chains/ada/sdkAda/transformations';
-import type { IEncodedTxAda } from '@onekeyhq/core/src/chains/ada/types';
-import { EAdaNetworkId } from '@onekeyhq/core/src/chains/ada/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+  transformToUnionKeyInputs,
+  transformToUnionKeyOutputs,
+} from '@unionkeyhq/core/src/chains/ada/sdkAda/transformations';
+import type { IEncodedTxAda } from '@unionkeyhq/core/src/chains/ada/types';
+import { EAdaNetworkId } from '@unionkeyhq/core/src/chains/ada/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { CoreSDKLoader } from '@unionkeyhq/shared/src/hardware/instance';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -90,7 +90,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             connectId,
             deviceId,
             pathPrefix,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
             template,
           }) => {
             const buildFullPath = (p: { index: number }) =>
@@ -140,7 +140,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //   networkId,
             //   protocolMagic,
             //   derivationType,
-            //   showOnOneKey: showOnOnekeyFn(index),
+            //   showOnOneKey: showOnOneKeyFn(index),
             // })) as CardanoGetAddressMethodParams[];
 
             // const HardwareSDK = await this.getHardwareSDKInstance();
@@ -222,7 +222,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         payment: { hash: null, path: dbAccount.path },
         stake: { hash: null, path: stakingPath },
       };
-      cardanoParams = await CardanoApi.txToOneKey(
+      cardanoParams = await CardanoApi.txToUnionKey(
         rawTxHex,
         networkId,
         keys,
@@ -233,7 +233,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       const hasSetTag = await CardanoApi.hasSetTagWithBody(tx.body);
       cardanoParams = {
         signingMode: PROTO.CardanoTxSigningMode.ORDINARY_TRANSACTION,
-        outputs: transformToOneKeyOutputs(
+        outputs: transformToUnionKeyOutputs(
           outputs,
           changeAddress.addressParameters,
         ),
@@ -246,7 +246,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const res = await HardwareSDK.cardanoSignTransaction(connectId, deviceId, {
       ...params.deviceParams?.deviceCommonParams,
-      inputs: transformToOneKeyInputs(inputs, utxos),
+      inputs: transformToUnionKeyInputs(inputs, utxos),
       derivationType,
       ...cardanoParams,
     } as any);

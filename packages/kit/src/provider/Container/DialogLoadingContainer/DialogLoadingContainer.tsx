@@ -4,12 +4,12 @@ import {
   DialogContainer,
   DialogLoadingView,
   Portal,
-} from '@onekeyhq/components';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/components';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
 
 export function DialogLoadingContainer() {
   // const dialogRef = useRef<IDialogInstance | null>(null);

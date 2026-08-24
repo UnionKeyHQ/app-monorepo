@@ -11,9 +11,9 @@ import * as BitcoinJS from 'bitcoinjs-lib';
 import { Psbt, Transaction, payments } from 'bitcoinjs-lib';
 import { isEmpty } from 'lodash';
 
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { EAddressEncodings } from '../../../types';
 
@@ -341,7 +341,7 @@ export async function buildPsbt({
 
   // add uuid for verifyPsbtSignMatched() check
   psbt.addUnknownKeyValToGlobal({
-    key: Buffer.from('$OnekeyPsbtUUID', 'utf-8'),
+    key: Buffer.from('$UnionKeyPsbtUUID', 'utf-8'),
     value: Buffer.from(generateUUID(), 'utf-8'),
   });
 

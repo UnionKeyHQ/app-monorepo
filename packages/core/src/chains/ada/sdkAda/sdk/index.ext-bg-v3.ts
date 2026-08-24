@@ -1,4 +1,4 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 
 import type { IAdaSdk, IEnsureSDKReady, IGetCardanoApi } from './types';
 
@@ -13,8 +13,8 @@ const signTransaction = async (...args: any[]) =>
 const hwSignTransaction = async (...args: any[]) =>
   appGlobals.$offscreenApiProxy.adaSdk.hwSignTransaction(...args);
 
-const txToOneKey = async (...args: any[]) =>
-  appGlobals.$offscreenApiProxy.adaSdk.txToOneKey(...args);
+const txToUnionKey = async (...args: any[]) =>
+  appGlobals.$offscreenApiProxy.adaSdk.txToUnionKey(...args);
 
 const hasSetTagWithBody = async (...args: any[]) =>
   appGlobals.$offscreenApiProxy.adaSdk.hasSetTagWithBody(...args);
@@ -39,7 +39,7 @@ const getCardanoApi: IGetCardanoApi = async () =>
     composeTxPlan,
     signTransaction,
     hwSignTransaction,
-    txToOneKey,
+    txToUnionKey,
     hasSetTagWithBody,
     dAppGetBalance,
     dAppGetAddresses,

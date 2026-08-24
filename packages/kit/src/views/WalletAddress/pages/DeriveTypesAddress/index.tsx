@@ -9,7 +9,7 @@ import {
 import { find } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   Icon,
   ListView,
@@ -19,33 +19,33 @@ import {
   Stack,
   Toast,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { useCopyAccountAddress } from '@onekeyhq/kit/src/hooks/useCopyAccountAddress';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IDBUtxoAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useAccountSelectorCreateAddress } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { NetworkAvatarBase } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { useCopyAccountAddress } from '@unionkeyhq/kit/src/hooks/useCopyAccountAddress';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IDBUtxoAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalWalletAddressRoutes,
   IModalWalletAddressParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 import {
   EAccountSelectorSceneName,
   type IServerNetwork,
-} from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
-import type { IToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import { EDeriveAddressActionType } from '@unionkeyhq/shared/types/address';
+import type { IToken, ITokenFiat } from '@unionkeyhq/shared/types/token';
 
 const DeriveTypesAddressContent = createContext<{
   network?: IServerNetwork;

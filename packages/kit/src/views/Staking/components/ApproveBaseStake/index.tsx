@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { IDialogInstance } from '@onekeyhq/components';
+import type { IDialogInstance } from '@unionkeyhq/components';
 import {
   Accordion,
   Alert,
@@ -22,35 +22,35 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   PercentageStageOnKeyboard,
   calcPercentBalance,
-} from '@onekeyhq/kit/src/components/PercentageStageOnKeyboard';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
-import { useEarnActions } from '@onekeyhq/kit/src/states/jotai/contexts/earn/actions';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
+} from '@unionkeyhq/kit/src/components/PercentageStageOnKeyboard';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { useSignatureConfirm } from '@unionkeyhq/kit/src/hooks/useSignatureConfirm';
+import { useEarnActions } from '@unionkeyhq/kit/src/states/jotai/contexts/earn/actions';
+import { validateAmountInput } from '@unionkeyhq/kit/src/utils/validateAmountInput';
 import {
   formatApy,
   formatStakingDistanceToNowStrict,
-} from '@onekeyhq/kit/src/views/Staking/components/utils';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { EApproveType } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/kit/src/views/Staking/components/utils';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { IApproveInfo } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import { EApproveType } from '@unionkeyhq/shared/types/staking';
 import type {
   IApproveConfirmFnParams,
   IEarnEstimateFeeResp,
   IEarnTokenItem,
   IProtocolInfo,
-} from '@onekeyhq/shared/types/staking';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/staking';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import { useEarnEventActive } from '../../hooks/useEarnEventActive';
 import { useEarnPermitApprove } from '../../hooks/useEarnPermitApprove';

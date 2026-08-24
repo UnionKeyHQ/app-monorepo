@@ -5,14 +5,14 @@
 import axios, { AxiosError } from 'axios';
 import { debounce, forEach } from 'lodash';
 
-import { OneKeyError, OneKeyServerApiError } from '@onekeyhq/shared/src/errors';
+import { UnionKeyError, UnionKeyServerApiError } from '@unionkeyhq/shared/src/errors';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import type { IOneKeyAPIBaseResponse } from '@onekeyhq/shared/types/request';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import type { IUnionKeyAPIBaseResponse } from '@unionkeyhq/shared/types/request';
 
-import { EOneKeyErrorClassNames } from '../errors/types/errorTypes';
+import { EUnionKeyErrorClassNames } from '../errors/types/errorTypes';
 import { ETranslations } from '../locale';
 import { appLocale } from '../locale/appLocale';
 import { defaultLogger } from '../logger/logger';
@@ -22,7 +22,7 @@ import systemTimeUtils from '../utils/systemTimeUtils';
 
 import {
   HEADER_REQUEST_ID_KEY,
-  checkRequestIsOneKeyDomain,
+  checkRequestIsUnionKeyDomain,
   getRequestHeaders,
 } from './Interceptor';
 
@@ -38,9 +38,9 @@ axios.interceptors.request.use(async (config) => {
     config.timeout = 30_000;
   }
   try {
-    const isOneKeyDomain = await checkRequestIsOneKeyDomain({ config });
+    const isUnionKeyDomain = await checkRequestIsUnionKeyDomain({ config });
 
-    if (!isOneKeyDomain) {
+    if (!isUnionKeyDomain) {
       if (isEnableLogNetwork(config.url)) {
         defaultLogger.app.network.start('axios', config.method, config.url);
       }
@@ -78,8 +78,8 @@ axios.interceptors.response.use(
     });
 
     try {
-      const isOneKeyDomain = await checkRequestIsOneKeyDomain({ config });
-      if (!isOneKeyDomain) {
+      const isUnionKeyDomain = await checkRequestIsUnionKeyDomain({ config });
+      if (!isUnionKeyDomain) {
         if (isEnableLogNetwork(config.url)) {
           defaultLogger.app.network.end({
             requestType: 'axios',
@@ -96,7 +96,7 @@ axios.interceptors.response.use(
       return response;
     }
 
-    const data = response.data as IOneKeyAPIBaseResponse;
+    const data = response.data as IUnionKeyAPIBaseResponse;
 
     if ((config as any).autoHandleError !== false && data.code !== 0) {
       const requestIdKey = HEADER_REQUEST_ID_KEY;
@@ -109,13 +109,13 @@ axios.interceptors.response.use(
         autoToast = false;
       }
 
-      throw new OneKeyServerApiError({
+      throw new UnionKeyServerApiError({
         autoToast,
         disableFallbackMessage: true,
         message:
           data?.translatedMessage ||
           data?.message ||
-          'OneKeyServer Unknown Error',
+          'UnionKeyServer Unknown Error',
         code: data.code,
         data,
         requestId: `RequestId: ${config.headers[requestIdKey] as string}`,
@@ -140,7 +140,7 @@ axios.interceptors.response.use(
     const { response } = error;
     if (response?.status && response?.config) {
       const config = response.config;
-      const isOneKeyDomain = await checkRequestIsOneKeyDomain({
+      const isUnionKeyDomain = await checkRequestIsUnionKeyDomain({
         config,
       });
       defaultLogger.app.network.error({
@@ -152,14 +152,14 @@ axios.interceptors.response.use(
         responseCode: response?.data?.code,
         errorMessage: response?.data?.message,
       });
-      if (isOneKeyDomain && Number(response.status) === 403) {
+      if (isUnionKeyDomain && Number(response.status) === 403) {
         const title = appLocale.intl.formatMessage({
           id: ETranslations.title_403,
         });
         const description = appLocale.intl.formatMessage({
           id: ETranslations.description_403,
         });
-        throw new OneKeyServerApiError({
+        throw new UnionKeyServerApiError({
           autoToast: true,
           message: title,
           code: 403,
@@ -178,10 +178,10 @@ axios.interceptors.response.use(
       const title = appLocale.intl.formatMessage({
         id: ETranslations.global_network_error,
       });
-      throw new OneKeyError({
+      throw new UnionKeyError({
         name: error.name,
         message: title,
-        className: EOneKeyErrorClassNames.AxiosNetworkError,
+        className: EUnionKeyErrorClassNames.AxiosNetworkError,
         key: ETranslations.global_network_error,
       });
     }

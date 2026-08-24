@@ -16,30 +16,30 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   useEarnActions,
   useEarnAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/earn';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/earn';
 import {
   EJotaiContextStoreNames,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalStakingRoutes } from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalStakingRoutes } from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import type {
   IEarnInvestmentItem,
   IEarnRewardNum,
   IInvestment,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { EarnProviderMirror } from '../../../Earn/EarnProviderMirror';
 
@@ -81,7 +81,7 @@ function BasicInvestmentDetails() {
   const [settings] = useSettingsPersistAtom();
   const navigation = useAppNavigation();
   const intl = useIntl();
-  const allNetworkId = useMemo(() => getNetworkIdsMap().onekeyall, []);
+  const allNetworkId = useMemo(() => getNetworkIdsMap().unionkeyall, []);
   const { result: earnInvestmentItems = [], isLoading } = usePromiseResult(
     () => {
       const totalFiatMapKey = actions.current.buildEarnAccountsKey(

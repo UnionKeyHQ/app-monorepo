@@ -7,14 +7,14 @@ import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 import type {
   IAccountToken,
   ITronWatchAssetParameter,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 import ProviderApiBase from './ProviderApiBase';
 

@@ -1,13 +1,13 @@
 import {
   EQRCodeHandlerType,
   PARSE_HANDLER_NAMES,
-} from '@onekeyhq/shared/types/qrCode';
+} from '@unionkeyhq/shared/types/qrCode';
 
 import { parseQRCode as parse } from './utils/parseQRCode';
 // yarn jest packages/kit-bg/src/services/ServiceScanQRCode/index.test.ts
 describe('useParseQRCode', () => {
   it('should parse as migrate', async () => {
-    expect(await parse('onekey-wallet://migrate/192.168.1.2')).toEqual(
+    expect(await parse('unionkey-wallet://migrate/192.168.1.2')).toEqual(
       expect.objectContaining({
         type: EQRCodeHandlerType.MIGRATE,
         data: { address: '192.168.1.2' },
@@ -444,33 +444,33 @@ describe('useParseQRCode', () => {
     );
   });
   it('should parse as url', async () => {
-    expect(await parse('https://www.google.com/search?q=onekey')).toEqual(
+    expect(await parse('https://www.google.com/search?q=unionkey')).toEqual(
       expect.objectContaining({
         type: EQRCodeHandlerType.URL,
         data: {
           'hostname': 'www.google.com',
           'origin': 'https://www.google.com',
           'pathname': '/search',
-          url: 'https://www.google.com/search?q=onekey',
+          url: 'https://www.google.com/search?q=unionkey',
           urlSchema: 'https',
           urlPathList: ['www.google.com', 'search'],
-          urlParamList: { 'q': 'onekey' },
+          urlParamList: { 'q': 'unionkey' },
         },
       }),
     );
   });
   it('should parse as deeplink', async () => {
-    expect(await parse('onekey-wallet://search/list?q=onekey')).toEqual(
+    expect(await parse('unionkey-wallet://search/list?q=unionkey')).toEqual(
       expect.objectContaining({
         type: EQRCodeHandlerType.DEEPLINK,
         data: {
           'hostname': 'search',
           'origin': 'null',
           'pathname': '/list',
-          url: 'onekey-wallet://search/list?q=onekey',
-          urlSchema: 'onekey-wallet',
+          url: 'unionkey-wallet://search/list?q=unionkey',
+          urlSchema: 'unionkey-wallet',
           urlPathList: ['search', 'list'],
-          urlParamList: { 'q': 'onekey' },
+          urlParamList: { 'q': 'unionkey' },
         },
       }),
     );
@@ -501,7 +501,7 @@ describe('useParseQRCode', () => {
     );
     expect(
       await parse(
-        'onekey-wallet://wc?uri=wc%3A6b18a69c27df54b4c228e0ff60218ba460a4994aa5775963f6f0ee354b629afe%402%3Frelay-protocol%3Dirn%26symKey%3D99f6e5fa2bda94c704be8d7adbc2643b861ef49dbe09e0af26d3713e219b4355',
+        'unionkey-wallet://wc?uri=wc%3A6b18a69c27df54b4c228e0ff60218ba460a4994aa5775963f6f0ee354b629afe%402%3Frelay-protocol%3Dirn%26symKey%3D99f6e5fa2bda94c704be8d7adbc2643b861ef49dbe09e0af26d3713e219b4355',
       ),
     ).toEqual(
       expect.objectContaining({

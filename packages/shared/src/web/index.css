@@ -193,7 +193,7 @@ textarea {
   cursor: default !important;
 }
 
-.onekey-img-cropper {
+.unionkey-img-cropper {
   height: 100%;
 }
 
@@ -211,11 +211,11 @@ body > div.cet-container {
 }
 
 /* Hide title bar icon on Windows/Linux Desktop */
-.onekey-body >.cet-titlebar >.cet-icon {
+.unionkey-body >.cet-titlebar >.cet-icon {
   display: none;
 }
 
-.onekey-body >.cet-titlebar >.cet-menubar {
+.unionkey-body >.cet-titlebar >.cet-menubar {
   margin-left: 16px;
 }
 

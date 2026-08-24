@@ -3,11 +3,11 @@ import { debounce } from 'lodash';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
+import type { IDappSourceInfo } from '@unionkeyhq/shared/types';
 import type {
   IBaseSignedMessageContentType,
   IConnectedSite,
@@ -16,10 +16,10 @@ import type {
   ISignatureItemQueryParams,
   ISignedMessage,
   ISignedTransaction,
-} from '@onekeyhq/shared/types/signatureRecord';
-import { ETransactionType } from '@onekeyhq/shared/types/signatureRecord';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
-import { EDecodedTxActionType } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/signatureRecord';
+import { ETransactionType } from '@unionkeyhq/shared/types/signatureRecord';
+import type { ISendTxOnSuccessData } from '@unionkeyhq/shared/types/tx';
+import { EDecodedTxActionType } from '@unionkeyhq/shared/types/tx';
 
 import localDb from '../dbs/local/localDb';
 import { ELocalDBStoreNames } from '../dbs/local/localDBStoreNames';
@@ -56,7 +56,7 @@ class ServiceSignature extends ServiceBase {
   ): Promise<ISignedMessage[]> {
     const { networkId: _networkId, address, limit, offset } = params ?? {};
     const networkId =
-      _networkId !== getNetworkIdsMap().onekeyall ? _networkId : undefined;
+      _networkId !== getNetworkIdsMap().unionkeyall ? _networkId : undefined;
     const isSearch = Boolean(networkId || address);
     const limitOffset = isSearch ? undefined : { limit, offset };
     const { records } = await localDb.getAllRecords({
@@ -110,7 +110,7 @@ class ServiceSignature extends ServiceBase {
   ): Promise<ISignedTransaction[]> {
     const { networkId: _networkId, address, limit, offset } = params ?? {};
     const networkId =
-      _networkId !== getNetworkIdsMap().onekeyall ? _networkId : undefined;
+      _networkId !== getNetworkIdsMap().unionkeyall ? _networkId : undefined;
     const isSearch = Boolean(networkId || address);
     const limitOffset = isSearch ? undefined : { limit, offset };
     const { records } = await localDb.getAllRecords({
@@ -224,7 +224,7 @@ class ServiceSignature extends ServiceBase {
   ): Promise<IConnectedSite[]> {
     const { networkId: _networkId, address, limit, offset } = params ?? {};
     const networkId =
-      _networkId !== getNetworkIdsMap().onekeyall ? _networkId : undefined;
+      _networkId !== getNetworkIdsMap().unionkeyall ? _networkId : undefined;
     const isSearch = Boolean(networkId || address);
     const limitOffset = isSearch ? undefined : { limit, offset };
     const { records } = await localDb.getAllRecords({
@@ -279,7 +279,7 @@ class ServiceSignature extends ServiceBase {
     const address = decodedTx.signer;
     const swapInfo = signedTx.swapInfo;
     const stakingInfo = signedTx.stakingInfo;
-    let title = 'OneKey Wallet';
+    let title = 'UnionKey Wallet';
     if (sourceInfo?.origin) {
       title = uriUtils.getHostNameFromUrl({ url: sourceInfo?.origin });
     } else if (swapInfo) {
@@ -422,7 +422,7 @@ class ServiceSignature extends ServiceBase {
     const { sourceInfo, networkId, accountId, message } = data;
     const title = sourceInfo?.origin
       ? uriUtils.getHostNameFromUrl({ url: sourceInfo?.origin })
-      : 'OneKey Wallet';
+      : 'UnionKey Wallet';
     const address =
       await this.backgroundApi.serviceAccount.getAccountAddressForApi({
         networkId,

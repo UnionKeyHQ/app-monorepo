@@ -13,15 +13,15 @@ import {
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import secureStorageInstance from '@onekeyhq/shared/src/storage/instance/secureStorageInstance';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import secureStorageInstance from '@unionkeyhq/shared/src/storage/instance/secureStorageInstance';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 import {
   buildUnionKeyHyperliquidActionHash,
   buildUnionKeyHyperliquidAgentApprovalTypedData,
   buildUnionKeyHyperliquidTypedData,
   formatUnionKeyHyperliquidPrice,
-} from '@onekeyhq/shared/src/utils/unionKeyHyperliquidUtils';
+} from '@unionkeyhq/shared/src/utils/unionKeyHyperliquidUtils';
 import {
   assertUnionKeyAssistRiskPolicy,
   assessUnionKeyAssistRisk,
@@ -30,7 +30,7 @@ import {
   isUnionKeyAssistTriggerMet,
   parseUnionKeyAssistClosePositionIntent,
   parseUnionKeyAssistRequirement,
-} from '@onekeyhq/shared/src/utils/unionKeyTradeUtils';
+} from '@unionkeyhq/shared/src/utils/unionKeyTradeUtils';
 import type {
   IActivateUnionKeyAssistTaskParams,
   ICreateUnionKeyAssistTaskParams,
@@ -57,7 +57,7 @@ import type {
   IUnionKeyHyperliquidOrderAction,
   IUnionKeyHyperliquidOrderWire,
   IUnionKeyHyperliquidTradingAction,
-} from '@onekeyhq/shared/types/unionkey/trade';
+} from '@unionkeyhq/shared/types/unionkey/trade';
 
 import ServiceBase from './ServiceBase';
 

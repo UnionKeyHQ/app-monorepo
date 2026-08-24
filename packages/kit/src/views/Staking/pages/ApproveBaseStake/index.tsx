@@ -2,25 +2,25 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { useEarnActions } from '@onekeyhq/kit/src/states/jotai/contexts/earn/actions';
-import { EarnProviderMirror } from '@onekeyhq/kit/src/views/Earn/EarnProviderMirror';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { Page } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useAppRoute } from '@unionkeyhq/kit/src/hooks/useAppRoute';
+import { useEarnActions } from '@unionkeyhq/kit/src/states/jotai/contexts/earn/actions';
+import { EarnProviderMirror } from '@unionkeyhq/kit/src/views/Earn/EarnProviderMirror';
+import { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EModalStakingRoutes,
   IModalStakingParamList,
-} from '@onekeyhq/shared/src/routes';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IApproveConfirmFnParams } from '@onekeyhq/shared/types/staking';
-import { EApproveType, EEarnLabels } from '@onekeyhq/shared/types/staking';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/src/routes';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IApproveConfirmFnParams } from '@unionkeyhq/shared/types/staking';
+import { EApproveType, EEarnLabels } from '@unionkeyhq/shared/types/staking';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import { ApproveBaseStake } from '../../components/ApproveBaseStake';
 import { useProviderLabel } from '../../hooks/useProviderLabel';

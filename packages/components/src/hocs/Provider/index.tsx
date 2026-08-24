@@ -4,10 +4,10 @@ import { memo, useMemo } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { TamaguiProvider } from 'tamagui';
 
-import type { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import type { ILocaleSymbol } from '@onekeyhq/shared/src/locale';
-import { AppIntlProvider } from '@onekeyhq/shared/src/locale/AppIntlProvider';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import type { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import type { ILocaleSymbol } from '@unionkeyhq/shared/src/locale';
+import { AppIntlProvider } from '@unionkeyhq/shared/src/locale/AppIntlProvider';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import config from '../../../tamagui.config';
 

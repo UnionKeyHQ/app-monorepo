@@ -1,21 +1,21 @@
 import { filter, forEach } from 'lodash';
 
-import { getEndpointsMapByDevSettings } from '@onekeyhq/shared/src/config/endpointsMap';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { getEndpointsMapByDevSettings } from '@unionkeyhq/shared/src/config/endpointsMap';
+import { UnionKeyError } from '@unionkeyhq/shared/src/errors';
+import errorUtils from '@unionkeyhq/shared/src/errors/utils/errorUtils';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EServiceEndpointEnum,
   IEndpointDomainWhiteList,
   IEndpointInfo,
-} from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/types/endpoint';
 
 import { devSettingsPersistAtom } from '../states/jotai/atoms';
 
 export async function getEndpoints() {
   if (platformEnv.isWebEmbed) {
     const enableTestEndpoint =
-      globalThis?.WEB_EMBED_ONEKEY_APP_SETTINGS?.enableTestEndpoint ?? false;
+      globalThis?.WEB_EMBED_UNIONKEY_APP_SETTINGS?.enableTestEndpoint ?? false;
     return getEndpointsMapByDevSettings({
       enabled: enableTestEndpoint,
       settings: {
@@ -35,7 +35,7 @@ export async function getEndpointInfo({
   const endpoints = await getEndpoints();
   const endpoint = endpoints[name];
   if (!endpoint) {
-    throw new OneKeyError(`Invalid endpoint name:${name}`);
+    throw new UnionKeyError(`Invalid endpoint name:${name}`);
   }
   return { endpoint, name };
 }
@@ -58,7 +58,7 @@ export async function getEndpointDomainWhitelist() {
   return filter(whitelist, Boolean);
 }
 
-export async function checkIsOneKeyDomain(url: string) {
+export async function checkIsUnionKeyDomain(url: string) {
   try {
     const whitelist = await getEndpointDomainWhitelist();
     return whitelist.includes(new URL(url).host);

@@ -1,5 +1,5 @@
-import { SizableText } from '@onekeyhq/components';
-import type { ITableColumn } from '@onekeyhq/components';
+import { SizableText } from '@unionkeyhq/components';
+import type { ITableColumn } from '@unionkeyhq/components';
 
 import { RiskIndicator } from './components/RiskIndicator';
 import { TokenIdentityItem } from './components/TokenIdentityItem';

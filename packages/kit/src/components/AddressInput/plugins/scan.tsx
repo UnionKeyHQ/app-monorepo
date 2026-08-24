@@ -2,12 +2,12 @@ import { type FC, useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { IconButton } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EInputAddressChangeType } from '@onekeyhq/shared/types/address';
+import { IconButton } from '@unionkeyhq/components';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useScanQrCode from '@unionkeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EInputAddressChangeType } from '@unionkeyhq/shared/types/address';
 
 import type { IAddressPluginProps } from '../types';
 

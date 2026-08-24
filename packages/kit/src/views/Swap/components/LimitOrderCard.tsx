@@ -12,20 +12,20 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   formatDate,
   formatDistanceStrict,
-} from '@onekeyhq/shared/src/utils/dateUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { formatBalance } from '@onekeyhq/shared/src/utils/numberUtils';
+} from '@unionkeyhq/shared/src/utils/dateUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { formatBalance } from '@unionkeyhq/shared/src/utils/numberUtils';
 import {
   ESwapLimitOrderStatus,
   ESwapQuoteKind,
   type IFetchLimitOrderRes,
   LIMIT_PRICE_DEFAULT_DECIMALS,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { SwapTxHistoryAvatar } from './SwapTxHistoryListCell';
 

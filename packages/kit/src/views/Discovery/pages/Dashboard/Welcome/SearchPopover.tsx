@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
-import { Portal, Stack } from '@onekeyhq/components';
-import type { IStackProps } from '@onekeyhq/components';
+import { Portal, Stack } from '@unionkeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
 
 export interface ISearchPopoverProps {
   isOpen: boolean;

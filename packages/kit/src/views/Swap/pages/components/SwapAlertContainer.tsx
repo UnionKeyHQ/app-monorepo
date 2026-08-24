@@ -8,23 +8,23 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useAccountSelectorCreateAddress } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
+} from '@unionkeyhq/components';
+import { useAccountSelectorCreateAddress } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorCreateAddress';
 import {
   useSwapActions,
   useSwapSelectTokenDetailFetchingAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { useAccountManualCreatingAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { useAccountManualCreatingAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   ISwapAlertActionData,
   ISwapAlertState,
   ISwapTokenBase,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import {
   ESwapAlertActionType,
   ESwapAlertLevel,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 export interface ISwapAlertContainerProps {
   alerts: ISwapAlertState[];

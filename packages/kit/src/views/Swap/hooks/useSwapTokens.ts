@@ -3,25 +3,25 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { debounce } from 'lodash';
 
-import { EPageType, usePageType } from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { EPageType, usePageType } from '@unionkeyhq/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import type { IAllNetworkAccountInfo } from '@unionkeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { useInAppNotificationAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import type { IFuseResult } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { useFuse } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import type { IFuseResult } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import { useFuse } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { equalTokenNoCaseSensitive } from '@unionkeyhq/shared/src/utils/tokenUtils';
 import type {
   ESwapCrossChainStatus,
   ESwapTxHistoryStatus,
   ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
-import { ESwapDirectionType } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
+import { ESwapDirectionType } from '@unionkeyhq/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useListenTabFocusState from '../../../hooks/useListenTabFocusState';

@@ -6,8 +6,8 @@ import {
   SortableSectionList,
   Stack,
   SwipeableCell,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+} from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
 
 import { mapIndexToData } from './SortableListView';
 

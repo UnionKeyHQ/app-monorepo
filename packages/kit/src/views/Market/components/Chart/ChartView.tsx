@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { memo } from 'react';
 
-import type { IMarketTokenChart } from '@onekeyhq/shared/types/market';
+import type { IMarketTokenChart } from '@unionkeyhq/shared/types/market';
 
 import ChartViewAdapter from './ChartViewAdapter';
 

@@ -8,12 +8,12 @@ import {
   SizableText,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import type { IAccountSelectorActiveAccountInfo } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
-import { SwapPercentageInputStage } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/components';
+import type { IAccountSelectorActiveAccountInfo } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { ISwapToken } from '@unionkeyhq/shared/types/swap/types';
+import { SwapPercentageInputStage } from '@unionkeyhq/shared/types/swap/types';
 
 import ActionBuy from '../../../AssetDetails/pages/TokenDetails/ActionBuy';
 import SwapPercentageStageBadge from '../../components/SwapPercentageStageBadge';

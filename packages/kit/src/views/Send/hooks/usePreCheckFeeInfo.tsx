@@ -2,10 +2,10 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ICheckedState } from '@onekeyhq/components';
-import { Checkbox, Dialog, Stack } from '@onekeyhq/components';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ICheckedState } from '@unionkeyhq/components';
+import { Checkbox, Dialog, Stack } from '@unionkeyhq/components';
+import type { IEncodedTx } from '@unionkeyhq/core/src/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

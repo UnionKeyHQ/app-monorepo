@@ -12,13 +12,13 @@ import {
   Skeleton,
   XStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalAssetDetailRoutes } from '@onekeyhq/shared/src/routes';
-import { listItemPressStyle } from '@onekeyhq/shared/src/style';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalAssetDetailRoutes } from '@unionkeyhq/shared/src/routes';
+import { listItemPressStyle } from '@unionkeyhq/shared/src/style';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import { useTokenDetailsContext } from './TokenDetailsContext';
 

@@ -1,13 +1,13 @@
 import { useIntl } from 'react-intl';
 
-import { Badge, Icon, IconButton, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { openExplorerAddressUrl } from '@onekeyhq/kit/src/utils/explorerUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IDisplayComponentAddress } from '@onekeyhq/shared/types/signatureConfirm';
+import { Badge, Icon, IconButton, XStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AddressInfo } from '@unionkeyhq/kit/src/components/AddressInfo';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { openExplorerAddressUrl } from '@unionkeyhq/kit/src/utils/explorerUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import type { IDisplayComponentAddress } from '@unionkeyhq/shared/types/signatureConfirm';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

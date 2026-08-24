@@ -7,10 +7,10 @@ import {
   onVisibilityStateChange,
   useDeferredPromise,
   useNetInfo,
-} from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { useIsMounted } from './useIsMounted';
 import { usePrevious } from './usePrevious';

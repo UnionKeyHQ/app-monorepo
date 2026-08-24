@@ -1,5 +1,5 @@
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import { useDebugComponentRemountLog } from '@unionkeyhq/shared/src/utils/debug/debugUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { AccountSelectorProviderMirror } from '../../components/AccountSelector';
 

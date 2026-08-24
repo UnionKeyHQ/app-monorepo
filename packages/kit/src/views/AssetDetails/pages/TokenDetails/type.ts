@@ -1,7 +1,7 @@
 import type { PropsWithChildren, ReactNode } from 'react';
 
-import type { IKeyOfIcons } from '@onekeyhq/components/src/primitives/Icon/Icons';
-import type { IFiatCryptoType } from '@onekeyhq/shared/types/fiatCrypto';
+import type { IKeyOfIcons } from '@unionkeyhq/components/src/primitives/Icon/Icons';
+import type { IFiatCryptoType } from '@unionkeyhq/shared/types/fiatCrypto';
 
 import type { IActionItemsProps } from '../../../Home/components/WalletActions/RawActions';
 

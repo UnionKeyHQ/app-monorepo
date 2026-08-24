@@ -1,15 +1,15 @@
 import { useIntl } from 'react-intl';
 
-import { Badge, Dialog, Stack, XStack } from '@onekeyhq/components';
+import { Badge, Dialog, Stack, XStack } from '@unionkeyhq/components';
 import type {
   IDBAccount,
   IDBIndexedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
-import { ERootRoutes, ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { buildAddressMapInfoKey } from '@onekeyhq/shared/src/utils/historyUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale/enum/translations';
+import { ERootRoutes, ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import { buildAddressMapInfoKey } from '@unionkeyhq/shared/src/utils/historyUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IAddressInfo } from '@unionkeyhq/shared/types/address';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../hooks/useAppNavigation';

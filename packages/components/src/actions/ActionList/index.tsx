@@ -7,14 +7,14 @@ import { type GestureResponderEvent } from 'react-native';
 import { useMedia, withStaticProperties } from 'tamagui';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { dismissKeyboard } from '@onekeyhq/shared/src/keyboard';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { dismissKeyboard } from '@unionkeyhq/shared/src/keyboard';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   type EShortcutEvents,
   shortcutsMap,
-} from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import { Divider } from '../../content';
 import { Portal } from '../../hocs';

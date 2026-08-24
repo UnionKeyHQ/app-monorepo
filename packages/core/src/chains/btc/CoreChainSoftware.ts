@@ -11,24 +11,24 @@ import bitcoinMessage from 'bitcoinjs-message';
 import bs58check from 'bs58check';
 import { encode as VaruintBitCoinEncode } from 'varuint-bitcoin';
 
-import { presetNetworksMap } from '@onekeyhq/shared/src/config/presetNetworks';
-import { BTC_FIRST_TAPROOT_PATH } from '@onekeyhq/shared/src/consts/chainConsts';
-import { IMPL_TBTC } from '@onekeyhq/shared/src/engine/engineConsts';
+import { presetNetworksMap } from '@unionkeyhq/shared/src/config/presetNetworks';
+import { BTC_FIRST_TAPROOT_PATH } from '@unionkeyhq/shared/src/consts/chainConsts';
+import { IMPL_TBTC } from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   AddressNotSupportSignMethodError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import numberUtils from '@onekeyhq/shared/src/utils/numberUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import numberUtils from '@unionkeyhq/shared/src/utils/numberUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 import type {
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
-import { EMessageTypesBtc } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/types/address';
+import { EMessageTypesBtc } from '@unionkeyhq/shared/types/message';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {
@@ -865,7 +865,7 @@ export default class CoreChainSoftwareBtc extends CoreChainApiBase {
     defaultLogger.account.accountCreatePerf.batchGetPublicKeysBtcDone();
 
     if (pubkeyInfos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     if (!networkChainCode) {

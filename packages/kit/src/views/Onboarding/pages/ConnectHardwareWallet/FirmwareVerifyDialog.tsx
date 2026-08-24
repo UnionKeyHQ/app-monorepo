@@ -15,27 +15,27 @@ import {
   XStack,
   YStack,
   useDialogInstance,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { useHelpLink } from '@onekeyhq/kit/src/hooks/useHelpLink';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { FIRMWARE_CONTACT_US_URL } from '@onekeyhq/shared/src/config/appConfig';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import { useHelpLink } from '@unionkeyhq/kit/src/hooks/useHelpLink';
+import type { IDBDevice } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { FIRMWARE_CONTACT_US_URL } from '@unionkeyhq/shared/src/config/appConfig';
 import {
-  type OneKeyError,
-  type OneKeyServerApiError,
-} from '@onekeyhq/shared/src/errors';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
+  type UnionKeyError,
+  type UnionKeyServerApiError,
+} from '@unionkeyhq/shared/src/errors';
+import { EUnionKeyErrorClassNames } from '@unionkeyhq/shared/src/errors/types/errorTypes';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   IDeviceVerifyVersionCompareResult,
-  IOneKeyDeviceFeatures,
-} from '@onekeyhq/shared/types/device';
+  IUnionKeyDeviceFeatures,
+} from '@unionkeyhq/shared/types/device';
 
 import type { SearchDevice } from '@onekeyfe/hd-core';
 
@@ -122,7 +122,7 @@ function useFirmwareVerifyBase({
       if (useNewProcess) {
         // verify firmware hash
         const latestFeatures =
-          await backgroundApiProxy.serviceHardware.getOneKeyFeatures({
+          await backgroundApiProxy.serviceHardware.getUnionKeyFeatures({
             connectId: device?.connectId ?? '',
             deviceType: device.deviceType,
           });
@@ -147,17 +147,17 @@ function useFirmwareVerifyBase({
 
       // Handle server-side exceptions
       if (
-        (error as OneKeyServerApiError).className ===
-        EOneKeyErrorClassNames.OneKeyServerApiError
+        (error as UnionKeyServerApiError).className ===
+        EUnionKeyErrorClassNames.UnionKeyServerApiError
       ) {
-        const { code, message } = error as OneKeyError;
+        const { code, message } = error as UnionKeyError;
         setContentType(EFirmwareAuthenticationDialogContentType.error_fallback);
         setErrorObj({ code, message });
         return;
       }
 
       // Handle local exceptions
-      const { code, message } = error as OneKeyError;
+      const { code, message } = error as UnionKeyError;
       switch (code) {
         case HardwareErrorCode.ActionCancelled:
         case HardwareErrorCode.NewFirmwareForceUpdate:
@@ -928,7 +928,7 @@ export function useFirmwareVerifyDialog() {
       onClose,
     }: {
       device: SearchDevice | IDBDevice;
-      features: IOneKeyDeviceFeatures | undefined;
+      features: IUnionKeyDeviceFeatures | undefined;
       onContinue: (params: { checked: boolean }) => Promise<void> | void;
       onClose: () => Promise<void> | void;
     }) => {

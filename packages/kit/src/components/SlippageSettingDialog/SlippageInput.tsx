@@ -2,12 +2,12 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { BigNumber } from 'bignumber.js';
 
-import type { IInputProps } from '@onekeyhq/components';
-import { Input } from '@onekeyhq/components';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
-import { swapSlippageDecimal } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapSlippageSegmentItem } from '@onekeyhq/shared/types/swap/types';
-import { ESwapSlippageSegmentKey } from '@onekeyhq/shared/types/swap/types';
+import type { IInputProps } from '@unionkeyhq/components';
+import { Input } from '@unionkeyhq/components';
+import { validateAmountInput } from '@unionkeyhq/kit/src/utils/validateAmountInput';
+import { swapSlippageDecimal } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
+import type { ISwapSlippageSegmentItem } from '@unionkeyhq/shared/types/swap/types';
+import { ESwapSlippageSegmentKey } from '@unionkeyhq/shared/types/swap/types';
 
 const BaseSlippageInput = ({
   swapSlippage,

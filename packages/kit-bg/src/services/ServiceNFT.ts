@@ -5,23 +5,23 @@ import { debounce, isArray, isNil, isObject, omitBy } from 'lodash';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
 import accountUtils, {
   buildAccountLocalAssetsKey,
-} from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import { ETraitsDisplayType } from '@onekeyhq/shared/types/nft';
+} from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
+import { ETraitsDisplayType } from '@unionkeyhq/shared/types/nft';
 import type {
   IAccountNFT,
   IFetchAccountNFTsParams,
   IFetchAccountNFTsResp,
   IFetchNFTDetailsParams,
   IFetchNFTDetailsResp,
-} from '@onekeyhq/shared/types/nft';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkeyhq/shared/types/nft';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import ServiceBase from './ServiceBase';
 
@@ -91,7 +91,7 @@ class ServiceNFT extends ServiceBase {
       ? this._currentUrlAccountId
       : this._currentAccountId;
 
-    if (isAllNetworks && currentNetworkId !== getNetworkIdsMap().onekeyall) {
+    if (isAllNetworks && currentNetworkId !== getNetworkIdsMap().unionkeyall) {
       return {
         data: [],
         next: '',

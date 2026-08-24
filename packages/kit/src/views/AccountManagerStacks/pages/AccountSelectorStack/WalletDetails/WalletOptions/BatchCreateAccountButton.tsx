@@ -1,17 +1,17 @@
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EAccountManagerStacksRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { WalletOptionItem } from './WalletOptionItem';
 

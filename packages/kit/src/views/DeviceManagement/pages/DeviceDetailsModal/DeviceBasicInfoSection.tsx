@@ -2,16 +2,16 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IBadgeType, IIconProps, IKeyOfIcons } from '@onekeyhq/components';
-import { Badge, Icon, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { WalletRenameButton } from '@onekeyhq/kit/src/views/AccountManagerStacks/components/WalletRename';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IHwQrWalletWithDevice } from '@onekeyhq/shared/types/account';
+import type { IBadgeType, IIconProps, IKeyOfIcons } from '@unionkeyhq/components';
+import { Badge, Icon, SizableText, XStack, YStack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { WalletAvatar } from '@unionkeyhq/kit/src/components/WalletAvatar';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { WalletRenameButton } from '@unionkeyhq/kit/src/views/AccountManagerStacks/components/WalletRename';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import type { IHwQrWalletWithDevice } from '@unionkeyhq/shared/types/account';
 
 function DeviceBasicInfoSection({
   data,

@@ -2,20 +2,20 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ICheckedState } from '@onekeyhq/components';
-import { Checkbox, Dialog, YStack } from '@onekeyhq/components';
+import type { ICheckedState } from '@unionkeyhq/components';
+import { Checkbox, Dialog, YStack } from '@unionkeyhq/components';
 import {
   isOnboardingFromExtensionUrl,
   useToOnBoardingPage,
-} from '@onekeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
-import { useV4migrationPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
+import { useV4migrationPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, Spinner, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, Spinner, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { useCreateAccountStateAtom } from '../../states/jotai/contexts/tokenList';
 

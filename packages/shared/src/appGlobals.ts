@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import type { IToast } from '@onekeyhq/components';
-import type { IAppNavigation } from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type BackgroundApi from '@onekeyhq/kit-bg/src/apis/BackgroundApi';
-import type BackgroundApiProxy from '@onekeyhq/kit-bg/src/apis/BackgroundApiProxy';
-import type { LocalDbBase } from '@onekeyhq/kit-bg/src/dbs/local/LocalDbBase';
+import type { IToast } from '@unionkeyhq/components';
+import type { IAppNavigation } from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import type BackgroundApi from '@unionkeyhq/kit-bg/src/apis/BackgroundApi';
+import type BackgroundApiProxy from '@unionkeyhq/kit-bg/src/apis/BackgroundApiProxy';
+import type { LocalDbBase } from '@unionkeyhq/kit-bg/src/dbs/local/LocalDbBase';
 import type {
   EIndexedDBBucketNames,
   IIndexedDBSchemaMap,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IOffscreenApi } from '@onekeyhq/kit-bg/src/offscreens/instance/IOffscreenApi';
-import type { JotaiBgSync } from '@onekeyhq/kit-bg/src/states/jotai/jotaiBgSync';
-import type { IWebembedApi } from '@onekeyhq/kit-bg/src/webembeds/instance/IWebembedApi';
-import type { Analytics } from '@onekeyhq/shared/src/analytics';
-import type { DefaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IOffscreenApi } from '@unionkeyhq/kit-bg/src/offscreens/instance/IOffscreenApi';
+import type { JotaiBgSync } from '@unionkeyhq/kit-bg/src/states/jotai/jotaiBgSync';
+import type { IWebembedApi } from '@unionkeyhq/kit-bg/src/webembeds/instance/IWebembedApi';
+import type { Analytics } from '@unionkeyhq/shared/src/analytics';
+import type { DefaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import type { IAppDeviceInfo } from './appDeviceInfo/types';
 import type { AppEventBusClass } from './eventBus/appEventBus';

@@ -7,36 +7,36 @@ import type {
   IEncodedTx,
   IUnsignedMessage,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { HISTORY_CONSTS } from '@onekeyhq/shared/src/engine/engineConsts';
-import { PendingQueueTooLong } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { HISTORY_CONSTS } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { PendingQueueTooLong } from '@unionkeyhq/shared/src/errors';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { getValidUnsignedMessage } from '@onekeyhq/shared/src/utils/messageUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import type { ISendSelectedFeeInfo } from '@onekeyhq/shared/types/fee';
-import type { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
-import type { IParseTransactionResp } from '@onekeyhq/shared/types/signatureConfirm';
-import type { IFetchTokenDetailItem } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { getValidUnsignedMessage } from '@unionkeyhq/shared/src/utils/messageUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
+import type { ISendSelectedFeeInfo } from '@unionkeyhq/shared/types/fee';
+import type { ESendPreCheckTimingEnum } from '@unionkeyhq/shared/types/send';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
+import type { IParseTransactionResp } from '@unionkeyhq/shared/types/signatureConfirm';
+import type { IFetchTokenDetailItem } from '@unionkeyhq/shared/types/token';
 import type {
   EReplaceTxType,
   IDecodedTx,
   ISendTxBaseParams,
   ISendTxOnSuccessData,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { vaultFactory } from '../vaults/factory';
 

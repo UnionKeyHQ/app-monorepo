@@ -14,10 +14,10 @@ import {
 import { consts } from '@onekeyfe/cross-inpage-provider-core';
 import { JsBridgeDesktopHost } from '@onekeyfe/onekey-cross-webview';
 
-import { Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { waitForDataLoaded } from '@onekeyhq/shared/src/background/backgroundUtils';
-import { checkOneKeyCardGoogleOauthUrl } from '@onekeyhq/shared/src/utils/uriUtils';
+import { Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { waitForDataLoaded } from '@unionkeyhq/shared/src/background/backgroundUtils';
+import { checkUnionKeyCardGoogleOauthUrl } from '@unionkeyhq/shared/src/utils/uriUtils';
 
 import ErrorView from './ErrorView';
 import { createMessageInjectedScript } from './utils';
@@ -49,7 +49,7 @@ export type {
 const isDev = process.env.NODE_ENV !== 'production';
 
 function usePreloadJsUrl() {
-  const { preloadJsUrl } = globalThis.ONEKEY_DESKTOP_GLOBALS ?? {};
+  const { preloadJsUrl } = globalThis.UNIONKEY_DESKTOP_GLOBALS ?? {};
   useEffect(() => {
     if (preloadJsUrl) {
       return;
@@ -57,7 +57,7 @@ function usePreloadJsUrl() {
     const timer = setTimeout(() => {
       if (!preloadJsUrl) {
         console.error(`Webview render failed:
-      Please send messages of channel SET_ONEKEY_DESKTOP_GLOBALS at app start
+      Please send messages of channel SET_UNIONKEY_DESKTOP_GLOBALS at app start
       `);
       }
     }, 3000);
@@ -110,7 +110,7 @@ const DesktopWebView = forwardRef(
       try {
         const checkGoogleOauth = (checkUrl: string) => {
           try {
-            if (checkOneKeyCardGoogleOauthUrl({ url: checkUrl })) {
+            if (checkUnionKeyCardGoogleOauthUrl({ url: checkUrl })) {
               const originUA = webview.getUserAgent();
               const updatedUserAgent = originUA.replace(
                 / Electron\/[\d.]+/,
@@ -354,7 +354,7 @@ const DesktopWebView = forwardRef(
           ref={initWebviewByRef}
           preload={preloadJsUrl}
           src={src}
-          partition="persist:onekey"
+          partition="persist:unionkey"
           style={{
             'width': '100%',
             'height': '100%',

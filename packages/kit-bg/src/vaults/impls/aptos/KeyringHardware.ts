@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { deriveTransactionType } from '@aptos-labs/ts-sdk';
 
-import type { ISignMessageRequest } from '@onekeyhq/core/src/chains/aptos/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { ISignMessageRequest } from '@unionkeyhq/core/src/chains/aptos/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkeyhq/core/src/types';
+import { convertDeviceResponse } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -57,7 +57,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             coinName,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
             template,
           }) => {
             const buildFullPath = (p: { index: number }) =>
@@ -93,7 +93,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       /**
             //        * Search accounts not show detail at device.Only show on device when add accounts into wallet.
             //        */
-            //       showOnOneKey: showOnOnekeyFn(arrIndex),
+            //       showOnOneKey: showOnOneKeyFn(arrIndex),
             //       chainId: Number(chainId),
             //     };
             //   }),

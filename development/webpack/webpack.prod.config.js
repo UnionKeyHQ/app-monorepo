@@ -27,7 +27,7 @@ module.exports = ({ platform, basePath }) => {
     },
     plugins: [
       sentryWebpackPlugin({
-        org: 'onekey-bb',
+        org: process.env.SENTRY_ORG,
         debug: false,
         project: process.env.SENTRY_PROJECT,
         authToken: process.env.SENTRY_TOKEN,

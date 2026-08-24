@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { EDeviceType } from '@onekeyfe/hd-shared';
 import { isNil } from 'lodash';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   AnimatePresence,
   Button,
@@ -16,25 +16,25 @@ import {
   Toast,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import type {
   IDeviceHomeScreenConfig,
   IDeviceHomeScreenSizeInfo,
-} from '@onekeyhq/kit-bg/src/services/ServiceHardware/DeviceSettingsManager';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit-bg/src/services/ServiceHardware/DeviceSettingsManager';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EAccountManagerStacksRoutes,
   IAccountManagerStacksParamList,
-} from '@onekeyhq/shared/src/routes';
-import deviceHomeScreenUtils from '@onekeyhq/shared/src/utils/deviceHomeScreenUtils';
-import imageUtils from '@onekeyhq/shared/src/utils/imageUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkeyhq/shared/src/routes';
+import deviceHomeScreenUtils from '@unionkeyhq/shared/src/utils/deviceHomeScreenUtils';
+import imageUtils from '@unionkeyhq/shared/src/utils/imageUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 
 import hardwareHomeScreenData from './hardwareHomeScreenData';
 import uploadedHomeScreenCache from './uploadedHomeScreenCache';

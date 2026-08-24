@@ -1,4 +1,4 @@
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import { getNetworkIdsMap } from '../../src/config/networkIds';
 

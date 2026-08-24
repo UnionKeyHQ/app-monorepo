@@ -50,31 +50,31 @@ export class PageScene extends BaseScene {
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public enterOneKeyLite() {
+  public enterUnionKeyLite() {
     return {};
   }
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public oneKeyLiteBackup() {
+  public unionKeyLiteBackup() {
     return {};
   }
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public oneKeyLiteBackupResult({ isSuccess }: { isSuccess: boolean }) {
+  public unionKeyLiteBackupResult({ isSuccess }: { isSuccess: boolean }) {
     return { isSuccess };
   }
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public oneKeyLiteImport() {
+  public unionKeyLiteImport() {
     return {};
   }
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public oneKeyLiteImportResult({ isSuccess }: { isSuccess: boolean }) {
+  public unionKeyLiteImportResult({ isSuccess }: { isSuccess: boolean }) {
     return { isSuccess };
   }
 

@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 
-import { Button, Input, Page } from '@onekeyhq/components';
-import { EWebEmbedRoutePath } from '@onekeyhq/shared/src/consts/webEmbedConsts';
-import openUrlUtils from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Button, Input, Page } from '@unionkeyhq/components';
+import { EWebEmbedRoutePath } from '@unionkeyhq/shared/src/consts/webEmbedConsts';
+import openUrlUtils from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 export default function WebviewGallery() {
   const [url, setUrl] = useState('https://www.baidu.com');

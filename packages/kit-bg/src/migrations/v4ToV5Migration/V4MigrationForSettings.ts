@@ -1,4 +1,4 @@
-import { LOCALES_OPTION } from '@onekeyhq/shared/src/locale';
+import { LOCALES_OPTION } from '@unionkeyhq/shared/src/locale';
 
 import { biologyAuthUtils } from '../../services/ServicePassword/biologyAuthUtils';
 import {

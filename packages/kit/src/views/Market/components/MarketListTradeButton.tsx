@@ -2,11 +2,11 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, XStack } from '@onekeyhq/components';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { isSupportStaking } from '@onekeyhq/shared/types/earn/earnProvider.constants';
+import { Button, XStack } from '@unionkeyhq/components';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { isSupportStaking } from '@unionkeyhq/shared/types/earn/earnProvider.constants';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { ReviewControl } from '../../../components/ReviewControl';

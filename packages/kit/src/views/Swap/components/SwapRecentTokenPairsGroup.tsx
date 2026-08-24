@@ -4,12 +4,12 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import { Icon, SizableText, XStack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, SizableText, XStack, YStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   ESwapTabSwitchType,
   type ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { Token } from '../../../components/Token';
 import { useSwapTypeSwitchAtom } from '../../../states/jotai/contexts/swap';

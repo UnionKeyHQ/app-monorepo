@@ -4,20 +4,20 @@ import { isArray, isEmpty, isNil } from 'lodash';
 import type {
   IEncodedTxAlgo,
   IEncodedTxGroupAlgo,
-} from '@onekeyhq/core/src/chains/algo/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/algo/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/secret';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
 import {
   ManageTokenInsufficientBalanceError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -25,23 +25,23 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
-import { ALGO_TX_MIN_FEE } from '@onekeyhq/shared/types/algo';
+} from '@unionkeyhq/shared/types/address';
+import { ALGO_TX_MIN_FEE } from '@unionkeyhq/shared/types/algo';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { IAccountToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
+import type { IAccountToken } from '@unionkeyhq/shared/types/token';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -141,10 +141,10 @@ export default class Vault extends VaultBase {
           specifiedFeeRate,
         });
       }
-      throw new OneKeyInternalError('Batch transfers not supported');
+      throw new UnionKeyInternalError('Batch transfers not supported');
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromTransfer(params: {
@@ -410,7 +410,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo ?? [],
       });
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _updateNativeTokenAmount(params: {
@@ -452,7 +452,7 @@ export default class Vault extends VaultBase {
     if (!isArray(encodedTxNew)) {
       if (feeInfo) {
         if (!unsignedTx.transfersInfo || isEmpty(unsignedTx.transfersInfo)) {
-          throw new OneKeyInternalError('transfersInfo is required');
+          throw new UnionKeyInternalError('transfersInfo is required');
         }
         encodedTxNew = await this._attachFeeInfoToEncodedTx({
           encodedTx: unsignedTx.encodedTx as IEncodedTxAlgo,
@@ -633,7 +633,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('rpcUrl is required');
+      throw new UnionKeyInternalError('rpcUrl is required');
     }
     const client = new sdkAlgo.Algodv2('', rpcUrl, 443);
     const { txId } = await client

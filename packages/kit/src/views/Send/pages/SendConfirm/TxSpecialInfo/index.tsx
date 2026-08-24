@@ -1,5 +1,5 @@
-import type { IUnsignedTx } from '@onekeyhq/core/src/types';
-import { IMPL_TRON } from '@onekeyhq/shared/src/engine/engineConsts';
+import type { IUnsignedTx } from '@unionkeyhq/core/src/types';
+import { IMPL_TRON } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { TronSpecialInfo } from './TronSpecialInfo';
 

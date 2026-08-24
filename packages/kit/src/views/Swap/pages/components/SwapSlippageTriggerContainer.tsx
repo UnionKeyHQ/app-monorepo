@@ -4,19 +4,19 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Icon, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Icon, SizableText, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 import {
   mevSwapNetworks,
   swapSlippageDecimal,
   swapSlippageWillAheadMinValue,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapSlippageSegmentItem } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
+import type { ISwapSlippageSegmentItem } from '@unionkeyhq/shared/types/swap/types';
 import {
   ESwapDirectionType,
   ESwapSlippageSegmentKey,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import SwapCommonInfoItem from '../../components/SwapCommonInfoItem';
 import { useSwapAddressInfo } from '../../hooks/useSwapAccount';

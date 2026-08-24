@@ -13,17 +13,17 @@ import { isEmpty, isNil } from 'lodash';
 import {
   getConfig,
   scriptToAddress,
-} from '@onekeyhq/core/src/chains/ckb/sdkCkb';
-import type { IEncodedTxCkb } from '@onekeyhq/core/src/chains/ckb/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/chains/ckb/sdkCkb';
+import type { IEncodedTxCkb } from '@unionkeyhq/core/src/chains/ckb/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
 import {
   MinimumTransferAmountError,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   RemainingMinBalanceError,
-} from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/errors';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -31,20 +31,20 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
 import {
   EDecodedTxDirection,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -162,9 +162,9 @@ export default class Vault extends VaultBase {
           specifiedFeeRate,
         });
       }
-      throw new OneKeyInternalError('Batch transfers not supported');
+      throw new UnionKeyInternalError('Batch transfers not supported');
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromTransfer({
@@ -372,7 +372,7 @@ export default class Vault extends VaultBase {
       ) ?? outputs[0];
 
     if (!toAddressOutput) {
-      throw new OneKeyInternalError('No to address output found');
+      throw new UnionKeyInternalError('No to address output found');
     }
 
     const toAddress = scriptToAddress(toAddressOutput.cellOutput.lock, {
@@ -603,7 +603,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo ?? [],
       });
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildUnsignedTxFromEncodedTx({
@@ -642,7 +642,7 @@ export default class Vault extends VaultBase {
     ) {
       console.log('Fee is too high, transaction: ', txs);
 
-      throw new OneKeyInternalError('Fee is too high');
+      throw new UnionKeyInternalError('Fee is too high');
     }
 
     return {
@@ -660,7 +660,7 @@ export default class Vault extends VaultBase {
     let encodedTxNew = unsignedTx.encodedTx as IEncodedTxCkb;
     if (feeInfo) {
       if (!unsignedTx.transfersInfo || isEmpty(unsignedTx.transfersInfo)) {
-        throw new OneKeyInternalError('transfersInfo is required');
+        throw new UnionKeyInternalError('transfersInfo is required');
       }
       encodedTxNew = await this._attachFeeInfoToEncodedTx({
         encodedTx: unsignedTx.encodedTx as IEncodedTxCkb,
@@ -762,7 +762,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new RPC(rpcUrl);
     const transaction = convertRawTxToApiTransaction(signedTx.rawTx);

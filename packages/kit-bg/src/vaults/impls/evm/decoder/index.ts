@@ -1,4 +1,4 @@
-import { ethers } from '@onekeyhq/core/src/chains/evm/sdkEvm/ethers';
+import { ethers } from '@unionkeyhq/core/src/chains/evm/sdkEvm/ethers';
 
 import { ABI } from './abi';
 

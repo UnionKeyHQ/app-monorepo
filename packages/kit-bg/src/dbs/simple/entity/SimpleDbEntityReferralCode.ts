@@ -1,4 +1,4 @@
-import type { IInvitePostConfig } from '@onekeyhq/shared/src/referralCode/type';
+import type { IInvitePostConfig } from '@unionkeyhq/shared/src/referralCode/type';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

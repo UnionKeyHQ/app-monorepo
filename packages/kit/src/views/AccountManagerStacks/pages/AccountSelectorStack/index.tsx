@@ -1,11 +1,11 @@
-import type { IPageScreenProps } from '@onekeyhq/components';
-import { Page } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { IPageScreenProps } from '@unionkeyhq/components';
+import { Page } from '@unionkeyhq/components';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EAccountManagerStacksRoutes,
   IAccountManagerStacksParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import { WalletDetails } from './WalletDetails';
 import { AccountSelectorWalletListSideBar } from './WalletList';

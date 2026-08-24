@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 
 import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 
-import { usePrimePersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import perfUtils from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import type { IPrimeUserInfo } from '@onekeyhq/shared/types/prime/primeTypes';
+import { usePrimePersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
+import perfUtils from '@unionkeyhq/shared/src/utils/debug/perfUtils';
+import type { IPrimeUserInfo } from '@unionkeyhq/shared/types/prime/primeTypes';
 
 import { getPrimePaymentApiKey } from './getPrimePaymentApiKey';
 import { usePrimeAuthV2 } from './usePrimeAuthV2';

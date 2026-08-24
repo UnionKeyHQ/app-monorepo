@@ -1,11 +1,11 @@
 import { useIntl } from 'react-intl';
 
-import { Empty, Skeleton, Stack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { useToOnBoardingPage } from '@onekeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
-import type { IAccountSelectorAccountsListSectionData } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { useAccountSelectorAccountsListIsLoadingAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Empty, Skeleton, Stack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { useToOnBoardingPage } from '@unionkeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
+import type { IAccountSelectorAccountsListSectionData } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { useAccountSelectorAccountsListIsLoadingAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function LoadingSkeletonView() {
   return (

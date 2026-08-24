@@ -1,5 +1,5 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IEarnAtomData } from '@onekeyhq/shared/types/staking';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import type { IEarnAtomData } from '@unionkeyhq/shared/types/staking';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

@@ -1,4 +1,4 @@
-import type { IAddressItem } from '@onekeyhq/kit/src/views/AddressBook/type';
+import type { IAddressItem } from '@unionkeyhq/kit/src/views/AddressBook/type';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

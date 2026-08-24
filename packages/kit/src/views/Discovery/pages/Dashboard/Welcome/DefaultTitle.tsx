@@ -8,8 +8,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import { SizableText } from '@onekeyhq/components/src/primitives';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+import { SizableText } from '@unionkeyhq/components/src/primitives';
+import { ETranslations } from '@unionkeyhq/shared/src/locale/enum/translations';
 
 const DefaultTitleComponent = () => {
   const intl = useIntl();

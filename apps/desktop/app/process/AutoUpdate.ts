@@ -10,7 +10,7 @@ import logger from 'electron-log/main';
 import { CancellationToken, autoUpdater } from 'electron-updater';
 import { readCleartextMessage, readKey } from 'openpgp';
 
-import type { IDesktopStoreUpdateSettings } from '@onekeyhq/shared/types/desktop';
+import type { IDesktopStoreUpdateSettings } from '@unionkeyhq/shared/types/desktop';
 
 import { ipcMessageKeys } from '../config';
 import { TRUSTED_PUBLIC_KEYS } from '../constant/gpg';

@@ -1,6 +1,6 @@
 import { useRoute } from '@react-navigation/core';
 
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
+import type { IDappSourceInfo } from '@unionkeyhq/shared/types';
 
 interface IBaseQueryInfo {
   $sourceInfo?: IDappSourceInfo;

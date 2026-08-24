@@ -5,29 +5,29 @@ import BigNumber from 'bignumber.js';
 import { find } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Page, YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import { Page, YStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useSignatureConfirmActions,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import { calculateTxExtraFee } from '@onekeyhq/kit/src/utils/gasFee';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import { calculateTxExtraFee } from '@unionkeyhq/kit/src/utils/gasFee';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalSignatureConfirmRoutes,
   IModalSignatureConfirmParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
-import { ESendFeeStatus } from '@onekeyhq/shared/types/fee';
-import { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
+import { ESendFeeStatus } from '@unionkeyhq/shared/types/fee';
+import { ESendPreCheckTimingEnum } from '@unionkeyhq/shared/types/send';
 
 import { DAppSiteMark } from '../../../DAppConnection/components/DAppRequestLayout';
 import { useRiskDetection } from '../../../DAppConnection/hooks/useRiskDetection';

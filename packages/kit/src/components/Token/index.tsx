@@ -11,7 +11,7 @@ import type {
   ISizableTextProps,
   IXStackProps,
   SizeTokens,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Badge,
   Icon,
@@ -21,8 +21,8 @@ import {
   Stack,
   Tooltip,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { useAccountData } from '../../hooks/useAccountData';
 import { NetworkAvatar, NetworkAvatarBase } from '../NetworkAvatar';

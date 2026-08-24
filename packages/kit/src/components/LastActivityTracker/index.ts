@@ -2,19 +2,19 @@ import { useCallback, useEffect } from 'react';
 
 import { AppState } from 'react-native';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useInterval } from '@onekeyhq/kit/src/hooks/useInterval';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useInterval } from '@unionkeyhq/kit/src/hooks/useInterval';
 import {
   usePasswordAtom,
   usePasswordPersistAtom,
   useSystemIdleLockSupport,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { analytics } from '@onekeyhq/shared/src/analytics';
-import { buildServiceEndpoint } from '@onekeyhq/shared/src/config/appConfig';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { setUser as setSentryUser } from '@onekeyhq/shared/src/modules3rdParty/sentry';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { analytics } from '@unionkeyhq/shared/src/analytics';
+import { buildServiceEndpoint } from '@unionkeyhq/shared/src/config/appConfig';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { setUser as setSentryUser } from '@unionkeyhq/shared/src/modules3rdParty/sentry';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 
 const LastActivityTracker = () => {
   const [{ enableSystemIdleLock, appLockDuration }] = usePasswordPersistAtom();

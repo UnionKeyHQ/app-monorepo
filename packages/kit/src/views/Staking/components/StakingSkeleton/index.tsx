@@ -1,4 +1,4 @@
-import { Divider, Skeleton, Stack, XStack, YStack } from '@onekeyhq/components';
+import { Divider, Skeleton, Stack, XStack, YStack } from '@unionkeyhq/components';
 
 const HistorySkeletonItem = () => (
   <XStack justifyContent="space-between">

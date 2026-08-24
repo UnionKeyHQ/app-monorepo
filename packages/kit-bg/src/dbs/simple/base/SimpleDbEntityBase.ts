@@ -1,10 +1,10 @@
 import { Semaphore } from 'async-mutex';
 import { isFunction, isNil, isString } from 'lodash';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { storageHub } from '@onekeyhq/shared/src/storage/appStorage';
-import appStorageUtils from '@onekeyhq/shared/src/storage/appStorageUtils';
-import dbPerfMonitor from '@onekeyhq/shared/src/utils/debug/dbPerfMonitor';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { storageHub } from '@unionkeyhq/shared/src/storage/appStorage';
+import appStorageUtils from '@unionkeyhq/shared/src/storage/appStorageUtils';
+import dbPerfMonitor from '@unionkeyhq/shared/src/utils/debug/dbPerfMonitor';
 
 import type { AsyncStorageStatic } from '@react-native-async-storage/async-storage';
 

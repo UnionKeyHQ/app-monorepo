@@ -4,13 +4,13 @@ import { keccak256 } from '@ethersproject/keccak256';
 import { TransactionTypes, serialize } from '@ethersproject/transactions';
 import BigNumber from 'bignumber.js';
 
-import { secp256k1 } from '@onekeyhq/core/src/secret';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { toBigIntHex } from '@onekeyhq/shared/src/utils/numberUtils';
-import type { IAddressValidation } from '@onekeyhq/shared/types/address';
+import { secp256k1 } from '@unionkeyhq/core/src/secret';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
+import { toBigIntHex } from '@unionkeyhq/shared/src/utils/numberUtils';
+import type { IAddressValidation } from '@unionkeyhq/shared/types/address';
 
 import type { IUnsignedTxPro } from '../../../types';
 import type { IEncodedTxEvm } from '../types';
@@ -22,11 +22,11 @@ export async function getPublicKeyFromPrivateKey({
   privateKeyRaw: string;
 }): Promise<{ publicKey: string }> {
   if (!hexUtils.isHexString(privateKeyRaw)) {
-    throw new OneKeyInternalError('Invalid private key.');
+    throw new UnionKeyInternalError('Invalid private key.');
   }
   const privateKey = bufferUtils.toBuffer(privateKeyRaw);
   if (privateKey.length !== 32) {
-    throw new OneKeyInternalError('Invalid private key.');
+    throw new UnionKeyInternalError('Invalid private key.');
   }
   const publicKey = secp256k1.publicFromPrivate(privateKey).toString('hex');
   return Promise.resolve({ publicKey });

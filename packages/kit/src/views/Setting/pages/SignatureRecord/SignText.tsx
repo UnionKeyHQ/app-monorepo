@@ -14,15 +14,15 @@ import {
   XStack,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import utils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
-import type { ISignedMessage } from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { NetworkAvatar } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import utils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { formatTime } from '@unionkeyhq/shared/src/utils/dateUtils';
+import type { ISignedMessage } from '@unionkeyhq/shared/types/signatureRecord';
 
 import { useGetSignatureSections } from './hooks';
 

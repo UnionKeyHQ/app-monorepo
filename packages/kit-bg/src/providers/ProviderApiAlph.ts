@@ -2,15 +2,15 @@ import { groupOfAddress } from '@alephium/web3';
 import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 
-import { EAlphTxType } from '@onekeyhq/core/src/chains/alph/types';
+import { EAlphTxType } from '@unionkeyhq/core/src/chains/alph/types';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IConnectedAccountInfo } from '@onekeyhq/shared/types/dappConnection';
-import type { EMessageTypesAlph } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import type { IConnectedAccountInfo } from '@unionkeyhq/shared/types/dappConnection';
+import type { EMessageTypesAlph } from '@unionkeyhq/shared/types/message';
 
 import {
   deserializeUnsignedTransaction,

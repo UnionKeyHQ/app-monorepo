@@ -1,22 +1,22 @@
-import { appApiClient } from '@onekeyhq/shared/src/appApiClient/appApiClient';
+import { appApiClient } from '@unionkeyhq/shared/src/appApiClient/appApiClient';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
-  OneKeyErrorPrimeLoginExceedDeviceLimit,
-  OneKeyErrorPrimeLoginInvalidToken,
-  OneKeyErrorPrimeMasterPasswordInvalid,
-  OneKeyErrorPrimePaidMembershipRequired,
-} from '@onekeyhq/shared/src/errors';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+  UnionKeyErrorPrimeLoginExceedDeviceLimit,
+  UnionKeyErrorPrimeLoginInvalidToken,
+  UnionKeyErrorPrimeMasterPasswordInvalid,
+  UnionKeyErrorPrimePaidMembershipRequired,
+} from '@unionkeyhq/shared/src/errors';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 
 import { getEndpointInfo } from '../endpoints';
 
@@ -30,7 +30,7 @@ export type IServiceBaseProps = {
 // Must use global variables, not class properties, otherwise independent properties will be generated in multiple service instances, causing the judgment to fail
 let hideTimer: Array<ReturnType<typeof setTimeout> | undefined> = [];
 
-const _oneKeyIdAuthClientsMap: Partial<
+const _unionKeyIdAuthClientsMap: Partial<
   Record<EServiceEndpointEnum, AxiosInstance | undefined>
 > = {};
 
@@ -48,8 +48,8 @@ export default class ServiceBase {
   getRawDataClient = async (name: EServiceEndpointEnum) =>
     appApiClient.getRawDataClient(await getEndpointInfo({ name }));
 
-  getOneKeyIdClient = async (name: EServiceEndpointEnum) => {
-    if (!_oneKeyIdAuthClientsMap[name]) {
+  getUnionKeyIdClient = async (name: EServiceEndpointEnum) => {
+    if (!_unionKeyIdAuthClientsMap[name]) {
       const client = await appApiClient.getClient(
         await getEndpointInfo({ name }),
       );
@@ -58,7 +58,7 @@ export default class ServiceBase {
           await this.backgroundApi.simpleDb.prime.getAuthToken();
         if (authToken) {
           // TODO use cookie instead of simpleDb
-          config.headers['X-Onekey-Request-Token'] = `${authToken}`;
+          config.headers['X-UnionKey-Request-Token'] = `${authToken}`;
         }
         return config;
       });
@@ -79,20 +79,20 @@ export default class ServiceBase {
               EAppEventBusNames.PrimeLoginInvalidToken,
               undefined,
             );
-            throw new OneKeyErrorPrimeLoginInvalidToken();
+            throw new UnionKeyErrorPrimeLoginInvalidToken();
           }
           if ([90_004].includes(errorCode)) {
             appEventBus.emit(
               EAppEventBusNames.PrimeExceedDeviceLimit,
               undefined,
             );
-            throw new OneKeyErrorPrimeLoginExceedDeviceLimit();
+            throw new UnionKeyErrorPrimeLoginExceedDeviceLimit();
           }
           if ([90_005].includes(errorCode)) {
-            throw new OneKeyErrorPrimePaidMembershipRequired();
+            throw new UnionKeyErrorPrimePaidMembershipRequired();
           }
           if ([90_006].includes(errorCode)) {
-            const e = new OneKeyErrorPrimeMasterPasswordInvalid();
+            const e = new UnionKeyErrorPrimeMasterPasswordInvalid();
             void this.backgroundApi.servicePrimeCloudSync.showAlertDialogIfLocalPasswordInvalid(
               {
                 error: e,
@@ -103,9 +103,9 @@ export default class ServiceBase {
           throw error;
         },
       );
-      _oneKeyIdAuthClientsMap[name] = client;
+      _unionKeyIdAuthClientsMap[name] = client;
     }
-    return _oneKeyIdAuthClientsMap[name];
+    return _unionKeyIdAuthClientsMap[name];
   };
 
   @backgroundMethod()

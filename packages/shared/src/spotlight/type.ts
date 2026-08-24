@@ -1,6 +1,6 @@
 export enum ESpotlightTour {
   createAllNetworks = 'createAllNetworks',
-  oneKeyProBanner = 'oneKeyProBanner',
+  unionKeyProBanner = 'unionKeyProBanner',
   allNetworkAccountValue = 'allNetworkAccountValue',
   switchDappAccount = 'switchDappAccount',
   showFloatingIconDialog = 'showFloatingIconDialog',

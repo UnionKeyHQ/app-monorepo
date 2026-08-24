@@ -1,5 +1,5 @@
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { decryptAsync } from '../../secret';

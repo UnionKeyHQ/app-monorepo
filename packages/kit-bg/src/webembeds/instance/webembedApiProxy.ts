@@ -1,11 +1,11 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { RemoteApiProxyBase } from '../../apis/RemoteApiProxyBase';
 
@@ -35,13 +35,13 @@ class WebembedApiProxy extends RemoteApiProxyBase implements IWebembedApi {
       return new Promise((resolve, reject) => {
         const timerId = setTimeout(() => {
           defaultLogger.app.webembed.initTimeout();
-          globalThis.$onekeyAppWebembedApiWebviewInitFailed = true;
+          globalThis.$unionkeyAppWebembedApiWebviewInitFailed = true;
           reject(new Error('WebEmbedApi not ready after 30s.'));
         }, 30 * 1000);
         appEventBus.once(EAppEventBusNames.LoadWebEmbedWebViewComplete, () => {
           defaultLogger.app.webembed.loadWebEmbedWebViewComplete();
           clearTimeout(timerId);
-          globalThis.$onekeyAppWebembedApiWebviewInitFailed = false;
+          globalThis.$unionkeyAppWebembedApiWebviewInitFailed = false;
           resolve();
         });
 

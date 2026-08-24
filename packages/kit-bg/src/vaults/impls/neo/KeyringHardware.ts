@@ -4,21 +4,21 @@ import * as crypto from 'crypto';
 
 import { tx, u, wallet } from '@cityofzion/neon-core';
 
-import type { IEncodedTxNeoN3 } from '@onekeyhq/core/src/chains/neo/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxNeoN3 } from '@unionkeyhq/core/src/chains/neo/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   NotImplemented,
-  OneKeyHardwareError,
-} from '@onekeyhq/shared/src/errors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+  UnionKeyHardwareError,
+} from '@unionkeyhq/shared/src/errors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -83,7 +83,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         for (const addressInfo of addressesInfo) {
           const { address, path, publicKey } = addressInfo;
           if (!address) {
-            throw new OneKeyHardwareError('Address is empty');
+            throw new UnionKeyHardwareError('Address is empty');
           }
           const item: ICoreApiGetAddressItem = {
             address,

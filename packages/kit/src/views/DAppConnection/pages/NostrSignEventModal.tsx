@@ -9,15 +9,15 @@ import {
   SizableText,
   TextArea,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   EEventKind,
   ENostrSignType,
   i18nSupportEventKinds,
-} from '@onekeyhq/core/src/chains/nostr/types';
-import type { INostrEvent } from '@onekeyhq/core/src/chains/nostr/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/core/src/chains/nostr/types';
+import type { INostrEvent } from '@unionkeyhq/core/src/chains/nostr/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useDappApproveAction from '../../../hooks/useDappApproveAction';

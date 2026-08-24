@@ -2,14 +2,14 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import { Alert, Dialog } from '@onekeyhq/components';
-import type { IAlertType } from '@onekeyhq/components/src/actions/Alert';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
+import { Alert, Dialog } from '@unionkeyhq/components';
+import type { IAlertType } from '@unionkeyhq/components/src/actions/Alert';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EHostSecurityLevel,
   type IHostSecurity,
-} from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/shared/types/discovery';
 
 import { DAppRiskyAlertDetail } from './DAppRiskyAlertDetail';
 

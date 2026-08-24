@@ -1,6 +1,6 @@
-import { compressPublicKey } from '@onekeyhq/core/src/secret';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { compressPublicKey } from '@unionkeyhq/core/src/secret';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import coreTestsUtils from '../../../@tests/coreTestsUtils';
 import coreTestsFixtures from '../../../@tests/fixtures/coreTestsFixtures';

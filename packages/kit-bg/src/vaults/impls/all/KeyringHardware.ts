@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -13,7 +13,7 @@ import type {
 } from '../../types';
 
 export class KeyringHardware extends KeyringHardwareBase {
-  override coreApi = coreChainApi.onekeyall.hd;
+  override coreApi = coreChainApi.unionkeyall.hd;
 
   override prepareAccounts(
     params: IPrepareHardwareAccountsParams,

@@ -1,26 +1,26 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { IModalReceiveParamList } from '@onekeyhq/shared/src/routes';
-import { EModalReceiveRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import type { IModalReceiveParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalReceiveRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 
 const ReceiveToken = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Receive/pages/ReceiveToken'),
+  () => import('@unionkeyhq/kit/src/views/Receive/pages/ReceiveToken'),
 );
 const CreateInvoice = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Receive/pages/CreateInvoice'),
+  () => import('@unionkeyhq/kit/src/views/Receive/pages/CreateInvoice'),
 );
 const ReceiveInvoice = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Receive/pages/ReceiveInvoice'),
+  () => import('@unionkeyhq/kit/src/views/Receive/pages/ReceiveInvoice'),
 );
 
 const TokenSelector = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AssetSelector/pages/TokenSelector'),
+  () => import('@unionkeyhq/kit/src/views/AssetSelector/pages/TokenSelector'),
 );
 
 const DeriveTypesAddress = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 export const ModalReceiveStack: IModalFlowNavigatorConfig<

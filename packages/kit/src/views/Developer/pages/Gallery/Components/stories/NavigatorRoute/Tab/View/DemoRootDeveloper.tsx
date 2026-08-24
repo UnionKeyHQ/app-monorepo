@@ -1,4 +1,4 @@
-import { Button, Input, Stack } from '@onekeyhq/components';
+import { Button, Input, Stack } from '@unionkeyhq/components';
 
 import { Layout } from '../../../utils/Layout';
 import { NavigationFocusTools } from '../../../utils/NavigationTools';

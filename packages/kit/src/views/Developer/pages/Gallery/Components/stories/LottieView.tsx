@@ -8,7 +8,7 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 
@@ -34,7 +34,7 @@ const LottieDemo = () => {
             height="$24"
             autoPlay={autoPlay}
             loop={loop}
-            source={require('@onekeyhq/kit/assets/animations/lottie_send_success_feedback.json')}
+            source={require('@unionkeyhq/kit/assets/animations/lottie_send_success_feedback.json')}
           />
         ) : null}
       </XStack>

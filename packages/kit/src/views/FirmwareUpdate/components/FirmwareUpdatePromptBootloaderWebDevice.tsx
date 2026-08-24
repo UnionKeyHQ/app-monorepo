@@ -2,12 +2,12 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromptWebDeviceAccess } from '@onekeyhq/kit/src/hooks/usePromptWebDeviceAccess';
-import type { IFirmwareUpdateStepInfo } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useFirmwareUpdateStepInfoAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Button, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromptWebDeviceAccess } from '@unionkeyhq/kit/src/hooks/usePromptWebDeviceAccess';
+import type { IFirmwareUpdateStepInfo } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { useFirmwareUpdateStepInfoAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export function FirmwareUpdatePromptBootloaderWebDevice({
   previousStepInfo,

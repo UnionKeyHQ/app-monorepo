@@ -1,7 +1,7 @@
-import type { IAddressItem } from '@onekeyhq/kit/src/views/AddressBook/type';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { IMPL_EVM, SEPERATOR } from '@onekeyhq/shared/src/engine/engineConsts';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+import type { IAddressItem } from '@unionkeyhq/kit/src/views/AddressBook/type';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { IMPL_EVM, SEPERATOR } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 
 import { V4MigrationManagerBase } from './V4MigrationManagerBase';
 

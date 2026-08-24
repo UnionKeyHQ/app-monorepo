@@ -4,10 +4,10 @@ import {
 } from '@sentry/react-native';
 import wordLists from 'bip39/src/wordlists/english.json';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
-import { EOneKeyErrorClassNames } from '../../errors/types/errorTypes';
+import { EUnionKeyErrorClassNames } from '../../errors/types/errorTypes';
 
 import type { BrowserOptions, Stacktrace } from '@sentry/browser';
 // dirty check for common private key formats
@@ -55,20 +55,20 @@ const checkAndRedactMnemonicWords = (words: string[]) => {
 const FILTERED_ERROR_TYPES = new Set([
   'AxiosError',
   'HTTPClientError',
-  EOneKeyErrorClassNames.OneKeyError,
-  EOneKeyErrorClassNames.OneKeyPlainTextError,
-  EOneKeyErrorClassNames.OneKeyHardwareError,
-  EOneKeyErrorClassNames.OneKeyAppError,
-  EOneKeyErrorClassNames.OneKeyServerApiError,
-  EOneKeyErrorClassNames.OneKeyErrorNotImplemented,
-  EOneKeyErrorClassNames.OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
-  EOneKeyErrorClassNames.OneKeyErrorAirGapAccountNotFound,
-  EOneKeyErrorClassNames.OneKeyErrorScanQrCodeCancel,
-  EOneKeyErrorClassNames.VaultKeyringNotDefinedError,
-  EOneKeyErrorClassNames.PasswordPromptDialogCancel,
-  EOneKeyErrorClassNames.PrimeLoginDialogCancelError,
-  EOneKeyErrorClassNames.FirmwareUpdateExit,
-  EOneKeyErrorClassNames.FirmwareUpdateTasksClear,
+  EUnionKeyErrorClassNames.UnionKeyError,
+  EUnionKeyErrorClassNames.UnionKeyPlainTextError,
+  EUnionKeyErrorClassNames.UnionKeyHardwareError,
+  EUnionKeyErrorClassNames.UnionKeyAppError,
+  EUnionKeyErrorClassNames.UnionKeyServerApiError,
+  EUnionKeyErrorClassNames.UnionKeyErrorNotImplemented,
+  EUnionKeyErrorClassNames.UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
+  EUnionKeyErrorClassNames.UnionKeyErrorAirGapAccountNotFound,
+  EUnionKeyErrorClassNames.UnionKeyErrorScanQrCodeCancel,
+  EUnionKeyErrorClassNames.VaultKeyringNotDefinedError,
+  EUnionKeyErrorClassNames.PasswordPromptDialogCancel,
+  EUnionKeyErrorClassNames.PrimeLoginDialogCancelError,
+  EUnionKeyErrorClassNames.FirmwareUpdateExit,
+  EUnionKeyErrorClassNames.FirmwareUpdateTasksClear,
 ]);
 
 const isFilterErrorAndSkipSentry = (error?: {

@@ -1,7 +1,7 @@
 import { isEqual, isEqualWith } from 'lodash';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
 
 import type { Psbt } from 'bitcoinjs-lib';
 

@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 
-import { SecureQRCodeDialogCancel } from '@onekeyhq/shared/src/errors';
-import { toPlainErrorObject } from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+import { SecureQRCodeDialogCancel } from '@unionkeyhq/shared/src/errors';
+import { toPlainErrorObject } from '@unionkeyhq/shared/src/errors/utils/errorUtils';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { EQRCodeHandlerNames } from '@onekeyhq/shared/types/qrCode';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { EQRCodeHandlerNames } from '@unionkeyhq/shared/types/qrCode';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { SecureQRToast } from '../../../components/SecureQRToast';

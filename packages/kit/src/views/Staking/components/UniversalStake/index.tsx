@@ -7,7 +7,7 @@ import { useIntl } from 'react-intl';
 import { Keyboard, StyleSheet } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { IDialogInstance } from '@onekeyhq/components';
+import type { IDialogInstance } from '@unionkeyhq/components';
 import {
   Accordion,
   Alert,
@@ -22,25 +22,25 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { FormatHyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { FormatHyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
 import {
   PercentageStageOnKeyboard,
   calcPercentBalance,
-} from '@onekeyhq/kit/src/components/PercentageStageOnKeyboard';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
-import { useEarnActions } from '@onekeyhq/kit/src/states/jotai/contexts/earn';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
-import type { IFeeUTXO } from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/kit/src/components/PercentageStageOnKeyboard';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { useSignatureConfirm } from '@unionkeyhq/kit/src/hooks/useSignatureConfirm';
+import { useEarnActions } from '@unionkeyhq/kit/src/states/jotai/contexts/earn';
+import { validateAmountInput } from '@unionkeyhq/kit/src/utils/validateAmountInput';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { IApproveInfo } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import { EEarnProviderEnum } from '@unionkeyhq/shared/types/earn';
+import type { IFeeUTXO } from '@unionkeyhq/shared/types/fee';
 import type {
   IApproveConfirmFnParams,
   IEarnEstimateFeeResp,
@@ -48,12 +48,12 @@ import type {
   IEarnTokenInfo,
   IProtocolInfo,
   IStakeTransactionConfirmation,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 import {
   EApproveType,
   ECheckAmountActionType,
-} from '@onekeyhq/shared/types/staking';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/staking';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import { useEarnPermitApprove } from '../../hooks/useEarnPermitApprove';
 import { useFalconEventEndedDialog } from '../../hooks/useFalconEventEndedDialog';

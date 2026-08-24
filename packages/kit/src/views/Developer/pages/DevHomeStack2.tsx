@@ -1,7 +1,7 @@
-import { Button, Page, YStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import type { ITabDeveloperParamList } from '@onekeyhq/shared/src/routes';
-import { ETabDeveloperRoutes } from '@onekeyhq/shared/src/routes';
+import { Button, Page, YStack } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import type { ITabDeveloperParamList } from '@unionkeyhq/shared/src/routes';
+import { ETabDeveloperRoutes } from '@unionkeyhq/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 

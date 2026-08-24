@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import type { PropsWithChildren } from 'react';
 
-import { ProviderJotaiContextSendConfirm } from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm/atoms';
-import { jotaiContextStore } from '@onekeyhq/kit/src/states/jotai/utils/jotaiContextStore';
-import { JotaiContextStoreMirrorTracker } from '@onekeyhq/kit/src/states/jotai/utils/JotaiContextStoreMirrorTracker';
+import { ProviderJotaiContextSendConfirm } from '@unionkeyhq/kit/src/states/jotai/contexts/sendConfirm/atoms';
+import { jotaiContextStore } from '@unionkeyhq/kit/src/states/jotai/utils/jotaiContextStore';
+import { JotaiContextStoreMirrorTracker } from '@unionkeyhq/kit/src/states/jotai/utils/JotaiContextStoreMirrorTracker';
 
 export const SendConfirmProviderMirrorBase = memo(
   (

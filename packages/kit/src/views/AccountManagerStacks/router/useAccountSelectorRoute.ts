@@ -3,7 +3,7 @@ import { useRoute } from '@react-navigation/core';
 import type {
   EAccountManagerStacksRoutes,
   IAccountManagerStacksParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import type { RouteProp } from '@react-navigation/core';
 

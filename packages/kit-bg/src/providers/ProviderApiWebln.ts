@@ -5,21 +5,21 @@ import BigNumber from 'bignumber.js';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EDAppConnectionModal,
   EModalRoutes,
   EModalSignatureConfirmRoutes,
-} from '@onekeyhq/shared/src/routes';
-import type { ILNURLDetails } from '@onekeyhq/shared/types/lightning';
+} from '@unionkeyhq/shared/src/routes';
+import type { ILNURLDetails } from '@unionkeyhq/shared/types/lightning';
 import type {
   IRequestInvoiceArgs,
   IRequestInvoiceResponse,
   ISignMessageResponse,
   IVerifyMessageArgs,
-} from '@onekeyhq/shared/types/lightning/webln';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/types/lightning/webln';
+import { EMessageTypesCommon } from '@unionkeyhq/shared/types/message';
 
 import { findLnurl } from '../vaults/impls/lightning/sdkLightning/lnurl';
 

@@ -1,28 +1,28 @@
 import { Semaphore } from 'async-mutex';
 import { isString } from 'lodash';
 
-import { ensureSensitiveTextEncoded } from '@onekeyhq/core/src/secret';
+import { ensureSensitiveTextEncoded } from '@unionkeyhq/core/src/secret';
 import {
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { PrimeLoginDialogCancelError } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { PrimeLoginDialogCancelError } from '@unionkeyhq/shared/src/errors';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IApiClientResponse } from '@onekeyhq/shared/types/endpoint';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale/enum/translations';
+import stringUtils from '@unionkeyhq/shared/src/utils/stringUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IApiClientResponse } from '@unionkeyhq/shared/types/endpoint';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IPrimeDeviceInfo,
   IPrimeServerUserInfo,
   IPrimeSubscriptionInfo,
   IPrimeUserInfo,
-} from '@onekeyhq/shared/types/prime/primeTypes';
+} from '@unionkeyhq/shared/types/prime/primeTypes';
 
 import {
   primeLoginDialogAtom,
@@ -42,7 +42,7 @@ class ServicePrime extends ServiceBase {
   }
 
   async getPrimeClient() {
-    return this.getOneKeyIdClient(EServiceEndpointEnum.Prime);
+    return this.getUnionKeyIdClient(EServiceEndpointEnum.Prime);
   }
 
   loginMutex = new Semaphore(1);
@@ -69,7 +69,7 @@ class ServicePrime extends ServiceBase {
           {},
           {
             headers: {
-              'X-Onekey-Request-Token': `${accessToken}`,
+              'X-UnionKey-Request-Token': `${accessToken}`,
             },
           },
         );
@@ -124,7 +124,7 @@ class ServicePrime extends ServiceBase {
       {},
       {
         headers: {
-          'X-Onekey-Request-Token': `${accessToken}`,
+          'X-UnionKey-Request-Token': `${accessToken}`,
         },
       },
     );
@@ -143,7 +143,7 @@ class ServicePrime extends ServiceBase {
       '/prime/v1/user/devices',
       {
         headers: {
-          'X-Onekey-Request-Token': `${accessToken}`,
+          'X-UnionKey-Request-Token': `${accessToken}`,
         },
       },
     );
@@ -660,7 +660,7 @@ class ServicePrime extends ServiceBase {
 
   @backgroundMethod()
   async sendEmailOTP(scene: 'UpdateReabteWithdrawAddress') {
-    const client = await this.getOneKeyIdClient(EServiceEndpointEnum.Prime);
+    const client = await this.getUnionKeyIdClient(EServiceEndpointEnum.Prime);
     return client.post('/prime/v1/general/emailOTP', {
       scene,
     });

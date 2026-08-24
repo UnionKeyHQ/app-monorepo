@@ -7,7 +7,7 @@ index 3bf4695..c2f99e5 100644
  
          if (!publicPath || publicPath.indexOf('://') < 0) {
 -          url += window.location.protocol + '//' + window.location.host;
-+          url += typeof window !=='undefined' ? window.location.protocol + '//' + window.location.host : 'https://app.onekey.so';
++          url += typeof window !=='undefined' ? window.location.protocol + '//' + window.location.host : 'https://unionkey.io';
          }
  
          if (publicPath) {

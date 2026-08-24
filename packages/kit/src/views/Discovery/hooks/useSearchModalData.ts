@@ -2,15 +2,15 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   GOOGLE_LOGO_URL,
   SEARCH_ITEM_ID,
-} from '@onekeyhq/shared/src/consts/discovery';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IFuseResultMatch } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/shared/src/consts/discovery';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IFuseResultMatch } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import type { IDApp } from '@unionkeyhq/shared/types/discovery';
 
 export interface ILocalDataType {
   bookmarkData: Array<{

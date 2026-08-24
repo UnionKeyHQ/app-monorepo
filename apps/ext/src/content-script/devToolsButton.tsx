@@ -1,6 +1,6 @@
-const BTN_ID = 'onekey-inpage-debug-dev-tools-button';
+const BTN_ID = 'unionkey-inpage-debug-dev-tools-button';
 const BTN_TEXT = 'RELOAD';
-const IFRAME_ID = 'onekey-inpage-debug-dev-tools-iframe';
+const IFRAME_ID = 'unionkey-inpage-debug-dev-tools-iframe';
 const IFRAME_URL = chrome.runtime.getURL('ui-content-script-iframe.html');
 
 // iframe is a HACK for background service-worker updating.
@@ -29,7 +29,7 @@ function injectDevToolsButton() {
 
   const devToolsButton = document.createElement('button');
   devToolsButton.title =
-    'Reload OneKey extension and this site, make injected.js updated.';
+    'Reload UnionKey extension and this site, make injected.js updated.';
   devToolsButton.draggable = true;
   devToolsButton.innerHTML = BTN_TEXT;
   devToolsButton.id = BTN_ID;
@@ -69,7 +69,7 @@ function injectDevToolsButton() {
     try {
       console.log('chrome.runtime', chrome.runtime);
       console.log('========================================');
-      console.log('>>>>>>>> OneKey Extension reloading in 3s...');
+      console.log('>>>>>>>> UnionKey Extension reloading in 3s...');
       console.log(`>>>>>>>> ${IFRAME_URL}`);
       console.log('========================================');
 

@@ -1,9 +1,9 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import type {
   IUnionKeyAssistAgentGrant,
   IUnionKeyAssistExecutionReceipt,
   IUnionKeyAssistTask,
-} from '@onekeyhq/shared/types/unionkey/trade';
+} from '@unionkeyhq/shared/types/unionkey/trade';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

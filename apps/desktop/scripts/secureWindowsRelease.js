@@ -5,7 +5,6 @@ const { spawnSync } = require('child_process');
 
 const desktopDir = path.resolve(__dirname, '..');
 const outputDir = path.join(desktopDir, 'build-electron');
-const legacyGpgFingerprint = 'A1D318260AE144F3E8C87177B3317C56108AD7F1';
 const currentGpgFingerprint = '8270C42EE15D14065D58E0B763AF8304B14D3F7F';
 
 function fail(message) {
@@ -32,7 +31,7 @@ const releaseArchitectures = (
   .map((arch) => arch.trim())
   .filter(Boolean);
 if (!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(releaseVersion || '')) {
-  fail('set RELEASE_VERSION to the new semantic version, for example 5.0.1');
+  fail('set RELEASE_VERSION to the new semantic version, for example 6.0.1');
 }
 if (!process.env.WINDOWS_PUBLISHER_NAME?.trim()) {
   fail('WINDOWS_PUBLISHER_NAME must match the production certificate');
@@ -85,14 +84,8 @@ const signingFingerprint = gpgKeyInfo.stdout
 if (!signingFingerprint) {
   fail('GPG_SIGNING_KEY could not be resolved');
 }
-const isCleanBreakRelease = process.env.CLEAN_BREAK_MAJOR_RELEASE === '1';
-if (isCleanBreakRelease && signingFingerprint !== currentGpgFingerprint) {
-  fail(`version 6 clean-break releases must use GPG key ${currentGpgFingerprint}`);
-}
-if (!isCleanBreakRelease && signingFingerprint !== legacyGpgFingerprint) {
-  fail(
-    `existing clients require legacy GPG key ${legacyGpgFingerprint}; set CLEAN_BREAK_MAJOR_RELEASE=1 only for a manual-install trust reset`,
-  );
+if (signingFingerprint !== currentGpgFingerprint) {
+  fail(`UnionKey releases must use GPG key ${currentGpgFingerprint}`);
 }
 
 const releaseEnv = {

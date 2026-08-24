@@ -9,15 +9,15 @@ import {
   Popover,
   Stack,
   Switch,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworksSupportFilterScamHistory } from '@onekeyhq/shared/src/config/presetNetworks';
+} from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { getNetworksSupportFilterScamHistory } from '@unionkeyhq/shared/src/config/presetNetworks';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { ListItem } from '../../../components/ListItem';
 import { useManageToken } from '../../../hooks/useManageToken';

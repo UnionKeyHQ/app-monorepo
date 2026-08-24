@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import { SizableText, XStack } from '@onekeyhq/components';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
+import { SizableText, XStack } from '@unionkeyhq/components';
+import { numberFormat } from '@unionkeyhq/shared/src/utils/numberUtils';
+import type { ISwapToken } from '@unionkeyhq/shared/types/swap/types';
 
 interface ISwapRateInfoItemProps {
   rate: string;

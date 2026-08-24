@@ -1,4 +1,4 @@
-import { SegmentControl, SizableText, Stack } from '@onekeyhq/components';
+import { SegmentControl, SizableText, Stack } from '@unionkeyhq/components';
 
 type ITimeRangeOption = {
   label: string;

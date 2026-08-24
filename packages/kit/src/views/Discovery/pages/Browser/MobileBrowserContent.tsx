@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { Freeze } from 'react-freeze';
 
-import { Stack } from '@onekeyhq/components';
-import type { IWebViewOnScrollEvent } from '@onekeyhq/kit/src/components/WebView/types';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Stack } from '@unionkeyhq/components';
+import type { IWebViewOnScrollEvent } from '@unionkeyhq/kit/src/components/WebView/types';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import WebContent from '../../components/WebContent/WebContent';
 import { useActiveTabId, useWebTabDataById } from '../../hooks/useWebTabs';

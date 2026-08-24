@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import { type IIconProps, type IKeyOfIcons } from '@onekeyhq/components';
-import { useFirmwareVerifyDialog } from '@onekeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/FirmwareVerifyDialog';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { type IIconProps, type IKeyOfIcons } from '@unionkeyhq/components';
+import { useFirmwareVerifyDialog } from '@unionkeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/FirmwareVerifyDialog';
+import type { IDBDevice } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { WalletOptionItem } from './WalletOptionItem';
 

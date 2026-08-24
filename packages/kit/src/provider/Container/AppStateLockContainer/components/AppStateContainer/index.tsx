@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { createPortal } from 'react-dom';
 
-import { Portal } from '@onekeyhq/components';
+import { Portal } from '@unionkeyhq/components';
 
 export function AppStateContainer({ children }: PropsWithChildren) {
   return createPortal(

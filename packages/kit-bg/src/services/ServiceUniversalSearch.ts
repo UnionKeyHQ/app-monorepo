@@ -1,38 +1,38 @@
 import { sortBy } from 'lodash';
 
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
+import { EAddressEncodings } from '@unionkeyhq/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
   GOOGLE_LOGO_URL,
   SEARCH_ITEM_ID,
-} from '@onekeyhq/shared/src/consts/discovery';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { buildFuse } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { promiseAllSettledEnhanced } from '@onekeyhq/shared/src/utils/promiseUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/consts/discovery';
+import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { buildFuse } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { promiseAllSettledEnhanced } from '@unionkeyhq/shared/src/utils/promiseUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import {
   getFilteredTokenBySearchKey,
   getMergedDeriveTokenData,
   sortTokensByFiatValue,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/utils/tokenUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 import type {
   IUniversalSearchAddress,
   IUniversalSearchBatchResult,
   IUniversalSearchDappResult,
   IUniversalSearchResultItem,
   IUniversalSearchSingleResult,
-} from '@onekeyhq/shared/types/search';
-import { EUniversalSearchType } from '@onekeyhq/shared/types/search';
-import type { IAccountToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/search';
+import { EUniversalSearchType } from '@unionkeyhq/shared/types/search';
+import type { IAccountToken, ITokenFiat } from '@unionkeyhq/shared/types/token';
 
 import { getVaultSettings } from '../vaults/settings';
 

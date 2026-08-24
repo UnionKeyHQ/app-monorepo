@@ -3,15 +3,15 @@ import { useMemo } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   formatDate,
   formatDistanceStrict,
-} from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/shared/src/utils/dateUtils';
 import {
   EParseTxDateTimeFormat,
   type IDisplayComponentDateTime,
-} from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkeyhq/shared/types/signatureConfirm';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

@@ -7,12 +7,12 @@ import {
   WALLET_CONNECT_LOGGER_LEVEL,
   WALLET_CONNECT_RELAY_URL,
   WALLET_CONNECT_V2_PROJECT_ID,
-} from '@onekeyhq/shared/src/walletConnect/constant';
+} from '@unionkeyhq/shared/src/walletConnect/constant';
 import type {
   IWalletConnectKeyValueStorage,
   IWalletConnectSignClient,
   IWalletConnectWeb3Wallet,
-} from '@onekeyhq/shared/src/walletConnect/types';
+} from '@unionkeyhq/shared/src/walletConnect/types';
 
 import walletConnectStorage from './walletConnectStorage';
 

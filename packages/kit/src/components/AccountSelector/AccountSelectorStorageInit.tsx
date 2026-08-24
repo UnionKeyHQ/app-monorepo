@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
 
 import {
   useAccountSelectorActions,

@@ -1,6 +1,6 @@
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { waitAsync } from '@onekeyhq/shared/src/utils/promiseUtils';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { waitAsync } from '@unionkeyhq/shared/src/utils/promiseUtils';
 
 export const exportLogs = async (filename: string) => {
   const logName = `${filename}.txt`;

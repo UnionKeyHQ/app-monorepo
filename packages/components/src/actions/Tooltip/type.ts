@@ -1,4 +1,4 @@
-import type { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import type { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import type { TooltipProps as TMTooltipProps } from 'tamagui';
 

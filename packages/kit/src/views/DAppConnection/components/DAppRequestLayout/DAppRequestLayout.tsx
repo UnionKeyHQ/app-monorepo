@@ -1,14 +1,14 @@
 import { type PropsWithChildren, useCallback } from 'react';
 
-import type { IAlertProps } from '@onekeyhq/components';
+import type { IAlertProps } from '@unionkeyhq/components';
 import {
   SizableText,
   Skeleton,
   Stack,
   YStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import type { IHostSecurity } from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/components';
+import type { IHostSecurity } from '@unionkeyhq/shared/types/discovery';
 
 import { DAppRiskyAlert } from './DAppRiskyAlert';
 import { DAppSignMessageAlert } from './DAppSignMessagAlert';

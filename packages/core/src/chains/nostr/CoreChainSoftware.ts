@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { decryptAsync } from '../../secret';

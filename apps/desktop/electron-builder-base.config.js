@@ -8,7 +8,7 @@ const baseElectronBuilderConfig = {
     'main': 'dist/app.js',
     'version': process.env.VERSION,
   },
-  'appId': 'so.UnionKey.wallet.desktop',
+  'appId': 'so.unionkey.wallet.desktop',
   'productName': 'UnionKey',
   'copyright': 'Copyright © ${author}',
   'asar': true,
@@ -45,7 +45,7 @@ const baseElectronBuilderConfig = {
   'publish': {
     'provider': 'github',
     'repo': 'app-monorepo',
-    'owner': 'OneKeyHQ',
+    'owner': 'UnionKeyHQ',
   },
   'afterSign': getPath('scripts/afterSign.js'),
   'afterPack': getPath('scripts/afterPack.js'),

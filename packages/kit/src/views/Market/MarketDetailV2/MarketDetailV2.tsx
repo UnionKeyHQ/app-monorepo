@@ -1,13 +1,13 @@
-import type { IPageScreenProps } from '@onekeyhq/components';
-import { Page, Stack, XStack } from '@onekeyhq/components';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IPageScreenProps } from '@unionkeyhq/components';
+import { Page, Stack, XStack } from '@unionkeyhq/components';
+import { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   type ETabMarketV2Routes,
   ETabRoutes,
   type ITabMarketV2ParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IMarketTokenDetail as IMarketTokenDetailV2 } from '@onekeyhq/shared/types/marketV2';
+} from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IMarketTokenDetail as IMarketTokenDetailV2 } from '@unionkeyhq/shared/types/marketV2';
 
 import {
   AccountSelectorProviderMirror,

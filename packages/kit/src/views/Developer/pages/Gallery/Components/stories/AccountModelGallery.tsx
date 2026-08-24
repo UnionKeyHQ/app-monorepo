@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 import * as crypto from 'crypto';
 
-import { Button, Divider, Input, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Button, Divider, Input, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   AccountSelectorTriggerLegacy,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { Layout } from './utils/Layout';
 

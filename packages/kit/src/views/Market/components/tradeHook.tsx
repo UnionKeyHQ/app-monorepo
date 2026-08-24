@@ -2,32 +2,32 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { Dialog, SizableText } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { Dialog, SizableText } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EModalStakingRoutes,
   type IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes/modal';
+import { EModalSwapRoutes } from '@unionkeyhq/shared/src/routes/swap';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import {
   isSupportStaking,
   normalizeToEarnSymbol,
-} from '@onekeyhq/shared/types/earn/earnProvider.constants';
-import type { IFiatCryptoType } from '@onekeyhq/shared/types/fiatCrypto';
+} from '@unionkeyhq/shared/types/earn/earnProvider.constants';
+import type { IFiatCryptoType } from '@unionkeyhq/shared/types/fiatCrypto';
 import type {
   IMarketDetailPlatformNetwork,
   IMarketTokenDetail,
-} from '@onekeyhq/shared/types/market';
-import { getNetworkIdBySymbol } from '@onekeyhq/shared/types/market/marketProvider.constants';
+} from '@unionkeyhq/shared/types/market';
+import { getNetworkIdBySymbol } from '@unionkeyhq/shared/types/market/marketProvider.constants';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

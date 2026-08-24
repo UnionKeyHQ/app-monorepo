@@ -11,14 +11,14 @@ import {
   Stack,
   TextArea,
   YStack,
-} from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { ITabDeveloperParamList } from '@onekeyhq/shared/src/routes';
-import { ETabDeveloperRoutes } from '@onekeyhq/shared/src/routes';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { ITabDeveloperParamList } from '@unionkeyhq/shared/src/routes';
+import { ETabDeveloperRoutes } from '@unionkeyhq/shared/src/routes';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkeyhq/shared/src/storage/syncStorage';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
@@ -171,11 +171,11 @@ const TabDeveloper = () => {
                     if (platformEnv.isRuntimeBrowser) {
                       if (status === '0') {
                         localStorage.removeItem(
-                          '$$OnekeyReactRenderTrackerEnabled',
+                          '$$UnionKeyReactRenderTrackerEnabled',
                         );
                       } else {
                         localStorage.setItem(
-                          '$$OnekeyReactRenderTrackerEnabled',
+                          '$$UnionKeyReactRenderTrackerEnabled',
                           'true',
                         );
                       }

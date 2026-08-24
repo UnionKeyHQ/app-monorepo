@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import WebView from '@onekeyhq/kit/src/components/WebView';
-import type { PageFaviconUpdatedEvent } from '@onekeyhq/kit/src/components/WebView/DesktopWebView';
-import type { IElectronWebView } from '@onekeyhq/kit/src/components/WebView/types';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import WebView from '@unionkeyhq/kit/src/components/WebView';
+import type { PageFaviconUpdatedEvent } from '@unionkeyhq/kit/src/components/WebView/DesktopWebView';
+import type { IElectronWebView } from '@unionkeyhq/kit/src/components/WebView/types';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import {
   useBrowserAction,
   useBrowserTabActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { EValidateUrlEnum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/discovery';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import { EValidateUrlEnum } from '@unionkeyhq/shared/types/dappConnection';
 
 import { webviewRefs } from '../../utils/explorerUtils';
 import BlockAccessView from '../BlockAccessView';

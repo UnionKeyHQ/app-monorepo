@@ -3,14 +3,14 @@ import { useCallback, useMemo, useState } from 'react';
 import { isNumber } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Page, Toast } from '@onekeyhq/components';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { Page, Toast } from '@unionkeyhq/components';
+import type { IAccountSelectorSelectedAccount } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EDAppModalPageStatus,
   type IConnectionAccountInfo,
-} from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/types/dappConnection';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useDappApproveAction from '../../../hooks/useDappApproveAction';

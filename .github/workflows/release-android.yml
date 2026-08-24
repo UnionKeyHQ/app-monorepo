@@ -41,7 +41,7 @@ jobs:
           node-version: 20.x
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkeyhq'
 
       - name: Setup keys secret
         run: |
@@ -56,12 +56,10 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Modify build.gradle
-        uses: OneKeyHQ/actions/build-gradle-edit@main
-        with:
-          versionCode: ${{ env.BUILD_NUMBER }}
-          versionName: ${{ env.BUILD_APP_VERSION }}
-          packageName: 'so.unionkey.app.wallet'
-          android_dir: ./apps/mobile
+        shell: bash
+        run: |
+          perl -0pi -e 's/versionCode\s+\d+/versionCode $ENV{BUILD_NUMBER}/' apps/mobile/android/app/build.gradle
+          perl -0pi -e 's/versionName\s+"[^"]+"/versionName "$ENV{BUILD_APP_VERSION}"/' apps/mobile/android/app/build.gradle
 
       - name: Write .env.version
         run: |

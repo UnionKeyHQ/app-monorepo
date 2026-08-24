@@ -31,10 +31,10 @@ import {
   IMPL_TON,
   IMPL_TRON,
   IMPL_XRP,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyPlainTextError } from '@onekeyhq/shared/src/errors';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { UnionKeyPlainTextError } from '@unionkeyhq/shared/src/errors';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import type {
   IAccountDeriveInfo,
@@ -66,7 +66,7 @@ function validateVaultSettings({
 
 export async function getVaultSettings({ networkId }: { networkId: string }) {
   if (!networkId) {
-    throw new OneKeyPlainTextError('networkId is not defined');
+    throw new UnionKeyPlainTextError('networkId is not defined');
   }
   const impl = networkUtils.getNetworkImpl({ networkId });
   const settingsLoader: Record<

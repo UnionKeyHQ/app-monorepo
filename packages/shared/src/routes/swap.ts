@@ -1,5 +1,5 @@
-import type { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
 import type {
   EProtocolOfExchange,
   ESwapDirectionType,
@@ -9,7 +9,7 @@ import type {
   ISwapNetwork,
   ISwapToken,
   ISwapTxHistory,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 export enum EModalSwapRoutes {
   SwapMainLand = 'SwapMainLand',

@@ -7,7 +7,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const notifier = require('node-notifier');
 const { exit } = require('process');
 const { createResolveExtensions } = require('./utils');
-const { isDev, PUBLIC_URL, NODE_ENV, ONEKEY_PROXY } = require('./constant');
+const { isDev, PUBLIC_URL, NODE_ENV, UNIONKEY_PROXY } = require('./constant');
 
 const IS_EAS_BUILD = !!process.env.EAS_BUILD;
 
@@ -15,7 +15,7 @@ const unionKeyFeModulesPath = path.join(
   __dirname,
   '../../node_modules/@unionkeyfe',
 );
-const oneKeyFeModulesPath = path.join(
+const upstreamModulesPath = path.join(
   __dirname,
   '../../node_modules/@onekeyfe',
 );
@@ -36,8 +36,8 @@ const createUnionKeyFeAliases = () => {
     .filter((entry) => entry.isDirectory() || entry.isSymbolicLink())
     .reduce((aliases, entry) => {
       const modulePath = resolveUnionKeyFeModulePath(entry.name);
-      const oneKeyFeModulePath = path.join(oneKeyFeModulesPath, entry.name);
-      if (!fs.existsSync(oneKeyFeModulePath)) {
+      const upstreamModulePath = path.join(upstreamModulesPath, entry.name);
+      if (!fs.existsSync(upstreamModulePath)) {
         aliases[`@onekeyfe/${entry.name}`] = modulePath;
         aliases[`@onekeyfe/${entry.name}/package.json`] = path.join(
           __dirname,
@@ -59,7 +59,7 @@ class BuildDoneNotifyPlugin {
       if (IS_EAS_BUILD) {
         exit(0);
       } else {
-        const msg = `OneKey Build at ${new Date().toLocaleTimeString()}, completed in ${
+        const msg = `UnionKey Build at ${new Date().toLocaleTimeString()}, completed in ${
           (compilation.endTime - compilation.startTime) / 1000
         }s`;
         setTimeout(() => {
@@ -86,20 +86,16 @@ const baseResolve = ({ platform, configName, basePath }) => ({
   symlinks: true,
   alias: {
     ...createUnionKeyFeAliases(),
-    '@onekeyhq/components': path.join(basePath, '../../packages/components'),
-    '@onekeyhq/core': path.join(basePath, '../../packages/core'),
-    '@onekeyhq/kit': path.join(basePath, '../../packages/kit'),
-    '@onekeyhq/kit-bg': path.join(basePath, '../../packages/kit-bg'),
-    '@onekeyhq/qr-wallet-sdk': path.join(
+    '@unionkeyhq/components': path.join(basePath, '../../packages/components'),
+    '@unionkeyhq/core': path.join(basePath, '../../packages/core'),
+    '@unionkeyhq/kit': path.join(basePath, '../../packages/kit'),
+    '@unionkeyhq/kit-bg': path.join(basePath, '../../packages/kit-bg'),
+    '@unionkeyhq/qr-wallet-sdk': path.join(
       basePath,
       '../../packages/qr-wallet-sdk',
     ),
-    '@onekeyhq/shared': path.join(basePath, '../../packages/shared'),
-    '@onekeyhq/desktop': path.join(basePath, '../../apps/desktop'),
-    '@unionkeyfe/onekey-cross-webview': path.join(
-      basePath,
-      '../../packages/unionkeyfe/onekey-cross-webview/dist',
-    ),
+    '@unionkeyhq/shared': path.join(basePath, '../../packages/shared'),
+    '@unionkeyhq/desktop': path.join(basePath, '../../apps/desktop'),
     'react-native-webview/lib/WebViewShared': path.join(
       basePath,
       '../../packages/kit/src/components/WebView/WebViewShared.web.ts',
@@ -160,7 +156,7 @@ const basePlugins = [
     __DEV__: isDev,
     process: {
       env: {
-        ONEKEY_PROXY: JSON.stringify(ONEKEY_PROXY),
+        UNIONKEY_PROXY: JSON.stringify(UNIONKEY_PROXY),
         NODE_ENV: JSON.stringify(NODE_ENV),
         TAMAGUI_TARGET: JSON.stringify('web'),
       },

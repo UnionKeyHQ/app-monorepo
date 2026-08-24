@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { SizableText, YStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function DeviceQrInfoSection() {
   const intl = useIntl();

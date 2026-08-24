@@ -6,25 +6,25 @@ import {
   SizableText,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import { getImportFromToken } from '@onekeyhq/shared/types/earn/earnProvider.constants';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes/modal';
+import { EModalSwapRoutes } from '@unionkeyhq/shared/src/routes/swap';
+import { getImportFromToken } from '@unionkeyhq/shared/types/earn/earnProvider.constants';
 import type {
   IEarnTokenInfo,
   IStakeEarnDetail,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { EarnText } from '../../components/ProtocolDetails/EarnText';
 

@@ -11,30 +11,30 @@ import { ethers } from 'ethers';
 import { cloneDeep } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { EPageType, Toast, usePageType } from '@onekeyhq/components';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
+import { EPageType, Toast, usePageType } from '@unionkeyhq/components';
+import type { IEncodedTx } from '@unionkeyhq/core/src/types';
 import {
   useInAppNotificationAtom,
   useSettingsAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import type {
   IApproveInfo,
   ITransferInfo,
   IWrappedInfo,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   numberFormat,
   toBigIntHex,
-} from '@onekeyhq/shared/src/utils/numberUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkeyhq/shared/src/utils/numberUtils';
+import { equalTokenNoCaseSensitive } from '@unionkeyhq/shared/src/utils/tokenUtils';
 import {
   EMessageTypesEth,
   ESigningScheme,
-} from '@onekeyhq/shared/types/message';
-import { swapApproveResetValue } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/types/message';
+import { swapApproveResetValue } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import type {
   ESwapCancelLimitOrderSource,
   IFetchLimitOrderRes,
@@ -42,15 +42,15 @@ import type {
   IOneInchOrderStruct,
   ISwapToken,
   ISwapTxInfo,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import {
   EProtocolOfExchange,
   ESwapApproveTransactionStatus,
   ESwapDirectionType,
   ESwapQuoteKind,
   EWrappedType,
-} from '@onekeyhq/shared/types/swap/types';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/swap/types';
+import type { ISendTxOnSuccessData } from '@unionkeyhq/shared/types/tx';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useSignatureConfirm } from '../../../hooks/useSignatureConfirm';

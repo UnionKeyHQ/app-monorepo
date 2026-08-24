@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useAddressBookPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/addressBooks';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useAddressBookPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/addressBooks';
 import {
   EModalAddressBookRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { noopObject } from '@unionkeyhq/shared/src/utils/miscUtils';
 
 import type { IAddressItem } from '../type';
 

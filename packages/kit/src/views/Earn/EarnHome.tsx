@@ -9,7 +9,7 @@ import type {
   IKeyOfIcons,
   ISizableTextProps,
   IYStackProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Badge,
   Banner,
@@ -27,33 +27,33 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   EJotaiContextStoreNames,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { getPrimaryColor } from '@onekeyhq/shared/src/modules3rdParty/react-native-image-colors';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { getPrimaryColor } from '@unionkeyhq/shared/src/modules3rdParty/react-native-image-colors';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EModalRoutes,
   EModalStakingRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 import {
   openUrlExternal,
   openUrlInApp,
-} from '@onekeyhq/shared/src/utils/openUrlUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import type {
   IEarnAccount,
   IEarnAccountToken,
   IEarnRewardUnit,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { AccountSelectorProviderMirror } from '../../components/AccountSelector';
 import { ListItem } from '../../components/ListItem';
@@ -77,7 +77,7 @@ const BANNER_TITLE_OFFSET = {
 };
 
 const buildAprText = (apr: string, unit: IEarnRewardUnit) => `${apr} ${unit}`;
-const useAllNetworkId = () => useMemo(() => getNetworkIdsMap().onekeyall, []);
+const useAllNetworkId = () => useMemo(() => getNetworkIdsMap().unionkeyall, []);
 const getNumberColor = (
   value: string | number,
   defaultColor: ISizableTextProps['color'] = '$textSuccess',

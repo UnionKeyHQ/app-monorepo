@@ -3,23 +3,23 @@ import { memo, useCallback } from 'react';
 import { flatMap, map } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Alert } from '@onekeyhq/components';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
+import { Alert } from '@unionkeyhq/components';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
 import {
   useDecodedTxsAtom,
   usePreCheckTxStatusAtom,
   useSendFeeStatusAtom,
   useSendTxStatusAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import type { ITransferPayload } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import type { ITransferPayload } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { ESendFeeStatus } from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { ESendFeeStatus } from '@unionkeyhq/shared/types/fee';
 
 interface IProps {
   accountId: string;

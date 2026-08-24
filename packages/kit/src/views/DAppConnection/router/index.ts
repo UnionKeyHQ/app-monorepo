@@ -1,6 +1,6 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { IDAppConnectionModalParamList } from '@onekeyhq/shared/src/routes';
-import { EDAppConnectionModal } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import type { IDAppConnectionModalParamList } from '@unionkeyhq/shared/src/routes';
+import { EDAppConnectionModal } from '@unionkeyhq/shared/src/routes';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 
@@ -36,12 +36,12 @@ const NostrSignEventModal = LazyLoadPage(
 
 // Custom Network
 const SettingCustomNetworkModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/CustomNetwork'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/CustomNetwork'),
 );
 
 // Custom Token
 const AddCustomTokenModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AssetList/pages/AddCustomTokenModal'),
+  () => import('@unionkeyhq/kit/src/views/AssetList/pages/AddCustomTokenModal'),
 );
 
 export const DAppConnectionRouter: IModalFlowNavigatorConfig<

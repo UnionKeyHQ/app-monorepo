@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
 import {
   ActionList,
   Alert,
@@ -20,38 +20,38 @@ import {
   useClipboard,
   useMedia,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { ITokenListItemProps } from '@onekeyhq/kit/src/components/TokenListItem';
-import { TokenListItem } from '@onekeyhq/kit/src/components/TokenListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import type { ITokenListItemProps } from '@unionkeyhq/kit/src/components/TokenListItem';
+import { TokenListItem } from '@unionkeyhq/kit/src/components/TokenListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useDebounce } from '@unionkeyhq/kit/src/hooks/useDebounce';
+import { useAccountSelectorActions } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   useSwapActions,
   useSwapNetworksIncludeAllNetworkAtom,
   useSwapSelectFromTokenAtom,
   useSwapSelectToTokenAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IFuseResult } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IModalSwapParamList } from '@onekeyhq/shared/src/routes/swap';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import type { IFuseResult } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IModalSwapParamList } from '@unionkeyhq/shared/src/routes/swap';
+import { EModalSwapRoutes } from '@unionkeyhq/shared/src/routes/swap';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import { equalTokenNoCaseSensitive } from '@unionkeyhq/shared/src/utils/tokenUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import {
   swapNetworksCommonCount,
   swapNetworksCommonCountMD,
   swapPopularTokens,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import {
   ESwapDirectionType,
   ESwapSelectTokenSource,
@@ -59,7 +59,7 @@ import {
   ETokenRiskLevel,
   type ISwapNetwork,
   type ISwapToken,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import useConfigurableChainSelector from '../../../ChainSelector/hooks/useChainSelector';
 import NetworkToggleGroup from '../../components/SwapNetworkToggleGroup';

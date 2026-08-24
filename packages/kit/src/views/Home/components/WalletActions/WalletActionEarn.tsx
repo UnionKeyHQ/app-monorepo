@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EModalRoutes, EModalStakingRoutes } from '@onekeyhq/shared/src/routes';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EModalRoutes, EModalStakingRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { RawActions } from './RawActions';
 

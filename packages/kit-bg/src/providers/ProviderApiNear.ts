@@ -6,8 +6,8 @@ import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import { getPublicKey } from '../vaults/impls/near/utils';
 

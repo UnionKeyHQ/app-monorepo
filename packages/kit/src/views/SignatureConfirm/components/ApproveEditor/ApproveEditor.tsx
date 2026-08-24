@@ -13,17 +13,17 @@ import {
   Skeleton,
   Switch,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useSignatureConfirmActions,
   useTokenApproveInfoAtom,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import type { IApproveInfo } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
 
 import { SignatureConfirmProviderMirror } from '../SignatureConfirmProvider/SignatureConfirmProviderMirror';
 

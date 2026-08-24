@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-import type { IPageProps } from '@onekeyhq/components';
-import { Page } from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { v4migrationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IPageProps } from '@unionkeyhq/components';
+import { Page } from '@unionkeyhq/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { v4migrationAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import {
   EModalExitPreventMode,

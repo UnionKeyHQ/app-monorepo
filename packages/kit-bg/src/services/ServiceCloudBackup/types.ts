@@ -1,15 +1,15 @@
-// import type { ISimpleDbEntityMarktData } from '@onekeyhq/engine/src/dbs/simple/entity/SimpleDbEntityMarket';
-// import type { ISimpleDbEntityUtxoData } from '@onekeyhq/engine/src/dbs/simple/entity/SimpleDbEntityUtxoAccounts';
-import type { IBrowserBookmark } from '@onekeyhq/kit/src/views/Discovery/types';
+// import type { ISimpleDbEntityMarktData } from '@unionkeyhq/engine/src/dbs/simple/entity/SimpleDbEntityMarket';
+// import type { ISimpleDbEntityUtxoData } from '@unionkeyhq/engine/src/dbs/simple/entity/SimpleDbEntityUtxoAccounts';
+import type { IBrowserBookmark } from '@unionkeyhq/kit/src/views/Discovery/types';
 import type {
   IDBAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
 // export type ISimpleDBBackUp = {
 //   utxoAccounts: Pick<ISimpleDbEntityUtxoData, 'utxos'>;
 //   market: Pick<ISimpleDbEntityMarktData, 'favorites'>;
 // };
-import type { IAvatarInfo } from '@onekeyhq/shared/src/utils/emojiUtils';
+import type { IAvatarInfo } from '@unionkeyhq/shared/src/utils/emojiUtils';
 
 type IBackupBasicData = {
   contacts: Record<

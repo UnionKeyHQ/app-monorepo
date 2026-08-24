@@ -10,7 +10,7 @@ import type {
   IUnionKeyAssistRiskPolicy,
   IUnionKeyAssistTrigger,
   IUnionKeyTradeInstrument,
-} from '@onekeyhq/shared/types/unionkey/trade';
+} from '@unionkeyhq/shared/types/unionkey/trade';
 
 const DEFAULT_BASE_SYMBOL = 'ETH';
 const DEFAULT_QUOTE_SYMBOL = 'USDC';

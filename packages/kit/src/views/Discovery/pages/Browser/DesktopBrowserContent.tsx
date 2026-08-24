@@ -10,12 +10,12 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import WebContent from '../../components/WebContent/WebContent';
 import { useWebTabDataById } from '../../hooks/useWebTabs';

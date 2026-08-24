@@ -1,9 +1,9 @@
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IDecodedTxExtraAlgo } from '@onekeyhq/core/src/chains/algo/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { type IDecodedTx } from '@onekeyhq/shared/types/tx';
+import type { IDecodedTxExtraAlgo } from '@unionkeyhq/core/src/chains/algo/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { type IDecodedTx } from '@unionkeyhq/shared/types/tx';
 
 import { InfoItem } from './TxDetailsInfoItem';
 

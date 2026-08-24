@@ -5,7 +5,7 @@ import { forwardRef, useCallback, useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { ICheckedState } from '@onekeyhq/components';
+import type { ICheckedState } from '@unionkeyhq/components';
 import {
   Dialog as BaseDialog,
   Button,
@@ -24,23 +24,23 @@ import {
   useDialogInstance,
   useForm,
   useInTabDialog,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   IDialogContainerProps,
   IDialogInstance,
-} from '@onekeyhq/components/src/composite/Dialog/type';
-import UpdateNotificationDark from '@onekeyhq/kit/assets/animations/update-notification-dark.json';
-import UpdateNotificationLight from '@onekeyhq/kit/assets/animations/update-notification-light.json';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useThemeVariant } from '@onekeyhq/kit/src/hooks/useThemeVariant';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components/src/composite/Dialog/type';
+import UpdateNotificationDark from '@unionkeyhq/kit/assets/animations/update-notification-dark.json';
+import UpdateNotificationLight from '@unionkeyhq/kit/assets/animations/update-notification-light.json';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useThemeVariant } from '@unionkeyhq/kit/src/hooks/useThemeVariant';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EGalleryRoutes,
   EModalRoutes,
   ETestModalPages,
-} from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/routes';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { Layout } from './utils/Layout';
 

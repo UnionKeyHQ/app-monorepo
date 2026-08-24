@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { IFuseResultMatch } from '@onekeyhq/shared/src/modules3rdParty/fuse';
+import type { IFuseResultMatch } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
 
 import { SizableText } from '../../primitives';
 

@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import type { IAddressInfo } from '@unionkeyhq/shared/types/address';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 

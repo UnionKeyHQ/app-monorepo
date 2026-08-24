@@ -4,21 +4,21 @@ import { createRoot } from 'react-dom/client';
 import { useIntl } from 'react-intl';
 import 'setimmediate';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useWebAuthActions } from '@onekeyhq/kit/src/components/BiologyAuthComponent/hooks/useWebAuthActions';
-import { GlobalJotaiReady } from '@onekeyhq/kit/src/components/GlobalJotaiReady';
-import { ThemeProvider } from '@onekeyhq/kit/src/provider/ThemeProvider';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useWebAuthActions } from '@unionkeyhq/kit/src/components/BiologyAuthComponent/hooks/useWebAuthActions';
+import { GlobalJotaiReady } from '@unionkeyhq/kit/src/components/GlobalJotaiReady';
+import { ThemeProvider } from '@unionkeyhq/kit/src/provider/ThemeProvider';
 import {
   usePasswordAtom,
   usePasswordPersistAtom,
   usePasswordPromptPromiseTriggerAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EPassKeyWindowFrom,
   EPassKeyWindowType,
-} from '@onekeyhq/shared/src/utils/extUtils';
-import { EPasswordVerifyStatus } from '@onekeyhq/shared/types/password';
+} from '@unionkeyhq/shared/src/utils/extUtils';
+import { EPasswordVerifyStatus } from '@unionkeyhq/shared/types/password';
 
 import { setupExtUIEventOnPassKeyPage } from '../background/extUI';
 

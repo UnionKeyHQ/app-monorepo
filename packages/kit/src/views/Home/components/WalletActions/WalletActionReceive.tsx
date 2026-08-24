@@ -1,16 +1,16 @@
 import { useCallback, useMemo } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useReceiveToken } from '@onekeyhq/kit/src/hooks/useReceiveToken';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useReceiveToken } from '@unionkeyhq/kit/src/hooks/useReceiveToken';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   useAllTokenListAtom,
   useAllTokenListMapAtom,
   useTokenListStateAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/tokenList';
+import { WALLET_TYPE_WATCHING } from '@unionkeyhq/shared/src/consts/dbConsts';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import { RawActions } from './RawActions';
 

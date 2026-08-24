@@ -1,6 +1,6 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { IModalAssetDetailsParamList } from '@onekeyhq/shared/src/routes/assetDetails';
-import { EModalAssetDetailRoutes } from '@onekeyhq/shared/src/routes/assetDetails';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import type { IModalAssetDetailsParamList } from '@unionkeyhq/shared/src/routes/assetDetails';
+import { EModalAssetDetailRoutes } from '@unionkeyhq/shared/src/routes/assetDetails';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 

@@ -1,93 +1,93 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
 import type {
   EModalAddressBookRoutes,
   IModalAddressBookParamList,
   IModalSettingParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
+import { EModalSettingRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { ModalAddressBookRouter } from '../../AddressBook/router';
 
 const SettingAccountDerivationModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/AccountDerivation'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/AccountDerivation'),
 );
 
 const SettingAppAutoLockModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/AppAutoLock'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/AppAutoLock'),
 );
 
 const SettingCurrencyModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/Currency'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/Currency'),
 );
 const SettingClearAppCacheModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/ClearAppCache'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/ClearAppCache'),
 );
 const SettingListModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/List'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/List'),
 );
 const SettingProtectionModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/Protection'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/Protection'),
 );
 const SettingSpendUTXOModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/SpendUTXO'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/SpendUTXO'),
 );
 const SettingCustomRPCModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/CustomRPC'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/CustomRPC'),
 );
 const SettingCustomNetworkModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/CustomNetwork'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/CustomNetwork'),
 );
 
 const SettingSignatureRecordModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/SignatureRecord'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/SignatureRecord'),
 );
 
 const FloatingIconModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/FloatingIcon'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/FloatingIcon'),
 );
 
 const FirmwareUpdateDevSettings = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/Setting/pages/FirmwareUpdateDevSettings'),
+    import('@unionkeyhq/kit/src/views/Setting/pages/FirmwareUpdateDevSettings'),
 );
 
 const V4MigrationDevSettings = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/V4MigrationDevSettings'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/V4MigrationDevSettings'),
 );
 
 const PageDevUnitTests = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Setting/pages/DevUnitTests/PageDevUnitTests'
+      '@unionkeyhq/kit/src/views/Setting/pages/DevUnitTests/PageDevUnitTests'
     ),
 );
 
 const ExportCustomNetworkConfig = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/Setting/pages/ExportCustomNetworkConfig'),
+    import('@unionkeyhq/kit/src/views/Setting/pages/ExportCustomNetworkConfig'),
 );
 
 const NotificationsSettings = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Setting/pages/Notifications/NotificationsSettings'
+      '@unionkeyhq/kit/src/views/Setting/pages/Notifications/NotificationsSettings'
     ),
 );
 
 const ManageAccountActivity = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Setting/pages/Notifications/ManageAccountActivity'
+      '@unionkeyhq/kit/src/views/Setting/pages/Notifications/ManageAccountActivity'
     ),
 );
 
 const AlignPrimaryAccountModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/AlignPrimaryAccount'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/AlignPrimaryAccount'),
 );
 
 const CustomTransactionModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/CustomTransaction'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/CustomTransaction'),
 );
 
 export const ModalSettingStack: IModalFlowNavigatorConfig<

@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import type { IRootStackNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ERootRoutes } from '@onekeyhq/shared/src/routes';
+import type { IRootStackNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import LazyLoad from '@unionkeyhq/shared/src/lazyLoad';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ERootRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { ModalNavigator } from './Modal/Navigator';
 import { fullModalRouter, modalRouter } from './Modal/router';
@@ -13,7 +13,7 @@ import { useTabRouterConfig } from './Tab/router';
 const buildPermissionRouter = () => {
   const PromptWebDeviceAccessPage = LazyLoad(
     () =>
-      import('@onekeyhq/kit/src/views/Permission/PromptWebDeviceAccessPage'),
+      import('@unionkeyhq/kit/src/views/Permission/PromptWebDeviceAccessPage'),
   );
   return [
     platformEnv.isExtension

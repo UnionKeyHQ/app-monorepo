@@ -1,4 +1,4 @@
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
 
 import type { UnsignedTransaction } from '@substrate/txwrapper-polkadot';
 

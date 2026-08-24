@@ -1,5 +1,5 @@
-import { encodeSensitiveTextAsync } from '@onekeyhq/core/src/secret';
-import secureStorageInstance from '@onekeyhq/shared/src/storage/instance/secureStorageInstance';
+import { encodeSensitiveTextAsync } from '@unionkeyhq/core/src/secret';
+import secureStorageInstance from '@unionkeyhq/shared/src/storage/instance/secureStorageInstance';
 
 import { biologyAuthUtils } from '../../services/ServicePassword/biologyAuthUtils';
 

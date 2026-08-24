@@ -1,17 +1,17 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import { noopObject } from '@unionkeyhq/shared/src/utils/miscUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IAddressValidateBaseStatus,
   IAddressValidation,
-} from '@onekeyhq/shared/types/address';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/types/address';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 
 import { vaultFactory } from '../vaults/factory';
 

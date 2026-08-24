@@ -3,17 +3,17 @@ import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
 import {
   Button,
   Icon,
   SizableText,
   XStack,
   usePopoverContext,
-} from '@onekeyhq/components';
-import { useFirmwareUpdatesDetectStatusPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import { useFirmwareUpdatesDetectStatusPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
@@ -50,7 +50,7 @@ export function FirmwareUpdateReminderAlert({
       flex={1}
       {...containerProps}
     >
-      <Icon size="$5" name="OnekeyDeviceCustom" color="$iconInfo" />
+      <Icon size="$5" name="UnionKeyDeviceCustom" color="$iconInfo" />
       <SizableText
         flex={1}
         size="$bodyMdMedium"

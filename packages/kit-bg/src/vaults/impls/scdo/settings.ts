@@ -4,8 +4,8 @@ import {
   COINTYPE_SCDO,
   IMPL_SCDO,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

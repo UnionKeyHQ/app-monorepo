@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IMarketTokenListItem } from '@onekeyhq/shared/types/marketV2';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IMarketTokenListItem } from '@unionkeyhq/shared/types/marketV2';
 
 import type { IRiskIndicatorType } from '../components/RiskIndicator';
 import type { IMarketToken } from '../MarketTokenData';

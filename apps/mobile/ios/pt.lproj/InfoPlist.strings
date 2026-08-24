@@ -1,14 +1,14 @@
 /* 
   InfoPlist.strings
-  OneKeyWallet
+  UnionKeyWallet
 
   Created by Leon on 2024/3/8.
   
 */
 
 "NFCReaderUsageDescription" = "Use o NFC para ler mensagens NDEF na aplicação.";
-"NSBluetoothAlwaysUsageDescription" = "Use o Bluetooth para conectar dispositivos de hardware OneKey.";
-"NSBluetoothPeripheralUsageDescription" = "Use o periférico Bluetooth para conectar dispositivos de hardware OneKey.";
+"NSBluetoothAlwaysUsageDescription" = "Use o Bluetooth para conectar dispositivos de hardware UnionKey.";
+"NSBluetoothPeripheralUsageDescription" = "Use o periférico Bluetooth para conectar dispositivos de hardware UnionKey.";
 "NSCameraUsageDescription" = "Use a câmara para ler o código QR.";
 "NSFaceIDUsageDescription" = "Use o Face ID para autenticar e desbloquear a sua carteira.";
 "NSMicrophoneUsageDescription" = "Use o microfone para gravar vídeos.";

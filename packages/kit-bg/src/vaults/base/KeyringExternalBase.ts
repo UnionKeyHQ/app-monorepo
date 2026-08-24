@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/require-await */
 
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
+import type { ISignedTxPro } from '@unionkeyhq/core/src/types';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
 
 import { EVaultKeyringTypes } from '../types';
 
@@ -39,7 +39,7 @@ export abstract class KeyringExternalBase extends KeyringBase {
   override prepareAccounts(
     params: IPrepareAccountsParams,
   ): Promise<IDBAccount[]> {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'prepareAccounts is not supported for external accounts, use serviceAccount directly',
     );
   }

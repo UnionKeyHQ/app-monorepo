@@ -2,12 +2,12 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance } from '@onekeyhq/components';
-import { Dialog, Icon, SizableText, XStack } from '@onekeyhq/components';
-import SlippageSettingDialog from '@onekeyhq/kit/src/components/SlippageSettingDialog';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { ISwapSlippageSegmentItem } from '@onekeyhq/shared/types/swap/types';
-import { ESwapSlippageSegmentKey } from '@onekeyhq/shared/types/swap/types';
+import type { IDialogInstance } from '@unionkeyhq/components';
+import { Dialog, Icon, SizableText, XStack } from '@unionkeyhq/components';
+import SlippageSettingDialog from '@unionkeyhq/kit/src/components/SlippageSettingDialog';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { ISwapSlippageSegmentItem } from '@unionkeyhq/shared/types/swap/types';
+import { ESwapSlippageSegmentKey } from '@unionkeyhq/shared/types/swap/types';
 
 import { InfoItemLabel } from '../InfoItemLabel/InfoItemLabel';
 

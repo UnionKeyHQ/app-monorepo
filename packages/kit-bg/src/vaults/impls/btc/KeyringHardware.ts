@@ -7,28 +7,28 @@ import {
   checkBtcAddressIsUsed,
   getBtcForkNetwork,
   isTaprootPath,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
+} from '@unionkeyhq/core/src/chains/btc/sdkBtc';
 import type {
   IBtcInput,
   IBtcOutput,
   IEncodedTxBtc,
-} from '@onekeyhq/core/src/chains/btc/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/btc/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { AddressNotSupportSignMethodError } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/core/src/types';
+import { AddressNotSupportSignMethodError } from '@unionkeyhq/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { CoreSDKLoader } from '@unionkeyhq/shared/src/hardware/instance';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 

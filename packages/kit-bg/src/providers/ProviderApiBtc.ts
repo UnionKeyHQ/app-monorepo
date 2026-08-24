@@ -5,27 +5,27 @@ import BigNumber from 'bignumber.js';
 import { Psbt } from 'bitcoinjs-lib';
 import { isEmpty, isNil } from 'lodash';
 
-import { getInputsToSignFromPsbt } from '@onekeyhq/core/src/chains/btc/sdkBtc';
+import { getInputsToSignFromPsbt } from '@unionkeyhq/core/src/chains/btc/sdkBtc';
 import {
   decodedPsbt as decodedPsbtFN,
   formatPsbtHex,
   toPsbtNetwork,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc/providerUtils';
+} from '@unionkeyhq/core/src/chains/btc/sdkBtc/providerUtils';
 import type {
   IBtcInput,
   IBtcOutput,
-} from '@onekeyhq/core/src/chains/btc/types';
-import type { IEncodedTx, ITxInputToSign } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/chains/btc/types';
+import type { IEncodedTx, ITxInputToSign } from '@unionkeyhq/core/src/types';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import {
   BtcDappUniSetChainTypes,
   EBtcDappUniSetChainTypeEnum,
@@ -37,8 +37,8 @@ import {
   type ISignPsbtsParams,
   type ISwitchNetworkParams,
   type IToSignInput,
-} from '@onekeyhq/shared/types/ProviderApis/ProviderApiBtc.type';
-import type { IPushTxParams } from '@onekeyhq/shared/types/ProviderApis/ProviderApiSui.type';
+} from '@unionkeyhq/shared/types/ProviderApis/ProviderApiBtc.type';
+import type { IPushTxParams } from '@unionkeyhq/shared/types/ProviderApis/ProviderApiSui.type';
 
 import { vaultFactory } from '../vaults/factory';
 

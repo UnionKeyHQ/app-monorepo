@@ -6,8 +6,8 @@ import type {
   ETranslations,
   ILocaleJSONSymbol,
   ILocaleSymbol,
-} from '@onekeyhq/shared/src/locale';
-import { LOCALES } from '@onekeyhq/shared/src/locale/localeJsonMap';
+} from '@unionkeyhq/shared/src/locale';
+import { LOCALES } from '@unionkeyhq/shared/src/locale/localeJsonMap';
 
 import * as store from './libs/store';
 
@@ -59,4 +59,4 @@ export const initLocale = async () => {
 };
 
 export const i18nText = (key: ETranslations) => globalMessages[key];
-export { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+export { ETranslations } from '@unionkeyhq/shared/src/locale/enum/translations';

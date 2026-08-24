@@ -3,7 +3,7 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 export interface ITxnsWalletInfo {
   /** Positive (green) count, e.g. incoming wallets */

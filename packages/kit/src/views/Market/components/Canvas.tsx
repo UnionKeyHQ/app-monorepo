@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { View } from '@onekeyhq/components';
+import { View } from '@unionkeyhq/components';
 
 export const Canvas = forwardRef(
   ({ height, width }: { height: number; width: number }, ref: any) => (

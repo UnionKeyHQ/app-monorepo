@@ -3,11 +3,11 @@ import type { Systeminformation } from 'systeminformation';
 
 export const cspRules = [
   // Default to only own resources
-  "default-src 'self' 'unsafe-inline' onekey.243096.com dev.243096.com onekey-asset.com",
+  "default-src 'self' 'unsafe-inline' unionkey.io *.unionkey.io api.unionkey.io",
   // Allow all API calls (Can't be restricted bc of custom backends)
   'connect-src *',
   // Allow images from trezor.io
-  "img-src 'self' onekey.243096.com devs.243096.com onekey.so *.onekey.so onekey-asset.com",
+  "img-src 'self' unionkey.io *.unionkey.io api.unionkey.io data:",
 ];
 
 export type IDesktopSystemInfo = {
@@ -112,7 +112,7 @@ export const ipcMessageKeys = {
   // DeepLink
   OPEN_DEEP_LINK_URL: 'deepLink/openUrl',
 
-  SET_ONEKEY_DESKTOP_GLOBALS: 'onekey/setDesktopGlobals',
+  SET_UNIONKEY_DESKTOP_GLOBALS: 'unionkey/setDesktopGlobals',
 
   // webview
   WEBVIEW_NEW_WINDOW: 'webview/newWindow',

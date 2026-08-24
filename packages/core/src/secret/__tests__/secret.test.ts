@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { Buffer } from 'buffer';
 
-import { DEFAULT_VERIFY_STRING } from '@onekeyhq/shared/src/consts/dbConsts';
+import { DEFAULT_VERIFY_STRING } from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   IncorrectPassword,
   InvalidMnemonic,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import {
   CKDPriv,
@@ -1525,7 +1525,7 @@ describe('Secret Module Tests', () => {
         password: testPassword,
       });
 
-      expect(decryptedString).toBe('OneKey');
+      expect(decryptedString).toBe('UnionKey');
     });
 
     it('should handle prefix option', async () => {
@@ -1549,14 +1549,14 @@ describe('Secret Module Tests', () => {
           verifyString: withPrefix,
           password: testPassword,
         }),
-      ).toBe('OneKey');
+      ).toBe('UnionKey');
 
       expect(
         await decryptVerifyString({
           verifyString: withoutPrefix,
           password: testPassword,
         }),
-      ).toBe('OneKey');
+      ).toBe('UnionKey');
     });
 
     it('should throw error for empty password', async () => {
@@ -1577,7 +1577,7 @@ describe('Secret Module Tests', () => {
   });
 
   describe('fixV4VerifyStringToV5', () => {
-    const defaultVerifyString = 'OneKey';
+    const defaultVerifyString = 'UnionKey';
 
     it('should not modify DEFAULT_VERIFY_STRING', () => {
       const result = fixV4VerifyStringToV5({

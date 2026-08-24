@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access */
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { waitForDataLoaded } from '@onekeyhq/shared/src/utils/promiseUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { waitForDataLoaded } from '@unionkeyhq/shared/src/utils/promiseUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { RemoteApiProxyBase } from '../apis/RemoteApiProxyBase';
 

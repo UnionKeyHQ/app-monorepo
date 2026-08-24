@@ -1,9 +1,9 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, Stack, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IAccountToken } from '@onekeyhq/shared/types/token';
+import { SizableText, Stack, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IAccountToken } from '@unionkeyhq/shared/types/token';
 
 type IProps = {
   filteredTokens: IAccountToken[];

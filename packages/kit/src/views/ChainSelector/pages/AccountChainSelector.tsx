@@ -1,25 +1,25 @@
 import { useCallback, useEffect } from 'react';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import type { IPageScreenProps } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useAccountSelectorActions,
   useActiveAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EChainSelectorPages,
   type IChainSelectorParamList,
-} from '@onekeyhq/shared/src/routes';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { EditableChainSelector } from '../components/EditableChainSelector';
 import { PureChainSelector } from '../components/PureChainSelector';

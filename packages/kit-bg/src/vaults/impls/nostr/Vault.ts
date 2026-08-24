@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { validateNpub } from '@onekeyhq/core/src/chains/nostr/sdkNostr';
+import { validateNpub } from '@unionkeyhq/core/src/chains/nostr/sdkNostr';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { InvalidAddress, NotImplemented } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/core/src/types';
+import { InvalidAddress, NotImplemented } from '@unionkeyhq/shared/src/errors';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -13,9 +13,9 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/address';
+import type { IDeviceSharedCallParams } from '@unionkeyhq/shared/types/device';
+import type { IDecodedTx } from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 

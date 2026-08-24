@@ -7,17 +7,17 @@ import {
   XStack,
   useMedia,
   useShare,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { OpenInAppButton } from '@onekeyhq/kit/src/components/OpenInAppButton';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { EOneKeyDeepLinkPath } from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { OpenInAppButton } from '@unionkeyhq/kit/src/components/OpenInAppButton';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { EUnionKeyDeepLinkPath } from '@unionkeyhq/shared/src/consts/deeplinkConsts';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import {
   buildUrlAccountFullUrl,
@@ -75,7 +75,7 @@ function OpenInAppButtonContainer() {
     () =>
       account && network
         ? uriUtils.buildDeepLinkUrl({
-            path: EOneKeyDeepLinkPath.url_account,
+            path: EUnionKeyDeepLinkPath.url_account,
             query: {
               networkCode: network.code,
               address: account.address,

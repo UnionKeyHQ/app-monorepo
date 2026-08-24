@@ -1,4 +1,4 @@
-import type { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+import type { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
 
 import { ELocalDBStoreNames } from '../../localDBStoreNames';
 import { RealmObjectBase } from '../base/RealmObjectBase';

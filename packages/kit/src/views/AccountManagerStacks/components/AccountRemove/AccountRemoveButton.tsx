@@ -1,8 +1,8 @@
-import { useAccountSelectorContextData } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { useAccountSelectorContextData } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import type {
   IDBAccount,
   IDBIndexedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
 
 import { WalletOptionItem } from '../../pages/AccountSelectorStack/WalletDetails/WalletOptions/WalletOptionItem';
 import { showAccountRemoveDialog } from '../AccountEdit/AccountRemoveButton';

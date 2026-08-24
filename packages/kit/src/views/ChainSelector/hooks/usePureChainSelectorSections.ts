@@ -2,8 +2,8 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { useFuseSearch } from './useFuseSearch';
 

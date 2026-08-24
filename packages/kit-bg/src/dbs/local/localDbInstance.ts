@@ -1,4 +1,4 @@
-import dbPerfMonitor from '@onekeyhq/shared/src/utils/debug/dbPerfMonitor';
+import dbPerfMonitor from '@unionkeyhq/shared/src/utils/debug/dbPerfMonitor';
 
 import { LocalDbIndexed } from './indexed/LocalDbIndexed';
 

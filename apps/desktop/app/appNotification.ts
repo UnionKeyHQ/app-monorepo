@@ -3,13 +3,13 @@ import logger from 'electron-log/main';
 import TaskBarBadgeWindows from 'electron-taskbar-badge';
 import { isNil } from 'lodash';
 
-import type { IDesktopSubModuleInitParams } from '@onekeyhq/shared/types/desktop';
+import type { IDesktopSubModuleInitParams } from '@unionkeyhq/shared/types/desktop';
 import type {
   INotificationPermissionDetail,
   INotificationSetBadgeParams,
   INotificationShowParams,
-} from '@onekeyhq/shared/types/notification';
-import { ENotificationPermission } from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
+import { ENotificationPermission } from '@unionkeyhq/shared/types/notification';
 
 import { ipcMessageKeys } from './config';
 

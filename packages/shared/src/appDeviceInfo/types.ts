@@ -1,4 +1,4 @@
-import type { IDesktopSystemInfo } from '@onekeyhq/desktop/app/config';
+import type { IDesktopSystemInfo } from '@unionkeyhq/desktop/app/config';
 
 import type { IExpoDeviceData } from './utils/expoDevice';
 

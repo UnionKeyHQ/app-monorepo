@@ -2,30 +2,30 @@
 import { PublicKey, VersionedTransaction } from '@solana/web3.js';
 import bs58 from 'bs58';
 
-import { OffchainMessage } from '@onekeyhq/core/src/chains/sol/sdkSol/OffchainMessage';
-import { parseToNativeTx } from '@onekeyhq/core/src/chains/sol/sdkSol/parse';
+import { OffchainMessage } from '@unionkeyhq/core/src/chains/sol/sdkSol/OffchainMessage';
+import { parseToNativeTx } from '@unionkeyhq/core/src/chains/sol/sdkSol/parse';
 import type {
   IEncodedTxSol,
   INativeTxSol,
-} from '@onekeyhq/core/src/chains/sol/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/sol/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 import {
   EMessageTypesCommon,
   EMessageTypesSolana,
-} from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/types/message';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -71,7 +71,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             coinName,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -104,7 +104,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //       `${index}`,
             //     )}`,
 
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnOneKey: showOnOneKeyFn(arrIndex),
             //     chainId: Number(chainId),
             //   })),
             // });

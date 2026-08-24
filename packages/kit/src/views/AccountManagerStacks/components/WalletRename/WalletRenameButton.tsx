@@ -1,16 +1,16 @@
 import { useIntl } from 'react-intl';
 
-import { Badge, Icon, SizableText, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { showRenameDialog } from '@onekeyhq/kit/src/components/RenameDialog';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { WALLET_TYPE_HD } from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Badge, Icon, SizableText, XStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { showRenameDialog } from '@unionkeyhq/kit/src/components/RenameDialog';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { WALLET_TYPE_HD } from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/types/changeHistory';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import { showLabelSetDialog as showHardwareLabelSetDialog } from './HardwareLabelSetDialog';
 

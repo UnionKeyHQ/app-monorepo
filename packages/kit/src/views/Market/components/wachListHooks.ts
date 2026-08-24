@@ -2,9 +2,9 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Toast } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketWatchListItem } from '@onekeyhq/shared/types/market';
+import { Toast } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IMarketWatchListItem } from '@unionkeyhq/shared/types/market';
 
 import { useWatchListActions } from '../../../states/jotai/contexts/market';
 

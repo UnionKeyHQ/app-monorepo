@@ -1,4 +1,4 @@
-import type { IAdaAmount } from '@onekeyhq/core/src/chains/ada/types';
+import type { IAdaAmount } from '@unionkeyhq/core/src/chains/ada/types';
 import type {
   EAddressEncodings,
   ECoreApiExportedSecretKeyType,
@@ -11,31 +11,31 @@ import type {
   ISignedTxPro,
   IUnsignedMessage,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import type { ICoinSelectAlgorithm } from '@onekeyhq/core/src/utils/coinSelectUtils';
-import type { IAirGapAccount } from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkeyhq/core/src/types';
+import type { ICoinSelectAlgorithm } from '@unionkeyhq/core/src/utils/coinSelectUtils';
+import type { IAirGapAccount } from '@unionkeyhq/qr-wallet-sdk';
 import type {
   ETranslations,
   ETranslationsMock,
-} from '@onekeyhq/shared/src/locale';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
-import type { IDBCustomRpc } from '@onekeyhq/shared/types/customRpc';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
-import type { IStakingConfig } from '@onekeyhq/shared/types/earn';
+} from '@unionkeyhq/shared/src/locale';
+import type { IDappSourceInfo } from '@unionkeyhq/shared/types';
+import type { IDBCustomRpc } from '@unionkeyhq/shared/types/customRpc';
+import type { IDeviceSharedCallParams } from '@unionkeyhq/shared/types/device';
+import type { IStakingConfig } from '@unionkeyhq/shared/types/earn';
 import type {
   IFeeInfoUnit,
   ISendSelectedFeeInfo,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/fee';
 import type {
   IAccountHistoryTx,
   IAllNetworkHistoryExtraItem,
   IOnChainHistoryTx,
   IOnChainHistoryTxNFT,
   IOnChainHistoryTxToken,
-} from '@onekeyhq/shared/types/history';
-import type { ILNURLPaymentInfo } from '@onekeyhq/shared/types/lightning';
-import type { ENFTType } from '@onekeyhq/shared/types/nft';
-import type { IStakingInfo } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/history';
+import type { ILNURLPaymentInfo } from '@unionkeyhq/shared/types/lightning';
+import type { ENFTType } from '@unionkeyhq/shared/types/nft';
+import type { IStakingInfo } from '@unionkeyhq/shared/types/staking';
 import type {
   ESwapTabSwitchType,
   EWrappedType,
@@ -43,9 +43,9 @@ import type {
   IOKXTransactionObject,
   ISwapTokenBase,
   ISwapTxInfo,
-} from '@onekeyhq/shared/types/swap/types';
-import type { IToken } from '@onekeyhq/shared/types/token';
-import type { IReplaceTxInfo } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/swap/types';
+import type { IToken } from '@unionkeyhq/shared/types/token';
+import type { IReplaceTxInfo } from '@unionkeyhq/shared/types/tx';
 
 import type {
   IAccountDeriveInfoMapBtc,

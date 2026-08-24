@@ -1,7 +1,7 @@
 import { isNil } from 'lodash';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { sidePanelState } from '@onekeyhq/shared/src/utils/sidePanelUtils';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { sidePanelState } from '@unionkeyhq/shared/src/utils/sidePanelUtils';
 
 import { EAppEventBusNames, appEventBus } from '../eventBus/appEventBus';
 

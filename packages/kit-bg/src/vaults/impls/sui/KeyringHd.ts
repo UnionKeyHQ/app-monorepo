@@ -1,6 +1,6 @@
-import type { IEncodedTxSui } from '@onekeyhq/core/src/chains/sui/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
+import type { IEncodedTxSui } from '@unionkeyhq/core/src/chains/sui/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkeyhq/core/src/types';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 

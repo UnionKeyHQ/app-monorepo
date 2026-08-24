@@ -1,4 +1,4 @@
-import { JsonRPCRequest } from '@onekeyhq/shared/src/request/JsonRPCRequest';
+import { JsonRPCRequest } from '@unionkeyhq/shared/src/request/JsonRPCRequest';
 
 export class NearRpcClient {
   readonly rpc: JsonRPCRequest;

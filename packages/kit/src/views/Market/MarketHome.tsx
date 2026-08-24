@@ -18,17 +18,17 @@ import {
   Stack,
   Tab,
   useMedia,
-} from '@onekeyhq/components';
-import type { IColorTokens } from '@onekeyhq/components';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
+} from '@unionkeyhq/components';
+import type { IColorTokens } from '@unionkeyhq/components';
+import { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/devSettings';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../components/AccountSelector';

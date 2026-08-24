@@ -21,13 +21,13 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IClaimableListItem } from '@onekeyhq/shared/types/staking';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/components';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IClaimableListItem } from '@unionkeyhq/shared/types/staking';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 type IOptionItem = IClaimableListItem;
 

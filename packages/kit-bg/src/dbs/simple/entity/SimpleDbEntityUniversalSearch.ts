@@ -1,5 +1,5 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IUniversalSearchAtomData } from '@onekeyhq/shared/types/search';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import type { IUniversalSearchAtomData } from '@unionkeyhq/shared/types/search';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

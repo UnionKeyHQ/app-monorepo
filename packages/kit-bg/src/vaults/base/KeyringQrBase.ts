@@ -3,20 +3,20 @@ import type {
   ICoreApiGetAddressItem,
   ISignedMessageItemPro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import type { AirGapUR } from '@onekeyhq/qr-wallet-sdk';
-import { OneKeyRequestDeviceQR } from '@onekeyhq/qr-wallet-sdk/src/OneKeyRequestDeviceQR';
+} from '@unionkeyhq/core/src/types';
+import type { AirGapUR } from '@unionkeyhq/qr-wallet-sdk';
+import { UnionKeyRequestDeviceQR } from '@unionkeyhq/qr-wallet-sdk/src/UnionKeyRequestDeviceQR';
 import {
   NotImplemented,
-  OneKeyErrorAirGapInvalidQrCode,
-} from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+  UnionKeyErrorAirGapInvalidQrCode,
+} from '@unionkeyhq/shared/src/errors';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 import type {
   INetworkAccount,
   IQrWalletAirGapAccount,
-} from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/types/account';
 
 import localDb from '../../dbs/local/localDb';
 import { UR_DEFAULT_ORIGIN } from '../../services/ServiceQrWallet/qrWalletConsts';
@@ -120,18 +120,18 @@ export abstract class KeyringQrBase extends KeyringBase {
     //   sig = await this.parseSignature(checkIsDefined(signatureUr));
     // } catch (error) {
     //   console.error(error);
-    //   throw new OneKeyErrorAirGapInvalidQrCode();
+    //   throw new UnionKeyErrorAirGapInvalidQrCode();
     // }
 
     // if (sig.requestId !== requestId) {
     //   console.error(new Error('Signature requestId not match'));
-    //   throw new OneKeyErrorAirGapInvalidQrCode();
+    //   throw new UnionKeyErrorAirGapInvalidQrCode();
     // }
 
     // // TODO do not check origin, device give origin is not reliable
     // // if (sig.origin !== device.name) {
     // //   console.error(new Error('Signature origin not match'));
-    // //   throw new OneKeyErrorAirGapInvalidQrCode();
+    // //   throw new UnionKeyErrorAirGapInvalidQrCode();
     // // }
 
     // return options.signedResultBuilder({ signature: sig });
@@ -250,7 +250,7 @@ export abstract class KeyringQrBase extends KeyringBase {
       index: indexes[0],
     });
 
-    const requestQR = new OneKeyRequestDeviceQR({
+    const requestQR = new UnionKeyRequestDeviceQR({
       requestId: generateUUID(),
       xfp: wallet.xfp || '',
       // deviceId: byDevice?.deviceId || '',
@@ -280,7 +280,7 @@ export abstract class KeyringQrBase extends KeyringBase {
       });
     // expect qr on device is address, but not UR
     if (raw && raw?.toLowerCase()?.startsWith('ur:')) {
-      throw new OneKeyErrorAirGapInvalidQrCode();
+      throw new UnionKeyErrorAirGapInvalidQrCode();
     }
     ret.push({
       address: raw || '',

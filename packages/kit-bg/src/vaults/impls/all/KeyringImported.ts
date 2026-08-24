@@ -1,6 +1,6 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
 
 import { KeyringImportedBase } from '../../base/KeyringImportedBase';
 
@@ -8,7 +8,7 @@ import type { IDBAccount } from '../../../dbs/local/types';
 import type { IGetPrivateKeysResult } from '../../types';
 
 export class KeyringImported extends KeyringImportedBase {
-  override coreApi = coreChainApi.onekeyall.imported;
+  override coreApi = coreChainApi.unionkeyall.imported;
 
   override async getPrivateKeys(): Promise<IGetPrivateKeysResult> {
     throw new NotImplemented();

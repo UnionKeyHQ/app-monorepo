@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
-import { Dialog, Stack } from '@onekeyhq/components';
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import { Dialog, Stack } from '@unionkeyhq/components';
+import type { IDialogShowProps } from '@unionkeyhq/components/src/composite/Dialog/type';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
 
 import {
   BATCH_CREATE_ACCONT_ALL_NETWORK_MAX_COUNT,
@@ -40,7 +40,7 @@ function DialogContentView({
       <BatchCreateAccountFormBase
         networkReadyOnly
         alwaysShowAdvancedSettings
-        // activeAccount?.network?.id ?? getNetworkIdsMap().onekeyall
+        // activeAccount?.network?.id ?? getNetworkIdsMap().unionkeyall
         defaultNetworkId={networkId}
         defaultDeriveType={defaultDeriveType}
         defaultFrom={defaultFrom}

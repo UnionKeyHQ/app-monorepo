@@ -3,11 +3,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { useForm } from '@onekeyhq/components';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IAccountToken, IToken } from '@onekeyhq/shared/types/token';
+import { useForm } from '@unionkeyhq/components';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import type { IAccountToken, IToken } from '@unionkeyhq/shared/types/token';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

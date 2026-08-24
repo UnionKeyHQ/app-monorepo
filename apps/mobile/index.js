@@ -2,9 +2,9 @@
 /* eslint-disable import/order */
 const {
   markJsBundleLoadedTime,
-} = require('@onekeyhq/shared/src/modules3rdParty/metrics');
+} = require('@unionkeyhq/shared/src/modules3rdParty/metrics');
 
-const { initSentry } = require('@onekeyhq/shared/src/modules3rdParty/sentry');
+const { initSentry } = require('@unionkeyhq/shared/src/modules3rdParty/sentry');
 
 markJsBundleLoadedTime();
 initSentry();

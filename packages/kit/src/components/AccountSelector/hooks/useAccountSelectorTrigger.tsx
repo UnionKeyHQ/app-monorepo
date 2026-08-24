@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import type { IAccountSelectorRouteParamsExtraConfig } from '@onekeyhq/shared/src/routes';
+import type { IAccountSelectorRouteParamsExtraConfig } from '@unionkeyhq/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import {

@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import type { IStackProps } from '@onekeyhq/components';
-import type { IDecodedTxExtraXrp } from '@onekeyhq/core/src/chains/xrp/types';
-import { useDecodedTxsAtom } from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import type { IStackProps } from '@unionkeyhq/components';
+import type { IDecodedTxExtraXrp } from '@unionkeyhq/core/src/chains/xrp/types';
+import { useDecodedTxsAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
 
 import { SignatureConfirmItem } from '../../SignatureConfirmItem';
 

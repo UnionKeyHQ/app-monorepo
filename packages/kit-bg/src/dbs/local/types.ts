@@ -1,7 +1,7 @@
 import type {
   IBip39RevealableSeed,
   IBip39RevealableSeedEncryptHex,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import type {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_HD,
@@ -9,31 +9,31 @@ import type {
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_QR,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import type { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
+import type { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
 import type {
   IndexedDBObjectStorePromised,
   IndexedDBPromised,
-} from '@onekeyhq/shared/src/IndexedDBPromised';
-import type { IAvatarInfo } from '@onekeyhq/shared/src/utils/emojiUtils';
+} from '@unionkeyhq/shared/src/IndexedDBPromised';
+import type { IAvatarInfo } from '@unionkeyhq/shared/src/utils/emojiUtils';
 import type {
   INetworkAccount,
   IQrWalletAirGapAccount,
   IQrWalletAirGapAccountsInfo,
-} from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/types/account';
 import type {
-  IOneKeyDeviceFeatures,
+  IUnionKeyDeviceFeatures,
   IQrWalletDevice,
-} from '@onekeyhq/shared/types/device';
-import type { IExternalConnectionInfo } from '@onekeyhq/shared/types/externalWallet.types';
-import type { ICloudSyncRawDataJson } from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkeyhq/shared/types/device';
+import type { IExternalConnectionInfo } from '@unionkeyhq/shared/types/externalWallet.types';
+import type { ICloudSyncRawDataJson } from '@unionkeyhq/shared/types/prime/primeCloudSyncTypes';
 import type {
   IBaseConnectedSite,
   IBaseCreatedAt,
   IBaseSignedMessage,
   IBaseSignedTransaction,
   IBaseSignedTransactionDataStringify,
-} from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkeyhq/shared/types/signatureRecord';
 
 import type { EDBAccountType, EDBCredentialType } from './consts';
 import type { ELocalDBStoreNames } from './localDBStoreNames';
@@ -171,7 +171,7 @@ export type IDBCreateHDWalletParams = {
 export type IDBCreateHwWalletParamsBase = {
   name?: string;
   device: SearchDevice;
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
   isFirmwareVerified?: boolean;
   skipDeviceCancel?: boolean;
   hideCheckingDeviceLoading?: boolean;
@@ -334,7 +334,7 @@ export type IDBDeviceSettings = {
 };
 export type IDBDevice = IDBBaseObjectWithName & {
   features: string; // TODO rename to featuresRaw
-  featuresInfo?: IOneKeyDeviceFeatures; // readonly field // TODO rename to features
+  featuresInfo?: IUnionKeyDeviceFeatures; // readonly field // TODO rename to features
   // TODO make index for better performance (getDeviceByQuery)
   connectId: string; // alias BLE mac or USB sn, never changed even if device reset
   name: string;

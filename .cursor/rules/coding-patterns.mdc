@@ -3,7 +3,7 @@ description:
 globs: 
 alwaysApply: true
 ---
-# OneKey Coding Patterns
+# UnionKey Coding Patterns
 
 ## Rules
 - Develop functions with a test-driven development mindset, ensuring each low-level function or method intended for reuse performs a single, atomic task, but avoid adding unnecessary abstration layers.

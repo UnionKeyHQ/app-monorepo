@@ -5,9 +5,9 @@ import {
   Stack,
   Stepper,
   YStack,
-} from '@onekeyhq/components';
-import type { IStepItemProps } from '@onekeyhq/components';
-import type { IStakeEarnDetail } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/components';
+import type { IStepItemProps } from '@unionkeyhq/components';
+import type { IStakeEarnDetail } from '@unionkeyhq/shared/types/staking';
 
 function CustomStepperItem({ title, description, ...props }: IStepItemProps) {
   return (

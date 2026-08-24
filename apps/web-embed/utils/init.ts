@@ -1,25 +1,25 @@
-import { checkIsOneKeyDomain } from '@onekeyhq/kit-bg/src/endpoints';
-import { analytics } from '@onekeyhq/shared/src/analytics';
-import { buildServiceEndpoint } from '@onekeyhq/shared/src/config/appConfig';
-import requestHelper from '@onekeyhq/shared/src/request/requestHelper';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import type { IWebEmbedOnekeyAppSettings } from '@onekeyhq/web-embed/utils/webEmbedAppSettings';
+import { checkIsUnionKeyDomain } from '@unionkeyhq/kit-bg/src/endpoints';
+import { analytics } from '@unionkeyhq/shared/src/analytics';
+import { buildServiceEndpoint } from '@unionkeyhq/shared/src/config/appConfig';
+import requestHelper from '@unionkeyhq/shared/src/request/requestHelper';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
+import type { IWebEmbedUnionKeyAppSettings } from '@unionkeyhq/web-embed/utils/webEmbedAppSettings';
 
-const getValueFromWebEmbedOneKeyAppSettings = <
-  T extends keyof IWebEmbedOnekeyAppSettings,
+const getValueFromWebEmbedUnionKeyAppSettings = <
+  T extends keyof IWebEmbedUnionKeyAppSettings,
 >(
   key: T,
-): IWebEmbedOnekeyAppSettings[keyof IWebEmbedOnekeyAppSettings] | string => {
-  const value = globalThis?.WEB_EMBED_ONEKEY_APP_SETTINGS?.[key];
+): IWebEmbedUnionKeyAppSettings[keyof IWebEmbedUnionKeyAppSettings] | string => {
+  const value = globalThis?.WEB_EMBED_UNIONKEY_APP_SETTINGS?.[key];
   return value ?? '';
 };
 
 const initRequestHelper = () => {
   requestHelper.overrideMethods({
-    checkIsOneKeyDomain,
+    checkIsUnionKeyDomain,
     getDevSettingsPersistAtom: async () => {
       return (
-        globalThis?.WEB_EMBED_ONEKEY_APP_SETTINGS?.$devSettings ?? {
+        globalThis?.WEB_EMBED_UNIONKEY_APP_SETTINGS?.$devSettings ?? {
           enabled: false,
         }
       );
@@ -31,14 +31,14 @@ const initRequestHelper = () => {
           id: 'usd',
           symbol: '$',
         },
-        instanceId: getValueFromWebEmbedOneKeyAppSettings('instanceId'),
-        theme: getValueFromWebEmbedOneKeyAppSettings('themeVariant') as
+        instanceId: getValueFromWebEmbedUnionKeyAppSettings('instanceId'),
+        theme: getValueFromWebEmbedUnionKeyAppSettings('themeVariant') as
           | 'light'
           | 'dark',
-        lastLocale: getValueFromWebEmbedOneKeyAppSettings('localeVariant'),
-        locale: getValueFromWebEmbedOneKeyAppSettings('localeVariant'),
-        version: getValueFromWebEmbedOneKeyAppSettings('appVersion'),
-        buildNumber: getValueFromWebEmbedOneKeyAppSettings('appBuildNumber'),
+        lastLocale: getValueFromWebEmbedUnionKeyAppSettings('localeVariant'),
+        locale: getValueFromWebEmbedUnionKeyAppSettings('localeVariant'),
+        version: getValueFromWebEmbedUnionKeyAppSettings('appVersion'),
+        buildNumber: getValueFromWebEmbedUnionKeyAppSettings('appBuildNumber'),
       } as any),
     getSettingsValuePersistAtom: async () =>
       Promise.resolve({
@@ -48,7 +48,7 @@ const initRequestHelper = () => {
 };
 
 export const initAnalytics = () => {
-  const instanceId = getValueFromWebEmbedOneKeyAppSettings(
+  const instanceId = getValueFromWebEmbedUnionKeyAppSettings(
     'instanceId',
   ) as string;
   analytics.init({
@@ -56,7 +56,7 @@ export const initAnalytics = () => {
     baseURL: buildServiceEndpoint({
       serviceName: EServiceEndpointEnum.Utility,
       env:
-        globalThis?.WEB_EMBED_ONEKEY_APP_SETTINGS?.enableTestEndpoint ?? false
+        globalThis?.WEB_EMBED_UNIONKEY_APP_SETTINGS?.enableTestEndpoint ?? false
           ? 'test'
           : 'prod',
     }),

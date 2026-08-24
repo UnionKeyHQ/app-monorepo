@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ESwitchSize, Switch } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src//background/instance/backgroundApiProxy';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ESwitchSize, Switch } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src//background/instance/backgroundApiProxy';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { WalletOptionItem } from './WalletOptionItem';
 

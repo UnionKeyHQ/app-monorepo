@@ -2,19 +2,19 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { ActionList, Dialog, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useResetApp } from '@onekeyhq/kit/src/views/Setting/hooks';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { ActionList, Dialog, Toast } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useResetApp } from '@unionkeyhq/kit/src/views/Setting/hooks';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalSettingParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalSettingRoutes } from '@unionkeyhq/shared/src/routes';
+import type { IModalSettingParamList } from '@unionkeyhq/shared/src/routes';
 
 export const CleanDataItem = () => {
   const intl = useIntl();

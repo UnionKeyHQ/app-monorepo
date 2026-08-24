@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CommonActions, StackActions } from '@react-navigation/native';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   EPageType,
   HeaderIconButton,
@@ -18,18 +18,18 @@ import {
   useMedia,
   usePageType,
   useShare,
-} from '@onekeyhq/components';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
-import { EOneKeyDeepLinkPath } from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import { EWatchlistFrom } from '@onekeyhq/shared/src/logger/scopes/market/scenes/token';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabMarketRoutes } from '@onekeyhq/shared/src/routes';
-import type { ITabMarketParamList } from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/components';
+import { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/devSettings';
+import { EUnionKeyDeepLinkPath } from '@unionkeyhq/shared/src/consts/deeplinkConsts';
+import { EWatchlistFrom } from '@unionkeyhq/shared/src/logger/scopes/market/scenes/token';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabMarketRoutes } from '@unionkeyhq/shared/src/routes';
+import type { ITabMarketParamList } from '@unionkeyhq/shared/src/routes';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IMarketTokenDetail } from '@unionkeyhq/shared/types/market';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../components/AccountSelector';
@@ -191,7 +191,7 @@ function MarketDetail({
   const buildDeepLinkUrl = useCallback(
     () =>
       uriUtils.buildDeepLinkUrl({
-        path: EOneKeyDeepLinkPath.market_detail,
+        path: EUnionKeyDeepLinkPath.market_detail,
         query: {
           coinGeckoId,
         },

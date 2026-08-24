@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Dialog, SizableText, Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Dialog, SizableText, Stack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 /*
 - 本地密码未设置（本地修改密码过程中异常退出）

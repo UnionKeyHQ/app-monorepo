@@ -1,8 +1,8 @@
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import type {
   ESwapTxHistoryStatus,
   ISwapTxHistory,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

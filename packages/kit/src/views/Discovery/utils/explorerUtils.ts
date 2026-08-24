@@ -1,6 +1,6 @@
-import type { IElement } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+import type { IElement } from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
 
 import type { IBrowserType } from '../types';
 import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
@@ -100,8 +100,8 @@ export function dismissWebviewKeyboard(id?: string) {
 export const injectToPauseWebsocket = `
 (function(){
   if (window.WebSocket) {
-    if (!window.$$onekeyWebSocketSend) {
-      window.$$onekeyWebSocketSend = window.WebSocket.prototype.send;
+    if (!window.$$unionkeyWebSocketSend) {
+      window.$$unionkeyWebSocketSend = window.WebSocket.prototype.send;
     }
     window.WebSocket.prototype.send = () => {};
   }
@@ -112,9 +112,9 @@ export const injectToResumeWebsocket = `
 (function(){
   if (
     window.WebSocket &&
-    window.$$onekeyWebSocketSend
+    window.$$unionkeyWebSocketSend
   ) {
-    window.WebSocket.prototype.send = window.$$onekeyWebSocketSend;
+    window.WebSocket.prototype.send = window.$$unionkeyWebSocketSend;
   }
 })()
 `;

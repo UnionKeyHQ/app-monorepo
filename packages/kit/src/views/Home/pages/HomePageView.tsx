@@ -3,17 +3,17 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { Animated, Easing, Keyboard } from 'react-native';
 
-import { Icon, Page, Stack, Tab, YStack } from '@onekeyhq/components';
-import { getEnabledNFTNetworkIds } from '@onekeyhq/shared/src/engine/engineConsts';
+import { Icon, Page, Stack, Tab, YStack } from '@unionkeyhq/components';
+import { getEnabledNFTNetworkIds } from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import type { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { EmptyAccount, EmptyWallet } from '../../../components/Empty';

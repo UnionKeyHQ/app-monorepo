@@ -8,13 +8,13 @@ import {
   SizableText,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import { AccountSelectorActiveAccountHome } from '@onekeyhq/kit/src/components/AccountSelector';
-import { NetworkSelectorTriggerHome } from '@onekeyhq/kit/src/components/AccountSelector/NetworkSelectorTrigger';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import { AccountSelectorActiveAccountHome } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { NetworkSelectorTriggerHome } from '@unionkeyhq/kit/src/components/AccountSelector/NetworkSelectorTrigger';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import { ESpotlightTour } from '@unionkeyhq/shared/src/spotlight';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import useListenTabFocusState from '../../hooks/useListenTabFocusState';
 import {

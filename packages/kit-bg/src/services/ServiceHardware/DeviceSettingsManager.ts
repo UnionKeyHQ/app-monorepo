@@ -1,13 +1,13 @@
 import { ResourceType, type Success } from '@onekeyfe/hd-transport';
 import { isNil } from 'lodash';
 
-import type { IHardwareHomeScreenName } from '@onekeyhq/kit/src/views/AccountManagerStacks/pages/HardwareHomeScreen/hardwareHomeScreenData';
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { FirmwareVersionTooLow } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import deviceHomeScreenUtils from '@onekeyhq/shared/src/utils/deviceHomeScreenUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
+import type { IHardwareHomeScreenName } from '@unionkeyhq/kit/src/views/AccountManagerStacks/pages/HardwareHomeScreen/hardwareHomeScreenData';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { FirmwareVersionTooLow } from '@unionkeyhq/shared/src/errors';
+import { convertDeviceResponse } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { CoreSDKLoader } from '@unionkeyhq/shared/src/hardware/instance';
+import deviceHomeScreenUtils from '@unionkeyhq/shared/src/utils/deviceHomeScreenUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
 
 import localDb from '../../dbs/local/localDb';
 

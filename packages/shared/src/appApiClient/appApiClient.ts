@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import { EServiceEndpointEnum } from '../../types/endpoint';
-import { OneKeyError } from '../errors';
+import { UnionKeyError } from '../errors';
 import platformEnv from '../platformEnv';
 import timerUtils from '../utils/timerUtils';
 
@@ -34,7 +34,7 @@ const rawDataClients: Record<EServiceEndpointEnum, AxiosInstance | null> = {
   [EServiceEndpointEnum.Rebate]: null,
 };
 
-const oneKeyIdAuthClients: Record<EServiceEndpointEnum, AxiosInstance | null> =
+const unionKeyIdAuthClients: Record<EServiceEndpointEnum, AxiosInstance | null> =
   {
     [EServiceEndpointEnum.Prime]: null,
     [EServiceEndpointEnum.Rebate]: null,
@@ -53,20 +53,20 @@ const getBasicClient = async ({
   autoHandleError = true,
 }: IEndpointInfo) => {
   if (!endpoint || !name) {
-    throw new OneKeyError('Invalid endpoint name.');
+    throw new UnionKeyError('Invalid endpoint name.');
   }
   if (!endpoint.startsWith('https://')) {
-    throw new OneKeyError('Invalid endpoint, https only');
+    throw new UnionKeyError('Invalid endpoint, https only');
   }
 
   const timeout = 30 * 1000;
   const options =
-    platformEnv.isDev && process.env.ONEKEY_PROXY
+    platformEnv.isDev && process.env.UNIONKEY_PROXY
       ? {
           baseURL: platformEnv.isExtension ? 'http://localhost:3180' : '/',
           timeout,
           headers: {
-            'X-OneKey-Dev-Proxy': endpoint,
+            'X-UnionKey-Dev-Proxy': endpoint,
           },
           autoHandleError,
         }
@@ -96,9 +96,9 @@ const getClient = memoizee(
   },
 );
 
-const getOneKeyIdAuthClient = memoizee(
+const getUnionKeyIdAuthClient = memoizee(
   async (params: IEndpointInfo) => {
-    const existingClient = oneKeyIdAuthClients[params.name];
+    const existingClient = unionKeyIdAuthClients[params.name];
     if (existingClient) {
       return existingClient;
     }
@@ -137,7 +137,7 @@ const appApiClient = {
   getBasicClient,
   getClient,
   getRawDataClient,
-  getOneKeyIdAuthClient,
+  getUnionKeyIdAuthClient,
 };
 export { appApiClient };
 

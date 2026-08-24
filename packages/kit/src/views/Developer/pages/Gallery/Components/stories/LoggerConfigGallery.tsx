@@ -12,11 +12,11 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { ILoggerConfig } from '@onekeyhq/shared/src/logger/loggerConfig';
-import { defaultLoggerConfig } from '@onekeyhq/shared/src/logger/loggerConfig';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/components';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import type { ILoggerConfig } from '@unionkeyhq/shared/src/logger/loggerConfig';
+import { defaultLoggerConfig } from '@unionkeyhq/shared/src/logger/loggerConfig';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 interface ILoggingEnabledConfig {
   [key: string]: boolean | ILoggingEnabledConfig;

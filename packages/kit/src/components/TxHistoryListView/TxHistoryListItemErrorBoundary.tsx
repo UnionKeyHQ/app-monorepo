@@ -1,4 +1,4 @@
-import { SizableText } from '@onekeyhq/components';
+import { SizableText } from '@unionkeyhq/components';
 
 import { ErrorBoundaryBase } from '../ErrorBoundary';
 

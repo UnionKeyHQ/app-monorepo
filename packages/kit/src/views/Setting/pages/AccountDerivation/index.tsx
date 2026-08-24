@@ -2,17 +2,17 @@ import { type FC, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, SizableText, Stack, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { DeriveTypeSelectorTriggerGlobalStandAlone } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import { Page, SizableText, Stack, XStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { DeriveTypeSelectorTriggerGlobalStandAlone } from '@unionkeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 type IAccountDerivationListItemProps = {
   title: string;

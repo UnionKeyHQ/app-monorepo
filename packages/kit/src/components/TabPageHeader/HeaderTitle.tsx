@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { UrlAccountNavHeader } from '../../views/Home/pages/urlAccount/UrlAccountNavHeader';
 import { AccountSelectorProviderMirror } from '../AccountSelector';

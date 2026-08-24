@@ -1,6 +1,6 @@
-import { ETxActionComponentType } from '@onekeyhq/shared/types';
-import type { IDecodedTxAction } from '@onekeyhq/shared/types/tx';
-import { EDecodedTxActionType } from '@onekeyhq/shared/types/tx';
+import { ETxActionComponentType } from '@unionkeyhq/shared/types';
+import type { IDecodedTxAction } from '@unionkeyhq/shared/types/tx';
+import { EDecodedTxActionType } from '@unionkeyhq/shared/types/tx';
 
 import {
   TxActionFunctionCallDetailView,

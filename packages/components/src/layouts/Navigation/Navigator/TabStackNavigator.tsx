@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useIntl } from 'react-intl';
 import { useMedia } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useOrientation, useThemeValue } from '../../../hooks';
 import { makeTabScreenOptions } from '../GlobalScreenOptions';

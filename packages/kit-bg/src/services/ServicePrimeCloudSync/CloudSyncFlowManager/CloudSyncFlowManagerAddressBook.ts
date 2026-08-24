@@ -1,12 +1,12 @@
 import { cloneDeep } from 'lodash';
 
-import type { IAddressItem } from '@onekeyhq/kit/src/views/AddressBook/type';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import type { IAddressItem } from '@unionkeyhq/kit/src/views/AddressBook/type';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 import type {
   ICloudSyncPayloadAddressBook,
   ICloudSyncTargetAddressBook,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkeyhq/shared/types/prime/primeCloudSyncTypes';
 
 import { CloudSyncFlowManagerBase } from './CloudSyncFlowManagerBase';
 

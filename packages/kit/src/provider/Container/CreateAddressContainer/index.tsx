@@ -2,16 +2,16 @@ import { useCallback, useEffect } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, Dialog, Toast } from '@onekeyhq/components';
-import type { IButtonProps } from '@onekeyhq/components';
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import { Button, Dialog, Toast } from '@unionkeyhq/components';
+import type { IButtonProps } from '@unionkeyhq/components';
+import type { IDBAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorCreateAddressButton } from '../../../components/AccountSelector/AccountSelectorCreateAddressButton';

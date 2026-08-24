@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Toast } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { useDownloadProgress } from '@onekeyhq/shared/src/modules3rdParty/auto-update';
+import { Toast } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { useDownloadProgress } from '@unionkeyhq/shared/src/modules3rdParty/auto-update';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 

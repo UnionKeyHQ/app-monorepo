@@ -3,11 +3,11 @@ import { isNil } from 'lodash';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { generateLocalIndexedIdFunc } from '@onekeyhq/shared/src/utils/miscUtils';
-import sortUtils from '@onekeyhq/shared/src/utils/sortUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { generateLocalIndexedIdFunc } from '@unionkeyhq/shared/src/utils/miscUtils';
+import sortUtils from '@unionkeyhq/shared/src/utils/sortUtils';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IMarketCategory,
   IMarketDetailPlatform,
@@ -16,7 +16,7 @@ import type {
   IMarketTokenChart,
   IMarketTokenDetail,
   IMarketWatchListItem,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/shared/types/market';
 
 import { type IDBCloudSyncItem } from '../dbs/local/types';
 
@@ -24,7 +24,7 @@ import ServiceBase from './ServiceBase';
 
 import type { AxiosResponse } from 'axios';
 
-const ONEKEY_SEARCH_TRANDING = 'onekey-search-trending';
+const UNIONKEY_SEARCH_TRANDING = 'unionkey-search-trending';
 
 @backgroundClass()
 class ServiceMarket extends ServiceBase {
@@ -33,7 +33,7 @@ class ServiceMarket extends ServiceBase {
   }
 
   @backgroundMethod()
-  async fetchCategories(filters = [ONEKEY_SEARCH_TRANDING]) {
+  async fetchCategories(filters = [UNIONKEY_SEARCH_TRANDING]) {
     const client = await this.getClient(EServiceEndpointEnum.Utility);
     const response = await client.get<{
       data: IMarketCategory[];
@@ -50,7 +50,7 @@ class ServiceMarket extends ServiceBase {
   async fetchSearchTrending() {
     const categories = await this.fetchCategories([]);
     const searchTrendingCategory = categories.find(
-      (i) => i.categoryId === ONEKEY_SEARCH_TRANDING,
+      (i) => i.categoryId === UNIONKEY_SEARCH_TRANDING,
     );
     return searchTrendingCategory
       ? this.fetchCategory(

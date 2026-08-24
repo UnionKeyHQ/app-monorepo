@@ -4,7 +4,7 @@ import { Fragment, useCallback, useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { Share, StyleSheet } from 'react-native';
 
-import type { IStackStyle } from '@onekeyhq/components';
+import type { IStackStyle } from '@unionkeyhq/components';
 import {
   Accordion,
   Badge,
@@ -24,21 +24,21 @@ import {
   XStack,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { Currency } from '@onekeyhq/kit/src/components/Currency';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IInviteSummary } from '@onekeyhq/shared/src/referralCode/type';
-import { EModalReferFriendsRoutes } from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { Currency } from '@unionkeyhq/kit/src/components/Currency';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IInviteSummary } from '@unionkeyhq/shared/src/referralCode/type';
+import { EModalReferFriendsRoutes } from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 function PopoverLine({ children }: PropsWithChildren) {
   return (

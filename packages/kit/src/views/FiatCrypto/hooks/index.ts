@@ -1,19 +1,19 @@
 import { useCallback } from 'react';
 
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import {
   useAllTokenListAtom,
   useAllTokenListMapAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/tokenList';
 import {
   EModalFiatCryptoRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 import type {
   IFiatCryptoType,
   IGetTokensListParams,
-} from '@onekeyhq/shared/types/fiatCrypto';
+} from '@unionkeyhq/shared/types/fiatCrypto';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

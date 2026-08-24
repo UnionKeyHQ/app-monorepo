@@ -10,7 +10,7 @@ import {
 
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons, IPropsWithTestId } from '@onekeyhq/components';
+import type { IKeyOfIcons, IPropsWithTestId } from '@unionkeyhq/components';
 import {
   Dialog,
   Form,
@@ -22,16 +22,16 @@ import {
   YStack,
   onVisibilityStateChange,
   useForm,
-} from '@onekeyhq/components';
-import { usePasswordAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import biologyAuth from '@onekeyhq/shared/src/biologyAuth';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { checkBiometricAuthChanged } from '@onekeyhq/shared/src/modules3rdParty/check-biometric-auth-changed';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { usePasswordAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import biologyAuth from '@unionkeyhq/shared/src/biologyAuth';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { checkBiometricAuthChanged } from '@unionkeyhq/shared/src/modules3rdParty/check-biometric-auth-changed';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EPasswordMode,
   EPasswordVerifyStatus,
-} from '@onekeyhq/shared/types/password';
+} from '@unionkeyhq/shared/types/password';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useBiometricAuthInfo } from '../../../hooks/useBiometricAuthInfo';

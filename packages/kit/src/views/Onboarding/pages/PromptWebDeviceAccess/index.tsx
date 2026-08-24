@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { Button, Page, SizableText, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromptWebDeviceAccess } from '@onekeyhq/kit/src/hooks/usePromptWebDeviceAccess';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Button, Page, SizableText, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromptWebDeviceAccess } from '@unionkeyhq/kit/src/hooks/usePromptWebDeviceAccess';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 function PromptWebDeviceAccessPage() {
   const [isConnecting, setIsConnecting] = useState(false);
@@ -28,7 +28,7 @@ function PromptWebDeviceAccessPage() {
     () => (
       <Stack alignItems="center" p="$5" gap="$5">
         <SizableText textAlign="center">
-          Click the "Connect" button to allow OneKey to access your USB device
+          Click the "Connect" button to allow UnionKey to access your USB device
         </SizableText>
         <Button size="large" onPress={handleConnect} loading={isConnecting}>
           Connect

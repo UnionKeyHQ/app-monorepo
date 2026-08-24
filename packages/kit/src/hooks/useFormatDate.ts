@@ -8,7 +8,7 @@ import {
   parseISO,
 } from 'date-fns';
 
-import { parseToDateFnsLocale } from '@onekeyhq/shared/src/utils/dateUtils';
+import { parseToDateFnsLocale } from '@unionkeyhq/shared/src/utils/dateUtils';
 
 import { useLocaleVariant } from './useLocaleVariant';
 

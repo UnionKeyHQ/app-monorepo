@@ -1,30 +1,30 @@
 import BigNumber from 'bignumber.js';
 
-import { isTaprootAddress } from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import type { IAxiosResponse } from '@onekeyhq/shared/src/appApiClient/appApiClient';
+import { isTaprootAddress } from '@unionkeyhq/core/src/chains/btc/sdkBtc';
+import type { IAxiosResponse } from '@unionkeyhq/shared/src/appApiClient/appApiClient';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { OneKeyServerApiError } from '@onekeyhq/shared/src/errors/errors/baseErrors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import type { IDiscoveryBanner } from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { UnionKeyServerApiError } from '@unionkeyhq/shared/src/errors/errors/baseErrors';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import type { IDiscoveryBanner } from '@unionkeyhq/shared/types/discovery';
 import type {
   EEarnProviderEnum,
   ISupportedSymbol,
-} from '@onekeyhq/shared/types/earn';
-import { earnMainnetNetworkIds } from '@onekeyhq/shared/types/earn/earnProvider.constants';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/types/earn';
+import { earnMainnetNetworkIds } from '@unionkeyhq/shared/types/earn/earnProvider.constants';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IAccountHistoryTx,
   IChangedPendingTxInfo,
-} from '@onekeyhq/shared/types/history';
+} from '@unionkeyhq/shared/types/history';
 import type {
   ECheckAmountActionType,
   IAllowanceOverview,
@@ -60,9 +60,9 @@ import type {
   IUnstakePushParams,
   IVerifyRegisterSignMessageParams,
   IWithdrawBaseParams,
-} from '@onekeyhq/shared/types/staking';
-import { EApproveType } from '@onekeyhq/shared/types/staking';
-import { EDecodedTxStatus } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/staking';
+import { EApproveType } from '@unionkeyhq/shared/types/staking';
+import { EDecodedTxStatus } from '@unionkeyhq/shared/types/tx';
 
 import simpleDb from '../dbs/simple/simpleDb';
 import { vaultFactory } from '../vaults/factory';
@@ -878,7 +878,7 @@ class ServiceStaking extends ServiceBase {
     requestId?: string;
   }) {
     if (data.code !== undefined && Number(data.code) !== 0 && data.message) {
-      throw new OneKeyServerApiError({
+      throw new UnionKeyServerApiError({
         autoToast: true,
         disableFallbackMessage: true,
         code: Number(data.code),

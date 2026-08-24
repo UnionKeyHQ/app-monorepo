@@ -1,4 +1,4 @@
-import type { IGlobalStatesSyncBroadcastParams } from '@onekeyhq/shared/src/background/backgroundUtils';
+import type { IGlobalStatesSyncBroadcastParams } from '@unionkeyhq/shared/src/background/backgroundUtils';
 
 import { globalJotaiStorageReadyHandler } from './jotaiStorage';
 import { jotaiDefaultStore } from './utils/jotaiDefaultStore';

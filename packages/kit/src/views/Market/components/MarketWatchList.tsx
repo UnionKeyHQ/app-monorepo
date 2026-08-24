@@ -12,14 +12,14 @@ import {
   YStack,
   getSharedButtonStyles,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IMarketCategory } from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IMarketCategory } from '@unionkeyhq/shared/types/market';
 
 import {
   useMarketWatchListAtom,

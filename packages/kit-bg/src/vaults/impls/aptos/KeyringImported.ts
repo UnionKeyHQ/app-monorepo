@@ -1,8 +1,8 @@
 import { Serializer } from '@aptos-labs/ts-sdk';
 
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { KeyringImportedBase } from '../../base/KeyringImportedBase';
 

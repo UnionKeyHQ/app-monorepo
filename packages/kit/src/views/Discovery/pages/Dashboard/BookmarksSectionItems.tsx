@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import type { IYStackProps } from '@onekeyhq/components';
-import { YStack, useMedia } from '@onekeyhq/components';
+import type { IYStackProps } from '@unionkeyhq/components';
+import { YStack, useMedia } from '@unionkeyhq/components';
 
 import { BookmarksSectionItem } from './BookmarksSectionItem';
 

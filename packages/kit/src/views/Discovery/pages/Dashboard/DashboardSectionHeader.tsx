@@ -2,8 +2,8 @@ import type {
   IButtonProps,
   IHeadingProps,
   IXStackProps,
-} from '@onekeyhq/components';
-import { Button, Heading, XStack } from '@onekeyhq/components';
+} from '@unionkeyhq/components';
+import { Button, Heading, XStack } from '@unionkeyhq/components';
 
 type ISectionHeadingProps = {
   selected?: boolean;

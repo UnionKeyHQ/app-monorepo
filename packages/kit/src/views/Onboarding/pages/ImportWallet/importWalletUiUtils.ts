@@ -1,7 +1,7 @@
-import { Toast } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Toast } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 function toastSuccessWhenImportAddressOrPrivateKey({
   isOverrideAccounts,

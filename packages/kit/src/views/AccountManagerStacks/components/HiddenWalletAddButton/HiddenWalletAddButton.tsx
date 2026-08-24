@@ -3,15 +3,15 @@ import { useCallback, useState } from 'react';
 import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
-import { Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useCreateQrWallet } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useCreateQrWallet';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Toast } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useCreateQrWallet } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useCreateQrWallet';
+import { useAccountSelectorActions } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import { WalletOptionItem } from '../../pages/AccountSelectorStack/WalletDetails/WalletOptions/WalletOptionItem';
 

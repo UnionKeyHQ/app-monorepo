@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import type { IDecodedTxExtraXrp } from '@onekeyhq/core/src/chains/xrp/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { type IDecodedTx } from '@onekeyhq/shared/types/tx';
+import type { IDecodedTxExtraXrp } from '@unionkeyhq/core/src/chains/xrp/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { type IDecodedTx } from '@unionkeyhq/shared/types/tx';
 
 import { InfoItem } from './TxDetailsInfoItem';
 

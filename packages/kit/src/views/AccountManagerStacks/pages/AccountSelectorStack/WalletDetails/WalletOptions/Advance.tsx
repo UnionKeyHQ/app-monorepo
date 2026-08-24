@@ -9,12 +9,12 @@ import {
   Spinner,
   Stack,
   Switch,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { WalletOptionItem } from './WalletOptionItem';
 

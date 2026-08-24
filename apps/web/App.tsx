@@ -1,4 +1,4 @@
-import { KitProvider } from '@onekeyhq/kit';
-import '@onekeyhq/shared/src/web/index.css';
+import { KitProvider } from '@unionkeyhq/kit';
+import '@unionkeyhq/shared/src/web/index.css';
 
 export default KitProvider;

@@ -1,11 +1,11 @@
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 
 import type {
   BenfenTransport,
   BenfenTransportRequestOptions,
 } from '@benfen/bfc.js/client';
 
-export class OneKeyBenfenTransport implements BenfenTransport {
+export class UnionKeyBenfenTransport implements BenfenTransport {
   backgroundApi: IBackgroundApi;
 
   networkId: string;

@@ -2,21 +2,21 @@ import { useCallback } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import { NumberSizeableText, Stack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import NumberSizeableTextWrapper from '@onekeyhq/kit/src/components/NumberSizeableTextWrapper';
-import { Token, TokenName } from '@onekeyhq/kit/src/components/Token';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useUniversalSearchActions } from '@onekeyhq/kit/src/states/jotai/contexts/universalSearch';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { NumberSizeableText, Stack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import NumberSizeableTextWrapper from '@unionkeyhq/kit/src/components/NumberSizeableTextWrapper';
+import { Token, TokenName } from '@unionkeyhq/kit/src/components/Token';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { useUniversalSearchActions } from '@unionkeyhq/kit/src/states/jotai/contexts/universalSearch';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EModalAssetDetailRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { getTokenPriceChangeStyle } from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { IUniversalSearchAccountAssets } from '@onekeyhq/shared/types/search';
+} from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { getTokenPriceChangeStyle } from '@unionkeyhq/shared/src/utils/tokenUtils';
+import type { IUniversalSearchAccountAssets } from '@unionkeyhq/shared/types/search';
 
 interface IUniversalSearchAccountAssetItemProps {
   item: IUniversalSearchAccountAssets;

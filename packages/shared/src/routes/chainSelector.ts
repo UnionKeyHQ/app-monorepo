@@ -1,8 +1,8 @@
 import type {
   IAccountSelectorAvailableNetworks,
   IAccountSelectorRouteParams,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 export enum EChainSelectorPages {
   AccountChainSelector = 'AccountChainSelector',

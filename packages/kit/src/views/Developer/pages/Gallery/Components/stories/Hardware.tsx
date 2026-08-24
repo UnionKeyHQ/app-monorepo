@@ -3,7 +3,7 @@
 
 import { EDeviceType } from '@onekeyfe/hd-shared';
 
-import { Button, Dialog, SizableText, Stack } from '@onekeyhq/components';
+import { Button, Dialog, SizableText, Stack } from '@unionkeyhq/components';
 import {
   ConfirmOnDeviceToast,
   confirmByPin,
@@ -12,15 +12,15 @@ import {
   confirmPhrase,
   confirmPhraseOnDevice,
   confirmPinOnDevice,
-} from '@onekeyhq/kit/src/components/Hardware';
-import type { IHardwareUiPayload } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/components/Hardware';
+import type { IHardwareUiPayload } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EHardwareUiStateAction,
   hardwareUiStateAtom,
   hardwareUiStateCompletedAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import deviceHomeScreenUtils from '@onekeyhq/shared/src/utils/deviceHomeScreenUtils';
-import { EOneKeyDeviceMode } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import deviceHomeScreenUtils from '@unionkeyhq/shared/src/utils/deviceHomeScreenUtils';
+import { EUnionKeyDeviceMode } from '@unionkeyhq/shared/types/device';
 
 import { Layout } from './utils/Layout';
 
@@ -42,7 +42,7 @@ const HardwareActionTest = () => {
       deviceType: deviceType ?? EDeviceType.Pro,
       deviceId: '123',
       connectId: '123',
-      deviceMode: EOneKeyDeviceMode.normal,
+      deviceMode: EUnionKeyDeviceMode.normal,
       isBootloaderMode: false,
       passphraseState: undefined,
       rawPayload: undefined,

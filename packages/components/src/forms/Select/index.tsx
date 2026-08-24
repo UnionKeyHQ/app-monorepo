@@ -3,7 +3,7 @@ import { useCallback, useContext, useMemo, useState } from 'react';
 import { InteractionManager } from 'react-native';
 import { useMedia, withStaticProperties } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { Popover, Trigger } from '../../actions';
 import { ListView, SectionList } from '../../layouts';

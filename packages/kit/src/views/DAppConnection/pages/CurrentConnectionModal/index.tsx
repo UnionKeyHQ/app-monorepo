@@ -14,19 +14,19 @@ import {
   Skeleton,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IDAppConnectionModalParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IDAppConnectionModalParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EDAppConnectionModal,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IConnectionAccountInfoWithNum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IConnectionAccountInfoWithNum } from '@unionkeyhq/shared/types/dappConnection';
 
 import { useShouldUpdateConnectedAccount } from '../../../Discovery/hooks/useDAppNotifyChanges';
 import { DAppAccountListItem } from '../../components/DAppAccountList';

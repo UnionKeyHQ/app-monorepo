@@ -6,9 +6,9 @@ import {
   IMPL_LIGHTNING_TESTNET,
   IMPL_TRON,
   IMPL_XRP,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import type { IHistoryTxMetaComponents } from '@onekeyhq/shared/types/history';
-import { EHistoryTxDetailsBlock } from '@onekeyhq/shared/types/history';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import type { IHistoryTxMetaComponents } from '@unionkeyhq/shared/types/history';
+import { EHistoryTxDetailsBlock } from '@unionkeyhq/shared/types/history';
 
 import { AdaTxFlow } from './pages/HistoryDetails/components/AdaTxMeta';
 import { AlgoTxAttributes } from './pages/HistoryDetails/components/AlgoTxMeta';

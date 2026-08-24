@@ -3,34 +3,34 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IAlertProps } from '@onekeyhq/components';
+import type { IAlertProps } from '@unionkeyhq/components';
 import {
   Divider,
   Page,
   SizableText,
   YGroup,
   YStack,
-} from '@onekeyhq/components';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import { NetworkSelectorTriggerDappConnectionCmp } from '@onekeyhq/kit/src/components/AccountSelector';
-import { AccountSelectorTriggerDappConnectionCmp } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
-import type { IDBIndexedAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import type { IUnsignedMessage } from '@unionkeyhq/core/src/types';
+import { NetworkSelectorTriggerDappConnectionCmp } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { AccountSelectorTriggerDappConnectionCmp } from '@unionkeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
+import type { IDBIndexedAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   isPrimaryTypeOrderSign,
   isPrimaryTypePermitSign,
-} from '@onekeyhq/shared/src/signMessage';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/signMessage';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 import {
   validateSignMessageData,
   validateTypedSignMessageDataV1,
   validateTypedSignMessageDataV3V4,
-} from '@onekeyhq/shared/src/utils/messageUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/utils/messageUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
+import { EHostSecurityLevel } from '@unionkeyhq/shared/types/discovery';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useDappApproveAction from '../../../hooks/useDappApproveAction';

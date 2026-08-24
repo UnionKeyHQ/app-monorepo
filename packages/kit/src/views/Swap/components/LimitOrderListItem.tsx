@@ -1,8 +1,8 @@
-import { XStack, useMedia } from '@onekeyhq/components';
+import { XStack, useMedia } from '@unionkeyhq/components';
 import {
   ESwapLimitOrderStatus,
   type IFetchLimitOrderRes,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import LimitOrderCard from './LimitOrderCard';
 

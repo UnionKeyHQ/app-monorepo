@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 interface IUseMarketDetailDataProps {
   tokenAddress: string;

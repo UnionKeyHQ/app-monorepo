@@ -1,7 +1,7 @@
-import type { IDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
-import type { ISettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/settings';
+import type { IDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/devSettings';
+import type { ISettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/settings';
 
-export type IWebEmbedOnekeyAppSettings = {
+export type IWebEmbedUnionKeyAppSettings = {
   $settings: ISettingsPersistAtom | undefined; // ISettingsPersistAtom
   $devSettings: IDevSettingsPersistAtom | undefined; // IDevSettingsPersistAtom
   isDev: boolean;
@@ -15,8 +15,8 @@ export type IWebEmbedOnekeyAppSettings = {
   appVersion: string;
 };
 
-function getSettings(): IWebEmbedOnekeyAppSettings | undefined {
-  const settings = globalThis.WEB_EMBED_ONEKEY_APP_SETTINGS;
+function getSettings(): IWebEmbedUnionKeyAppSettings | undefined {
+  const settings = globalThis.WEB_EMBED_UNIONKEY_APP_SETTINGS;
   return settings;
 }
 

@@ -1,6 +1,6 @@
 import { ParamsFormatter, ResultFormatter } from '@ckb-lumos/rpc';
 
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 
 import type { ECellStatus } from '../types';
 import type { OutPoint } from '@ckb-lumos/base';

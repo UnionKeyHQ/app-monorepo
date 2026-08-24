@@ -12,17 +12,17 @@ import {
   Stack,
   XStack,
   getFontSize,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   IInputProps,
   IStackProps,
   IXStackProps,
-} from '@onekeyhq/components';
-import { getSharedInputStyles } from '@onekeyhq/components/src/forms/Input/sharedStyles';
-import type { IFormFieldProps } from '@onekeyhq/components/src/forms/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { NUMBER_FORMATTER } from '@onekeyhq/shared/src/utils/numberUtils';
+} from '@unionkeyhq/components';
+import { getSharedInputStyles } from '@unionkeyhq/components/src/forms/Input/sharedStyles';
+import type { IFormFieldProps } from '@unionkeyhq/components/src/forms/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { NUMBER_FORMATTER } from '@unionkeyhq/shared/src/utils/numberUtils';
 
 import { LetterAvatar } from '../LetterAvatar';
 

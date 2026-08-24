@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { validateEvent } from '@onekeyhq/core/src/chains/nostr/sdkNostr';
-import type { IEncodedTxNostr } from '@onekeyhq/core/src/chains/nostr/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import { validateEvent } from '@unionkeyhq/core/src/chains/nostr/sdkNostr';
+import type { IEncodedTxNostr } from '@unionkeyhq/core/src/chains/nostr/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyHardwareError } from '@onekeyhq/shared/src/errors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/core/src/types';
+import { UnionKeyHardwareError } from '@unionkeyhq/shared/src/errors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import type { IDeviceSharedCallParams } from '@unionkeyhq/shared/types/device';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -54,7 +54,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             deviceId,
             pathPrefix,
             template,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -83,7 +83,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //   ...params.deviceParams.deviceCommonParams,
             //   bundle: usedIndexes.map((index, arrIndex) => ({
             //     path: `${pathPrefix}/${index}'/0/0`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnOneKey: showOnOneKeyFn(arrIndex),
             //   })),
             // });
             // return response;
@@ -128,7 +128,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         event,
       });
     } catch (error: any) {
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -192,7 +192,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         showOnOneKey: false,
       });
     } catch (error: any) {
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -224,7 +224,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         showOnOneKey: false,
       });
     } catch (error: any) {
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {

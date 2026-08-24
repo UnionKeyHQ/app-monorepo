@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/require-await, max-classes-per-file */
-import type { ICoreApiNetworkInfo } from '@onekeyhq/core/src/types';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import type { ICoreApiNetworkInfo } from '@unionkeyhq/core/src/types';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { getVaultSettings, getVaultSettingsNetworkInfo } from '../settings';
 

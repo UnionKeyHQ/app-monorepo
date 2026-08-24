@@ -10,16 +10,16 @@ import {
   Stack,
   Switch,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
 import {
   usePasswordPersistAtom,
   useSystemIdleLockSupport,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms/password';
-import { ELockDuration } from '@onekeyhq/shared/src/consts/appAutoLockConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms/password';
+import { ELockDuration } from '@unionkeyhq/shared/src/consts/appAutoLockConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { ListItemSelect } from '../../components/ListItemSelect';
 

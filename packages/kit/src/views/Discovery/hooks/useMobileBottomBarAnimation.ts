@@ -6,9 +6,9 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 
-import { useOrientation } from '@onekeyhq/components/src/hooks/useOrientation';
-import type { IWebViewOnScrollEvent } from '@onekeyhq/kit/src/components/WebView/types';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { useOrientation } from '@unionkeyhq/components/src/hooks/useOrientation';
+import type { IWebViewOnScrollEvent } from '@unionkeyhq/kit/src/components/WebView/types';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import {
   BROWSER_BOTTOM_BAR_HEIGHT,

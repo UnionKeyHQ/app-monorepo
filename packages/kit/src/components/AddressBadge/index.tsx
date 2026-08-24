@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { memo, useMemo } from 'react';
 
-import type { IBadgeProps, IKeyOfIcons } from '@onekeyhq/components';
+import type { IBadgeProps, IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Badge,
   Icon,
@@ -9,7 +9,7 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 interface IBasicAddressBadgeProps {
   title: string;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import type { ISwitchProps } from '@onekeyhq/components';
-import { ESwitchSize, SizableText, Stack, Switch } from '@onekeyhq/components';
+import type { ISwitchProps } from '@unionkeyhq/components';
+import { ESwitchSize, SizableText, Stack, Switch } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

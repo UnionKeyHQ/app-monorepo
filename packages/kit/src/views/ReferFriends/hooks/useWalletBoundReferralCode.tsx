@@ -14,17 +14,17 @@ import {
   useForm,
   useInModalDialog,
   useInTabDialog,
-} from '@onekeyhq/components';
-import { autoFixPersonalSignMessage } from '@onekeyhq/core/src/chains/evm/sdkEvm/signMessage';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { FIRST_EVM_ADDRESS_PATH } from '@onekeyhq/shared/src/engine/engineConsts';
-import type { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { OneKeyPlainTextError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/components';
+import { autoFixPersonalSignMessage } from '@unionkeyhq/core/src/chains/evm/sdkEvm/signMessage';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { FIRST_EVM_ADDRESS_PATH } from '@unionkeyhq/shared/src/engine/engineConsts';
+import type { UnionKeyError } from '@unionkeyhq/shared/src/errors';
+import { UnionKeyPlainTextError } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
 
 import { WalletAvatar } from '../../../components/WalletAvatar/WalletAvatar';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';
@@ -131,7 +131,7 @@ function InviteCode({
         }
 
         if (!walletInfo) {
-          throw new OneKeyPlainTextError('Invalid Wallet');
+          throw new UnionKeyPlainTextError('Invalid Wallet');
         }
         const { referralCode } = form.getValues();
         let unsignedMessage: string | undefined;
@@ -147,11 +147,11 @@ function InviteCode({
           console.log('===>>> unsignedMessage: ', unsignedMessage);
         } catch (e) {
           if (
-            (e as OneKeyError).className === 'OneKeyServerApiError' &&
-            (e as OneKeyError).message
+            (e as UnionKeyError).className === 'UnionKeyServerApiError' &&
+            (e as UnionKeyError).message
           ) {
             form.setError('referralCode', {
-              message: (e as OneKeyError).message,
+              message: (e as UnionKeyError).message,
             });
           }
           throw e;

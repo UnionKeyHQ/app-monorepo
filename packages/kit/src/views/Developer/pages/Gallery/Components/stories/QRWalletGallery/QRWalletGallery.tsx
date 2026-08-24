@@ -1,24 +1,24 @@
 import { networks as BitcoinJsNetworks, Psbt } from 'bitcoinjs-lib';
 import { range } from 'lodash';
 
-import { Button, Stack } from '@onekeyhq/components';
-import { decodedPsbt } from '@onekeyhq/core/src/chains/btc/sdkBtc/providerUtils';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
-import type { IAnimationValue } from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
-import { airGapUrUtils, getAirGapSdk } from '@onekeyhq/qr-wallet-sdk';
-import { OneKeyRequestDeviceQR } from '@onekeyhq/qr-wallet-sdk/src/OneKeyRequestDeviceQR';
+import { Button, Stack } from '@unionkeyhq/components';
+import { decodedPsbt } from '@unionkeyhq/core/src/chains/btc/sdkBtc/providerUtils';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import useScanQrCode from '@unionkeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+import type { IAnimationValue } from '@unionkeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
+import { airGapUrUtils, getAirGapSdk } from '@unionkeyhq/qr-wallet-sdk';
+import { UnionKeyRequestDeviceQR } from '@unionkeyhq/qr-wallet-sdk/src/UnionKeyRequestDeviceQR';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EQRCodeHandlerNames } from '@onekeyhq/shared/types/qrCode';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EQRCodeHandlerNames } from '@unionkeyhq/shared/types/qrCode';
 
 import { Layout } from '../utils/Layout';
 
@@ -34,11 +34,11 @@ function CustomAppRequestDeviceQR() {
     <Stack gap="$2">
       <Button
         onPress={() => {
-          const request = new OneKeyRequestDeviceQR({
+          const request = new UnionKeyRequestDeviceQR({
             requestId: generateUUID(),
             xfp: '5c9e228d',
             deviceId: 'CLA8888',
-            origin: 'OneKey iOS',
+            origin: 'UnionKey iOS',
             //
             method: 'getMultiAccounts',
             params: [
@@ -67,11 +67,11 @@ function CustomAppRequestDeviceQR() {
 
       <Button
         onPress={() => {
-          const request = new OneKeyRequestDeviceQR({
+          const request = new UnionKeyRequestDeviceQR({
             requestId: generateUUID(),
             xfp: '5c9e228d',
             // deviceId: 'CLA8888',
-            origin: 'OneKey Wallet',
+            origin: 'UnionKey Wallet',
             //
             method: 'verifyAddress',
             params: [
@@ -115,7 +115,7 @@ function CustomAppRequestDeviceQR() {
           if (ur) {
             console.log('scan ur', ur);
             if (ur.type === 'onekey-app-call-device') {
-              const requestQR = OneKeyRequestDeviceQR.fromUR(ur);
+              const requestQR = UnionKeyRequestDeviceQR.fromUR(ur);
               console.log('requestQR', requestQR);
             }
             if (ur.type === 'crypto-psbt') {

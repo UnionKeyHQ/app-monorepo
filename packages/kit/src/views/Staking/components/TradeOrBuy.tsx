@@ -2,21 +2,21 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { Button, SizableText, XStack } from '@onekeyhq/components';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IModalSwapParamList } from '@onekeyhq/shared/src/routes';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes/modal';
-import { EModalSwapRoutes } from '@onekeyhq/shared/src/routes/swap';
-import { getImportFromToken } from '@onekeyhq/shared/types/earn/earnProvider.constants';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { Button, SizableText, XStack } from '@unionkeyhq/components';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import type { IModalSwapParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes/modal';
+import { EModalSwapRoutes } from '@unionkeyhq/shared/src/routes/swap';
+import { getImportFromToken } from '@unionkeyhq/shared/types/earn/earnProvider.constants';
 import {
   ESwapSource,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/swap/types';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react';
 
 import { Animated } from 'react-native';
 
-import { IconButton } from '@onekeyhq/components';
+import { IconButton } from '@unionkeyhq/components';
 
 interface IRefreshButtonProps {
   onRefresh: () => void;

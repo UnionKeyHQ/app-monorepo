@@ -7,19 +7,19 @@ import {
   Image,
   SizableText,
   XStack,
-} from '@onekeyhq/components';
-import { DeriveTypeSelectorTriggerForSwap } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+} from '@unionkeyhq/components';
+import { DeriveTypeSelectorTriggerForSwap } from '@unionkeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
 import {
   useSwapNetworksIncludeAllNetworkAtom,
   useSwapSelectFromTokenAtom,
   useSwapSelectToTokenAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   ESwapDirectionType,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 interface ISwapAccountAddressContainerProps {
   type: ESwapDirectionType;

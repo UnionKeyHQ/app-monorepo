@@ -10,7 +10,7 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 import { mnemonicToDotMapValues } from './utils';
 
@@ -101,7 +101,7 @@ const DotMapBaseHeader = () => {
   return (
     <XStack alignItems="flex-end" pb="$2">
       <XStack width="$6" justifyContent="flex-end">
-        <Icon name="OnekeyBrand" />
+        <Icon name="UnionKeyBrand" />
       </XStack>
       <XStack
         h="$10"

@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js';
 
-import { Icon } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { IAccountDefi } from '@onekeyhq/shared/types/defi';
+import { Icon } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import type { IAccountDefi } from '@unionkeyhq/shared/types/defi';
 
 type IProps = {
   defi: IAccountDefi;

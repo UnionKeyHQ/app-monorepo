@@ -2,8 +2,8 @@
 /* eslint-disable react/no-unstable-nested-components */
 import { useState } from 'react';
 
-import type { ISelectItem, ISelectSection } from '@onekeyhq/components';
-import { Icon, Select, SizableText, Stack } from '@onekeyhq/components';
+import type { ISelectItem, ISelectSection } from '@unionkeyhq/components';
+import { Icon, Select, SizableText, Stack } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

@@ -1,4 +1,4 @@
-// OneKeyChatInterface.tsx
+// UnionKeyChatInterface.tsx
 import React, { useState, useRef, useEffect } from 'react';
 import {
   Stack,
@@ -9,21 +9,21 @@ import {
   ScrollView,
   Spinner,
   useTheme,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import { Message } from './types';
 import { getAgentResponse, generateMessageId, testAPIConnection } from './agentService';
 
-interface OneKeyChatInterfaceProps {
+interface UnionKeyChatInterfaceProps {
   title?: string;
   onBack?: () => void;
   initialMessages?: Message[];
 }
 
-export function OneKeyChatInterface({
-  title = 'OneKey AI助手',
+export function UnionKeyChatInterface({
+  title = 'UnionKey AI助手',
   onBack,
   initialMessages = [],
-}: OneKeyChatInterfaceProps) {
+}: UnionKeyChatInterfaceProps) {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +36,7 @@ export function OneKeyChatInterface({
     if (messages.length === 0) {
       const welcomeMessage: Message = {
         id: generateMessageId(),
-        content: '你好！我是OneKey AI助手。有什么可以帮助你的吗？',
+        content: '你好！我是UnionKey AI助手。有什么可以帮助你的吗？',
         role: 'assistant',
         timestamp: new Date(),
       };

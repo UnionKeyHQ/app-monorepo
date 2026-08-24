@@ -4,22 +4,22 @@ import { useRoute } from '@react-navigation/core';
 import { StackActions, useNavigation } from '@react-navigation/native';
 import { AppState } from 'react-native';
 
-import { Page, Spinner, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import { Page, Spinner, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import type {
   EModalSendRoutes,
   IModalSendParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EModalSignatureConfirmRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { waitAsync } from '@onekeyhq/shared/src/utils/promiseUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { EModalSignatureConfirmRoutes } from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { waitAsync } from '@unionkeyhq/shared/src/utils/promiseUtils';
 import type {
   IFeeInfoUnit,
   IGasEIP1559,
   IGasLegacy,
-} from '@onekeyhq/shared/types/fee';
-import type { ISendTxOnSuccessData } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/fee';
+import type { ISendTxOnSuccessData } from '@unionkeyhq/shared/types/tx';
 
 import type { RouteProp } from '@react-navigation/core';
 import type { StackActionType } from '@react-navigation/native';

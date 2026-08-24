@@ -2,7 +2,7 @@ import { memo, useCallback, useMemo } from 'react';
 
 import { RefreshControl, useWindowDimensions } from 'react-native';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
 import {
   Icon,
   Image,
@@ -14,10 +14,10 @@ import {
   Stack,
   Tab,
   XStack,
-} from '@onekeyhq/components';
-import { getTokens } from '@onekeyhq/components/src/hooks';
-import type { ITabHomeParamList } from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import { getTokens } from '@unionkeyhq/components/src/hooks';
+import type { ITabHomeParamList } from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
 import useAppNavigation from '../../../hooks/useAppNavigation';

@@ -2,25 +2,25 @@ import { memo, useCallback, useEffect, useState } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import { Skeleton, Stack, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { TxActionsListView } from '@onekeyhq/kit/src/components/TxActionListView';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import { Skeleton, Stack, XStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { TxActionsListView } from '@unionkeyhq/kit/src/components/TxActionListView';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useNativeTokenInfoAtom,
   useNativeTokenTransferAmountToUpdateAtom,
   useSendConfirmActions,
   useSendSelectedFeeInfoAtom,
   useUnsignedTxsAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
-import type { ITransferPayload } from '@onekeyhq/kit-bg/src/vaults/types';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/sendConfirm';
+import type { ITransferPayload } from '@unionkeyhq/kit-bg/src/vaults/types';
 import {
   calculateNativeAmountInActions,
   isSendNativeTokenAction,
-} from '@onekeyhq/shared/src/utils/txActionUtils';
-import { ETxActionComponentType } from '@onekeyhq/shared/types';
-import { EDecodedTxActionType } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/src/utils/txActionUtils';
+import { ETxActionComponentType } from '@unionkeyhq/shared/types';
+import { EDecodedTxActionType } from '@unionkeyhq/shared/types/tx';
 
 import {
   InfoItem,

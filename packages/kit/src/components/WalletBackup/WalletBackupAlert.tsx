@@ -9,9 +9,9 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { WALLET_TYPE_HD } from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { WALLET_TYPE_HD } from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { useActiveAccount } from '../../states/jotai/contexts/accountSelector';
 

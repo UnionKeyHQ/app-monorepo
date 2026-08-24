@@ -4,7 +4,7 @@ import { BigNumber } from 'bignumber.js';
 import { debounce } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance } from '@onekeyhq/components';
+import type { IDialogInstance } from '@unionkeyhq/components';
 import {
   Button,
   Dialog,
@@ -13,20 +13,20 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   swapSlippageCustomDefaultList,
   swapSlippageItems,
   swapSlippageMaxValue,
   swapSlippageWillAheadMinValue,
   swapSlippageWillFailMinValue,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapSlippageSegmentItem } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
+import type { ISwapSlippageSegmentItem } from '@unionkeyhq/shared/types/swap/types';
 import {
   ESwapSlippageCustomStatus,
   ESwapSlippageSegmentKey,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { SlippageInput } from './SlippageInput';
 

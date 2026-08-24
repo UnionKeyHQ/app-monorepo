@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   Button,
   Dialog,
@@ -15,13 +15,13 @@ import {
   SizableText,
   Stack,
   Toast,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations, ETranslationsMock } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations, ETranslationsMock } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IOnboardingParamList } from '@unionkeyhq/shared/src/routes';
+import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
 
 import { V4MigrationLogCopy } from './components/V4MigrationLogCopy';
 import { V4MigrationModalPage } from './components/V4MigrationModalPage';
@@ -186,7 +186,7 @@ export function V4MigrationGetStarted({
             <Image
               w={360}
               h={360}
-              source={require('@onekeyhq/kit/assets/logo-press.png')}
+              source={require('@unionkeyhq/kit/assets/logo-press.png')}
             />
           </V4MigrationLogCopy>
           <Stack p="$5" pb="$0" mt="$-16" maxWidth="$96">

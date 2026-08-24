@@ -3,8 +3,7 @@
     "scheme": "unionkey-wallet",
     "name": "UnionKey Wallet",
     "slug": "unionkeyapp",
-    "owner": "zyfshr",
-    "version": "4.6.0",
+    "version": "6.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -20,19 +19,14 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.zyfshr.unionkeyapp",
+      "bundleIdentifier": "so.unionkey.wallet",
       "associatedDomains": [
-        "applinks:app.unionkey.so"
+        "applinks:unionkey.io"
       ],
       "buildNumber": "72"
     },
     "android": {
       "googleServicesFile": "./android/app/google-services.json"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "99ea403f-8f20-41b0-971e-1b9263ecd0f2"
-      }
     },
     "plugins": [
       [

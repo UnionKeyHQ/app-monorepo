@@ -5,7 +5,7 @@ import {
   YStack,
   refreshNetInfo,
   useNetInfo,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 export function NetInfo() {
   const { isInternetReachable, isRawInternetReachable } = useNetInfo();

@@ -3,40 +3,40 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, useClipboard } from '@onekeyhq/components';
-import { ECoreApiExportedSecretKeyType } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useReviewControl } from '@onekeyhq/kit/src/components/ReviewControl';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useReceiveToken } from '@onekeyhq/kit/src/hooks/useReceiveToken';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { Dialog, useClipboard } from '@unionkeyhq/components';
+import { ECoreApiExportedSecretKeyType } from '@unionkeyhq/core/src/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useReviewControl } from '@unionkeyhq/kit/src/components/ReviewControl';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useReceiveToken } from '@unionkeyhq/kit/src/hooks/useReceiveToken';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   useAllTokenListAtom,
   useAllTokenListMapAtom,
   useTokenListStateAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { openExplorerAddressUrl } from '@onekeyhq/kit/src/utils/explorerUtils';
-import { useFiatCrypto } from '@onekeyhq/kit/src/views/FiatCrypto/hooks';
-import { useAllNetworkCopyAddressHandler } from '@onekeyhq/kit/src/views/WalletAddress/hooks/useAllNetworkCopyAddressHandler';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/tokenList';
+import { openExplorerAddressUrl } from '@unionkeyhq/kit/src/utils/explorerUtils';
+import { useFiatCrypto } from '@unionkeyhq/kit/src/views/FiatCrypto/hooks';
+import { useAllNetworkCopyAddressHandler } from '@unionkeyhq/kit/src/views/WalletAddress/hooks/useAllNetworkCopyAddressHandler';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   WALLET_TYPE_HW,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EModalFiatCryptoRoutes,
   EModalRoutes,
   EModalWalletAddressRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import { EDeriveAddressActionType } from '@unionkeyhq/shared/types/address';
 
 import { RawActions } from './RawActions';
 

@@ -1,6 +1,6 @@
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import { decryptAsync } from '../../secret';
@@ -191,7 +191,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     if (addressEncoding === EAddressEncodings.KASPA_ORG) {
       pub = publicKeyFromDER(publicKey);
     } else {
-      // OneKey tweak convert
+      // UnionKey tweak convert
       pub = publicKeyFromOriginPubkey(bufferUtils.toBuffer(publicKey));
     }
     const address = addressFromPublicKey(pub, chainId);

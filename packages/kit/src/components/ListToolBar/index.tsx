@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import type { ISearchBarProps, IYStackProps } from '@onekeyhq/components';
-import { SearchBar, XStack, YStack, useMedia } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ISearchBarProps, IYStackProps } from '@unionkeyhq/components';
+import { SearchBar, XStack, YStack, useMedia } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 type IProps = {
   searchProps?: ISearchBarProps & { searchResultCount?: number };

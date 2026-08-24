@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, SizableText, Stack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Button, SizableText, Stack } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { Layout } from '../../../utils/Layout';
 import { NavigationFocusTools } from '../../../utils/NavigationTools';

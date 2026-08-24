@@ -24,7 +24,7 @@ config.resolver.sourceExts = [
 config.resolver.extraNodeModules = {
   ...config.resolver.extraNodeModules,
   crypto: require.resolve(
-    '@onekeyhq/shared/src/modules3rdParty/cross-crypto/index.native.js',
+    '@unionkeyhq/shared/src/modules3rdParty/cross-crypto/index.native.js',
   ),
   fs: require.resolve('react-native-level-fs'),
   path: require.resolve('path-browserify'),

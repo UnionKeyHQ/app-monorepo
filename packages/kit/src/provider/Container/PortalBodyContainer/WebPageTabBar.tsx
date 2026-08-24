@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { Portal, useMedia, useOrientation } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Portal, useMedia, useOrientation } from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import DesktopCustomTabBar from '../../../views/Discovery/pages/DesktopCustomTabBar';
 

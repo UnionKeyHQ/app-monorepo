@@ -1,5 +1,5 @@
 import type {
-  EV4OnekeyDomain,
+  EV4UnionKeyDomain,
   EV4ValidationFields,
   IV4LocaleSymbol,
   IV4WalletSwitchItem,
@@ -97,7 +97,7 @@ export type IV4ReduxSettingsState = {
   advancedSettings?: {
     useDustUtxo?: boolean;
   };
-  hardwareConnectSrc?: EV4OnekeyDomain;
+  hardwareConnectSrc?: EV4UnionKeyDomain;
   gasPanelEIP1559Enabled?: boolean;
   showTokenDetailPriceChart?: boolean;
   hideAllNetworksSelectNetworkTips?: boolean;

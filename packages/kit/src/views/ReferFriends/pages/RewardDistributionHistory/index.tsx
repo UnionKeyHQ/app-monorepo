@@ -12,12 +12,12 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { Currency } from '@onekeyhq/kit/src/components/Currency';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IHardwareSalesRecord } from '@onekeyhq/shared/src/referralCode/type';
-import { formatDate, formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Currency } from '@unionkeyhq/kit/src/components/Currency';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IHardwareSalesRecord } from '@unionkeyhq/shared/src/referralCode/type';
+import { formatDate, formatTime } from '@unionkeyhq/shared/src/utils/dateUtils';
 
 type ISectionListItem = {
   title?: string;

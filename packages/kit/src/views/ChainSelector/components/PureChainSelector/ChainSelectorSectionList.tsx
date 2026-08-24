@@ -15,17 +15,17 @@ import {
   SectionList,
   Stack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   ISectionListProps,
   ISortableSectionListRef,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { NetworkAvatarBase } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { usePureChainSelectorSections } from '../../hooks/usePureChainSelectorSections';
 import RecentNetworks from '../RecentNetworks';

@@ -5,7 +5,7 @@
 // @ts-expect-error
 import { bech32, mnemonicToRootKeypair, toPublic } from 'cardano-crypto.js';
 
-import { mnemonicFromEntropy } from '@onekeyhq/core/src/secret';
+import { mnemonicFromEntropy } from '@unionkeyhq/core/src/secret';
 
 import { DERIVATION_SCHEME, HARDENED_THRESHOLD } from './constants';
 
@@ -77,7 +77,7 @@ export async function generateExportedCredential(
 }
 
 /*
- * @param xprv xprv string, 165 length, generate from OneKey wallet
+ * @param xprv xprv string, 165 length, generate from UnionKey wallet
  */
 export function decodePrivateKeyByXprv(xprv: string) {
   const decodeXprv = bech32.decode(xprv);

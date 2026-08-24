@@ -1,12 +1,12 @@
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
 import type {
   IAccountToken,
   IAddCustomTokenRouteParams,
   ITokenFiat,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 export enum EModalAssetListRoutes {
   TokenList = 'TokenList',

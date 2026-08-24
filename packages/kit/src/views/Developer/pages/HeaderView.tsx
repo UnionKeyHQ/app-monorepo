@@ -1,15 +1,15 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { Button, SizableText, YStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import { useToOnBoardingPage } from '@onekeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
-import type { ITabDeveloperParamList } from '@onekeyhq/shared/src/routes';
+import { Button, SizableText, YStack } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import { useToOnBoardingPage } from '@unionkeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
+import type { ITabDeveloperParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EModalRoutes,
   ETabDeveloperRoutes,
   ETestModalPages,
-} from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import {

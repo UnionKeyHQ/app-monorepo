@@ -2,11 +2,11 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Checkbox, Dialog } from '@onekeyhq/components';
-import { formatApy } from '@onekeyhq/kit/src/views/Staking/components/utils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+import { Checkbox, Dialog } from '@unionkeyhq/components';
+import { formatApy } from '@unionkeyhq/kit/src/views/Staking/components/utils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import type { IStakeProtocolDetails } from '@unionkeyhq/shared/types/staking';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

@@ -2,7 +2,7 @@ import { LOCALES_OPTION } from '.';
 
 import { isFunction } from 'lodash';
 
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import { LOCALES } from './localeJsonMap';
 import systemLocaleUtils from './systemLocale';

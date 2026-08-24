@@ -1,10 +1,10 @@
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
+import { EAddressEncodings } from '@unionkeyhq/core/src/types';
 import {
   COINNAME_BCH,
   COINTYPE_BCH,
   IMPL_BCH,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import settingsBtc from '../btc/settings';
 

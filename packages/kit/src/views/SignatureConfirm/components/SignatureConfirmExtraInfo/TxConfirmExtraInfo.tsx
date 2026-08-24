@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import type { IStackProps } from '@onekeyhq/components';
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
+import type { IStackProps } from '@unionkeyhq/components';
+import type { IUnsignedTxPro } from '@unionkeyhq/core/src/types';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
 import {
   IMPL_ALGO,
   IMPL_COSMOS,
@@ -11,7 +11,7 @@ import {
   IMPL_TON,
   IMPL_TRON,
   IMPL_XRP,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import TxExtraInfoAlgo from './ExtraInfoAlgo';
 import TxExtraInfoCosmos from './ExtraInfoCosmos';

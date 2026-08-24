@@ -2,15 +2,15 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, Shortcut } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Page, Shortcut } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { Section } from '@unionkeyhq/kit/src/components/Section';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EShortcutEvents,
   shortcutsMap,
-} from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { shortcutsKeys } from '@onekeyhq/shared/src/shortcuts/shortcutsKeys.enum';
+} from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import { shortcutsKeys } from '@unionkeyhq/shared/src/shortcuts/shortcutsKeys.enum';
 
 const sections = [
   {

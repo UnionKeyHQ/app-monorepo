@@ -16,7 +16,7 @@ if (!global.IDBDatabase.prototype.transactionOriginal_a7c9d6a9) {
     const self = this;
     try {
       const isWriteMode = mode !== 'readonly';
-      if (isWriteMode && global.$onekeySystemDiskIsFull) {
+      if (isWriteMode && global.$unionkeySystemDiskIsFull) {
         console.error('IndexedDB==>checkDiskFull ', self, {
           name: self.name,
           storeNames,

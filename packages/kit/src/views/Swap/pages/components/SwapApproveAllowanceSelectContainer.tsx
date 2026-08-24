@@ -2,14 +2,14 @@ import { memo, useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { NumberSizeableText } from '@onekeyhq/components';
+import { NumberSizeableText } from '@unionkeyhq/components';
 import {
   useSwapApproveAllowanceSelectOpenAtom,
   useSwapQuoteApproveAllowanceUnLimitAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IAllowanceResult } from '@onekeyhq/shared/types/swap/types';
-import { ESwapApproveAllowanceType } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IAllowanceResult } from '@unionkeyhq/shared/types/swap/types';
+import { ESwapApproveAllowanceType } from '@unionkeyhq/shared/types/swap/types';
 
 import SwapApproveAllowanceSelect from '../../components/SwapApproveAllowanceSelect';
 

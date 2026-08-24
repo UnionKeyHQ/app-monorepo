@@ -1,12 +1,12 @@
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import { ELockDuration } from '@onekeyhq/shared/src/consts/appAutoLockConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { isSupportWebAuth } from '@onekeyhq/shared/src/webAuth';
+import type { IDialogShowProps } from '@unionkeyhq/components/src/composite/Dialog/type';
+import { ELockDuration } from '@unionkeyhq/shared/src/consts/appAutoLockConsts';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { isSupportWebAuth } from '@unionkeyhq/shared/src/webAuth';
 import {
   EPasswordMode,
   EPasswordVerifyStatus,
-} from '@onekeyhq/shared/types/password';
-import type { EPasswordPromptType } from '@onekeyhq/shared/types/password';
+} from '@unionkeyhq/shared/types/password';
+import type { EPasswordPromptType } from '@unionkeyhq/shared/types/password';
 
 import { biologyAuthUtils } from '../../../services/ServicePassword/biologyAuthUtils';
 import { EAtomNames } from '../atomNames';

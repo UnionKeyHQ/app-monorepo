@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import type { ISwitchProps } from '@onekeyhq/components';
-import { Icon, SizableText, Stack, Switch } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import type { ISwitchProps } from '@unionkeyhq/components';
+import { Icon, SizableText, Stack, Switch } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
 
 import { Layout } from './utils/Layout';
 

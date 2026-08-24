@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useHandleAppStateActive } from '@onekeyhq/kit/src/hooks/useHandleAppStateActive';
+import { useHandleAppStateActive } from '@unionkeyhq/kit/src/hooks/useHandleAppStateActive';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 

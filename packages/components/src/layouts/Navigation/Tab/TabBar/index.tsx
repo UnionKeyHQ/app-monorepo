@@ -1,7 +1,7 @@
 import { useMedia } from 'tamagui';
 
-import { useOrientation } from '@onekeyhq/components/src/hooks/useOrientation';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { useOrientation } from '@unionkeyhq/components/src/hooks/useOrientation';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { DesktopLeftSideBar } from './DesktopLeftSideBar';
 import MobileBottomTabBar from './MobileBottomTabBar';

@@ -15,8 +15,8 @@ index 46e0631..f746598 100644
        status_code,
      };
  
-+    if (request_headers['x-onekey-request-id']) {
-+      data.request_id = request_headers['x-onekey-request-id'];
++    if (request_headers['x-unionkey-request-id']) {
++      data.request_id = request_headers['x-unionkey-request-id'];
 +    }
 +
      const hint = {
@@ -39,8 +39,8 @@ index 155b29b..5ffd88c 100644
        status_code,
      };
  
-+    if (request_headers['x-onekey-request-id']) {
-+      data.request_id = request_headers['x-onekey-request-id'];
++    if (request_headers['x-unionkey-request-id']) {
++      data.request_id = request_headers['x-unionkey-request-id'];
 +    }
 +
      const hint = {

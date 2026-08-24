@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useThemeVariant } from '../../../hooks/useThemeVariant';
 

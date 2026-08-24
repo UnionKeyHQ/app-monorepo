@@ -7,23 +7,23 @@ import {
   Stack,
   useIsHorizontalLayout,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   HeaderButtonGroup,
   HeaderIconButton,
-} from '@onekeyhq/components/src/layouts/Navigation/Header';
-import { NetworkSelectorTriggerHome } from '@onekeyhq/kit/src/components/AccountSelector/NetworkSelectorTrigger';
-import { UniversalSearchInput } from '@onekeyhq/kit/src/components/TabPageHeader/UniversalSearchInput';
-import { useNotificationsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalNotificationsRoutes } from '@onekeyhq/shared/src/routes/notifications';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes/tab';
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components/src/layouts/Navigation/Header';
+import { NetworkSelectorTriggerHome } from '@unionkeyhq/kit/src/components/AccountSelector/NetworkSelectorTrigger';
+import { UniversalSearchInput } from '@unionkeyhq/kit/src/components/TabPageHeader/UniversalSearchInput';
+import { useNotificationsAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import { EModalNotificationsRoutes } from '@unionkeyhq/shared/src/routes/notifications';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes/tab';
+import type { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import useAppNavigation from '../../hooks/useAppNavigation';
-import { useLoginOneKeyId } from '../../hooks/useLoginOneKeyId';
+import { useLoginUnionKeyId } from '../../hooks/useLoginUnionKeyId';
 import { useReferFriends } from '../../hooks/useReferFriends';
 import TabCountButton from '../../views/Discovery/components/MobileBrowser/TabCountButton';
 import { HistoryIconButton } from '../../views/Discovery/pages/components/HistoryIconButton';
@@ -122,17 +122,17 @@ export function SelectorTrigger() {
 }
 
 function PeopleAction() {
-  const { loginOneKeyId } = useLoginOneKeyId();
+  const { loginUnionKeyId } = useLoginUnionKeyId();
   const handlePress = useCallback(async () => {
-    await loginOneKeyId({ toOneKeyIdPageOnLoginSuccess: true });
-  }, [loginOneKeyId]);
+    await loginUnionKeyId({ toUnionKeyIdPageOnLoginSuccess: true });
+  }, [loginUnionKeyId]);
   return (
     <HeaderIconButton
-      key="onekey-id"
-      title="OneKey ID"
+      key="unionkey-id"
+      title="UnionKey ID"
       icon="PeopleOutline"
       onPress={handlePress}
-      testID="header-right-onekey-id"
+      testID="header-right-unionkey-id"
     />
   );
 }

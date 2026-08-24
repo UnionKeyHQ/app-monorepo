@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import { useFirmwareUpdateActions } from '../hooks/useFirmwareUpdateActions';

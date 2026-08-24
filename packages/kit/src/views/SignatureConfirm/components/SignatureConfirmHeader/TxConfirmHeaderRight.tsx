@@ -12,11 +12,11 @@ import {
   Skeleton,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { getNetworksSupportMevProtection } from '@onekeyhq/shared/src/config/presetNetworks';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/components';
+import type { IUnsignedTxPro } from '@unionkeyhq/core/src/types';
+import { getNetworksSupportMevProtection } from '@unionkeyhq/shared/src/config/presetNetworks';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IDecodedTx } from '@unionkeyhq/shared/types/tx';
 
 const mevProtectionProviders = getNetworksSupportMevProtection();
 

@@ -1,7 +1,7 @@
 import { isNil, omitBy } from 'lodash';
 
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

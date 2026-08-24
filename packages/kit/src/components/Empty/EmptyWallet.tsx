@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { Empty } from '@onekeyhq/components';
-import { useToOnBoardingPage } from '@onekeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Empty } from '@unionkeyhq/components';
+import { useToOnBoardingPage } from '@unionkeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function EmptyWallet() {
   const intl = useIntl();

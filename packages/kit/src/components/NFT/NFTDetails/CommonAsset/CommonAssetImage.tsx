@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import { Icon, Image, SizableText, Stack, Video } from '@onekeyhq/components';
-import { SHOW_NFT_AMOUNT_MAX } from '@onekeyhq/shared/src/consts/walletConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ENFTType, type IAccountNFT } from '@onekeyhq/shared/types/nft';
+import { Icon, Image, SizableText, Stack, Video } from '@unionkeyhq/components';
+import { SHOW_NFT_AMOUNT_MAX } from '@unionkeyhq/shared/src/consts/walletConsts';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ENFTType, type IAccountNFT } from '@unionkeyhq/shared/types/nft';
 
 import { UnSupportedImageContainer } from './UnSupportedImageContainer';
 

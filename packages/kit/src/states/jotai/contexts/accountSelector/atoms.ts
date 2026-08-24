@@ -5,20 +5,20 @@ import type {
   IDBDevice,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAccountSelectorSelectedAccount } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveInfoItems,
   IAccountDeriveTypes,
   IVaultSettings,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 import type {
   EAccountSelectorSceneName,
   IServerNetwork,
-} from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/types';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 import { createJotaiContext } from '../../utils/createJotaiContext';
 

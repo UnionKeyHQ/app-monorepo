@@ -7,7 +7,7 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 const KEYBOARD_DELETE_CHAR = 'x';
 

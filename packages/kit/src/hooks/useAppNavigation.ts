@@ -2,19 +2,19 @@ import { useCallback, useMemo, useRef } from 'react';
 
 import { useNavigation } from '@react-navigation/core';
 
-import { Page, rootNavigationRef } from '@onekeyhq/components';
+import { Page, rootNavigationRef } from '@unionkeyhq/components';
 import type {
   IModalNavigationProp,
   IPageNavigationProp,
   IStackNavigationOptions,
-} from '@onekeyhq/components/src/layouts/Navigation';
+} from '@unionkeyhq/components/src/layouts/Navigation';
 import type {
   EModalRoutes,
   ETabRoutes,
   IModalParamList,
   ITabStackParamList,
-} from '@onekeyhq/shared/src/routes';
-import { ERootRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
+import { ERootRoutes } from '@unionkeyhq/shared/src/routes';
 
 export type IAppNavigation = ReturnType<typeof useAppNavigation>;
 

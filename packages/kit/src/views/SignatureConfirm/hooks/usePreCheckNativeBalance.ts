@@ -5,13 +5,13 @@ import {
   useNativeTokenInfoAtom,
   useSendSelectedFeeInfoAtom,
   useSignatureConfirmActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import type { ITransferPayload } from '@onekeyhq/kit-bg/src/vaults/types';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import type { ITransferPayload } from '@unionkeyhq/kit-bg/src/vaults/types';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
 import {
   calculateNativeAmountInActions,
   isSendNativeTokenAction,
-} from '@onekeyhq/shared/src/utils/txActionUtils';
+} from '@unionkeyhq/shared/src/utils/txActionUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

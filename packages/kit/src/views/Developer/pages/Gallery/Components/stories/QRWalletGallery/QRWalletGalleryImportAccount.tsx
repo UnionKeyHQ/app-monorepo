@@ -3,15 +3,15 @@ import { useState } from 'react';
 import { publicToAddress, toChecksumAddress } from '@ethereumjs/util';
 import HDKey from 'hdkey';
 
-import { Button, Stack, TextArea } from '@onekeyhq/components';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
-import type { IAnimationValue } from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
-import type { IAirGapAccount } from '@onekeyhq/qr-wallet-sdk';
+import { Button, Stack, TextArea } from '@unionkeyhq/components';
+import useScanQrCode from '@unionkeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+import type { IAnimationValue } from '@unionkeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
+import type { IAirGapAccount } from '@unionkeyhq/qr-wallet-sdk';
 import {
   AirGapCryptoHDKeyEvm,
   airGapUrUtils,
   getAirGapSdk,
-} from '@onekeyhq/qr-wallet-sdk';
+} from '@unionkeyhq/qr-wallet-sdk';
 
 import { KEYRING_ACCOUNT, KEYRING_MODE } from './types';
 
@@ -110,7 +110,7 @@ UR:CRYPTO-HDKEY/2-2/LPAOAOCSGECYBAKIYLATHDDAJEECAAHDCXLTFSZMLYRTDLGMHFCNZCCTVWCM
             const childrenPathWildcard = cryptoHDKey.getChildren()?.getPath();
             const childrenPathWildcardWithDefault =
               childrenPathWildcard || '0/*';
-            const name = cryptoHDKey.getName(); // walletName: "OneKey"
+            const name = cryptoHDKey.getName(); // walletName: "UnionKey"
             const note = cryptoHDKey.getNote(); //
 
             let keyringAccount = KEYRING_ACCOUNT.standard;
@@ -141,7 +141,7 @@ UR:CRYPTO-HDKEY/2-2/LPAOAOCSGECYBAKIYLATHDDAJEECAAHDCXLTFSZMLYRTDLGMHFCNZCCTVWCM
               chain: 'ETH',
               path: hdPath,
               publicKey: '',
-              name: 'OneKeyPro',
+              name: 'UnionKeyPro',
               chainCode: '1111',
               extendedPublicKey: xpub,
               xfp,

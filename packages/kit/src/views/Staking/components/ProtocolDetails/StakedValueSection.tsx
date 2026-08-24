@@ -11,10 +11,10 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IStakeProtocolDetails } from '@unionkeyhq/shared/types/staking';
 
 import { AlertSection } from './AlertSection';
 

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import UniversalProvider from '@walletconnect/universal-provider';
 
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import type {
   NamespaceConfig,

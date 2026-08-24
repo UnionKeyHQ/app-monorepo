@@ -26,7 +26,7 @@ const ERRORS = {
 };
 
 const MacVolumesPath = '/Volumes';
-const MacDiskPath = path.join(MacVolumesPath, 'ONEKEY DATA');
+const MacDiskPath = path.join(MacVolumesPath, 'UNIONKEY DATA');
 
 const init = ({ mainWindow }: { mainWindow: BrowserWindow }) => {
   const getPlatform = () => {
@@ -146,7 +146,7 @@ const init = ({ mainWindow }: { mainWindow: BrowserWindow }) => {
             );
 
             const diskPath = Object.keys(result).find(
-              (key) => result[key].indexOf('ONEKEYDATA') > -1,
+              (key) => result[key].indexOf('UNIONKEYDATA') > -1,
             );
             if (diskPath) {
               cleanTimer();
@@ -360,7 +360,7 @@ const init = ({ mainWindow }: { mainWindow: BrowserWindow }) => {
           logger.info('open dialog permission : ====> ', result);
           if (
             !(result ?? []).find(
-              (item) => item.indexOf('/Volumes/ONEKEY DATA') > -1,
+              (item) => item.indexOf('/Volumes/UNIONKEY DATA') > -1,
             )
           ) {
             logger.error('mas permission denied');

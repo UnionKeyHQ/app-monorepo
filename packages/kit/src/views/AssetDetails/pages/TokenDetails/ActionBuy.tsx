@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { withBrowserProvider } from '@onekeyhq/kit/src/views/Discovery/pages/Browser/WithBrowserProvider';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { withBrowserProvider } from '@unionkeyhq/kit/src/views/Discovery/pages/Browser/WithBrowserProvider';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { ActionBase } from './ActionBase';
 

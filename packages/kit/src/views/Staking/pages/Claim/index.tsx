@@ -2,20 +2,20 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { Page } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useAppRoute } from '@unionkeyhq/kit/src/hooks/useAppRoute';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EModalStakingRoutes,
   IModalStakingParamList,
-} from '@onekeyhq/shared/src/routes';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import type { IEarnToken } from '@onekeyhq/shared/types/staking';
-import { EEarnLabels } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/src/routes';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import type { IEarnToken } from '@unionkeyhq/shared/types/staking';
+import { EEarnLabels } from '@unionkeyhq/shared/types/staking';
 
 import { UniversalClaim } from '../../components/UniversalClaim';
 import { useProviderLabel } from '../../hooks/useProviderLabel';

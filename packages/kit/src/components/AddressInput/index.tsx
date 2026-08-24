@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { TextArea } from '@onekeyhq/components';
+import type { TextArea } from '@unionkeyhq/components';
 import {
   Badge,
   Form,
@@ -15,28 +15,28 @@ import {
   Stack,
   XStack,
   useFormContext,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalAddressBookRoutes } from '@onekeyhq/shared/src/routes/addressBook';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EAddressInteractionStatus } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import { EModalAddressBookRoutes } from '@unionkeyhq/shared/src/routes/addressBook';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EAddressInteractionStatus } from '@unionkeyhq/shared/types/address';
 import type {
   EInputAddressChangeType,
   IAddressBadge,
   IAddressValidateStatus,
   IQueryCheckAddressArgs,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 
 import { AddressBadge } from '../AddressBadge';
 import { BaseInput } from '../BaseInput';

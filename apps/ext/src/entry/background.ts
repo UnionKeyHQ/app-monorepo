@@ -4,29 +4,29 @@
 import 'setimmediate';
 
 // eslint-disable-next-line import/order
-import '@onekeyhq/shared/src/polyfills';
+import '@unionkeyhq/shared/src/polyfills';
 
 import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
 import urlParse from 'url-parse';
 
-import offscreenApiProxy from '@onekeyhq/kit-bg/src/offscreens/instance/offscreenApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { getExtensionIndexHtml } from '@onekeyhq/shared/src/utils/extUtils';
+import offscreenApiProxy from '@unionkeyhq/kit-bg/src/offscreens/instance/offscreenApiProxy';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { getExtensionIndexHtml } from '@unionkeyhq/shared/src/utils/extUtils';
 
 import { setupExtUIEvent } from '../background/extUI';
 import { setupKeepAlive } from '../background/keepAlive';
 import serviceWorker from '../background/serviceWorker';
 import { setupSidePanelPortInBg } from '../background/sidePanel';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 
 import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
 
 function initBackground() {
   // TODO use backgroundApiInit
-  const backgroundApiProxy: typeof import('@onekeyhq/kit/src/background/instance/backgroundApiProxy').default =
+  const backgroundApiProxy: typeof import('@unionkeyhq/kit/src/background/instance/backgroundApiProxy').default =
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    require('@onekeyhq/kit/src/background/instance/backgroundApiProxy').default;
+    require('@unionkeyhq/kit/src/background/instance/backgroundApiProxy').default;
 
   const bridge = bridgeSetup.background.createHostBridge({
     receiveHandler: backgroundApiProxy.bridgeReceiveHandler,
@@ -48,7 +48,7 @@ if (platformEnv.isExtensionBackgroundServiceWorker) {
   serviceWorker.disableCacheInBackground();
 }
 console.log(
-  `[OneKey RN] Extension background page ready: 666  ${new Date().toLocaleTimeString()}`,
+  `[UnionKey RN] Extension background page ready: 666  ${new Date().toLocaleTimeString()}`,
 );
 initBackground();
 

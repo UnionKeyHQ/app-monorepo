@@ -1,7 +1,7 @@
 import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   Divider,
   Group,
@@ -10,13 +10,13 @@ import {
   Page,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EOnboardingPages,
   IOnboardingParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import {
   getCreateNewWalletStepImage,
@@ -109,10 +109,10 @@ export function ActivateDevice({
   };
 
   const getDeviceSteps = (
-    onekeyDeviceType: IDeviceType,
+    unionKeyDeviceType: IDeviceType,
     stepType: IDeviceStepType,
   ): IDeviceStepDetail[] | undefined => {
-    switch (onekeyDeviceType) {
+    switch (unionKeyDeviceType) {
       case EDeviceType.Unknown:
         return;
       case EDeviceType.Classic:
@@ -186,7 +186,7 @@ export function ActivateDevice({
         return;
       default:
         // eslint-disable-next-line no-case-declarations, @typescript-eslint/no-unused-vars
-        const _exhaustiveCheck = onekeyDeviceType;
+        const _exhaustiveCheck = unionKeyDeviceType;
     }
   };
 

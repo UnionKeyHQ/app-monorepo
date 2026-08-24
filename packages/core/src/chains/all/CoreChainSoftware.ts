@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 

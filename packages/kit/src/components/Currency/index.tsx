@@ -2,11 +2,11 @@ import { memo, useMemo } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import type { INumberSizeableTextProps } from '@onekeyhq/components';
+import type { INumberSizeableTextProps } from '@unionkeyhq/components';
 import {
   useCurrencyPersistAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import NumberSizeableTextWrapper from '../NumberSizeableTextWrapper';
 

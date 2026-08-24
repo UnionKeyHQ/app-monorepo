@@ -1,5 +1,5 @@
 {
-  "name": "@onekeyhq/shared",
+  "name": "@unionkeyhq/shared",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "lint:fix": "tsc --noEmit && eslint . --ext .ts,.tsx --fix"
   },
   "author": "",
-  "license": "SEE https://github.com/OneKeyHQ/app-monorepo/blob/onekey/LICENSE.md",
+  "license": "SEE https://github.com/UnionKeyHQ/app-monorepo/blob/main/LICENSE.md",
   "private": true,
   "dependencies": {
     "@types/webextension-polyfill": "^0.8.2",

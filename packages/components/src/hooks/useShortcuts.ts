@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { ipcMessageKeys } from '@onekeyhq/desktop/app/config';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import { ipcMessageKeys } from '@unionkeyhq/desktop/app/config';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 export const useShortcuts = (
   eventName: EShortcutEvents | undefined,

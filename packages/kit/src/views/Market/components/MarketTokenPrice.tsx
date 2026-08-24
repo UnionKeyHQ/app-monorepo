@@ -2,9 +2,9 @@ import { useLayoutEffect, useMemo, useState } from 'react';
 
 import { throttle } from 'lodash';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { NumberSizeableText } from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { ISizableTextProps } from '@unionkeyhq/components';
+import { NumberSizeableText } from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 class MarketTokenPriceEvent {
   private tokenPriceMap = new Map<

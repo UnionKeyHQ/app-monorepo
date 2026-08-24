@@ -1,12 +1,12 @@
-import type { IEncodedTx, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+import type { IEncodedTx, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
   ITransferPayload,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
-import type { IAccountNFT } from '@onekeyhq/shared/types/nft';
-import type { IToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import type { IDappSourceInfo } from '@unionkeyhq/shared/types';
+import type { IAccountNFT } from '@unionkeyhq/shared/types/nft';
+import type { IToken, ITokenFiat } from '@unionkeyhq/shared/types/token';
 
 import type { ITokenSelectorParamList } from './assetSelector';
 import type { INetworkAccount } from '../../types/account';

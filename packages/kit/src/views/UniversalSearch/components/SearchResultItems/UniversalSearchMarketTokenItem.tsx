@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
 
-import { XStack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUniversalSearchActions } from '@onekeyhq/kit/src/states/jotai/contexts/universalSearch';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EWatchlistFrom } from '@onekeyhq/shared/src/logger/scopes/market/scenes/token';
-import { ETabMarketRoutes, ETabRoutes } from '@onekeyhq/shared/src/routes';
-import type { IUniversalSearchMarketToken } from '@onekeyhq/shared/types/search';
-import { ESearchStatus } from '@onekeyhq/shared/types/search';
+import { XStack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useUniversalSearchActions } from '@unionkeyhq/kit/src/states/jotai/contexts/universalSearch';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EWatchlistFrom } from '@unionkeyhq/shared/src/logger/scopes/market/scenes/token';
+import { ETabMarketRoutes, ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import type { IUniversalSearchMarketToken } from '@unionkeyhq/shared/types/search';
+import { ESearchStatus } from '@unionkeyhq/shared/types/search';
 
 import { MarketStar } from '../../../Market/components/MarketStar';
 import { MarketTokenIcon } from '../../../Market/components/MarketTokenIcon';

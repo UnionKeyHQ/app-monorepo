@@ -2,13 +2,13 @@ import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import pRetry from 'p-retry';
 
-import { RefreshControl, ScrollView, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useListenTabFocusState from '@onekeyhq/kit/src/hooks/useListenTabFocusState';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
+import { RefreshControl, ScrollView, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useListenTabFocusState from '@unionkeyhq/kit/src/hooks/useListenTabFocusState';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { useBannerData } from '../../hooks/useBannerData';
 import { useDisplayHomePageFlag } from '../../hooks/useWebTabs';

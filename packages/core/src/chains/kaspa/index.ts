@@ -1,4 +1,4 @@
-import { IMPL_KASPA } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_KASPA } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

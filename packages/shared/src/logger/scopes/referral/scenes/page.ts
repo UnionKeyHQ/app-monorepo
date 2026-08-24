@@ -12,19 +12,19 @@ export class PageScene extends BaseScene {
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public signupOneKeyID() {
+  public signupUnionKeyID() {
     return {};
   }
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public signupOneKeyIDResult(isSuccess: boolean) {
+  public signupUnionKeyIDResult(isSuccess: boolean) {
     return { isSuccess };
   }
 
   @LogToServer()
   @LogToLocal({ level: 'info' })
-  public logoutOneKeyIDResult() {
+  public logoutUnionKeyIDResult() {
     return {};
   }
 

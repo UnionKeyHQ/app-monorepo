@@ -2,25 +2,25 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import { isEmpty, uniqBy } from 'lodash';
 
-import { useTabIsRefreshingFocused } from '@onekeyhq/components';
-import type { ITabPageProps } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IDBAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { useTabIsRefreshingFocused } from '@unionkeyhq/components';
+import type { ITabPageProps } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IDBAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAllNetworkAccountInfo } from '@unionkeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   POLLING_DEBOUNCE_INTERVAL,
   POLLING_INTERVAL_FOR_NFT,
-} from '@onekeyhq/shared/src/consts/walletConsts';
+} from '@unionkeyhq/shared/src/consts/walletConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { EHomeTab } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { EHomeTab } from '@unionkeyhq/shared/types';
 import type {
   IAccountNFT,
   IFetchAccountNFTsResp,
-} from '@onekeyhq/shared/types/nft';
+} from '@unionkeyhq/shared/types/nft';
 
 import { useAllNetworkRequests } from '../../../hooks/useAllNetwork';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';
@@ -119,7 +119,7 @@ function NFTListContainer(_props: ITabPageProps) {
       });
       if (
         !allNetworkDataInit &&
-        r.networkId === networkIdsMap.onekeyall &&
+        r.networkId === networkIdsMap.unionkeyall &&
         r.isSameAllNetworksAccountData
       ) {
         setNftList((prev) =>

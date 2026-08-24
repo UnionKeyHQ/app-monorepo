@@ -1,10 +1,10 @@
 import { Semaphore } from 'async-mutex';
 
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
+import type { IDialogShowProps } from '@unionkeyhq/components/src/composite/Dialog/type';
 import type {
   IDecryptStringParams,
   IEncryptStringParams,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import {
   decodePasswordAsync,
   decodeSensitiveTextAsync,
@@ -15,23 +15,23 @@ import {
   ensureSensitiveTextEncoded,
   getBgSensitiveTextEncodeKey,
   revealEntropyToMnemonic,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import biologyAuth from '@onekeyhq/shared/src/biologyAuth';
-import * as OneKeyErrors from '@onekeyhq/shared/src/errors';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IDeviceSharedCallParams } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import biologyAuth from '@unionkeyhq/shared/src/biologyAuth';
+import * as UnionKeyErrors from '@unionkeyhq/shared/src/errors';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IDeviceSharedCallParams } from '@unionkeyhq/shared/types/device';
 import type {
   IPasswordRes,
   IPasswordSecuritySession,
-} from '@onekeyhq/shared/types/password';
+} from '@unionkeyhq/shared/types/password';
 import {
   BIOLOGY_AUTH_CANCEL_ERROR,
   EPasswordMode,
@@ -40,8 +40,8 @@ import {
   PASSCODE_LENGTH,
   PASSWORD_MAX_LENGTH,
   PASSWORD_MIN_LENGTH,
-} from '@onekeyhq/shared/types/password';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkeyhq/shared/types/password';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import localDb from '../../dbs/local/localDb';
 import {
@@ -97,7 +97,7 @@ export default class ServicePassword extends ServiceBase {
         nativeError.cause = biologyAuthNativeError;
         throw nativeError;
       } else {
-        throw new OneKeyErrors.BiologyAuthFailed();
+        throw new UnionKeyErrors.BiologyAuthFailed();
       }
     }
   }
@@ -325,7 +325,7 @@ export default class ServicePassword extends ServiceBase {
       return pwd;
     } catch (e) {
       await this.setBiologyAuthEnable(false);
-      throw new OneKeyErrors.BiologyAuthFailed();
+      throw new UnionKeyErrors.BiologyAuthFailed();
     }
   }
 
@@ -372,11 +372,11 @@ export default class ServicePassword extends ServiceBase {
       (realPassword.length < PASSWORD_MIN_LENGTH ||
         realPassword.length > PASSWORD_MAX_LENGTH)
     ) {
-      throw new OneKeyErrors.PasswordStrengthValidationFailed();
+      throw new UnionKeyErrors.PasswordStrengthValidationFailed();
     }
     if (passwordMode === EPasswordMode.PASSCODE) {
       if (realPassword.length !== PASSCODE_LENGTH) {
-        throw new OneKeyErrors.PasswordStrengthValidationFailed();
+        throw new UnionKeyErrors.PasswordStrengthValidationFailed();
       }
     }
     // **** other rules ....
@@ -402,7 +402,7 @@ export default class ServicePassword extends ServiceBase {
       useRnJsCrypto,
     });
     if (realPassword === realNewPassword) {
-      throw new OneKeyErrors.PasswordUpdateSameFailed();
+      throw new UnionKeyErrors.PasswordUpdateSameFailed();
     }
   }
 
@@ -656,7 +656,7 @@ export default class ServicePassword extends ServiceBase {
         this.backgroundApi.bridgeExtBg &&
         !checkExtUIOpen(this.backgroundApi.bridgeExtBg)
       ) {
-        throw new OneKeyErrors.OneKeyInternalError();
+        throw new UnionKeyErrors.UnionKeyInternalError();
       }
 
       const needReenterPassword = await this.isAlwaysReenterPassword(reason);
@@ -789,7 +789,7 @@ export default class ServicePassword extends ServiceBase {
 
   @backgroundMethod()
   async cancelPasswordPromptDialog(promiseId: number) {
-    const error = new OneKeyErrors.PasswordPromptDialogCancel();
+    const error = new UnionKeyErrors.PasswordPromptDialogCancel();
     return this.rejectPasswordPromptDialog({ promiseId, error });
   }
 
@@ -801,11 +801,11 @@ export default class ServicePassword extends ServiceBase {
   }: {
     promiseId: number;
     message?: string;
-    error?: IOneKeyError;
+    error?: IUnionKeyError;
   }) {
     const errorReject =
       error ??
-      new OneKeyErrors.OneKeyError({
+      new UnionKeyErrors.UnionKeyError({
         message: message || 'rejectPasswordPromptDialog',
       });
     this.clearPasswordPromptTimeout();

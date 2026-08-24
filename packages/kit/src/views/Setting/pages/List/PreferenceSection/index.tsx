@@ -2,19 +2,19 @@ import { useCallback, useContext, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ISelectItem } from '@onekeyhq/components';
-import { Select, XStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { TabFreezeOnBlurContext } from '@onekeyhq/kit/src/provider/Container/TabFreezeOnBlurContainer';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations, type ILocaleSymbol } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IModalSettingParamList } from '@onekeyhq/shared/src/routes';
-import { EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
+import type { ISelectItem } from '@unionkeyhq/components';
+import { Select, XStack } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { Section } from '@unionkeyhq/kit/src/components/Section';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { TabFreezeOnBlurContext } from '@unionkeyhq/kit/src/provider/Container/TabFreezeOnBlurContainer';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations, type ILocaleSymbol } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IModalSettingParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalSettingRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { useLocaleOptions } from '../../../hooks';
 

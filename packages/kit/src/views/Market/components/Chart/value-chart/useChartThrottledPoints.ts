@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { monotoneCubicInterpolation } from '@onekeyfe/react-native-animated-charts';
 import { debounce } from 'lodash';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IMarketTokenChart } from '@onekeyhq/shared/types/market';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IMarketTokenChart } from '@unionkeyhq/shared/types/market';
 
 export const POINT_LIMITS = platformEnv.isNativeIOSPad ? 500 : 200;
 const DUMMY_POINTS = 10;

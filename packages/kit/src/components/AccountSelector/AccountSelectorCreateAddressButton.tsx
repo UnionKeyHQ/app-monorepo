@@ -3,25 +3,25 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { IButtonProps } from '@onekeyhq/components';
-import { Button } from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
+import type { IButtonProps } from '@unionkeyhq/components';
+import { Button } from '@unionkeyhq/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
 import type {
   IDBAccount,
   IDBWalletId,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
 import {
   useAccountIsAutoCreatingAtom,
   useAccountManualCreatingAtom,
   useIndexedAccountAddressCreationStateAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
+import errorUtils from '@unionkeyhq/shared/src/errors/utils/errorUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { useEnabledNetworksCompatibleWithWalletIdInAllNetworks } from '../../hooks/useAllNetwork';

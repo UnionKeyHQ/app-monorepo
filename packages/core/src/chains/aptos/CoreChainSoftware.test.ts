@@ -1,4 +1,4 @@
-import { EMessageTypesAptos } from '@onekeyhq/shared/types/message';
+import { EMessageTypesAptos } from '@unionkeyhq/shared/types/message';
 
 import coreTestsUtils from '../../../@tests/coreTestsUtils';
 import coreTestsFixtures from '../../../@tests/fixtures/coreTestsFixtures';
@@ -56,8 +56,8 @@ const {
           'message': 'This is a sample message',
           'nonce': 12_345,
           'fullMessage':
-            'APTOS\napplication: dapp-example.onekeytest.com\nchainId: 1\nmessage: This is a sample message\nnonce: 12345',
-          'application': 'dapp-example.onekeytest.com',
+            'APTOS\napplication: dapp-example.api.unionkey.io\nchainId: 1\nmessage: This is a sample message\nnonce: 12345',
+          'application': 'dapp-example.api.unionkey.io',
           'chainId': 1,
         }),
       },

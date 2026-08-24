@@ -2,18 +2,18 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IActionListItemProps } from '@onekeyhq/components';
+import type { IActionListItemProps } from '@unionkeyhq/components';
 import {
   ActionList,
   Button,
   IconButton,
   Skeleton,
   XStack,
-} from '@onekeyhq/components';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/components';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import type { IMarketTokenDetail } from '@unionkeyhq/shared/types/market';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { ReviewControl } from '../../../components/ReviewControl';

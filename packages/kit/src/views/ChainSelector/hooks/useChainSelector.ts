@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import { EChainSelectorPages, EModalRoutes } from '@onekeyhq/shared/src/routes';
-import type { IChainSelectorParams } from '@onekeyhq/shared/src/routes/chainSelector';
+import { EChainSelectorPages, EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import type { IChainSelectorParams } from '@unionkeyhq/shared/src/routes/chainSelector';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 

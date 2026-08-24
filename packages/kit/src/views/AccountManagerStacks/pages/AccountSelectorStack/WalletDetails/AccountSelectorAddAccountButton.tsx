@@ -3,38 +3,38 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Icon, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useCreateQrWallet } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useCreateQrWallet';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import { Icon, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useCreateQrWallet } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useCreateQrWallet';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import {
   useAccountSelectorActions,
   useActiveAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import type {
   IDBDevice,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountSelectorAccountsListSectionData } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAccountSelectorAccountsListSectionData } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
 import {
   indexedAccountAddressCreationStateAtom,
   useIndexedAccountAddressCreationStateAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes, EOnboardingPages } from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 export function AccountSelectorAddAccountButton({
   num,
@@ -158,7 +158,7 @@ export function AccountSelectorAddAccountButton({
             });
             if (
               isQrWallet &&
-              (activeNetworkId !== getNetworkIdsMap().onekeyall
+              (activeNetworkId !== getNetworkIdsMap().unionkeyall
                 ? result?.failedAccounts?.find(
                     (account) => account.networkId === activeNetworkId,
                   )
@@ -166,7 +166,7 @@ export function AccountSelectorAddAccountButton({
             ) {
               await createQrWalletByAccount({
                 walletId: focusedWalletId,
-                networkId: activeNetworkId || getNetworkIdsMap().onekeyall,
+                networkId: activeNetworkId || getNetworkIdsMap().unionkeyall,
                 indexedAccountId: indexedAccount.id,
               });
               // QR wallet should add default network accounts after create

@@ -4,20 +4,20 @@ import { debounce, isNil } from 'lodash';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import accountUtils, {
   buildAccountLocalAssetsKey,
-} from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/utils/accountUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkeyhq/shared/src/utils/debug/perfUtils';
 import {
   getEmptyTokenData,
   getMergedTokenData,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/utils/tokenUtils';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IAccountToken,
   IFetchAccountTokensParams,
@@ -28,7 +28,7 @@ import type {
   IToken,
   ITokenData,
   ITokenFiat,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 import { vaultFactory } from '../vaults/factory';
 import { getVaultSettings } from '../vaults/settings';
@@ -108,7 +108,7 @@ class ServiceToken extends ServiceBase {
       ? this._currentUrlAccountId
       : this._currentAccountId;
 
-    if (isAllNetworks && currentNetworkId !== getNetworkIdsMap().onekeyall)
+    if (isAllNetworks && currentNetworkId !== getNetworkIdsMap().unionkeyall)
       return {
         ...getEmptyTokenData(),
         networkId: currentNetworkId,

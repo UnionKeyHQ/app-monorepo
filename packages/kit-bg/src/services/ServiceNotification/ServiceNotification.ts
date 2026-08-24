@@ -4,24 +4,24 @@ import { InteractionManager } from 'react-native';
 import {
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import perfUtils from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import perfUtils from '@unionkeyhq/shared/src/utils/debug/perfUtils';
 import notificationsUtils, {
   NOTIFICATION_ACCOUNT_ACTIVITY_DEFAULT_MAX_ACCOUNT_COUNT,
-} from '@onekeyhq/shared/src/utils/notificationsUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import type { IApiClientResponse } from '@onekeyhq/shared/types/endpoint';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/utils/notificationsUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import type { IApiClientResponse } from '@unionkeyhq/shared/types/endpoint';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   INotificationClickParams,
   INotificationPermissionDetail,
@@ -36,13 +36,13 @@ import type {
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 import {
   ENotificationPermission,
   ENotificationPushMessageAckAction,
   ENotificationPushSyncMethod,
   EPushProviderEventNames,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 
 import {
   notificationsAtom,

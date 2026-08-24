@@ -5,9 +5,9 @@ import type {
   IIconProps,
   ISizableTextProps,
   IStackProps,
-} from '@onekeyhq/components';
-import { Empty, Icon, SizableText, Stack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { Empty, Icon, SizableText, Stack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 type IProps = {
   isBuyTokenSupported?: boolean;

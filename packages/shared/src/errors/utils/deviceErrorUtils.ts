@@ -4,16 +4,16 @@ import { isArray, isNil } from 'lodash';
 import platformEnv from '../../platformEnv';
 import * as HardwareErrors from '../errors/hardwareErrors';
 import {
-  ECustomOneKeyHardwareError,
-  EOneKeyErrorClassNames,
+  ECustomUnionKeyHardwareError,
+  EUnionKeyErrorClassNames,
 } from '../types/errorTypes';
 
 import { getDeviceErrorPayloadMessage } from './errorUtils';
 
 import type { IDeviceResponseResult } from '../../../types/device';
 import type {
-  IOneKeyError,
-  IOneKeyHardwareErrorPayload,
+  IUnionKeyError,
+  IUnionKeyHardwareErrorPayload,
 } from '../types/errorTypes';
 
 export function captureSpecialError(
@@ -40,15 +40,15 @@ export function captureSpecialError(
 }
 
 export function convertDeviceError(
-  payloadOrigin: IOneKeyHardwareErrorPayload,
-): IOneKeyError {
+  payloadOrigin: IUnionKeyHardwareErrorPayload,
+): IUnionKeyError {
   const payload = {
     ...payloadOrigin,
     message: getDeviceErrorPayloadMessage(payloadOrigin),
   };
   const { code, message, params } = payload;
 
-  // TODO convert hardware error payload params to OneKeyError i18n info
+  // TODO convert hardware error payload params to UnionKeyError i18n info
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const info = params;
 
@@ -167,9 +167,9 @@ export function convertDeviceError(
     case HardwareErrorCode.ActionCancelled:
       return new HardwareErrors.UserCancel({ payload });
     case HardwareErrorCode.BridgeNotInstalled:
-      return new HardwareErrors.NeedOneKeyBridge({ payload });
-    case ECustomOneKeyHardwareError.NeedOneKeyBridge:
-      return new HardwareErrors.NeedOneKeyBridge({ payload });
+      return new HardwareErrors.NeedUnionKeyBridge({ payload });
+    case ECustomUnionKeyHardwareError.NeedUnionKeyBridge:
+      return new HardwareErrors.NeedUnionKeyBridge({ payload });
     case HardwareErrorCode.BridgeNetworkError:
       return new HardwareErrors.BridgeNetworkError({ payload });
     case HardwareErrorCode.BridgeTimeoutError:
@@ -229,7 +229,7 @@ export async function convertDeviceResponse<T>(
   } catch (e) {
     const error: Error | undefined = e as Error;
     console.error(error);
-    const hardwareCommonError = new HardwareErrors.OneKeyHardwareError(error);
+    const hardwareCommonError = new HardwareErrors.UnionKeyHardwareError(error);
     throw hardwareCommonError;
   }
   if (!response.success) {
@@ -241,25 +241,25 @@ export async function convertDeviceResponse<T>(
 export function isHardwareError({
   error,
 }: {
-  error: IOneKeyError | undefined;
+  error: IUnionKeyError | undefined;
 }) {
-  const isOneKeyHardwareError =
-    error instanceof HardwareErrors.OneKeyHardwareError ||
-    error?.className === EOneKeyErrorClassNames.OneKeyHardwareError ||
-    error?.className === EOneKeyErrorClassNames.UnknownHardwareError ||
+  const isUnionKeyHardwareError =
+    error instanceof HardwareErrors.UnionKeyHardwareError ||
+    error?.className === EUnionKeyErrorClassNames.UnionKeyHardwareError ||
+    error?.className === EUnionKeyErrorClassNames.UnknownHardwareError ||
     error?.$isHardwareError === true;
-  return error && isOneKeyHardwareError;
+  return error && isUnionKeyHardwareError;
 }
 
 export function isHardwareErrorByCode({
   error,
   code,
 }: {
-  error: IOneKeyError | undefined;
+  error: IUnionKeyError | undefined;
   code: number | Array<number | string> | undefined;
 }) {
   // HardwareErrorCode
-  const isOneKeyHardwareError = isHardwareError({ error });
+  const isUnionKeyHardwareError = isHardwareError({ error });
 
   const isCodeMatch = (errorCode: number | undefined | string) =>
     errorCode === code ||
@@ -267,7 +267,7 @@ export function isHardwareErrorByCode({
 
   return (
     error &&
-    isOneKeyHardwareError &&
+    isUnionKeyHardwareError &&
     (isCodeMatch(error?.code) || isCodeMatch(error?.payload?.code))
   );
 }
@@ -275,7 +275,7 @@ export function isHardwareErrorByCode({
 export function isHardwareInterruptErrorByCode({
   error,
 }: {
-  error: IOneKeyError | undefined;
+  error: IUnionKeyError | undefined;
 }) {
   return isHardwareErrorByCode({
     error,

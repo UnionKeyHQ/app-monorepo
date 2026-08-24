@@ -6,7 +6,7 @@ import type {
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_QR,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
 
 import type { EV4DBAccountType, EV4TokenRiskLevel } from '../v4types';
 import type { IDeviceType } from '@onekeyfe/hd-core';
@@ -79,7 +79,7 @@ export type IV4DBDevicePayloadJson = {
 };
 export type IV4DBDevice = IV4DBBaseObjectWithName & {
   features: string; // TODO rename to featuresRaw
-  //   featuresInfo?: IOneKeyDeviceFeatures; // readonly field // TODO rename to features
+  //   featuresInfo?: IUnionKeyDeviceFeatures; // readonly field // TODO rename to features
   // TODO make index for better performance (getDeviceByQuery)
   mac: string; // alias connectId/mac\sn, never changed even if device reset
   name: string;

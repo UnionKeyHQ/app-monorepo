@@ -1,10 +1,10 @@
 import { memo, useMemo } from 'react';
 
-import { Divider, Stack } from '@onekeyhq/components';
-import { useAccountSelectorEditModeAtom } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { HiddenWalletAddButton } from '@onekeyhq/kit/src/views/AccountManagerStacks/components/HiddenWalletAddButton';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Divider, Stack } from '@unionkeyhq/components';
+import { useAccountSelectorEditModeAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { HiddenWalletAddButton } from '@unionkeyhq/kit/src/views/AccountManagerStacks/components/HiddenWalletAddButton';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import { BatchCreateAccountButton } from './BatchCreateAccountButton';
 import { DeviceManagementButton } from './DeviceManagementButton';

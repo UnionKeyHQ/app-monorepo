@@ -5,7 +5,7 @@ import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { IActionListItemProps } from '@onekeyhq/components';
+import type { IActionListItemProps } from '@unionkeyhq/components';
 import {
   ActionList,
   Button,
@@ -13,24 +13,24 @@ import {
   Spinner,
   Stack,
   Toast,
-} from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { HeaderIconButton } from '@unionkeyhq/components/src/layouts/Navigation/Header';
+import type { IDBDevice } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EModalRoutes,
   EModalSignatureConfirmRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 import type {
   EModalAssetDetailRoutes,
   IModalAssetDetailsParamList,
-} from '@onekeyhq/shared/src/routes/assetDetails';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { generateUploadNFTParams } from '@onekeyhq/shared/src/utils/nftUtils';
-import stringUtils from '@onekeyhq/shared/src/utils/stringUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { IAccountNFT } from '@onekeyhq/shared/types/nft';
+} from '@unionkeyhq/shared/src/routes/assetDetails';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { generateUploadNFTParams } from '@unionkeyhq/shared/src/utils/nftUtils';
+import stringUtils from '@unionkeyhq/shared/src/utils/stringUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
+import type { IAccountNFT } from '@unionkeyhq/shared/types/nft';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

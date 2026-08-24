@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import axios from 'axios';
 
-import { InvalidTransferValue } from '@onekeyhq/shared/src/errors';
-import type { IRpcClientInfo } from '@onekeyhq/shared/types/customRpc';
+import { InvalidTransferValue } from '@unionkeyhq/shared/src/errors';
+import type { IRpcClientInfo } from '@unionkeyhq/shared/types/customRpc';
 
 import type { AxiosError, AxiosInstance } from 'axios';
 

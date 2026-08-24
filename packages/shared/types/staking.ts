@@ -1,4 +1,4 @@
-import type { ColorTokens, IKeyOfIcons } from '@onekeyhq/components';
+import type { ColorTokens, IKeyOfIcons } from '@unionkeyhq/components';
 
 import type { INetworkAccount } from './account';
 import type { IFetchTokenDetailItem, IToken } from './token';

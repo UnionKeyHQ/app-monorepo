@@ -5,16 +5,16 @@ import TonWeb from 'tonweb';
 import {
   ETonSendMode,
   genAddressFromAddress,
-} from '@onekeyhq/core/src/chains/ton/sdkTon';
-import type { IEncodedTxTon } from '@onekeyhq/core/src/chains/ton/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/ton/sdkTon';
+import type { IEncodedTxTon } from '@unionkeyhq/core/src/chains/ton/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/core/src/types';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -22,22 +22,22 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
+} from '@unionkeyhq/shared/types/customRpc';
 import type {
   IEstimateFeeParams,
   IFeeInfoUnit,
-} from '@onekeyhq/shared/types/fee';
-import { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
+} from '@unionkeyhq/shared/types/fee';
+import { ESendPreCheckTimingEnum } from '@unionkeyhq/shared/types/send';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
   EDecodedTxStatus,
   type IDecodedTx,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -111,7 +111,7 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTx> {
     const { transfersInfo } = params;
     if (!transfersInfo) {
-      throw new OneKeyInternalError('Invalid transfersInfo');
+      throw new UnionKeyInternalError('Invalid transfersInfo');
     }
     const network = await this.getNetwork();
     const fromAddress = await this.getAccountAddress();
@@ -297,7 +297,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo ?? [],
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   override async updateUnsignedTx(
@@ -452,7 +452,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new ClientTon({ url: rpcUrl });
     const txId = await client.sendBocReturnHash({ boc: signedTx.rawTx });
@@ -480,7 +480,7 @@ export default class Vault extends VaultBase {
     };
     const fromAddress = await this.getAccountAddress();
     if (from !== fromAddress) {
-      throw new OneKeyInternalError('Invalid from address');
+      throw new UnionKeyInternalError('Invalid from address');
     }
     return {
       from,
@@ -519,7 +519,7 @@ export default class Vault extends VaultBase {
     }
 
     const network = await this.getNetwork();
-    throw new OneKeyInternalError({
+    throw new UnionKeyInternalError({
       key: ETranslations.swap_page_toast_insufficient_balance_content,
       info: {
         token: network.symbol,

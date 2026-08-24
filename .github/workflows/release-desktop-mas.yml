@@ -45,7 +45,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkeyhq'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -82,7 +82,7 @@ jobs:
           MAC_INSTALL_P12_PATH=$RUNNER_TEMP/mac_install_certificate.p12
           APPLE_DISTRIBUTION_P12_PATH=$RUNNER_TEMP/apple_distribution_certificate.p12
           # APPLE_WWDRCA_PATH=$RUNNER_TEMP/apple_WWDRCAG3.cer
-          PP_PATH=./apps/desktop/OneKey_Mac_App.provisionprofile
+          PP_PATH=./apps/desktop/UnionKey_Mac_App.provisionprofile
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
           # import certificate from secrets
@@ -119,12 +119,12 @@ jobs:
         if: ${{ always() }}
         run: |
           security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
-          rm ~/Library/MobileDevice/Provisioning\ Profiles/OneKey_Mac_App.provisionprofile
+          rm ~/Library/MobileDevice/Provisioning\ Profiles/UnionKey_Mac_App.provisionprofile
 
       - name: Upload Artifacts mas
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-desktop-mas
+          name: unionkey-desktop-mas
           path: |
             ./apps/desktop/build-electron/mas-universal/*.pkg
 
@@ -141,16 +141,3 @@ jobs:
           APPLEIDPASS: ${{ secrets.APPLEIDPASS }}
         run: |
           xcrun altool --upload-app --f ./apps/desktop/build-electron/mas-universal/*.pkg -t macOS -u $APPLEID -p $APPLEIDPASS --show-progress
-
-      - name: 'Notify to Slack'
-        if: ${{ github.event.workflow_run }}
-        uses: onekeyhq/actions/slack-notify-webhook@main
-        with:
-          web-hook-url: ${{ secrets.SLACK_NOTIFICATION_WEBHOOK }}
-          secret-key: ${{ secrets.ACTION_SIGN_SECERT_KEY }}
-          artifact-type: Desktop
-          artifact-name: OneKey-Desktop-MAS
-          artifact-bundle-id: 'so.onekey.wallet'
-          artifact-version-name: '${{ env.BUILD_APP_VERSION }}@${{ env.BUILD_NUMBER }}'
-          artifact-version-code: '${{ env.BUILD_NUMBER }}'
-          artifact-download-url: '${{ env.ARTIFACTS_URL }}'

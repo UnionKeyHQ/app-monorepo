@@ -1,4 +1,4 @@
-import type { IKeyOfIcons } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Divider,
   Group,
@@ -7,7 +7,7 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 type IProps = {
   title?: React.ReactNode;

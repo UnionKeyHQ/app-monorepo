@@ -4,12 +4,12 @@ import {
   openURL as linkingOpenURL,
 } from 'expo-linking';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EModalRoutes,
   EModalWebViewRoutes,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import appGlobals from '../appGlobals';
 

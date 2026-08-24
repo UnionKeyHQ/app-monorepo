@@ -13,11 +13,11 @@ import {
   YStack,
   useMedia,
   usePageType,
-} from '@onekeyhq/components';
-import useFormatDate from '@onekeyhq/kit/src/hooks/useFormatDate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IMarketTokenChart } from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/components';
+import useFormatDate from '@unionkeyhq/kit/src/hooks/useFormatDate';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IMarketTokenChart } from '@unionkeyhq/shared/types/market';
 
 import ChartView from './ChartView';
 import { PriceLabel } from './PriceLabel';

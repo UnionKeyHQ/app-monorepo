@@ -1,6 +1,6 @@
 import { type PropsWithChildren, memo } from 'react';
 
-import type { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import { ProviderJotaiContextSwap } from '../../../states/jotai/contexts/swap';
 import { jotaiContextStore } from '../../../states/jotai/utils/jotaiContextStore';

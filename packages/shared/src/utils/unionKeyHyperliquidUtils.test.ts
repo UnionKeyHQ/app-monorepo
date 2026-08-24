@@ -1,5 +1,5 @@
 /* eslint-disable spellcheck/spell-checker */
-import type { IUnionKeyHyperliquidOrderAction } from '@onekeyhq/shared/types/unionkey/trade';
+import type { IUnionKeyHyperliquidOrderAction } from '@unionkeyhq/shared/types/unionkey/trade';
 
 import {
   buildUnionKeyHyperliquidActionHash,

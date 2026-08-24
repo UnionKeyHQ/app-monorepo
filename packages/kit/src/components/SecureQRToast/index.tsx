@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IQRCodeProps, IShowToasterProps } from '@onekeyhq/components';
+import type { IQRCodeProps, IShowToasterProps } from '@unionkeyhq/components';
 import {
   Button,
   HeightTransition,
@@ -13,10 +13,10 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { airGapUrUtils } from '@onekeyhq/qr-wallet-sdk';
-import { OneKeyRequestDeviceQR } from '@onekeyhq/qr-wallet-sdk/src/OneKeyRequestDeviceQR';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { airGapUrUtils } from '@unionkeyhq/qr-wallet-sdk';
+import { UnionKeyRequestDeviceQR } from '@unionkeyhq/qr-wallet-sdk/src/UnionKeyRequestDeviceQR';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 interface ISecureQRToastBaseProps {
   title?: string;
@@ -125,7 +125,7 @@ const SecureQRToastBase = ({
                   valueUr &&
                   qrcodeDetails.single?.startsWith('ur:onekey-app-call-device/')
                 ) {
-                  const data = OneKeyRequestDeviceQR.fromUR(valueUr);
+                  const data = UnionKeyRequestDeviceQR.fromUR(valueUr);
                   console.log(data);
                 }
               }

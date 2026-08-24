@@ -7,14 +7,14 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useLoginOneKeyId } from '@onekeyhq/kit/src/hooks/useLoginOneKeyId';
-import { usePrimeAuthV2 } from '@onekeyhq/kit/src/views/Prime/hooks/usePrimeAuthV2';
-import { usePrimePayment } from '@onekeyhq/kit/src/views/Prime/hooks/usePrimePayment';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EPrimePages } from '@onekeyhq/shared/src/routes/prime';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useLoginUnionKeyId } from '@unionkeyhq/kit/src/hooks/useLoginUnionKeyId';
+import { usePrimeAuthV2 } from '@unionkeyhq/kit/src/views/Prime/hooks/usePrimeAuthV2';
+import { usePrimePayment } from '@unionkeyhq/kit/src/views/Prime/hooks/usePrimePayment';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import { EPrimePages } from '@unionkeyhq/shared/src/routes/prime';
 
 function CloudSyncDebugTest() {
   return (
@@ -179,7 +179,7 @@ export function PrimeDebugPanel({
   const { getCustomerInfo } = usePrimePayment();
   const navigation = useAppNavigation();
   const [isHidden, setIsHidden] = useState(false);
-  const { loginOneKeyId } = useLoginOneKeyId();
+  const { loginUnionKeyId } = useLoginUnionKeyId();
 
   if (isHidden) {
     return null;
@@ -258,10 +258,10 @@ export function PrimeDebugPanel({
         </Button>
         <Button
           onPress={() => {
-            void loginOneKeyId();
+            void loginUnionKeyId();
           }}
         >
-          loginOneKeyId
+          loginUnionKeyId
         </Button>
       </XStack>
       <CloudSyncDebugTest />

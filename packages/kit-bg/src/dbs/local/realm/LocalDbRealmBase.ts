@@ -1,19 +1,19 @@
 // eslint-disable-next-line max-classes-per-file
 import Realm from 'realm';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
   DB_MAIN_CONTEXT_ID,
   DEFAULT_VERIFY_STRING,
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 
 import { REALM_DB_NAME, REALM_DB_VERSION } from '../consts';
 import { LocalDbBase } from '../LocalDbBase';

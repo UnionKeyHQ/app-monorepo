@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import semver from 'semver';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export const useFirmwareVersionValid = () => {
   const intl = useIntl();

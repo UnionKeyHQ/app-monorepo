@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { ELocalDBStoreNames } from './localDBStoreNames';
 import { EIndexedDBBucketNames } from './types';
@@ -8,7 +8,7 @@ export const IS_DB_BUCKET_SUPPORT = Boolean(
     (globalThis?.navigator as INavigator)?.storageBuckets,
 );
 
-const LOCAL_DB_NAME = 'OneKeyV5';
+const LOCAL_DB_NAME = 'UnionKeyV5';
 const LOCAL_DB_VERSION = 10;
 
 // ----------------------------------------------

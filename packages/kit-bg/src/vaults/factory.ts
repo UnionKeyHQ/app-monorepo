@@ -4,7 +4,7 @@ import {
   WALLET_TYPE_EXTERNAL,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   IMPL_ADA,
   IMPL_ALGO,
@@ -38,14 +38,14 @@ import {
   IMPL_TON,
   IMPL_TRON,
   IMPL_XRP,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
-  OneKeyInternalError,
+  UnionKeyInternalError,
   VaultKeyringNotDefinedError,
-} from '@onekeyhq/shared/src/errors';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { ensureRunOnBackground } from '@onekeyhq/shared/src/utils/assertUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/errors';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { ensureRunOnBackground } from '@unionkeyhq/shared/src/utils/assertUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import { VaultFactory } from './base/VaultFactory';
 
@@ -61,7 +61,7 @@ export async function createKeyringInstance(vault: VaultBase) {
 
   const checkKeyringClassExists = (
     keyringClass: typeof KeyringBaseMock,
-    throwError?: () => IOneKeyError,
+    throwError?: () => IUnionKeyError,
   ) => {
     if (!keyringClass) {
       if (throwError) {
@@ -167,7 +167,7 @@ export async function createVaultInstance(options: IVaultOptions) {
   vault = new VaultClass(options);
 
   if (!vault) {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       `Vault Class not found for: networkId=${options.networkId}, accountId=${options.accountId}`,
     );
   }

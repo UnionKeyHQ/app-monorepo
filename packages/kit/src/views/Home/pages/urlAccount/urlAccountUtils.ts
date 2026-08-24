@@ -1,20 +1,20 @@
 import { StackActions } from '@react-navigation/native';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IAppNavigation } from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { WEB_APP_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IAppNavigation } from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { WEB_APP_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   ERootRoutes,
   ETabHomeRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 type IUrlAccountRouteBuildParams = {
   account: INetworkAccount | undefined;

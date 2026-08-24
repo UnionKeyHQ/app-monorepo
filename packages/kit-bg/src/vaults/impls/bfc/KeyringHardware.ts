@@ -2,20 +2,20 @@ import { toSerializedSignature } from '@benfen/bfc.js/cryptography';
 import { Ed25519PublicKey } from '@benfen/bfc.js/keypairs/ed25519';
 import { toB64 } from '@benfen/bfc.js/utils';
 
-import { handleSignData } from '@onekeyhq/core/src/chains/bfc/CoreChainSoftware';
-import type { IEncodedTxBfc } from '@onekeyhq/core/src/chains/bfc/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import { handleSignData } from '@unionkeyhq/core/src/chains/bfc/CoreChainSoftware';
+import type { IEncodedTxBfc } from '@unionkeyhq/core/src/chains/bfc/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyHardwareError } from '@onekeyhq/shared/src/errors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkeyhq/core/src/types';
+import { UnionKeyHardwareError } from '@unionkeyhq/shared/src/errors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -87,7 +87,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //   ...params.deviceParams.deviceCommonParams,
             //   bundle: paths.map((path, arrIndex) => ({
             //     path,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnOneKey: showOnOneKeyFn(arrIndex),
             //   })),
             // });
 
@@ -99,7 +99,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         for (const addressInfo of addressesInfo) {
           const { address, path, publicKey } = addressInfo;
           if (!address) {
-            throw new OneKeyHardwareError('Address is empty');
+            throw new UnionKeyHardwareError('Address is empty');
           }
           const item: ICoreApiGetAddressItem = {
             address,

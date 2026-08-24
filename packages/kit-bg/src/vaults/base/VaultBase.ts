@@ -7,34 +7,34 @@ import { Semaphore } from 'async-mutex';
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil, omit, omitBy } from 'lodash';
 
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
+import type { CoreChainApiBase } from '@unionkeyhq/core/src/base/CoreChainApiBase';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import type {
   EAddressEncodings,
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkeyhq/core/src/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 import {
   getOnChainHistoryTxAssetInfo,
   getOnChainHistoryTxStatus,
-} from '@onekeyhq/shared/src/utils/historyUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+} from '@unionkeyhq/shared/src/utils/historyUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 import {
   buildTxActionDirection,
   getStakingActionLabel,
-} from '@onekeyhq/shared/src/utils/txActionUtils';
-import { addressIsEnsFormat } from '@onekeyhq/shared/src/utils/uriUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/utils/txActionUtils';
+import { addressIsEnsFormat } from '@unionkeyhq/shared/src/utils/uriUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 import type {
   IAddressValidation,
   IFetchAccountDetailsResp,
@@ -45,19 +45,19 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/types/customRpc';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IEstimateFeeParams,
   IEstimateGasParams,
   IEstimateGasResp,
   IFeeInfoUnit,
   IServerEstimateFeeResponse,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/fee';
 import type {
   IAccountHistoryTx,
   IAllNetworkHistoryExtraItem,
@@ -69,24 +69,24 @@ import type {
   IOnChainHistoryTxTransfer,
   IServerFetchAccountHistoryDetailParams,
   IServerFetchAccountHistoryDetailResp,
-} from '@onekeyhq/shared/types/history';
-import { EOnChainHistoryTxType } from '@onekeyhq/shared/types/history';
-import type { IResolveNameResp } from '@onekeyhq/shared/types/name';
-import type { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
+} from '@unionkeyhq/shared/types/history';
+import { EOnChainHistoryTxType } from '@unionkeyhq/shared/types/history';
+import type { IResolveNameResp } from '@unionkeyhq/shared/types/name';
+import type { ESendPreCheckTimingEnum } from '@unionkeyhq/shared/types/send';
 import type {
   IFetchServerTokenDetailParams,
   IFetchServerTokenDetailResponse,
   IFetchServerTokenListParams,
   IFetchServerTokenListResponse,
-} from '@onekeyhq/shared/types/serverToken';
-import type { IAfterSendTxActionParams } from '@onekeyhq/shared/types/signatureConfirm';
-import type { IStakeTx, IStakingInfo } from '@onekeyhq/shared/types/staking';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/serverToken';
+import type { IAfterSendTxActionParams } from '@unionkeyhq/shared/types/signatureConfirm';
+import type { IStakeTx, IStakingInfo } from '@unionkeyhq/shared/types/staking';
+import type { ISwapTxInfo } from '@unionkeyhq/shared/types/swap/types';
 import type {
   IAccountToken,
   IFetchAccountTokensResp,
   IFetchTokenDetailItem,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 import type {
   EReplaceTxType,
   IDecodedTx,
@@ -94,11 +94,11 @@ import type {
   IDecodedTxActionAssetTransfer,
   IDecodedTxExtraInfo,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultContext } from './VaultContext';
 
@@ -564,7 +564,7 @@ export abstract class VaultBase extends VaultBaseChainOnly {
     let networkId = originNetworkId;
     let accountAddress = originAccountAddress;
     let xpub = originXpub;
-    if (originNetworkId === getNetworkIdsMap().onekeyall) {
+    if (originNetworkId === getNetworkIdsMap().unionkeyall) {
       const allNetworkAccount = allNetworkHistoryExtraItems?.find((i) => {
         const [_, txXpub] = onChainHistoryTx.key.split('_');
         if (!isNil(i.accountXpub)) {

@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons, IPageNavigationProp } from '@onekeyhq/components';
+import type { IKeyOfIcons, IPageNavigationProp } from '@unionkeyhq/components';
 import {
   Button,
   Icon,
@@ -15,8 +15,8 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+} from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import {
   useSwapFromTokenAmountAtom,
   useSwapManualSelectQuoteProvidersAtom,
@@ -25,25 +25,25 @@ import {
   useSwapSelectFromTokenAtom,
   useSwapSelectToTokenAtom,
   useSwapSortedQuoteListAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
+} from '@unionkeyhq/shared/src/routes/swap';
 import {
   canCompareSwapQuoteNetCost,
   getLowestCostSwapQuote,
   isSameSwapQuote,
   isSwapQuoteAvailable,
-} from '@onekeyhq/shared/src/utils/unionKeySwapQuoteUtils';
-import { ESwapProviderSort } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/src/utils/unionKeySwapQuoteUtils';
+import { ESwapProviderSort } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import {
   ESwapQuoteKind,
   type IFetchQuoteResult,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import SwapProviderListItem from '../../components/SwapProviderListItem';
 import { SwapProviderMirror } from '../SwapProviderMirror';

@@ -1,8 +1,8 @@
 import { type EIP1193Provider } from 'viem';
 
-import type { ExternalConnectorWalletConnect } from '@onekeyhq/kit-bg/src/connectors/chains/walletconnect/ExternalConnectorWalletConnect';
-import type { IDBAccountAddressesMap } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { WalletConnectDappSideProvider } from '@onekeyhq/kit-bg/src/services/ServiceWalletConnect/WalletConnectDappSideProvider';
+import type { ExternalConnectorWalletConnect } from '@unionkeyhq/kit-bg/src/connectors/chains/walletconnect/ExternalConnectorWalletConnect';
+import type { IDBAccountAddressesMap } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { WalletConnectDappSideProvider } from '@unionkeyhq/kit-bg/src/services/ServiceWalletConnect/WalletConnectDappSideProvider';
 
 import type { Emitter } from '../src/eventBus/WagmiEventEmitter';
 import type {

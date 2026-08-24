@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useThrottledCallback } from 'use-debounce';
 
-import { ipcMessageKeys } from '@onekeyhq/desktop/app/config';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { ipcMessageKeys } from '@unionkeyhq/desktop/app/config';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { defaultLogger } from '../../logger/logger';
 

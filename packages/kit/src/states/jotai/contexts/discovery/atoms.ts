@@ -1,12 +1,12 @@
 import { LRUCache } from 'lru-cache';
 
-import { createJotaiContext } from '@onekeyhq/kit/src/states/jotai/utils/createJotaiContext';
-import { MaximumNumberOfTabs } from '@onekeyhq/kit/src/views/Discovery/config/Discovery.constants';
+import { createJotaiContext } from '@unionkeyhq/kit/src/states/jotai/utils/createJotaiContext';
+import { MaximumNumberOfTabs } from '@unionkeyhq/kit/src/views/Discovery/config/Discovery.constants';
 import type {
   IWebTab,
   IWebTabsAtom,
-} from '@onekeyhq/kit/src/views/Discovery/types';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit/src/views/Discovery/types';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 const {
   Provider: ProviderJotaiContextDiscovery,

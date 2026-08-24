@@ -2,8 +2,8 @@ import { type PropsWithChildren, useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Empty, Spinner, Stack, Toast } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Empty, Spinner, Stack, Toast } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';

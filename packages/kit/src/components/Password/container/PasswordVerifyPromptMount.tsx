@@ -3,12 +3,12 @@ import { Suspense, useCallback, useEffect, useRef } from 'react';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Dialog, Spinner } from '@onekeyhq/components';
-import type { IDialogShowProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePasswordPromptPromiseTriggerAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/password';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EPasswordPromptType } from '@onekeyhq/shared/types/password';
+import { Dialog, Spinner } from '@unionkeyhq/components';
+import type { IDialogShowProps } from '@unionkeyhq/components/src/composite/Dialog/type';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePasswordPromptPromiseTriggerAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/password';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EPasswordPromptType } from '@unionkeyhq/shared/types/password';
 
 import PasswordSetupContainer from './PasswordSetupContainer';
 import PasswordVerifyContainer from './PasswordVerifyContainer';

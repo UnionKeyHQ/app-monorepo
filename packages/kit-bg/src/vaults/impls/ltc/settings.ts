@@ -1,11 +1,11 @@
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
+import { EAddressEncodings } from '@unionkeyhq/core/src/types';
 import {
   COINNAME_LTC,
   COINTYPE_LTC,
   IMPL_LTC,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import settingsBtc from '../btc/settings';
 

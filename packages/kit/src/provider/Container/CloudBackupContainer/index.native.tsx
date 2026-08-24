@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openSettings } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Dialog } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { openSettings } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 export function CloudBackupContainer() {
   const intl = useIntl();

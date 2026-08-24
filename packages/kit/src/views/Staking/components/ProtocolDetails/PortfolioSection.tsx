@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IBadgeType, IPopoverProps } from '@onekeyhq/components';
+import type { IBadgeType, IPopoverProps } from '@unionkeyhq/components';
 import {
   Alert,
   Badge,
@@ -19,18 +19,18 @@ import {
   XStack,
   YStack,
   usePopoverContext,
-} from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
+} from '@unionkeyhq/components';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import { EEarnProviderEnum } from '@unionkeyhq/shared/types/earn';
 import type {
   IEarnRewardNum,
   IEarnTokenItem,
   IEarnUnbondingDelegationList,
   IStakeProtocolDetails,
-} from '@onekeyhq/shared/types/staking';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/staking';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 
 import { formatApy, formatStakingDistanceToNowStrict } from '../utils';
 

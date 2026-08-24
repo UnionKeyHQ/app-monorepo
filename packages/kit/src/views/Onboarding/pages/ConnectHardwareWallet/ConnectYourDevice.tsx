@@ -28,32 +28,32 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import ConnectByBluetoothAnim from '@onekeyhq/kit/assets/animations/connect_by_bluetooth.json';
-import ConnectByUSBAnim from '@onekeyhq/kit/assets/animations/connect_by_usb.json';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useCreateQrWallet } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useCreateQrWallet';
+} from '@unionkeyhq/components';
+import ConnectByBluetoothAnim from '@unionkeyhq/kit/assets/animations/connect_by_bluetooth.json';
+import ConnectByUSBAnim from '@unionkeyhq/kit/assets/animations/connect_by_usb.json';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useCreateQrWallet } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useCreateQrWallet';
 import {
   OpenBleSettingsDialog,
   RequireBlePermissionDialog,
-} from '@onekeyhq/kit/src/components/Hardware/HardwareDialog';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { MultipleClickStack } from '@onekeyhq/kit/src/components/MultipleClickStack';
-import type { ITutorialsListItem } from '@onekeyhq/kit/src/components/TutorialsList';
-import { TutorialsList } from '@onekeyhq/kit/src/components/TutorialsList';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useHelpLink } from '@onekeyhq/kit/src/hooks/useHelpLink';
-import { usePromptWebDeviceAccess } from '@onekeyhq/kit/src/hooks/usePromptWebDeviceAccess';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/components/Hardware/HardwareDialog';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { MultipleClickStack } from '@unionkeyhq/kit/src/components/MultipleClickStack';
+import type { ITutorialsListItem } from '@unionkeyhq/kit/src/components/TutorialsList';
+import { TutorialsList } from '@unionkeyhq/kit/src/components/TutorialsList';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useHelpLink } from '@unionkeyhq/kit/src/hooks/useHelpLink';
+import { usePromptWebDeviceAccess } from '@unionkeyhq/kit/src/hooks/usePromptWebDeviceAccess';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { useAccountSelectorActions } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   FIRMWARE_CONTACT_US_URL,
   HARDWARE_BRIDGE_DOWNLOAD_URL,
-} from '@onekeyhq/shared/src/config/appConfig';
+} from '@unionkeyhq/shared/src/config/appConfig';
 import {
   BleLocationServiceError,
   BridgeTimeoutError,
@@ -64,34 +64,34 @@ import {
   InitIframeTimeout,
   NeedBluetoothPermissions,
   NeedBluetoothTurnedOn,
-  NeedOneKeyBridge,
-  OneKeyHardwareError,
-} from '@onekeyhq/shared/src/errors/errors/hardwareErrors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import bleManagerInstance from '@onekeyhq/shared/src/hardware/bleManager';
-import { checkBLEPermissions } from '@onekeyhq/shared/src/hardware/blePermissions';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IOnboardingParamList } from '@onekeyhq/shared/src/routes';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+  NeedUnionKeyBridge,
+  UnionKeyHardwareError,
+} from '@unionkeyhq/shared/src/errors/errors/hardwareErrors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
+import bleManagerInstance from '@unionkeyhq/shared/src/hardware/bleManager';
+import { checkBLEPermissions } from '@unionkeyhq/shared/src/hardware/blePermissions';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IOnboardingParamList } from '@unionkeyhq/shared/src/routes';
+import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
 import {
   HwWalletAvatarImages,
   getDeviceAvatarImage,
-} from '@onekeyhq/shared/src/utils/avatarUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
+} from '@unionkeyhq/shared/src/utils/avatarUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
 import {
   EAccountSelectorSceneName,
   EHardwareTransportType,
-} from '@onekeyhq/shared/types';
-import { EConnectDeviceChannel } from '@onekeyhq/shared/types/connectDevice';
+} from '@unionkeyhq/shared/types';
+import { EConnectDeviceChannel } from '@unionkeyhq/shared/types/connectDevice';
 import {
-  EOneKeyDeviceMode,
-  type IOneKeyDeviceFeatures,
-} from '@onekeyhq/shared/types/device';
+  EUnionKeyDeviceMode,
+  type IUnionKeyDeviceFeatures,
+} from '@unionkeyhq/shared/types/device';
 
-import { useBuyOneKeyHeaderRightButton } from '../../../DeviceManagement/hooks/useBuyOneKeyHeaderRightButton';
+import { useBuyUnionKeyHeaderRightButton } from '../../../DeviceManagement/hooks/useBuyUnionKeyHeaderRightButton';
 import { useFirmwareUpdateActions } from '../../../FirmwareUpdate/hooks/useFirmwareUpdateActions';
 
 import { useFirmwareVerifyDialog } from './FirmwareVerifyDialog';
@@ -304,7 +304,7 @@ function ConnectByQrCodeComingSoon() {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function BridgeNotInstalledDialogContent(props: { error: NeedOneKeyBridge }) {
+function BridgeNotInstalledDialogContent(props: { error: NeedUnionKeyBridge }) {
   return (
     <Stack>
       <HyperlinkText
@@ -313,7 +313,7 @@ function BridgeNotInstalledDialogContent(props: { error: NeedOneKeyBridge }) {
         translationId={
           platformEnv.isSupportWebUSB
             ? ETranslations.device_communication_failed
-            : ETranslations.onboarding_install_onekey_bridge_help_text
+            : ETranslations.onboarding_install_unionkey_bridge_help_text
         }
       />
     </Stack>
@@ -469,7 +469,7 @@ function ConnectByUSBOrBLE() {
         awaitBonded: true,
       });
     } catch (error: any) {
-      if (error instanceof OneKeyHardwareError) {
+      if (error instanceof UnionKeyHardwareError) {
         const { code, message } = error;
         // ui prop window handler
         if (
@@ -568,13 +568,13 @@ function ConnectByUSBOrBLE() {
             deviceScanner.stopScan();
           }
 
-          if (error instanceof NeedOneKeyBridge) {
+          if (error instanceof NeedUnionKeyBridge) {
             Dialog.confirm({
-              icon: 'OnekeyBrand',
+              icon: 'UnionKeyBrand',
               title: intl.formatMessage({
-                id: ETranslations.onboarding_install_onekey_bridge,
+                id: ETranslations.onboarding_install_unionkey_bridge,
               }),
-              // error.message i18n should set NeedOneKeyBridge.defaultKey...
+              // error.message i18n should set NeedUnionKeyBridge.defaultKey...
               renderContent: <BridgeNotInstalledDialogContent error={error} />,
               onConfirmText: intl.formatMessage({
                 id: ETranslations.global_download_and_install,
@@ -595,7 +595,7 @@ function ConnectByUSBOrBLE() {
         );
         setSearchedDevices(sortedDevices);
         console.log('=====>>>>> startDeviceScan>>>>>', sortedDevices);
-       
+
       },
       (state) => {
         searchStateRef.current = state;
@@ -628,7 +628,7 @@ function ConnectByUSBOrBLE() {
     }: {
       device: SearchDevice;
       isFirmwareVerified?: boolean;
-      features: IOneKeyDeviceFeatures;
+      features: IUnionKeyDeviceFeatures;
     }) => {
       try {
         console.log('ConnectYourDevice -> createHwWallet', device);
@@ -714,60 +714,60 @@ function ConnectByUSBOrBLE() {
         });
         return;
       }
-       
+
       try {
         stopScan();
-        let deviceFeatures: IOneKeyDeviceFeatures | undefined;  
-      try {  
-        deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({  
-          connectId: device.connectId ?? '',  
-        });  
-      } catch (error) {  
-        console.log('获取设备特征失败:', error);  
-      }  
-        
-      const waitForDeviceUnlock = async () => {  
-        while (true) {  
-          let deviceFeatures: IOneKeyDeviceFeatures | undefined;  
-          try {  
-            deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({  
-              connectId: device.connectId ?? '',  
-            });  
-          } catch (error) {  
-            console.log('获取设备特征失败:', error);  
-          }  
-            
-          // 如果设备已解锁，退出循环  
-          if (deviceFeatures && deviceFeatures.unlocked) {  
-            break;  
-          }  
-            
-          // 设备未解锁，显示提示并等待用户确认  
-          await new Promise<void>((resolve) => {  
-            Dialog.show({  
-              title: intl.formatMessage({  
-                id: ETranslations.device_hardware_communication,  
-              }),  
-              description: intl.formatMessage({  
-                id: ETranslations.onboarding_create_qr_wallet_unlock_device_desc,  
-              }),  
-              onConfirmText: intl.formatMessage({  
-                id: ETranslations.global_ok,  
-              }),  
-              showCancelButton: false,  
-              onConfirm: () => {  
-                resolve();  
-              },  
-            });  
-          });  
-            
-          // 等待一下再重新检查，避免过于频繁  
-          await new Promise(resolve => setTimeout(resolve, 1000));  
-        }  
-      };  
-        
-      // 等待设备解锁  
-      await waitForDeviceUnlock();  
+        let deviceFeatures: IUnionKeyDeviceFeatures | undefined;
+      try {
+        deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({
+          connectId: device.connectId ?? '',
+        });
+      } catch (error) {
+        console.log('获取设备特征失败:', error);
+      }
+
+      const waitForDeviceUnlock = async () => {
+        while (true) {
+          let deviceFeatures: IUnionKeyDeviceFeatures | undefined;
+          try {
+            deviceFeatures = await backgroundApiProxy.serviceHardware.getFeaturesWithoutCache({
+              connectId: device.connectId ?? '',
+            });
+          } catch (error) {
+            console.log('获取设备特征失败:', error);
+          }
+
+          // 如果设备已解锁，退出循环
+          if (deviceFeatures && deviceFeatures.unlocked) {
+            break;
+          }
+
+          // 设备未解锁，显示提示并等待用户确认
+          await new Promise<void>((resolve) => {
+            Dialog.show({
+              title: intl.formatMessage({
+                id: ETranslations.device_hardware_communication,
+              }),
+              description: intl.formatMessage({
+                id: ETranslations.onboarding_create_qr_wallet_unlock_device_desc,
+              }),
+              onConfirmText: intl.formatMessage({
+                id: ETranslations.global_ok,
+              }),
+              showCancelButton: false,
+              onConfirm: () => {
+                resolve();
+              },
+            });
+          });
+
+          // 等待一下再重新检查，避免过于频繁
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+      };
+
+      // 等待设备解锁
+      await waitForDeviceUnlock();
         const handleBootloaderMode = (existsFirmware: boolean) => {
           fwUpdateActions.showBootloaderMode({
             connectId: device.connectId ?? undefined,
@@ -799,7 +799,7 @@ function ConnectByUSBOrBLE() {
             features,
             hardwareTransportType,
           });
-          throw new OneKeyHardwareError(
+          throw new UnionKeyHardwareError(
             'connect device failed, no features returned',
           );
         }
@@ -822,8 +822,8 @@ function ConnectByUSBOrBLE() {
         const deviceMode = await deviceUtils.getDeviceModeFromFeatures({
           features,
         });
-        // const deviceMode = EOneKeyDeviceMode.notInitialized;
-        if (deviceMode === EOneKeyDeviceMode.backupMode) {
+        // const deviceMode = EUnionKeyDeviceMode.notInitialized;
+        if (deviceMode === EUnionKeyDeviceMode.backupMode) {
           await trackHardwareWalletConnection({
             status: 'failure',
             deviceType,
@@ -847,7 +847,7 @@ function ConnectByUSBOrBLE() {
         //     features,
         //     onContinue: async ({ checked }) => {
         //       setIsChecking(false);
-        //       if (deviceMode === EOneKeyDeviceMode.notInitialized) {
+        //       if (deviceMode === EUnionKeyDeviceMode.notInitialized) {
         //         handleNotActivatedDevicePress({ deviceType });
         //         return;
         //       }
@@ -865,7 +865,7 @@ function ConnectByUSBOrBLE() {
         //   return;
         // }
 
-        if (deviceMode === EOneKeyDeviceMode.notInitialized) {
+        if (deviceMode === EUnionKeyDeviceMode.notInitialized) {
           handleNotActivatedDevicePress({ deviceType });
           return;
         }
@@ -1056,7 +1056,7 @@ function ConnectByUSBOrBLE() {
         },
       ),
       intl.formatMessage({
-        id: ETranslations.troubleshooting_close_other_onekey_app,
+        id: ETranslations.troubleshooting_close_other_unionkey_app,
       }),
       intl.formatMessage({
         id: ETranslations.troubleshooting_connect_and_unlock,
@@ -1333,7 +1333,7 @@ export function ConnectYourDevicePage() {
     channel ?? EConnectDeviceChannel.usbOrBle,
   );
 
-  const { headerRight } = useBuyOneKeyHeaderRightButton();
+  const { headerRight } = useBuyUnionKeyHeaderRightButton();
 
   return (
     <Page>
@@ -1384,7 +1384,7 @@ export function ConnectYourDevicePage() {
           <SizableText size="$bodyMd" color="$textSubdued">
             {intl.formatMessage({
               // eslint-disable-next-line spellcheck/spell-checker
-              id: ETranslations.global_onekey_prompt_dont_have_yet,
+              id: ETranslations.global_unionkey_prompt_dont_have_yet,
             })}
           </SizableText>
           <Anchor

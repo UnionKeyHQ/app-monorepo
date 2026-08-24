@@ -7,7 +7,7 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 export const InfoItemLabel = ({
   title,

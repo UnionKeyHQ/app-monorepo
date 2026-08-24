@@ -1,11 +1,11 @@
-import { ECoreApiExportedSecretKeyType } from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { ECoreApiExportedSecretKeyType } from '@unionkeyhq/core/src/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   COINTYPE_COSMOS,
   IMPL_COSMOS,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { EEarnProviderEnum } from '@unionkeyhq/shared/types/earn';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

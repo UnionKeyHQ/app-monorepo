@@ -5,7 +5,7 @@ import { debounce, noop } from 'lodash';
 import {
   useSettingsPersistAtom,
   useSettingsValuePersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useRouteIsFocused } from '../../../hooks/useRouteIsFocused';

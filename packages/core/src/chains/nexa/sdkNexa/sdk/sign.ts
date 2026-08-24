@@ -1,7 +1,7 @@
 import BN from 'bn.js';
 import elliptic from 'elliptic';
 
-import { hmacSHA256, sha256 } from '@onekeyhq/core/src/secret';
+import { hmacSHA256, sha256 } from '@unionkeyhq/core/src/secret';
 
 import { getBufferFromBN } from './bn';
 

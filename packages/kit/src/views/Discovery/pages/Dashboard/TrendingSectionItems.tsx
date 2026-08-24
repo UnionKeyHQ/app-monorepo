@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import type { IYStackProps } from '@onekeyhq/components';
-import { YStack, useMedia } from '@onekeyhq/components';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+import type { IYStackProps } from '@unionkeyhq/components';
+import { YStack, useMedia } from '@unionkeyhq/components';
+import type { IDApp } from '@unionkeyhq/shared/types/discovery';
 
 import { TrendingSectionItem } from './TrendingSectionItem';
 

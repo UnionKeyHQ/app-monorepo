@@ -7,9 +7,9 @@ import {
   Skeleton,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { useShortcutsOnRouteFocused } from '../../../hooks/useShortcutsOnRouteFocused';
 import { useAccountSelectorSyncLoadingAtom } from '../../../states/jotai/contexts/accountSelector';

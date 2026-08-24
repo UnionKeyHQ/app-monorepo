@@ -2,13 +2,13 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, IconButton, SizableText, XStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IOneKeyDeviceFeatures } from '@onekeyhq/shared/types/device';
+import { Dialog, IconButton, SizableText, XStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IDBDevice } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types/device';
 
 function DescriptionList({
   label,
@@ -70,7 +70,7 @@ export function AboutDeviceInfo({
   );
 
   const convertDeviceVersionToInfo = useCallback(
-    async (data: IDBDevice, features?: IOneKeyDeviceFeatures) => {
+    async (data: IDBDevice, features?: IUnionKeyDeviceFeatures) => {
       const { bleVersion, firmwareVersion } =
         await deviceUtils.getDeviceVersion({
           device: data,

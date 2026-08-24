@@ -5,28 +5,28 @@ import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { IMPL_EVM } from '@onekeyhq/shared/src/engine/engineConsts';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { EUnionKeyErrorClassNames } from '@unionkeyhq/shared/src/errors/types/errorTypes';
 import {
   convertDeviceResponse,
   isHardwareErrorByCode,
   isHardwareInterruptErrorByCode,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+} from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import errorUtils from '@unionkeyhq/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IBatchCreateAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IBatchCreateAccount } from '@unionkeyhq/shared/types/account';
 
 import localDb from '../../dbs/local/localDb';
 import { vaultFactory } from '../../vaults/factory';
@@ -384,7 +384,7 @@ class ServiceBatchCreateAccount extends ServiceBase {
     walletId: string;
   }): Promise<IBatchBuildAccountsBaseParams[]> {
     let excludeNetworkIds = [
-      getNetworkIdsMap().onekeyall,
+      getNetworkIdsMap().unionkeyall,
       getNetworkIdsMap().ada, // too slow
       getNetworkIdsMap().lightning, // network connection required
       getNetworkIdsMap().tlightning,
@@ -392,7 +392,7 @@ class ServiceBatchCreateAccount extends ServiceBase {
     ];
     if (accountUtils.isHwWallet({ walletId })) {
       excludeNetworkIds = [
-        getNetworkIdsMap().onekeyall,
+        getNetworkIdsMap().unionkeyall,
         getNetworkIdsMap().ada, // too slow, destroy hw passpharse
         getNetworkIdsMap().lightning, // sign required
         getNetworkIdsMap().tlightning,
@@ -450,7 +450,7 @@ class ServiceBatchCreateAccount extends ServiceBase {
     failedAccounts: Array<{
       networkId: string;
       deriveType: IAccountDeriveTypes;
-      error: IOneKeyError;
+      error: IUnionKeyError;
     }>;
   }> {
     defaultLogger.account.batchCreatePerf.addDefaultNetworkAccountsInService({
@@ -706,7 +706,7 @@ class ServiceBatchCreateAccount extends ServiceBase {
         const failedAccounts: Array<{
           networkId: string;
           deriveType: IAccountDeriveTypes;
-          error: IOneKeyError;
+          error: IUnionKeyError;
         }> = [];
 
         const hwAllNetworkPrepareAccountsResponse =
@@ -839,9 +839,9 @@ class ServiceBatchCreateAccount extends ServiceBase {
       errorUtils.isErrorByClassName({
         error,
         className: [
-          EOneKeyErrorClassNames.PasswordPromptDialogCancel,
-          EOneKeyErrorClassNames.SecureQRCodeDialogCancel,
-          EOneKeyErrorClassNames.OneKeyErrorScanQrCodeCancel,
+          EUnionKeyErrorClassNames.PasswordPromptDialogCancel,
+          EUnionKeyErrorClassNames.SecureQRCodeDialogCancel,
+          EUnionKeyErrorClassNames.UnionKeyErrorScanQrCodeCancel,
         ],
       })
     ) {

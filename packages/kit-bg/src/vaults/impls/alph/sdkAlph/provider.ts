@@ -1,6 +1,6 @@
 import { NodeProvider } from '@alephium/web3';
 
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 
 import type { ApiRequestArguments } from '@alephium/web3';
 import type {

@@ -1,22 +1,22 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IDiscoveryModalParamList } from '@onekeyhq/shared/src/routes';
-import { EDiscoveryModalRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import type { IDiscoveryModalParamList } from '@unionkeyhq/shared/src/routes';
+import { EDiscoveryModalRoutes } from '@unionkeyhq/shared/src/routes';
 
 const SearchModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Discovery/pages/SearchModal'),
+  () => import('@unionkeyhq/kit/src/views/Discovery/pages/SearchModal'),
 );
 
 const MobileTabListModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Discovery/pages/MobileTabListModal'),
+  () => import('@unionkeyhq/kit/src/views/Discovery/pages/MobileTabListModal'),
 );
 
 const BookmarkListModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Discovery/pages/BookmarkListModal'),
+  () => import('@unionkeyhq/kit/src/views/Discovery/pages/BookmarkListModal'),
 );
 
 const HistoryListModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Discovery/pages/HistoryListModal'),
+  () => import('@unionkeyhq/kit/src/views/Discovery/pages/HistoryListModal'),
 );
 
 export const ModalDiscoveryStack: IModalFlowNavigatorConfig<

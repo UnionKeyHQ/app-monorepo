@@ -1,4 +1,4 @@
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
 import {
   Heading,
   Image,
@@ -7,7 +7,7 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 const DATA = [
   {
@@ -78,7 +78,7 @@ function Item({
         }}
       >
         <Image
-          source={require('@onekeyhq/kit/assets/logo-press.png')}
+          source={require('@unionkeyhq/kit/assets/logo-press.png')}
           w="$10"
           h="$10"
         />

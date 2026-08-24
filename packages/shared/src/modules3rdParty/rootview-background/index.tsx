@@ -1,8 +1,8 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { IUpdateRootViewBackgroundColor } from './type';
 
-export const THEME_PRELOAD_STORAGE_KEY = 'ONEKEY_THEME_PRELOAD';
+export const THEME_PRELOAD_STORAGE_KEY = 'UNIONKEY_THEME_PRELOAD';
 
 export const updateRootViewBackgroundColor: IUpdateRootViewBackgroundColor = (
   color: string,

@@ -16,17 +16,17 @@ import { isEmpty, isNil, isObject } from 'lodash';
 import type {
   IEncodedTxFil,
   IFilCID,
-} from '@onekeyhq/core/src/chains/fil/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/fil/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
   uncompressPublicKey,
-} from '@onekeyhq/core/src/secret';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
+} from '@unionkeyhq/core/src/secret';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -34,22 +34,22 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { IResolveNameResp } from '@onekeyhq/shared/types/name';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
+import type { IResolveNameResp } from '@unionkeyhq/shared/types/name';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -135,10 +135,10 @@ export default class Vault extends VaultBase {
           transferInfo: transfersInfo[0],
         });
       }
-      throw new OneKeyInternalError('Batch transfers not supported');
+      throw new UnionKeyInternalError('Batch transfers not supported');
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromTransfer(params: { transferInfo: ITransferInfo }) {
@@ -252,7 +252,7 @@ export default class Vault extends VaultBase {
     if (encodedTx) {
       return this._buildUnsignedTxFromEncodedTx(encodedTx as IEncodedTxFil);
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildUnsignedTxFromEncodedTx(
@@ -521,7 +521,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new LotusRpcEngine({
       apiAddress: rpcUrl,

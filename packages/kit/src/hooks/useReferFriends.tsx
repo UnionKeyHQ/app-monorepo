@@ -11,22 +11,22 @@ import {
   YStack,
   rootNavigationRef,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { FormatHyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { ONEKEY_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { FormatHyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import { UNIONKEY_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EModalReferFriendsRoutes,
   EModalRoutes,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { ESpotlightTour } from '@unionkeyhq/shared/src/spotlight';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import useAppNavigation from './useAppNavigation';
-import { useLoginOneKeyId } from './useLoginOneKeyId';
+import { useLoginUnionKeyId } from './useLoginUnionKeyId';
 
 // use rootNavigationRef to navigate
 export function useToReferFriendsModalByRootNavigation() {
@@ -60,7 +60,7 @@ export const isOpenedReferFriendsPage = () => {
 export const useReferFriends = () => {
   const intl = useIntl();
   const navigation = useAppNavigation();
-  const { loginOneKeyId } = useLoginOneKeyId();
+  const { loginUnionKeyId } = useLoginUnionKeyId();
 
   const toInviteRewardPage = useCallback(async () => {
     const isLogin = await backgroundApiProxy.servicePrime.isLoggedIn();
@@ -69,9 +69,9 @@ export const useReferFriends = () => {
         screen: EModalReferFriendsRoutes.InviteReward,
       });
     } else {
-      void loginOneKeyId({ toOneKeyIdPageOnLoginSuccess: true });
+      void loginUnionKeyId({ toUnionKeyIdPageOnLoginSuccess: true });
     }
-  }, [loginOneKeyId, navigation]);
+  }, [loginUnionKeyId, navigation]);
 
   const toReferFriendsPage = useCallback(async () => {
     const isLogin = await backgroundApiProxy.servicePrime.isLoggedIn();
@@ -106,7 +106,7 @@ export const useReferFriends = () => {
             screen: EModalReferFriendsRoutes.InviteReward,
           });
         } else {
-          void loginOneKeyId({ toOneKeyIdPageOnLoginSuccess: true });
+          void loginUnionKeyId({ toUnionKeyIdPageOnLoginSuccess: true });
         }
       };
       const dialog = Dialog.show({
@@ -179,7 +179,7 @@ export const useReferFriends = () => {
           id: ETranslations.referral_intro_learn_more,
         }),
         onCancel: () => {
-          openUrlExternal(ONEKEY_URL);
+          openUrlExternal(UNIONKEY_URL);
         },
         cancelButtonProps: {
           iconAfter: 'OpenOutline',
@@ -192,7 +192,7 @@ export const useReferFriends = () => {
         onConfirm: handleConfirm,
       });
     },
-    [copyText, intl, loginOneKeyId, navigation],
+    [copyText, intl, loginUnionKeyId, navigation],
   );
 
   return useMemo(

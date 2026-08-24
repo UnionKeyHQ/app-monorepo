@@ -6,40 +6,40 @@ import {
   encryptImportedCredential,
   encryptRevealableSeed,
   mnemonicFromEntropy,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import {
   decryptAsync,
   encryptAsync,
-} from '@onekeyhq/core/src/secret/encryptors/aes256';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { cloudBackupPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/core/src/secret/encryptors/aes256';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { cloudBackupPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import * as CloudFs from '@onekeyhq/shared/src/cloudfs';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import * as CloudFs from '@unionkeyhq/shared/src/cloudfs';
 import {
   WALLET_TYPE_HD,
   WALLET_TYPE_HW,
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import RNFS from '@onekeyhq/shared/src/modules3rdParty/react-native-fs';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import RNFS from '@unionkeyhq/shared/src/modules3rdParty/react-native-fs';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import {
   generateUUID,
   getContactUUID,
   getHDAccountUUID,
   getImportedAccountUUID,
   getWatchingAccountUUID,
-} from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkeyhq/shared/src/utils/miscUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import ServiceBase from '../ServiceBase';
 

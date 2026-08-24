@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
-import { Divider, YStack } from '@onekeyhq/components';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+import { Divider, YStack } from '@unionkeyhq/components';
+import type { IStakeProtocolDetails } from '@unionkeyhq/shared/types/staking';
 
 import { FaqSection } from './FaqSection';
 import { PeriodSection } from './PeriodSection';

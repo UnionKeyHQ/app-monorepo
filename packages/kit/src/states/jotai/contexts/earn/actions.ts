@@ -1,18 +1,18 @@
 import { useCallback, useRef } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ContextJotaiActionsBase } from '@onekeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ContextJotaiActionsBase } from '@unionkeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
 import type {
   IEarnPermitCache,
   IEarnPermitCacheKey,
-} from '@onekeyhq/shared/types/earn';
+} from '@unionkeyhq/shared/types/earn';
 import type {
   IAvailableAsset,
   IEarnAccountTokenResponse,
   IEarnAtomData,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { contextAtomMethod, earnAtom, earnPermitCacheAtom } from './atoms';
 

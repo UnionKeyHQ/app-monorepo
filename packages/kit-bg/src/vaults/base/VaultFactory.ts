@@ -1,7 +1,7 @@
-import { ensureRunOnBackground } from '@onekeyhq/shared/src/utils/assertUtils';
-import type { IMemoizeeOptions } from '@onekeyhq/shared/src/utils/cacheUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { ensureRunOnBackground } from '@unionkeyhq/shared/src/utils/assertUtils';
+import type { IMemoizeeOptions } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import type { VaultBase, VaultBaseChainOnly } from './VaultBase';
 import type { IBackgroundApi } from '../../apis/IBackgroundApi';

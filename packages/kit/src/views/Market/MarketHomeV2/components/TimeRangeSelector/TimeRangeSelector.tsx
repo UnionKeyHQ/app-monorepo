@@ -1,4 +1,4 @@
-import { SegmentControl } from '@onekeyhq/components';
+import { SegmentControl } from '@unionkeyhq/components';
 
 export type ITimeRangeSelectorValue = '5m' | '1h' | '4h' | '24h';
 

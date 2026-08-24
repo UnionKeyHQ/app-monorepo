@@ -1,5 +1,5 @@
-import type { IFuseResultMatch } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import type { IDApp } from '@onekeyhq/shared/types/discovery';
+import type { IFuseResultMatch } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import type { IDApp } from '@unionkeyhq/shared/types/discovery';
 
 export type IBrowserType = 'StandardBrowser' | 'MultiTabBrowser';
 

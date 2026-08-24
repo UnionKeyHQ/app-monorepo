@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import { useMedia } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useThemeValue } from '../../../hooks';
 import {

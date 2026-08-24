@@ -3,7 +3,7 @@ import { Fragment, useCallback, useMemo, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IButtonProps, IPageFooterProps } from '@onekeyhq/components';
+import type { IButtonProps, IPageFooterProps } from '@unionkeyhq/components';
 import {
   Badge,
   Button,
@@ -14,29 +14,29 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { CountDownCalendarAlert } from '@onekeyhq/kit/src/components/CountDownCalendarAlert';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { PeriodSection } from '@onekeyhq/kit/src/views/Staking/components/ProtocolDetails/PeriodSectionV2';
-import { ProtectionSection } from '@onekeyhq/kit/src/views/Staking/components/ProtocolDetails/ProtectionSectionV2';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { CountDownCalendarAlert } from '@unionkeyhq/kit/src/components/CountDownCalendarAlert';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useAppRoute } from '@unionkeyhq/kit/src/hooks/useAppRoute';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { PeriodSection } from '@unionkeyhq/kit/src/views/Staking/components/ProtocolDetails/PeriodSectionV2';
+import { ProtectionSection } from '@unionkeyhq/kit/src/views/Staking/components/ProtocolDetails/ProtectionSectionV2';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EModalStakingRoutes,
   type IModalStakingParamList,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import type {
   IEarnTokenInfo,
   IProtocolInfo,
   IStakeEarnDetail,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import {
   PageFrame,

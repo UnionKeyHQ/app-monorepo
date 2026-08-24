@@ -53,7 +53,7 @@ function isHardenedIndex(index: number): boolean {
 }
 
 function N(curve: BaseCurve, privateKey: Buffer): Buffer {
-  const msgHash: Buffer = Buffer.from('Hello OneKey');
+  const msgHash: Buffer = Buffer.from('Hello UnionKey');
   const publicKey: Buffer = curve.publicFromPrivate(privateKey);
 
   if (!curve.verify(publicKey, msgHash, curve.sign(privateKey, msgHash))) {

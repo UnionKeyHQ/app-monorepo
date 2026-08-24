@@ -2,15 +2,15 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { throttle } from 'lodash';
 
-import { useIsMounted } from '@onekeyhq/components/src/hocs/Provider/hooks/useIsMounted';
-import type { IElectronWebView } from '@onekeyhq/kit/src/components/WebView/types';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import { useIsMounted } from '@unionkeyhq/components/src/hocs/Provider/hooks/useIsMounted';
+import type { IElectronWebView } from '@unionkeyhq/kit/src/components/WebView/types';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 import type {
   IConnectionAccountInfo,
   IConnectionStorageType,
-} from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/types/dappConnection';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useListenTabFocusState from '../../../hooks/useListenTabFocusState';

@@ -1,4 +1,4 @@
-import { IMPL_CFX } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_CFX } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

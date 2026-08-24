@@ -1,5 +1,5 @@
 /** Signature */
-export const LightningScenario = 'onekey-lightning-network';
+export const LightningScenario = 'unionkey-lightning-network';
 
 type IRegisterMsgType = {
   scenario: typeof LightningScenario;

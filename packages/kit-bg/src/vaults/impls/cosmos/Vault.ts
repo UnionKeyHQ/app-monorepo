@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 
-import type { ICosmosUnpackedMessage } from '@onekeyhq/core/src/chains/cosmos/sdkCosmos';
+import type { ICosmosUnpackedMessage } from '@unionkeyhq/core/src/chains/cosmos/sdkCosmos';
 import {
   ECosmosMessageType,
   TransactionWrapper,
@@ -16,22 +16,22 @@ import {
   setFee,
   setSendAmount,
   validateCosmosAddress,
-} from '@onekeyhq/core/src/chains/cosmos/sdkCosmos';
-import type { ICosmosProtoMsgsOrWithAminoMsgs } from '@onekeyhq/core/src/chains/cosmos/sdkCosmos/ITxMsgBuilder';
+} from '@unionkeyhq/core/src/chains/cosmos/sdkCosmos';
+import type { ICosmosProtoMsgsOrWithAminoMsgs } from '@unionkeyhq/core/src/chains/cosmos/sdkCosmos/ITxMsgBuilder';
 import type {
   ICosmosStdFee,
   IEncodedTxCosmos,
-} from '@onekeyhq/core/src/chains/cosmos/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/cosmos/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkeyhq/core/src/types';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -39,20 +39,20 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { IStakeTxCosmosAmino } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
+import type { IStakeTxCosmosAmino } from '@unionkeyhq/shared/types/staking';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
   EDecodedTxStatus,
   type IDecodedTx,
   type IDecodedTxAction,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -157,7 +157,7 @@ export default class VaultCosmos extends VaultBase {
   }): Promise<IEncodedTx> {
     const { transfersInfo, feeInfo } = params;
     if (transfersInfo.length !== 1) {
-      throw new OneKeyInternalError('Only support one transfer');
+      throw new UnionKeyInternalError('Only support one transfer');
     }
     const network = await this.getNetwork();
     const networkInfo = await this.getNetworkInfo();
@@ -416,7 +416,7 @@ export default class VaultCosmos extends VaultBase {
         transfersInfo: params.transfersInfo ?? [],
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   private async _attachFeeInfoToEncodedTx(params: {
@@ -427,10 +427,10 @@ export default class VaultCosmos extends VaultBase {
     const { gasPrice: price, gasLimit: limit } = gas ?? {};
 
     if (!price || typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
     const gasLimitNum = new BigNumber(limit);
     const gasPriceNum = new BigNumber(price);
@@ -466,7 +466,7 @@ export default class VaultCosmos extends VaultBase {
     params: IUpdateUnsignedTxParams,
   ): Promise<IUnsignedTxPro> {
     if (!params.unsignedTx || !params.feeInfo) {
-      throw new OneKeyInternalError('unsignedTx and feeInfo are required');
+      throw new UnionKeyInternalError('unsignedTx and feeInfo are required');
     }
     const { unsignedTx, feeInfo } = params;
     if (!unsignedTx.encodedTx) {

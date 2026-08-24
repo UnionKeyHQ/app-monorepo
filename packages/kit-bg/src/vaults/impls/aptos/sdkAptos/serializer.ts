@@ -37,7 +37,7 @@ export enum ETransactionPayloadType {
   ENTRY_FUNCTION_LEGACY = 3, // V1 SDK Entry Function Params
 }
 
-// OneKey Primitive Types
+// UnionKey Primitive Types
 export enum EArgumentType {
   NULL = 10_000,
   UNDEFINED = 10_001,

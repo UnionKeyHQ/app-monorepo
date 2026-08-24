@@ -15,9 +15,9 @@ import {
 } from '@react-navigation/native';
 import { useTheme } from 'tamagui';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { updateRootViewBackgroundColor } from '@onekeyhq/shared/src/modules3rdParty/rootview-background';
-import { navigationIntegration } from '@onekeyhq/shared/src/modules3rdParty/sentry';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
+import { updateRootViewBackgroundColor } from '@unionkeyhq/shared/src/modules3rdParty/rootview-background';
+import { navigationIntegration } from '@unionkeyhq/shared/src/modules3rdParty/sentry';
 
 import { useSettingConfig } from '../../../hocs/Provider/hooks/useProviderValue';
 

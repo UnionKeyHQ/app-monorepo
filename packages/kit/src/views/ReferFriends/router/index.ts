@@ -1,14 +1,14 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IModalReferFriendsParamList } from '@onekeyhq/shared/src/routes';
-import { EModalReferFriendsRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import type { IModalReferFriendsParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalReferFriendsRoutes } from '@unionkeyhq/shared/src/routes';
 
 const ReferFriends = LazyLoadPage(() => import('../pages/ReferAFriend'));
 const YourReferred = LazyLoadPage(() => import('../pages/YourReferred'));
 const HardwareSalesReward = LazyLoadPage(
   () => import('../pages/HardwareSalesReward'),
 );
-const OneKeyId = LazyLoadPage(() => import('../pages/OneKeyId'));
+const UnionKeyId = LazyLoadPage(() => import('../pages/UnionKeyId'));
 const InviteReward = LazyLoadPage(() => import('../pages/InviteReward'));
 const EditAddress = LazyLoadPage(() => import('../pages/EditAddress'));
 const EarnReward = LazyLoadPage(() => import('../pages/EarnReward'));
@@ -42,8 +42,8 @@ export const ReferFriendsRouter: IModalFlowNavigatorConfig<
     component: HardwareSalesReward,
   },
   {
-    name: EModalReferFriendsRoutes.OneKeyId,
-    component: OneKeyId,
+    name: EModalReferFriendsRoutes.UnionKeyId,
+    component: UnionKeyId,
   },
   {
     name: EModalReferFriendsRoutes.InviteReward,

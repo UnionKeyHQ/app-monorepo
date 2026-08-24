@@ -3,7 +3,7 @@ import { useLayoutEffect } from 'react';
 import { StatusBar } from 'react-native';
 import { getTokenValue } from 'tamagui';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { IUseAppearanceTheme } from './type';
 

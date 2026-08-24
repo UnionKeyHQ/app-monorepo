@@ -13,11 +13,11 @@ import {
   setNotificationHandler,
 } from 'expo-notifications';
 
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { setBadgeCountAsync } from '@onekeyhq/shared/src/modules3rdParty/expo-notifications';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import openUrlUtils from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { setBadgeCountAsync } from '@unionkeyhq/shared/src/modules3rdParty/expo-notifications';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import openUrlUtils from '@unionkeyhq/shared/src/utils/openUrlUtils';
 import type {
   IJPushNotificationLocalEvent,
   INativeNotificationCenterMessageInfo,
@@ -27,11 +27,11 @@ import type {
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 import {
   ENotificationPermission,
   EPushProviderEventNames,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 
 import { PushProviderJPush } from '../PushProvider/PushProviderJPush';
 

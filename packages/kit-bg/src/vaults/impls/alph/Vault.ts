@@ -13,21 +13,21 @@ import BigNumber from 'bignumber.js';
 import {
   EAlphTxType,
   type IEncodedTxAlph,
-} from '@onekeyhq/core/src/chains/alph/types';
+} from '@unionkeyhq/core/src/chains/alph/types';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { EAddressEncodings } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
+import { EAddressEncodings } from '@unionkeyhq/core/src/types';
 import {
   MinimumTransferAmountError,
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -35,22 +35,22 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IEstimateFeeParams } from '@onekeyhq/shared/types/fee';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IEstimateFeeParams } from '@unionkeyhq/shared/types/fee';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -108,7 +108,7 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTx> {
     const { transfersInfo } = params;
     if (!transfersInfo) {
-      throw new OneKeyInternalError('Invalid transfersInfo');
+      throw new UnionKeyInternalError('Invalid transfersInfo');
     }
     const signerAddress = await this.getAccountAddress();
     const transfer = transfersInfo[0];
@@ -301,7 +301,7 @@ export default class Vault extends VaultBase {
         transfersInfo: params.transfersInfo ?? [],
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   override async updateUnsignedTx(
@@ -335,7 +335,7 @@ export default class Vault extends VaultBase {
           .toFixed();
       } else {
         if (!txParams.destinations[0].tokens) {
-          throw new OneKeyInternalError('No tokens found');
+          throw new UnionKeyInternalError('No tokens found');
         }
         const token = await this.backgroundApi.serviceToken.getToken({
           networkId: this.networkId,
@@ -483,7 +483,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const nodeProvider = new NodeProvider(rpcUrl);
     const { txId } = await nodeProvider.transactions.postTransactionsSubmit(

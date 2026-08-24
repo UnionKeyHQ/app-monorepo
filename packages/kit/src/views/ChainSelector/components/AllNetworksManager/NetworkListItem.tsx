@@ -1,9 +1,9 @@
 import { memo, useContext } from 'react';
 
-import { Checkbox } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { isEnabledNetworksInAllNetworks } from '@onekeyhq/shared/src/utils/networkUtils';
+import { Checkbox } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { NetworkAvatarBase } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { isEnabledNetworksInAllNetworks } from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import { AllNetworksManagerContext } from './AllNetworksManagerContext';
 

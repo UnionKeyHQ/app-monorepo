@@ -1,4 +1,4 @@
-import { IMPL_COSMOS } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_COSMOS } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

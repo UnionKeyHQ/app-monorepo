@@ -1,13 +1,13 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IMarketChainsResponse,
   IMarketTokenDetail,
   IMarketTokenListResponse,
-} from '@onekeyhq/shared/types/marketV2';
+} from '@unionkeyhq/shared/types/marketV2';
 
 import ServiceBase from './ServiceBase';
 

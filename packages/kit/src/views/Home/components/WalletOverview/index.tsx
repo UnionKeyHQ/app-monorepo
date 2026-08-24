@@ -1,4 +1,4 @@
-import { SizableText, Skeleton, YStack } from '@onekeyhq/components';
+import { SizableText, Skeleton, YStack } from '@unionkeyhq/components';
 
 type IProps = {
   address: string;

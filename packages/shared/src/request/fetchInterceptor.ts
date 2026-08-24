@@ -54,9 +54,9 @@ const newFetch = async function (
   }
 
   const url = getUrlFromResource(resource);
-  const isOneKeyDomain = await requestHelper.checkIsOneKeyDomain(url);
+  const isUnionKeyDomain = await requestHelper.checkIsUnionKeyDomain(url);
   let requestId: string | undefined;
-  if (isOneKeyDomain) {
+  if (isUnionKeyDomain) {
     options.headers = options.headers || {};
     const headers = await getRequestHeaders();
     requestId = headers[HEADER_REQUEST_ID_KEY];
@@ -125,7 +125,7 @@ console.log('fetchInterceptor.ts', fetch);
 if (
   globalThis.fetch &&
   // @ts-ignore
-  !globalThis.fetch.isNormalizedByOneKey
+  !globalThis.fetch.isNormalizedByUnionKey
 ) {
   // **** for global instance of fetch
   globalThis.fetch = newFetch;

@@ -12,8 +12,8 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 
-import { YStack } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { YStack } from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { PassCodeRegex } from '../utils';
 

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IStackStyle } from '@onekeyhq/components';
+import type { IStackStyle } from '@unionkeyhq/components';
 import {
   IconButton,
   SearchBar,
@@ -10,11 +10,11 @@ import {
   View,
   XStack,
   useIsHorizontalLayout,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EUniversalSearchPages } from '@onekeyhq/shared/src/routes/universalSearch';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import { EUniversalSearchPages } from '@unionkeyhq/shared/src/routes/universalSearch';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import useAppNavigation from '../../hooks/useAppNavigation';
 

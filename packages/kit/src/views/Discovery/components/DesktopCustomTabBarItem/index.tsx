@@ -2,20 +2,20 @@ import { memo, useCallback, useEffect, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { useClipboard } from '@onekeyhq/components';
+import { useClipboard } from '@unionkeyhq/components';
 import type {
   IActionListItemProps,
   IPropsWithTestId,
-} from '@onekeyhq/components';
-import { DesktopTabItem } from '@onekeyhq/components/src/layouts/Navigation/Tab/TabBar/DesktopTabItem';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import { DesktopTabItem } from '@unionkeyhq/components/src/layouts/Navigation/Tab/TabBar/DesktopTabItem';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import useBrowserOptionsAction from '../../hooks/useBrowserOptionsAction';
 import { useActiveTabId, useWebTabDataById } from '../../hooks/useWebTabs';

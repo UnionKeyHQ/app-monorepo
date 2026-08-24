@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { TokenListItem } from '@onekeyhq/kit/src/components/TokenListItem';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { presetNetworksMap } from '@onekeyhq/shared/src/config/presetNetworks';
+import { YStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { TokenListItem } from '@unionkeyhq/kit/src/components/TokenListItem';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { presetNetworksMap } from '@unionkeyhq/shared/src/config/presetNetworks';
 
 import { SwitchToTradePrompt } from './SwitchToTradePrompt';
 

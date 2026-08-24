@@ -7,7 +7,7 @@ import BigNumber from 'bignumber.js';
 import type {
   IEncodedTxDnx,
   ISignTxParams,
-} from '@onekeyhq/core/src/chains/dnx/types';
+} from '@unionkeyhq/core/src/chains/dnx/types';
 
 import type { DnxSignature } from '@onekeyfe/hd-core';
 

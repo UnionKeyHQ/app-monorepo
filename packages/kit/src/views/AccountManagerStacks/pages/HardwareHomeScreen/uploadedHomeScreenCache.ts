@@ -1,4 +1,4 @@
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import type { IHardwareHomeScreenData } from './hardwareHomeScreenData';
 

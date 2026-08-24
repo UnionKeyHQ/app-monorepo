@@ -1,22 +1,22 @@
 import { useCallback, useMemo } from 'react';
 
-import { Haptics, ImpactFeedbackStyle } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Haptics, ImpactFeedbackStyle } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import type {
   IAnimationValue,
   IBaseValue,
   IQRCodeHandlerParseOutsideOptions,
   IQRCodeHandlerParseResult,
-} from '@onekeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
-import { OneKeyErrorScanQrCodeCancel } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/kit-bg/src/services/ServiceScanQRCode/utils/parseQRCode/type';
+import { UnionKeyErrorScanQrCodeCancel } from '@unionkeyhq/shared/src/errors';
 import {
   EModalRoutes,
   EScanQrCodeModalPages,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 import {
   EQRCodeHandlerType,
   PARSE_HANDLER_NAMES,
-} from '@onekeyhq/shared/types/qrCode';
+} from '@unionkeyhq/shared/types/qrCode';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 
@@ -92,7 +92,7 @@ export default function useScanQrCode() {
 
                 return {};
               }
-              reject(new OneKeyErrorScanQrCodeCancel());
+              reject(new UnionKeyErrorScanQrCodeCancel());
               return {};
             },
           },

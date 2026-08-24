@@ -1,4 +1,4 @@
-import type { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
+import type { EHostSecurityLevel } from '@unionkeyhq/shared/types/discovery';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';

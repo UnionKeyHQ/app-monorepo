@@ -18,7 +18,7 @@ A clear and concise description of any alternative solutions or features you've 
 
 **Community & Quick support**
 
-- [Community Forum](https://github.com/orgs/OneKeyHQ/discussions). Best for: help with building, discussion about best practices.
+- [Community Forum](https://github.com/orgs/UnionKeyHQ/discussions). Best for: help with building, discussion about best practices.
 
 **Additional context**
 Add any other context or screenshots about the feature request here.

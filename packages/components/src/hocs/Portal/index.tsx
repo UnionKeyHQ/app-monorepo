@@ -7,8 +7,8 @@ import ChildrenWrapper from 'react-native-root-siblings/lib/ChildrenWrapper';
 import wrapRootComponent from 'react-native-root-siblings/lib/wrapRootComponent';
 import { withStaticProperties } from 'tamagui';
 
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { RootSiblingManager } from 'react-native-root-siblings/lib/wrapRootComponent';
 
@@ -28,14 +28,14 @@ function isPortalExisted(name: string): boolean {
 }
 
 export enum EPortalContainerConstantName {
-  WEB_TAB_BAR = 'ONEKEY_WEB_TAB_BAR',
+  WEB_TAB_BAR = 'UNIONKEY_WEB_TAB_BAR',
   SIDEBAR_BANNER = 'SIDEBAR_BANNER',
   APP_STATE_LOCK_CONTAINER_OVERLAY = 'APP_STATE_LOCK_CONTAINER_OVERLAY',
-  SPOTLIGHT_OVERLAY_PORTAL = 'ONEKEY-Root-SPOTLIGHT_OVERLAY_PORTAL',
-  FULL_WINDOW_OVERLAY_PORTAL = 'ONEKEY-Root-FullWindowOverlay',
-  TOASTER_OVERLAY_PORTAL = 'ONEKEY_TOASTER_OVERLAY_PORTAL',
-  ACCOUNT_SELECTOR = 'ONEKEY_ACCOUNT_SELECTOR',
-  WALLET_ACTIONS = 'ONEKEY_WALLET_ACTIONS',
+  SPOTLIGHT_OVERLAY_PORTAL = 'UNIONKEY-Root-SPOTLIGHT_OVERLAY_PORTAL',
+  FULL_WINDOW_OVERLAY_PORTAL = 'UNIONKEY-Root-FullWindowOverlay',
+  TOASTER_OVERLAY_PORTAL = 'UNIONKEY_TOASTER_OVERLAY_PORTAL',
+  ACCOUNT_SELECTOR = 'UNIONKEY_ACCOUNT_SELECTOR',
+  WALLET_ACTIONS = 'UNIONKEY_WALLET_ACTIONS',
   HARDWARE_UI_STATE_DIALOG = 'HARDWARE_UI_STATE_DIALOG',
   IN_PAGE_TAB_CONTAINER = 'IN_PAGE_TAB_CONTAINER',
 }

@@ -2,10 +2,10 @@ import {
   decodeSensitiveTextAsync,
   encodeKeyPrefix,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import biologyAuth from '@onekeyhq/shared/src/biologyAuth';
-import type { IBiologyAuth } from '@onekeyhq/shared/src/biologyAuth/types';
-import secureStorageInstance from '@onekeyhq/shared/src/storage/instance/secureStorageInstance';
+} from '@unionkeyhq/core/src/secret';
+import biologyAuth from '@unionkeyhq/shared/src/biologyAuth';
+import type { IBiologyAuth } from '@unionkeyhq/shared/src/biologyAuth/types';
+import secureStorageInstance from '@unionkeyhq/shared/src/storage/instance/secureStorageInstance';
 
 import { settingsPersistAtom } from '../../states/jotai/atoms/settings';
 

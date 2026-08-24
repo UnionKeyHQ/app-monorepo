@@ -8,10 +8,10 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { validateAmountInput } from '@unionkeyhq/kit/src/utils/validateAmountInput';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { ESwapDirection, type ITradeType } from '../../hooks/useTradeType';
 

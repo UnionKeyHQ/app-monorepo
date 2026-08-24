@@ -1,10 +1,10 @@
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IBleFirmwareUpdateInfo,
   IFirmwareUpdateInfo,
   IFirmwareUpdatesDetectMap,
   IFirmwareUpdatesDetectStatus,
-} from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/types/device';
 
 import { firmwareUpdatesDetectStatusPersistAtom } from '../../states/jotai/atoms';
 

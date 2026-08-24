@@ -9,7 +9,7 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
     'pin_protection': true,
     'passphrase_protection': null,
     'language': 'zh_hk',
-    'label': 'OneKey Touch',
+    'label': 'UnionKey Touch',
     'initialized': true,
     'revision': 'fccbac81cef7877e6e3b761677ff0d83808380ad',
     'bootloader_hash': null,
@@ -81,7 +81,7 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
     'onekey_se04_version': null,
   },
   'deviceType': 'touch',
-  'deviceName': 'OneKey Touch',
+  'deviceName': 'UnionKey Touch',
   'deviceUUID': 'TC01WBD202207290844270000046',
   'hasUpgrade': true,
   'isBootloaderMode': false,
@@ -105,15 +105,15 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
           'required': false,
           'version': [4, 9, 1],
           'bootloaderResource':
-            'https://web.onekey-asset.com/hardware/touch/bootloader/v2.4.9/bootloader.2.4.9-Stable-0807-3e033eb.signed.bin',
+            'https://web.unionkey.io/hardware/touch/bootloader/v2.4.9/bootloader.2.4.9-Stable-0807-3e033eb.signed.bin',
           'bootloaderVersion': [2, 4, 8],
           'fullResource':
-            'https://web.onekey-asset.com/hardware/touch/resource/res-4.9.0.zip',
+            'https://web.unionkey.io/hardware/touch/resource/res-4.9.0.zip',
           'fullResourceRange': ['3.5.0', '4.0.0'],
           'resource':
-            'https://web.onekey-asset.com/hardware/touch/resource/resource-4.0.0-4.9.0.zip',
+            'https://web.unionkey.io/hardware/touch/resource/resource-4.0.0-4.9.0.zip',
           'url':
-            'https://web.onekey-asset.com/hardware/touch/firmware/v4.9.0/touch.4.9.0-Stable-0410-fccbac8.signed.bin',
+            'https://web.unionkey.io/hardware/touch/firmware/v4.9.0/touch.4.9.0-Stable-0410-fccbac8.signed.bin',
           'fingerprint': '',
           'changelog': {
             'zh-CN':
@@ -133,7 +133,7 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
           'pin_protection': true,
           'passphrase_protection': null,
           'language': 'zh_hk',
-          'label': 'OneKey Touch',
+          'label': 'UnionKey Touch',
           'initialized': true,
           'revision': 'fccbac81cef7877e6e3b761677ff0d83808380ad',
           'bootloader_hash': null,
@@ -234,7 +234,7 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
           'required': false,
           'version': [2, 1, 1],
           'webUpdate':
-            'https://common.onekey-asset.com/hw/touch/2.1.0/touch_ble_signed-2022-1102_2.1.0.bin',
+            'https://common.unionkey.io/hw/touch/2.1.0/touch_ble_signed-2022-1102_2.1.0.bin',
           'fingerprint': '',
           'changelog': {
             'zh-CN':
@@ -254,7 +254,7 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
           'pin_protection': true,
           'passphrase_protection': null,
           'language': 'zh_hk',
-          'label': 'OneKey Touch',
+          'label': 'UnionKey Touch',
           'initialized': true,
           'revision': 'fccbac81cef7877e6e3b761677ff0d83808380ad',
           'bootloader_hash': null,
@@ -355,15 +355,15 @@ export const FIRMWARE_UPDATE_UPDATE_INFO_SAMPLE = {
           'required': false,
           'version': [4, 9, 1],
           'bootloaderResource':
-            'https://web.onekey-asset.com/hardware/touch/bootloader/v2.4.9/bootloader.2.4.9-Stable-0807-3e033eb.signed.bin',
+            'https://web.unionkey.io/hardware/touch/bootloader/v2.4.9/bootloader.2.4.9-Stable-0807-3e033eb.signed.bin',
           'bootloaderVersion': [2, 4, 8],
           'fullResource':
-            'https://web.onekey-asset.com/hardware/touch/resource/res-4.9.0.zip',
+            'https://web.unionkey.io/hardware/touch/resource/res-4.9.0.zip',
           'fullResourceRange': ['3.5.0', '4.0.0'],
           'resource':
-            'https://web.onekey-asset.com/hardware/touch/resource/resource-4.0.0-4.9.0.zip',
+            'https://web.unionkey.io/hardware/touch/resource/resource-4.0.0-4.9.0.zip',
           'url':
-            'https://web.onekey-asset.com/hardware/touch/firmware/v4.9.0/touch.4.9.0-Stable-0410-fccbac8.signed.bin',
+            'https://web.unionkey.io/hardware/touch/firmware/v4.9.0/touch.4.9.0-Stable-0410-fccbac8.signed.bin',
           'fingerprint': '',
           'changelog': {
             'zh-CN':

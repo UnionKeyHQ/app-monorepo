@@ -1,9 +1,9 @@
 import type { ComponentProps } from 'react';
 
-import { getDisplayedActions } from '@onekeyhq/shared/src/utils/txActionUtils';
-import { ETxActionComponentType } from '@onekeyhq/shared/types';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
-import type { EReplaceTxType, IDecodedTx } from '@onekeyhq/shared/types/tx';
+import { getDisplayedActions } from '@unionkeyhq/shared/src/utils/txActionUtils';
+import { ETxActionComponentType } from '@unionkeyhq/shared/types';
+import type { ISwapTxInfo } from '@unionkeyhq/shared/types/swap/types';
+import type { EReplaceTxType, IDecodedTx } from '@unionkeyhq/shared/types/tx';
 
 import { getTxActionMeta } from '../../utils/getTxActionMeta';
 

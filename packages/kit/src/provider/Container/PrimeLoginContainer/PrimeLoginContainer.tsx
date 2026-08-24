@@ -3,22 +3,22 @@ import { useEffect, useRef } from 'react';
 import { throttle } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance } from '@onekeyhq/components';
-import { Dialog, SizableText, Stack, YStack } from '@onekeyhq/components';
-import type { IPrimeLoginDialogAtomPasswordData } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IDialogInstance } from '@unionkeyhq/components';
+import { Dialog, SizableText, Stack, YStack } from '@unionkeyhq/components';
+import type { IPrimeLoginDialogAtomPasswordData } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   usePasswordAtom,
   usePrimeCloudSyncPersistAtom,
   usePrimeLoginDialogAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { EPrimePages } from '@onekeyhq/shared/src/routes/prime';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import { EPrimePages } from '@unionkeyhq/shared/src/routes/prime';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';
@@ -105,7 +105,7 @@ export function PrimeLoginContainer() {
 
         const showPasswordDialog = () => {
           let title = 'Welcome back';
-          let description = `Manage your OneKey ID <email>${
+          let description = `Manage your UnionKey ID <email>${
             data?.email || ''
           }</email>`;
           if (data?.isRegister) {

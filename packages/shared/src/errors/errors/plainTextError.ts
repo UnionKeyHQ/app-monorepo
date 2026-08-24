@@ -1,18 +1,18 @@
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
-import { EOneKeyErrorClassNames } from '../types/errorTypes';
+import { EUnionKeyErrorClassNames } from '../types/errorTypes';
 
-import { OneKeyError } from './baseErrors';
+import { UnionKeyError } from './baseErrors';
 
-import type { IOneKeyErrorI18nInfo, IOneKeyJsError } from '../types/errorTypes';
+import type { IUnionKeyErrorI18nInfo, IUnionKeyJsError } from '../types/errorTypes';
 
-export class OneKeyPlainTextError<
-  I18nInfoT = IOneKeyErrorI18nInfo | any,
-  DataT = IOneKeyJsError | any,
-> extends OneKeyError<I18nInfoT, DataT> {
-  override className = EOneKeyErrorClassNames.OneKeyPlainTextError;
+export class UnionKeyPlainTextError<
+  I18nInfoT = IUnionKeyErrorI18nInfo | any,
+  DataT = IUnionKeyJsError | any,
+> extends UnionKeyError<I18nInfoT, DataT> {
+  override className = EUnionKeyErrorClassNames.UnionKeyPlainTextError;
 
-  override name = EOneKeyErrorClassNames.OneKeyPlainTextError;
+  override name = EUnionKeyErrorClassNames.UnionKeyPlainTextError;
 
   constructor(message: string) {
     super(message);

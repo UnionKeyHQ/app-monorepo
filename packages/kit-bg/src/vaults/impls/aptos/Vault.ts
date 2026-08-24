@@ -16,21 +16,21 @@ import {
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil } from 'lodash';
 
-import type { IEncodedTxAptos } from '@onekeyhq/core/src/chains/aptos/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import type { IEncodedTxAptos } from '@unionkeyhq/core/src/chains/aptos/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   InvalidAccount,
   NetworkFeeInsufficient,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -38,19 +38,19 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
 import {
   EDecodedTxActionType,
   EDecodedTxDirection,
   EDecodedTxStatus,
   type IDecodedTx,
   type IDecodedTxAction,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -425,7 +425,7 @@ export default class VaultAptos extends VaultBase {
     let action: IDecodedTxAction | null = null;
 
     if (swapInfo && !!payload) {
-      // OneKey Client Swap
+      // UnionKey Client Swap
       const [toAddress] = payload.arguments || [];
       action = await this.buildInternalSwapAction({
         swapInfo,
@@ -609,7 +609,7 @@ export default class VaultAptos extends VaultBase {
         transfersInfo: params.transfersInfo,
       };
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   private async _attachFeeInfoToEncodedTx(params: {
@@ -618,10 +618,10 @@ export default class VaultAptos extends VaultBase {
   }): Promise<IEncodedTxAptos> {
     const { gas, common } = params.feeInfo;
     if (typeof gas?.gasPrice !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof gas.gasLimit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
     const gasPrice = new BigNumber(gas.gasPrice)
       .shiftedBy(common.feeDecimals)
@@ -888,7 +888,7 @@ export default class VaultAptos extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
 
     const rpcUrlWithoutSeparator = rpcUrl.replace(/\/$/, '');

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import type { IDisplayComponent } from '@onekeyhq/shared/types/signatureConfirm';
+import type { IDisplayComponent } from '@unionkeyhq/shared/types/signatureConfirm';
 
 import SignatureConfirmDetails from './SignatureConfirmDetails';
 

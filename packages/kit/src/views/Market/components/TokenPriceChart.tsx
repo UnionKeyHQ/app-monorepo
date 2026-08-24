@@ -15,18 +15,18 @@ import {
   usePageType,
   useSafeAreaInsets,
   useTabBarHeight,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   IDeferredPromise,
   ISegmentControlProps,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   IMarketDetailTicker,
   IMarketTokenChart,
   IMarketTokenDetail,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/shared/types/market';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { TradingView } from '../../../components/TradingView';

@@ -2,28 +2,28 @@ import { useCallback, useEffect } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useShowAddressBook } from '@onekeyhq/kit/src/hooks/useShowAddressBook';
-import { useBackupEntryStatus } from '@onekeyhq/kit/src/views/CloudBackup/components/useBackupEntryStatus';
-import { usePasswordPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { YStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useShowAddressBook } from '@unionkeyhq/kit/src/hooks/useShowAddressBook';
+import { useBackupEntryStatus } from '@unionkeyhq/kit/src/views/CloudBackup/components/useBackupEntryStatus';
+import { usePasswordPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   ECloudBackupRoutes,
   EDAppConnectionModal,
   ELiteCardRoutes,
   EModalKeyTagRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 export const useOnLock = () => {
   const [passwordSetting] = usePasswordPersistAtom();
@@ -149,8 +149,8 @@ export const DefaultSection = () => {
       ) : null}
       {/* {platformEnv.isNative ? (
         <ListItem
-          icon="OnekeyLiteOutline"
-          title={intl.formatMessage({ id: ETranslations.global_onekey_lite })}
+          icon="UnionKeyLiteOutline"
+          title={intl.formatMessage({ id: ETranslations.global_unionkey_lite })}
           drillIn
           onPress={() => {
             navigation.pushModal(EModalRoutes.LiteCardModal, {
@@ -160,8 +160,8 @@ export const DefaultSection = () => {
         />
       ) : null} */}
       <ListItem
-        icon="OnekeyKeytagOutline"
-        title={intl.formatMessage({ id: ETranslations.global_onekey_keytag })}
+        icon="UnionKeyKeytagOutline"
+        title={intl.formatMessage({ id: ETranslations.global_unionkey_keytag })}
         drillIn
         onPress={() => {
           defaultLogger.setting.page.enterKeyTag();

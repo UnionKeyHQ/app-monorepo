@@ -3,26 +3,26 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { Button } from '@onekeyhq/components';
-import { Page, YStack, useMedia } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { CountDownCalendarAlert } from '@onekeyhq/kit/src/components/CountDownCalendarAlert';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useEarnEventActive } from '@onekeyhq/kit/src/views/Staking/hooks/useEarnEventActive';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { Button } from '@unionkeyhq/components';
+import { Page, YStack, useMedia } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { CountDownCalendarAlert } from '@unionkeyhq/kit/src/components/CountDownCalendarAlert';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useAppRoute } from '@unionkeyhq/kit/src/hooks/useAppRoute';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { useEarnEventActive } from '@unionkeyhq/kit/src/views/Staking/hooks/useEarnEventActive';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   EModalStakingRoutes,
   type IModalStakingParamList,
-} from '@onekeyhq/shared/src/routes';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
-import { EEarnLabels } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/src/routes';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EEarnProviderEnum } from '@unionkeyhq/shared/types/earn';
+import { EEarnLabels } from '@unionkeyhq/shared/types/staking';
 
 import { BabylonTrackingAlert } from '../../components/BabylonTrackingAlert';
 import {

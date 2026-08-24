@@ -1,6 +1,6 @@
-import { YStack } from '@onekeyhq/components';
-import { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { YStack } from '@unionkeyhq/components';
+import { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { Layout } from './utils/Layout';
 

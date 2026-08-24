@@ -1,5 +1,5 @@
-import type { ITabSubNavigatorConfig } from '@onekeyhq/components';
-import { EMultiTabBrowserRoutes } from '@onekeyhq/shared/src/routes';
+import type { ITabSubNavigatorConfig } from '@unionkeyhq/components';
+import { EMultiTabBrowserRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { LazyLoadRootTabPage } from '../../../components/LazyLoadPage';
 

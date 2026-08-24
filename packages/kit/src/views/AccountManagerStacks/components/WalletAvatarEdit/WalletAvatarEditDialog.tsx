@@ -9,14 +9,14 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { HdWalletAvatarImageNames } from '@onekeyhq/shared/src/utils/avatarUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { WalletAvatar } from '@unionkeyhq/kit/src/components/WalletAvatar';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { HdWalletAvatarImageNames } from '@unionkeyhq/shared/src/utils/avatarUtils';
 
 export function WalletAvatarEditDialog({ wallet }: { wallet: IDBWallet }) {
   const intl = useIntl();

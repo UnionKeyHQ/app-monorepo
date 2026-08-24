@@ -1,5 +1,5 @@
-import kaspaWebSdk from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/sdk/kaspaWebSdk';
-import type { IKaspaSdkApi } from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/types/sdk';
+import kaspaWebSdk from '@unionkeyhq/core/src/chains/kaspa/sdkKaspa/sdk/kaspaWebSdk';
+import type { IKaspaSdkApi } from '@unionkeyhq/core/src/chains/kaspa/sdkKaspa/types/sdk';
 
 export default class OffscreenApiKaspaSdk implements IKaspaSdkApi {
   async createKRC20RevealTxJSON(...args: any[]) {

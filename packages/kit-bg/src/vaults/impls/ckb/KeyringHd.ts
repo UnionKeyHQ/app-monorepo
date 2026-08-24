@@ -1,14 +1,14 @@
 import { blockchain } from '@ckb-lumos/base';
 import { sealTransaction } from '@ckb-lumos/helpers';
 
-import type { IEncodedTxCkb } from '@onekeyhq/core/src/chains/ckb/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
+import type { IEncodedTxCkb } from '@unionkeyhq/core/src/chains/ckb/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkeyhq/core/src/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 
@@ -58,7 +58,7 @@ export class KeyringHd extends KeyringHdBase {
       serializeTransactionMessage(txSkeleton);
 
     if (!message) {
-      throw new OneKeyInternalError('Unable to serialize transaction message.');
+      throw new UnionKeyInternalError('Unable to serialize transaction message.');
     }
 
     const result = await this.baseSignTransaction({

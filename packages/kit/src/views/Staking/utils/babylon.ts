@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   IBabylonPortfolioItem,
   IBabylonPortfolioStatus,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 export type IBabylonStatus = IBabylonPortfolioStatus | 'overflow';
 

@@ -2,10 +2,10 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Icon, Page, SectionList, Stack } from '@onekeyhq/components';
-import type { IIconProps } from '@onekeyhq/components/src/primitives';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Icon, Page, SectionList, Stack } from '@unionkeyhq/components';
+import type { IIconProps } from '@unionkeyhq/components/src/primitives';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import useLiteCard from '../../hooks/useLiteCard';
 
@@ -22,7 +22,7 @@ const CREATE_LITE_CARD_SECTION_LIST = (
         icon: 'FolderUploadOutline',
         title: intl.formatMessage({ id: ETranslations.global_backup }),
         detail: intl.formatMessage({
-          id: ETranslations.settings_backup_recovery_phrase_to_onekey_lite,
+          id: ETranslations.settings_backup_recovery_phrase_to_unionkey_lite,
         }),
         onPress: liteCard.backupWallet,
       },
@@ -30,7 +30,7 @@ const CREATE_LITE_CARD_SECTION_LIST = (
         icon: 'FolderDownloadOutline',
         title: intl.formatMessage({ id: ETranslations.global_import }),
         detail: intl.formatMessage({
-          id: ETranslations.settings_import_recovery_phrase_from_onekey_lite,
+          id: ETranslations.settings_import_recovery_phrase_from_unionkey_lite,
         }),
         onPress: liteCard.importWallet,
       },

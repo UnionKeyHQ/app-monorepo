@@ -1,5 +1,5 @@
-import type { IAdaChangeAddress } from '@onekeyhq/core/src/chains/ada/types';
-import type { IDBUtxoAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+import type { IAdaChangeAddress } from '@unionkeyhq/core/src/chains/ada/types';
+import type { IDBUtxoAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
 
 // PROTO.CardanoAddressType.BASE
 const CardanoAddressTypeBASE = 0;

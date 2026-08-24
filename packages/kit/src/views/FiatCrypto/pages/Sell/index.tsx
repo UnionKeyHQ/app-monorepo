@@ -1,13 +1,13 @@
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalFiatCryptoRoutes,
   IModalFiatCryptoParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { HomeTokenListProviderMirror } from '../../../Home/components/HomeTokenListProvider/HomeTokenListProviderMirror';
 import SellOrBuy from '../../components/SellOrBuy';

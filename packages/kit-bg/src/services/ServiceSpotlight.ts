@@ -1,8 +1,8 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { ESpotlightTour } from '@unionkeyhq/shared/src/spotlight';
 
 import { spotlightPersistAtom } from '../states/jotai/atoms/spotlight';
 
@@ -52,7 +52,7 @@ class ServiceSpotlight extends ServiceBase {
     await spotlightPersistAtom.set({
       data: {
         [ESpotlightTour.createAllNetworks]: 0,
-        [ESpotlightTour.oneKeyProBanner]: 0,
+        [ESpotlightTour.unionKeyProBanner]: 0,
         [ESpotlightTour.switchDappAccount]: 0,
         [ESpotlightTour.allNetworkAccountValue]: 0,
         [ESpotlightTour.showFloatingIconDialog]: 0,

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import DAppConnectExtensionFloatingTrigger from '@onekeyhq/kit/src/views/DAppConnection/components/DAppConnectExtensionFloatingTrigger';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import DAppConnectExtensionFloatingTrigger from '@unionkeyhq/kit/src/views/DAppConnection/components/DAppConnectExtensionFloatingTrigger';
+import { useDebugComponentRemountLog } from '@unionkeyhq/shared/src/utils/debug/debugUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
 import { withAccountOverviewProvider } from '../../../states/jotai/contexts/accountOverview';

@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import { debounce } from 'lodash';
 
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import type { IButtonProps } from '..';
 import type { GestureResponderEvent } from 'react-native';

@@ -6,9 +6,9 @@ import {
   useState,
 } from 'react';
 
-import { Group, Stack, TextArea } from '@onekeyhq/components';
-import { getSharedInputStyles } from '@onekeyhq/components/src/forms/Input/sharedStyles';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Group, Stack, TextArea } from '@unionkeyhq/components';
+import { getSharedInputStyles } from '@unionkeyhq/components/src/forms/Input/sharedStyles';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { LayoutChangeEvent } from 'react-native';
 

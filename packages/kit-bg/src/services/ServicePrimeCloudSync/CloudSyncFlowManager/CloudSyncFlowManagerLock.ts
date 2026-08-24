@@ -1,10 +1,10 @@
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
 import type {
   ICloudSyncCredential,
   ICloudSyncCredentialForLock,
   ICloudSyncPayloadLock,
   ICloudSyncTargetLock,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkeyhq/shared/types/prime/primeCloudSyncTypes';
 
 import { CloudSyncFlowManagerBase } from './CloudSyncFlowManagerBase';
 

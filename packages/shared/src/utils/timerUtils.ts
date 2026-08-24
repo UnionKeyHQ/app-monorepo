@@ -1,6 +1,6 @@
 function interceptTimeout(
   method: 'setTimeout' | 'setInterval',
-  checkProp: '$$onekeyDisabledSetTimeout' | '$$onekeyDisabledSetInterval',
+  checkProp: '$$unionkeyDisabledSetTimeout' | '$$unionkeyDisabledSetInterval',
 ) {
   const methodOld = global[method];
   console.log('interceptTimeout methodOld', methodOld.toString());
@@ -23,31 +23,31 @@ function interceptTimeout(
 
 function interceptTimerWithDisable() {
   try {
-    interceptTimeout('setTimeout', '$$onekeyDisabledSetTimeout');
+    interceptTimeout('setTimeout', '$$unionkeyDisabledSetTimeout');
   } catch (error) {
     console.error(error);
   }
   try {
-    interceptTimeout('setInterval', '$$onekeyDisabledSetInterval');
+    interceptTimeout('setInterval', '$$unionkeyDisabledSetInterval');
   } catch (error) {
     console.error(error);
   }
 }
 
 function enableSetTimeout() {
-  globalThis.$$onekeyDisabledSetTimeout = undefined;
+  globalThis.$$unionkeyDisabledSetTimeout = undefined;
 }
 
 function disableSetTimeout() {
-  globalThis.$$onekeyDisabledSetTimeout = true;
+  globalThis.$$unionkeyDisabledSetTimeout = true;
 }
 
 function enableSetInterval() {
-  globalThis.$$onekeyDisabledSetInterval = undefined;
+  globalThis.$$unionkeyDisabledSetInterval = undefined;
 }
 
 function disableSetInterval() {
-  globalThis.$$onekeyDisabledSetInterval = true;
+  globalThis.$$unionkeyDisabledSetInterval = true;
 }
 
 const MS_ONE_SECOND = 1000;

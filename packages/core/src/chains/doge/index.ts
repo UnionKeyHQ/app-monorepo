@@ -1,4 +1,4 @@
-import { IMPL_DOGE } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_DOGE } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

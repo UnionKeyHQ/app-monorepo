@@ -3,19 +3,19 @@ import { useState } from 'react';
 import emojiRegex from 'emoji-regex';
 import { useIntl } from 'react-intl';
 
-import type { IDialogShowProps } from '@onekeyhq/components';
-import { Dialog, Spinner, Stack, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { RenameInputWithNameSelector } from '@onekeyhq/kit/src/components/RenameDialog';
-import { MAX_LENGTH_HW_LABEL_NAME } from '@onekeyhq/kit/src/components/RenameDialog/renameConsts';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import type { IDialogShowProps } from '@unionkeyhq/components';
+import { Dialog, Spinner, Stack, Toast } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { RenameInputWithNameSelector } from '@unionkeyhq/kit/src/components/RenameDialog';
+import { MAX_LENGTH_HW_LABEL_NAME } from '@unionkeyhq/kit/src/components/RenameDialog/renameConsts';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
 import {
   EChangeHistoryContentType,
   EChangeHistoryEntityType,
-} from '@onekeyhq/shared/src/types/changeHistory';
+} from '@unionkeyhq/shared/src/types/changeHistory';
 
 function DeviceLabelDialogContent(props: {
   wallet: IDBWallet | undefined;

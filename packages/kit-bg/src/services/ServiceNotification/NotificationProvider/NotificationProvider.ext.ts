@@ -1,22 +1,22 @@
 import { isNil } from 'lodash';
 
-import { BLANK_ICON_BASE64 } from '@onekeyhq/shared/src/consts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import extUtils from '@onekeyhq/shared/src/utils/extUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import notificationsUtils from '@onekeyhq/shared/src/utils/notificationsUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { BLANK_ICON_BASE64 } from '@unionkeyhq/shared/src/consts';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import extUtils from '@unionkeyhq/shared/src/utils/extUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import notificationsUtils from '@unionkeyhq/shared/src/utils/notificationsUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   INotificationPermissionDetail,
   INotificationRemoveParams,
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 import {
   ENotificationPermission,
   EPushProviderEventNames,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 
 import NotificationProviderBase from './NotificationProviderBase';
 
@@ -199,7 +199,7 @@ export default class NotificationProvider extends NotificationProviderBase {
       const options: chrome.notifications.NotificationOptions<true> = {
         // export type TemplateType = "basic" | "image" | "list" | "progress";
         type: 'basic',
-        iconUrl: icon || BLANK_ICON_BASE64, // ONEKEY_LOGO_ICON_URL
+        iconUrl: icon || BLANK_ICON_BASE64, // UNIONKEY_LOGO_ICON_URL
         title,
         message: description,
         silent: false,
@@ -218,7 +218,7 @@ export default class NotificationProvider extends NotificationProviderBase {
             {
               ...options,
               // image url may be invalid, use blank icon as default
-              iconUrl: BLANK_ICON_BASE64, // ONEKEY_LOGO_ICON_URL
+              iconUrl: BLANK_ICON_BASE64, // UNIONKEY_LOGO_ICON_URL
             },
             (id2) => {
               resolve(id2);

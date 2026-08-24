@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 import type {
   INumberSizeableTextProps,
   ITabPageProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   EPageType,
   NestedScrollView,
@@ -17,15 +17,15 @@ import {
   XStack,
   YStack,
   usePageType,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { formatLocaleDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { formatLocaleDate } from '@unionkeyhq/shared/src/utils/dateUtils';
 import type {
   IMarketDetailAthOrAtl,
   IMarketDetailPlatform,
   IMarketTokenDetail,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/shared/types/market';
 
 import { MarketAbout } from './MarketAbout';
 import { MarketDetailOverviewContract } from './MarketDetailOverviewContract';

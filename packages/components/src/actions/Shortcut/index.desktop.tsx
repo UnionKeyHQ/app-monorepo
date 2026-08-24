@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { shortcutsMap } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import { shortcutsMap } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import { SizableText, Stack, XStack } from '../../primitives';
 

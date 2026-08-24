@@ -1,4 +1,4 @@
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/marketV2';
+import type { IMarketTokenDetail } from '@unionkeyhq/shared/types/marketV2';
 
 export type IPriceChangeKey =
   | 'priceChange1hPercent'

@@ -3,15 +3,15 @@ import { useCallback, useMemo, useRef } from 'react';
 import LiteCard from '@onekeyfe/react-native-lite-card';
 import { CardErrors } from '@onekeyfe/react-native-lite-card/src/types';
 
-import { Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
+import { Toast } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EModalRoutes, EOnboardingPages } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EModalRoutes, EOnboardingPages } from '@unionkeyhq/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 
@@ -38,7 +38,7 @@ export default function useLiteCard() {
   const navigation = useAppNavigation();
   const backupWallet = useCallback(
     async (walletId?: string) => {
-      defaultLogger.setting.page.oneKeyLiteBackup();
+      defaultLogger.setting.page.unionKeyLiteBackup();
       try {
         await nfc.checkNFCEnabledPermission();
         const { mnemonic, walletId: selectedWalletId } =
@@ -97,10 +97,10 @@ export default function useLiteCard() {
           await createSetMnemonicConnection();
         });
         await createLiteInfoConnection();
-        defaultLogger.setting.page.oneKeyLiteBackupResult({ isSuccess: true });
+        defaultLogger.setting.page.unionKeyLiteBackupResult({ isSuccess: true });
         return true;
       } catch {
-        defaultLogger.setting.page.oneKeyLiteBackupResult({ isSuccess: false });
+        defaultLogger.setting.page.unionKeyLiteBackupResult({ isSuccess: false });
         return false;
       }
     },
@@ -151,7 +151,7 @@ export default function useLiteCard() {
         });
       });
       await createGetMnemonicConnection();
-      defaultLogger.setting.page.oneKeyLiteImportResult({ isSuccess: true });
+      defaultLogger.setting.page.unionKeyLiteImportResult({ isSuccess: true });
       defaultLogger.account.wallet.walletAdded({
         status: 'success',
         addMethod: 'ImportWallet',
@@ -161,7 +161,7 @@ export default function useLiteCard() {
         isSoftwareWalletOnlyUser,
       });
     } catch {
-      defaultLogger.setting.page.oneKeyLiteImportResult({ isSuccess: false });
+      defaultLogger.setting.page.unionKeyLiteImportResult({ isSuccess: false });
       defaultLogger.account.wallet.walletAdded({
         status: 'failure',
         addMethod: 'ImportWallet',

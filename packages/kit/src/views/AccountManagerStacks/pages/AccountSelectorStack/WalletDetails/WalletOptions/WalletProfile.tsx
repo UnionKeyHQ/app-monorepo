@@ -1,10 +1,10 @@
-import { Stack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { showWalletAvatarEditDialog } from '@onekeyhq/kit/src/views/AccountManagerStacks/components/WalletAvatarEdit';
-import { WalletRenameButton } from '@onekeyhq/kit/src/views/AccountManagerStacks/components/WalletRename';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Stack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { WalletAvatar } from '@unionkeyhq/kit/src/components/WalletAvatar';
+import { showWalletAvatarEditDialog } from '@unionkeyhq/kit/src/views/AccountManagerStacks/components/WalletAvatarEdit';
+import { WalletRenameButton } from '@unionkeyhq/kit/src/views/AccountManagerStacks/components/WalletRename';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 export function WalletProfile({ wallet }: { wallet: IDBWallet }) {
   return (

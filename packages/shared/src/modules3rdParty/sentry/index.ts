@@ -5,8 +5,8 @@ import * as Sentry from '@sentry/react';
 import {
   EWebEmbedPostMessageType,
   postMessage,
-} from '@onekeyhq/shared/src/modules3rdParty/webEmebd/postMessage';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/modules3rdParty/webEmebd/postMessage';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import appGlobals from '../../appGlobals';
 

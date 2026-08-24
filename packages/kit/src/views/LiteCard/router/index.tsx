@@ -1,15 +1,15 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ELiteCardRoutes } from '@onekeyhq/shared/src/routes';
-import type { ILiteCardParamList } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import LazyLoad from '@unionkeyhq/shared/src/lazyLoad';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { ELiteCardRoutes } from '@unionkeyhq/shared/src/routes';
+import type { ILiteCardParamList } from '@unionkeyhq/shared/src/routes';
 
 const LiteCardHome = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/LiteCard/pages/Home'),
+  () => import('@unionkeyhq/kit/src/views/LiteCard/pages/Home'),
 );
 
 const LiteCardSelectWallet = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/LiteCard/pages/SelectWallet'),
+  () => import('@unionkeyhq/kit/src/views/LiteCard/pages/SelectWallet'),
 );
 
 export const LiteCardPages: IModalFlowNavigatorConfig<
@@ -19,7 +19,7 @@ export const LiteCardPages: IModalFlowNavigatorConfig<
   {
     name: ELiteCardRoutes.LiteCardHome,
     component: LiteCardHome,
-    translationId: ETranslations.global_onekey_lite,
+    translationId: ETranslations.global_unionkey_lite,
   },
   {
     name: ELiteCardRoutes.LiteCardSelectWallet,

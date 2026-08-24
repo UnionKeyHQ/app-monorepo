@@ -3,8 +3,8 @@ import {
   SizableText,
   Stack,
   Stepper,
-} from '@onekeyhq/components';
-import type { IStepItemProps } from '@onekeyhq/components';
+} from '@unionkeyhq/components';
+import type { IStepItemProps } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

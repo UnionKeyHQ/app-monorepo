@@ -1,4 +1,4 @@
-import type { IMarketTokenChart } from '@onekeyhq/shared/types/market';
+import type { IMarketTokenChart } from '@unionkeyhq/shared/types/market';
 
 import type {
   BusinessDay,
@@ -39,9 +39,9 @@ export interface IChartViewAdapterProps extends IChartViewProps {
   bottomColor: string;
 }
 
-interface IOnekeyChartApi extends IChartApi {
+interface IUnionKeyChartApi extends IChartApi {
   // eslint-disable-next-line camelcase
-  _onekey_series?: ISeriesApi<'Area'>;
+  _unionkey_series?: ISeriesApi<'Area'>;
 }
 export function createChartDom(
   createChartFunc: (
@@ -90,7 +90,7 @@ export function createChartDom(
   chart.timeScale().fitContent();
   window.addEventListener('resize', handleResize);
   // @ts-ignore
-  globalThis._onekey_chart = chart;
+  globalThis._unionkey_chart = chart;
   return { chart, handleResize };
 }
 
@@ -112,8 +112,8 @@ export function updateChartDom({
     }),
   );
   // @ts-ignore
-  const chart = globalThis._onekey_chart as IOnekeyChartApi;
-  if (!chart._onekey_series) {
+  const chart = globalThis._unionkey_chart as IUnionKeyChartApi;
+  if (!chart._unionkey_series) {
     const newSeries = chart.addAreaSeries({
       lineColor,
       topColor,
@@ -123,10 +123,10 @@ export function updateChartDom({
       crosshairMarkerRadius: 5,
     });
     newSeries.setData(formattedData);
-    chart._onekey_series = newSeries;
+    chart._unionkey_series = newSeries;
     return;
   }
-  const series = chart._onekey_series;
+  const series = chart._unionkey_series;
   series.applyOptions({ lineColor, topColor, bottomColor });
   series.setData(formattedData);
 

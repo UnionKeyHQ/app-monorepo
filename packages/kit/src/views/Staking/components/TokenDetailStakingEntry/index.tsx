@@ -3,15 +3,15 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import { Icon, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { formatApy } from '@onekeyhq/kit/src/views/Staking/components/utils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EModalStakingRoutes } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import { Icon, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { formatApy } from '@unionkeyhq/kit/src/views/Staking/components/utils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes, EModalStakingRoutes } from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 type IStakingListItemProps = {
   networkId: string;

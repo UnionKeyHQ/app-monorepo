@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 export const useIsEnableTransferAllowList = () => {
   const [settings] = useSettingsPersistAtom();

@@ -1,7 +1,7 @@
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { map, max } from 'lodash';
 
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 
 import type { AccountInfo, PublicKey } from '@solana/web3.js';
 

@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Dialog, SizableText, Stack, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Dialog, SizableText, Stack, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function SpeedUpTransactionContent() {
   const intl = useIntl();

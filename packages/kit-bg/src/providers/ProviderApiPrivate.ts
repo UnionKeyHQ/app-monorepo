@@ -3,23 +3,23 @@
 /* eslint-disable camelcase */
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 
-import { getBgSensitiveTextEncodeKey } from '@onekeyhq/core/src/secret';
+import { getBgSensitiveTextEncodeKey } from '@unionkeyhq/core/src/secret';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import type { IEventBusPayloadShowToast } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import type { IEventBusPayloadShowToast } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import { waitForDataLoaded } from '@onekeyhq/shared/src/utils/promiseUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import { waitForDataLoaded } from '@unionkeyhq/shared/src/utils/promiseUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { isWebEmbedApiAllowedOrigin } from '../apis/backgroundApiPermissions';
 
@@ -34,7 +34,7 @@ import type {
   IJsonRpcRequest,
 } from '@onekeyfe/cross-inpage-provider-types';
 
-export interface IOneKeyWalletInfo {
+export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;
   platform?: string;
   version?: string;
@@ -141,12 +141,12 @@ class ProviderApiPrivate extends ProviderApiBase {
   }
 
   // ----------------------------------------------
-  async getWalletInfo(): Promise<IOneKeyWalletInfo> {
+  async getWalletInfo(): Promise<IUnionKeyWalletInfo> {
     const { isDefaultWallet, excludedDappList } =
       await this.backgroundApi.serviceContextMenu.getDefaultWalletSettings();
     return {
       enableExtContentScriptReloadButton: false,
-      platform: process.env.ONEKEY_PLATFORM,
+      platform: process.env.UNIONKEY_PLATFORM,
       version: process.env.VERSION,
       buildNumber: process.env.BUILD_NUMBER,
       disableExt: false,
@@ -217,7 +217,7 @@ class ProviderApiPrivate extends ProviderApiBase {
         // ** or you can update logger settings in Dapp console directly
         //    ** (all logger settings in Wallet should be disabled first)
         /*
-          window.localStorage.setItem('$$ONEKEY_DEBUG_LOGGER', 'jsBridge,ethereum');
+          window.localStorage.setItem('$$UNIONKEY_DEBUG_LOGGER', 'jsBridge,ethereum');
           window.location.reload();
            */
       },

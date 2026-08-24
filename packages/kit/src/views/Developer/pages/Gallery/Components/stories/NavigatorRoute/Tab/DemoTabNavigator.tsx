@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import type { ITabNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { TabStackNavigator } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { ITabNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import { TabStackNavigator } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import {
   EDemoDeveloperTabRoutes,

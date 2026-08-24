@@ -11,23 +11,23 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import type { IDialogInstance } from '@onekeyhq/components';
+} from '@unionkeyhq/components';
+import type { IDialogInstance } from '@unionkeyhq/components';
 import {
   settingsValuePersistAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { numberFormat } from '@onekeyhq/shared/src/utils/numberUtils';
-import type { INumberFormatProps } from '@onekeyhq/shared/src/utils/numberUtils';
-import { EHomeTab } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { numberFormat } from '@unionkeyhq/shared/src/utils/numberUtils';
+import type { INumberFormatProps } from '@unionkeyhq/shared/src/utils/numberUtils';
+import { EHomeTab } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AllNetworksManagerTrigger } from '../../../components/AccountSelector/AllNetworksManagerTrigger';

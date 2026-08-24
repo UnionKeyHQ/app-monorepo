@@ -9,24 +9,24 @@ import {
   SigningMethodType,
   publicKeyFromX,
   toTransaction,
-} from '@onekeyhq/core/src/chains/kaspa/sdkKaspa';
-import sdkWasm from '@onekeyhq/core/src/chains/kaspa/sdkKaspa/sdk';
-import type { IEncodedTxKaspa } from '@onekeyhq/core/src/chains/kaspa/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/kaspa/sdkKaspa';
+import sdkWasm from '@unionkeyhq/core/src/chains/kaspa/sdkKaspa/sdk';
+import type { IEncodedTxKaspa } from '@unionkeyhq/core/src/chains/kaspa/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import {
   EAddressEncodings,
   type ICoreApiGetAddressItem,
   type ISignedMessagePro,
   type ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { convertDeviceError } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { convertDeviceError } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -74,7 +74,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             deviceId,
             pathPrefix,
             template,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -104,7 +104,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //   ...params.deviceParams.deviceCommonParams,
             //   bundle: usedIndexes.map((index, arrIndex) => ({
             //     path: `${pathPrefix}/${index}`,
-            //     showOnOneKey: showOnOnekeyFn(arrIndex),
+            //     showOnOneKey: showOnOneKeyFn(arrIndex),
             //     prefix: chainId,
             //     scheme: EKaspaSignType.Schnorr,
             //   })),
@@ -185,7 +185,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       massAndSize.mass > MAX_ORPHAN_TX_MASS ||
       massAndSize.txSize > MAX_BLOCK_SIZE
     ) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `Transaction size is too large, please try to reduce the amount of the transaction. UTXO Count: ${txn?.inputs?.length}`,
       );
     }

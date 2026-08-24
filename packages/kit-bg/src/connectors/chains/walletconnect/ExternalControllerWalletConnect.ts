@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
 import type {
   IExternalConnectResultWalletConnect,
   IExternalConnectWalletResult,
   IExternalConnectionInfo,
   IExternalCreateConnectorResult,
   IExternalListWalletsResult,
-} from '@onekeyhq/shared/types/externalWallet.types';
+} from '@unionkeyhq/shared/types/externalWallet.types';
 
 import walletConnectStorage from '../../../services/ServiceWalletConnect/walletConnectStorage';
 import { ExternalControllerBase } from '../../base/ExternalControllerBase';

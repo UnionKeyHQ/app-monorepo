@@ -118,12 +118,12 @@ export type ICardanoOutput =
       tokenBundle?: ICardanoAssetGroup[];
     };
 
-export const transformToOneKeyInputs = (
+export const transformToUnionKeyInputs = (
   utxos: IAdaUtxo[],
-  onekeyUtxos: IAdaUTXO[],
+  unionKeyUtxos: IAdaUTXO[],
 ): ICardanoInput[] =>
   utxos.map((utxo) => {
-    const utxoWithPath = onekeyUtxos.find(
+    const utxoWithPath = unionKeyUtxos.find(
       (u) => u.tx_hash === utxo.txHash && +u.output_index === utxo.outputIndex,
     );
     if (!utxoWithPath)
@@ -187,7 +187,7 @@ export const transformToTokenBundle = (assets: IAdaAsset[]) => {
   return assetsByPolicy;
 };
 
-export const transformToOneKeyOutputs = (
+export const transformToUnionKeyOutputs = (
   outputs: IAdaFinalOutput[],
   changeAddressParameters: ICardanoAddressParameters,
 ): ICardanoOutput[] =>

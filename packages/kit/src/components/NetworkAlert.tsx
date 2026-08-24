@@ -2,8 +2,8 @@ import { memo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Alert, useNetInfo } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Alert, useNetInfo } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function BasicNetworkAlert() {
   const { isInternetReachable } = useNetInfo();

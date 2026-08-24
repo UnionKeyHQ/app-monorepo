@@ -1,4 +1,4 @@
-import { devOnlyData } from '@onekeyhq/shared/src/utils/devModeUtils';
+import { devOnlyData } from '@unionkeyhq/shared/src/utils/devModeUtils';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToConsole, LogToLocal } from '../../../base/decorators';

@@ -18,7 +18,7 @@ import { InteractionManager } from 'react-native';
 import type {
   IBip39RevealableSeed,
   IBip39RevealableSeedEncryptHex,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import {
   decryptImportedCredential,
   decryptRevealableSeed,
@@ -28,11 +28,11 @@ import {
   encryptVerifyString,
   ensureSensitiveTextEncoded,
   sha256,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import type {
   ICoreImportedCredential,
   ICoreImportedCredentialEncryptHex,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   DB_MAIN_CONTEXT_ID,
   DEFAULT_VERIFY_STRING,
@@ -42,54 +42,54 @@ import {
   WALLET_TYPE_IMPORTED,
   WALLET_TYPE_QR,
   WALLET_TYPE_WATCHING,
-} from '@onekeyhq/shared/src/consts/dbConsts';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
+} from '@unionkeyhq/shared/src/consts/dbConsts';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
 import {
   COINTYPE_DNX,
   COINTYPE_ETH,
   FIRST_EVM_ADDRESS_PATH,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   NotImplemented,
-  OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
-  OneKeyInternalError,
+  UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet,
+  UnionKeyInternalError,
   PasswordNotSet,
   RenameDuplicateNameError,
   WrongPassword,
-} from '@onekeyhq/shared/src/errors';
-import errorUtils from '@onekeyhq/shared/src/errors/utils/errorUtils';
+} from '@unionkeyhq/shared/src/errors';
+import errorUtils from '@unionkeyhq/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import { getDeviceAvatarImage } from '@onekeyhq/shared/src/utils/avatarUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { CoreSDKLoader } from '@unionkeyhq/shared/src/hardware/instance';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import { getDeviceAvatarImage } from '@unionkeyhq/shared/src/utils/avatarUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import type { IAvatarInfo } from '@onekeyhq/shared/src/utils/emojiUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/utils/debug/perfUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import type { IAvatarInfo } from '@unionkeyhq/shared/src/utils/emojiUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   INetworkAccount,
   IQrWalletAirGapAccountsInfo,
-} from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/types/account';
 import type {
   IDeviceVersionCacheInfo,
-  IOneKeyDeviceFeatures,
-} from '@onekeyhq/shared/types/device';
+  IUnionKeyDeviceFeatures,
+} from '@unionkeyhq/shared/types/device';
 import type {
   ICreateConnectedSiteParams,
   ICreateSignedMessageParams,
   ICreateSignedTransactionParams,
-} from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkeyhq/shared/types/signatureRecord';
 
 import { EDBAccountType } from './consts';
 import { LocalDbBaseContainer } from './LocalDbBaseContainer';
@@ -1253,7 +1253,7 @@ export abstract class LocalDbBase extends LocalDbBaseContainer {
       !accountUtils.isQrWallet({ walletId }) &&
       !accountUtils.isHwWallet({ walletId })
     ) {
-      throw new OneKeyInternalError({
+      throw new UnionKeyInternalError({
         message: `addIndexedAccount ERROR: only hd or hw wallet support "${walletId}"`,
       });
     }
@@ -1971,7 +1971,7 @@ export abstract class LocalDbBase extends LocalDbBaseContainer {
     });
   }
 
-  async updateDevice({ features }: { features: IOneKeyDeviceFeatures }) {
+  async updateDevice({ features }: { features: IUnionKeyDeviceFeatures }) {
     const device = await this.getDeviceByQuery({
       features,
     });
@@ -2109,10 +2109,10 @@ export abstract class LocalDbBase extends LocalDbBaseContainer {
     let xfpHash = '';
     let xfpHashLegacy = '';
 
-    // TODO support OneKey Pro device only
+    // TODO support UnionKey Pro device only
     const deviceType: IDeviceType = EDeviceType.Pro;
-    // TODO name should be OneKey Pro-xxxxxx
-    let deviceName = qrDevice.name || 'OneKey Pro';
+    // TODO name should be UnionKey Pro-xxxxxx
+    let deviceName = qrDevice.name || 'UnionKey Pro';
     const nameArr = deviceName.split('-');
     if (nameArr.length >= 2) {
       const lastHash = nameArr[nameArr.length - 1];
@@ -2179,7 +2179,7 @@ export abstract class LocalDbBase extends LocalDbBaseContainer {
       if (!parentWalletId) {
         // make sure UI loading visible
         await timerUtils.wait(1000);
-        throw new OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet();
+        throw new UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet();
       }
     }
 
@@ -4303,7 +4303,7 @@ export abstract class LocalDbBase extends LocalDbBaseContainer {
   }: {
     connectId?: string;
     featuresDeviceId?: string; // rawDeviceId
-    features?: IOneKeyDeviceFeatures;
+    features?: IUnionKeyDeviceFeatures;
   }): Promise<IDBDevice | undefined> {
     const { getDeviceUUID } = await CoreSDKLoader();
     const { devices } = await this.getAllDevices();

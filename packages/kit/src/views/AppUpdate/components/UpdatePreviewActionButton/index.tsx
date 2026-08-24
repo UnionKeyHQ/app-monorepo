@@ -2,17 +2,17 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageFooterProps } from '@onekeyhq/components';
-import { Page, YStack } from '@onekeyhq/components';
+import type { IPageFooterProps } from '@unionkeyhq/components';
+import { Page, YStack } from '@unionkeyhq/components';
 import {
   useAppUpdateInfo,
   useDownloadPackage,
-} from '@onekeyhq/kit/src/components/UpdateReminder/hooks';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EAppUpdateRoutes } from '@onekeyhq/shared/src/routes/appUpdate';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/kit/src/components/UpdateReminder/hooks';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { EAppUpdateStatus } from '@unionkeyhq/shared/src/appUpdate';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EAppUpdateRoutes } from '@unionkeyhq/shared/src/routes/appUpdate';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import type { IUpdatePreviewActionButton } from './type';
 

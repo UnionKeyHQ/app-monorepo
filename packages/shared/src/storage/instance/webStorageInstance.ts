@@ -7,7 +7,7 @@ const webStorageLegacy = new WebStorageLegacy();
 const webStorage = platformEnv.isJest
   ? webStorageLegacy
   : new WebStorage({
-      dbName: 'OneKeyAppStorage',
+      dbName: 'UnionKeyAppStorage',
       bucketName: 'app-storage_onekey-bucket',
       tableName: 'keyvaluepairs',
       legacyKeyPrefix: EWebStorageKeyPrefix.AppStorage,
@@ -16,7 +16,7 @@ const webStorage = platformEnv.isJest
 const webStorageSimpleDB = platformEnv.isJest
   ? webStorageLegacy
   : new WebStorage({
-      dbName: 'OneKeySimpleDB',
+      dbName: 'UnionKeySimpleDB',
       bucketName: 'simple-db_onekey-bucket',
       tableName: 'keyvaluepairs',
       legacyKeyPrefix: EWebStorageKeyPrefix.SimpleDB,
@@ -25,7 +25,7 @@ const webStorageSimpleDB = platformEnv.isJest
 const webStorageGlobalStates = platformEnv.isJest
   ? webStorageLegacy
   : new WebStorage({
-      dbName: 'OneKeyGlobalStates',
+      dbName: 'UnionKeyGlobalStates',
       bucketName: 'global-states_onekey-bucket',
       tableName: 'keyvaluepairs',
       legacyKeyPrefix: EWebStorageKeyPrefix.GlobalStates,

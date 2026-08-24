@@ -1,6 +1,6 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import type { IPrimeParamList } from '@onekeyhq/shared/src/routes/prime';
-import { EPrimePages } from '@onekeyhq/shared/src/routes/prime';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import type { IPrimeParamList } from '@unionkeyhq/shared/src/routes/prime';
+import { EPrimePages } from '@unionkeyhq/shared/src/routes/prime';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 

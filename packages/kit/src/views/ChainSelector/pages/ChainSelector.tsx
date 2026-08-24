@@ -1,13 +1,13 @@
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IPageScreenProps } from '@unionkeyhq/components';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EChainSelectorPages,
   IChainSelectorParamList,
-} from '@onekeyhq/shared/src/routes';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { PureChainSelector } from '../components/PureChainSelector';

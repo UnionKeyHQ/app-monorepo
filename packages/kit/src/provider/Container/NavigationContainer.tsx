@@ -4,8 +4,8 @@ import { memo, useRef } from 'react';
 import {
   NavigationContainer as NavigationContainerComponent,
   RouterEventProvider,
-} from '@onekeyhq/components';
-import { RootNavigator } from '@onekeyhq/kit/src/routes';
+} from '@unionkeyhq/components';
+import { RootNavigator } from '@unionkeyhq/kit/src/routes';
 
 import { useRouterConfig } from '../../routes/config';
 

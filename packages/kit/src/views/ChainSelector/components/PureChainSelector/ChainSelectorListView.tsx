@@ -8,10 +8,10 @@ import {
   SearchBar,
   Stack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { NetworkAvatarBase } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { useFuseSearch } from '../../hooks/useFuseSearch';
 

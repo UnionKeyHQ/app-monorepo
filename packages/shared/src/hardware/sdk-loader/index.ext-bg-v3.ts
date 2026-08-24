@@ -26,5 +26,5 @@ export const importHardwareSDK = async ({
 // offscreen ---> background (hardware events emit)
 //    offscreenApi -> addHardwareGlobalEventListener -> extJsBridgeOffscreenToBg.request -> serviceHardware.passHardwareEventsFromOffscreenToBackground
 export const importHardwareSDKLowLevel = async () =>
-  (await import('@onekeyhq/kit-bg/src/offscreens/instance/offscreenApiProxy'))
+  (await import('@unionkeyhq/kit-bg/src/offscreens/instance/offscreenApiProxy'))
     .default.hardwareSDKLowLevel as unknown as Promise<LowLevelCoreApi>;

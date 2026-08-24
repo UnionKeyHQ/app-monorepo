@@ -14,7 +14,7 @@ import type {
   IStackStyle,
   ITableColumn,
   ITableProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   ActionList,
   Icon,
@@ -29,25 +29,25 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EWatchlistFrom } from '@onekeyhq/shared/src/logger/scopes/market/scenes/token';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabMarketRoutes } from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { isSupportStaking } from '@onekeyhq/shared/types/earn/earnProvider.constants';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EWatchlistFrom } from '@unionkeyhq/shared/src/logger/scopes/market/scenes/token';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabMarketRoutes } from '@unionkeyhq/shared/src/routes';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { isSupportStaking } from '@unionkeyhq/shared/types/earn/earnProvider.constants';
 import type {
   IMarketCategory,
   IMarketToken,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/shared/types/market';
 
 import { useReviewControl } from '../../../components/ReviewControl';
 import useAppNavigation from '../../../hooks/useAppNavigation';

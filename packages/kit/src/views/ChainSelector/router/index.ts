@@ -1,7 +1,7 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import type { IChainSelectorParamList } from '@onekeyhq/shared/src/routes';
-import { EChainSelectorPages } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import type { IChainSelectorParamList } from '@unionkeyhq/shared/src/routes';
+import { EChainSelectorPages } from '@unionkeyhq/shared/src/routes';
 
 const AccountChainSelector = LazyLoadPage(
   () => import('../pages/AccountChainSelector'),
@@ -9,7 +9,7 @@ const AccountChainSelector = LazyLoadPage(
 const ChainSelector = LazyLoadPage(() => import('../pages/ChainSelector'));
 
 const SettingCustomNetworkModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/Setting/pages/CustomNetwork'),
+  () => import('@unionkeyhq/kit/src/views/Setting/pages/CustomNetwork'),
 );
 
 const AllNetworksManager = LazyLoadPage(

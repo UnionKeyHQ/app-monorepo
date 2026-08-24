@@ -1,56 +1,56 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import { EModalStakingRoutes } from '@onekeyhq/shared/src/routes';
-import type { IModalStakingParamList } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import LazyLoad from '@unionkeyhq/shared/src/lazyLoad';
+import { EModalStakingRoutes } from '@unionkeyhq/shared/src/routes';
+import type { IModalStakingParamList } from '@unionkeyhq/shared/src/routes';
 import type {
   EModalAssetDetailRoutes,
   IModalAssetDetailsParamList,
-} from '@onekeyhq/shared/src/routes/assetDetails';
+} from '@unionkeyhq/shared/src/routes/assetDetails';
 
 import { ModalAssetDetailsStack } from '../../AssetDetails/router';
 
 const InvestmentDetails = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/InvestmentDetails'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/InvestmentDetails'),
 );
 
 const ProtocolDetails = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/ProtocolDetails'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/ProtocolDetails'),
 );
 
 const ProtocolDetailsV2 = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/ProtocolDetailsV2'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/ProtocolDetailsV2'),
 );
 
 const Withdraw = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/Withdraw'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/Withdraw'),
 );
 
 const Stake = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/Stake'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/Stake'),
 );
 
 const Claim = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/Claim'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/Claim'),
 );
 
 const AssetProtocolList = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/AssetProtocolList'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/AssetProtocolList'),
 );
 
 const ClaimOptions = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/ClaimOptions'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/ClaimOptions'),
 );
 
 const WithdrawOptions = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/WithdrawOptions'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/WithdrawOptions'),
 );
 
 const PortfolioDetails = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/PortfolioDetails'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/PortfolioDetails'),
 );
 
 const HistoryList = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/Staking/pages/HistoryList'),
+  () => import('@unionkeyhq/kit/src/views/Staking/pages/HistoryList'),
 );
 
 export const StakingModalRouter: IModalFlowNavigatorConfig<

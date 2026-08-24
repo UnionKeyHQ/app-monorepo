@@ -13,9 +13,9 @@ import {
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 const ContentSpinner = () => (
   <Stack h="100%" justifyContent="center" alignItems="center">

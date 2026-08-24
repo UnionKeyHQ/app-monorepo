@@ -17,8 +17,8 @@ exports.default = async function fileOperation(context) {
     console.log('copy file start..', originPath);
     fs.mkdirSync(destDir, { recursive: true });
     fs.copyFileSync(
-      path.join(originPath, 'onekeyd'),
-      path.join(destDir, 'onekeyd'),
+      path.join(originPath, 'unionkeyd'),
+      path.join(destDir, 'unionkeyd'),
     );
     console.log('copy file finish');
     console.log('remove file start..');

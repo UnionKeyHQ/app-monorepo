@@ -1,4 +1,4 @@
-import { NumberSizeableText, SizableText, Stack } from '@onekeyhq/components';
+import { NumberSizeableText, SizableText, Stack } from '@unionkeyhq/components';
 
 export const ValuePriceListItem = ({
   amount,

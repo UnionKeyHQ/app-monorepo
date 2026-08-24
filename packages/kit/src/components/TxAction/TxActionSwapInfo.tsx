@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
+import type { ISizableTextProps } from '@unionkeyhq/components';
 import {
   Divider,
   Image,
@@ -12,13 +12,13 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   swapServiceFeeDefault,
   swapSlippageDecimal,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
+import type { ISwapTxInfo } from '@unionkeyhq/shared/types/swap/types';
 
 import { useAccountData } from '../../hooks/useAccountData';
 import {

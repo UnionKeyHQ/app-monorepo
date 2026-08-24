@@ -5,7 +5,7 @@ import { sha256 } from '@noble/hashes/sha256';
 import * as secp256k1 from '@noble/secp256k1';
 import { bech32 } from 'bech32';
 
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import { aesCbcDecrypt, aesCbcEncrypt } from '../../../secret/crypto-functions';
 

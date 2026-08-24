@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 import { InteractionManager, Keyboard } from 'react-native';
 
-import type { IIconProps, IPropsWithTestId } from '@onekeyhq/components';
+import type { IIconProps, IPropsWithTestId } from '@unionkeyhq/components';
 import {
   Button,
   Dialog,
@@ -12,20 +12,20 @@ import {
   SectionList,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useBackupEntryStatus } from '@onekeyhq/kit/src/views/CloudBackup/components/useBackupEntryStatus';
-import useLiteCard from '@onekeyhq/kit/src/views/LiteCard/hooks/useLiteCard';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IListItemProps } from '@unionkeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { useBackupEntryStatus } from '@unionkeyhq/kit/src/views/CloudBackup/components/useBackupEntryStatus';
+import useLiteCard from '@unionkeyhq/kit/src/views/LiteCard/hooks/useLiteCard';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { useV4MigrationActions } from '../V4Migration/hooks/useV4MigrationActions';
 
@@ -229,15 +229,15 @@ export function ImportWalletOptions() {
         //   ? [
         //       {
         //         title: intl.formatMessage({
-        //           id: ETranslations.global_onekey_lite,
+        //           id: ETranslations.global_unionkey_lite,
         //         }),
-        //         icon: 'OnekeyLiteOutline',
+        //         icon: 'UnionKeyLiteOutline',
         //         onPress: liteCard.importWallet,
         //       } as IOptionItem,
         //     ]
         //   : []),//zyf
         {
-          icon: 'OnekeyKeytagOutline',
+          icon: 'UnionKeyKeytagOutline',
           title: 'UnionKey KeyTag',
           onPress: handleImportKeyTag,
         },

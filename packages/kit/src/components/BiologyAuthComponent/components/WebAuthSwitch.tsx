@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { ESwitchSize, Switch } from '@onekeyhq/components';
+import { ESwitchSize, Switch } from '@unionkeyhq/components';
 
 interface IWebAuthSwitchProps {
   isSupport: boolean;

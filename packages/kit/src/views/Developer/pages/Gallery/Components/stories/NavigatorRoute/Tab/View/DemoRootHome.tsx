@@ -1,12 +1,12 @@
 import { useCallback, useLayoutEffect, useState } from 'react';
 
-import { Button, SizableText, Stack, YStack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import HeaderIconButton from '@onekeyhq/components/src/layouts/Navigation/Header/HeaderIconButton';
-import useCookie from '@onekeyhq/kit/src/hooks/useCookie';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
+import { Button, SizableText, Stack, YStack } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import HeaderIconButton from '@unionkeyhq/components/src/layouts/Navigation/Header/HeaderIconButton';
+import useCookie from '@unionkeyhq/kit/src/hooks/useCookie';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkeyhq/shared/src/storage/syncStorage';
 
 import { Layout } from '../../../utils/Layout';
 import { NavigationFocusTools } from '../../../utils/NavigationTools';
@@ -159,11 +159,11 @@ const DemoRootHome = () => {
                   if (platformEnv.isRuntimeBrowser) {
                     if (status === '0') {
                       localStorage.removeItem(
-                        '$$OnekeyReactRenderTrackerEnabled',
+                        '$$UnionKeyReactRenderTrackerEnabled',
                       );
                     } else {
                       localStorage.setItem(
-                        '$$OnekeyReactRenderTrackerEnabled',
+                        '$$UnionKeyReactRenderTrackerEnabled',
                         'true',
                       );
                     }

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import LazyLoad from '@unionkeyhq/shared/src/lazyLoad';
 
 const DevOverlayWindow = LazyLoad(() => import('./DevOverlayWindow'));
 

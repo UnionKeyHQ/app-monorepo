@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
 
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 import type {
   INativeNotificationCenterMessageInfo,
   INotificationPermissionDetail,
@@ -8,7 +8,7 @@ import type {
   INotificationSetBadgeParams,
   INotificationShowParams,
   INotificationShowResult,
-} from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
 
 import { NotificationEventEmitter } from '../NotificationEventEmitter';
 import { PushProviderWebSocket } from '../PushProvider/PushProviderWebSocket';
@@ -71,7 +71,7 @@ export default abstract class NotificationProviderBase {
   abstract clearNotificationCache(): Promise<void>;
 
   fixShowParams(params: INotificationShowParams) {
-    // ONEKEY_LOGO_ICON_URL
+    // UNIONKEY_LOGO_ICON_URL
     params.icon = params.remotePushMessageInfo?.extras?.image || params.icon;
     params.notificationId = params.notificationId || generateUUID();
     params.time = params.time || Date.now();

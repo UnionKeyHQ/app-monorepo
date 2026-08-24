@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
 
-import { YStack } from '@onekeyhq/components';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+import { YStack } from '@unionkeyhq/components';
+import type { IUnsignedMessage } from '@unionkeyhq/core/src/types';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
 
 import { DataViewerTab } from '../SignatureConfirmDataViewer';
 

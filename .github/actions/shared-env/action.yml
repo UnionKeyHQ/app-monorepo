@@ -61,11 +61,14 @@ runs:
           git checkout ${{ env.WORKFLOW_GITHUB_REF_NAME }}
         fi
 
-    - name: Dotenv Action
+    - name: Read app version
       id: dotenv
-      uses: OneKeyHQ/actions/dotenv-action@main
-      with:
-        path: .env.version
+      shell: bash
+      run: |
+        set -a
+        source .env.version
+        set +a
+        echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
     - name: Setup ENV 
       shell: bash

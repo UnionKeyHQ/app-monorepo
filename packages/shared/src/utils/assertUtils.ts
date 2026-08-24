@@ -109,7 +109,7 @@ export function toggleBgApiSerializableChecking(enabled: boolean) {
     updateAt: Date.now(),
   };
   appGlobals.$appStorage?.syncStorage.setObject(
-    EAppSyncStorageKeys.onekey_disable_bg_api_serializable_checking,
+    EAppSyncStorageKeys.unionkey_disable_bg_api_serializable_checking,
     data,
   );
 }
@@ -117,7 +117,7 @@ export function isBgApiSerializableCheckingDisabled() {
   try {
     const data =
       appGlobals.$appStorage?.syncStorage.getObject<ISerializableCheckingDisabledConfig>(
-        EAppSyncStorageKeys.onekey_disable_bg_api_serializable_checking,
+        EAppSyncStorageKeys.unionkey_disable_bg_api_serializable_checking,
       );
     if (!data) {
       return false;

@@ -1,4 +1,4 @@
-import { TradingView } from '@onekeyhq/kit/src/components/TradingView';
+import { TradingView } from '@unionkeyhq/kit/src/components/TradingView';
 
 import { Layout } from './utils/Layout';
 

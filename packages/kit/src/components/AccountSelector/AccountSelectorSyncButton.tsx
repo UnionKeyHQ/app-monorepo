@@ -1,4 +1,4 @@
-import { Button } from '@onekeyhq/components';
+import { Button } from '@unionkeyhq/components';
 
 import { useAccountSelectorActions } from '../../states/jotai/contexts/accountSelector';
 

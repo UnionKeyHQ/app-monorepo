@@ -4,19 +4,19 @@ import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import { Badge, Button, SizableText, XStack } from '@onekeyhq/components';
-import { DeriveTypeSelectorTriggerForDapp } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import { Badge, Button, SizableText, XStack } from '@unionkeyhq/components';
+import { DeriveTypeSelectorTriggerForDapp } from '@unionkeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import type { IListItemProps } from '@unionkeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
 import {
   useAccountSelectorContextDataAtom,
   useSelectedAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { WalletRemoveButton } from '@onekeyhq/kit/src/views/AccountManagerStacks/components/WalletRemove';
-import { WALLET_TYPE_HD } from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { WalletRemoveButton } from '@unionkeyhq/kit/src/views/AccountManagerStacks/components/WalletRemove';
+import { WALLET_TYPE_HD } from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { AboutDevice } from './AboutDevice';
 

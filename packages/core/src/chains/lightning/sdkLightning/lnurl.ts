@@ -1,7 +1,7 @@
 import { hmac } from '@noble/hashes/hmac';
 import { sha256 } from '@noble/hashes/sha256';
 
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 export function getPathSuffix(domain: string, privateKeyHex: string) {
   const derivationMaterial = bufferUtils.bytesToHex(

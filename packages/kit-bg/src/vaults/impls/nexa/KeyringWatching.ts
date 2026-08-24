@@ -1,4 +1,4 @@
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
+import type { CoreChainApiBase } from '@unionkeyhq/core/src/base/CoreChainApiBase';
 
 import { KeyringWatchingBase } from '../../base/KeyringWatchingBase';
 

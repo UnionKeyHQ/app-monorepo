@@ -1,6 +1,6 @@
-import { LottieView, Stack } from '@onekeyhq/components';
-import PrimeBannerBgDark from '@onekeyhq/kit/assets/animations/prime-banner-bg-dark.json';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { LottieView, Stack } from '@unionkeyhq/components';
+import PrimeBannerBgDark from '@unionkeyhq/kit/assets/animations/prime-banner-bg-dark.json';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 const PrimeLottie = () => (
   <LottieView

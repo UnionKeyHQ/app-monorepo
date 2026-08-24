@@ -1,8 +1,8 @@
-import type { IDialogShowProps } from '@onekeyhq/components';
-import { Button, Dialog, XStack, YStack } from '@onekeyhq/components';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
+import type { IDialogShowProps } from '@unionkeyhq/components';
+import { Button, Dialog, XStack, YStack } from '@unionkeyhq/components';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
 
 import { WalletBackupActions } from './WalletBackupActions';
 

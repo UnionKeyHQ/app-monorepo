@@ -1,16 +1,16 @@
-import { Button, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Button, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   BadAuthError,
   InvoiceExpiredError,
-  OneKeyError,
-} from '@onekeyhq/shared/src/errors';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
+  UnionKeyError,
+} from '@unionkeyhq/shared/src/errors';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { Layout } from './utils/Layout';
 
@@ -26,9 +26,9 @@ function error11() {
   });
 }
 function error13() {
-  throw new OneKeyError({
+  throw new UnionKeyError({
     autoToast: true,
-    message: '使用基类 new OneKeyError + autoToast 显示 toast',
+    message: '使用基类 new UnionKeyError + autoToast 显示 toast',
   });
 }
 function error12() {

@@ -11,7 +11,7 @@ import {
   TextAreaInput,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   AES256_IV_LENGTH,
   PBKDF2_KEY_LENGTH,
@@ -19,13 +19,13 @@ import {
   aesCbcDecrypt,
   aesCbcEncrypt,
   keyFromPasswordAndSalt,
-} from '@onekeyhq/core/src/secret/crypto-functions';
+} from '@unionkeyhq/core/src/secret/crypto-functions';
 import {
   hash160,
   hmacSHA256,
   hmacSHA512,
   sha256,
-} from '@onekeyhq/core/src/secret/hash';
+} from '@unionkeyhq/core/src/secret/hash';
 
 // Test snapshots for validation
 const HASH_TEST_SNAPSHOTS = {

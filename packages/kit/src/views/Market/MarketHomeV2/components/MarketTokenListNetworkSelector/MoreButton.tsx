@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { Button, Popover } from '@onekeyhq/components';
-import type { IButtonProps } from '@onekeyhq/components';
+import { Button, Popover } from '@unionkeyhq/components';
+import type { IButtonProps } from '@unionkeyhq/components';
 
 import { NetworksSearchPanel } from './NetworksSearchPanel';
 

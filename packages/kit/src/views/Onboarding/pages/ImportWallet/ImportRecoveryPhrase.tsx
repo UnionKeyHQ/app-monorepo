@@ -2,13 +2,13 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page } from '@onekeyhq/components';
-import { EMnemonicType } from '@onekeyhq/core/src/secret';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EOnboardingPages } from '@onekeyhq/shared/src/routes';
+import { Page } from '@unionkeyhq/components';
+import { EMnemonicType } from '@unionkeyhq/core/src/secret';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
 
 import { PhaseInputArea } from '../../components/PhaseInputArea';
 import { showTonMnemonicDialog } from '../../components/TonMnemonicDialog';

@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
-import type { HyperlinkText } from '@onekeyhq/kit/src/components/HyperlinkText';
-import type { ILocaleSymbol } from '@onekeyhq/shared/src/locale';
+import type { HyperlinkText } from '@unionkeyhq/kit/src/components/HyperlinkText';
+import type { ILocaleSymbol } from '@unionkeyhq/shared/src/locale';
 
 export type ISettingConfigContextValue = {
   theme: 'light' | 'dark';

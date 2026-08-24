@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import type { IDesktopAppState } from '@onekeyhq/shared/types/desktop';
+import type { IDesktopAppState } from '@unionkeyhq/shared/types/desktop';
 
 import type { IUseHandleAppStateActive } from './types';
 

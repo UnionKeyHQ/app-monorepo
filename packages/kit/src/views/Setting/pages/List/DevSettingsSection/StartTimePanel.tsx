@@ -1,5 +1,5 @@
-import { SizableText, YStack } from '@onekeyhq/components';
-import { useMeasureTime } from '@onekeyhq/shared/src/modules3rdParty/metrics';
+import { SizableText, YStack } from '@unionkeyhq/components';
+import { useMeasureTime } from '@unionkeyhq/shared/src/modules3rdParty/metrics';
 
 export function StartTimePanel() {
   const { jsBundleLoadedTime, fpTime } = useMeasureTime();

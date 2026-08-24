@@ -1,10 +1,10 @@
 import { Transaction } from '@mysten/sui/transactions';
 import { SUI_TYPE_ARG, normalizeSuiAddress } from '@mysten/sui/utils';
 
-import type { IEncodedTxSui } from '@onekeyhq/core/src/chains/sui/types';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
+import type { IEncodedTxSui } from '@unionkeyhq/core/src/chains/sui/types';
+import { UnionKeyError } from '@unionkeyhq/shared/src/errors';
 
-import type { OneKeySuiClient } from './ClientSui';
+import type { UnionKeySuiClient } from './ClientSui';
 import type {
   SuiTransactionBlockResponse,
   SuiTransactionBlockResponseOptions,
@@ -27,7 +27,7 @@ export function normalizeSuiCoinType(coinType: string): string {
 }
 
 export async function toTransaction(
-  client: OneKeySuiClient,
+  client: UnionKeySuiClient,
   sender: string,
   tx: IEncodedTxSui | Uint8Array,
 ) {
@@ -50,7 +50,7 @@ export async function toTransaction(
 const POLL_INTERVAL = 2000;
 type IPollFn<T> = (time?: number, index?: number) => T;
 export function waitPendingTransaction(
-  client: OneKeySuiClient,
+  client: UnionKeySuiClient,
   txId: string,
   options?: SuiTransactionBlockResponseOptions,
   right = true,
@@ -77,7 +77,7 @@ export function waitPendingTransaction(
         // ignore transaction not found
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         if (error.code !== -32_000 && error.code !== -32_602) {
-          return Promise.reject(new OneKeyError(error));
+          return Promise.reject(new UnionKeyError(error));
         }
       }
     }
@@ -89,7 +89,7 @@ export function waitPendingTransaction(
     }
 
     if (retry > retryCount) {
-      return Promise.reject(new OneKeyError('transaction timeout'));
+      return Promise.reject(new UnionKeyError('transaction timeout'));
     }
 
     return new Promise(

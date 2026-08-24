@@ -1,6 +1,6 @@
-import { Icon } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { EChainSelectorPages, EModalRoutes } from '@onekeyhq/shared/src/routes';
+import { Icon } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { EChainSelectorPages, EModalRoutes } from '@unionkeyhq/shared/src/routes';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 

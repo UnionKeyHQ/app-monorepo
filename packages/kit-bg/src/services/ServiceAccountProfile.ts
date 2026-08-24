@@ -1,36 +1,36 @@
 import BigNumber from 'bignumber.js';
 
-import type { IAddressQueryResult } from '@onekeyhq/kit/src/components/AddressInput';
+import type { IAddressQueryResult } from '@unionkeyhq/kit/src/components/AddressInput';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { parseRPCResponse } from '@onekeyhq/shared/src/request/utils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { ERequestWalletTypeEnum } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { parseRPCResponse } from '@unionkeyhq/shared/src/request/utils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import { ERequestWalletTypeEnum } from '@unionkeyhq/shared/types/account';
 import type {
   IAddressBadge,
   IFetchAccountDetailsParams,
   IFetchAccountDetailsResp,
   IQueryCheckAddressArgs,
   IServerAccountBadgeResp,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import {
   EAddressInteractionStatus,
   EServerInteractedStatus,
-} from '@onekeyhq/shared/types/address';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import type { IResolveNameResp } from '@onekeyhq/shared/types/name';
+} from '@unionkeyhq/shared/types/address';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
+import type { IResolveNameResp } from '@unionkeyhq/shared/types/name';
 import type {
   IProxyRequest,
   IProxyRequestItem,
   IProxyResponse,
   IRpcProxyResponse,
-} from '@onekeyhq/shared/types/proxy';
+} from '@unionkeyhq/shared/types/proxy';
 
 import simpleDb from '../dbs/simple/simpleDb';
 import {
@@ -739,7 +739,7 @@ class ServiceAccountProfile extends ServiceBase {
     accountId?: string;
   }) {
     return {
-      'X-OneKey-Wallet-Type': await this._getRequestWalletType(params),
+      'X-UnionKey-Wallet-Type': await this._getRequestWalletType(params),
     };
   }
 

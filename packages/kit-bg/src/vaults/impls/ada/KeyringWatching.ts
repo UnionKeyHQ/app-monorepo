@@ -1,7 +1,7 @@
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
-import type { IAdaAddressInfo } from '@onekeyhq/core/src/chains/ada/types';
-import { InvalidAccount } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { CoreChainApiBase } from '@unionkeyhq/core/src/base/CoreChainApiBase';
+import type { IAdaAddressInfo } from '@unionkeyhq/core/src/chains/ada/types';
+import { InvalidAccount } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { KeyringWatchingBase } from '../../base/KeyringWatchingBase';
 

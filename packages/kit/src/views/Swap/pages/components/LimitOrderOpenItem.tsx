@@ -2,20 +2,20 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { Icon, SizableText, Spinner, XStack } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSwapTypeSwitchAtom } from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import type { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IModalSwapParamList } from '@onekeyhq/shared/src/routes';
-import { EModalRoutes, EModalSwapRoutes } from '@onekeyhq/shared/src/routes';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { Icon, SizableText, Spinner, XStack } from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useSwapTypeSwitchAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import type { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { useInAppNotificationAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IModalSwapParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalRoutes, EModalSwapRoutes } from '@unionkeyhq/shared/src/routes';
 import {
   EProtocolOfExchange,
   ESwapLimitOrderStatus,
   ESwapTabSwitchType,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 const LimitOrderOpenItem = ({
   storeName,

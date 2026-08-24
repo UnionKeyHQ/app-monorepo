@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import type { IDisplayComponent } from '@onekeyhq/shared/types/signatureConfirm';
-import { EParseTxComponentType } from '@onekeyhq/shared/types/signatureConfirm';
+import type { IApproveInfo } from '@unionkeyhq/kit-bg/src/vaults/types';
+import type { IDisplayComponent } from '@unionkeyhq/shared/types/signatureConfirm';
+import { EParseTxComponentType } from '@unionkeyhq/shared/types/signatureConfirm';
 
 import {
   Address,

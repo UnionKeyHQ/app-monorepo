@@ -1,14 +1,14 @@
 /* 
   InfoPlist.strings
-  OneKeyWallet
+  UnionKeyWallet
 
   Created by Leon on 2024/3/8.
   
 */
 
 "NFCReaderUsageDescription" = "एनएफसी का उपयोग करके एनडीईएफ संदेशों को एप्लिकेशन में पढ़ें।";
-"NSBluetoothAlwaysUsageDescription" = "OneKey हार्डवेयर उपकरणों को कनेक्ट करने के लिए ब्लूटूथ का उपयोग करें।";
-"NSBluetoothPeripheralUsageDescription" = "OneKey हार्डवेयर उपकरणों को कनेक्ट करने के लिए ब्लूटूथ परिधीय का उपयोग करें।";
+"NSBluetoothAlwaysUsageDescription" = "UnionKey हार्डवेयर उपकरणों को कनेक्ट करने के लिए ब्लूटूथ का उपयोग करें।";
+"NSBluetoothPeripheralUsageDescription" = "UnionKey हार्डवेयर उपकरणों को कनेक्ट करने के लिए ब्लूटूथ परिधीय का उपयोग करें।";
 "NSCameraUsageDescription" = "क्यूआर कोड स्कैन करने के लिए कैमरा का उपयोग करें।";
 "NSFaceIDUsageDescription" = "अपने वॉलेट को प्रमाणित और अनलॉक करने के लिए फेस आईडी का उपयोग करें।";
 "NSMicrophoneUsageDescription" = "वीडियो रिकॉर्ड करने के लिए माइक्रोफोन का उपयोग करें।";

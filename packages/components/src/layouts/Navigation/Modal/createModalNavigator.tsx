@@ -17,7 +17,7 @@ import { useWindowDimensions } from 'react-native';
 import { useMedia } from 'tamagui';
 import { useThrottledCallback } from 'use-debounce';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { Portal } from '../../../hocs';
 import { useBackHandler } from '../../../hooks';

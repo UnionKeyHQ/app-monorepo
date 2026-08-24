@@ -6,8 +6,8 @@ import {
   SizableText,
   Stack,
   useThemeValue,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 interface IDiveInContentProps {
   onReload: () => void;

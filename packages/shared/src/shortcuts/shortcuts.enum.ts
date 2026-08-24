@@ -20,7 +20,7 @@ export enum EShortcutEvents {
   TabSwap = 'TabSwap',
   TabMarket = 'TabMarket',
   TabReferAFriend = 'TabReferAFriend',
-  TabMyOneKey = 'TabMyOneKey',
+  TabMyUnionKey = 'TabMyUnionKey',
   TabBrowser = 'TabBrowser',
   ViewHistory = 'ViewHistory',
   ViewBookmark = 'ViewBookmark',
@@ -105,9 +105,9 @@ export const shortcutsMap: Record<
     keys: [shortcutsKeys.CmdOrCtrl, '5'],
     desc: 'Refer a Friend Tab',
   },
-  [EShortcutEvents.TabMyOneKey]: {
+  [EShortcutEvents.TabMyUnionKey]: {
     keys: [shortcutsKeys.CmdOrCtrl, '6'],
-    desc: 'My OneKey Tab',
+    desc: 'My UnionKey Tab',
   },
   [EShortcutEvents.TabBrowser]: {
     keys: [shortcutsKeys.CmdOrCtrl, '7'],

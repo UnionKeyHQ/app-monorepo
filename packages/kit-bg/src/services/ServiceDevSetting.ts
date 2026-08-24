@@ -1,10 +1,10 @@
-import { analytics } from '@onekeyhq/shared/src/analytics';
+import { analytics } from '@unionkeyhq/shared/src/analytics';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { buildServiceEndpoint } from '@onekeyhq/shared/src/config/appConfig';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { buildServiceEndpoint } from '@unionkeyhq/shared/src/config/appConfig';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 
 import {
   devSettingsPersistAtom,

@@ -13,14 +13,14 @@ import {
   Stack,
   XStack,
   useMedia,
-} from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IFuseResultMatch } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { buildFuse } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import { EModalAddressBookRoutes } from '@onekeyhq/shared/src/routes';
-import { listItemPressStyle } from '@onekeyhq/shared/src/style';
+} from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IFuseResultMatch } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import { buildFuse } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import { EModalAddressBookRoutes } from '@unionkeyhq/shared/src/routes';
+import { listItemPressStyle } from '@unionkeyhq/shared/src/style';
 
 import { AccountAvatar } from '../../../components/AccountAvatar';
 

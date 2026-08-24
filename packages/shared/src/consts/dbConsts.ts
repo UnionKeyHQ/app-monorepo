@@ -1,4 +1,4 @@
-export const DEFAULT_VERIFY_STRING = 'OneKey';
+export const DEFAULT_VERIFY_STRING = 'UnionKey';
 export const DB_MAIN_CONTEXT_ID = 'mainContext';
 export const WALLET_TYPE_HD = 'hd';
 export const WALLET_TYPE_HW = 'hw';

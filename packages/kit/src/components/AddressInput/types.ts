@@ -1,4 +1,4 @@
-import type { EInputAddressChangeType } from '@onekeyhq/shared/types/address';
+import type { EInputAddressChangeType } from '@unionkeyhq/shared/types/address';
 
 export type IAddressPluginProps = {
   onChange?: (text: string) => void;

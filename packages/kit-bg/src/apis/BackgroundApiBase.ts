@@ -2,33 +2,33 @@ import { consts } from '@onekeyfe/cross-inpage-provider-core';
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import { isFunction } from 'lodash';
 
-import '@onekeyhq/kit-bg/src/webembeds/instance/webembedApiProxy';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import '@unionkeyhq/kit-bg/src/webembeds/instance/webembedApiProxy';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
   backgroundClass,
   backgroundMethod,
   bindThis,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
   GLOBAL_EVENT_BUS_SYNC_BROADCAST_METHOD_NAME,
   getBackgroundServiceApi,
   throwMethodNotFound,
-} from '@onekeyhq/shared/src/background/backgroundUtils';
-import type { IGlobalEventBusSyncBroadcastParams } from '@onekeyhq/shared/src/background/backgroundUtils';
+} from '@unionkeyhq/shared/src/background/backgroundUtils';
+import type { IGlobalEventBusSyncBroadcastParams } from '@unionkeyhq/shared/src/background/backgroundUtils';
 import {
   EEventBusBroadcastMethodNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import type {
   EAppEventBusNames,
   IAppEventBusPayload,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   ensurePromiseObject,
   ensureSerializable,
-} from '@onekeyhq/shared/src/utils/assertUtils';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/src/utils/assertUtils';
+import { EAlignPrimaryAccountMode } from '@unionkeyhq/shared/types/dappConnection';
 
 import { updateInterceptorRequestHelper } from '../init/updateInterceptorRequestHelper';
 import { createBackgroundProviders } from '../providers/backgroundProviders';

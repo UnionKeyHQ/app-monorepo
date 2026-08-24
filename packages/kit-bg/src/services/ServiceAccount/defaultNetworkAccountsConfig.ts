@@ -1,6 +1,6 @@
 import { uniqBy } from 'lodash';
 
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
 
 import type { IBackgroundApi } from '../../apis/IBackgroundApi';
 import type { IAccountDeriveTypes } from '../../vaults/types';

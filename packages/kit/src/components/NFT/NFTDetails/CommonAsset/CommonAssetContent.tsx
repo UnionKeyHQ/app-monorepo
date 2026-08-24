@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { isNil, isObject } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IImageProps, IKeyOfIcons } from '@onekeyhq/components';
+import type { IImageProps, IKeyOfIcons } from '@unionkeyhq/components';
 import {
   DescriptionList,
   Divider,
@@ -13,15 +13,15 @@ import {
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/components';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { formatDate } from '@unionkeyhq/shared/src/utils/dateUtils';
 import {
   ETraitsDisplayType,
   type IAccountNFT,
-} from '@onekeyhq/shared/types/nft';
+} from '@unionkeyhq/shared/types/nft';
 
 type IProps = {
   networkId: string;

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
 import {
   Form,
   Icon,
@@ -12,25 +12,25 @@ import {
   Stack,
   XStack,
   useForm,
-} from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import type { IAddressInputValue } from '@onekeyhq/kit/src/components/AddressInput';
-import { AddressInputField } from '@onekeyhq/kit/src/components/AddressInput';
-import { renderAddressSecurityHeaderRightButton } from '@onekeyhq/kit/src/components/AddressInput/AddressSecurityHeaderRightButton';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+} from '@unionkeyhq/components';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import type { IAddressInputValue } from '@unionkeyhq/kit/src/components/AddressInput';
+import { AddressInputField } from '@unionkeyhq/kit/src/components/AddressInput';
+import { renderAddressSecurityHeaderRightButton } from '@unionkeyhq/kit/src/components/AddressInput/AddressSecurityHeaderRightButton';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import {
   useSwapManualSelectQuoteProvidersAtom,
   useSwapQuoteCurrentSelectAtom,
   useSwapToAnotherAccountAddressAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { useSettingsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { useSettingsAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { ESwapDirectionType } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/src/routes/swap';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { ESwapDirectionType } from '@unionkeyhq/shared/types/swap/types';
 
 import { useSwapAddressInfo } from '../../hooks/useSwapAccount';
 import { SwapProviderMirror } from '../SwapProviderMirror';

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/devSettings';
 
 import { usePrimeAuthV2 } from './usePrimeAuthV2';
 

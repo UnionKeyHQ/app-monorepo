@@ -4,29 +4,29 @@ import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useRoute } from '@react-navigation/native';
 import { useIntl } from 'react-intl';
 
-import { Page, YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { FirmwareUpdateReminderAlert } from '@onekeyhq/kit/src/views/FirmwareUpdate/components/HomeFirmwareUpdateReminder';
-import { useFirmwareUpdateActions } from '@onekeyhq/kit/src/views/FirmwareUpdate/hooks/useFirmwareUpdateActions';
-import { useFirmwareVerifyDialog } from '@onekeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/FirmwareVerifyDialog';
-import { useFirmwareUpdatesDetectStatusPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { Page, YStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { FirmwareUpdateReminderAlert } from '@unionkeyhq/kit/src/views/FirmwareUpdate/components/HomeFirmwareUpdateReminder';
+import { useFirmwareUpdateActions } from '@unionkeyhq/kit/src/views/FirmwareUpdate/hooks/useFirmwareUpdateActions';
+import { useFirmwareVerifyDialog } from '@unionkeyhq/kit/src/views/Onboarding/pages/ConnectHardwareWallet/FirmwareVerifyDialog';
+import { useFirmwareUpdatesDetectStatusPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IModalDeviceManagementParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IModalDeviceManagementParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EAccountManagerStacksRoutes,
   EModalDeviceManagementRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IHwQrWalletWithDevice } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IHwQrWalletWithDevice } from '@unionkeyhq/shared/types/account';
 
 import DeviceAdvanceSection from './DeviceAdvanceSection';
 import DeviceBasicInfoSection from './DeviceBasicInfoSection';

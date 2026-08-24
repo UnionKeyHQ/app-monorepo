@@ -1,4 +1,4 @@
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
+import type { IUnsignedMessage } from '@unionkeyhq/core/src/types';
 
 import { EMessageTypesEth } from '../../types/message';
 

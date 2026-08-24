@@ -1,4 +1,4 @@
-import { Stack, useIsHorizontalLayout } from '@onekeyhq/components';
+import { Stack, useIsHorizontalLayout } from '@unionkeyhq/components';
 
 import { HomeTokenListProviderMirror } from '../components/HomeTokenListProvider/HomeTokenListProviderMirror';
 import { WalletActions } from '../components/WalletActions';

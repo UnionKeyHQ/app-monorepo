@@ -1,10 +1,10 @@
-import type { ISwapProviderManager } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+import type { ISwapProviderManager } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import type {
   IFetchLimitOrderRes,
   ISwapApproveTransaction,
   ISwapToken,
   ISwapTxHistory,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { EAtomNames } from '../atomNames';
 import { globalAtom } from '../utils';

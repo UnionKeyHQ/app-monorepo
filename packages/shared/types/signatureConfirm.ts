@@ -1,5 +1,5 @@
-import type { IBadgeType, IKeyOfIcons } from '@onekeyhq/components';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
+import type { IBadgeType, IKeyOfIcons } from '@unionkeyhq/components';
+import type { IEncodedTx } from '@unionkeyhq/core/src/types';
 
 import type { ENFTType, IAccountNFT } from './nft';
 import type { ISwapTxInfo } from './swap/types';

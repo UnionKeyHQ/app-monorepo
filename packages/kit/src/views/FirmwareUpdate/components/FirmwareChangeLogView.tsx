@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
 import {
   Accordion,
   Icon,
@@ -11,21 +11,21 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateStepInfoAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   IBleFirmwareUpdateInfo,
   IBootloaderUpdateInfo,
   ICheckAllFirmwareReleaseResult,
   IFirmwareChangeLog,
   IFirmwareUpdateInfo,
-} from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/types/device';
 
 import { useFirmwareUpdateActions } from '../hooks/useFirmwareUpdateActions';
 

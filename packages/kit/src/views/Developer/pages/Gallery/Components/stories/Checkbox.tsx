@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import type { ICheckboxProps, ICheckedState } from '@onekeyhq/components';
-import { Checkbox, Stack } from '@onekeyhq/components';
+import type { ICheckboxProps, ICheckedState } from '@unionkeyhq/components';
+import { Checkbox, Stack } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

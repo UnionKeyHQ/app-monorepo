@@ -10,19 +10,19 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { ISectionListProps } from '@onekeyhq/components';
-import type { IIconProps } from '@onekeyhq/components/src/primitives';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import type { IMetaDataObject } from '@onekeyhq/kit-bg/src/services/ServiceCloudBackup/types';
-import { useCloudBackupPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ECloudBackupRoutes, EModalRoutes } from '@onekeyhq/shared/src/routes';
-import { formatDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/components';
+import type { ISectionListProps } from '@unionkeyhq/components';
+import type { IIconProps } from '@unionkeyhq/components/src/primitives';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import type { IMetaDataObject } from '@unionkeyhq/kit-bg/src/services/ServiceCloudBackup/types';
+import { useCloudBackupPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { ECloudBackupRoutes, EModalRoutes } from '@unionkeyhq/shared/src/routes';
+import { formatDate } from '@unionkeyhq/shared/src/utils/dateUtils';
 
 import BackupListLoading from './BackupListLoading';
 
@@ -166,7 +166,7 @@ export default function BackupDeviceList<T>({
         !hasData && ListEmptyComponent ? null : (
           <SizableText size="$bodySm" color="$textSubdued" px="$5" pt="$3">
             {intl.formatMessage({
-              id: ETranslations.backup_onekey_doesnt_back_up_hardware_wallets,
+              id: ETranslations.backup_unionkey_doesnt_back_up_hardware_wallets,
             })}
           </SizableText>
         )

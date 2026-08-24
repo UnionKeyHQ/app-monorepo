@@ -1,5 +1,5 @@
 {
-  "name": "@onekeyhq/web-embed",
+  "name": "@unionkeyhq/web-embed",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,9 @@
   },
   "private": true,
   "dependencies": {
-    "@onekeyhq/components": "*",
-    "@onekeyhq/kit": "*",
-    "@onekeyhq/shared": "*"
+    "@unionkeyhq/components": "*",
+    "@unionkeyhq/kit": "*",
+    "@unionkeyhq/shared": "*"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

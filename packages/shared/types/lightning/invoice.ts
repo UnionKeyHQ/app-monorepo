@@ -1,5 +1,5 @@
 /* eslint-disable spellcheck/spell-checker */
-import type { IOneKeyAPIBaseResponse } from '@onekeyhq/shared/types/request';
+import type { IUnionKeyAPIBaseResponse } from '@unionkeyhq/shared/types/request';
 
 export type ICreateInvoiceParams = {
   amount: number;
@@ -7,7 +7,7 @@ export type ICreateInvoiceParams = {
   description_hash?: string;
 };
 
-export type ICreateInvoiceResponse = IOneKeyAPIBaseResponse<{
+export type ICreateInvoiceResponse = IUnionKeyAPIBaseResponse<{
   expires_at: string;
   payment_hash: string;
   payment_request: string;

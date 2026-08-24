@@ -2,11 +2,11 @@ import { useCallback, useContext, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import { Button, SizableText, XStack } from '@onekeyhq/components';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
+import { Button, SizableText, XStack } from '@unionkeyhq/components';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { NetworkAvatarBase } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { EditableChainSelectorContext } from './context';
 import { CELL_HEIGHT } from './type';

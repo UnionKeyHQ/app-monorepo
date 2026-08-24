@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import * as bip39 from 'bip39';
 
-import { TextArea, Toast, XStack, YStack } from '@onekeyhq/components';
-import { DotMap } from '@onekeyhq/kit/src/components/DotMap';
+import { TextArea, Toast, XStack, YStack } from '@unionkeyhq/components';
+import { DotMap } from '@unionkeyhq/kit/src/components/DotMap';
 
 import { Layout } from './utils/Layout';
 

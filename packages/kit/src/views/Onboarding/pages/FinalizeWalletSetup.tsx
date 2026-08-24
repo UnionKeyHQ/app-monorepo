@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useThrottledCallback } from 'use-debounce';
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   AnimatePresence,
   Heading,
@@ -12,24 +12,24 @@ import {
   Spinner,
   Stack,
   Toast,
-} from '@onekeyhq/components';
-import { EMnemonicType } from '@onekeyhq/core/src/secret';
-import { useWalletBoundReferralCode } from '@onekeyhq/kit/src/views/ReferFriends/hooks/useWalletBoundReferralCode';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import type { IAppEventBusPayload } from '@onekeyhq/shared/src/eventBus/appEventBus';
+} from '@unionkeyhq/components';
+import { EMnemonicType } from '@unionkeyhq/core/src/secret';
+import { useWalletBoundReferralCode } from '@unionkeyhq/kit/src/views/ReferFriends/hooks/useWalletBoundReferralCode';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import type { IAppEventBusPayload } from '@unionkeyhq/shared/src/eventBus/appEventBus';
 import {
   EAppEventBusNames,
   EFinalizeWalletSetupSteps,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EOnboardingPages,
   IOnboardingParamList,
-} from '@onekeyhq/shared/src/routes';
-import { ERootRoutes } from '@onekeyhq/shared/src/routes';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import { ERootRoutes } from '@unionkeyhq/shared/src/routes';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';
@@ -51,18 +51,18 @@ function FinalizeWalletSetupPage({
     EFinalizeWalletSetupSteps.CreatingWallet,
   );
    
-  const SUCCESS_IMAGE = require('@onekeyhq/kit/assets/success.png');
-  const creatingWalletImg = require('@onekeyhq/kit/assets/icon_01mdpi.png');
-  const generatingAccountsImg = require('@onekeyhq/kit/assets/icon_02mdpi.png');
-  const encryptingDataImg = require('@onekeyhq/kit/assets/icon_03mdpi.png');
-  const readyImg = require('@onekeyhq/kit/assets/icon_05mdpi.png');
+  const SUCCESS_IMAGE = require('@unionkeyhq/kit/assets/success.png');
+  const creatingWalletImg = require('@unionkeyhq/kit/assets/icon_01mdpi.png');
+  const generatingAccountsImg = require('@unionkeyhq/kit/assets/icon_02mdpi.png');
+  const encryptingDataImg = require('@unionkeyhq/kit/assets/icon_03mdpi.png');
+  const readyImg = require('@unionkeyhq/kit/assets/icon_05mdpi.png');
   const [showStep, setShowStep] = useState(false);
   const navigation = useAppNavigation();
   const mnemonic = route?.params?.mnemonic;
   const mnemonicType = route?.params?.mnemonicType;
   const isWalletBackedUp = route?.params?.isWalletBackedUp;
   const [onboardingError, setOnboardingError] = useState<
-    IOneKeyError | undefined
+    IUnionKeyError | undefined
   >(undefined);
   const closePageCalled = useRef(false);
 

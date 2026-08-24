@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/order
-import '@onekeyhq/shared/src/polyfills';
+import '@unionkeyhq/shared/src/polyfills';
 
 // eslint-disable-next-line import/order
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { setupSidePanelPortInUI } from '../background/sidePanel';
 import hotReload from '../ui/hotReload';
@@ -26,7 +26,7 @@ function init() {
     setupSidePanelPortInUI();
   }
 
-  globalThis.$$onekeyPerfTrace?.log({
+  globalThis.$$unionkeyPerfTrace?.log({
     name: '[EXT]: ui.tsx init() / KitProviderExt render()',
   });
   initUi();

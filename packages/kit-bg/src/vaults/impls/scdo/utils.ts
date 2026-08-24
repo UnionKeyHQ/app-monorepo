@@ -3,10 +3,10 @@ import BigNumber from 'bignumber.js';
 import RLP from 'rlp';
 import { keccak256 } from 'viem';
 
-import type { IEncodedTxScdo } from '@onekeyhq/core/src/chains/scdo/types';
-import { secp256k1 } from '@onekeyhq/core/src/secret';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import type { IEncodedTxScdo } from '@unionkeyhq/core/src/chains/scdo/types';
+import { secp256k1 } from '@unionkeyhq/core/src/secret';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 const TransferMethod = '0xa9059cbb';
 

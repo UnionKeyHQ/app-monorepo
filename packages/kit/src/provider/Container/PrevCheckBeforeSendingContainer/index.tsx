@@ -2,15 +2,15 @@ import { memo, useEffect } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { PreCheckBeforeSendingCancelError } from '@onekeyhq/shared/src/errors/errors/appErrors';
-import { toPlainErrorObject } from '@onekeyhq/shared/src/errors/utils/errorUtils';
+import { Dialog } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { PreCheckBeforeSendingCancelError } from '@unionkeyhq/shared/src/errors/errors/appErrors';
+import { toPlainErrorObject } from '@unionkeyhq/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function BasicPrevCheckBeforeSendingContainer() {
   const intl = useIntl();

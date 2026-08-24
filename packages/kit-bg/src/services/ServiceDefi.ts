@@ -5,12 +5,12 @@ import { isNil, omitBy } from 'lodash';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import type {
   IFetchAccountDefiParams,
   IFetchAccountDefiResp,
-} from '@onekeyhq/shared/types/defi';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/types/defi';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 
 import ServiceBase from './ServiceBase';
 

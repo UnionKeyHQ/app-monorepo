@@ -2,14 +2,14 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { ICheckedState } from '@onekeyhq/components';
-import { Checkbox, Dialog, Toast } from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import type { IAccountSelectorContextData } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { ICheckedState } from '@unionkeyhq/components';
+import { Checkbox, Dialog, Toast } from '@unionkeyhq/components';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import type { IAccountSelectorContextData } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { useAccountSelectorActions } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 export function WalletRemoveDialog({
   defaultValue,

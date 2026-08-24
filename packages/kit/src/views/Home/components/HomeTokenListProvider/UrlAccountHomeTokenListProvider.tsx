@@ -1,8 +1,8 @@
 import { memo, useMemo } from 'react';
 
-import { ProviderJotaiContextTokenList } from '@onekeyhq/kit/src/states/jotai/contexts/tokenList/atoms';
-import { useJotaiContextRootStore } from '@onekeyhq/kit/src/states/jotai/utils/useJotaiContextRootStore';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { ProviderJotaiContextTokenList } from '@unionkeyhq/kit/src/states/jotai/contexts/tokenList/atoms';
+import { useJotaiContextRootStore } from '@unionkeyhq/kit/src/states/jotai/utils/useJotaiContextRootStore';
+import { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 export function useUrlAccountHomeTokenListContextStoreInitData() {
   const data = useMemo(

@@ -2,13 +2,13 @@ import { useCallback, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance } from '@onekeyhq/components';
-import { IconButton, SizableText, XStack, YStack } from '@onekeyhq/components';
-import type { IUnsignedTx } from '@onekeyhq/core/src/types';
-import { showResourceDetailsDialog } from '@onekeyhq/kit/src/components/Resource';
-import { useSendSelectedFeeInfoAtom } from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
-import { InfoItem } from '@onekeyhq/kit/src/views/AssetDetails/pages/HistoryDetails/components/TxDetailsInfoItem';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IDialogInstance } from '@unionkeyhq/components';
+import { IconButton, SizableText, XStack, YStack } from '@unionkeyhq/components';
+import type { IUnsignedTx } from '@unionkeyhq/core/src/types';
+import { showResourceDetailsDialog } from '@unionkeyhq/kit/src/components/Resource';
+import { useSendSelectedFeeInfoAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/sendConfirm';
+import { InfoItem } from '@unionkeyhq/kit/src/views/AssetDetails/pages/HistoryDetails/components/TxDetailsInfoItem';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function TronSpecialInfo({
   accountId,

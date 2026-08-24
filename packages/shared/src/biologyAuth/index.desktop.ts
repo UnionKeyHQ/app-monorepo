@@ -1,6 +1,6 @@
 import { AuthenticationType } from 'expo-local-authentication';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { ETranslations } from '../locale';
 import {

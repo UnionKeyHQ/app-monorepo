@@ -13,15 +13,15 @@ import {
   SectionList,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useBrowserHistoryAction } from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import { formatRelativeDate } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useBrowserHistoryAction } from '@unionkeyhq/kit/src/states/jotai/contexts/discovery';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EEnterMethod } from '@unionkeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
+import { formatRelativeDate } from '@unionkeyhq/shared/src/utils/dateUtils';
 
 import { DiscoveryIcon } from '../../components/DiscoveryIcon';
 import { useWebSiteHandler } from '../../hooks/useWebSiteHandler';

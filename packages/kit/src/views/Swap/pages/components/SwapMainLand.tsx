@@ -19,10 +19,10 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useSignatureConfirm } from '@onekeyhq/kit/src/hooks/useSignatureConfirm';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useSignatureConfirm } from '@unionkeyhq/kit/src/hooks/useSignatureConfirm';
 import {
   useSwapActions,
   useSwapAlertsAtom,
@@ -32,28 +32,28 @@ import {
   useSwapSelectToTokenAtom,
   useSwapSelectedFromTokenBalanceAtom,
   useSwapTypeSwitchAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/swap';
-import { EJotaiContextStoreNames } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/swap';
+import { EJotaiContextStoreNames } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes } from '@unionkeyhq/shared/src/routes';
 import {
   EModalSwapRoutes,
   type IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/routes/swap';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 import {
   assertUnionKeyAssistRequirementIsUnambiguous,
   getUnionKeyTradeInstrument,
   parseUnionKeyAssistRequirement,
-} from '@onekeyhq/shared/src/utils/unionKeyTradeUtils';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import { swapApproveResetValue } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/src/utils/unionKeyTradeUtils';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
+import { swapApproveResetValue } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import {
   ESwapDirectionType,
   ESwapQuoteKind,
   ESwapTabSwitchType,
   type ISwapInitParams,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import type {
   IUnionKeyAssistAgentGrant,
   IUnionKeyAssistAuthorizationMode,
@@ -63,7 +63,7 @@ import type {
   IUnionKeyAssistRiskPolicy,
   IUnionKeyAssistSiteId,
   IUnionKeyAssistTask,
-} from '@onekeyhq/shared/types/unionkey/trade';
+} from '@unionkeyhq/shared/types/unionkey/trade';
 
 import SwapProviderInfoItem from '../../components/SwapProviderInfoItem';
 import { useSwapAddressInfo } from '../../hooks/useSwapAccount';

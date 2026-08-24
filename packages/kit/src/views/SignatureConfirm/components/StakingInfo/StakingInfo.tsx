@@ -2,9 +2,9 @@ import { memo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Image, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IStakingInfo } from '@onekeyhq/shared/types/staking';
+import { Image, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IStakingInfo } from '@unionkeyhq/shared/types/staking';
 
 import { SignatureConfirmItem } from '../SignatureConfirmItem';
 

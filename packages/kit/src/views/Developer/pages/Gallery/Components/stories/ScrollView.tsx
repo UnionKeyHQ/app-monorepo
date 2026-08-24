@@ -1,13 +1,13 @@
 import { useRef } from 'react';
 
-import type { IScrollViewRef } from '@onekeyhq/components';
+import type { IScrollViewRef } from '@unionkeyhq/components';
 import {
   Button,
   ScrollView,
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

@@ -1,13 +1,13 @@
 import { useIntl } from 'react-intl';
 import { Pressable } from 'react-native';
 
-import type { IStackProps } from '@onekeyhq/components';
-import { SizableText, Stack, Tooltip, useMedia } from '@onekeyhq/components';
-import type { IWalletAvatarProps } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountSelectorFocusedWallet } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import type { IStackProps } from '@unionkeyhq/components';
+import { SizableText, Stack, Tooltip, useMedia } from '@unionkeyhq/components';
+import type { IWalletAvatarProps } from '@unionkeyhq/kit/src/components/WalletAvatar';
+import { WalletAvatar } from '@unionkeyhq/kit/src/components/WalletAvatar';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAccountSelectorFocusedWallet } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 type IWalletListItemProps = {
   isOthers?: boolean;

@@ -1,19 +1,19 @@
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import { ActionList } from '@onekeyhq/components';
-import { ensureSensitiveTextEncoded } from '@onekeyhq/core/src/secret';
-import type { IExportKeyType } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
+import { ActionList } from '@unionkeyhq/components';
+import { ensureSensitiveTextEncoded } from '@unionkeyhq/core/src/secret';
+import type { IExportKeyType } from '@unionkeyhq/core/src/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import type {
   IDBAccount,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
 import {
   EAccountManagerStacksRoutes,
   EModalRoutes,
   EOnboardingPages,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 export function AccountExportPrivateKeyButton({
   testID,

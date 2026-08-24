@@ -8,20 +8,20 @@ import {
   SizableText,
   Toast,
   rootNavigationRef,
-} from '@onekeyhq/components';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import { useInAppNotificationAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EModalSwapRoutes } from '@onekeyhq/shared/src/routes';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes, EModalSwapRoutes } from '@unionkeyhq/shared/src/routes';
+import { noopObject } from '@unionkeyhq/shared/src/utils/miscUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import {
   ESwapApproveTransactionStatus,
   ESwapSource,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AccountSelectorProviderMirror } from '../../../components/AccountSelector';

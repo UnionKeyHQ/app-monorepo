@@ -12,10 +12,10 @@ import {
   XStack,
   YStack,
   useForm,
-} from '@onekeyhq/components';
-import { AmountInput } from '@onekeyhq/kit/src/components/AmountInput';
-import { NetworksFilterItem } from '@onekeyhq/kit/src/components/NetworksFilterItem';
-import { TokenListItem } from '@onekeyhq/kit/src/components/TokenListItem';
+} from '@unionkeyhq/components';
+import { AmountInput } from '@unionkeyhq/kit/src/components/AmountInput';
+import { NetworksFilterItem } from '@unionkeyhq/kit/src/components/NetworksFilterItem';
+import { TokenListItem } from '@unionkeyhq/kit/src/components/TokenListItem';
 
 import { Layout } from './utils/Layout';
 
@@ -50,7 +50,7 @@ const AmountInputGallery = () => (
               }}
               tokenSelectorTriggerProps={{
                 selectedTokenImageUri:
-                  'https://uni.onekey-asset.com/static/chain/btc.png',
+                  'https://uni.unionkey.io/static/chain/btc.png',
                 selectedTokenSymbol: 'BTC',
               }}
               enableMaxAmount
@@ -66,7 +66,7 @@ const AmountInputGallery = () => (
           const [tokenSelectorTriggerProps, setTokenSelectorTriggerProps] =
             useState({
               selectedTokenImageUri:
-                'https://uni.onekey-asset.com/static/chain/btc.png',
+                'https://uni.unionkey.io/static/chain/btc.png',
               selectedTokenSymbol: 'BTC',
             });
           const [balanceProps, setBalanceProps] = useState({

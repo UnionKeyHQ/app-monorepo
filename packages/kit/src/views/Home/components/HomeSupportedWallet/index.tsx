@@ -1,17 +1,17 @@
 import { EDeviceType } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
-import { Empty, Stack, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IOneKeyDeviceType } from '@onekeyhq/shared/types/device';
+import { Empty, Stack, YStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types/device';
 
-type IWalletType = IOneKeyDeviceType | 'watching';
+type IWalletType = IUnionKeyDeviceType | 'watching';
 
 export function HomeSupportedWallet({
   supportedDeviceTypes,
   watchingAccountEnabled,
 }: {
-  supportedDeviceTypes?: IOneKeyDeviceType[];
+  supportedDeviceTypes?: IUnionKeyDeviceType[];
   watchingAccountEnabled?: boolean;
 }) {
   const intl = useIntl();

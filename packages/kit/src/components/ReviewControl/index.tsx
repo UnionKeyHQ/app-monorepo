@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 export const useReviewControl = () => {
   const [{ reviewControl }] = useSettingsPersistAtom();

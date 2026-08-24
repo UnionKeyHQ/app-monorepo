@@ -1,19 +1,19 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import { LazyLoadPage } from '@onekeyhq/kit/src/components/LazyLoadPage';
-import { EModalFiatCryptoRoutes } from '@onekeyhq/shared/src/routes/fiatCrypto';
-import type { IModalFiatCryptoParamList } from '@onekeyhq/shared/src/routes/fiatCrypto';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import { LazyLoadPage } from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import { EModalFiatCryptoRoutes } from '@unionkeyhq/shared/src/routes/fiatCrypto';
+import type { IModalFiatCryptoParamList } from '@unionkeyhq/shared/src/routes/fiatCrypto';
 
 const FiatCryptoBuyModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/FiatCrypto/pages/Buy'),
+  () => import('@unionkeyhq/kit/src/views/FiatCrypto/pages/Buy'),
 );
 
 const FiatCryptoSellModal = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/FiatCrypto/pages/Sell'),
+  () => import('@unionkeyhq/kit/src/views/FiatCrypto/pages/Sell'),
 );
 
 const DeriveTypesAddress = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 export const ModalFiatCryptoRouter: IModalFlowNavigatorConfig<

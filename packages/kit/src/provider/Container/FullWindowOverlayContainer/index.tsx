@@ -3,20 +3,20 @@ import {
   Portal,
   ShowToastProvider,
   Toaster,
-} from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { OneKeyFloatingChatBot } from './OneKeyFloatingChatBot';
+} from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { UnionKeyFloatingChatBot } from './UnionKeyFloatingChatBot';
 import { DevOverlayWindowContainer } from './DevOverlayWindowContainer';
 
 export function FullWindowOverlayContainer() {
   return (
     <>
       <OverlayContainer>
-    
-      
+
+
         <Portal.Container name={Portal.Constant.SPOTLIGHT_OVERLAY_PORTAL} />
-        {/* <Portal.Container name={Portal.Constant.FULL_WINDOW_OVERLAY_PORTAL}>  
-          <OneKeyFloatingChatBot />  
+        {/* <Portal.Container name={Portal.Constant.FULL_WINDOW_OVERLAY_PORTAL}>
+          <UnionKeyFloatingChatBot />
         </Portal.Container>  */}
         <Portal.Container name={Portal.Constant.FULL_WINDOW_OVERLAY_PORTAL} />
         <ShowToastProvider />
@@ -25,7 +25,7 @@ export function FullWindowOverlayContainer() {
         {platformEnv.isE2E ? <></> : <Toaster />}
       </OverlayContainer>
       <Portal.Container name={Portal.Constant.HARDWARE_UI_STATE_DIALOG} />
-      
+
     </>
   );
 }

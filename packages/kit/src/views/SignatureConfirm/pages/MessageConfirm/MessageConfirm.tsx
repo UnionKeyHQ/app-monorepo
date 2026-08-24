@@ -3,34 +3,34 @@ import { memo, useCallback, useEffect, useMemo } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { Page, YStack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import { Page, YStack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalSignatureConfirmRoutes,
   IModalSignatureConfirmParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { promiseAllSettledEnhanced } from '@onekeyhq/shared/src/utils/promiseUtils';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { promiseAllSettledEnhanced } from '@unionkeyhq/shared/src/utils/promiseUtils';
 import {
   convertAddressToSignatureConfirmAddress,
   convertNetworkToSignatureConfirmNetwork,
-} from '@onekeyhq/shared/src/utils/txActionUtils';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/utils/txActionUtils';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
+import { EHostSecurityLevel } from '@unionkeyhq/shared/types/discovery';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
 import {
   EParseTxComponentType,
   type IParseMessageResp,
   type ISignatureConfirmDisplay,
-} from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkeyhq/shared/types/signatureConfirm';
 
 import {
   DAppRiskyAlert,

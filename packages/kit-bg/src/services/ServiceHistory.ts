@@ -1,24 +1,24 @@
 import { isNil, unionBy } from 'lodash';
 
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
-import type ILightningVault from '@onekeyhq/kit-bg/src/vaults/impls/lightning/Vault';
+import type { IEncodedTx } from '@unionkeyhq/core/src/types';
+import type ILightningVault from '@unionkeyhq/kit-bg/src/vaults/impls/lightning/Vault';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import type { OneKeyServerApiError } from '@onekeyhq/shared/src/errors';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import type { UnionKeyServerApiError } from '@unionkeyhq/shared/src/errors';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import {
   getOnChainHistoryTxStatus,
   isAccountCompatibleWithTx,
-} from '@onekeyhq/shared/src/utils/historyUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { TX_RISKY_LEVEL_SPAM } from '@onekeyhq/shared/src/walletConnect/constant';
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/utils/historyUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { TX_RISKY_LEVEL_SPAM } from '@unionkeyhq/shared/src/walletConnect/constant';
+import type { IAddressInfo } from '@unionkeyhq/shared/types/address';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IAccountHistoryTx,
   IAllNetworkHistoryExtraItem,
@@ -31,18 +31,18 @@ import type {
   IOnChainHistoryTxNFT,
   IOnChainHistoryTxToken,
   IServerFetchAccountHistoryDetailParams,
-} from '@onekeyhq/shared/types/history';
-import { EOnChainHistoryTxStatus } from '@onekeyhq/shared/types/history';
-import { ESwapTxHistoryStatus } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/history';
+import { EOnChainHistoryTxStatus } from '@unionkeyhq/shared/types/history';
+import { ESwapTxHistoryStatus } from '@unionkeyhq/shared/types/swap/types';
 import type {
   IReplaceTxInfo,
   ISendTxOnSuccessData,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import {
   EBtcF2poolReplaceState,
   EDecodedTxStatus,
   EReplaceTxType,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import simpleDb from '../dbs/simple/simpleDb';
 import { vaultFactory } from '../vaults/factory';
@@ -721,7 +721,7 @@ class ServiceHistory extends ServiceBase {
     const fetchHistoryFromServer = async () => {
       extraParams = await this.buildFetchHistoryListParams(params);
       let extraRequestParams = extraParams;
-      if (networkId === getNetworkIdsMap().onekeyall) {
+      if (networkId === getNetworkIdsMap().unionkeyall) {
         extraRequestParams = {
           allNetworkAccounts: (
             extraParams as unknown as {
@@ -759,7 +759,7 @@ class ServiceHistory extends ServiceBase {
     try {
       resp = await fetchHistoryFromServer();
     } catch (e) {
-      const error = e as OneKeyServerApiError;
+      const error = e as UnionKeyServerApiError;
       // Exchange the token on the first error to ensure subsequent polling requests succeed
       if (error.data?.code === 50_401) {
         // 50401 -> Lightning service special error code

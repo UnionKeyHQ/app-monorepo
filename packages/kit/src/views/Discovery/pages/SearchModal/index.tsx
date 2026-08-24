@@ -4,14 +4,14 @@ import { useFocusEffect, useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { Keyboard } from 'react-native';
 
-import { Page, ScrollView, SearchBar, Stack } from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
+import { Page, ScrollView, SearchBar, Stack } from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EEnterMethod } from '@unionkeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
 import type {
   EDiscoveryModalRoutes,
   IDiscoveryModalParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import { SearchResultContent } from '../../components/SearchResultContent';
 import { useSearchModalData } from '../../hooks/useSearchModalData';

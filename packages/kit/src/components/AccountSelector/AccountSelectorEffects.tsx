@@ -2,18 +2,18 @@ import { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { throttle } from 'lodash';
 
-import type { IDBExternalAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { useSettingsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IDBExternalAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAccountSelectorSelectedAccount } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { useSettingsAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
-import { noopObject } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { useDebugComponentRemountLog } from '@unionkeyhq/shared/src/utils/debug/debugUtils';
+import { noopObject } from '@unionkeyhq/shared/src/utils/miscUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import {

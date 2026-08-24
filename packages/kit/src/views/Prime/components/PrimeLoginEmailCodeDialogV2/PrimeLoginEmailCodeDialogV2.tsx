@@ -11,9 +11,9 @@ import {
   Toast,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 
@@ -59,7 +59,7 @@ export function PrimeLoginEmailCodeDialogV2(props: {
     } finally {
       setIsResending(false);
     }
-    defaultLogger.referral.page.signupOneKeyID();
+    defaultLogger.referral.page.signupUnionKeyID();
   }, [email, sendCode]);
 
   useEffect(() => {
@@ -134,7 +134,7 @@ export function PrimeLoginEmailCodeDialogV2(props: {
 
       setState({ status: 'done' });
       await onLoginSuccess?.();
-      defaultLogger.referral.page.signupOneKeyIDResult(true);
+      defaultLogger.referral.page.signupUnionKeyIDResult(true);
     } catch (error) {
       console.error('prime login error', error);
       const e = error as Error | undefined;
@@ -152,7 +152,7 @@ export function PrimeLoginEmailCodeDialogV2(props: {
       } else {
         setState({ status: 'error' });
       }
-      defaultLogger.referral.page.signupOneKeyIDResult(false);
+      defaultLogger.referral.page.signupUnionKeyIDResult(false);
     } finally {
       setIsSubmittingVerificationCode(false);
     }

@@ -12,14 +12,14 @@ import { JsBridgeNativeHost } from '@onekeyfe/onekey-cross-webview';
 import { RefreshControl, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-// import debugLogger from '@onekeyhq/shared/src/logger/debugLogger';
+// import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { Stack } from '@onekeyhq/components';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import GeckoView from '@onekeyhq/shared/src/modules3rdParty/geckoview';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { checkOneKeyCardGoogleOauthUrl } from '@onekeyhq/shared/src/utils/uriUtils';
+import { Stack } from '@unionkeyhq/components';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import GeckoView from '@unionkeyhq/shared/src/modules3rdParty/geckoview';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import { checkUnionKeyCardGoogleOauthUrl } from '@unionkeyhq/shared/src/utils/uriUtils';
 
 import ErrorView from './ErrorView';
 import { createMessageInjectedScript } from './utils';
@@ -115,7 +115,7 @@ const NativeWebView = forwardRef(
         // eslint-disable-next-line no-unsafe-optional-chaining, @typescript-eslint/no-unsafe-member-access
         const { url } = syntheticEvent?.nativeEvent;
         try {
-          if (checkOneKeyCardGoogleOauthUrl({ url })) {
+          if (checkUnionKeyCardGoogleOauthUrl({ url })) {
             openUrlExternal(url);
             webviewRef.current?.stopLoading();
           }

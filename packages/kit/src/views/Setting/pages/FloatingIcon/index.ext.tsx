@@ -8,11 +8,11 @@ import {
   Switch,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/settings';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/settings';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 function FloatingIconModal() {
   const intl = useIntl();
@@ -33,7 +33,7 @@ function FloatingIconModal() {
               w: 600,
               h: 272,
             }}
-            source={require('@onekeyhq/kit/assets/floating_icon_placeholder.png')}
+            source={require('@unionkeyhq/kit/assets/floating_icon_placeholder.png')}
           />
           <XStack ai="center" jc="space-between" pt="$4">
             <SizableText size="$bodyLgMedium">

@@ -20,20 +20,20 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateResultVerifyAtom,
   useFirmwareUpdateStepInfoAtom,
   useHardwareUiStateAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EFirmwareUpdateTipMessages } from '@unionkeyhq/shared/types/device';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkeyhq/shared/types/device';
 
 import { FirmwareUpdatePromptBootloaderWebDevice } from '../components/FirmwareUpdatePromptBootloaderWebDevice';
 import { useFirmwareVersionValid } from '../hooks/useFirmwareVersionValid';

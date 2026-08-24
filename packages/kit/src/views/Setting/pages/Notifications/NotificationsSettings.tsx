@@ -12,21 +12,21 @@ import {
   Spinner,
   Stack,
   Switch,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { showNotificationPermissionsDialog } from '@onekeyhq/kit/src/components/PermissionsDialog';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { showNotificationPermissionsDialog } from '@unionkeyhq/kit/src/components/PermissionsDialog';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useDevSettingsPersistAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalRoutes, EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalNotificationsRoutes } from '@onekeyhq/shared/src/routes/notifications';
-import type { INotificationPushSettings } from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EModalRoutes, EModalSettingRoutes } from '@unionkeyhq/shared/src/routes';
+import { EModalNotificationsRoutes } from '@unionkeyhq/shared/src/routes/notifications';
+import type { INotificationPushSettings } from '@unionkeyhq/shared/types/notification';
 
 import NotificationsHelpCenterInstruction from '../../components/NotificationsHelpCenterInstruction';
 import NotificationsTestButton from '../../components/NotificationsTestButton';

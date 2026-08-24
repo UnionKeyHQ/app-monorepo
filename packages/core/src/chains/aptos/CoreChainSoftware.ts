@@ -10,10 +10,10 @@ import {
 // eslint-disable-next-line camelcase
 import { sha3_256 } from 'js-sha3';
 
-import { decryptAsync, ed25519 } from '@onekeyhq/core/src/secret';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { decryptAsync, ed25519 } from '@unionkeyhq/core/src/secret';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';
 import {
@@ -112,7 +112,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     }
     const senderPublicKey = account.pub;
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
 
     const rawTxn = SimpleTransaction.deserialize(
@@ -160,7 +160,7 @@ export default class CoreChainSoftware extends CoreChainApiBase {
     const { privateKeyRaw } = query;
     const privateKey = bufferUtils.toBuffer(privateKeyRaw);
     if (privateKey.length !== 32) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
     const pub = ed25519.publicFromPrivate(privateKey);
     return this.getAddressFromPublic({

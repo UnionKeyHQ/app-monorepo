@@ -11,7 +11,7 @@ import type {
   IListViewProps,
   ISectionListProps,
   IStackProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   ActionList,
   Page,
@@ -22,31 +22,31 @@ import {
   useClipboard,
   useMedia,
   useThemeValue,
-} from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { openTokenDetailsUrl } from '@onekeyhq/kit/src/utils/explorerUtils';
+} from '@unionkeyhq/components';
+import { HeaderIconButton } from '@unionkeyhq/components/src/layouts/Navigation/Header';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { openTokenDetailsUrl } from '@unionkeyhq/kit/src/utils/explorerUtils';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EModalAssetDetailRoutes,
   IModalAssetDetailsParamList,
-} from '@onekeyhq/shared/src/routes/assetDetails';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { waitAsync } from '@onekeyhq/shared/src/utils/promiseUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IAccountHistoryTx } from '@onekeyhq/shared/types/history';
+} from '@unionkeyhq/shared/src/routes/assetDetails';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { waitAsync } from '@unionkeyhq/shared/src/utils/promiseUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IAccountHistoryTx } from '@unionkeyhq/shared/types/history';
 import type {
   IFetchTokenDetailItem,
   IToken,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 import {
   TokenDetailsContext,

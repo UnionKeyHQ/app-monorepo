@@ -7,12 +7,12 @@ import {
   RichSizeableText,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
-import type { IRichSizeableTextProps } from '@onekeyhq/components';
-import type { IKeyOfIcons } from '@onekeyhq/components/src/primitives';
-import { FIRMWARE_CONTACT_US_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import type { IRichSizeableTextProps } from '@unionkeyhq/components';
+import type { IKeyOfIcons } from '@unionkeyhq/components/src/primitives';
+import { FIRMWARE_CONTACT_US_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { ColorTokens } from 'tamagui';
 

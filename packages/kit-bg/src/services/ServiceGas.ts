@@ -1,19 +1,19 @@
 import BigNumber from 'bignumber.js';
 import { isArray } from 'lodash';
 
-import type { IEncodedTxCkb } from '@onekeyhq/core/src/chains/ckb/types';
-import type { IEncodedTx } from '@onekeyhq/core/src/types';
+import type { IEncodedTxCkb } from '@unionkeyhq/core/src/chains/ckb/types';
+import type { IEncodedTx } from '@unionkeyhq/core/src/types';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IBatchEstimateFeeParams,
   IEstimateGasParams,
   IFeeInfoUnit,
   IServerBatchEstimateFeeResponse,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/fee';
 
 import { vaultFactory } from '../vaults/factory';
 import { FIL_MIN_BASE_FEE } from '../vaults/impls/fil/utils';

@@ -14,7 +14,7 @@ import type {
 import type { HeaderBackButtonProps } from '@react-navigation/elements';
 import type { VariableVal } from '@tamagui/core';
 
-export type IOnekeyStackHeaderProps = {
+export type IUnionKeyStackHeaderProps = {
   navigation?: IStackHeaderProps['navigation'];
   isModelScreen?: boolean;
   isRootScreen?: boolean;
@@ -28,7 +28,7 @@ export function makeHeaderScreenOptions({
   isRootScreen = false,
   bgColor,
   titleColor,
-}: IOnekeyStackHeaderProps & {
+}: IUnionKeyStackHeaderProps & {
   bgColor: VariableVal;
   titleColor: VariableVal;
 }): IStackNavigationOptions {

@@ -4,7 +4,7 @@ import { UNSTABLE_usePreventRemove as usePreventRemove } from '@react-navigation
 import noop from 'lodash/noop';
 import { useIntl } from 'react-intl';
 
-import type { IButtonProps, IPageScreenProps } from '@onekeyhq/components';
+import type { IButtonProps, IPageScreenProps } from '@unionkeyhq/components';
 import {
   Button,
   EStepItemStatus,
@@ -13,20 +13,20 @@ import {
   Stepper,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate/type';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { EAppUpdateStatus } from '@unionkeyhq/shared/src/appUpdate/type';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   installPackage,
   useDownloadProgress,
-} from '@onekeyhq/shared/src/modules3rdParty/auto-update';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/modules3rdParty/auto-update';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EAppUpdateRoutes,
   IAppUpdatePagesParamList,
-} from '@onekeyhq/shared/src/routes';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import { HyperlinkText } from '../../../components/HyperlinkText';
 import {
@@ -194,7 +194,7 @@ function DownloadVerify({
                     }}
                     onAction={() => {
                       openUrlExternal(
-                        'https://github.com/UnionKey/app-monorepo/releases',
+                        'https://github.com/UnionKeyHQ/app-monorepo/releases',
                       );
                     }}
                   />
@@ -338,7 +338,7 @@ function DownloadVerify({
                 return (
                   <SizableText size="$bodyLg" color="$textCritical">
                     {intl.formatMessage({
-                      id: ETranslations.update_installation_not_safe_alert_text2,
+                      id: ETranslations.update_installation_not_safe_alert_text,
                     })}
                   </SizableText>
                 );

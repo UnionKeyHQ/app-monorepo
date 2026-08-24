@@ -1,12 +1,12 @@
 import { uniq } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { Alert } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EEarnProviderEnum } from '@onekeyhq/shared/types/earn';
+import { Alert } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EEarnProviderEnum } from '@unionkeyhq/shared/types/earn';
 
 type IBabylonTrackingBaseProps = {
   networkId: string;

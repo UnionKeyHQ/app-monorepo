@@ -8,12 +8,12 @@ import isString from 'lodash/isString';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EMessageTypesCommon,
   EMessageTypesSolana,
-} from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/types/message';
 
 import ProviderApiBase from './ProviderApiBase';
 

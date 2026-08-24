@@ -2,13 +2,13 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, Toast } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Dialog, Toast } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
-import { useLoginOneKeyId } from '../../../hooks/useLoginOneKeyId';
+import { useLoginUnionKeyId } from '../../../hooks/useLoginUnionKeyId';
 
 import { getPrimePaymentApiKey } from './getPrimePaymentApiKey';
 import { usePrimeAuthV2 } from './usePrimeAuthV2';
@@ -21,10 +21,10 @@ const PrimePurchaseDialog = LazyLoadPage(
 
 export function usePrimeRequirements() {
   const { user, isLoggedIn, logout } = usePrimeAuthV2();
-  const { loginOneKeyId } = useLoginOneKeyId();
+  const { loginUnionKeyId } = useLoginUnionKeyId();
 
   const intl = useIntl();
-  const ensureOneKeyIDLoggedIn = useCallback(
+  const ensureUnionKeyIDLoggedIn = useCallback(
     async ({
       skipDialogConfirm,
     }: {
@@ -37,7 +37,7 @@ export function usePrimeRequirements() {
         void logout();
 
         const onConfirm = async () => {
-          await loginOneKeyId();
+          await loginUnionKeyId();
         };
         if (!skipDialogConfirm) {
           const dialog = Dialog.show({
@@ -61,7 +61,7 @@ export function usePrimeRequirements() {
         throw new Error('Prime is not logged in');
       }
     },
-    [isLoggedIn, logout, intl, loginOneKeyId],
+    [isLoggedIn, logout, intl, loginUnionKeyId],
   );
 
   const ensurePrimeSubscriptionActive = useCallback(
@@ -70,7 +70,7 @@ export function usePrimeRequirements() {
     }: {
       skipDialogConfirm?: boolean;
     } = {}) => {
-      await ensureOneKeyIDLoggedIn({
+      await ensureUnionKeyIDLoggedIn({
         skipDialogConfirm,
       });
       const isPrimeSubscriptionActive: boolean =
@@ -121,11 +121,11 @@ export function usePrimeRequirements() {
         throw new Error('Prime subscription is not active');
       }
     },
-    [ensureOneKeyIDLoggedIn, intl, user.isEnableSandboxPay],
+    [ensureUnionKeyIDLoggedIn, intl, user.isEnableSandboxPay],
   );
 
   return {
-    ensureOneKeyIDLoggedIn,
+    ensureUnionKeyIDLoggedIn,
     ensurePrimeSubscriptionActive,
   };
 }

@@ -9,9 +9,9 @@ import {
   SizableText,
   Stack,
   Toast,
-} from '@onekeyhq/components';
-import type { IModalNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator/ModalFlowNavigator';
+} from '@unionkeyhq/components';
+import type { IModalNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator/ModalFlowNavigator';
 
 import { Layout } from '../../utils/Layout';
 import { NavigationFocusTools } from '../../utils/NavigationTools';

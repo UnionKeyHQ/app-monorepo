@@ -35,8 +35,8 @@ crypto.getRandomValues =
   crypto.getRandomValues || global.crypto.getRandomValues;
 global.crypto.randomBytes = global.crypto.randomBytes || crypto.randomBytes;
 
-crypto.$$isOneKeyShim = true;
-global.crypto.$$isOneKeyShim = true;
+crypto.$$isUnionKeyShim = true;
+global.crypto.$$isUnionKeyShim = true;
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('react-native-crypto polyfilled', crypto, global.crypto);

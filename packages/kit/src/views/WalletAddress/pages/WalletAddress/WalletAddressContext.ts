@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-import type { IAllNetworksDBStruct } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAllNetworks';
-import type { IAllNetworkAccountInfo } from '@onekeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IAllNetworksDBStruct } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAllNetworks';
+import type { IAllNetworkAccountInfo } from '@unionkeyhq/kit-bg/src/services/ServiceAllNetwork/ServiceAllNetwork';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
 
 export type IWalletAddressContext = {
   networkAccountMap: Record<string, IAllNetworkAccountInfo[]>;

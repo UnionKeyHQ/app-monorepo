@@ -4,16 +4,16 @@ import { useMemo } from 'react';
 import { differenceInDays } from 'date-fns';
 import { useIntl } from 'react-intl';
 
-import type { INumberSizeableTextProps } from '@onekeyhq/components';
+import type { INumberSizeableTextProps } from '@unionkeyhq/components';
 import {
   NumberSizeableText,
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IMarketDetailPool } from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IMarketDetailPool } from '@unionkeyhq/shared/types/market';
 
 import { MarketPoolIcon } from './MarketPoolIcon';
 import { MarketTokenAddress } from './MarketTokenAddress';

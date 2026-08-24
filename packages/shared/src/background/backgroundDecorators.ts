@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import errorToastUtils from '../errors/utils/errorToastUtils';
 import { formatDateFns } from '../utils/dateUtils';

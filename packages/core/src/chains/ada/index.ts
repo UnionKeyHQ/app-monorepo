@@ -1,4 +1,4 @@
-import { IMPL_ADA } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_ADA } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

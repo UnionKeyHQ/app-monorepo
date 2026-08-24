@@ -1,11 +1,11 @@
-import type { IExportKeyType } from '@onekeyhq/core/src/types';
-import type { IAccountSelectorRouteParams } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IExportKeyType } from '@unionkeyhq/core/src/types';
+import type { IAccountSelectorRouteParams } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import type {
   IDBAccount,
   IDBDevice,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
 
 export enum EAccountManagerStacksRoutes {
   AccountSelectorStack = 'AccountSelectorStack',

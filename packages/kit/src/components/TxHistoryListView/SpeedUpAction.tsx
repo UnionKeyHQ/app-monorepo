@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IActionListSection, IKeyOfIcons } from '@onekeyhq/components';
-import { ActionList, Button } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EReplaceTxType } from '@onekeyhq/shared/types/tx';
+import type { IActionListSection, IKeyOfIcons } from '@unionkeyhq/components';
+import { ActionList, Button } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EReplaceTxType } from '@unionkeyhq/shared/types/tx';
 
 interface ISpeedUpActionProps {
   networkId: string;

@@ -4,15 +4,15 @@ import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import { isNaN } from 'lodash';
 import TonWeb from 'tonweb';
 
-import type { IEncodedTxTon } from '@onekeyhq/core/src/chains/ton/types';
+import type { IEncodedTxTon } from '@unionkeyhq/core/src/chains/ton/types';
 import {
   backgroundClass,
   permissionRequired,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EMessageTypesTon } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import { EMessageTypesTon } from '@unionkeyhq/shared/types/message';
 
 import {
   getAccountVersion,

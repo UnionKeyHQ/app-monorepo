@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
+import type { ISizableTextProps } from '@unionkeyhq/components';
 
 import { useTokenListMapAtom } from '../../states/jotai/contexts/tokenList';
 import NumberSizeableTextWrapper from '../NumberSizeableTextWrapper';

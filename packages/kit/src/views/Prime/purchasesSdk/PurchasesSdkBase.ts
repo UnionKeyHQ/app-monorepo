@@ -1,4 +1,4 @@
-import { createPromiseTarget } from '@onekeyhq/shared/src/utils/promiseUtils';
+import { createPromiseTarget } from '@unionkeyhq/shared/src/utils/promiseUtils';
 
 import type {
   CustomerInfo,

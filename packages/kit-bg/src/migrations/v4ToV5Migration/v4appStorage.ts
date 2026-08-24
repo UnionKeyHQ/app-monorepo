@@ -1,4 +1,4 @@
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
 
 import type { AsyncStorageStatic } from '@react-native-async-storage/async-storage';
 

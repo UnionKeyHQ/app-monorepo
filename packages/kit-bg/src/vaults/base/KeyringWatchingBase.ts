@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/require-await */
 
-import type { EAddressEncodings, ISignedTxPro } from '@onekeyhq/core/src/types';
+import type { EAddressEncodings, ISignedTxPro } from '@unionkeyhq/core/src/types';
 import {
   InvalidAddress,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { EDBAccountType } from '../../dbs/local/consts';
 import { EVaultKeyringTypes } from '../types';
@@ -26,7 +26,7 @@ export abstract class KeyringWatchingBase extends KeyringBase {
   override keyringType: EVaultKeyringTypes = EVaultKeyringTypes.watching;
 
   async signTransaction(): Promise<ISignedTxPro> {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       appLocale.intl.formatMessage({
         id: ETranslations.wallet_error_trade_with_watched_acocunt,
       }),
@@ -34,7 +34,7 @@ export abstract class KeyringWatchingBase extends KeyringBase {
   }
 
   async signMessage(): Promise<string[]> {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       appLocale.intl.formatMessage({
         id: ETranslations.wallet_error_trade_with_watched_acocunt,
       }),

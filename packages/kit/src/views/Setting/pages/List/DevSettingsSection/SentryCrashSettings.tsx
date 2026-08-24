@@ -3,8 +3,8 @@ import { useState } from 'react';
 import {
   captureException,
   nativeCrash,
-} from '@onekeyhq/shared/src/modules3rdParty/sentry';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/modules3rdParty/sentry';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { SectionPressItem } from './SectionPressItem';
 

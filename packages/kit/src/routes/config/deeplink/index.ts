@@ -1,26 +1,26 @@
 import * as Linking from 'expo-linking';
 import { isString } from 'lodash';
 
-import type { IDesktopOpenUrlEventData } from '@onekeyhq/desktop/app/app';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import type { IEOneKeyDeepLinkParams } from '@onekeyhq/shared/src/consts/deeplinkConsts';
+import type { IDesktopOpenUrlEventData } from '@unionkeyhq/desktop/app/app';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
+import type { IEUnionKeyDeepLinkParams } from '@unionkeyhq/shared/src/consts/deeplinkConsts';
 import {
-  EOneKeyDeepLinkPath,
-  ONEKEY_APP_DEEP_LINK,
-  ONEKEY_APP_DEEP_LINK_NAME,
-  ONEKEY_UNIVERSAL_LINK_HOST,
-  ONEKEY_UNIVERSAL_TEST_LINK_HOST,
+  EUnionKeyDeepLinkPath,
+  UNIONKEY_APP_DEEP_LINK,
+  UNIONKEY_APP_DEEP_LINK_NAME,
+  UNIONKEY_UNIVERSAL_LINK_HOST,
+  UNIONKEY_UNIVERSAL_TEST_LINK_HOST,
   WALLET_CONNECT_DEEP_LINK,
   WALLET_CONNECT_DEEP_LINK_NAME,
   WalletConnectUniversalLinkPath,
-} from '@onekeyhq/shared/src/consts/deeplinkConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/consts/deeplinkConsts';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EModalReferFriendsRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+} from '@unionkeyhq/shared/src/routes';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { urlAccountNavigation } from '../../../views/Home/pages/urlAccount/urlAccountUtils';
@@ -49,8 +49,8 @@ async function processDeepLinkUrlAccount(
     const { parsedUrl } = params;
     const { hostname, queryParams, scheme, path } = parsedUrl;
     if (
-      scheme === ONEKEY_APP_DEEP_LINK ||
-      scheme === ONEKEY_APP_DEEP_LINK_NAME
+      scheme === UNIONKEY_APP_DEEP_LINK ||
+      scheme === UNIONKEY_APP_DEEP_LINK_NAME
     ) {
       console.log('processDeepLinkUrlAccount: >>>>> ', parsedUrl);
       const navigation = appGlobals.$rootAppNavigation;
@@ -61,9 +61,9 @@ async function processDeepLinkUrlAccount(
         return;
       }
       switch (platformEnv.isNative ? hostname : path?.slice(1)) {
-        case EOneKeyDeepLinkPath.url_account: {
+        case EUnionKeyDeepLinkPath.url_account: {
           const query =
-            queryParams as IEOneKeyDeepLinkParams[EOneKeyDeepLinkPath.url_account];
+            queryParams as IEUnionKeyDeepLinkParams[EUnionKeyDeepLinkPath.url_account];
           if (navigation) {
             await urlAccountNavigation.pushUrlAccountPageFromDeeplink(
               navigation,
@@ -75,10 +75,10 @@ async function processDeepLinkUrlAccount(
           }
           break;
         }
-        case EOneKeyDeepLinkPath.market_detail:
+        case EUnionKeyDeepLinkPath.market_detail:
           {
             const { coinGeckoId } =
-              queryParams as IEOneKeyDeepLinkParams[EOneKeyDeepLinkPath.market_detail];
+              queryParams as IEUnionKeyDeepLinkParams[EUnionKeyDeepLinkPath.market_detail];
             if (navigation) {
               await marketNavigation.pushDetailPageFromDeeplink(navigation, {
                 coinGeckoId,
@@ -86,10 +86,10 @@ async function processDeepLinkUrlAccount(
             }
           }
           break;
-        case EOneKeyDeepLinkPath.invite_share:
+        case EUnionKeyDeepLinkPath.invite_share:
           {
             const { utm_source: utmSource, code } =
-              queryParams as IEOneKeyDeepLinkParams[EOneKeyDeepLinkPath.invite_share];
+              queryParams as IEUnionKeyDeepLinkParams[EUnionKeyDeepLinkPath.invite_share];
             if (navigation) {
               navigation.pushModal(EModalRoutes.ReferFriendsModal, {
                 screen: EModalReferFriendsRoutes.ReferAFriend,
@@ -114,8 +114,8 @@ async function processDeepLinkUrlAccount(
 const getUniversalLink = async () => {
   const settings = await backgroundApiProxy.serviceDevSetting.getDevSetting();
   return settings.settings?.enableTestEndpoint
-    ? ONEKEY_UNIVERSAL_TEST_LINK_HOST
-    : ONEKEY_UNIVERSAL_LINK_HOST;
+    ? UNIONKEY_UNIVERSAL_TEST_LINK_HOST
+    : UNIONKEY_UNIVERSAL_LINK_HOST;
 };
 
 async function processDeepLinkWalletConnect({
@@ -131,9 +131,9 @@ async function processDeepLinkWalletConnect({
 
     const universalLinkHost = await getUniversalLink();
     // ** ios UniversalLink
-    //        https://app.onekey.so/wc/connect/wc?uri=wc%3Aeb16df1f-1d3b-4018-9d18-28ef610cc1a4%401%3Fbridge%3Dhttps%253A%252F%252Fj.bridge.walletconnect.org%26key%3D0037246aefb211f98a8386d4bf7fd2a5344960bf98cb39c57fb312a098f2eb77
+    //        https://unionkey.io/wc/connect/wc?uri=wc%3Aeb16df1f-1d3b-4018-9d18-28ef610cc1a4%401%3Fbridge%3Dhttps%253A%252F%252Fj.bridge.walletconnect.org%26key%3D0037246aefb211f98a8386d4bf7fd2a5344960bf98cb39c57fb312a098f2eb77
     // check UniversalLink allowed path here:
-    //    https://app.onekey.so/.well-known/apple-app-site-association
+    //    https://unionkey.io/.well-known/apple-app-site-association
     if (
       hostname === universalLinkHost &&
       path === WalletConnectUniversalLinkPath
@@ -146,12 +146,12 @@ async function processDeepLinkWalletConnect({
     }
 
     // ** ios/android/desktop DeepLink
-    //        onekey-wallet://wc
+    //        unionkey-wallet://wc
     // eslint-disable-next-line spellcheck/spell-checker
-    // onekey-wallet://wc?uri=wc%3Afa75a793-a3fb-48e4-8629-8f1f034ec6eb%401%3Fbridge%3Dhttps%253A%252F%252Fy.bridge.walletconnect.org%26key%3D9e97f71a32b4e629cb60106295dca54d733d124da480b4031d0d848b678fd610/
+    // unionkey-wallet://wc?uri=wc%3Afa75a793-a3fb-48e4-8629-8f1f034ec6eb%401%3Fbridge%3Dhttps%253A%252F%252Fy.bridge.walletconnect.org%26key%3D9e97f71a32b4e629cb60106295dca54d733d124da480b4031d0d848b678fd610/
     if (
-      scheme === ONEKEY_APP_DEEP_LINK ||
-      scheme === ONEKEY_APP_DEEP_LINK_NAME
+      scheme === UNIONKEY_APP_DEEP_LINK ||
+      scheme === UNIONKEY_APP_DEEP_LINK_NAME
     ) {
       if (
         (path === WALLET_CONNECT_DEEP_LINK_NAME && !hostname) ||

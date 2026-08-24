@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDebouncedCallback } from 'use-debounce';
 
-import type { IBadgeType } from '@onekeyhq/components';
+import type { IBadgeType } from '@unionkeyhq/components';
 import {
   ActionList,
   Badge,
@@ -24,21 +24,21 @@ import {
   XStack,
   YStack,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import useConfigurableChainSelector from '@onekeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { NetworkAvatar } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import useConfigurableChainSelector from '@unionkeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { ICustomRpcItem } from '@onekeyhq/shared/types/customRpc';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
+import type { ICustomRpcItem } from '@unionkeyhq/shared/types/customRpc';
 
 type IEditRpcParams = {
   network: IServerNetwork;

@@ -1,8 +1,8 @@
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 import type {
   IWalletAddedEventParams,
   IWalletStartedParams,
-} from '@onekeyhq/shared/types/analytics/onboarding';
+} from '@unionkeyhq/shared/types/analytics/onboarding';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToLocal, LogToServer } from '../../../base/decorators';

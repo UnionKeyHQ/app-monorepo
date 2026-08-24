@@ -1,22 +1,22 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
 import {
   useAccountSelectorActions,
   useAccountSelectorContextDataAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IAccountSelectorSelectedAccount } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
-import type { IConnectionAccountInfo } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ESpotlightTour } from '@unionkeyhq/shared/src/spotlight';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EAlignPrimaryAccountMode } from '@unionkeyhq/shared/types/dappConnection';
+import type { IConnectionAccountInfo } from '@unionkeyhq/shared/types/dappConnection';
 
 import { useSpotlight } from '../../../components/Spotlight';
 

@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Empty } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Empty } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 function EmptyHistory() {
   const intl = useIntl();

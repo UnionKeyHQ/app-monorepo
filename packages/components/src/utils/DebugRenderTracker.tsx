@@ -1,9 +1,9 @@
 import type { ComponentType, FC, ReactNode } from 'react';
 import { useRef } from 'react';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkeyhq/shared/src/storage/syncStorage';
 
 const css1 = 'debug-render-tracker-animated-bg';
 const css2 = 'debug-render-tracker-animated-bg0';
@@ -18,7 +18,7 @@ function DebugRenderTracker(props: {
   if (process.env.NODE_ENV !== 'production') {
     if (platformEnv.isRuntimeBrowser) {
       const isDebugRenderTrackerEnabled = appStorage.syncStorage.getBoolean(
-        EAppSyncStorageKeys.onekey_debug_render_tracker,
+        EAppSyncStorageKeys.unionkey_debug_render_tracker,
       );
       if (isDebugRenderTrackerEnabled) {
         classRef.current = classRef.current === css1 ? css2 : css1;

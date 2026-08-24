@@ -3,12 +3,12 @@ import {
   SizableText,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import type { IStackProps } from '@onekeyhq/components';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { IFuseResultMatch } from '@onekeyhq/shared/src/modules3rdParty/fuse';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
+import type { IListItemProps } from '@unionkeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import type { IFuseResultMatch } from '@unionkeyhq/shared/src/modules3rdParty/fuse';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import { Token } from '../Token';
 

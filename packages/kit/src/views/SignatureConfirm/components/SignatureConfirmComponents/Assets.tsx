@@ -4,24 +4,24 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IYStackProps } from '@onekeyhq/components';
+import type { IYStackProps } from '@unionkeyhq/components';
 import {
   Icon,
   SizableText,
   Skeleton,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { ITokenProps } from '@onekeyhq/kit/src/components/Token';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
+} from '@unionkeyhq/components';
+import type { ITokenProps } from '@unionkeyhq/kit/src/components/Token';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
 import {
   useDecodedTxsAtom,
   useSignatureConfirmActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/signatureConfirm';
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ENFTType } from '@onekeyhq/shared/types/nft';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/signatureConfirm';
+import type { IApproveInfo } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { ENFTType } from '@unionkeyhq/shared/types/nft';
 import {
   EParseTxComponentType,
   ETransferDirection,
@@ -30,7 +30,7 @@ import {
   type IDisplayComponentInternalAssets,
   type IDisplayComponentNFT,
   type IDisplayComponentToken,
-} from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkeyhq/shared/types/signatureConfirm';
 
 import { showApproveEditor } from '../ApproveEditor';
 import { SignatureConfirmItem } from '../SignatureConfirmItem';

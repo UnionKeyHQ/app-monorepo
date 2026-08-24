@@ -6,8 +6,8 @@ import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { makeTimeoutPromise } from '@onekeyhq/shared/src/background/backgroundUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { makeTimeoutPromise } from '@unionkeyhq/shared/src/background/backgroundUtils';
 import {
   BridgeTimeoutError,
   FirmwareUpdateBatteryTooLow,
@@ -16,26 +16,26 @@ import {
   InitIframeLoadFail,
   InitIframeTimeout,
   NeedFirmwareUpgradeFromWeb,
-  NeedOneKeyBridgeUpgrade,
+  NeedUnionKeyBridgeUpgrade,
   UseDesktopToUpdateFirmware,
-} from '@onekeyhq/shared/src/errors';
-import { FirmwareUpdateVersionMismatchError } from '@onekeyhq/shared/src/errors/errors/hardwareErrors';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
+} from '@unionkeyhq/shared/src/errors';
+import { FirmwareUpdateVersionMismatchError } from '@unionkeyhq/shared/src/errors/errors/hardwareErrors';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
 import {
   convertDeviceResponse,
   isHardwareErrorByCode,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { toPlainErrorObject } from '@onekeyhq/shared/src/errors/utils/errorUtils';
+} from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { toPlainErrorObject } from '@unionkeyhq/shared/src/errors/utils/errorUtils';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { CoreSDKLoader } from '@onekeyhq/shared/src/hardware/instance';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import { equalsIgnoreCase } from '@onekeyhq/shared/src/utils/stringUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EHardwareTransportType } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { CoreSDKLoader } from '@unionkeyhq/shared/src/hardware/instance';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EHardwareTransportType } from '@unionkeyhq/shared/types';
 import type {
   IAllDeviceVerifyVersions,
   IBleFirmwareReleasePayload,
@@ -49,10 +49,10 @@ import type {
   IFirmwareUpdateInfo,
   IFirmwareUpdateV3VersionParams,
   IHardwareBridgeReleasePayload,
-  IOneKeyDeviceFeatures,
+  IUnionKeyDeviceFeatures,
   IResourceUpdateInfo,
-} from '@onekeyhq/shared/types/device';
-import { EOneKeyDeviceMode } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/types/device';
+import { EUnionKeyDeviceMode } from '@unionkeyhq/shared/types/device';
 
 import localDb from '../../dbs/local/localDb';
 import {
@@ -146,8 +146,8 @@ class ServiceFirmwareUpdate extends ServiceBase {
   }: {
     connectId: string | undefined;
   }) {
-    let features: IOneKeyDeviceFeatures | undefined;
-    let error: IOneKeyError | undefined;
+    let features: IUnionKeyDeviceFeatures | undefined;
+    let error: IUnionKeyError | undefined;
     let isBootloaderMode = false;
     try {
       // call getFeatures, use FIRMWARE_EVENT to setFirmwareUpdateInfo() and setBleFirmwareUpdateInfo()
@@ -520,7 +520,7 @@ class ServiceFirmwareUpdate extends ServiceBase {
 //       hasUpgrade,
 //       isBootloaderMode: features
 //         ? (await deviceUtils.getDeviceModeFromFeatures({ features })) ===
-//           EOneKeyDeviceMode.bootloader
+//           EUnionKeyDeviceMode.bootloader
 //         : false,
 //       updateInfos: {
 //         firmware,
@@ -713,7 +713,7 @@ if (Array.isArray(versionInfosFromBackend)) {
       hasUpgrade,
       isBootloaderMode: features
         ? (await deviceUtils.getDeviceModeFromFeatures({ features })) ===
-          EOneKeyDeviceMode.bootloader
+          EUnionKeyDeviceMode.bootloader
         : false,
       updateInfos: {
         firmware,
@@ -733,7 +733,7 @@ if (Array.isArray(versionInfosFromBackend)) {
     firmwareReleasePayload,
   }: {
     connectId: string | undefined;
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
     firmwareReleasePayload: IFirmwareReleasePayload;
   }): Promise<IFirmwareUpdateInfo> {
     const releasePayload: IFirmwareReleasePayload = {
@@ -767,7 +767,6 @@ if (Array.isArray(versionInfosFromBackend)) {
     );
 
     return result;
-    //zyfshr
       }
 
 
@@ -843,7 +842,7 @@ if (Array.isArray(versionInfosFromBackend)) {
     bleReleasePayload,
   }: {
     connectId: string | undefined;
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
     bleReleasePayload: IBleFirmwareReleasePayload;
   }): Promise<IBleFirmwareUpdateInfo> {
     const releasePayload: IBleFirmwareReleasePayload = {
@@ -867,7 +866,7 @@ if (Array.isArray(versionInfosFromBackend)) {
     bootloaderReleasePayload,
   }: {
     connectId: string | undefined;
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
     firmwareUpdateInfo: IFirmwareUpdateInfo;
     bootloaderReleasePayload: IBootloaderReleasePayload;
   }): Promise<IBootloaderUpdateInfo> {
@@ -1518,9 +1517,9 @@ if (Array.isArray(versionInfosFromBackend)) {
         // pre checking
         await this.validateMnemonicBackuped(params);
         await this.validateUSBConnection(params);
-        // must before validateMinVersionAllowed, go to https://help.onekey.so/
+        // must before validateMinVersionAllowed, go to https://unionkey.io/
         await this.validateShouldUpdateFullResource(params);
-        // go to https://firmware.onekey.so/
+        // go to https://unionkey.io/
         await this.validateMinVersionAllowed(params);
         await this.validateDeviceBattery(params);
         await this.validateShouldUpdateBridge(params);
@@ -1658,9 +1657,9 @@ if (Array.isArray(versionInfosFromBackend)) {
         // pre checking
         await this.validateMnemonicBackuped(params);
         await this.validateUSBConnection(params);
-        // must before validateMinVersionAllowed, go to https://help.onekey.so/
+        // must before validateMinVersionAllowed, go to https://unionkey.io/
         await this.validateShouldUpdateFullResource(params);
-        // go to https://firmware.onekey.so/
+        // go to https://unionkey.io/
         await this.validateMinVersionAllowed(params);
         await this.validateDeviceBattery(params);
         await this.validateShouldUpdateBridge(params);
@@ -2041,7 +2040,7 @@ if (Array.isArray(versionInfosFromBackend)) {
 
   async validateShouldUpdateBridge(params: IUpdateFirmwareWorkflowParams) {
     if (params?.releaseResult?.updateInfos?.bridge?.shouldUpdate) {
-      throw new NeedOneKeyBridgeUpgrade();
+      throw new NeedUnionKeyBridgeUpgrade();
     }
   }
 

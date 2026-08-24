@@ -1,17 +1,17 @@
 import { useCallback, useEffect } from 'react';
 
-import { useUpdateEffect } from '@onekeyhq/components';
-import type { IPrimeInitAtomData } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { useUpdateEffect } from '@unionkeyhq/components';
+import type { IPrimeInitAtomData } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   usePrimeInitAtom,
   usePrimePersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IPrimeUserInfo } from '@onekeyhq/shared/types/prime/primeTypes';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IPrimeUserInfo } from '@unionkeyhq/shared/types/prime/primeTypes';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { GlobalJotaiReady } from '../../../components/GlobalJotaiReady/GlobalJotaiReady';

@@ -1,13 +1,13 @@
-import type { IDecodedTxExtraAlgo } from '@onekeyhq/core/src/chains/algo/types';
-import type { IDecodedTxExtraCosmos } from '@onekeyhq/core/src/chains/cosmos/types';
-import type { IDecodedTxExtraDnx } from '@onekeyhq/core/src/chains/dnx/types';
-import type { IDecodedTxExtraLightning } from '@onekeyhq/core/src/chains/lightning/types';
-import type { IDecodedTxExtraSol } from '@onekeyhq/core/src/chains/sol/types';
-import type { IDecodedTxExtraTon } from '@onekeyhq/core/src/chains/ton/types';
-import type { IDecodedTxExtraTron } from '@onekeyhq/core/src/chains/tron/types';
-import type { IDecodedTxExtraXrp } from '@onekeyhq/core/src/chains/xrp/types';
-import type { IEncodedTx, ISignedTxPro } from '@onekeyhq/core/src/types';
-import type { IApproveInfo } from '@onekeyhq/kit-bg/src/vaults/types';
+import type { IDecodedTxExtraAlgo } from '@unionkeyhq/core/src/chains/algo/types';
+import type { IDecodedTxExtraCosmos } from '@unionkeyhq/core/src/chains/cosmos/types';
+import type { IDecodedTxExtraDnx } from '@unionkeyhq/core/src/chains/dnx/types';
+import type { IDecodedTxExtraLightning } from '@unionkeyhq/core/src/chains/lightning/types';
+import type { IDecodedTxExtraSol } from '@unionkeyhq/core/src/chains/sol/types';
+import type { IDecodedTxExtraTon } from '@unionkeyhq/core/src/chains/ton/types';
+import type { IDecodedTxExtraTron } from '@unionkeyhq/core/src/chains/tron/types';
+import type { IDecodedTxExtraXrp } from '@unionkeyhq/core/src/chains/xrp/types';
+import type { IEncodedTx, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import type { IApproveInfo } from '@unionkeyhq/kit-bg/src/vaults/types';
 
 import type { IFeeInfoUnit } from './fee';
 import type { EOnChainHistoryTxType } from './history';

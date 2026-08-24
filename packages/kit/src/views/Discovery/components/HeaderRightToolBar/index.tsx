@@ -10,23 +10,23 @@ import {
   YStack,
   useMedia,
   usePopoverContext,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountAvatar } from '@unionkeyhq/kit/src/components/AccountAvatar';
 import {
   AccountSelectorProviderMirror,
   NetworkSelectorTriggerBrowserSingle,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { AccountSelectorTriggerBrowserSingle } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IDBIndexedAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit/src/components/AccountSelector';
+import { AccountSelectorTriggerBrowserSingle } from '@unionkeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IDBIndexedAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IConnectionAccountInfoWithNum } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IConnectionAccountInfoWithNum } from '@unionkeyhq/shared/types/dappConnection';
 
 import { DAppAccountListItem } from '../../../DAppConnection/components/DAppAccountList';
 import { useHandleDiscoveryAccountChanged } from '../../../DAppConnection/hooks/useHandleAccountChanged';

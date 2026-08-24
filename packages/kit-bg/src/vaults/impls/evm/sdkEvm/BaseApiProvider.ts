@@ -4,20 +4,20 @@ import BigNumber from 'bignumber.js';
 import { md5 } from 'js-md5';
 import { forEach, isEmpty, isNaN, keyBy, omit, orderBy, uniqBy } from 'lodash';
 
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 import {
   NotImplemented,
-  OneKeyError,
-  OneKeyPlainTextError,
-} from '@onekeyhq/shared/src/errors';
-import { JsonRPCRequest } from '@onekeyhq/shared/src/request/JsonRPCRequest';
+  UnionKeyError,
+  UnionKeyPlainTextError,
+} from '@unionkeyhq/shared/src/errors';
+import { JsonRPCRequest } from '@unionkeyhq/shared/src/request/JsonRPCRequest';
 import type {
   IFetchAccountDetailsResp,
   IFetchServerAccountDetailsParams,
   IFetchServerAccountDetailsResponse,
   IServerFetchNonceResponse,
   IServerGetAccountNetWorthResponse,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IEstimateGasParams,
   IServerEstimateFeeResponse,
@@ -27,18 +27,18 @@ import type {
   IServerGasLimitResponse,
   IServerGasPriceParams,
   IServerGasPriceResponse,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/fee';
 import {
   EOnChainHistoryTxStatus,
   EOnChainHistoryTxType,
-} from '@onekeyhq/shared/types/history';
+} from '@unionkeyhq/shared/types/history';
 import type {
   IFetchAccountHistoryResp,
   IFetchHistoryTxDetailsResp,
   IOnChainHistoryTx,
   IServerFetchAccountHistoryDetailParams,
   IServerFetchAccountHistoryDetailResp,
-} from '@onekeyhq/shared/types/history';
+} from '@unionkeyhq/shared/types/history';
 import type {
   IFetchServerTokenDetailParams,
   IFetchServerTokenDetailResponse,
@@ -48,13 +48,13 @@ import type {
   IServerAccountTokenItem,
   IServerTokenItemWithInfo,
   IServerTokenListQuery,
-} from '@onekeyhq/shared/types/serverToken';
+} from '@unionkeyhq/shared/types/serverToken';
 import type {
   IAccountToken,
   IFetchTokenDetailItem,
   ITokenData,
   ITokenFiat,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 import { parseTokenItem, safeNumberString } from './utils';
 
@@ -96,10 +96,10 @@ class BaseApiProvider {
       contractList: [this.nativeTokenAddress],
     });
     if (!token) {
-      throw new OneKeyPlainTextError('getNativeToken failed');
+      throw new UnionKeyPlainTextError('getNativeToken failed');
     }
     if (!token?.info?.decimals) {
-      throw new OneKeyPlainTextError('getNativeToken decimals failed');
+      throw new UnionKeyPlainTextError('getNativeToken decimals failed');
     }
     return {
       info: {
@@ -680,7 +680,7 @@ class BaseApiProvider {
       await this.getHistoryDetailFromThirdParty(params);
     const data = history.data;
     if (!data) {
-      throw new OneKeyError(
+      throw new UnionKeyError(
         `[ProviderBasic.getHistoryDetail] Transaction not found: ${params.txid}`,
       );
     }

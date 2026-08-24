@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 
-import { Stack, useMedia } from '@onekeyhq/components';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
+import { Stack, useMedia } from '@unionkeyhq/components';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
 
 import type { ViewStyle } from 'react-native';
 import type { WebViewProps } from 'react-native-webview';

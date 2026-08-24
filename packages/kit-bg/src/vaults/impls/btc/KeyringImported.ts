@@ -1,8 +1,8 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import {
   type ISignedMessagePro,
   type ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 
 import { KeyringImportedBase } from '../../base/KeyringImportedBase';
 

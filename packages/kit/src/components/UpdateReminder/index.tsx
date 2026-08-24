@@ -3,18 +3,18 @@ import { useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IIconProps, IStackProps } from '@onekeyhq/components';
+import type { IIconProps, IStackProps } from '@unionkeyhq/components';
 import {
   Button,
   Icon,
   SizableText,
   XStack,
   usePopoverContext,
-} from '@onekeyhq/components';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate';
-import type { IAppUpdateInfo } from '@onekeyhq/shared/src/appUpdate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { EAppUpdateStatus } from '@unionkeyhq/shared/src/appUpdate';
+import type { IAppUpdateInfo } from '@unionkeyhq/shared/src/appUpdate';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { DownloadProgress } from './DownloadProgress';
 import { useAppUpdateInfo } from './hooks';

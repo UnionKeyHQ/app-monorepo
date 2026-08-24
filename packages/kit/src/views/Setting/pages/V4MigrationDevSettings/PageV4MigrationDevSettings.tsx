@@ -1,5 +1,5 @@
-import { Button, Page, Toast, YStack } from '@onekeyhq/components';
-import { useV4migrationPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { Button, Page, Toast, YStack } from '@unionkeyhq/components';
+import { useV4migrationPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 export default function PageV4MigrationDevSettings() {
   const [_, setV4migrationData] = useV4migrationPersistAtom();

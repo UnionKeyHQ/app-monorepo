@@ -1,6 +1,6 @@
 import notifee from '@notifee/react-native';
 
-import { ONEKEY_LOGO_ICON_URL } from '@onekeyhq/shared/src/consts';
+import { UNIONKEY_LOGO_ICON_URL } from '@unionkeyhq/shared/src/consts';
 
 import type { IDemoNotificationSdk } from './types';
 import type { EventType } from '@notifee/react-native';
@@ -43,7 +43,7 @@ const sdk: IDemoNotificationSdk = {
       android: {
         channelId: 'default',
         // 设置自定义图片（Android） 待定
-        largeIcon: ONEKEY_LOGO_ICON_URL, // 可以是网络图片 URL 或本地图片路径
+        largeIcon: UNIONKEY_LOGO_ICON_URL, // 可以是网络图片 URL 或本地图片路径
         pressAction: {
           id: 'default',
         },
@@ -52,7 +52,7 @@ const sdk: IDemoNotificationSdk = {
         // 设置自定义图片（iOS） working
         attachments: [
           {
-            url: ONEKEY_LOGO_ICON_URL, // 可以是网络图片 URL 或本地图片路径
+            url: UNIONKEY_LOGO_ICON_URL, // 可以是网络图片 URL 或本地图片路径
           },
         ],
       },

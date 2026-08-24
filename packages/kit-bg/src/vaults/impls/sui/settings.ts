@@ -1,12 +1,12 @@
 import { SUI_TYPE_ARG } from '@mysten/sui/utils';
 
-import { ECoreApiExportedSecretKeyType } from '@onekeyhq/core/src/types';
+import { ECoreApiExportedSecretKeyType } from '@unionkeyhq/core/src/types';
 import {
   COINTYPE_SUI,
   IMPL_SUI,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

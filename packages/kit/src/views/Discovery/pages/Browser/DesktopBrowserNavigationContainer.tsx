@@ -2,19 +2,19 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { Freeze } from 'react-freeze';
 
-import type { IElectronWebView } from '@onekeyhq/kit/src/components/WebView/types';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useShortcutsOnRouteFocused } from '@onekeyhq/kit/src/hooks/useShortcutsOnRouteFocused';
+import type { IElectronWebView } from '@unionkeyhq/kit/src/components/WebView/types';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useShortcutsOnRouteFocused } from '@unionkeyhq/kit/src/hooks/useShortcutsOnRouteFocused';
 import {
   useBrowserBookmarkAction,
   useBrowserTabActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/discovery';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+} from '@unionkeyhq/shared/src/routes';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import DesktopBrowserInfoBar from '../../components/DesktopBrowser/DesktopBrowserInfoBar';
 import {

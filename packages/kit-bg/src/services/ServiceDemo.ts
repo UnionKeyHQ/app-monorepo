@@ -1,35 +1,35 @@
 import { verifyMessage } from '@ethersproject/wallet';
 import { random, range } from 'lodash';
 
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
+import type { IEncodedTxEvm } from '@unionkeyhq/core/src/chains/evm/types';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { DB_MAIN_CONTEXT_ID } from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { DB_MAIN_CONTEXT_ID } from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   IncorrectPassword,
   MinimumTransferBalanceRequiredError,
-} from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/shared/src/errors';
 import {
   DeviceNotFound,
-  NeedOneKeyBridge,
-} from '@onekeyhq/shared/src/errors/errors/hardwareErrors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { generateUUID } from '@onekeyhq/shared/src/utils/miscUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IWalletConnectChainString } from '@onekeyhq/shared/src/walletConnect/types';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+  NeedUnionKeyBridge,
+} from '@unionkeyhq/shared/src/errors/errors/hardwareErrors';
+import { convertDeviceResponse } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
+import { generateUUID } from '@unionkeyhq/shared/src/utils/miscUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IWalletConnectChainString } from '@unionkeyhq/shared/src/walletConnect/types';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
+import type { IDecodedTx } from '@unionkeyhq/shared/types/tx';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import localDb from '../dbs/local/localDb';
 import { ELocalDBStoreNames } from '../dbs/local/localDBStoreNames';
@@ -201,7 +201,7 @@ class ServiceDemo extends ServiceBase {
   @toastIfError()
   async demoErrorWithUrl(): Promise<string> {
     await timerUtils.wait(600);
-    throw new NeedOneKeyBridge();
+    throw new NeedUnionKeyBridge();
   }
 
   @backgroundMethod()
@@ -820,7 +820,7 @@ class ServiceDemo extends ServiceBase {
     await Promise.all(
       range(0, count).map(async (i) => {
         await localDb.addConnectedSite({
-          url: `https://onekey.so/${i}`,
+          url: `https://unionkey.io/${i}`,
           networkIds: [getNetworkIdsMap().eth],
           addresses: ['0x1959f5f4979c5cd87d5cb75c678c770515cb5e0e'],
         });
@@ -841,7 +841,7 @@ class ServiceDemo extends ServiceBase {
       data: [
         ...range(0, count).map((i) => ({
           id: generateUUID(),
-          url: `https://onekey.so/${i}`,
+          url: `https://unionkey.io/${i}`,
           title: `title ${i}`,
           createdAt: Date.now(),
         })),

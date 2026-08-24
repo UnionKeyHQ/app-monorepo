@@ -10,26 +10,26 @@ import {
   Stack,
   YGroup,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   NetworkSelectorTriggerDappConnection,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { AccountSelectorTriggerDappConnection } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
-import { useAccountSelectorAvailableNetworks } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorAvailableNetworks';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IAccountSelectorAvailableNetworksMap } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkeyhq/kit/src/components/AccountSelector';
+import { AccountSelectorTriggerDappConnection } from '@unionkeyhq/kit/src/components/AccountSelector/AccountSelectorTrigger/AccountSelectorTriggerDApp';
+import { useAccountSelectorAvailableNetworks } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorAvailableNetworks';
+import useDappQuery from '@unionkeyhq/kit/src/hooks/useDappQuery';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IAccountSelectorAvailableNetworksMap } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   useAccountSelectorActions,
   useAccountSelectorSyncLoadingAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { getNetworkImplsFromDappScope } from '@onekeyhq/shared/src/background/backgroundUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { getNetworkImplsFromDappScope } from '@unionkeyhq/shared/src/background/backgroundUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { useHandleDiscoveryAccountChanged } from '../../hooks/useHandleAccountChanged';
 

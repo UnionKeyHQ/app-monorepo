@@ -1,15 +1,15 @@
 import BigNumber from 'bignumber.js';
 
-import { DUST_AMOUNT } from '@onekeyhq/core/src/chains/kaspa/sdkKaspa';
+import { DUST_AMOUNT } from '@unionkeyhq/core/src/chains/kaspa/sdkKaspa';
 import {
   EAddressEncodings,
   ECoreApiExportedSecretKeyType,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   COINTYPE_KASPA,
   IMPL_KASPA,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 
@@ -28,10 +28,10 @@ export type IAccountDeriveTypesKaspa = keyof IAccountDeriveInfoMapKaspa;
 const accountDeriveInfo: IAccountDeriveInfoMapKaspa = {
   default: {
     namePrefix: 'KASPA',
-    label: 'Kaspa OneKey',
+    label: 'Kaspa UnionKey',
     template: `m/44'/${COINTYPE_KASPA}'/0'/0/${INDEX_PLACEHOLDER}`,
     coinType: COINTYPE_KASPA,
-    desc: 'Kaspa OneKey address',
+    desc: 'Kaspa UnionKey address',
     useAddressEncodingDerive: true,
   },
   kaspaOfficial: {

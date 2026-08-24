@@ -1,25 +1,25 @@
 import BigNumber from 'bignumber.js';
 import { isEmpty } from 'lodash';
 
-import { XRPL } from '@onekeyhq/core/src/chains/xrp/sdkXrp';
+import { XRPL } from '@unionkeyhq/core/src/chains/xrp/sdkXrp';
 import type {
   IDecodedTxExtraXrp,
   IEncodedTxXrp,
-} from '@onekeyhq/core/src/chains/xrp/types';
+} from '@unionkeyhq/core/src/chains/xrp/types';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/secret';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
 import {
   InvalidAddress,
   InvalidTransferValue,
   NotImplemented,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -27,17 +27,17 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IOnChainHistoryTx } from '@onekeyhq/shared/types/history';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IOnChainHistoryTx } from '@unionkeyhq/shared/types/history';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
-import type { IDecodedTx, IDecodedTxAction } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
+import type { IDecodedTx, IDecodedTxAction } from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -93,10 +93,10 @@ export default class Vault extends VaultBase {
   ): Promise<IEncodedTxXrp> {
     const { transfersInfo } = params;
     if (!transfersInfo || isEmpty(transfersInfo)) {
-      throw new OneKeyInternalError('transfersInfo is required');
+      throw new UnionKeyInternalError('transfersInfo is required');
     }
     if (transfersInfo.length > 1) {
-      throw new OneKeyInternalError('Batch transfer is not supported');
+      throw new UnionKeyInternalError('Batch transfer is not supported');
     }
     const transferInfo = transfersInfo[0];
     if (!transferInfo.to) {
@@ -425,7 +425,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
 
     const client = new ClientRipple({ url: rpcUrl });

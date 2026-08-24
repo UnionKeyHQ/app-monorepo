@@ -13,23 +13,23 @@ import {
   Toast,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import type { IActionListItemProps } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
+} from '@unionkeyhq/components';
+import type { IActionListItemProps } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
 import {
   useBrowserBookmarkAction,
   useBrowserTabActions,
-} from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IDiscoveryModalParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/discovery';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IDiscoveryModalParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import MobileTabListItem from '../../components/MobileTabListItem';
 import MobileTabListPinnedItem from '../../components/MobileTabListItem/MobileTabListPinnedItem';

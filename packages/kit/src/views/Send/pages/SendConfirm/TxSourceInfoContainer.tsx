@@ -1,5 +1,5 @@
-import { Stack } from '@onekeyhq/components';
-import type { IDappSourceInfo } from '@onekeyhq/shared/types';
+import { Stack } from '@unionkeyhq/components';
+import type { IDappSourceInfo } from '@unionkeyhq/shared/types';
 
 import { DAppSiteMark } from '../../../DAppConnection/components/DAppRequestLayout';
 import { useRiskDetection } from '../../../DAppConnection/hooks/useRiskDetection';

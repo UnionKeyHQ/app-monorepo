@@ -6,9 +6,9 @@ import {
   utils,
 } from '@starcoin/starcoin';
 
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 import { Verifier } from '../../base/ChainSigner';
 import { CoreChainApiBase } from '../../base/CoreChainApiBase';

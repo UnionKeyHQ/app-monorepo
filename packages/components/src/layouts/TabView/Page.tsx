@@ -8,7 +8,7 @@ import {
 } from '@onekeyfe/react-native-tab-page-view';
 import { Animated } from 'react-native';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { Stack } from '../../primitives';
 

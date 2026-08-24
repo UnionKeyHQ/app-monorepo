@@ -1,11 +1,11 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { type IInstanceMetaBackup } from '@onekeyhq/shared/types/desktop';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { type IInstanceMetaBackup } from '@unionkeyhq/shared/types/desktop';
 
 import { INDEXED_DB_BUCKET_PRESET_STORE_NAMES } from '../../dbs/local/consts';
 import { ELocalDBStoreNames } from '../../dbs/local/localDBStoreNames';

@@ -1,4 +1,4 @@
-import type { IAddressInfo } from '@onekeyhq/shared/types/address';
+import type { IAddressInfo } from '@unionkeyhq/shared/types/address';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

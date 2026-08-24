@@ -1,7 +1,7 @@
 import { type PropsWithChildren, useEffect } from 'react';
 
-import { Portal } from '@onekeyhq/components';
-import hooks from '@onekeyhq/kit/src/components/WalletConnect/WalletConnectModal';
+import { Portal } from '@unionkeyhq/components';
+import hooks from '@unionkeyhq/kit/src/components/WalletConnect/WalletConnectModal';
 
 const { useModal } = hooks;
 export function AppStateContainer({ children }: PropsWithChildren) {

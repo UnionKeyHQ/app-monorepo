@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 
-import { ContextJotaiActionsBase } from '@onekeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
-import type { IMarketWatchListItem } from '@onekeyhq/shared/types/market'; // Assuming similar data type
+import { ContextJotaiActionsBase } from '@unionkeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import type { IMarketWatchListItem } from '@unionkeyhq/shared/types/market'; // Assuming similar data type
 
 import { contextAtomMethod, marketV2Atom } from './atoms';
 

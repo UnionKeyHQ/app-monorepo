@@ -1,4 +1,4 @@
-import { Progress, SizableText, Stack } from '@onekeyhq/components';
+import { Progress, SizableText, Stack } from '@unionkeyhq/components';
 
 type IActivityRowProps = {
   label: string;

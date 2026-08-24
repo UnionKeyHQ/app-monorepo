@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { EPageType, usePageType } from '../../hocs';
 import {

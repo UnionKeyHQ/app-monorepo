@@ -9,23 +9,23 @@ import type {
   IImageProps,
   ISkeletonProps,
   SizeTokens,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Icon,
   Image,
   Skeleton,
   Stack,
   withStaticProperties,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   IDBAccount,
   IDBExternalAccount,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import externalWalletLogoUtils from '@onekeyhq/shared/src/utils/externalWalletLogoUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import externalWalletLogoUtils from '@unionkeyhq/shared/src/utils/externalWalletLogoUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 import { NetworkAvatar } from '../NetworkAvatar';
 import { WalletAvatar } from '../WalletAvatar';

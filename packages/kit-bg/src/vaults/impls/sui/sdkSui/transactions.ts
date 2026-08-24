@@ -2,13 +2,13 @@ import { Transaction } from '@mysten/sui/transactions';
 import { SUI_TYPE_ARG } from '@mysten/sui/utils';
 import BigNumber from 'bignumber.js';
 
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { normalizeSuiCoinType } from './utils';
 
-import type { OneKeySuiClient } from './ClientSui';
+import type { UnionKeySuiClient } from './ClientSui';
 import type { BalanceChange, CoinStruct } from '@mysten/sui/client';
 
 export enum ESuiTransactionType {
@@ -22,7 +22,7 @@ async function getAllCoinsByCoinType({
   address,
   coinType,
 }: {
-  client: OneKeySuiClient;
+  client: UnionKeySuiClient;
   address: string;
   coinType: string;
 }) {
@@ -74,7 +74,7 @@ async function createTokenTransaction({
   coinType,
   maxSendNativeToken = false,
 }: {
-  client: OneKeySuiClient;
+  client: UnionKeySuiClient;
   sender: string;
   recipient: string;
   amount: string;
@@ -97,7 +97,7 @@ async function createTokenTransaction({
     totalBalance.lt(amount) ||
     (totalBalance.isZero() && allCoins.length === 0)
   ) {
-    throw new OneKeyInternalError({
+    throw new UnionKeyInternalError({
       key: ETranslations.earn_insufficient_balance,
     });
   }

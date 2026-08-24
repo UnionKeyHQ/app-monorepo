@@ -1,12 +1,12 @@
 // eslint-disable-next-line max-classes-per-file
 import { isNil } from 'lodash';
 
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import type { CoreChainApiBase } from '@unionkeyhq/core/src/base/CoreChainApiBase';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import { EDBAccountType } from '../../dbs/local/consts';
 import { EVaultKeyringTypes } from '../types';

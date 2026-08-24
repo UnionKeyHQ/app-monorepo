@@ -16,18 +16,18 @@ import {
   Stack,
   XStack,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   useNotificationsAtom,
   useNotificationsReadedAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalRoutes, EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
-import { EModalNotificationsRoutes } from '@onekeyhq/shared/src/routes/notifications';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalRoutes, EModalSettingRoutes } from '@unionkeyhq/shared/src/routes';
+import { EModalNotificationsRoutes } from '@unionkeyhq/shared/src/routes/notifications';
 import notificationsUtils, {
   NOTIFICATION_ACCOUNT_ACTIVITY_DEFAULT_MAX_ACCOUNT_COUNT,
-} from '@onekeyhq/shared/src/utils/notificationsUtils';
-import type { INotificationPushMessageListItem } from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/src/utils/notificationsUtils';
+import type { INotificationPushMessageListItem } from '@unionkeyhq/shared/types/notification';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { ListItem } from '../../../components/ListItem';

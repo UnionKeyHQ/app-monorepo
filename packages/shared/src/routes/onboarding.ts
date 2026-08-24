@@ -1,4 +1,4 @@
-import type { EMnemonicType } from '@onekeyhq/core/src/secret';
+import type { EMnemonicType } from '@unionkeyhq/core/src/secret';
 
 import type { EConnectDeviceChannel } from '../../types/connectDevice';
 import type { IWalletConnectConnectToWalletParams } from '../walletConnect/types';
@@ -15,7 +15,7 @@ export enum EOnboardingPages {
 
   // connect hardware wallet
   ConnectYourDevice = 'ConnectYourDevice',
-  OneKeyHardwareWallet = 'OneKeyHardwareWallet',
+  UnionKeyHardwareWallet = 'UnionKeyHardwareWallet',
   ActivateDevice = 'ActivateDevice',
 
   // create wallet
@@ -63,7 +63,7 @@ export type IOnboardingParamList = {
   [EOnboardingPages.ConnectYourDevice]: {
     channel?: EConnectDeviceChannel;
   };
-  [EOnboardingPages.OneKeyHardwareWallet]: undefined;
+  [EOnboardingPages.UnionKeyHardwareWallet]: undefined;
   [EOnboardingPages.ActivateDevice]: {
     tutorialType: 'create' | 'restore';
     deviceType: IDeviceType;

@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import { Page } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { ChainSelectorListView } from './ChainSelectorListView';
 import { ChainSelectorSectionList } from './ChainSelectorSectionList';

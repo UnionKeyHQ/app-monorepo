@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import type { IImageProps } from '@onekeyhq/components';
-import { Icon, Image, SizableText, Stack, Tooltip } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IImageProps } from '@unionkeyhq/components';
+import { Icon, Image, SizableText, Stack, Tooltip } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 type ISwapProviderIconProps = {
   providerLogo?: string;

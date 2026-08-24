@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { IconButton, SizableText, Stack } from '@onekeyhq/components';
-import { useToOnBoardingPage } from '@onekeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { IconButton, SizableText, Stack } from '@unionkeyhq/components';
+import { useToOnBoardingPage } from '@unionkeyhq/kit/src/views/Onboarding/hooks/useToOnBoardingPage';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { useAccountSelectorRoute } from '../../../router/useAccountSelectorRoute';
 

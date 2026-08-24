@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 
 import { StyleSheet } from 'react-native';
 
-import type { IIconButtonProps, IKeyOfIcons } from '@onekeyhq/components';
+import type { IIconButtonProps, IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Button,
   Icon,
@@ -11,13 +11,13 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { EModalStakingRoutes } from '@onekeyhq/shared/src/routes/staking';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { EEarnLabels } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/components';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { EModalStakingRoutes } from '@unionkeyhq/shared/src/routes/staking';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import { EEarnLabels } from '@unionkeyhq/shared/types/staking';
 import type {
   IEarnActionIcon,
   IEarnClaimActionIcon,
@@ -28,7 +28,7 @@ import type {
   IEarnToken,
   IEarnTokenInfo,
   IProtocolInfo,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { useHandleClaim } from '../../pages/ProtocolDetails/useHandleClaim';
 

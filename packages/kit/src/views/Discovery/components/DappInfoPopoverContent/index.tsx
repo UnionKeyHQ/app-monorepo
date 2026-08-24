@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IIconProps, IKeyOfIcons } from '@onekeyhq/components';
+import type { IIconProps, IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Badge,
   Dialog,
@@ -15,10 +15,10 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IHostSecurity } from '@onekeyhq/shared/types/discovery';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IHostSecurity } from '@unionkeyhq/shared/types/discovery';
+import { EHostSecurityLevel } from '@unionkeyhq/shared/types/discovery';
 
 import { DAppRequestedDappList } from '../../../DAppConnection/components/DAppRequestContent/DAppRequestedDappList';
 import { DAppRiskyAlertDetail } from '../../../DAppConnection/components/DAppRequestLayout/DAppRiskyAlertDetail';

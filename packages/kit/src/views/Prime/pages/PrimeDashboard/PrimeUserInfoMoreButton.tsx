@@ -11,13 +11,13 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { MultipleClickStack } from '@onekeyhq/kit/src/components/MultipleClickStack';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { formatDateFns } from '@onekeyhq/shared/src/utils/dateUtils';
-import openUrlUtils from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { MultipleClickStack } from '@unionkeyhq/kit/src/components/MultipleClickStack';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { formatDateFns } from '@unionkeyhq/shared/src/utils/dateUtils';
+import openUrlUtils from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 import { usePrimePayment } from '../../hooks/usePrimePayment';
@@ -148,10 +148,10 @@ function PrimeUserInfoMoreButtonDropDownMenu({
           Dialog.show({
             icon: 'InfoCircleOutline',
             title: intl.formatMessage({
-              id: ETranslations.prime_onekeyid_log_out,
+              id: ETranslations.prime_unionkeyid_log_out,
             }),
             description: intl.formatMessage({
-              id: ETranslations.prime_onekeyid_log_out_description,
+              id: ETranslations.prime_unionkeyid_log_out_description,
             }),
             onConfirmText: intl.formatMessage({
               id: ETranslations.prime_log_out,

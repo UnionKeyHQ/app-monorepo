@@ -7,10 +7,10 @@ import {
   SizableText,
   Stack,
   ThemeableStack,
-} from '@onekeyhq/components';
-import { MultipleClickStack } from '@onekeyhq/kit/src/components/MultipleClickStack';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { MultipleClickStack } from '@unionkeyhq/kit/src/components/MultipleClickStack';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export function Welcome() {
   const intl = useIntl();
@@ -27,7 +27,7 @@ export function Welcome() {
           <Image
             w={360}
             h={360}
-            source={require('@onekeyhq/kit/assets/logo-press.png')}
+            source={require('@unionkeyhq/kit/assets/logo-press.png')}
           />
         </MultipleClickStack>
       </ThemeableStack>

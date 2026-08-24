@@ -1,4 +1,4 @@
-import { Skeleton, View, XStack, YStack } from '@onekeyhq/components';
+import { Skeleton, View, XStack, YStack } from '@unionkeyhq/components';
 
 function SkeletonHeader() {
   return (

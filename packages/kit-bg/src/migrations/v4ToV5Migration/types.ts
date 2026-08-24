@@ -1,4 +1,4 @@
-import type { IServerNetwork } from '@onekeyhq/shared/types';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import type {
   IV4DBAccount,

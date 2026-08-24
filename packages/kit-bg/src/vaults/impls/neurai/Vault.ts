@@ -1,4 +1,4 @@
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 
 import VaultBtc from '../btc/Vault';
 

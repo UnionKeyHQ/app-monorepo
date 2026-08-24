@@ -1,6 +1,6 @@
-import { Button } from '@onekeyhq/components';
-import { SecureQRToast } from '@onekeyhq/kit/src/components/SecureQRToast';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+import { Button } from '@unionkeyhq/components';
+import { SecureQRToast } from '@unionkeyhq/kit/src/components/SecureQRToast';
+import useScanQrCode from '@unionkeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
 
 import { Layout } from './utils/Layout';
 
@@ -17,7 +17,7 @@ const SecureQRToastGallery = () => {
             <Button
               onPress={() => {
                 const toast = SecureQRToast.show({
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.io',
                   onCancel: async () => {
                     await toast.close();
                   },
@@ -40,7 +40,7 @@ const SecureQRToastGallery = () => {
             <Button
               onPress={() => {
                 const toast = SecureQRToast.show({
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.io',
                   showQRCode: false,
                   onCancel: async () => {
                     await toast.close();
@@ -64,7 +64,7 @@ const SecureQRToastGallery = () => {
             <Button
               onPress={() => {
                 const toast = SecureQRToast.show({
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.io',
                   showConfirmButton: false,
                   onCancel: async () => {
                     await toast.close();
@@ -88,7 +88,7 @@ const SecureQRToastGallery = () => {
                   title: 'AAA',
                   message: 'BBBB',
                   dismissOnOverlayPress: false,
-                  value: 'https://onekey.so',
+                  value: 'https://unionkey.io',
                   onConfirm: async () => {
                     await toast.close();
                     await scanQrCode.start({

@@ -12,26 +12,26 @@ import {
   getFormInstances,
   rootNavigationRef,
   useShortcuts,
-} from '@onekeyhq/components';
-import { ipcMessageKeys } from '@onekeyhq/desktop/app/config';
+} from '@unionkeyhq/components';
+import { ipcMessageKeys } from '@unionkeyhq/desktop/app/config';
 import {
   useAppIsLockedAtom,
   useDevSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { EAppUpdateStatus } from '@unionkeyhq/shared/src/appUpdate';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
   EModalSettingRoutes,
   EMultiTabBrowserRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { ERootRoutes } from '@onekeyhq/shared/src/routes/root';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { ESpotlightTour } from '@onekeyhq/shared/src/spotlight';
+} from '@unionkeyhq/shared/src/routes';
+import { ERootRoutes } from '@unionkeyhq/shared/src/routes/root';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import { ESpotlightTour } from '@unionkeyhq/shared/src/spotlight';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { useAppUpdateInfo } from '../components/UpdateReminder/hooks';
@@ -41,9 +41,9 @@ import {
   useReferFriends,
 } from '../hooks/useReferFriends';
 import {
-  isOpenedMyOneKeyModal,
-  useToMyOneKeyModal,
-} from '../views/DeviceManagement/hooks/useToMyOneKeyModal';
+  isOpenedMyUnionKeyModal,
+  useToMyUnionKeyModal,
+} from '../views/DeviceManagement/hooks/useToMyUnionKeyModal';
 import { useOnLock } from '../views/Setting/pages/List/DefaultSection';
 
 import type { IntlShape } from 'react-intl';
@@ -67,7 +67,7 @@ const useDesktopEvents = platformEnv.isDesktop
       useOnLockRef.current = onLock;
 
       const { toReferFriendsPage } = useReferFriends();
-      const toMyOneKeyModal = useToMyOneKeyModal();
+      const toMyUnionKeyModal = useToMyUnionKeyModal();
 
       const { checkForUpdates, onUpdateAction } = useAppUpdateInfoCallback(
         false,
@@ -277,10 +277,10 @@ const useDesktopEvents = platformEnv.isDesktop
               ensureModalClosedAndNavigate();
             }
             break;
-          case EShortcutEvents.TabMyOneKey:
-            if (!isOpenedMyOneKeyModal()) {
+          case EShortcutEvents.TabMyUnionKey:
+            if (!isOpenedMyUnionKeyModal()) {
               ensureModalClosedAndNavigate(() => {
-                void toMyOneKeyModal();
+                void toMyUnionKeyModal();
               });
             } else {
               ensureModalClosedAndNavigate();
@@ -390,7 +390,7 @@ const launchFloatingIconEvent = async (intl: IntlShape) => {
                 w: 360,
                 h: 163,
               }}
-              source={require('@onekeyhq/kit/assets/floating_icon_placeholder.png')}
+              source={require('@unionkeyhq/kit/assets/floating_icon_placeholder.png')}
             />
             <YStack gap="$1">
               <SizableText size="$headingLg">

@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js';
 import { Keyboard } from 'react-native';
 
-import { Button, XStack, useIsKeyboardShown } from '@onekeyhq/components';
-import SwapPercentageStageBadge from '@onekeyhq/kit/src/views/Swap/components/SwapPercentageStageBadge';
+import { Button, XStack, useIsKeyboardShown } from '@unionkeyhq/components';
+import SwapPercentageStageBadge from '@unionkeyhq/kit/src/views/Swap/components/SwapPercentageStageBadge';
 
 export const PercentageInputStageForNative = [25, 50, 75, 100];
 

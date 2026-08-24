@@ -1,5 +1,5 @@
-import { Shortcut, YStack } from '@onekeyhq/components';
-import { shortcutsKeys } from '@onekeyhq/shared/src/shortcuts/shortcutsKeys.enum';
+import { Shortcut, YStack } from '@unionkeyhq/components';
+import { shortcutsKeys } from '@unionkeyhq/shared/src/shortcuts/shortcutsKeys.enum';
 
 import { Layout } from './utils/Layout';
 

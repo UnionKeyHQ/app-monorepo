@@ -1,4 +1,4 @@
-import { SizableText, YStack } from '@onekeyhq/components';
+import { SizableText, YStack } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

@@ -1,5 +1,5 @@
-import { Button, SizableText, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Button, SizableText, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   demoPriceAtom,
   demoReadOnlyAtom,
@@ -9,8 +9,8 @@ import {
   useDemoReadWriteAtom,
   useDemoWriteOnlyAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { JOTAI_RESET } from '@onekeyhq/kit-bg/src/states/jotai/types';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { JOTAI_RESET } from '@unionkeyhq/kit-bg/src/states/jotai/types';
 
 import { Layout } from './utils/Layout';
 

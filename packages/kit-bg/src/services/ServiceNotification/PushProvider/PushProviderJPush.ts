@@ -1,14 +1,14 @@
 import JPush from 'jpush-react-native';
 import { isString } from 'lodash';
 
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   IJPushNotificationLocalEvent,
   IJPushNotificationRemoteEvent,
   INotificationPushMessageInfo,
-} from '@onekeyhq/shared/types/notification';
-import { EPushProviderEventNames } from '@onekeyhq/shared/types/notification';
+} from '@unionkeyhq/shared/types/notification';
+import { EPushProviderEventNames } from '@unionkeyhq/shared/types/notification';
 
 import { PushProviderBase } from './PushProviderBase';
 

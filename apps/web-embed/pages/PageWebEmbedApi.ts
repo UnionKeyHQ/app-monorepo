@@ -1,9 +1,9 @@
 import { memo, useEffect } from 'react';
 
-import { setBgSensitiveTextEncodeKey } from '@onekeyhq/core/src/secret';
-import type { IBackgroundApiWebembedCallMessage } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import webembedApi from '@onekeyhq/kit-bg/src/webembeds/instance/webembedApi';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { setBgSensitiveTextEncodeKey } from '@unionkeyhq/core/src/secret';
+import type { IBackgroundApiWebembedCallMessage } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
+import webembedApi from '@unionkeyhq/kit-bg/src/webembeds/instance/webembedApi';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 
 import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
 

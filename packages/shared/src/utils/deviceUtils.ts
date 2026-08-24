@@ -1,16 +1,16 @@
 import { EDeviceType } from '@onekeyfe/hd-shared';
 import semver from 'semver';
 
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
-import type { IDBDevice } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IHardwareUiState } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IDBDevice } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IHardwareUiState } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { EHardwareUiStateAction } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import { EHardwareUiStateAction } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import {
   EFirmwareUpdateTipMessages,
   EFirmwareVerifyType,
-  EOneKeyDeviceMode,
+  EUnionKeyDeviceMode,
 } from '../../types/device';
 import { CoreSDKLoader } from '../hardware/instance';
 import platformEnv from '../platformEnv';
@@ -23,19 +23,19 @@ import type {
   IDeviceVerifyVersions,
   IFetchFirmwareVerifyHashParams,
   IFirmwareVerifyInfo,
-  IOneKeyDeviceFeatures,
-  IOneKeyDeviceType,
+  IUnionKeyDeviceFeatures,
+  IUnionKeyDeviceType,
 } from '../../types/device';
 import type {
   IDeviceType,
   KnownDevice,
-  OnekeyFeatures,
+  OnekeyFeatures as UnionKeyFeatures,
   SearchDevice,
 } from '@onekeyfe/hd-core';
 
 type IGetDeviceVersionParams = {
   device: SearchDevice | undefined;
-  features: IOneKeyDeviceFeatures | undefined;
+  features: IUnionKeyDeviceFeatures | undefined;
 };
 
 // TODO move to db converter
@@ -52,7 +52,7 @@ function dbDeviceToSearchDevice(device: IDBDevice) {
 }
 
 function getDeviceSerialNoFromFeatures(
-  features: IOneKeyDeviceFeatures | undefined,
+  features: IUnionKeyDeviceFeatures | undefined,
 ) {
   return (
     features?.onekey_serial_no ?? features?.onekey_serial ?? features?.serial_no
@@ -110,7 +110,7 @@ async function getDeviceVersionStr(params: IGetDeviceVersionParams) {
 async function getDeviceTypeFromFeatures({
   features,
 }: {
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
 }): Promise<IDeviceType> {
   const { getDeviceType } = await CoreSDKLoader();
   return Promise.resolve(getDeviceType(features));
@@ -131,47 +131,47 @@ function getDeviceScanner({
 async function getDeviceModeFromFeatures({
   features,
 }: {
-  features: IOneKeyDeviceFeatures;
-}): Promise<EOneKeyDeviceMode> {
-  // https://github.com/OneKeyHQ/hardware-js-sdk/blob/onekey/packages/core/src/device/Device.ts#L503
-  // if (features?.bootloader_mode) return EOneKeyDeviceMode.bootloader;
-  // if (!features?.initialized) return EOneKeyDeviceMode.initialize;
-  // if (features?.no_backup) return EOneKeyDeviceMode.seedless;
-  // return EOneKeyDeviceMode.normal;
+  features: IUnionKeyDeviceFeatures;
+}): Promise<EUnionKeyDeviceMode> {
+  // https://github.com/UnionKeyHQ/hardware-js-sdk/blob/main/packages/core/src/device/Device.ts#L503
+  // if (features?.bootloader_mode) return EUnionKeyDeviceMode.bootloader;
+  // if (!features?.initialized) return EUnionKeyDeviceMode.initialize;
+  // if (features?.no_backup) return EUnionKeyDeviceMode.seedless;
+  // return EUnionKeyDeviceMode.normal;
 
   if (features?.bootloader_mode) {
     // bootloader mode
-    return EOneKeyDeviceMode.bootloader;
+    return EUnionKeyDeviceMode.bootloader;
   }
   if (!features?.initialized) {
     // not initialized
-    return EOneKeyDeviceMode.notInitialized;
+    return EUnionKeyDeviceMode.notInitialized;
   }
 
   if (features?.no_backup) {
     // backup mode
-    return EOneKeyDeviceMode.backupMode;
+    return EUnionKeyDeviceMode.backupMode;
   }
 
   // normal mode
-  return EOneKeyDeviceMode.normal;
+  return EUnionKeyDeviceMode.normal;
 }
 
 async function isBootloaderModeByFeatures({
   features,
 }: {
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
 }) {
   return (
     (await getDeviceModeFromFeatures({ features })) ===
-    EOneKeyDeviceMode.bootloader
+    EUnionKeyDeviceMode.bootloader
   );
 }
 
 async function existsFirmwareByFeatures({
   features,
 }: {
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
 }) {
   return features?.firmware_present === true;
 }
@@ -213,19 +213,19 @@ async function buildDeviceLabel({
   features,
   buildModelName,
 }: {
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
   buildModelName?: boolean;
 }): Promise<string | ''> {
   if (features.label && !buildModelName) {
     return features.label;
   }
-  const defaultLabelsByDeviceType: Record<IOneKeyDeviceType, string> = {
-    [EDeviceType.Classic]: 'OneKey Classic',
-    [EDeviceType.Classic1s]: 'OneKey Classic 1S',
-    [EDeviceType.ClassicPure]: 'OneKey Classic 1S Pure',
-    [EDeviceType.Mini]: 'OneKey Mini',
+  const defaultLabelsByDeviceType: Record<IUnionKeyDeviceType, string> = {
+    [EDeviceType.Classic]: 'UnionKey Classic',
+    [EDeviceType.Classic1s]: 'UnionKey Classic 1S',
+    [EDeviceType.ClassicPure]: 'UnionKey Classic 1S Pure',
+    [EDeviceType.Mini]: 'UnionKey Mini',
     [EDeviceType.Touch]: 'UnionKey DEX',
-    [EDeviceType.Pro]: 'OneKey Pro',
+    [EDeviceType.Pro]: 'UnionKey Pro',
     [EDeviceType.Unknown]: '',
   };
   const deviceType = await getDeviceTypeFromFeatures({
@@ -239,7 +239,7 @@ async function buildDeviceName({
   features,
 }: {
   device?: SearchDevice;
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
 }): Promise<string> {
   const label = await buildDeviceLabel({ features });
   if (label) {
@@ -248,14 +248,14 @@ async function buildDeviceName({
   const { getDeviceUUID } = await CoreSDKLoader();
   const deviceUUID = device?.uuid || getDeviceUUID(features);
   return (
-    features.label || features.ble_name || `OneKey ${deviceUUID.slice(-4)}`
+    features.label || features.ble_name || `UnionKey ${deviceUUID.slice(-4)}`
   );
 }
 
 function buildDeviceBleName({
   features,
 }: {
-  features: IOneKeyDeviceFeatures | undefined;
+  features: IUnionKeyDeviceFeatures | undefined;
 }): string | undefined {
   if (!features) {
     return undefined;
@@ -268,12 +268,12 @@ async function getDeviceVerifyVersionsFromFeatures({
   features,
 }: {
   deviceType?: IDeviceType;
-  features: OnekeyFeatures | IOneKeyDeviceFeatures;
+  features: UnionKeyFeatures | IUnionKeyDeviceFeatures;
 }): Promise<IFetchFirmwareVerifyHashParams | null> {
   let finalDeviceType = deviceType;
   if (!deviceType) {
     finalDeviceType = await getDeviceTypeFromFeatures({
-      features: features as IOneKeyDeviceFeatures,
+      features: features as IUnionKeyDeviceFeatures,
     });
   }
   if (!finalDeviceType || finalDeviceType === 'unknown') {
@@ -281,19 +281,19 @@ async function getDeviceVerifyVersionsFromFeatures({
   }
 
   const {
-    onekey_firmware_version: onekeyFirmwareVersion,
-    onekey_ble_version: onekeyBleVersion,
-    onekey_boot_version: onekeyBootVersion,
+    onekey_firmware_version: unionKeyFirmwareVersion,
+    onekey_ble_version: unionKeyBleVersion,
+    onekey_boot_version: unionKeyBootVersion,
   } = features;
-  if (!onekeyFirmwareVersion || !onekeyBleVersion || !onekeyBootVersion) {
+  if (!unionKeyFirmwareVersion || !unionKeyBleVersion || !unionKeyBootVersion) {
     return null;
   }
 
   return {
     deviceType: finalDeviceType,
-    firmwareVersion: onekeyFirmwareVersion,
-    bluetoothVersion: onekeyBleVersion,
-    bootloaderVersion: onekeyBootVersion,
+    firmwareVersion: unionKeyFirmwareVersion,
+    bluetoothVersion: unionKeyBleVersion,
+    bootloaderVersion: unionKeyBootVersion,
   };
 }
 
@@ -338,7 +338,7 @@ function formatVersionWithHash(
 export function parseLocalDeviceVersions({
   onekeyFeatures,
 }: {
-  onekeyFeatures: OnekeyFeatures;
+  onekeyFeatures: UnionKeyFeatures;
 }): IAllDeviceVerifyVersions {
   return {
     firmware: formatVersionWithHash({
@@ -412,7 +412,7 @@ export function compareDeviceVersions({
 async function shouldUseV2FirmwareUpdateFlow({
   features,
 }: {
-  features: IOneKeyDeviceFeatures | undefined;
+  features: IUnionKeyDeviceFeatures | undefined;
 }) {
   if (!features) {
     return false;
@@ -436,7 +436,7 @@ function getRawDeviceId({
   features,
 }: {
   device: SearchDevice;
-  features: IOneKeyDeviceFeatures;
+  features: IUnionKeyDeviceFeatures;
 }) {
   // SearchDevice.deviceId is undefined when BLE connecting
   // const rawDeviceId = device.deviceId || features.device_id || '';

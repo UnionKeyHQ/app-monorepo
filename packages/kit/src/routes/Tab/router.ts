@@ -1,17 +1,17 @@
 import { useMemo } from 'react';
 
-import { getTokenValue, useMedia } from '@onekeyhq/components';
+import { getTokenValue, useMedia } from '@unionkeyhq/components';
 import type {
   ITabNavigatorConfig,
   ITabNavigatorExtraConfig,
-} from '@onekeyhq/components/src/layouts/Navigation/Navigator/types';
+} from '@unionkeyhq/components/src/layouts/Navigation/Navigator/types';
 import {
-  useIsShowMyOneKeyOnTabbar,
-  useToMyOneKeyModalByRootNavigation,
-} from '@onekeyhq/kit/src/views/DeviceManagement/hooks/useToMyOneKeyModal';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
+  useIsShowMyUnionKeyOnTabbar,
+  useToMyUnionKeyModalByRootNavigation,
+} from '@unionkeyhq/kit/src/views/DeviceManagement/hooks/useToMyUnionKeyModal';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { useToReferFriendsModalByRootNavigation } from '../../hooks/useReferFriends';
 import { developerRouters } from '../../views/Developer/router';
@@ -68,9 +68,9 @@ export const useTabRouterConfig = (params?: IGetTabRouterParams) => {
     [isShowDesktopDiscover, md],
   );
 
-  const toMyOneKeyModal = useToMyOneKeyModalByRootNavigation();
+  const toMyUnionKeyModal = useToMyUnionKeyModalByRootNavigation();
   const toReferFriendsPage = useToReferFriendsModalByRootNavigation();
-  const isShowMyOneKeyOnTabbar = useIsShowMyOneKeyOnTabbar();
+  const isShowMyUnionKeyOnTabbar = useIsShowMyUnionKeyOnTabbar();
 
   return useMemo(
     () =>
@@ -119,7 +119,7 @@ export const useTabRouterConfig = (params?: IGetTabRouterParams) => {
         //   children: earnRouters,
         //   trackId: 'global-earn',
         // },
-        // isShowMyOneKeyOnTabbar
+        // isShowMyUnionKeyOnTabbar
         //   ? {
         //       name: ETabRoutes.ReferFriends,
         //       tabBarIcon: () => 'GiftOutline',
@@ -129,14 +129,14 @@ export const useTabRouterConfig = (params?: IGetTabRouterParams) => {
         //       trackId: 'global-referral',
         //     }
         //   : undefined,ZYF
-        isShowMyOneKeyOnTabbar
+        isShowMyUnionKeyOnTabbar
           ? {
               name: ETabRoutes.DeviceManagement,
-              tabBarIcon: () => 'OnekeyDeviceCustom',
-              translationId: ETranslations.global_my_onekey,
-              tabbarOnPress: toMyOneKeyModal,
+              tabBarIcon: () => 'UnionKeyDeviceCustom',
+              translationId: ETranslations.global_my_unionkey,
+              tabbarOnPress: toMyUnionKeyModal,
               children: null,
-              trackId: 'global-my-onekey',
+              trackId: 'global-my-unionkey',
             }
           : undefined,
         isShowMDDiscover ? getDiscoverRouterConfig(params) : undefined,
@@ -177,9 +177,9 @@ export const useTabRouterConfig = (params?: IGetTabRouterParams) => {
     [
       isShowDesktopDiscover,
       isShowMDDiscover,
-      isShowMyOneKeyOnTabbar,
+      isShowMyUnionKeyOnTabbar,
       params,
-      toMyOneKeyModal,
+      toMyUnionKeyModal,
       toReferFriendsPage,
     ],
   );

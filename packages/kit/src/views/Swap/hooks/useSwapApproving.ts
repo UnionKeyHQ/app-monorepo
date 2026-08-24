@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useInAppNotificationAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import type { ISwapApproveTransaction } from '@onekeyhq/shared/types/swap/types';
-import { ESwapApproveTransactionStatus } from '@onekeyhq/shared/types/swap/types';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { useInAppNotificationAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import type { ISwapApproveTransaction } from '@unionkeyhq/shared/types/swap/types';
+import { ESwapApproveTransactionStatus } from '@unionkeyhq/shared/types/swap/types';
 
 import { useSwapBuildTxFetchingAtom } from '../../../states/jotai/contexts/swap';
 

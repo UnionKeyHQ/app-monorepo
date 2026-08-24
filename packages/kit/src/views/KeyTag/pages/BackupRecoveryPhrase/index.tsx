@@ -2,13 +2,13 @@ import { useCallback, useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page } from '@onekeyhq/components';
-import type { EMnemonicType } from '@onekeyhq/core/src/secret';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { PhaseInputArea } from '@onekeyhq/kit/src/views/Onboarding/components/PhaseInputArea';
-import { Tutorials } from '@onekeyhq/kit/src/views/Onboarding/components/Tutorials';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalKeyTagRoutes } from '@onekeyhq/shared/src/routes';
+import { Page } from '@unionkeyhq/components';
+import type { EMnemonicType } from '@unionkeyhq/core/src/secret';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { PhaseInputArea } from '@unionkeyhq/kit/src/views/Onboarding/components/PhaseInputArea';
+import { Tutorials } from '@unionkeyhq/kit/src/views/Onboarding/components/Tutorials';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalKeyTagRoutes } from '@unionkeyhq/shared/src/routes';
 
 export function ImportRecoveryPhrase() {
   const intl = useIntl();

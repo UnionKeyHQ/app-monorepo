@@ -2,23 +2,23 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import BigNumber from 'bignumber.js';
 import { isEmpty, isNil, isNumber } from 'lodash';
 
-import { validateEvmAddress } from '@onekeyhq/core/src/chains/evm/sdkEvm';
+import { validateEvmAddress } from '@unionkeyhq/core/src/chains/evm/sdkEvm';
 import {
   EthersJsonRpcProvider,
   ethers,
-} from '@onekeyhq/core/src/chains/evm/sdkEvm/ethers';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { getEnabledNFTNetworkIds } from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyError, OneKeyInternalError } from '@onekeyhq/shared/src/errors';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkeyhq/core/src/chains/evm/sdkEvm/ethers';
+import type { IEncodedTxEvm } from '@unionkeyhq/core/src/chains/evm/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { getEnabledNFTNetworkIds } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { UnionKeyError, UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 import numberUtils, {
   toBigIntHex,
-} from '@onekeyhq/shared/src/utils/numberUtils';
-import { mergeAssetTransferActions } from '@onekeyhq/shared/src/utils/txActionUtils';
+} from '@unionkeyhq/shared/src/utils/numberUtils';
+import { mergeAssetTransferActions } from '@unionkeyhq/shared/src/utils/txActionUtils';
 import type {
   IAddressValidation,
   IFetchServerAccountDetailsParams,
@@ -28,39 +28,39 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
+} from '@unionkeyhq/shared/types/customRpc';
 import type {
   IEstimateGasParams,
   IFeeInfoUnit,
   IServerEstimateFeeResponse,
-} from '@onekeyhq/shared/types/fee';
+} from '@unionkeyhq/shared/types/fee';
 import type {
   IServerFetchAccountHistoryDetailParams,
   IServerFetchAccountHistoryDetailResp,
-} from '@onekeyhq/shared/types/history';
-import { ENFTType } from '@onekeyhq/shared/types/nft';
+} from '@unionkeyhq/shared/types/history';
+import { ENFTType } from '@unionkeyhq/shared/types/nft';
 import type {
   IFetchServerTokenDetailParams,
   IFetchServerTokenDetailResponse,
   IFetchServerTokenListParams,
   IFetchServerTokenListResponse,
-} from '@onekeyhq/shared/types/serverToken';
-import { EWrappedType } from '@onekeyhq/shared/types/swap/types';
-import type { IToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/serverToken';
+import { EWrappedType } from '@unionkeyhq/shared/types/swap/types';
+import type { IToken } from '@unionkeyhq/shared/types/token';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
   EReplaceTxType,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -184,7 +184,7 @@ export default class Vault extends VaultBase {
       return this._buildEncodedTxFromWrapperToken(params);
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromWrapperToken(params: IBuildEncodedTxParams) {
@@ -374,7 +374,7 @@ export default class Vault extends VaultBase {
       }
       return unsignedTx;
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   override async updateUnsignedTx(
@@ -1164,7 +1164,7 @@ export default class Vault extends VaultBase {
     }
 
     if (isNil(nonce) || !isNumber(nonce) || nonce < 0) {
-      throw new OneKeyError('speedUpOrCancelTx ERROR: nonce is missing!');
+      throw new UnionKeyError('speedUpOrCancelTx ERROR: nonce is missing!');
     }
 
     // set only fields of IEncodedTxEvm
@@ -1200,7 +1200,7 @@ export default class Vault extends VaultBase {
             encodedTxOrigin.nonce || '0',
           ))
       ) {
-        throw new OneKeyError(
+        throw new UnionKeyError(
           'Speedup failed. History transaction data not matched',
         );
       }
@@ -1218,7 +1218,7 @@ export default class Vault extends VaultBase {
       params.validateChainId &&
       Number(chainId) !== Number(await this.getNetworkChainId())
     ) {
-      throw new OneKeyError('Invalid chainId');
+      throw new UnionKeyError('Invalid chainId');
     }
     const start = performance.now();
     const result = await client.getInfo();
@@ -1235,7 +1235,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new ClientEvm(rpcUrl);
     const txid = await client.broadcastTransaction(signedTx.rawTx);
@@ -1269,7 +1269,7 @@ export default class Vault extends VaultBase {
         this.networkId,
       );
     if (!rpcInfo?.rpc) {
-      throw new OneKeyInternalError('No RPC url');
+      throw new UnionKeyInternalError('No RPC url');
     }
 
     const provider = new EvmApiProvider({

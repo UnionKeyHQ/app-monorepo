@@ -157,7 +157,7 @@ const tsRules = {
           'position': 'before',
         },
         {
-          'pattern': '@onekeyhq/**',
+          'pattern': '@unionkeyhq/**',
           'group': 'external',
           'position': 'after',
         },
@@ -323,9 +323,9 @@ module.exports = {
               ...restrictedImportsPatterns,
               {
                 allowTypeImports: true,
-                group: ['@onekeyhq/kit', '@onekeyhq/kit-bg'],
+                group: ['@unionkeyhq/kit', '@unionkeyhq/kit-bg'],
                 message:
-                  'Please avoid using @onekeyhq/kit and @onekeyhq/kit-bg in this folder',
+                  'Please avoid using @unionkeyhq/kit and @unionkeyhq/kit-bg in this folder',
               },
             ],
           },
@@ -343,12 +343,12 @@ module.exports = {
               {
                 allowTypeImports: true,
                 group: [
-                  '@onekeyhq/kit',
-                  '@onekeyhq/kit-bg',
-                  '@onekeyhq/components',
+                  '@unionkeyhq/kit',
+                  '@unionkeyhq/kit-bg',
+                  '@unionkeyhq/components',
                 ],
                 message:
-                  'Please avoid using @onekeyhq/kit and @onekeyhq/kit-bg and @onekeyhq/components in this folder',
+                  'Please avoid using @unionkeyhq/kit and @unionkeyhq/kit-bg and @unionkeyhq/components in this folder',
               },
             ],
           },
@@ -370,9 +370,9 @@ module.exports = {
               },
               {
                 allowTypeImports: true,
-                group: ['@onekeyhq/kit', '@onekeyhq/components'],
+                group: ['@unionkeyhq/kit', '@unionkeyhq/components'],
                 message:
-                  'Please avoid using @onekeyhq/kit and @onekeyhq/components in this folder',
+                  'Please avoid using @unionkeyhq/kit and @unionkeyhq/components in this folder',
               },
             ],
           },
@@ -397,17 +397,17 @@ module.exports = {
                 // TODO: upgrade eslint version to use regex pattern in no-restricted-imports rule
                 // https://eslint.org/docs/latest/rules/no-restricted-imports
                 group: [
-                  '@onekeyhq/kit-bg/src/connectors',
-                  '@onekeyhq/kit-bg/src/dbs',
-                  '@onekeyhq/kit-bg/src/endpoints',
-                  '@onekeyhq/kit-bg/src/migrations',
-                  '@onekeyhq/kit-bg/src/offscreens',
-                  '@onekeyhq/kit-bg/src/providers',
-                  '@onekeyhq/kit-bg/src/services',
-                  '@onekeyhq/kit-bg/src/vaults',
-                  '@onekeyhq/kit-bg/src/webembeds',
+                  '@unionkeyhq/kit-bg/src/connectors',
+                  '@unionkeyhq/kit-bg/src/dbs',
+                  '@unionkeyhq/kit-bg/src/endpoints',
+                  '@unionkeyhq/kit-bg/src/migrations',
+                  '@unionkeyhq/kit-bg/src/offscreens',
+                  '@unionkeyhq/kit-bg/src/providers',
+                  '@unionkeyhq/kit-bg/src/services',
+                  '@unionkeyhq/kit-bg/src/vaults',
+                  '@unionkeyhq/kit-bg/src/webembeds',
                 ],
-                message: 'Please avoid using @onekeyhq/kit-bg in this folder',
+                message: 'Please avoid using @unionkeyhq/kit-bg in this folder',
               },
             ],
           },
@@ -426,9 +426,9 @@ module.exports = {
                 allowTypeImports: true,
                 group: [
                   'tamagui',
-                  '@onekeyhq/kit',
-                  '@onekeyhq/kit-bg',
-                  '@onekeyhq/components',
+                  '@unionkeyhq/kit',
+                  '@unionkeyhq/kit-bg',
+                  '@unionkeyhq/components',
                 ],
                 message: 'Please avoid using tamagui in this folder',
               },

@@ -1,4 +1,4 @@
-import { DB_MAIN_CONTEXT_ID } from '@onekeyhq/shared/src/consts/dbConsts';
+import { DB_MAIN_CONTEXT_ID } from '@unionkeyhq/shared/src/consts/dbConsts';
 
 import * as consts from '../consts';
 import { EIndexedDBBucketNames } from '../types';

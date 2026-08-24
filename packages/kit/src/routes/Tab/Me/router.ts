@@ -1,6 +1,6 @@
-import type { ITabSubNavigatorConfig } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { ETabMeRoutes } from '@onekeyhq/shared/src/routes/tabMe';
+import type { ITabSubNavigatorConfig } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { ETabMeRoutes } from '@unionkeyhq/shared/src/routes/tabMe';
 
 import { LazyLoadRootTabPage } from '../../../components/LazyLoadPage';
 

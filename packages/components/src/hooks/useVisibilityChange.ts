@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { AppState } from 'react-native';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 export const getCurrentVisibilityState = () => {
   const desktopApi = globalThis.desktopApi;

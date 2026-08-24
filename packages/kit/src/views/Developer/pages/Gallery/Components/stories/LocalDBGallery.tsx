@@ -1,6 +1,6 @@
-import { Button, Stack, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Button, Stack, Toast } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { Layout } from './utils/Layout';
 

@@ -1,6 +1,6 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 
-import { SizableText, Stack } from '@onekeyhq/components';
+import { SizableText, Stack } from '@unionkeyhq/components';
 
 export type ISectionProps = {
   title: string;

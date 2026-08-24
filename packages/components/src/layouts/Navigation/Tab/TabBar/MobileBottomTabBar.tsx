@@ -3,15 +3,15 @@ import { useEffect, useMemo } from 'react';
 import { CommonActions } from '@react-navigation/native';
 import { Animated, StyleSheet } from 'react-native';
 
-import { useSafeAreaInsets } from '@onekeyhq/components/src/hooks';
-import { Stack } from '@onekeyhq/components/src/primitives';
-import type { IKeyOfIcons } from '@onekeyhq/components/src/primitives';
+import { useSafeAreaInsets } from '@unionkeyhq/components/src/hooks';
+import { Stack } from '@unionkeyhq/components/src/primitives';
+import type { IKeyOfIcons } from '@unionkeyhq/components/src/primitives';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { ESwapSource } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { ESwapSource } from '@unionkeyhq/shared/types/swap/types';
 
 import { MobileTabItem } from './MobileTabItem';
 

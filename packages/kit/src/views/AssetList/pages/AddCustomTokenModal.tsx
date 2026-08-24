@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { IButtonProps } from '@onekeyhq/components';
+import type { IButtonProps } from '@unionkeyhq/components';
 import {
   Button,
   Form,
@@ -15,27 +15,27 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   AccountSelectorProviderMirror,
   ControlledNetworkSelectorTrigger,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { AccountSelectorCreateAddressButton } from '@onekeyhq/kit/src/components/AccountSelector/AccountSelectorCreateAddressButton';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit/src/components/AccountSelector';
+import { AccountSelectorCreateAddressButton } from '@unionkeyhq/kit/src/components/AccountSelector/AccountSelectorCreateAddressButton';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkeyhq/kit/src/hooks/useDappQuery';
+import { UnionKeyError } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalAssetListRoutes,
   IModalAssetListParamList,
-} from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import {
   ECustomTokenStatus,
   type IAccountToken,
   type IAddCustomTokenRouteParams,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { NetworkAvatar } from '../../../components/NetworkAvatar/NetworkAvatar';
@@ -206,7 +206,7 @@ function AddCustomTokenModal() {
           }),
         });
         dappApprove.reject({
-          error: new OneKeyError({
+          error: new UnionKeyError({
             key: ETranslations.manger_token_custom_token_address_required,
           }),
         });
@@ -220,7 +220,7 @@ function AddCustomTokenModal() {
           }),
         });
         dappApprove.reject({
-          error: new OneKeyError({
+          error: new UnionKeyError({
             key: ETranslations.send_engine_incorrect_address,
           }),
         });

@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
 import {
   Button,
   Dialog,
@@ -17,32 +17,32 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AddressInfo } from '@onekeyhq/kit/src/components/AddressInfo';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useFormatDate from '@onekeyhq/kit/src/hooks/useFormatDate';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AddressInfo } from '@unionkeyhq/kit/src/components/AddressInfo';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import useFormatDate from '@unionkeyhq/kit/src/hooks/useFormatDate';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useInAppNotificationAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EModalSwapRoutes,
   IModalSwapParamList,
-} from '@onekeyhq/shared/src/routes/swap';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
-import type { IExplorersInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/src/routes/swap';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import { equalTokenNoCaseSensitive } from '@unionkeyhq/shared/src/utils/tokenUtils';
+import type { IExplorersInfo } from '@unionkeyhq/shared/types/swap/types';
 import {
   EExplorerType,
   ESwapCleanHistorySource,
   ESwapCrossChainStatus,
   ESwapTxHistoryStatus,
-} from '@onekeyhq/shared/types/swap/types';
-import { EDecodedTxDirection } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/swap/types';
+import { EDecodedTxDirection } from '@unionkeyhq/shared/types/tx';
 
 import { AssetItem } from '../../../AssetDetails/pages/HistoryDetails';
 import {
@@ -532,11 +532,11 @@ const SwapHistoryDetailModal = () => {
                 }
               />
             ) : null}
-            {txHistory?.swapInfo?.oneKeyFeeExtraInfo?.oneKeyFeeUsd ? (
+            {txHistory?.swapInfo?.unionKeyFeeExtraInfo?.unionKeyFeeUsd ? (
               <InfoItem
                 disabledCopy
                 label={intl.formatMessage({
-                  id: ETranslations.provider_ios_popover_onekey_fee,
+                  id: ETranslations.provider_ios_popover_unionkey_fee,
                 })}
                 renderContent={
                   <NumberSizeableText
@@ -547,7 +547,7 @@ const SwapHistoryDetailModal = () => {
                       currency: '$',
                     }}
                   >
-                    {txHistory?.swapInfo?.oneKeyFeeExtraInfo?.oneKeyFeeUsd}
+                    {txHistory?.swapInfo?.unionKeyFeeExtraInfo?.unionKeyFeeUsd}
                   </NumberSizeableText>
                 }
               />

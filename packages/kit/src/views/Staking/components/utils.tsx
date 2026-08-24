@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 
-import { formatDistanceToNowStrict } from '@onekeyhq/shared/src/utils/dateUtils';
+import { formatDistanceToNowStrict } from '@unionkeyhq/shared/src/utils/dateUtils';
 
 const TIME_23H = 23 * 3600;
 const TIME_24H = 24 * 3600;

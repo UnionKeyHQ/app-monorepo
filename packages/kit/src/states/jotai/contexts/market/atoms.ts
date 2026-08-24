@@ -1,11 +1,11 @@
 import memoizee from 'memoizee';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   atom,
   createJotaiContext,
-} from '@onekeyhq/kit/src/states/jotai/utils/createJotaiContext';
-import type { IMarketWatchListData } from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/kit/src/states/jotai/utils/createJotaiContext';
+import type { IMarketWatchListData } from '@unionkeyhq/shared/types/market';
 
 const {
   Provider: ProviderJotaiContextMarketWatchList,

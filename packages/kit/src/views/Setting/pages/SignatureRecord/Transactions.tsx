@@ -14,26 +14,26 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
-import { Token } from '@onekeyhq/kit/src/components/Token';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { NetworkAvatar } from '@unionkeyhq/kit/src/components/NetworkAvatar';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
 import {
   openExplorerAddressUrl,
   openTransactionDetailsUrl,
-} from '@onekeyhq/kit/src/utils/explorerUtils';
-import { useEarnTxLabel } from '@onekeyhq/kit/src/views/Staking/hooks/useEarnTxLabel';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import utils from '@onekeyhq/shared/src/utils/accountUtils';
-import { formatTime } from '@onekeyhq/shared/src/utils/dateUtils';
-import { ETransactionType } from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkeyhq/kit/src/utils/explorerUtils';
+import { useEarnTxLabel } from '@unionkeyhq/kit/src/views/Staking/hooks/useEarnTxLabel';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import utils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { formatTime } from '@unionkeyhq/shared/src/utils/dateUtils';
+import { ETransactionType } from '@unionkeyhq/shared/types/signatureRecord';
 import type {
   IApproveTransactionData,
   IEarnTransactionData,
   ISendTransactionData,
   ISignedTransaction,
   ISwapTransactionData,
-} from '@onekeyhq/shared/types/signatureRecord';
+} from '@unionkeyhq/shared/types/signatureRecord';
 
 import { useGetSignatureSections } from './hooks';
 

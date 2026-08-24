@@ -3,33 +3,33 @@ import { useCallback, useMemo } from 'react';
 import { EDeviceType, HardwareErrorCode } from '@onekeyfe/hd-shared';
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Image,
   RichSizeableText,
   SizableText,
   Stack,
-} from '@onekeyhq/components';
-import type { IFirmwareUpdateRetry } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import type { IFirmwareUpdateRetry } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateStepInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   FIRMWARE_MANUAL_ENTERING_BOOTLOADER_MODE_GUIDE,
   FIRMWARE_UPDATE_BRIDGE_GUIDE,
   FIRMWARE_UPDATE_FULL_RES_GUIDE,
   FIRMWARE_UPDATE_WEB_TOOLS_URL,
-} from '@onekeyhq/shared/src/config/appConfig';
+} from '@unionkeyhq/shared/src/config/appConfig';
 import {
-  ECustomOneKeyHardwareError,
-  type IOneKeyError,
-} from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { isHardwareErrorByCode } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
+  ECustomUnionKeyHardwareError,
+  type IUnionKeyError,
+} from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { isHardwareErrorByCode } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkeyhq/shared/types/device';
+import { EFirmwareUpdateTipMessages } from '@unionkeyhq/shared/types/device';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import ImgEnterBootGuideMini from '../assets/enter-boot-guide-mini.png';
@@ -194,7 +194,7 @@ export function useFirmwareUpdateErrors({
   lastFirmwareTipMessage,
 }: {
   onRetry?: () => void;
-  error: IOneKeyError | undefined;
+  error: IUnionKeyError | undefined;
   result: ICheckAllFirmwareReleaseResult | undefined;
   lastFirmwareTipMessage: EFirmwareUpdateTipMessages | undefined;
 }) {
@@ -364,7 +364,7 @@ export function useFirmwareUpdateErrors({
         error,
         code: [
           HardwareErrorCode.BridgeNotInstalled,
-          ECustomOneKeyHardwareError.NeedOneKeyBridge,
+          ECustomUnionKeyHardwareError.NeedUnionKeyBridge,
         ],
       })
     ) {
@@ -390,7 +390,7 @@ export function useFirmwareUpdateErrors({
     if (
       isHardwareErrorByCode({
         error,
-        code: ECustomOneKeyHardwareError.NeedOneKeyBridgeUpgrade,
+        code: ECustomUnionKeyHardwareError.NeedUnionKeyBridgeUpgrade,
       })
     ) {
       return {
@@ -402,7 +402,7 @@ export function useFirmwareUpdateErrors({
     if (
       isHardwareErrorByCode({
         error,
-        code: ECustomOneKeyHardwareError.NeedFirmwareUpgradeFromWeb,
+        code: ECustomUnionKeyHardwareError.NeedFirmwareUpgradeFromWeb,
       })
     ) {
       return {
@@ -459,7 +459,7 @@ function WorkflowErrors({
   result,
 }: {
   onRetry?: () => void;
-  error: IOneKeyError;
+  error: IUnionKeyError;
   result: ICheckAllFirmwareReleaseResult | undefined;
 }) {
   const intl = useIntl();

@@ -3,7 +3,7 @@ import Axios from 'axios';
 import {
   EWebEmbedPostMessageType,
   postMessage,
-} from '@onekeyhq/shared/src/modules3rdParty/webEmebd/postMessage';
+} from '@unionkeyhq/shared/src/modules3rdParty/webEmebd/postMessage';
 
 import appGlobals from '../appGlobals';
 import platformEnv from '../platformEnv';

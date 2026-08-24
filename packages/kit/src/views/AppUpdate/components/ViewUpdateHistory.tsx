@@ -2,14 +2,14 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Button, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Button, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 export function ViewUpdateHistory() {
   const intl = useIntl();
   const handlePress = useCallback(() => {
-    openUrlExternal('https://github.com/OneKeyHQ/app-monorepo/releases');
+    openUrlExternal('https://github.com/UnionKeyHQ/app-monorepo/releases');
   }, []);
   return (
     <XStack>

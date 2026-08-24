@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { EWebEmbedRoutePath } from '@onekeyhq/shared/src/consts/webEmbedConsts';
+import { EWebEmbedRoutePath } from '@unionkeyhq/shared/src/consts/webEmbedConsts';
 
 export default function PageIndex() {
   return (

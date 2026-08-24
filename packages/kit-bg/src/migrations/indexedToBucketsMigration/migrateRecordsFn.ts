@@ -1,4 +1,4 @@
-import type { IndexedDBTransactionPromised } from '@onekeyhq/shared/src/IndexedDBPromised';
+import type { IndexedDBTransactionPromised } from '@unionkeyhq/shared/src/IndexedDBPromised';
 
 import { ELocalDBStoreNames } from '../../dbs/local/localDBStoreNames';
 

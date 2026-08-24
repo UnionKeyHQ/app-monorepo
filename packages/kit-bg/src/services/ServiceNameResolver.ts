@@ -1,12 +1,12 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
 import type {
   IResolveNameParams,
   IResolveNameResp,
-} from '@onekeyhq/shared/types/name';
+} from '@unionkeyhq/shared/types/name';
 
 import ServiceBase from './ServiceBase';
 

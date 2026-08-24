@@ -2,13 +2,13 @@ import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useWalletBoundReferralCode } from '@onekeyhq/kit/src/views/ReferFriends/hooks/useWalletBoundReferralCode';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useWalletBoundReferralCode } from '@unionkeyhq/kit/src/views/ReferFriends/hooks/useWalletBoundReferralCode';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { WalletOptionItem } from './WalletOptionItem';
 
@@ -81,7 +81,7 @@ function WalletBoundReferralCodeButtonView({
   //     onPress={handlePress}
   //     isLoading={isLoading}
   //   />
-  // );zyfshr
+  // );
 }
 
 export function WalletBoundReferralCodeButton({

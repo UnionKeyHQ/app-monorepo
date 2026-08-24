@@ -9,10 +9,10 @@ import {
   ScrollView,
   SizableText,
   useClipboard,
-} from '@onekeyhq/components';
-import type { IEncodedTxEvm } from '@onekeyhq/core/src/chains/evm/types';
-import { useUnsignedTxsAtom } from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import type { IEncodedTxEvm } from '@unionkeyhq/core/src/chains/evm/types';
+import { useUnsignedTxsAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/sendConfirm';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import {
   InfoItem,

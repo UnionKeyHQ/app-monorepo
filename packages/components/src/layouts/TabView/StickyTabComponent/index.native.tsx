@@ -2,7 +2,7 @@ import { createRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import { NestedTabView } from '@onekeyfe/react-native-tab-page-view';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useThemeValue } from '../../../hooks';
 import { Stack } from '../../../primitives';

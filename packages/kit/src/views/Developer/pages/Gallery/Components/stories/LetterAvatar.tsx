@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unstable-nested-components */
 
-import { YStack } from '@onekeyhq/components';
-import { LetterAvatar } from '@onekeyhq/kit/src/components/LetterAvatar';
-import { NetworkAvatar } from '@onekeyhq/kit/src/components/NetworkAvatar';
+import { YStack } from '@unionkeyhq/components';
+import { LetterAvatar } from '@unionkeyhq/kit/src/components/LetterAvatar';
+import { NetworkAvatar } from '@unionkeyhq/kit/src/components/NetworkAvatar';
 
 import { Layout } from './utils/Layout';
 

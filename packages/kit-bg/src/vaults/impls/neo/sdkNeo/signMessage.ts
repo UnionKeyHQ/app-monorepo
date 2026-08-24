@@ -2,7 +2,7 @@ import { Buffer } from 'buffer';
 
 import elliptic from 'elliptic';
 
-import { sha256 as sha256Hash } from '@onekeyhq/core/src/secret/crypto-functions';
+import { sha256 as sha256Hash } from '@unionkeyhq/core/src/secret/crypto-functions';
 
 // eslint-disable-next-line new-cap
 const curveInstance = new elliptic.ec('p256');

@@ -1,44 +1,44 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components';
-import { SendConfirmWithProvider } from '@onekeyhq/kit/src/views/Send';
-import type { IModalSendParamList } from '@onekeyhq/shared/src/routes';
-import { EModalSendRoutes } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components';
+import { SendConfirmWithProvider } from '@unionkeyhq/kit/src/views/Send';
+import type { IModalSendParamList } from '@unionkeyhq/shared/src/routes';
+import { EModalSendRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { LazyLoadPage } from '../../../components/LazyLoadPage';
 
 const SendDataInput = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendDataInput/SendDataInputContainer'
+      '@unionkeyhq/kit/src/views/Send/pages/SendDataInput/SendDataInputContainer'
     ),
 );
 
 const SendReplaceTx = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendReplaceTx/SendReplaceTxContainer'
+      '@unionkeyhq/kit/src/views/Send/pages/SendReplaceTx/SendReplaceTxContainer'
     ),
 );
 
 const TokenSelector = LazyLoadPage(
-  () => import('@onekeyhq/kit/src/views/AssetSelector/pages/TokenSelector'),
+  () => import('@unionkeyhq/kit/src/views/AssetSelector/pages/TokenSelector'),
 );
 
 const DeriveTypesAddress = LazyLoadPage(
   () =>
-    import('@onekeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
+    import('@unionkeyhq/kit/src/views/WalletAddress/pages/DeriveTypesAddress'),
 );
 
 const SendConfirmFromDApp = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendConfirmFromDApp/SendConfirmFromDApp'
+      '@unionkeyhq/kit/src/views/Send/pages/SendConfirmFromDApp/SendConfirmFromDApp'
     ),
 );
 
 const SendConfirmFromSwap = LazyLoadPage(
   () =>
     import(
-      '@onekeyhq/kit/src/views/Send/pages/SendConfirmFromSwap/SendConfirmFromSwap'
+      '@unionkeyhq/kit/src/views/Send/pages/SendConfirmFromSwap/SendConfirmFromSwap'
     ),
 );
 

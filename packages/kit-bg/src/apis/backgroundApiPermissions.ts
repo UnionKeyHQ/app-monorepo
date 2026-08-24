@@ -1,5 +1,5 @@
-import { INTERNAL_METHOD_PREFIX } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { INTERNAL_METHOD_PREFIX } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type {
   IJsBridgeMessagePayload,
@@ -37,7 +37,7 @@ export const WEB_EMBED_API_WHITE_LIST_ORIGIN = [
 
 export const PROVIDER_API_PRIVATE_WHITE_LIST_ORIGIN = [
   'https://1key.so',
-  'https://onekey.so',
+  'https://unionkey.io',
   ...WEB_EMBED_API_WHITE_LIST_ORIGIN,
 ].filter(Boolean);
 
@@ -69,7 +69,7 @@ export function isProviderApiPrivateAllowedMethod(method?: string) {
 export function isProviderApiPrivateAllowedOrigin(origin?: string) {
   return (
     origin &&
-    (origin?.endsWith('.onekey.so') ||
+    (origin?.endsWith('.unionkey.io') ||
       PROVIDER_API_PRIVATE_WHITE_LIST_ORIGIN.includes(origin))
   );
 }

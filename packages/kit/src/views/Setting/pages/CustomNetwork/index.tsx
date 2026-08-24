@@ -13,20 +13,20 @@ import {
   Page,
   Toast,
   useForm,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import type { IAddEthereumChainParameter } from '@onekeyhq/kit-bg/src/providers/ProviderApiEthereum';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkeyhq/kit/src/hooks/useDappQuery';
+import type { IAddEthereumChainParameter } from '@unionkeyhq/kit-bg/src/providers/ProviderApiEthereum';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EChainSelectorPages,
   IChainSelectorParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
 
 import { useDappCloseHandler } from '../../../DAppConnection/pages/DappOpenModalPage';
 

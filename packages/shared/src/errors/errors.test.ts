@@ -3,7 +3,7 @@ import { InvalidAccount, InvalidAddress, TooManyHWPassphraseWallets } from '.';
 
 import { ETranslations } from '../locale';
 
-describe('OneKey Error tests', () => {
+describe('UnionKey Error tests', () => {
   it('common tests', () => {
     const e1 = new TooManyHWPassphraseWallets(12);
     expect(e1.constructorName).toBe('TooManyHWPassphraseWallets');

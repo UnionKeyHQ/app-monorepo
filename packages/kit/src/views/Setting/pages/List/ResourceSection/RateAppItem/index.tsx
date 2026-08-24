@@ -2,15 +2,15 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
 import {
   APP_STORE_LINK,
   EXT_RATE_URL,
   PLAY_STORE_LINK,
-} from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 const show =
   platformEnv.isExtension ||

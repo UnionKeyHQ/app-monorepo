@@ -6,8 +6,8 @@ import {
   SizableText,
   XStack,
   getFontSize,
-} from '@onekeyhq/components';
-import type { ISwapTokenBase } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/components';
+import type { ISwapTokenBase } from '@unionkeyhq/shared/types/swap/types';
 
 interface ILimitRateInputProps {
   fromTokenInfo?: ISwapTokenBase;

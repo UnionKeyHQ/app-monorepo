@@ -9,13 +9,13 @@ import {
   XStack,
   YStack,
   useThemeName,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import BiologyAuthSwitchContainer from '@onekeyhq/kit/src/components/BiologyAuthComponent/container/BiologyAuthSwitchContainer';
-import WebAuthSwitchContainer from '@onekeyhq/kit/src/components/BiologyAuthComponent/container/WebAuthSwitchContainer';
-import { useWebAuthActions } from '@onekeyhq/kit/src/components/BiologyAuthComponent/hooks/useWebAuthActions';
-import PasswordSetupContainer from '@onekeyhq/kit/src/components/Password/container/PasswordSetupContainer';
-import PasswordUpdateContainer from '@onekeyhq/kit/src/components/Password/container/PasswordUpdateContainer';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import BiologyAuthSwitchContainer from '@unionkeyhq/kit/src/components/BiologyAuthComponent/container/BiologyAuthSwitchContainer';
+import WebAuthSwitchContainer from '@unionkeyhq/kit/src/components/BiologyAuthComponent/container/WebAuthSwitchContainer';
+import { useWebAuthActions } from '@unionkeyhq/kit/src/components/BiologyAuthComponent/hooks/useWebAuthActions';
+import PasswordSetupContainer from '@unionkeyhq/kit/src/components/Password/container/PasswordSetupContainer';
+import PasswordUpdateContainer from '@unionkeyhq/kit/src/components/Password/container/PasswordUpdateContainer';
 
 import { Layout } from './utils/Layout';
 

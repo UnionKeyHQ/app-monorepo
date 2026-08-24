@@ -1,20 +1,20 @@
 import { UNSTABLE_usePreventRemove as usePreventRemove } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
+import type { IPageScreenProps } from '@unionkeyhq/components';
 import {
   Markdown,
   Page,
   ScrollView,
   SizableText,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EAppUpdateRoutes,
   IAppUpdatePagesParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import { useAppChangeLog } from '../../../components/UpdateReminder/hooks';
 import { UpdatePreviewActionButton } from '../components/UpdatePreviewActionButton';

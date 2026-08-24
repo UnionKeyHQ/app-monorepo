@@ -1,11 +1,11 @@
-import type { IUnionMsgType } from '@onekeyhq/core/src/chains/lightning/types';
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IUnionMsgType } from '@unionkeyhq/core/src/chains/lightning/types';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 import type {
-  OneKeyError,
-  OneKeyServerApiError,
-} from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+  UnionKeyError,
+  UnionKeyServerApiError,
+} from '@unionkeyhq/shared/src/errors';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IAuthResponse,
   ICreateInvoiceResponse,
@@ -13,18 +13,18 @@ import type {
   IInvoiceConfig,
   IInvoiceDecodedResponse,
   IInvoiceType,
-} from '@onekeyhq/shared/types/lightning';
-import type { ICheckPaymentResponse } from '@onekeyhq/shared/types/lightning/payments';
-import type { IOneKeyAPIBaseResponse } from '@onekeyhq/shared/types/request';
+} from '@unionkeyhq/shared/types/lightning';
+import type { ICheckPaymentResponse } from '@unionkeyhq/shared/types/lightning/payments';
+import type { IUnionKeyAPIBaseResponse } from '@unionkeyhq/shared/types/request';
 
 import type { IBroadcastTransactionParams } from '../../../types';
 import type { AxiosInstance } from 'axios';
 
 function isAuthError(error: unknown): boolean {
   return (
-    (error as OneKeyError) &&
-    ((error as OneKeyError).code === 401 ||
-      (error as OneKeyError).code === 50_401)
+    (error as UnionKeyError) &&
+    ((error as UnionKeyError).code === 401 ||
+      (error as UnionKeyError).code === 50_401)
   );
 }
 
@@ -163,7 +163,7 @@ class ClientLightning {
     signType: 'register' | 'auth' | 'transfer',
   ): Promise<IUnionMsgType> {
     return this.request
-      .get<IOneKeyAPIBaseResponse<IUnionMsgType>>(
+      .get<IUnionKeyAPIBaseResponse<IUnionMsgType>>(
         `${this.prefix}/account/get-sign-template`,
         {
           params: { address, signType, testnet: this.testnet },
@@ -221,7 +221,7 @@ class ClientLightning {
         throw new Error('Bad Auth');
       }
       return this.request
-        .get<IOneKeyAPIBaseResponse<boolean>>(
+        .get<IUnionKeyAPIBaseResponse<boolean>>(
           `${this.prefix}/account/auth/check`,
           {
             params: { testnet: this.testnet },
@@ -253,7 +253,7 @@ class ClientLightning {
   getConfig = memoizee(
     async () =>
       this.request
-        .get<IOneKeyAPIBaseResponse<IInvoiceConfig>>(
+        .get<IUnionKeyAPIBaseResponse<IInvoiceConfig>>(
           `${this.prefix}/invoices/config`,
           {
             params: { testnet: this.testnet },
@@ -283,7 +283,7 @@ class ClientLightning {
           `${this.prefix}/invoices/create`,
           {
             amount,
-            description: description || 'OneKey Invoice',
+            description: description || 'UnionKey Invoice',
             testnet: this.testnet,
           },
           {
@@ -309,7 +309,7 @@ class ClientLightning {
 
   async decodedInvoice(invoice: string) {
     return this.request
-      .get<IOneKeyAPIBaseResponse<IInvoiceDecodedResponse>>(
+      .get<IUnionKeyAPIBaseResponse<IInvoiceDecodedResponse>>(
         `${this.prefix}/invoices/decode/${invoice}`,
       )
       .then((i) => i.data.data);
@@ -326,7 +326,7 @@ class ClientLightning {
       paymentHash: string;
     }) =>
       this.request
-        .get<IOneKeyAPIBaseResponse<IInvoiceType>>(
+        .get<IUnionKeyAPIBaseResponse<IInvoiceType>>(
           `${this.prefix}/invoices/${paymentHash}`,
           {
             params: {
@@ -402,7 +402,7 @@ class ClientLightning {
     nonce: number;
   }) {
     return this.request
-      .get<IOneKeyAPIBaseResponse<ICheckPaymentResponse>>(
+      .get<IUnionKeyAPIBaseResponse<ICheckPaymentResponse>>(
         `${this.prefix}/payments/check-bolt11`,
         {
           params: { nonce, testnet: this.testnet },
@@ -441,7 +441,7 @@ class ClientLightning {
         });
       },
       shouldRetry: (e) => {
-        const error = e as OneKeyServerApiError;
+        const error = e as UnionKeyServerApiError;
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         return error.data?.data?.code === 50_401;
       },

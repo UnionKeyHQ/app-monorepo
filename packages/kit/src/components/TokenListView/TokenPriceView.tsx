@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import type { ISizableTextProps } from '@onekeyhq/components';
-import { NumberSizeableText } from '@onekeyhq/components';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+import type { ISizableTextProps } from '@unionkeyhq/components';
+import { NumberSizeableText } from '@unionkeyhq/components';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 import { useTokenListMapAtom } from '../../states/jotai/contexts/tokenList';
 

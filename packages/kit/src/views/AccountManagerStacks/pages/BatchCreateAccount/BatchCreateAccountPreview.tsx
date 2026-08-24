@@ -9,7 +9,7 @@ import type {
   IPageScreenProps,
   ISelectRenderTriggerProps,
   ISizableTextProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   ButtonGroup,
   Checkbox,
@@ -28,44 +28,44 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   ControlledNetworkSelectorTrigger,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { DeriveTypeSelectorFormInput } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useAccountSelectorEditModeAtom } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IDBUtxoAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit/src/components/AccountSelector';
+import { DeriveTypeSelectorFormInput } from '@unionkeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useAccountSelectorEditModeAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IDBUtxoAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
 import type {
   IBatchBuildAccountsAdvancedFlowParams,
   IBatchBuildAccountsNormalFlowParams,
-} from '@onekeyhq/kit-bg/src/services/ServiceBatchCreateAccount/ServiceBatchCreateAccount';
+} from '@unionkeyhq/kit-bg/src/services/ServiceBatchCreateAccount/ServiceBatchCreateAccount';
 import type {
   IAccountDeriveInfoItems,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type {
   EAccountManagerStacksRoutes,
   IAccountManagerStacksParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import type {
   IBatchCreateAccount,
   INetworkAccount,
-} from '@onekeyhq/shared/types/account';
-import type { IFetchAccountDetailsResp } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/account';
+import type { IFetchAccountDetailsResp } from '@unionkeyhq/shared/types/address';
 
 import { BATCH_CREATE_ACCONT_ALL_NETWORK_MAX_COUNT } from './BatchCreateAccountFormBase';
 import { showBatchCreateAccountPreviewAdvancedDialog } from './PreviewAdvancedDialog';
@@ -297,7 +297,7 @@ function BatchCreateAccountPreviewPage({
           // If an error occurs and exits, the user cannot switch to other networks for addition, such as an error under DNX, and cannot switch to ETH
           // navigation.pop();
         }
-        setPreviewError((error as IOneKeyError)?.message || 'Error');
+        setPreviewError((error as IUnionKeyError)?.message || 'Error');
         throw error;
       } finally {
         defaultLogger.account.accountCreatePerf.createAddressRunFinished();

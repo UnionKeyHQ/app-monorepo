@@ -1,11 +1,11 @@
 import { cloneDeep } from 'lodash';
 
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import type { IDBCustomRpc } from '@onekeyhq/shared/types/customRpc';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
+import type { IDBCustomRpc } from '@unionkeyhq/shared/types/customRpc';
 import type {
   ICloudSyncPayloadCustomRpc,
   ICloudSyncTargetCustomRpc,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkeyhq/shared/types/prime/primeCloudSyncTypes';
 
 import { CloudSyncFlowManagerBase } from './CloudSyncFlowManagerBase';
 

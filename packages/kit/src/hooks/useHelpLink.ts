@@ -1,4 +1,4 @@
-import { HELP_CENTER_URL } from '@onekeyhq/shared/src/config/appConfig';
+import { HELP_CENTER_URL } from '@unionkeyhq/shared/src/config/appConfig';
 
 import { useLocaleVariant } from './useLocaleVariant';
 import { useSystemLocale } from './useSystemLocale';

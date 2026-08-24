@@ -1,7 +1,7 @@
-import type { IEncodedTxTon } from '@onekeyhq/core/src/chains/ton/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
-import type { ISignedTxPro } from '@onekeyhq/core/src/types';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+import type { IEncodedTxTon } from '@unionkeyhq/core/src/chains/ton/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
+import type { ISignedTxPro } from '@unionkeyhq/core/src/types';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 import { KeyringHdBase } from '../../base/KeyringHdBase';
 

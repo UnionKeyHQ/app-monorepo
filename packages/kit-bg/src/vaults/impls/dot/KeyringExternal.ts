@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { CoreChainApiBase } from '@onekeyhq/core/src/base/CoreChainApiBase';
-import type { ISignedMessagePro, ISignedTxPro } from '@onekeyhq/core/src/types';
+import type { CoreChainApiBase } from '@unionkeyhq/core/src/base/CoreChainApiBase';
+import type { ISignedMessagePro, ISignedTxPro } from '@unionkeyhq/core/src/types';
 
 import { KeyringExternalBase } from '../../base/KeyringExternalBase';
 

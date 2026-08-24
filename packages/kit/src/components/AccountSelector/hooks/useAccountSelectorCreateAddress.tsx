@@ -10,21 +10,21 @@ import {
   Stack,
   Toast,
   XStack,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import type {
   IDBAccount,
   IDBWalletId,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IWithHardwareProcessingControlParams } from '@onekeyhq/kit-bg/src/services/ServiceHardwareUI/ServiceHardwareUI';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import { FIRMWARE_UPDATE_WEB_TOOLS_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { OneKeyErrorAirGapAccountNotFound } from '@onekeyhq/shared/src/errors/errors/appErrors';
-import type { IOneKeyError } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { EOneKeyErrorClassNames } from '@onekeyhq/shared/src/errors/types/errorTypes';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IWithHardwareProcessingControlParams } from '@unionkeyhq/kit-bg/src/services/ServiceHardwareUI/ServiceHardwareUI';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
+import { FIRMWARE_UPDATE_WEB_TOOLS_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { UnionKeyErrorAirGapAccountNotFound } from '@unionkeyhq/shared/src/errors/errors/appErrors';
+import type { IUnionKeyError } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { EUnionKeyErrorClassNames } from '@unionkeyhq/shared/src/errors/types/errorTypes';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useHelpLink } from '../../../hooks/useHelpLink';
@@ -142,7 +142,7 @@ export function useAccountSelectorCreateAddress() {
           result?.failedAccounts?.length &&
           accountUtils.isQrWallet({ walletId: account.walletId })
         ) {
-          throw new OneKeyErrorAirGapAccountNotFound();
+          throw new UnionKeyErrorAirGapAccountNotFound();
         }
         return handleAddAccounts({
           walletId: account?.walletId,
@@ -178,8 +178,8 @@ export function useAccountSelectorCreateAddress() {
       };
 
       const isAirGapAccountNotFound = (error: Error | unknown) =>
-        (error as IOneKeyError)?.className ===
-        EOneKeyErrorClassNames.OneKeyErrorAirGapAccountNotFound;
+        (error as IUnionKeyError)?.className ===
+        EUnionKeyErrorClassNames.UnionKeyErrorAirGapAccountNotFound;
 
       try {
         return await addAccounts();

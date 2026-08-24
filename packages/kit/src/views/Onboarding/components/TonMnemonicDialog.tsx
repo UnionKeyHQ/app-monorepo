@@ -1,7 +1,7 @@
-import type { IDialogShowProps } from '@onekeyhq/components';
-import { Dialog } from '@onekeyhq/components';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import { ETranslations } from '@onekeyhq/shared/src/locale/enum/translations';
+import type { IDialogShowProps } from '@unionkeyhq/components';
+import { Dialog } from '@unionkeyhq/components';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale/enum/translations';
 
 export function showTonMnemonicDialog({ onConfirm }: IDialogShowProps) {
   Dialog.show({

@@ -1,4 +1,4 @@
-import type { IDemoDeveloperTabParamList } from '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/NavigatorRoute/Tab/RouteParamTypes';
+import type { IDemoDeveloperTabParamList } from '@unionkeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/NavigatorRoute/Tab/RouteParamTypes';
 import type {
   IModalDeviceManagementParamList,
   IModalReferFriendsParamList,
@@ -7,7 +7,7 @@ import type {
   ITabHomeParamList,
   ITabMeParamList,
   ITabSwapParamList,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import type { ITabEarnParamList } from './tabEarn';
 import type { ITabMarketParamList } from './tabMarket';

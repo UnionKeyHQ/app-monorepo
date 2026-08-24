@@ -2,11 +2,11 @@
 /* eslint-disable react/no-unstable-nested-components */
 import { useState } from 'react';
 
-import { Button, Select, YStack } from '@onekeyhq/components';
-import type { IAccountAvatarProps } from '@onekeyhq/kit/src/components/AccountAvatar';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
-import type { IDBExternalAccount } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+import { Button, Select, YStack } from '@unionkeyhq/components';
+import type { IAccountAvatarProps } from '@unionkeyhq/kit/src/components/AccountAvatar';
+import { AccountAvatar } from '@unionkeyhq/kit/src/components/AccountAvatar';
+import type { IDBExternalAccount } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 import { Layout } from './utils/Layout';
 
@@ -43,7 +43,7 @@ const externalAccount: IDBExternalAccount = {
     evmInjected: {
       global: 'ethereum',
       name: 'string',
-      icon: 'https://uni.onekey-asset.com/static/chain/btc.png',
+      icon: 'https://uni.unionkey.io/static/chain/btc.png',
     },
   },
 } as IDBExternalAccount;
@@ -56,7 +56,7 @@ const invalidExternalAccount: IDBExternalAccount = {
     evmInjected: {
       global: 'ethereum',
       name: 'string',
-      icon: 'https://uni.onekey-asset.com/static/chain/btc.pn',
+      icon: 'https://uni.unionkey.io/static/chain/btc.pn',
     },
   },
 } as IDBExternalAccount;
@@ -88,13 +88,13 @@ const ToastGallery = () => (
             {/* always loading */}
             <AccountAvatar
               size="small"
-              src="https://uni.onekey-asset.com/static/chain/btc.pn"
+              src="https://uni.unionkey.io/static/chain/btc.pn"
             />
             <AccountAvatar
               size="small"
-              src="https://uni.onekey-asset.com/static/chain/btc.png"
+              src="https://uni.unionkey.io/static/chain/btc.png"
             />
-            <AccountAvatar src="https://uni.onekey-asset.com/static/chain/btc.png" />
+            <AccountAvatar src="https://uni.unionkey.io/static/chain/btc.png" />
           </YStack>
         ),
       },
@@ -108,14 +108,14 @@ const ToastGallery = () => (
               <YStack gap="$4">
                 <Button
                   onPress={() => {
-                    setUri('https://uni.onekey-asset.com/static/chain/btc.pn');
+                    setUri('https://uni.unionkey.io/static/chain/btc.pn');
                   }}
                 >
                   Change to invalid URI
                 </Button>
                 <Button
                   onPress={() => {
-                    setUri('https://uni.onekey-asset.com/static/chain/btc.png');
+                    setUri('https://uni.unionkey.io/static/chain/btc.png');
                   }}
                 >
                   Change to valid URI

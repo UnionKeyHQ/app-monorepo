@@ -1,4 +1,4 @@
-import { ensureRunOnNative } from '@onekeyhq/shared/src/utils/assertUtils';
+import { ensureRunOnNative } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { LocalDbRealm } from './realm/LocalDbRealm';
 

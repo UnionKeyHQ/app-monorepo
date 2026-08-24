@@ -3,20 +3,20 @@ import { useCallback, useMemo, useState } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { Page, Toast } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import useDappQuery from '@onekeyhq/kit/src/hooks/useDappQuery';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import DappOpenModalPage from '@onekeyhq/kit/src/views/DAppConnection/pages/DappOpenModalPage';
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Page, Toast } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import useDappQuery from '@unionkeyhq/kit/src/hooks/useDappQuery';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import DappOpenModalPage from '@unionkeyhq/kit/src/views/DAppConnection/pages/DappOpenModalPage';
+import { UnionKeyError } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalSignatureConfirmRoutes,
   IModalSignatureConfirmParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/src/routes';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
 
 import {
   DAppAccountListStandAloneItem,
@@ -212,7 +212,7 @@ function LnurlAuthModal() {
             });
           }, 1500);
         }
-        throw new OneKeyError({
+        throw new UnionKeyError({
           info: message,
           autoToast: true,
         });

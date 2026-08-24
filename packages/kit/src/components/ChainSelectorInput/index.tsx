@@ -1,12 +1,12 @@
 import type { ComponentProps, FC } from 'react';
 import { useCallback, useEffect, useMemo } from 'react';
 
-import type { Input } from '@onekeyhq/components';
-import { Icon, SizableText, Stack } from '@onekeyhq/components';
-import { getSharedInputStyles } from '@onekeyhq/components/src/forms/Input/sharedStyles';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import useConfigurableChainSelector from '@onekeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
+import type { Input } from '@unionkeyhq/components';
+import { Icon, SizableText, Stack } from '@unionkeyhq/components';
+import { getSharedInputStyles } from '@unionkeyhq/components/src/forms/Input/sharedStyles';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import useConfigurableChainSelector from '@unionkeyhq/kit/src/views/ChainSelector/hooks/useChainSelector';
 
 import { NetworkAvatar } from '../NetworkAvatar';
 

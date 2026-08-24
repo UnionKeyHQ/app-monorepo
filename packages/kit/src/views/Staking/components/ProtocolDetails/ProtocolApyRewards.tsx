@@ -10,16 +10,16 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { IColorTokens } from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { formatApy } from '@onekeyhq/kit/src/views/Staking/components/utils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
+} from '@unionkeyhq/components';
+import type { IColorTokens } from '@unionkeyhq/components';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import { formatApy } from '@unionkeyhq/kit/src/views/Staking/components/utils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
 import type {
   IEarnTokenItem,
   IRewardApys,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { useEarnEventActive } from '../../hooks/useEarnEventActive';
 

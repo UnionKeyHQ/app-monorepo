@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import {
   ESwapQuoteKind,
   type IFetchQuoteResult,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 const toFiniteBigNumber = (value?: BigNumber.Value) => {
   if (value === undefined || value === null || value === '') {
@@ -41,7 +41,7 @@ export const isSwapQuoteAvailable = (
 
 const getQuoteFeeFiatValue = (quote: IFetchQuoteResult) =>
   new BigNumber(quote.fee?.estimatedFeeFiatValue ?? 0).plus(
-    quote.oneKeyFeeExtraInfo?.oneKeyFeeUsd ?? 0,
+    quote.unionKeyFeeExtraInfo?.unionKeyFeeUsd ?? 0,
   );
 
 export const canCompareSwapQuoteNetCost = ({

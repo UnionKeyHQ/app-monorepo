@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
-import { OneKeyError } from '@onekeyhq/shared/src/errors';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { UnionKeyError } from '@unionkeyhq/shared/src/errors';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import type { AxiosInstance } from 'axios';
 
@@ -76,7 +76,7 @@ export class ClientCosmos {
     const { code } = resp.data.tx_response;
 
     if (code != null && code !== 0) {
-      throw new OneKeyError(rawLog);
+      throw new UnionKeyError(rawLog);
     }
 
     return resp.data.tx_response?.txhash ?? null;

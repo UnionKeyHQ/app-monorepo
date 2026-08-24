@@ -1,4 +1,4 @@
-import { SizableText, Stack } from '@onekeyhq/components';
+import { SizableText, Stack } from '@unionkeyhq/components';
 
 interface IKeyboardShortcutKeyProps {
   label: string;

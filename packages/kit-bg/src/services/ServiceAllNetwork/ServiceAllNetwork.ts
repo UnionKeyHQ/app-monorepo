@@ -1,21 +1,21 @@
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
   IMPL_ALLNETWORKS,
   IMPL_EVM,
   getEnabledNFTNetworkIds,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 import perfUtils, {
   EPerformanceTimerLogNames,
-} from '@onekeyhq/shared/src/utils/debug/perfUtils';
+} from '@unionkeyhq/shared/src/utils/debug/perfUtils';
 import networkUtils, {
   isEnabledNetworksInAllNetworks,
-} from '@onekeyhq/shared/src/utils/networkUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/utils/networkUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 import ServiceBase from '../ServiceBase';
 

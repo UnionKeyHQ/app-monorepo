@@ -2,14 +2,14 @@ import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
 import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
 import { Semaphore } from 'async-mutex';
 
-import { EAdaNetworkId } from '@onekeyhq/core/src/chains/ada/types';
-import type IAdaVault from '@onekeyhq/kit-bg/src/vaults/impls/ada/Vault';
+import { EAdaNetworkId } from '@unionkeyhq/core/src/chains/ada/types';
+import type IAdaVault from '@unionkeyhq/kit-bg/src/vaults/impls/ada/Vault';
 import {
   backgroundClass,
   providerApiMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EMessageTypesCommon } from '@unionkeyhq/shared/types/message';
 
 import { vaultFactory } from '../vaults/factory';
 

@@ -6,8 +6,8 @@ import {
   getRegistry,
 } from '@substrate/txwrapper-polkadot';
 
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import numberUtils from '@onekeyhq/shared/src/utils/numberUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
+import numberUtils from '@unionkeyhq/shared/src/utils/numberUtils';
 
 import type { IEncodedTxDot } from '../types';
 

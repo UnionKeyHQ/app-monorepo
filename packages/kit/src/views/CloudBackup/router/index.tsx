@@ -1,18 +1,18 @@
-import type { IModalFlowNavigatorConfig } from '@onekeyhq/components/src/layouts/Navigation/Navigator';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import { ECloudBackupRoutes } from '@onekeyhq/shared/src/routes';
-import type { ICloudBackupParamList } from '@onekeyhq/shared/src/routes';
+import type { IModalFlowNavigatorConfig } from '@unionkeyhq/components/src/layouts/Navigation/Navigator';
+import LazyLoad from '@unionkeyhq/shared/src/lazyLoad';
+import { ECloudBackupRoutes } from '@unionkeyhq/shared/src/routes';
+import type { ICloudBackupParamList } from '@unionkeyhq/shared/src/routes';
 
 const CloudBackupHome = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/CloudBackup/pages/Home'),
+  () => import('@unionkeyhq/kit/src/views/CloudBackup/pages/Home'),
 );
 
 const CloudBackupList = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/CloudBackup/pages/List'),
+  () => import('@unionkeyhq/kit/src/views/CloudBackup/pages/List'),
 );
 
 const CloudBackupDetail = LazyLoad(
-  () => import('@onekeyhq/kit/src/views/CloudBackup/pages/Detail'),
+  () => import('@unionkeyhq/kit/src/views/CloudBackup/pages/Detail'),
 );
 
 export const CloudBackupPages: IModalFlowNavigatorConfig<

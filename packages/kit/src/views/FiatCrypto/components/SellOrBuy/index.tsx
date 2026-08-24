@@ -3,26 +3,26 @@ import { useCallback, useMemo } from 'react';
 
 import BigNumber from 'bignumber.js';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { Page, Spinner, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useAccountData } from '@onekeyhq/kit/src/hooks/useAccountData';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { withBrowserProvider } from '@onekeyhq/kit/src/views/Discovery/pages/Browser/WithBrowserProvider';
-import { TokenList } from '@onekeyhq/kit/src/views/FiatCrypto/components/TokenList';
-import { useGetTokensList } from '@onekeyhq/kit/src/views/FiatCrypto/hooks';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { Page, Spinner, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useAccountData } from '@unionkeyhq/kit/src/hooks/useAccountData';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { withBrowserProvider } from '@unionkeyhq/kit/src/views/Discovery/pages/Browser/WithBrowserProvider';
+import { TokenList } from '@unionkeyhq/kit/src/views/FiatCrypto/components/TokenList';
+import { useGetTokensList } from '@unionkeyhq/kit/src/views/FiatCrypto/hooks';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import type {
   EModalFiatCryptoRoutes,
   IModalFiatCryptoParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 import type {
   IFiatCryptoToken,
   IFiatCryptoType,
-} from '@onekeyhq/shared/types/fiatCrypto';
+} from '@unionkeyhq/shared/types/fiatCrypto';
 
 import { NetworkContainer } from '../NetworkContainer';
 import { useTokenDataContext } from '../TokenDataContainer';

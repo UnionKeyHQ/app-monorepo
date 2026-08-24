@@ -1,4 +1,4 @@
-import { IMPL_LIGHTNING } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_LIGHTNING } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

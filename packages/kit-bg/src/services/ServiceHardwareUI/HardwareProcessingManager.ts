@@ -1,4 +1,4 @@
-import { UserCancelFromOutside } from '@onekeyhq/shared/src/errors';
+import { UserCancelFromOutside } from '@unionkeyhq/shared/src/errors';
 
 export class HardwareProcessingManager {
   private cancelCallbacks: Map<string, () => void> = new Map();

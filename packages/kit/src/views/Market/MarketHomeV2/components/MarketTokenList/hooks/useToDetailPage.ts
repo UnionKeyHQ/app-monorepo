@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
-import type { IPageNavigationProp } from '@onekeyhq/components';
-import { ETabMarketV2Routes } from '@onekeyhq/shared/src/routes';
-import type { ITabMarketV2ParamList } from '@onekeyhq/shared/src/routes';
+import type { IPageNavigationProp } from '@unionkeyhq/components';
+import { ETabMarketV2Routes } from '@unionkeyhq/shared/src/routes';
+import type { ITabMarketV2ParamList } from '@unionkeyhq/shared/src/routes';
 
 // Change the interface to include the required fields based on actual usage
 interface IMarketToken {

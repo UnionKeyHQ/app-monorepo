@@ -1,5 +1,5 @@
-import { YStack } from '@onekeyhq/components';
-import { CountDownCalendarAlert } from '@onekeyhq/kit/src/components/CountDownCalendarAlert';
+import { YStack } from '@unionkeyhq/components';
+import { CountDownCalendarAlert } from '@unionkeyhq/kit/src/components/CountDownCalendarAlert';
 
 import { Layout } from './utils/Layout';
 

@@ -1,5 +1,5 @@
-import { Button, Dialog, SizableText, Stack } from '@onekeyhq/components';
-import { ENotificationPermission } from '@onekeyhq/shared/types/notification';
+import { Button, Dialog, SizableText, Stack } from '@unionkeyhq/components';
+import { ENotificationPermission } from '@unionkeyhq/shared/types/notification';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 

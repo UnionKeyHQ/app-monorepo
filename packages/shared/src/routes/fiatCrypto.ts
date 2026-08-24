@@ -1,4 +1,4 @@
-import type { IAccountToken, ITokenFiat } from '@onekeyhq/shared/types/token';
+import type { IAccountToken, ITokenFiat } from '@unionkeyhq/shared/types/token';
 
 import type { IDeriveTypesAddressParams } from './walletAddress';
 

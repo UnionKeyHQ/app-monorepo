@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { showMorphoClaimDialog } from '@onekeyhq/kit/src/views/Staking/components/ProtocolDetails/showMorphoClaimDialog';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EModalStakingRoutes } from '@onekeyhq/shared/src/routes';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { showMorphoClaimDialog } from '@unionkeyhq/kit/src/views/Staking/components/ProtocolDetails/showMorphoClaimDialog';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EModalStakingRoutes } from '@unionkeyhq/shared/src/routes';
 import type {
   IEarnTokenInfo,
   IProtocolInfo,
   IStakingInfo,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { useUniversalClaim } from '../../hooks/useUniversalHooks';
 

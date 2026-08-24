@@ -46,7 +46,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://npm.pkg.github.com'
           always-auth: true
-          scope: '@onekeyhq'
+          scope: '@unionkeyhq'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -72,7 +72,7 @@ jobs:
           echo ${{ secrets.DESKTOP_KEYS_SECRET }} | base64 -d > apps/desktop/sign.p12
 
       - name: Publish and Sign Static Windows Installer
-        if: ${{ (github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/onekey') }}
+        if: ${{ (github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main') }}
         env:
           NODE_OPTIONS: '--max_old_space_size=8192'
           APPLEID: ${{ secrets.APPLEID }}
@@ -97,7 +97,7 @@ jobs:
       - name: Upload Artifacts Windows
         uses: actions/upload-artifact@v4
         with:
-          name: onekey-desktop-windows
+          name: unionkey-desktop-windows
           path: |
             ./apps/desktop/build-electron/*.exe
 
@@ -112,16 +112,3 @@ jobs:
             !./apps/desktop/build-electron/mac
             !./apps/desktop/build-electron/linux-unpacked
             !./apps/desktop/build-electron/builder-debug.yml
-
-      - name: 'Notify to Slack'
-        if: ${{ github.event.workflow_run }}
-        uses: onekeyhq/actions/slack-notify-webhook@main
-        with:
-          web-hook-url: ${{ secrets.SLACK_NOTIFICATION_WEBHOOK }}
-          secret-key: ${{ secrets.ACTION_SIGN_SECERT_KEY }}
-          artifact-type: Desktop
-          artifact-name: OneKey-Desktop-Win-Store
-          artifact-bundle-id: 'so.onekey.wallet.desktop'
-          artifact-version-name: '${{ env.BUILD_APP_VERSION }}@${{ env.BUILD_NUMBER }}'
-          artifact-version-code: '${{ env.BUILD_NUMBER }}'
-          artifact-download-url: '${{ env.ARTIFACTS_URL }}'

@@ -1,4 +1,4 @@
-import { Input, Stack } from '@onekeyhq/components';
+import { Input, Stack } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 

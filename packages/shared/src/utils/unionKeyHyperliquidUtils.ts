@@ -8,7 +8,7 @@ import type {
   IUnionKeyAssistTypedData,
   IUnionKeyHyperliquidApproveAgentAction,
   IUnionKeyHyperliquidTradingAction,
-} from '@onekeyhq/shared/types/unionkey/trade';
+} from '@unionkeyhq/shared/types/unionkey/trade';
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const HYPERLIQUID_SIGNATURE_CHAIN_ID = 42_161;

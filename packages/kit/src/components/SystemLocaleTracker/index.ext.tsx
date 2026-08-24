@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 let done = false;
 

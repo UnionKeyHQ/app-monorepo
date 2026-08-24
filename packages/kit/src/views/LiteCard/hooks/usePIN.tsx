@@ -2,8 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Dialog, SizableText } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Dialog, SizableText } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { PasswordKeyboard } from '../components/PasswordKeyboard';
 
@@ -49,25 +49,25 @@ export default function usePIN() {
     (isSetNewPassword?: boolean, shouldConfirmPassword?: string) => {
       const config = {
         title: intl.formatMessage({
-          id: ETranslations.hardware_enter_onekey_lite_pin,
+          id: ETranslations.hardware_enter_unionkey_lite_pin,
         }),
         description: intl.formatMessage({
-          id: ETranslations.hardware_enter_onekey_lite_pin_desc,
+          id: ETranslations.hardware_enter_unionkey_lite_pin_desc,
         }),
       };
       if (isSetNewPassword) {
         config.title = intl.formatMessage({
-          id: ETranslations.hardware_set_onekey_lite_pin,
+          id: ETranslations.hardware_set_unionkey_lite_pin,
         });
         config.description = intl.formatMessage({
-          id: ETranslations.hardware_set_onekey_lite_pin_desc,
+          id: ETranslations.hardware_set_unionkey_lite_pin_desc,
         });
         if (shouldConfirmPassword) {
           config.title = intl.formatMessage({
-            id: ETranslations.hardware_confirm_onekey_lite_pin,
+            id: ETranslations.hardware_confirm_unionkey_lite_pin,
           });
           config.description = intl.formatMessage({
-            id: ETranslations.hardware_confirm_onekey_lite_pin_desc,
+            id: ETranslations.hardware_confirm_unionkey_lite_pin_desc,
           });
         }
       }

@@ -10,7 +10,7 @@ import type {
   IKeyOfIcons,
   IStackProps,
   IXStackProps,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   ActionList,
   Button,
@@ -18,8 +18,8 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export type IActionItemsProps = {
   icon?: IKeyOfIcons;

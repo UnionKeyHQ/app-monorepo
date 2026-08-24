@@ -9,25 +9,25 @@ import {
   XStack,
   useMedia,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import { HeaderIconButton } from '@onekeyhq/components/src/layouts/Navigation/Header';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import { HeaderIconButton } from '@unionkeyhq/components/src/layouts/Navigation/Header';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   useAccountSelectorActions,
   useSelectedAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IDBWallet } from '@onekeyhq/kit-bg/src/dbs/local/types';
-import type { IAccountSelectorFocusedWallet } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import { analytics } from '@onekeyhq/shared/src/analytics';
-import { emptyArray } from '@onekeyhq/shared/src/consts';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IDBWallet } from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import type { IAccountSelectorFocusedWallet } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import { analytics } from '@unionkeyhq/shared/src/analytics';
+import { emptyArray } from '@unionkeyhq/shared/src/consts';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import { useAccountSelectorRoute } from '../../../router/useAccountSelectorRoute';
 

@@ -6,9 +6,9 @@ import {
   Page,
   ScrollView,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useAppChangeLog } from '../../../components/UpdateReminder/hooks';
 import { ViewUpdateHistory } from '../components/ViewUpdateHistory';
@@ -27,7 +27,7 @@ function WhatsNew() {
           <>
             {intl
               .formatMessage(
-                { id: ETranslations.update_whats_new_in_onekey_version },
+                { id: ETranslations.update_whats_new_in_unionkey_version },
                 {
                   version,
                 },

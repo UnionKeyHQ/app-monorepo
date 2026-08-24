@@ -2,14 +2,14 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { debounce } from 'lodash';
 
-import { EPageType, usePageType } from '@onekeyhq/components';
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
-import { useSettingsAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETabRoutes } from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import type { ISwapToken } from '@onekeyhq/shared/types/swap/types';
-import { ESwapDirectionType } from '@onekeyhq/shared/types/swap/types';
+import { EPageType, usePageType } from '@unionkeyhq/components';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
+import { useSettingsAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETabRoutes } from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import type { ISwapToken } from '@unionkeyhq/shared/types/swap/types';
+import { ESwapDirectionType } from '@unionkeyhq/shared/types/swap/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useListenTabFocusState from '../../../hooks/useListenTabFocusState';

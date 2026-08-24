@@ -1,6 +1,6 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { ensureRunOnBackground } from '@onekeyhq/shared/src/utils/assertUtils';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { ensureRunOnBackground } from '@unionkeyhq/shared/src/utils/assertUtils';
 
 import { SimpleDb } from './base/SimpleDb';
 

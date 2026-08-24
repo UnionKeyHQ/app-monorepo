@@ -1,6 +1,6 @@
 import { useIntl } from 'react-intl';
 
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export const useProviderLabel = (name: string) => {
   const intl = useIntl();

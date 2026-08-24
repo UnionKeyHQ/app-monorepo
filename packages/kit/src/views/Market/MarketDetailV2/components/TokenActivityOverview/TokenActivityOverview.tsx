@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { Stack } from '@onekeyhq/components';
-import type { IMarketTokenDetail } from '@onekeyhq/shared/types/marketV2';
+import { Stack } from '@unionkeyhq/components';
+import type { IMarketTokenDetail } from '@unionkeyhq/shared/types/marketV2';
 
 import { ActivityRow } from './ActivityRow';
 import { TimeRangeSelector } from './TimeRangeSelector';

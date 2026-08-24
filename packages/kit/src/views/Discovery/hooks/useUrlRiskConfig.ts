@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
-import type { IHostSecurity } from '@onekeyhq/shared/types/discovery';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { EHostSecurityLevel } from '@unionkeyhq/shared/types/discovery';
+import type { IHostSecurity } from '@unionkeyhq/shared/types/discovery';
 
 import type { ColorTokens } from 'tamagui';
 

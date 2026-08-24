@@ -10,14 +10,14 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import Logo from '@onekeyhq/kit/assets/logo_round_decorated.png';
-import { DOWNLOAD_MOBILE_APP_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import Logo from '@unionkeyhq/kit/assets/logo_round_decorated.png';
+import { DOWNLOAD_MOBILE_APP_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import openUrlUtils, {
   openUrlExternal,
-} from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import { usePromiseResult } from '../../hooks/usePromiseResult';
 

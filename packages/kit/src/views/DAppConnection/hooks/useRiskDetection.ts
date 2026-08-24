@@ -1,18 +1,18 @@
 import { useMemo, useState } from 'react';
 
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import type { IUnsignedMessage } from '@unionkeyhq/core/src/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   isEthSignType,
   isPrimaryTypeOrderSign,
   isPrimaryTypePermitSign,
-} from '@onekeyhq/shared/src/signMessage';
+} from '@unionkeyhq/shared/src/signMessage';
 import {
   EHostSecurityLevel,
   type IHostSecurity,
-} from '@onekeyhq/shared/types/discovery';
+} from '@unionkeyhq/shared/types/discovery';
 
 function useRiskDetection({
   origin,

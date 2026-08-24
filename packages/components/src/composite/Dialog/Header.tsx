@@ -1,6 +1,6 @@
 import { createContext, memo, useContext, useEffect, useMemo } from 'react';
 
-import type { IHyperlinkTextProps } from '@onekeyhq/kit/src/components/HyperlinkText';
+import type { IHyperlinkTextProps } from '@unionkeyhq/kit/src/components/HyperlinkText';
 
 import { IconButton } from '../../actions/IconButton';
 import { RichSizeableText } from '../../content/RichSizeableText';

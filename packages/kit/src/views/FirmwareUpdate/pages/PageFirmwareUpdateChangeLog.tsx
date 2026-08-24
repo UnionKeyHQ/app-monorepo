@@ -1,16 +1,16 @@
 import { useMemo, useRef } from 'react';
 
-import { Page } from '@onekeyhq/components';
+import { Page } from '@unionkeyhq/components';
 import {
   EFirmwareUpdateSteps,
   useFirmwareUpdateStepInfoAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { toPlainErrorObject } from '@onekeyhq/shared/src/errors/utils/errorUtils';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { toPlainErrorObject } from '@unionkeyhq/shared/src/errors/utils/errorUtils';
 import type {
   EModalFirmwareUpdateRoutes,
   IModalFirmwareUpdateParamList,
-} from '@onekeyhq/shared/src/routes';
-import type { ICheckAllFirmwareReleaseResult } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/src/routes';
+import type { ICheckAllFirmwareReleaseResult } from '@unionkeyhq/shared/types/device';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../hooks/useAppNavigation';

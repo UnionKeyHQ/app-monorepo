@@ -9,26 +9,26 @@ import {
   SizableText,
   Spinner,
   Stack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAppRoute } from '@onekeyhq/kit/src/hooks/useAppRoute';
-import { ProviderJotaiContextAccountOverview } from '@onekeyhq/kit/src/states/jotai/contexts/accountOverview';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useAppRoute } from '@unionkeyhq/kit/src/hooks/useAppRoute';
+import { ProviderJotaiContextAccountOverview } from '@unionkeyhq/kit/src/states/jotai/contexts/accountOverview';
 import {
   useAccountSelectorActions,
   useSelectedAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
-import errorToastUtils from '@onekeyhq/shared/src/errors/utils/errorToastUtils';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { useDebugComponentRemountLog } from '@onekeyhq/shared/src/utils/debug/debugUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EUniversalSearchType } from '@onekeyhq/shared/types/search';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { WALLET_TYPE_WATCHING } from '@unionkeyhq/shared/src/consts/dbConsts';
+import errorToastUtils from '@unionkeyhq/shared/src/errors/utils/errorToastUtils';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { useDebugComponentRemountLog } from '@unionkeyhq/shared/src/utils/debug/debugUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EUniversalSearchType } from '@unionkeyhq/shared/types/search';
 
 import { HomePageView } from '../HomePageView';
 

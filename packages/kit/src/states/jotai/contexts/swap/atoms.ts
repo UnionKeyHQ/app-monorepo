@@ -1,15 +1,15 @@
 import BigNumber from 'bignumber.js';
 
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { dangerAllNetworkRepresent } from '@onekeyhq/shared/src/config/presetNetworks';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { dangerAllNetworkRepresent } from '@unionkeyhq/shared/src/config/presetNetworks';
 import {
   checkWrappedTokenPair,
   equalTokenNoCaseSensitive,
-} from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkeyhq/shared/src/utils/tokenUtils';
 import {
   ESwapProviderSort,
   swapProviderRecommendApprovedWeights,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import type {
   ESwapDirectionType,
   ESwapQuoteKind,
@@ -22,12 +22,12 @@ import type {
   ISwapToken,
   ISwapTokenCatch,
   ISwapTokenMetadata,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import {
   ESwapTabSwitchType,
   LIMIT_PRICE_DEFAULT_DECIMALS,
   defaultLimitExpirationTime,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { createJotaiContext } from '../../utils/createJotaiContext';
 
@@ -66,7 +66,7 @@ export const {
     return net.supportSingleSwap;
   });
   const allNetwork = {
-    networkId: getNetworkIdsMap().onekeyall,
+    networkId: getNetworkIdsMap().unionkeyall,
     name: dangerAllNetworkRepresent.name,
     symbol: dangerAllNetworkRepresent.symbol,
     logoURI: dangerAllNetworkRepresent.logoURI,

@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Camera } from 'react-native-camera-kit/src';
 
-import { usePreventRemove } from '@onekeyhq/components';
+import { usePreventRemove } from '@unionkeyhq/components';
 
 import type { IScanCameraProps } from './types';
 

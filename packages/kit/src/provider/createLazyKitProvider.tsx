@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { updateInterceptorRequestHelper } from '@onekeyhq/kit-bg/src/init/updateInterceptorRequestHelper';
+import { updateInterceptorRequestHelper } from '@unionkeyhq/kit-bg/src/init/updateInterceptorRequestHelper';
 
 // TODO why not use lazy feature?
 export function createLazyKitProviderLegacy({
@@ -21,13 +21,13 @@ export function createLazyKitProviderLegacy({
       }, 0);
     }, []);
     if (cmp) {
-      globalThis.$$onekeyPerfTrace?.log({
+      globalThis.$$unionkeyPerfTrace?.log({
         name: 'LazyKitProvider render **children**',
       });
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return cmp;
     }
-    globalThis.$$onekeyPerfTrace?.log({
+    globalThis.$$unionkeyPerfTrace?.log({
       name: 'LazyKitProvider render [null]',
     });
     return null;

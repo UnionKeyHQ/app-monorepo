@@ -3,29 +3,29 @@ import { memo, useCallback, useEffect } from 'react';
 import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
-import { Alert, Page, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import useDappApproveAction from '@onekeyhq/kit/src/hooks/useDappApproveAction';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+import { Alert, Page, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import useDappApproveAction from '@unionkeyhq/kit/src/hooks/useDappApproveAction';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   usePreCheckTxStatusAtom,
   useSendConfirmActions,
   useSendFeeStatusAtom,
   useSendTxStatusAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/sendConfirm';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/sendConfirm';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalSendRoutes,
   IModalSendParamList,
-} from '@onekeyhq/shared/src/routes';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
-import { ESendFeeStatus } from '@onekeyhq/shared/types/fee';
-import { ESendPreCheckTimingEnum } from '@onekeyhq/shared/types/send';
+} from '@unionkeyhq/shared/src/routes';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
+import { ESendFeeStatus } from '@unionkeyhq/shared/types/fee';
+import { ESendPreCheckTimingEnum } from '@unionkeyhq/shared/types/send';
 
 import { SendConfirmProviderMirror } from '../../components/SendConfirmProvider/SendConfirmProviderMirror';
 

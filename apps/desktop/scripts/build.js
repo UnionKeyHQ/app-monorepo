@@ -30,7 +30,7 @@ build({
   drop: isProduction ? ['console', 'debugger'] : [],
   // Help esbuild locate missing dependencies.
   alias: {
-    '@onekeyhq/shared': path.join(__dirname, '../../../packages/shared'),
+    '@unionkeyhq/shared': path.join(__dirname, '../../../packages/shared'),
     'react-native': path.join(
       __dirname,
       '../../desktop/app/libs/react-native-mock',

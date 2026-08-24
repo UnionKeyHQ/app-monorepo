@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import { useShortcuts } from '@onekeyhq/components';
-import type { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
+import { useShortcuts } from '@unionkeyhq/components';
+import type { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
 
 import { useRouteIsFocused } from './useRouteIsFocused';
 

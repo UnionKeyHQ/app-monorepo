@@ -1,5 +1,5 @@
-import type { IAdaSdkApi } from '@onekeyhq/core/src/chains/ada/sdkAda/sdk/types';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
+import type { IAdaSdkApi } from '@unionkeyhq/core/src/chains/ada/sdkAda/sdk/types';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import type IAdaLib from '@onekeyfe/cardano-coin-selection-asmjs';
 
@@ -11,7 +11,7 @@ type IAdaDappGetAddresses = typeof IAdaLib.dAppUtils.getAddresses;
 type IAdaDappSignData = typeof IAdaLib.dAppUtils.signData;
 type IAdaDappConvertCborTxToEncodeTx =
   typeof IAdaLib.dAppUtils.convertCborTxToEncodeTx;
-type IAdaTxToOneKey = typeof IAdaLib.onekeyUtils.txToOneKey;
+type IAdaTxToUnionKey = typeof IAdaLib.onekeyUtils.txToOneKey;
 type IAdaHasSetTagWithBody = typeof IAdaLib.onekeyUtils.hasSetTagWithBody;
 type IAdaComposeTxPlan = typeof IAdaLib.onekeyUtils.composeTxPlan;
 type IAdaSignTransaction = typeof IAdaLib.onekeyUtils.signTransaction;
@@ -24,7 +24,7 @@ const getCardanoApi = memoizee(
       composeTxPlan: AdaLib.onekeyUtils.composeTxPlan,
       signTransaction: AdaLib.onekeyUtils.signTransaction,
       hwSignTransaction: AdaLib.trezorUtils.signTransaction,
-      txToOneKey: AdaLib.onekeyUtils.txToOneKey,
+      txToUnionKey: AdaLib.onekeyUtils.txToOneKey,
       hasSetTagWithBody: AdaLib.onekeyUtils.hasSetTagWithBody,
       dAppUtils: AdaLib.dAppUtils,
     };
@@ -50,9 +50,9 @@ class WebEmbedApiChainAdaLegacy implements IAdaSdkApi {
     return cardanoApi.hwSignTransaction(...args);
   }
 
-  async txToOneKey(...args: Parameters<IAdaTxToOneKey>) {
+  async txToUnionKey(...args: Parameters<IAdaTxToUnionKey>) {
     const cardanoApi = await getCardanoApi();
-    return cardanoApi.txToOneKey(...args);
+    return cardanoApi.txToUnionKey(...args);
   }
 
   async hasSetTagWithBody(...args: Parameters<IAdaHasSetTagWithBody>) {

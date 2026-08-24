@@ -1,6 +1,6 @@
-import RNShare from '@onekeyhq/shared/src/modules3rdParty/expo-sharing';
-import RNFS from '@onekeyhq/shared/src/modules3rdParty/react-native-fs';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import RNShare from '@unionkeyhq/shared/src/modules3rdParty/expo-sharing';
+import RNFS from '@unionkeyhq/shared/src/modules3rdParty/react-native-fs';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { IDownloadAsFileType } from './type';
 

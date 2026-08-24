@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Button, Heading, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Button, Heading, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 export function DappSearchModalSectionHeader({
   title,

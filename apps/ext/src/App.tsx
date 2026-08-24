@@ -1,5 +1,5 @@
-import { createLazyKitProvider } from '@onekeyhq/kit/src/provider/createLazyKitProvider';
-import '@onekeyhq/shared/src/web/index.css';
+import { createLazyKitProvider } from '@unionkeyhq/kit/src/provider/createLazyKitProvider';
+import '@unionkeyhq/shared/src/web/index.css';
 
 const KitProviderExt = createLazyKitProvider({
   displayName: 'KitProviderExt',

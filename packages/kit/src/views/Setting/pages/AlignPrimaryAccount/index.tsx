@@ -2,11 +2,11 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, Radio, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
+import { Page, Radio, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EAlignPrimaryAccountMode } from '@unionkeyhq/shared/types/dappConnection';
 
 function AlignPrimaryAccount() {
   const intl = useIntl();

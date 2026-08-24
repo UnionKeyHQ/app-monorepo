@@ -1,4 +1,4 @@
-import { Page } from '@onekeyhq/components';
+import { Page } from '@unionkeyhq/components';
 
 import { FirmwareUpdateDevSettings } from '../List/DevSettingsSection/FirmwareUpdateDevSettings';
 

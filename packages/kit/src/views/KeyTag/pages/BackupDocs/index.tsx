@@ -2,10 +2,10 @@ import type { ComponentProps } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Page, SizableText, Stack, YStack } from '@onekeyhq/components';
-import { BIP39_DOT_MAP_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+import { Page, SizableText, Stack, YStack } from '@unionkeyhq/components';
+import { BIP39_DOT_MAP_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import { RatioImage } from '../../components/RatioImage';
 
@@ -57,7 +57,7 @@ const BackupDocs = () => {
     <Page scrollEnabled>
       <Page.Header
         title={intl.formatMessage({
-          id: ETranslations.settings_backup_with_onekey_keytag,
+          id: ETranslations.settings_backup_with_unionkey_keytag,
         })}
       />
       <Page.Body>
@@ -67,11 +67,11 @@ const BackupDocs = () => {
             image={{
               sm: {
                 ratio: 353 / 224,
-                source: require('@onekeyhq/kit/assets/keytag/keytag_doc_step1_sm.png'),
+                source: require('@unionkeyhq/kit/assets/keytag/keytag_doc_step1_sm.png'),
               },
               base: {
                 ratio: 600 / 224,
-                source: require('@onekeyhq/kit/assets/keytag/keytag_doc_step1_base.png'),
+                source: require('@unionkeyhq/kit/assets/keytag/keytag_doc_step1_base.png'),
               },
             }}
             title={intl.formatMessage({
@@ -106,11 +106,11 @@ const BackupDocs = () => {
             image={{
               sm: {
                 ratio: 353 / 224,
-                source: require('@onekeyhq/kit/assets/keytag/keytag_doc_step2_sm.png'),
+                source: require('@unionkeyhq/kit/assets/keytag/keytag_doc_step2_sm.png'),
               },
               base: {
                 ratio: 600 / 224,
-                source: require('@onekeyhq/kit/assets/keytag/keytag_doc_step2_base.png'),
+                source: require('@unionkeyhq/kit/assets/keytag/keytag_doc_step2_base.png'),
               },
             }}
             title={intl.formatMessage({
@@ -143,11 +143,11 @@ const BackupDocs = () => {
             image={{
               sm: {
                 ratio: 353 / 224,
-                source: require('@onekeyhq/kit/assets/keytag/keytag_doc_step3_sm.png'),
+                source: require('@unionkeyhq/kit/assets/keytag/keytag_doc_step3_sm.png'),
               },
               base: {
                 ratio: 600 / 224,
-                source: require('@onekeyhq/kit/assets/keytag/keytag_doc_step3_base.png'),
+                source: require('@unionkeyhq/kit/assets/keytag/keytag_doc_step3_base.png'),
               },
             }}
             title={intl.formatMessage({

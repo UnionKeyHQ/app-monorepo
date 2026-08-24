@@ -1,5 +1,5 @@
-import { TextAreaInput } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { TextAreaInput } from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 function DataViewer({ data }: { data: string }) {
   return (

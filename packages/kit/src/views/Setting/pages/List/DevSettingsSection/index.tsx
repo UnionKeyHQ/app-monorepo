@@ -12,46 +12,46 @@ import {
   Toast,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
-import type { IDialogButtonProps } from '@onekeyhq/components/src/composite/Dialog/type';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import { Section } from '@onekeyhq/kit/src/components/Section';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { WebEmbedDevConfig } from '@onekeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/WebEmbed';
+} from '@unionkeyhq/components';
+import type { IDialogButtonProps } from '@unionkeyhq/components/src/composite/Dialog/type';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import { Section } from '@unionkeyhq/kit/src/components/Section';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { WebEmbedDevConfig } from '@unionkeyhq/kit/src/views/Developer/pages/Gallery/Components/stories/WebEmbed';
 import {
   appUpdatePersistAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
-import appDeviceInfo from '@onekeyhq/shared/src/appDeviceInfo/appDeviceInfo';
-import { EAppUpdateStatus } from '@onekeyhq/shared/src/appUpdate';
-import type { IBackgroundMethodWithDevOnlyPassword } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { isCorrectDevOnlyPassword } from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/devSettings';
+import appDeviceInfo from '@unionkeyhq/shared/src/appDeviceInfo/appDeviceInfo';
+import { EAppUpdateStatus } from '@unionkeyhq/shared/src/appUpdate';
+import type { IBackgroundMethodWithDevOnlyPassword } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { isCorrectDevOnlyPassword } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
-  ONEKEY_API_HOST,
-  ONEKEY_TEST_API_HOST,
-} from '@onekeyhq/shared/src/config/appConfig';
-import { presetNetworksMap } from '@onekeyhq/shared/src/config/presetNetworks';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+  UNIONKEY_API_HOST,
+  UNIONKEY_TEST_API_HOST,
+} from '@unionkeyhq/shared/src/config/appConfig';
+import { presetNetworksMap } from '@unionkeyhq/shared/src/config/presetNetworks';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   requestPermissionsAsync,
   setBadgeCountAsync,
-} from '@onekeyhq/shared/src/modules3rdParty/expo-notifications';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EModalSettingRoutes } from '@onekeyhq/shared/src/routes';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorage';
+} from '@unionkeyhq/shared/src/modules3rdParty/expo-notifications';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EModalSettingRoutes } from '@unionkeyhq/shared/src/routes';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkeyhq/shared/src/storage/syncStorage';
 import {
   isBgApiSerializableCheckingDisabled,
   toggleBgApiSerializableChecking,
-} from '@onekeyhq/shared/src/utils/assertUtils';
-import { formatDateFns } from '@onekeyhq/shared/src/utils/dateUtils';
+} from '@unionkeyhq/shared/src/utils/assertUtils';
+import { formatDateFns } from '@unionkeyhq/shared/src/utils/dateUtils';
 import {
   isWebInDappMode,
   switchWebDappMode,
-} from '@onekeyhq/shared/src/utils/devModeUtils';
-import { stableStringify } from '@onekeyhq/shared/src/utils/stringUtils';
+} from '@unionkeyhq/shared/src/utils/devModeUtils';
+import { stableStringify } from '@unionkeyhq/shared/src/utils/stringUtils';
 
 import { AddressBookDevSetting } from './AddressBookDevSetting';
 import { AsyncStorageDevSettings } from './AsyncStorageDevSettings';
@@ -205,11 +205,11 @@ export const DevSettingsSection = () => {
       ) : null}
       {/* <SectionFieldItem
         name="enableTestEndpoint"
-        title="启用 OneKey 测试网络节点"
+        title="启用 UnionKey 测试网络节点"
         subtitle={
           devSettings.settings?.enableTestEndpoint
-            ? ONEKEY_TEST_API_HOST
-            : ONEKEY_API_HOST
+            ? UNIONKEY_TEST_API_HOST
+            : UNIONKEY_API_HOST
         }
         onBeforeValueChange={async () => {
           try {
@@ -367,12 +367,12 @@ export const DevSettingsSection = () => {
           size={ESwitchSize.small}
           defaultChecked={
             appStorage.syncStorage.getBoolean(
-              EAppSyncStorageKeys.onekey_debug_render_tracker,
+              EAppSyncStorageKeys.unionkey_debug_render_tracker,
             ) ?? false
           }
           onChange={(v) => {
             appStorage.syncStorage.set(
-              EAppSyncStorageKeys.onekey_debug_render_tracker,
+              EAppSyncStorageKeys.unionkey_debug_render_tracker,
               v,
             );
           }}

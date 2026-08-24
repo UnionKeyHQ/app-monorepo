@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { StyleSheet } from 'react-native';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
 import {
   Alert,
   Badge,
@@ -19,21 +19,21 @@ import {
   YStack,
   useClipboard,
   useMedia,
-} from '@onekeyhq/components';
-import { WalletAvatar } from '@onekeyhq/kit/src/components/WalletAvatar';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
+} from '@unionkeyhq/components';
+import { WalletAvatar } from '@unionkeyhq/kit/src/components/WalletAvatar';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
 import {
   FIRMWARE_CONTACT_US_URL,
   HELP_CENTER_URLHTML,
-} from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalDeviceManagementRoutes,
   IModalDeviceManagementParamList,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import type { RouteProp } from '@react-navigation/core';
 
@@ -103,42 +103,42 @@ function HardwareTroubleshootingModal() {
           id: ETranslations.global_faqs_firmware_detection,
         }),
         icon: 'ErrorOutline',
-        link: 'https://help.onekey.so/hc/articles/8739271314319-Solution-for-firmware-upgrade-page-not-recognizing-hardware-wallet',
+        link: 'https://unionkey.io/hc/articles/8739271314319-Solution-for-firmware-upgrade-page-not-recognizing-hardware-wallet',
       },
       {
         title: intl.formatMessage({
           id: ETranslations.global_faqs_forgot_pin,
         }),
         icon: 'UnlockedOutline',
-        link: 'https://help.onekey.so/hc/articles/10822167443343-What-to-do-If-you-forget-the-PIN-code-for-your-OneKey-hardware-wallet',
+        link: 'https://unionkey.io/hc/articles/10822167443343-What-to-do-If-you-forget-the-PIN-code-for-your-UnionKey-hardware-wallet',
       },
       {
         title: intl.formatMessage({
           id: ETranslations.global_faqs_reset_wallet,
         }),
         icon: 'RepeatOutline',
-        link: 'https://help.onekey.so/hc/articles/9800444975247-How-to-reset-your-OneKey-hardware-wallet',
+        link: 'https://unionkey.io/hc/articles/9800444975247-How-to-reset-your-UnionKey-hardware-wallet',
       },
       {
         title: intl.formatMessage({
           id: ETranslations.global_faqs_bootloader_mode,
         }),
         icon: 'ConsoleOutline',
-        link: 'https://help.onekey.so/hc/articles/8352275268623-How-to-enter-and-exit-the-Bootloader-mode-on-OneKey-hardware-wallets',
+        link: 'https://unionkey.io/hc/articles/8352275268623-How-to-enter-and-exit-the-Bootloader-mode-on-UnionKey-hardware-wallets',
       },
       {
         title: intl.formatMessage({
           id: ETranslations.global_faqs_bridge_download,
         }),
         icon: 'DownloadOutline',
-        link: 'https://help.onekey.so/hc/articles/9740566472335-Download-and-update-OneKey-Bridge',
+        link: 'https://unionkey.io/hc/articles/9740566472335-Download-and-update-UnionKey-Bridge',
       },
       {
         title: intl.formatMessage({
           id: ETranslations.global_faqs_bluetooth_status,
         }),
         icon: 'BluetoothOutline',
-        link: 'https://help.onekey.so/hc/articles/360002789976-Identifying-whether-the-hardware-wallet-bluetooth-is-turned-on',
+        link: 'https://unionkey.io/hc/articles/360002789976-Identifying-whether-the-hardware-wallet-bluetooth-is-turned-on',
       },
     ],
     [intl],

@@ -3,14 +3,14 @@ import { useCallback } from 'react';
 import { flatten } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useAllTokenListAtom } from '@onekeyhq/kit/src/states/jotai/contexts/tokenList';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { IServerNetwork } from '@onekeyhq/shared/types';
-import type { ICustomTokenItem } from '@onekeyhq/shared/types/token';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useAllTokenListAtom } from '@unionkeyhq/kit/src/states/jotai/contexts/tokenList';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import type { IServerNetwork } from '@unionkeyhq/shared/types';
+import type { ICustomTokenItem } from '@unionkeyhq/shared/types/token';
 
 export function useTokenManagement({
   networkId,
@@ -20,7 +20,7 @@ export function useTokenManagement({
   accountId: string;
 }) {
   const intl = useIntl();
-  const isAllNetwork = networkId === getNetworkIdsMap().onekeyall;
+  const isAllNetwork = networkId === getNetworkIdsMap().unionkeyall;
   const [tokenList] = useAllTokenListAtom();
 
   const {

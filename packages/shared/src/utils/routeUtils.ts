@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   EGalleryRoutes,
   EModalReferFriendsRoutes,
@@ -11,7 +11,7 @@ import {
   ETabMarketRoutes,
   ETabRoutes,
   ETestModalPages,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 interface IAllowSettingItem {
   /** whether to show URL parameters, it is false in default. */

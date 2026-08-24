@@ -2,15 +2,15 @@ import { useMemo } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IKeyOfIcons } from '@onekeyhq/components';
-import { Empty } from '@onekeyhq/components';
+import type { IKeyOfIcons } from '@unionkeyhq/components';
+import { Empty } from '@unionkeyhq/components';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import { useActiveAccount } from '../../states/jotai/contexts/accountSelector';
 import { AccountSelectorCreateAddressButton } from '../AccountSelector/AccountSelectorCreateAddressButton';

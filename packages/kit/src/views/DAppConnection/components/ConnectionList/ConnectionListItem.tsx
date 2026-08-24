@@ -7,18 +7,18 @@ import {
   Skeleton,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { IMPL_ALGO } from '@onekeyhq/shared/src/engine/engineConsts';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/components';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { IMPL_ALGO } from '@unionkeyhq/shared/src/engine/engineConsts';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 import {
   EAlignPrimaryAccountMode,
   type IConnectionAccountInfo,
   type IConnectionAccountInfoWithNum,
   type IConnectionItemWithStorageType,
   type IConnectionStorageType,
-} from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/types/dappConnection';
 
 import { DAppAccountListItem } from '../DAppAccountList';
 

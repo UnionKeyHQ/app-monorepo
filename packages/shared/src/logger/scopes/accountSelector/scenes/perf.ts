@@ -2,13 +2,13 @@ import type {
   IDBAccount,
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
 import type {
   IAccountSelectorFocusedWallet,
   IAccountSelectorSelectedAccount,
-} from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
-import type { IAccountDeriveTypes } from '@onekeyhq/kit-bg/src/vaults/types';
-import type { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+} from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+import type { IAccountDeriveTypes } from '@unionkeyhq/kit-bg/src/vaults/types';
+import type { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { BaseScene } from '../../../base/baseScene';
 import { LogToConsole } from '../../../base/decorators';

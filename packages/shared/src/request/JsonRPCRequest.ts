@@ -1,7 +1,7 @@
 import axios from 'axios';
 import timeoutSignal from 'timeout-signal';
 
-import type { IJsonRpcResponsePro } from '@onekeyhq/shared/types/request';
+import type { IJsonRpcResponsePro } from '@unionkeyhq/shared/types/request';
 
 import {
   AxiosResponseError,

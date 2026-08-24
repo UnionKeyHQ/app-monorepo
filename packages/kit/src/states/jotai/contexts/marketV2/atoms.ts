@@ -1,8 +1,8 @@
 import {
   atom,
   createJotaiContext,
-} from '@onekeyhq/kit/src/states/jotai/utils/createJotaiContext';
-import type { IMarketWatchListData } from '@onekeyhq/shared/types/market'; // Assuming similar data structure for now
+} from '@unionkeyhq/kit/src/states/jotai/utils/createJotaiContext';
+import type { IMarketWatchListData } from '@unionkeyhq/shared/types/market'; // Assuming similar data structure for now
 
 const {
   Provider: ProviderJotaiContextMarketV2,

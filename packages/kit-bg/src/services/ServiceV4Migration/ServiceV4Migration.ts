@@ -1,29 +1,29 @@
 /* eslint-disable @typescript-eslint/no-restricted-imports */
 import { flatten, uniqBy } from 'lodash';
 
-import { decryptVerifyString } from '@onekeyhq/core/src/secret';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import { decryptVerifyString } from '@unionkeyhq/core/src/secret';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
   backgroundClass,
   backgroundMethod,
   toastIfError,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { DEFAULT_VERIFY_STRING } from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { DEFAULT_VERIFY_STRING } from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   COINTYPE_CFX,
   COINTYPE_COSMOS,
   COINTYPE_DOT,
   COINTYPE_NEXA,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { IncorrectPassword } from '@onekeyhq/shared/src/errors';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { appLocale } from '@onekeyhq/shared/src/locale/appLocale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { IncorrectPassword } from '@unionkeyhq/shared/src/errors';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { appLocale } from '@unionkeyhq/shared/src/locale/appLocale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import simpleDb from '../../dbs/simple/simpleDb';
 import { v4CoinTypeToNetworkId } from '../../migrations/v4ToV5Migration/v4CoinTypeToNetworkId';
@@ -243,13 +243,13 @@ class ServiceV4Migration extends ServiceBase {
     v4migrationAutoStartDisabled: boolean | undefined;
   }) {
     await appStorage.setItem(
-      '$$_OneKey_V4Migration_AutoStart_Disabled_$$',
+      '$$_UnionKey_V4Migration_AutoStart_Disabled_$$',
       v4migrationAutoStartDisabled ? 'true' : '',
     );
   }
 
   async getAppStorageV4migrationAutoStartDisabled() {
-    return appStorage.getItem('$$_OneKey_V4Migration_AutoStart_Disabled_$$');
+    return appStorage.getItem('$$_UnionKey_V4Migration_AutoStart_Disabled_$$');
   }
 
   @backgroundMethod()
@@ -344,7 +344,7 @@ class ServiceV4Migration extends ServiceBase {
   @toastIfError()
   async migrateBaseSettings() {
     try {
-      const storageKey = '$$$_OneKey_V4Migration_BaseSettings_Migrated_$$$';
+      const storageKey = '$$$_UnionKey_V4Migration_BaseSettings_Migrated_$$$';
       // migrateBaseSettings may cause app reload, so we should check
       const isBaseSettingsMigrated = await appStorage.getItem(storageKey);
       if (isBaseSettingsMigrated) {

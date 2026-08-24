@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 
-import { Switch, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import { Switch, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { InfoItemLabel } from './InfoItemLabel';
 

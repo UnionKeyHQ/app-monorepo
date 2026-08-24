@@ -1,7 +1,7 @@
 import { EDeviceType } from '@onekeyfe/hd-shared';
 
-import { Dialog, Toast } from '@onekeyhq/components';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+import { Dialog, Toast } from '@unionkeyhq/components';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import {
   ConfirmOnDeviceToastContent,

@@ -11,12 +11,12 @@ import {
   Spinner,
   Stack,
   YStack,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import type {
   EModalAssetDetailRoutes,
   IModalAssetDetailsParamList,
-} from '@onekeyhq/shared/src/routes/assetDetails';
+} from '@unionkeyhq/shared/src/routes/assetDetails';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useAccountData } from '../../../hooks/useAccountData';

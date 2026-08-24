@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { SizableText, Stack, XStack } from '@onekeyhq/components';
+import { SizableText, Stack, XStack } from '@unionkeyhq/components';
 
 import { Token } from '../../../components/Token';
 

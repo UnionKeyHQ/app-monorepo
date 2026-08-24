@@ -1,4 +1,4 @@
-import { IMPL_SCDO } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_SCDO } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

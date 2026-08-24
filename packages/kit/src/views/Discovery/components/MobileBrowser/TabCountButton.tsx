@@ -1,13 +1,13 @@
 import { useCallback, useMemo } from 'react';
 
-import { SizableText, Stack } from '@onekeyhq/components';
-import type { IPageNavigationProp } from '@onekeyhq/components/src/layouts/Navigation';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import type { IDiscoveryModalParamList } from '@onekeyhq/shared/src/routes';
+import { SizableText, Stack } from '@unionkeyhq/components';
+import type { IPageNavigationProp } from '@unionkeyhq/components/src/layouts/Navigation';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import type { IDiscoveryModalParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EDiscoveryModalRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import { useTakeScreenshot } from '../../hooks/useTakeScreenshot';
 import {

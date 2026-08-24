@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import type { IFetchTokenDetailItem } from '@onekeyhq/shared/types/token';
+import type { IFetchTokenDetailItem } from '@unionkeyhq/shared/types/token';
 
 export interface ITokenDetailsContextValue {
   tokenMetadata?: {

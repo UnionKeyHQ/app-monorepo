@@ -1,5 +1,5 @@
-import type { IStackProps } from '@onekeyhq/components';
-import { Badge } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
+import { Badge } from '@unionkeyhq/components';
 
 const SwapPercentageStageBadge = ({
   stage,

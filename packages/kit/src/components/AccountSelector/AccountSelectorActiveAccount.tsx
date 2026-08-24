@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
 import type {
   IIconButtonProps,
   IPageNavigationProp,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Icon,
   IconButton,
@@ -15,25 +15,25 @@ import {
   Tooltip,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useAllNetworkCopyAddressHandler } from '@onekeyhq/kit/src/views/WalletAddress/hooks/useAllNetworkCopyAddressHandler';
-import { ALL_NETWORK_ACCOUNT_MOCK_ADDRESS } from '@onekeyhq/shared/src/consts/addresses';
+} from '@unionkeyhq/components';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useAllNetworkCopyAddressHandler } from '@unionkeyhq/kit/src/views/WalletAddress/hooks/useAllNetworkCopyAddressHandler';
+import { ALL_NETWORK_ACCOUNT_MOCK_ADDRESS } from '@unionkeyhq/shared/src/consts/addresses';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { IModalReceiveParamList } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { IModalReceiveParamList } from '@unionkeyhq/shared/src/routes';
 import {
   EModalReceiveRoutes,
   EModalRoutes,
   EModalWalletAddressRoutes,
-} from '@onekeyhq/shared/src/routes';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { EDeriveAddressActionType } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/src/routes';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { EDeriveAddressActionType } from '@unionkeyhq/shared/types/address';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { useEnabledNetworksCompatibleWithWalletIdInAllNetworks } from '../../hooks/useAllNetwork';

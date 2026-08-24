@@ -1,22 +1,22 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 import { Children, cloneElement, useCallback } from 'react';
 
-import type { IPropsWithTestId } from '@onekeyhq/components';
+import type { IPropsWithTestId } from '@unionkeyhq/components';
 import {
   Button,
   ESwitchSize,
   Stack,
   Switch,
   Toast,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
-import type { INotificationsDevSettingsKeys } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { IListItemProps } from '@unionkeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
+import type { INotificationsDevSettingsKeys } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   useNotificationsAtom,
   useNotificationsDevSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 
 interface INotificationSectionFieldItem extends PropsWithChildren {
   name?: INotificationsDevSettingsKeys;

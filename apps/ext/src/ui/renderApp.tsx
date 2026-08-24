@@ -5,11 +5,11 @@ import 'setimmediate';
 // eslint-disable-next-line import/order
 import { createRoot } from 'react-dom/client';
 
-import { SentryErrorBoundaryFallback } from '@onekeyhq/kit/src/components/ErrorBoundary';
+import { SentryErrorBoundaryFallback } from '@unionkeyhq/kit/src/components/ErrorBoundary';
 import {
   initSentry,
   withSentryHOC,
-} from '@onekeyhq/shared/src/modules3rdParty/sentry';
+} from '@unionkeyhq/shared/src/modules3rdParty/sentry';
 
 import App from '../App';
 

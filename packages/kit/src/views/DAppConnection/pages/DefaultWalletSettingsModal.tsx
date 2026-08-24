@@ -13,14 +13,14 @@ import {
   Stack,
   Switch,
   Toast,
-} from '@onekeyhq/components';
-import type { IDefaultWalletSettingsWithLogo } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityDefaultWalletSettings';
+} from '@unionkeyhq/components';
+import type { IDefaultWalletSettingsWithLogo } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityDefaultWalletSettings';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { ListItem } from '../../../components/ListItem';
@@ -38,7 +38,7 @@ function EmptyGuide() {
       <Image
         w="$80"
         h={341}
-        source={require('@onekeyhq/kit/assets/extension_menu.png')}
+        source={require('@unionkeyhq/kit/assets/extension_menu.png')}
       />
     </Stack>
   );

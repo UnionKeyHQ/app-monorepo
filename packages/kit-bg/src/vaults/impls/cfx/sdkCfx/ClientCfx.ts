@@ -1,4 +1,4 @@
-import type { IBackgroundApi } from '@onekeyhq/kit-bg/src/apis/IBackgroundApi';
+import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/apis/IBackgroundApi';
 
 class ClientCfx {
   private backgroundApi: IBackgroundApi;

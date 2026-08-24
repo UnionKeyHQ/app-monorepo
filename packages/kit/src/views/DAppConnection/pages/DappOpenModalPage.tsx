@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
-import { Page } from '@onekeyhq/components';
-import { EDAppModalPageStatus } from '@onekeyhq/shared/types/dappConnection';
+import { Page } from '@unionkeyhq/components';
+import { EDAppModalPageStatus } from '@unionkeyhq/shared/types/dappConnection';
 
 import type useDappApproveAction from '../../../hooks/useDappApproveAction';
 

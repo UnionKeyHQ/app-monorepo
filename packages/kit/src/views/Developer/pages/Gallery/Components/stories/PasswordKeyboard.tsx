@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { PasswordKeyboard } from '@onekeyhq/kit/src/views/LiteCard/components/PasswordKeyboard';
+import { PasswordKeyboard } from '@unionkeyhq/kit/src/views/LiteCard/components/PasswordKeyboard';
 
 import { Layout } from './utils/Layout';
 

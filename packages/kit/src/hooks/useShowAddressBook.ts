@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { useAddressBookPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
+import { useAddressBookPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import {
   EModalAddressBookRoutes,
   EModalRoutes,
-} from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/shared/src/routes';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { showAddressSafeNotificationDialog } from '../components/AddressInput/AddressSafeDialog';

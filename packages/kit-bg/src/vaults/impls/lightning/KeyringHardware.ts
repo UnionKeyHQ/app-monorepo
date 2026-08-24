@@ -2,32 +2,32 @@
 import { sha256 } from '@noble/hashes/sha256';
 import stringify from 'fast-json-stable-stringify';
 
-import { getBtcForkNetwork } from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+import { getBtcForkNetwork } from '@unionkeyhq/core/src/chains/btc/sdkBtc';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/types';
 import {
   IMPL_BTC,
   IMPL_LIGHTNING_TESTNET,
   IMPL_TBTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyInternalError } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { UnionKeyInternalError } from '@unionkeyhq/shared/src/errors';
 import {
   convertDeviceError,
   convertDeviceResponse,
-} from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 import type {
   IEncodedTxLightning,
   ILnurlAuthParams,
   ISignApiMessageParams,
-} from '@onekeyhq/shared/types/lightning';
+} from '@unionkeyhq/shared/types/lightning';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -284,7 +284,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       typeof signTemplate.nonce !== 'number' ||
       typeof signTemplate.randomSeed !== 'number'
     ) {
-      throw new OneKeyInternalError('Invalid signature');
+      throw new UnionKeyInternalError('Invalid signature');
     }
 
     const rawTx = {
@@ -360,7 +360,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const { signature, publickey } = response.payload;
     if (!signature || !publickey) {
-      throw new OneKeyInternalError('Unable to get signature or publickey');
+      throw new UnionKeyInternalError('Unable to get signature or publickey');
     }
 
     const loginURL = url;

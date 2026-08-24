@@ -14,33 +14,33 @@ import { Semaphore } from 'async-mutex';
 import { throttle } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IDialogInstance, IDialogShowProps } from '@onekeyhq/components';
+import type { IDialogInstance, IDialogShowProps } from '@unionkeyhq/components';
 import {
   Dialog,
   DialogContainer,
   Portal,
   SizableText,
   Toast,
-} from '@onekeyhq/components';
-import type { IShowToasterInstance } from '@onekeyhq/components/src/actions/Toast/ShowCustom';
-import { ShowCustom } from '@onekeyhq/components/src/actions/Toast/ShowCustom';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import type { IShowToasterInstance } from '@unionkeyhq/components/src/actions/Toast/ShowCustom';
+import { ShowCustom } from '@unionkeyhq/components/src/actions/Toast/ShowCustom';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   usePromptWebDeviceAccess,
   useToPromptWebDeviceAccessPage,
-} from '@onekeyhq/kit/src/hooks/usePromptWebDeviceAccess';
-import type { IHardwareUiState } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit/src/hooks/usePromptWebDeviceAccess';
+import type { IHardwareUiState } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EHardwareUiStateAction,
   useHardwareUiStateAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { EFirmwareUpdateTipMessages } from '@onekeyhq/shared/types/device';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { EFirmwareUpdateTipMessages } from '@unionkeyhq/shared/types/device';
 
 import {
   CommonDeviceLoading,

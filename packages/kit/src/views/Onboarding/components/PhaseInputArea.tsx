@@ -24,7 +24,7 @@ import type {
   IPageFooterProps,
   IPasteEventParams,
   IPropsWithTestId,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Button,
   EPasteEventPayloadItemType,
@@ -44,15 +44,15 @@ import {
   useIsKeyboardShown,
   useKeyboardEvent,
   useMedia,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   type EMnemonicType,
   validateMnemonic,
-} from '@onekeyhq/core/src/secret';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { parseSecretRecoveryPhrase } from '@onekeyhq/shared/src/utils/phrase';
+} from '@unionkeyhq/core/src/secret';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { parseSecretRecoveryPhrase } from '@unionkeyhq/shared/src/utils/phrase';
 
 import { PHRASE_LENGTHS, useSuggestion } from './hooks';
 

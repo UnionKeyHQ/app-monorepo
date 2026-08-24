@@ -4,10 +4,10 @@ import {
   EPortalContainerConstantName,
   Portal,
   TabStackNavigator,
-} from '@onekeyhq/components';
-import { TabFreezeOnBlurContext } from '@onekeyhq/kit/src/provider/Container/TabFreezeOnBlurContainer';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import type { ETabRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/components';
+import { TabFreezeOnBlurContext } from '@unionkeyhq/kit/src/provider/Container/TabFreezeOnBlurContainer';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import type { ETabRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { tabExtraConfig, useTabRouterConfig } from './router';
 

@@ -1,8 +1,8 @@
 import { app, globalShortcut } from 'electron';
 
-import type { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { shortcutsMap } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import { shortcutsKeys } from '@onekeyhq/shared/src/shortcuts/shortcutsKeys.enum';
+import type { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import { shortcutsMap } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import { shortcutsKeys } from '@unionkeyhq/shared/src/shortcuts/shortcutsKeys.enum';
 
 import * as store from './store';
 

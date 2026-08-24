@@ -1,8 +1,8 @@
-import sortUtils from '@onekeyhq/shared/src/utils/sortUtils';
+import sortUtils from '@unionkeyhq/shared/src/utils/sortUtils';
 import type {
   IMarketWatchListData,
   IMarketWatchListItem,
-} from '@onekeyhq/shared/types/market';
+} from '@unionkeyhq/shared/types/market';
 
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';
 

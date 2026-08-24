@@ -2,20 +2,20 @@ import { useCallback, useRef } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import type { IPageScreenProps } from '@onekeyhq/components';
-import { Page, SizableText, Stack } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import type { IAccountManagerStacksParamList } from '@onekeyhq/shared/src/routes';
-import { EAccountManagerStacksRoutes } from '@onekeyhq/shared/src/routes';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import { EReasonForNeedPassword } from '@onekeyhq/shared/types/setting';
+import type { IPageScreenProps } from '@unionkeyhq/components';
+import { Page, SizableText, Stack } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import type { IAccountManagerStacksParamList } from '@unionkeyhq/shared/src/routes';
+import { EAccountManagerStacksRoutes } from '@unionkeyhq/shared/src/routes';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import { EReasonForNeedPassword } from '@unionkeyhq/shared/types/setting';
 
 import {
   BATCH_CREATE_ACCONT_ALL_NETWORK_MAX_COUNT,
@@ -73,8 +73,8 @@ function BatchCreateAccountFormPage({
       <Page.Body p="$4">
         <BatchCreateAccountFormBase
           alwaysShowAdvancedSettings
-          // activeAccount?.network?.id ?? getNetworkIdsMap().onekeyall
-          defaultNetworkId={networkId || getNetworkIdsMap().onekeyall}
+          // activeAccount?.network?.id ?? getNetworkIdsMap().unionkeyall
+          defaultNetworkId={networkId || getNetworkIdsMap().unionkeyall}
           defaultDeriveType={undefined}
           defaultFrom="1"
           defaultCount={String(BATCH_CREATE_ACCONT_ALL_NETWORK_MAX_COUNT)}

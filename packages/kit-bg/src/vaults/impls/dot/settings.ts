@@ -1,9 +1,9 @@
-import { ECoreApiExportedSecretKeyType } from '@onekeyhq/core/src/types';
+import { ECoreApiExportedSecretKeyType } from '@unionkeyhq/core/src/types';
 import {
   COINTYPE_DOT,
   IMPL_DOT,
   INDEX_PLACEHOLDER,
-} from '@onekeyhq/shared/src/engine/engineConsts';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { EDBAccountType } from '../../../dbs/local/consts';
 

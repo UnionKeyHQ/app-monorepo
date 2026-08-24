@@ -4,23 +4,23 @@ import { encodeAddress } from '@polkadot/util-crypto';
 import {
   serializeSignedTransaction,
   serializeUnsignedTransaction,
-} from '@onekeyhq/core/src/chains/dot/sdkDot';
+} from '@unionkeyhq/core/src/chains/dot/sdkDot';
 import {
   DOT_TYPE_PREFIX,
   type IEncodedTxDot,
-} from '@onekeyhq/core/src/chains/dot/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/dot/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import type {
   ICoreApiGetAddressItem,
   ISignedMessagePro,
   ISignedTxPro,
-} from '@onekeyhq/core/src/types';
-import { NotImplemented } from '@onekeyhq/shared/src/errors';
-import { convertDeviceResponse } from '@onekeyhq/shared/src/errors/utils/deviceErrorUtils';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { checkIsDefined } from '@onekeyhq/shared/src/utils/assertUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
+} from '@unionkeyhq/core/src/types';
+import { NotImplemented } from '@unionkeyhq/shared/src/errors';
+import { convertDeviceResponse } from '@unionkeyhq/shared/src/errors/utils/deviceErrorUtils';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { checkIsDefined } from '@unionkeyhq/shared/src/utils/assertUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
 
 import { KeyringHardwareBase } from '../../base/KeyringHardwareBase';
 
@@ -72,7 +72,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             pathPrefix,
             pathSuffix,
             template,
-            showOnOnekeyFn,
+            showOnOneKeyFn,
           }) => {
             const buildFullPath = (p: { index: number }) =>
               accountUtils.buildPathFromTemplate({
@@ -103,7 +103,7 @@ export class KeyringHardware extends KeyringHardwareBase {
             //     const i = pathSuffix.replace('{index}', `${index}`);
             //     return {
             //       path: `${pathPrefix}/${i}`,
-            //       showOnOneKey: showOnOnekeyFn(arrIndex),
+            //       showOnOneKey: showOnOneKeyFn(arrIndex),
             //       prefix: +networkInfo.addressPrefix,
             //       network: chainId,
             //     };

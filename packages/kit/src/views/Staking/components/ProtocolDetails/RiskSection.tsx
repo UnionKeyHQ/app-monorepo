@@ -7,12 +7,12 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { FALCON_DOCS_URL } from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
-import type { IStakeProtocolDetails } from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/components';
+import { FALCON_DOCS_URL } from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
+import type { IStakeProtocolDetails } from '@unionkeyhq/shared/types/staking';
 
 export function RiskSection({ details }: { details?: IStakeProtocolDetails }) {
   const intl = useIntl();

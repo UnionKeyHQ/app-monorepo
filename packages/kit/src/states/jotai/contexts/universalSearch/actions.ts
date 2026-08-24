@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { ContextJotaiActionsBase } from '@onekeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { ContextJotaiActionsBase } from '@unionkeyhq/kit/src/states/jotai/utils/ContextJotaiActionsBase';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import type {
   IIUniversalRecentSearchItem,
   IUniversalSearchAtomData,
-} from '@onekeyhq/shared/types/search';
+} from '@unionkeyhq/shared/types/search';
 
 import { contextAtomMethod, universalSearchAtom } from './atoms';
 

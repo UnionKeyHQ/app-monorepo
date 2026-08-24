@@ -8,14 +8,14 @@ import {
   Stack,
   Toast,
   YStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { AccountSelectorProviderMirror } from '@onekeyhq/kit/src/components/AccountSelector';
-import { useActiveAccount } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { AccountSelectorProviderMirror } from '@unionkeyhq/kit/src/components/AccountSelector';
+import { useActiveAccount } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import type { IV4MigrationImportedCredential } from '@onekeyhq/kit-bg/src/migrations/v4ToV5Migration/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import type { IV4MigrationImportedCredential } from '@unionkeyhq/kit-bg/src/migrations/v4ToV5Migration/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import { Layout } from './utils/Layout';
 

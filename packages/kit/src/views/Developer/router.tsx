@@ -1,9 +1,9 @@
-import type { ITabSubNavigatorConfig } from '@onekeyhq/components';
+import type { ITabSubNavigatorConfig } from '@unionkeyhq/components';
 import {
   LazyLoadPage,
   LazyLoadRootTabPage,
-} from '@onekeyhq/kit/src/components/LazyLoadPage';
-import { ETabDeveloperRoutes } from '@onekeyhq/shared/src/routes';
+} from '@unionkeyhq/kit/src/components/LazyLoadPage';
+import { ETabDeveloperRoutes } from '@unionkeyhq/shared/src/routes';
 
 import { galleryScreenList } from './pages/Gallery';
 

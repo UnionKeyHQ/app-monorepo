@@ -8,15 +8,15 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { formatApy } from '@onekeyhq/kit/src/views/Staking/components/utils';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import earnUtils from '@onekeyhq/shared/src/utils/earnUtils';
+} from '@unionkeyhq/components';
+import { formatApy } from '@unionkeyhq/kit/src/views/Staking/components/utils';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import earnUtils from '@unionkeyhq/shared/src/utils/earnUtils';
 import type {
   IEarnRewardUnit,
   IStakeProtocolDetails,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { useEarnEventActive } from '../../hooks/useEarnEventActive';
 import { formatStakingDistanceToNowStrict } from '../utils';

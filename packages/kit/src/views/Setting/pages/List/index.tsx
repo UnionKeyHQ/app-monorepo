@@ -13,16 +13,16 @@ import {
   YStack,
   useClipboard,
   useSafeAreaInsets,
-} from '@onekeyhq/components';
-import { useAppUpdatePersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
+} from '@unionkeyhq/components';
+import { useAppUpdatePersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
 import {
   GITHUB_URL,
-  ONEKEY_URL,
+  UNIONKEY_URL,
   TWITTER_URL,
-} from '@onekeyhq/shared/src/config/appConfig';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { openUrlExternal } from '@onekeyhq/shared/src/utils/openUrlUtils';
+} from '@unionkeyhq/shared/src/config/appConfig';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { openUrlExternal } from '@unionkeyhq/shared/src/utils/openUrlUtils';
 
 import { handleOpenDevMode } from '../../utils/devMode';
 
@@ -85,8 +85,8 @@ const SocialButtonGroup = () => {
       <XStack justifyContent="center">
         <XStack gap="$3" paddingVertical="$3" my="$3">
           <SocialButton
-            icon="OnekeyBrand"
-            url={ONEKEY_URL}
+            icon="UnionKeyBrand"
+            url={UNIONKEY_URL}
             text={intl.formatMessage({
               id: ETranslations.global_official_website,
             })}

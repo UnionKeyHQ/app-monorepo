@@ -3,7 +3,7 @@ import { Children, cloneElement, forwardRef, isValidElement } from 'react';
 
 import { debounce } from 'lodash';
 
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { Stack } from '../../primitives';
 

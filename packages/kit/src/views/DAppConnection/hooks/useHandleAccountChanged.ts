@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react';
 
 import { useThrottledCallback } from 'use-debounce';
 
-import type { IAccountSelectorActiveAccountInfo } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IAccountSelectorActiveAccountInfo } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
 import {
   useActiveAccount,
   useSelectedAccount,
-} from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import type { IAccountSelectorSelectedAccount } from '@onekeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import type { IAccountSelectorSelectedAccount } from '@unionkeyhq/kit-bg/src/dbs/simple/entity/SimpleDbEntityAccountSelector';
 
 export type IHandleAccountChangedParams = {
   activeAccount: IAccountSelectorActiveAccountInfo;

@@ -16,8 +16,8 @@ describe('Punycode detection', () => {
       'https://www.npmjs.com/package/punycode',
       'http://example.com',
       'https://github.com/mathiasbynens/punycode.js/pulls?q=is%3Apr+is%3Aclosed',
-      'https://github.com/OneKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aclosed',
-      'https://github.com/OneKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aclose',
+      'https://github.com/UnionKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aclosed',
+      'https://github.com/UnionKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aclose',
     ];
     expect(asciiUrls.every((url) => containsPunycode(url))).toBeFalsy();
   });

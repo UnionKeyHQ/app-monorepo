@@ -1,4 +1,4 @@
-import { Icon, Stack } from '@onekeyhq/components';
+import { Icon, Stack } from '@unionkeyhq/components';
 
 import { MarketTokenIcon } from './MarketTokenIcon';
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { Buffer } from 'buffer';
 
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
 
 import {
   decodePasswordAsync,
@@ -43,12 +43,12 @@ jest.mock('crypto', () => ({
   }),
 }));
 
-jest.mock('@onekeyhq/shared/src/platformEnv', () => ({
-  ...jest.requireActual('@onekeyhq/shared/src/platformEnv'),
+jest.mock('@unionkeyhq/shared/src/platformEnv', () => ({
+  ...jest.requireActual('@unionkeyhq/shared/src/platformEnv'),
   isJest: true,
 }));
 
-const platformEnv = jest.requireMock('@onekeyhq/shared/src/platformEnv');
+const platformEnv = jest.requireMock('@unionkeyhq/shared/src/platformEnv');
 
 beforeEach(() => {
   platformEnv.isExtensionUi = false;

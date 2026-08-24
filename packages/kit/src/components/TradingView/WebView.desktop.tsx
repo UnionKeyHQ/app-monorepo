@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 
-import { Stack } from '@onekeyhq/components';
+import { Stack } from '@unionkeyhq/components';
 
 import type { ViewStyle } from 'react-native';
 

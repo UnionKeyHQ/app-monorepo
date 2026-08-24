@@ -1,5 +1,5 @@
-import { Page } from '@onekeyhq/components';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import { Page } from '@unionkeyhq/components';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { WalletConnectModalContainer } from '../../../components/WalletConnect/WalletConnectModalContainer';
 

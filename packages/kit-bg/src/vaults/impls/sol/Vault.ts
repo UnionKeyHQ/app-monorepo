@@ -43,25 +43,25 @@ import BigNumber from 'bignumber.js';
 import bs58 from 'bs58';
 import { isEmpty, isNil } from 'lodash';
 
-import { parseToNativeTx } from '@onekeyhq/core/src/chains/sol/sdkSol/parse';
+import { parseToNativeTx } from '@unionkeyhq/core/src/chains/sol/sdkSol/parse';
 import type {
   IDecodedTxExtraSol,
   IEncodedTxSol,
   INativeTxSol,
-} from '@onekeyhq/core/src/chains/sol/types';
-import coreChainApi from '@onekeyhq/core/src/instance/coreChainApi';
+} from '@unionkeyhq/core/src/chains/sol/types';
+import coreChainApi from '@unionkeyhq/core/src/instance/coreChainApi';
 import {
   decodeSensitiveTextAsync,
   encodeSensitiveTextAsync,
-} from '@onekeyhq/core/src/secret';
-import type { ISignedTxPro, IUnsignedTxPro } from '@onekeyhq/core/src/types';
+} from '@unionkeyhq/core/src/secret';
+import type { ISignedTxPro, IUnsignedTxPro } from '@unionkeyhq/core/src/types';
 import {
   CanNotSendZeroAmountError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import chainValueUtils from '@onekeyhq/shared/src/utils/chainValueUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import chainValueUtils from '@unionkeyhq/shared/src/utils/chainValueUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 import type {
   IAddressValidation,
   IGeneralInputValidation,
@@ -69,22 +69,22 @@ import type {
   IPrivateKeyValidation,
   IXprvtValidation,
   IXpubValidation,
-} from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/shared/types/address';
 import type {
   IMeasureRpcStatusParams,
   IMeasureRpcStatusResult,
-} from '@onekeyhq/shared/types/customRpc';
-import type { IFeeInfoUnit } from '@onekeyhq/shared/types/fee';
-import type { ISwapTxInfo } from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/customRpc';
+import type { IFeeInfoUnit } from '@unionkeyhq/shared/types/fee';
+import type { ISwapTxInfo } from '@unionkeyhq/shared/types/swap/types';
 import {
   EDecodedTxActionType,
   EDecodedTxStatus,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 import type {
   IDecodedTx,
   IDecodedTxAction,
   IDecodedTxTransferInfo,
-} from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/tx';
 
 import { VaultBase } from '../../base/VaultBase';
 
@@ -195,7 +195,7 @@ export default class Vault extends VaultBase {
       return this._buildEncodedTxFromBatchTransfer({ transfersInfo });
     }
 
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildEncodedTxFromTransfer(params: { transferInfo: ITransferInfo }) {
@@ -1003,7 +1003,7 @@ export default class Vault extends VaultBase {
         swapInfo: params.swapInfo,
       });
     }
-    throw new OneKeyInternalError();
+    throw new UnionKeyInternalError();
   }
 
   async _buildUnsignedTxFromEncodedTx({
@@ -1416,7 +1416,7 @@ export default class Vault extends VaultBase {
     const { customRpcInfo, signedTx } = params;
     const rpcUrl = customRpcInfo.rpc;
     if (!rpcUrl) {
-      throw new OneKeyInternalError('Invalid rpc url');
+      throw new UnionKeyInternalError('Invalid rpc url');
     }
     const client = new ClientCustomRpcSol(rpcUrl);
     const txid = await client.broadcastTransaction(signedTx.rawTx);

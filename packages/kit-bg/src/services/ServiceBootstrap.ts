@@ -1,8 +1,8 @@
-import { backgroundClass } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import { EAppSyncStorageKeys } from '@onekeyhq/shared/src/storage/syncStorageKeys';
-import systemTimeUtils from '@onekeyhq/shared/src/utils/systemTimeUtils';
+import { backgroundClass } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import { EAppSyncStorageKeys } from '@unionkeyhq/shared/src/storage/syncStorageKeys';
+import systemTimeUtils from '@unionkeyhq/shared/src/utils/systemTimeUtils';
 
 import localDb from '../dbs/local/localDb';
 import { devSettingsPersistAtom } from '../states/jotai/atoms';
@@ -56,7 +56,7 @@ class ServiceBootstrap extends ServiceBase {
   async saveDevModeToSyncStorage() {
     const devSettings = await devSettingsPersistAtom.get();
     appStorage.syncStorage.set(
-      EAppSyncStorageKeys.onekey_developer_mode_enabled,
+      EAppSyncStorageKeys.unionkey_developer_mode_enabled,
       !!devSettings.enabled,
     );
   }

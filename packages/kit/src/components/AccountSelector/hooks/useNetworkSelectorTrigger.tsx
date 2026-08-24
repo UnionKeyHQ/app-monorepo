@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
 
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import {

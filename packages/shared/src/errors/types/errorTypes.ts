@@ -1,44 +1,44 @@
 import type {
   ETranslations,
   ETranslationsMock,
-} from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/shared/src/locale';
 
-export enum ECustomOneKeyHardwareError {
-  NeedOneKeyBridge = 3030,
+export enum ECustomUnionKeyHardwareError {
+  NeedUnionKeyBridge = 3030,
   // TODO: remove this error code
   NeedFirmwareUpgrade = 4030,
-  NeedOneKeyBridgeUpgrade = 4031,
+  NeedUnionKeyBridgeUpgrade = 4031,
   NeedFirmwareUpgradeFromWeb = 4032,
   DeviceMethodCallTimeout = 4080,
   FirmwareUpdateBatteryTooLow = 4081,
 }
 
-export enum EOneKeyErrorClassNames {
-  OneKeyError = 'OneKeyError',
-  OneKeyAppError = 'OneKeyAppError',
-  OneKeyPlainTextError = 'OneKeyPlainTextError',
-  OneKeyHardwareError = 'OneKeyHardwareError',
+export enum EUnionKeyErrorClassNames {
+  UnionKeyError = 'UnionKeyError',
+  UnionKeyAppError = 'UnionKeyAppError',
+  UnionKeyPlainTextError = 'UnionKeyPlainTextError',
+  UnionKeyHardwareError = 'UnionKeyHardwareError',
   UnknownHardwareError = 'UnknownHardwareError',
-  OneKeyServerApiError = 'OneKeyServerApiError',
+  UnionKeyServerApiError = 'UnionKeyServerApiError',
   LocalDBRecordNotFoundError = 'LocalDBRecordNotFoundError',
-  OneKeyValidatorError = 'OneKeyValidatorError',
-  OneKeyValidatorTip = 'OneKeyValidatorTip',
-  OneKeyAbortError = 'OneKeyAbortError',
+  UnionKeyValidatorError = 'UnionKeyValidatorError',
+  UnionKeyValidatorTip = 'UnionKeyValidatorTip',
+  UnionKeyAbortError = 'UnionKeyAbortError',
   IncorrectPassword = 'IncorrectPassword',
   IncorrectMasterPassword = 'IncorrectMasterPassword',
   AxiosAbortCancelError = 'AxiosAbortCancelError',
   AxiosNetworkError = 'AxiosNetworkError',
-  OneKeyWalletConnectModalCloseError = 'OneKeyWalletConnectModalCloseError',
-  OneKeyAlreadyExistWalletError = 'OneKeyAlreadyExistWalletError',
+  UnionKeyWalletConnectModalCloseError = 'UnionKeyWalletConnectModalCloseError',
+  UnionKeyAlreadyExistWalletError = 'UnionKeyAlreadyExistWalletError',
   PasswordPromptDialogCancel = 'PasswordPromptDialogCancel',
   PrimeLoginDialogCancelError = 'PrimeLoginDialogCancelError',
-  OneKeyErrorPrimeMasterPasswordInvalid = 'OneKeyErrorPrimeMasterPasswordInvalid',
+  UnionKeyErrorPrimeMasterPasswordInvalid = 'UnionKeyErrorPrimeMasterPasswordInvalid',
   VaultKeyringNotDefinedError = 'VaultKeyringNotDefinedError',
-  OneKeyErrorInsufficientNativeBalance = 'OneKeyErrorInsufficientNativeBalance',
-  OneKeyErrorNotImplemented = 'OneKeyErrorNotImplemented',
-  OneKeyErrorAirGapAccountNotFound = 'OneKeyErrorAirGapAccountNotFound',
-  OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet = 'OneKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet',
-  OneKeyErrorScanQrCodeCancel = 'OneKeyErrorScanQrCodeCancel',
+  UnionKeyErrorInsufficientNativeBalance = 'UnionKeyErrorInsufficientNativeBalance',
+  UnionKeyErrorNotImplemented = 'UnionKeyErrorNotImplemented',
+  UnionKeyErrorAirGapAccountNotFound = 'UnionKeyErrorAirGapAccountNotFound',
+  UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet = 'UnionKeyErrorAirGapStandardWalletRequiredWhenCreateHiddenWallet',
+  UnionKeyErrorScanQrCodeCancel = 'UnionKeyErrorScanQrCodeCancel',
   SecureQRCodeDialogCancel = 'SecureQRCodeDialogCancel',
   HardwareUserCancelFromOutside = 'HardwareUserCancelFromOutside',
   FirmwareUpdateExit = 'FirmwareUpdateExit',
@@ -46,10 +46,10 @@ export enum EOneKeyErrorClassNames {
   WebDeviceNotFoundOrNeedsPermission = 'WebDeviceNotFoundOrNeedsPermission',
 }
 
-export type IOneKeyErrorI18nInfo = Record<string | number, string | number>;
+export type IUnionKeyErrorI18nInfo = Record<string | number, string | number>;
 
 // @ts-ignore
-export interface IOneKeyJsError extends Error {
+export interface IUnionKeyJsError extends Error {
   // ES5 Error props
   message?: string;
   name?: string;
@@ -58,15 +58,15 @@ export interface IOneKeyJsError extends Error {
   cause?: unknown;
 }
 
-export interface IOneKeyError<
-  InfoT = IOneKeyErrorI18nInfo | any,
-  DataT = IOneKeyJsError | any,
-> extends IOneKeyJsError {
+export interface IUnionKeyError<
+  InfoT = IUnionKeyErrorI18nInfo | any,
+  DataT = IUnionKeyJsError | any,
+> extends IUnionKeyJsError {
   // ---- Web3RpcError props
   code?: number;
   data?: DataT;
-  // ---- OneKeyError props
-  className?: EOneKeyErrorClassNames;
+  // ---- UnionKeyError props
+  className?: EUnionKeyErrorClassNames;
   key?: ETranslations | ETranslationsMock; // i18n key
   info?: InfoT; // i18n params
   constructorName?: string;
@@ -79,7 +79,7 @@ export interface IOneKeyError<
   */
   autoToast?: boolean; // TODO move to $$config: { autoToast, reconnect }
   // ---- hardwareError props
-  payload?: IOneKeyHardwareErrorPayload; // raw payload from hardware sdk error response
+  payload?: IUnionKeyHardwareErrorPayload; // raw payload from hardware sdk error response
   reconnect?: boolean;
   $isHardwareError?: boolean;
 
@@ -88,7 +88,7 @@ export interface IOneKeyError<
   disableFallbackMessage?: boolean;
 }
 
-export type IOneKeyHardwareErrorPayload = {
+export type IUnionKeyHardwareErrorPayload = {
   code?: number | string;
   error?: string;
   message?: string;
@@ -97,17 +97,17 @@ export type IOneKeyHardwareErrorPayload = {
   deviceId?: string;
 };
 
-export type IOneKeyHardwareErrorData = {
+export type IUnionKeyHardwareErrorData = {
   reconnect?: boolean | undefined;
   connectId?: string;
   deviceId?: string;
 };
 
-export type IOneKeyErrorMeta = {
+export type IUnionKeyErrorMeta = {
   defaultMessage?: string;
 };
 
-export type IOneKeyRpcError = {
+export type IUnionKeyRpcError = {
   req: {
     method: string;
     params: [any];

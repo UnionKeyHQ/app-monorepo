@@ -2,9 +2,9 @@
 import { uniq } from 'lodash';
 import { Platform } from 'react-native';
 
-import { ONEKEY_LOGO_ICON_URL } from '../consts';
+import { UNIONKEY_LOGO_ICON_URL } from '../consts';
 import {
-  ONEKEY_APP_DEEP_LINK,
+  UNIONKEY_APP_DEEP_LINK,
   WalletConnectUniversalLinkFull,
 } from '../consts/deeplinkConsts';
 import {
@@ -29,7 +29,7 @@ export const WALLET_CONNECT_RELAY_URL = 'wss://relay.walletconnect.com';
 export const WALLET_CONNECT_LOGGER_LEVEL: IWalletConnectLoggerLevel = 'error';
 
 const platformName = uniq([
-  process.env.ONEKEY_PLATFORM ?? '',
+  process.env.UNIONKEY_PLATFORM ?? '',
   process.env.EXT_CHANNEL ?? '',
   Platform.OS ?? '',
 ])
@@ -47,14 +47,14 @@ export const WALLET_CONNECT_CLIENT_META = {
   description: WALLET_CONNECT_CLIENT_DESC,
   // wallet-connect identify different dApps by url
   url: platformEnv.isWeb
-    ? `https://app.onekey.so`
-    : `https://${platformName}.app.onekey.so`,
-  icons: [ONEKEY_LOGO_ICON_URL],
-  // https://explorer-api.walletconnect.com/v3/all?projectId=2f05ae7f1116030fde2d36508f472bfb&entries=40&page=1&search=onekey&build=1710747625972
+    ? `https://unionkey.io`
+    : `https://${platformName}.unionkey.io`,
+  icons: [UNIONKEY_LOGO_ICON_URL],
+  // https://explorer-api.walletconnect.com/v3/all?projectId=2f05ae7f1116030fde2d36508f472bfb&entries=40&page=1&search=unionkey&build=1710747625972
   redirect: platformEnv.isNative
     ? {
-        native: ONEKEY_APP_DEEP_LINK, // 'onekey-wallet://',
-        universal: WalletConnectUniversalLinkFull, // 'https://app.onekey.so/wc/connect',
+        native: UNIONKEY_APP_DEEP_LINK, // 'unionkey-wallet://',
+        universal: WalletConnectUniversalLinkFull, // 'https://unionkey.io/wc/connect',
       }
     : (undefined as any),
 };

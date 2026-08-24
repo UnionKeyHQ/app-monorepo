@@ -1,7 +1,7 @@
-import type { IIconProps, ISizableTextProps } from '@onekeyhq/components';
-import { Icon, Spinner, Stack } from '@onekeyhq/components';
-import type { IListItemProps } from '@onekeyhq/kit/src/components/ListItem';
-import { ListItem } from '@onekeyhq/kit/src/components/ListItem';
+import type { IIconProps, ISizableTextProps } from '@unionkeyhq/components';
+import { Icon, Spinner, Stack } from '@unionkeyhq/components';
+import type { IListItemProps } from '@unionkeyhq/kit/src/components/ListItem';
+import { ListItem } from '@unionkeyhq/kit/src/components/ListItem';
 
 export function WalletOptionItem({
   label,

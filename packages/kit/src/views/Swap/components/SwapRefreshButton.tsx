@@ -3,8 +3,8 @@ import { memo, useCallback, useEffect, useRef } from 'react';
 import { debounce } from 'lodash';
 import { Animated } from 'react-native';
 
-import { LottieView, XStack } from '@onekeyhq/components';
-import { swapRefreshInterval } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+import { LottieView, XStack } from '@unionkeyhq/components';
+import { swapRefreshInterval } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 
 import { useRouteIsFocused } from '../../../hooks/useRouteIsFocused';
 import { useThemeVariant } from '../../../hooks/useThemeVariant';
@@ -133,8 +133,8 @@ const SwapRefreshButton = ({
           ref={lottieRef}
           source={
             themeVariant === 'light'
-              ? require('@onekeyhq/kit/assets/animations/lottie_onekey_swap_refresh_light.json')
-              : require('@onekeyhq/kit/assets/animations/lottie_onekey_swap_refresh_dark.json')
+              ? require('@unionkeyhq/kit/assets/animations/lottie_unionkey_swap_refresh_light.json')
+              : require('@unionkeyhq/kit/assets/animations/lottie_unionkey_swap_refresh_dark.json')
           }
           width={18}
           height={18}

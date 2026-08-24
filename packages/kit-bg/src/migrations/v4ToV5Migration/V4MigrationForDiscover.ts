@@ -1,7 +1,7 @@
 import { unionBy } from 'lodash';
 
-import type { IBrowserBookmark } from '@onekeyhq/kit/src/views/Discovery/types';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+import type { IBrowserBookmark } from '@unionkeyhq/kit/src/views/Discovery/types';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
 
 import { V4MigrationManagerBase } from './V4MigrationManagerBase';
 

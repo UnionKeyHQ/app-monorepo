@@ -8,8 +8,8 @@ import {
   Stack,
   XStack,
   useClipboard,
-} from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
+} from '@unionkeyhq/components';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
 
 interface ITokenIdentityItemProps {
   /**

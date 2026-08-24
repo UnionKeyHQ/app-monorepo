@@ -50,3 +50,10 @@ The UnionKey App provides the following benefits:
 
 - [Mobile](https://unionkey.io/mobile)
 - [Desktop](https://unionkey.io/desktop)
+
+## Development and licensing
+
+See [UPSTREAM_COMPATIBILITY.md](./UPSTREAM_COMPATIBILITY.md) for the remaining
+third-party SDK and upgrade-compatibility boundaries. Redistribution is subject
+to the terms in [LICENSE.md](./LICENSE.md) and any additional authorization from
+the upstream rights holder.

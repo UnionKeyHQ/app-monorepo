@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import { RootSiblingParent } from 'react-native-root-siblings';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import LazyLoad from '@onekeyhq/shared/src/lazyLoad';
-import type { IJPushRemotePushMessageInfo } from '@onekeyhq/shared/types/notification';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
+import LazyLoad from '@unionkeyhq/shared/src/lazyLoad';
+import type { IJPushRemotePushMessageInfo } from '@unionkeyhq/shared/types/notification';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { WalletBackupPreCheckContainer } from '../../components/WalletBackup';

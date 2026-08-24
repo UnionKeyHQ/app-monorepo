@@ -1,5 +1,5 @@
-import { Dialog } from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+import { Dialog } from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 
 import { showDevOnlyPasswordDialog } from '../pages/List/DevSettingsSection';
 

@@ -3,19 +3,19 @@ import { memo, useCallback, useMemo } from 'react';
 import { isEmpty } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import type { IAlertProps } from '@onekeyhq/components';
-import { Alert, YStack } from '@onekeyhq/components';
-import type { IUnsignedMessage } from '@onekeyhq/core/src/types';
-import { useDevSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms/devSettings';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+import type { IAlertProps } from '@unionkeyhq/components';
+import { Alert, YStack } from '@unionkeyhq/components';
+import type { IUnsignedMessage } from '@unionkeyhq/core/src/types';
+import { useDevSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms/devSettings';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   isPrimaryTypeOrderSign,
   isPrimaryTypePermitSign,
-} from '@onekeyhq/shared/src/signMessage';
-import { EHostSecurityLevel } from '@onekeyhq/shared/types/discovery';
-import type { IHostSecurity } from '@onekeyhq/shared/types/discovery';
-import { EMessageTypesEth } from '@onekeyhq/shared/types/message';
-import type { ISignatureConfirmDisplay } from '@onekeyhq/shared/types/signatureConfirm';
+} from '@unionkeyhq/shared/src/signMessage';
+import { EHostSecurityLevel } from '@unionkeyhq/shared/types/discovery';
+import type { IHostSecurity } from '@unionkeyhq/shared/types/discovery';
+import { EMessageTypesEth } from '@unionkeyhq/shared/types/message';
+import type { ISignatureConfirmDisplay } from '@unionkeyhq/shared/types/signatureConfirm';
 
 interface IProps {
   unsignedMessage: IUnsignedMessage;

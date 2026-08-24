@@ -4,23 +4,23 @@ import BigNumber from 'bignumber.js';
 import { debounce, isNil } from 'lodash';
 import { useIntl } from 'react-intl';
 
-import { useRouteIsFocused as useIsFocused } from '@onekeyhq/kit/src/hooks/useRouteIsFocused';
+import { useRouteIsFocused as useIsFocused } from '@unionkeyhq/kit/src/hooks/useRouteIsFocused';
 import {
   useInAppNotificationAtom,
   useSettingsAtom,
   useSettingsPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { equalTokenNoCaseSensitive } from '@onekeyhq/shared/src/utils/tokenUtils';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { equalTokenNoCaseSensitive } from '@unionkeyhq/shared/src/utils/tokenUtils';
 import {
   swapQuoteIntervalMaxCount,
   swapSlippageAutoValue,
-} from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 import type {
   ISwapCheckWarningDef,
   ISwapState,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 import {
   EProtocolOfExchange,
   ESwapAlertLevel,
@@ -29,7 +29,7 @@ import {
   ESwapSlippageSegmentKey,
   ESwapTabSwitchType,
   SwapBuildUseMultiplePopoversNetworkIds,
-} from '@onekeyhq/shared/types/swap/types';
+} from '@unionkeyhq/shared/types/swap/types';
 
 import { useDebounce } from '../../../hooks/useDebounce';
 import {

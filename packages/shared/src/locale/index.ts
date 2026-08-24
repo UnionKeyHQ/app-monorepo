@@ -4,7 +4,7 @@ import ISO6391 from 'iso-639-1';
 /*
 Linting file xxx.tsx took 14762ms. Please check the ESLint rules for performance issues.
 */
-import '@onekeyhq/shared/src/platformEnv';
+import '@unionkeyhq/shared/src/platformEnv';
 
 import { LOCALES as _LOCALES } from './localeJsonMap';
 

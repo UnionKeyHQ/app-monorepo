@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import type { ICheckedState, ISizableTextProps } from '@onekeyhq/components';
+import type { ICheckedState, ISizableTextProps } from '@unionkeyhq/components';
 import {
   Button,
   Checkbox,
@@ -16,27 +16,27 @@ import {
   XStack,
   YStack,
   useClipboard,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import type { IDBCloudSyncItem } from '@onekeyhq/kit-bg/src/dbs/local/types';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import type { IDBCloudSyncItem } from '@unionkeyhq/kit-bg/src/dbs/local/types';
 import {
   useDevSettingsPersistAtom,
   useNotificationStatusAtom,
   usePrimeCloudSyncPersistAtom,
   usePrimeMasterPasswordPersistAtom,
-} from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { EPrimeCloudSyncDataType } from '@onekeyhq/shared/src/consts/primeConsts';
-import dateUtils from '@onekeyhq/shared/src/utils/dateUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
+} from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { EPrimeCloudSyncDataType } from '@unionkeyhq/shared/src/consts/primeConsts';
+import dateUtils from '@unionkeyhq/shared/src/utils/dateUtils';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
 import type {
   ICloudSyncRawDataJson,
   ICloudSyncServerItemByDownloaded,
-} from '@onekeyhq/shared/types/prime/primeCloudSyncTypes';
+} from '@unionkeyhq/shared/types/prime/primeCloudSyncTypes';
 import type {
   IPrimeDeviceInfo,
   IPrimeServerUserInfo,
-} from '@onekeyhq/shared/types/prime/primeTypes';
+} from '@unionkeyhq/shared/types/prime/primeTypes';
 
 import { usePrimeAuthV2 } from '../../hooks/usePrimeAuthV2';
 
@@ -455,7 +455,7 @@ function StatusPanel() {
         checkValue: !!result?.cachePassword,
       })}
       {renderTestItem({
-        title: 'OneKeyID 已登录',
+        title: 'UnionKeyID 已登录',
         checkValue: !!user?.privyUserId,
       })}
       {renderTestItem({

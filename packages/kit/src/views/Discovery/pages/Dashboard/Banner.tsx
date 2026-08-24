@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { Pressable, Image } from 'react-native';
 
-import { Stack } from '@onekeyhq/components';
-import { EEnterMethod } from '@onekeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
-import type { IDiscoveryBanner } from '@onekeyhq/shared/types/discovery';
+import { Stack } from '@unionkeyhq/components';
+import { EEnterMethod } from '@unionkeyhq/shared/src/logger/scopes/discovery/scenes/dapp';
+import type { IDiscoveryBanner } from '@unionkeyhq/shared/types/discovery';
 
 import { useBannerData } from '../../hooks/useBannerData';
 import { useWebSiteHandler } from '../../hooks/useWebSiteHandler';

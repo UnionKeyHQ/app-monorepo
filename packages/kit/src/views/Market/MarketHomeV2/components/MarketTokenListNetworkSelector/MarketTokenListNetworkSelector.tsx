@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
-import type { ISwapNetwork } from '@onekeyhq/shared/types/swap/types';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import type { ISwapNetwork } from '@unionkeyhq/shared/types/swap/types';
 
 import MarketNetworkFilter from './MarketNetworkFilter';
 

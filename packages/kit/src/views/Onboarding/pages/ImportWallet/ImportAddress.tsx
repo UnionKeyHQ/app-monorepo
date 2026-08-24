@@ -6,7 +6,7 @@ import type {
   IFormMode,
   IReValidateMode,
   UseFormReturn,
-} from '@onekeyhq/components';
+} from '@unionkeyhq/components';
 import {
   Form,
   Icon,
@@ -20,36 +20,36 @@ import {
   useForm,
   useFormWatch,
   useMedia,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   AccountSelectorProviderMirror,
   ControlledNetworkSelectorTrigger,
-} from '@onekeyhq/kit/src/components/AccountSelector';
-import { DeriveTypeSelectorFormInput } from '@onekeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
-import { useAccountSelectorTrigger } from '@onekeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
-import type { IAddressInputValue } from '@onekeyhq/kit/src/components/AddressInput';
+} from '@unionkeyhq/kit/src/components/AccountSelector';
+import { DeriveTypeSelectorFormInput } from '@unionkeyhq/kit/src/components/AccountSelector/DeriveTypeSelectorTrigger';
+import { useAccountSelectorTrigger } from '@unionkeyhq/kit/src/components/AccountSelector/hooks/useAccountSelectorTrigger';
+import type { IAddressInputValue } from '@unionkeyhq/kit/src/components/AddressInput';
 import {
   AddressInput,
   createValidateAddressRule,
-} from '@onekeyhq/kit/src/components/AddressInput';
-import { MAX_LENGTH_ACCOUNT_NAME } from '@onekeyhq/kit/src/components/RenameDialog/renameConsts';
-import useAppNavigation from '@onekeyhq/kit/src/hooks/useAppNavigation';
-import { useDebounce } from '@onekeyhq/kit/src/hooks/useDebounce';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { useUserWalletProfile } from '@onekeyhq/kit/src/hooks/useUserWalletProfile';
-import { useAccountSelectorActions } from '@onekeyhq/kit/src/states/jotai/contexts/accountSelector';
-import useScanQrCode from '@onekeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
+} from '@unionkeyhq/kit/src/components/AddressInput';
+import { MAX_LENGTH_ACCOUNT_NAME } from '@unionkeyhq/kit/src/components/RenameDialog/renameConsts';
+import useAppNavigation from '@unionkeyhq/kit/src/hooks/useAppNavigation';
+import { useDebounce } from '@unionkeyhq/kit/src/hooks/useDebounce';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { useUserWalletProfile } from '@unionkeyhq/kit/src/hooks/useUserWalletProfile';
+import { useAccountSelectorActions } from '@unionkeyhq/kit/src/states/jotai/contexts/accountSelector';
+import useScanQrCode from '@unionkeyhq/kit/src/views/ScanQrCode/hooks/useScanQrCode';
 import type {
   IAccountDeriveInfo,
   IAccountDeriveTypes,
-} from '@onekeyhq/kit-bg/src/vaults/types';
-import { getNetworkIdsMap } from '@onekeyhq/shared/src/config/networkIds';
-import { WALLET_TYPE_WATCHING } from '@onekeyhq/shared/src/consts/dbConsts';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IGeneralInputValidation } from '@onekeyhq/shared/types/address';
+} from '@unionkeyhq/kit-bg/src/vaults/types';
+import { getNetworkIdsMap } from '@unionkeyhq/shared/src/config/networkIds';
+import { WALLET_TYPE_WATCHING } from '@unionkeyhq/shared/src/consts/dbConsts';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IGeneralInputValidation } from '@unionkeyhq/shared/types/address';
 
 import { Tutorials } from '../../components';
 
@@ -171,7 +171,7 @@ function ImportAddress() {
     () => ({
       values: {
         networkId:
-          network?.id && network.id !== getNetworkIdsMap().onekeyall
+          network?.id && network.id !== getNetworkIdsMap().unionkeyall
             ? network?.id
             : getNetworkIdsMap().btc,
         deriveType: undefined,

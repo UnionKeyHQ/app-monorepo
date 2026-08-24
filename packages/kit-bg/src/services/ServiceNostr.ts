@@ -3,15 +3,15 @@ import ExpiryMap from 'expiry-map';
 import {
   getEventHash,
   validateEvent,
-} from '@onekeyhq/core/src/chains/nostr/sdkNostr';
-import type { INostrEvent } from '@onekeyhq/core/src/chains/nostr/types';
-import type IVaultNostr from '@onekeyhq/kit-bg/src/vaults/impls/nostr/Vault';
+} from '@unionkeyhq/core/src/chains/nostr/sdkNostr';
+import type { INostrEvent } from '@unionkeyhq/core/src/chains/nostr/types';
+import type IVaultNostr from '@unionkeyhq/kit-bg/src/vaults/impls/nostr/Vault';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import { EMessageTypesCommon } from '@onekeyhq/shared/types/message';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import { EMessageTypesCommon } from '@unionkeyhq/shared/types/message';
 
 import { vaultFactory } from '../vaults/factory';
 

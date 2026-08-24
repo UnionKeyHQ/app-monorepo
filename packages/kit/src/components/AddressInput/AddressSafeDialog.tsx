@@ -5,8 +5,8 @@ import {
   XStack,
   YStack,
   useDialogInstance,
-} from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 
 import { TransferAllowListContent } from './AddressSecurityHeaderRightButton';
 

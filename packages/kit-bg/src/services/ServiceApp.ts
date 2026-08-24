@@ -1,27 +1,27 @@
 import RNRestart from 'react-native-restart';
 
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import {
   isAvailable,
   logoutFromGoogleDrive,
-} from '@onekeyhq/shared/src/cloudfs';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import { exitApp } from '@onekeyhq/shared/src/modules3rdParty/react-native-exit';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/cloudfs';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import { exitApp } from '@unionkeyhq/shared/src/modules3rdParty/react-native-exit';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import {
   ERootRoutes,
   ETabHomeRoutes,
   ETabRoutes,
-} from '@onekeyhq/shared/src/routes';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
-import type { IOpenUrlRouteInfo } from '@onekeyhq/shared/src/utils/extUtils';
-import extUtils from '@onekeyhq/shared/src/utils/extUtils';
-import resetUtils from '@onekeyhq/shared/src/utils/resetUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
+} from '@unionkeyhq/shared/src/routes';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
+import type { IOpenUrlRouteInfo } from '@unionkeyhq/shared/src/utils/extUtils';
+import extUtils from '@unionkeyhq/shared/src/utils/extUtils';
+import resetUtils from '@unionkeyhq/shared/src/utils/resetUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
 
 import localDb from '../dbs/local/localDb';
 import simpleDb from '../dbs/simple/simpleDb';

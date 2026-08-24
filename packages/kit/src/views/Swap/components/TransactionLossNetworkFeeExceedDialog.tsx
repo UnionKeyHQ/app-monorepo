@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 
-import { SizableText, YStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EProtocolOfExchange } from '@onekeyhq/shared/types/swap/types';
+import { SizableText, YStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EProtocolOfExchange } from '@unionkeyhq/shared/types/swap/types';
 
 const TransactionLossNetworkFeeExceedDialog = ({
   protocol,

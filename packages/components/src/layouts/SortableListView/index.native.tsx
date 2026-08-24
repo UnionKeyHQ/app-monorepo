@@ -12,8 +12,8 @@ import { withStaticProperties } from 'tamagui';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import sortableListViewUtils from './sortableListViewUtils';
 

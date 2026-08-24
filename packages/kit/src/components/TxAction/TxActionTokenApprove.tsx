@@ -3,9 +3,9 @@ import { useEffect, useRef } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import { Button, SizableText, XStack } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
+import { Button, SizableText, XStack } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
 
 import { useAccountData } from '../../hooks/useAccountData';
 import { useFeeInfoInDecodedTx } from '../../hooks/useTxFeeInfo';

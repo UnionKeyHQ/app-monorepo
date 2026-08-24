@@ -11,17 +11,17 @@ import {
   XStack,
   YStack,
   useMedia,
-} from '@onekeyhq/components';
-import { AccountAvatar } from '@onekeyhq/kit/src/components/AccountAvatar';
-import { NetworkAvatarBase } from '@onekeyhq/kit/src/components/NetworkAvatar';
+} from '@unionkeyhq/components';
+import { AccountAvatar } from '@unionkeyhq/kit/src/components/AccountAvatar';
+import { NetworkAvatarBase } from '@unionkeyhq/kit/src/components/NetworkAvatar';
 import type {
   IDBIndexedAccount,
   IDBWallet,
-} from '@onekeyhq/kit-bg/src/dbs/local/types';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { EShortcutEvents } from '@onekeyhq/shared/src/shortcuts/shortcuts.enum';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
+} from '@unionkeyhq/kit-bg/src/dbs/local/types';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { EShortcutEvents } from '@unionkeyhq/shared/src/shortcuts/shortcuts.enum';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
 
 import { useShortcutsOnRouteFocused } from '../../../hooks/useShortcutsOnRouteFocused';
 import { useAccountSelectorSyncLoadingAtom } from '../../../states/jotai/contexts/accountSelector';

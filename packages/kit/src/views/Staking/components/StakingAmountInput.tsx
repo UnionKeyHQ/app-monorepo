@@ -7,11 +7,11 @@ import {
   SizableText,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import type { IAmountInputFormItemProps } from '@onekeyhq/kit/src/components/AmountInput';
-import { AmountInput } from '@onekeyhq/kit/src/components/AmountInput';
-import SwapPercentageStageBadge from '@onekeyhq/kit/src/views/Swap/components/SwapPercentageStageBadge';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+} from '@unionkeyhq/components';
+import type { IAmountInputFormItemProps } from '@unionkeyhq/kit/src/components/AmountInput';
+import { AmountInput } from '@unionkeyhq/kit/src/components/AmountInput';
+import SwapPercentageStageBadge from '@unionkeyhq/kit/src/views/Swap/components/SwapPercentageStageBadge';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { StyleProp, TextStyle } from 'react-native';
 

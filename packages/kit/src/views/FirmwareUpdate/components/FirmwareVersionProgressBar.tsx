@@ -1,4 +1,4 @@
-import { Anchor, Badge, Icon, SizableText, XStack } from '@onekeyhq/components';
+import { Anchor, Badge, Icon, SizableText, XStack } from '@unionkeyhq/components';
 
 import { useFirmwareVersionValid } from '../hooks/useFirmwareVersionValid';
 

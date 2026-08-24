@@ -23,9 +23,9 @@ export type IV4LocaleSymbol =
   | 'pt-BR'
   | 'system';
 
-export enum EV4OnekeyDomain {
-  ONEKEY_SO = 'onekey.so',
-  ONEKEY_CN = 'onekeycn.com',
+export enum EV4UnionKeyDomain {
+  UNIONKEY_SO = 'unionkey.io',
+  UNIONKEY_CN = 'api.unionkey.io',
 }
 export enum EV4ValidationFields {
   Payment = 'Payment', // form__create_transactions

@@ -6,7 +6,7 @@ const getCardanoApi: IGetCardanoApi = async () => ({
   composeTxPlan: Loader.onekeyUtils.composeTxPlan,
   signTransaction: Loader.onekeyUtils.signTransaction,
   hwSignTransaction: Loader.trezorUtils.signTransaction,
-  txToOneKey: Loader.onekeyUtils.txToOneKey,
+  txToUnionKey: Loader.onekeyUtils.txToOneKey,
   hasSetTagWithBody: Loader.onekeyUtils.hasSetTagWithBody,
   dAppGetBalance: Loader.dAppUtils.getBalance,
   dAppGetAddresses: Loader.dAppUtils.getAddresses,

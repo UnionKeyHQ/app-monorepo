@@ -20,16 +20,16 @@ import type {
   ISignMessagePayload,
   ISignMessageRequest,
   ITxPayload,
-} from '@onekeyhq/core/src/chains/aptos/types';
+} from '@unionkeyhq/core/src/chains/aptos/types';
 import {
   InvalidAccount,
-  OneKeyError,
-  OneKeyHardwareError,
-  OneKeyInternalError,
-} from '@onekeyhq/shared/src/errors';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import { EDecodedTxActionType } from '@onekeyhq/shared/types/tx';
+  UnionKeyError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
+} from '@unionkeyhq/shared/src/errors';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
+import { EDecodedTxActionType } from '@unionkeyhq/shared/types/tx';
 
 import type { AptosClient } from './sdkAptos/AptosClient';
 import type { IBuildUnsignedTxParams } from '../../types';
@@ -170,33 +170,33 @@ export async function buildSignedTx(
   });
 }
 
-export function convertRpcError(error: string): OneKeyError {
+export function convertRpcError(error: string): UnionKeyError {
   // more: https://github.com/aptos-labs/aptos-core/blob/1b3348636fd24a8eb413c34f2ebb2c76c25e10d5/developer-docs-site/docs/guides/handle-aptos-errors.md
   if (error.indexOf('EACCOUNT_DOES_NOT_EXIST') !== -1) {
-    return new OneKeyInternalError(error);
+    return new UnionKeyInternalError(error);
   }
   if (
     error.indexOf('EINSUFFICIENT_BALANCE') !== -1 ||
     error.indexOf('INSUFFICIENT_BALANCE_FOR_TRANSACTION_FEE') !== -1
   ) {
-    return new OneKeyInternalError(error);
+    return new UnionKeyInternalError(error);
   }
 
   if (error.indexOf('ECOIN_STORE_NOT_PUBLISHED') !== -1) {
-    return new OneKeyInternalError(error);
+    return new UnionKeyInternalError(error);
   }
 
   if (error.indexOf('ECOLLECTION_ALREADY_EXISTS') !== -1) {
-    return new OneKeyInternalError(error);
+    return new UnionKeyInternalError(error);
   }
   if (error.indexOf('ECOLLECTION_NOT_PUBLISHED') !== -1) {
-    return new OneKeyInternalError(error);
+    return new UnionKeyInternalError(error);
   }
 
   if (error.indexOf('ETOKEN_DATA_ALREADY_EXISTS') !== -1) {
-    return new OneKeyInternalError(error);
+    return new UnionKeyInternalError(error);
   }
-  return new OneKeyError(error);
+  return new UnionKeyError(error);
 }
 
 export function waitPendingTransaction(
@@ -220,7 +220,7 @@ export function waitPendingTransaction(
         const { errorCode } = error;
         // ignore transaction not found
         if (errorCode !== 'transaction_not_found') {
-          return Promise.reject(new OneKeyError(errorCode));
+          return Promise.reject(new UnionKeyError(errorCode));
         }
       }
     }
@@ -235,7 +235,7 @@ export function waitPendingTransaction(
       );
     }
     if (retry > retryCount) {
-      return Promise.reject(new OneKeyError('transaction timeout'));
+      return Promise.reject(new UnionKeyError('transaction timeout'));
     }
 
     return new Promise(
@@ -484,7 +484,7 @@ export async function generateUnsignedTransaction(
 
   const { sender } = encodedTx;
   if (!sender) {
-    throw new OneKeyHardwareError(Error('sender is required'));
+    throw new UnionKeyHardwareError(Error('sender is required'));
   }
 
   let rawTxn: SimpleTransaction | undefined;
@@ -509,7 +509,7 @@ export async function generateUnsignedTransaction(
       const typeArguments = payload?.type_arguments ?? encodedTx.type_arguments;
 
       if (!func) {
-        throw new OneKeyError('generate transaction error: function is empty');
+        throw new UnionKeyError('generate transaction error: function is empty');
       }
 
       const { moduleAddress, moduleName, functionName } = getFunctionParts(
@@ -529,7 +529,7 @@ export async function generateUnsignedTransaction(
         abi,
       };
     } else {
-      throw new OneKeyError('Not support transaction type');
+      throw new UnionKeyError('Not support transaction type');
     }
 
     if (!sequenceNumber) {
@@ -561,7 +561,7 @@ export async function generateUnsignedTransaction(
   }
 
   if (!rawTxn) {
-    throw new OneKeyError('Not support transaction type');
+    throw new UnionKeyError('Not support transaction type');
   }
 
   return rawTxn;

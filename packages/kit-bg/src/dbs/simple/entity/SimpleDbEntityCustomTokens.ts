@@ -1,15 +1,15 @@
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
-import { backgroundMethod } from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { NATIVE_TOKEN_MOCK_ADDRESS } from '@onekeyhq/shared/src/consts/tokenConsts';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
+import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { NATIVE_TOKEN_MOCK_ADDRESS } from '@unionkeyhq/shared/src/consts/tokenConsts';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 import {
   ECustomTokenStatus,
   type IAccountToken,
   type IAccountTokenWithAccountId,
   type ICloudSyncCustomToken,
   type ICloudSyncCustomTokenInfo,
-} from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/token';
 
 // ICustomTokenItem
 import { SimpleDbEntityBase } from '../base/SimpleDbEntityBase';

@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
-import { Button, Input, Toast, YStack } from '@onekeyhq/components';
-import appStorage from '@onekeyhq/shared/src/storage/appStorage';
+import { Button, Input, Toast, YStack } from '@unionkeyhq/components';
+import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
 
 const DEBUG_KEY = '$$test_async_storage_size_key';
 

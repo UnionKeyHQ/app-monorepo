@@ -1,4 +1,4 @@
-import { Anchor, SizableText, Stack, YStack } from '@onekeyhq/components';
+import { Anchor, SizableText, Stack, YStack } from '@unionkeyhq/components';
 
 import { Layout } from './utils/Layout';
 
@@ -13,7 +13,7 @@ const AnchorGallery = () => (
         element: (
           <YStack gap="$4" alignItems="flex-start">
             <Anchor href="https://tamagui.dev">Tamagui Website</Anchor>
-            <Anchor href="https://github.com/onekeyhq">OneKey GitHub</Anchor>
+            <Anchor href="https://github.com/UnionKeyHQ">UnionKey GitHub</Anchor>
           </YStack>
         ),
       },
@@ -83,7 +83,7 @@ const AnchorGallery = () => (
             </SizableText>
             <SizableText>
               Check out our{' '}
-              <Anchor href="https://github.com/onekeyhq">
+              <Anchor href="https://github.com/UnionKeyHQ">
                 GitHub repository
               </Anchor>{' '}
               to see our code.

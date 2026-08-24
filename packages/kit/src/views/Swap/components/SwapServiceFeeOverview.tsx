@@ -9,10 +9,10 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { IImageSourceProps } from '@onekeyhq/components';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { otherWalletFeeData } from '@onekeyhq/shared/types/swap/SwapProvider.constants';
+} from '@unionkeyhq/components';
+import type { IImageSourceProps } from '@unionkeyhq/components';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { otherWalletFeeData } from '@unionkeyhq/shared/types/swap/SwapProvider.constants';
 
 interface IProtocolFeeInfo {
   name: string;
@@ -44,7 +44,7 @@ export function SwapServiceFeeOverview({
         </Stack>
         <SizableText
           size="$bodySm"
-          color={item.name === 'oneKey' ? '$textSuccess' : '$text'}
+          color={item.name === 'unionKey' ? '$textSuccess' : '$text'}
           textAlign="right"
         >
           {item.fee}%
@@ -61,11 +61,11 @@ export function SwapServiceFeeOverview({
       ...otherWalletFeeData,
       {
         maxFee: 0.875,
-        name: 'oneKey',
+        name: 'unionKey',
         fee: serviceFee,
         // color: '#202020',
         color: '#44D62C',
-        icon: require('@onekeyhq/kit/assets/logo.png'),
+        icon: require('@unionkeyhq/kit/assets/logo.png'),
       },
     ],
     [serviceFee],
@@ -73,7 +73,7 @@ export function SwapServiceFeeOverview({
   return (
     <Popover
       title={intl.formatMessage({
-        id: ETranslations.provider_ios_popover_onekey_fee,
+        id: ETranslations.provider_ios_popover_unionkey_fee,
       })}
       renderTrigger={
         <Icon
@@ -89,7 +89,7 @@ export function SwapServiceFeeOverview({
             <SizableText size="$bodyMd" color="$textSubdued">
               {intl.formatMessage(
                 {
-                  id: ETranslations.provider_ios_popover_onekey_fee_content,
+                  id: ETranslations.provider_ios_popover_unionkey_fee_content,
                 },
                 { num: `${serviceFee}%` },
               )}
@@ -97,7 +97,7 @@ export function SwapServiceFeeOverview({
             <SizableText size="$bodyMd" color="$textSubdued">
               {intl.formatMessage(
                 {
-                  id: ETranslations.provider_ios_popover_onekey_fee_content_2,
+                  id: ETranslations.provider_ios_popover_unionkey_fee_content_2,
                 },
                 { num: `${serviceFee}%` },
               )}

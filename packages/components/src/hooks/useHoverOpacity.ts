@@ -1,4 +1,4 @@
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 export function useHoverOpacity(isHovering?: boolean) {
   if (!platformEnv.isDesktop) {

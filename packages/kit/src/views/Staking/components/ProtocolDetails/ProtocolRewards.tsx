@@ -12,15 +12,15 @@ import {
   Stack,
   XStack,
   YStack,
-} from '@onekeyhq/components';
-import { Token } from '@onekeyhq/kit/src/components/Token';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
-import { formatBalance } from '@onekeyhq/shared/src/utils/numberUtils';
+} from '@unionkeyhq/components';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
+import { formatBalance } from '@unionkeyhq/shared/src/utils/numberUtils';
 import type {
   IEarnRewardNum,
   IEarnTokenItem,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 function RewardItem({
   rewardTokenAddress,

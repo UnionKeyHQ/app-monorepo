@@ -1,4 +1,4 @@
-import { IMPL_DNX } from '@onekeyhq/shared/src/engine/engineConsts';
+import { IMPL_DNX } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { CoreChainScopeBase } from '../../base/CoreChainScopeBase';
 

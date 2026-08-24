@@ -4,20 +4,20 @@ import natsort from 'natsort';
 import {
   getBtcForkNetwork,
   getPublicKeyFromXpub,
-} from '@onekeyhq/core/src/chains/btc/sdkBtc';
-import { verifyNexaAddressPrefix } from '@onekeyhq/core/src/chains/nexa/sdkNexa';
+} from '@unionkeyhq/core/src/chains/btc/sdkBtc';
+import { verifyNexaAddressPrefix } from '@unionkeyhq/core/src/chains/nexa/sdkNexa';
 import {
   decryptAsync,
   encodeSensitiveTextAsync,
   encryptImportedCredential,
   fixV4VerifyStringToV5,
   revealEntropyToMnemonic,
-} from '@onekeyhq/core/src/secret';
+} from '@unionkeyhq/core/src/secret';
 import {
   ECoreApiExportedSecretKeyType,
   type ICoreCredentialsInfo,
-} from '@onekeyhq/core/src/types';
-import { WALLET_TYPE_HD } from '@onekeyhq/shared/src/consts/dbConsts';
+} from '@unionkeyhq/core/src/types';
+import { WALLET_TYPE_HD } from '@unionkeyhq/shared/src/consts/dbConsts';
 import {
   COINTYPE_ADA,
   COINTYPE_BTC,
@@ -32,12 +32,12 @@ import {
   COINTYPE_STC,
   COINTYPE_SUI,
   COINTYPE_TBTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import bufferUtils from '@onekeyhq/shared/src/utils/bufferUtils';
-import deviceUtils from '@onekeyhq/shared/src/utils/deviceUtils';
-import hexUtils from '@onekeyhq/shared/src/utils/hexUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
+import deviceUtils from '@unionkeyhq/shared/src/utils/deviceUtils';
+import hexUtils from '@unionkeyhq/shared/src/utils/hexUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
 
 import { EDBAccountType } from '../../dbs/local/consts';
 import v5localDb from '../../dbs/local/localDb';

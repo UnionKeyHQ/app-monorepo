@@ -6,12 +6,12 @@ import { atom, createStore, useAtom } from 'jotai';
 import type {
   IJotaiRead,
   IJotaiWrite,
-} from '@onekeyhq/kit-bg/src/states/jotai/types';
+} from '@unionkeyhq/kit-bg/src/states/jotai/types';
 import {
   contextAtomBase,
   contextAtomComputedBase,
   contextAtomMethodBase,
-} from '@onekeyhq/kit-bg/src/states/jotai/utils';
+} from '@unionkeyhq/kit-bg/src/states/jotai/utils';
 
 import type { WritableAtom } from 'jotai';
 

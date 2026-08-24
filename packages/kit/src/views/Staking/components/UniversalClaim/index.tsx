@@ -13,20 +13,20 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import backgroundApiProxy from '@onekeyhq/kit/src/background/instance/backgroundApiProxy';
+} from '@unionkeyhq/components';
+import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import {
   PercentageStageOnKeyboard,
   calcPercentBalance,
-} from '@onekeyhq/kit/src/components/PercentageStageOnKeyboard';
-import { usePromiseResult } from '@onekeyhq/kit/src/hooks/usePromiseResult';
-import { validateAmountInput } from '@onekeyhq/kit/src/utils/validateAmountInput';
-import { useSettingsPersistAtom } from '@onekeyhq/kit-bg/src/states/jotai/atoms';
-import { ETranslations } from '@onekeyhq/shared/src/locale';
+} from '@unionkeyhq/kit/src/components/PercentageStageOnKeyboard';
+import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+import { validateAmountInput } from '@unionkeyhq/kit/src/utils/validateAmountInput';
+import { useSettingsPersistAtom } from '@unionkeyhq/kit-bg/src/states/jotai/atoms';
+import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import {
   ECheckAmountActionType,
   type IEarnEstimateFeeResp,
-} from '@onekeyhq/shared/types/staking';
+} from '@unionkeyhq/shared/types/staking';
 
 import { capitalizeString, countDecimalPlaces } from '../../utils/utils';
 import { CalculationList, CalculationListItem } from '../CalculationList';

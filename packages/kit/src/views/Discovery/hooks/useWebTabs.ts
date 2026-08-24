@@ -6,7 +6,7 @@ import {
   useDisplayHomePageAtom,
   useWebTabsAtom,
   useWebTabsMapAtom,
-} from '@onekeyhq/kit/src/states/jotai/contexts/discovery';
+} from '@unionkeyhq/kit/src/states/jotai/contexts/discovery';
 
 import type { IWebTab } from '../types';
 

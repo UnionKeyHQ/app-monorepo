@@ -1,14 +1,14 @@
 import { useRef } from 'react';
 
-import type { IUnsignedTxPro } from '@onekeyhq/core/src/types';
-import { memoFn } from '@onekeyhq/shared/src/utils/cacheUtils';
+import type { IUnsignedTxPro } from '@unionkeyhq/core/src/types';
+import { memoFn } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import type {
   EFeeType,
   ESendFeeStatus,
   IFeeInfoUnit,
   ISendSelectedFeeInfo,
-} from '@onekeyhq/shared/types/fee';
-import type { IDecodedTx } from '@onekeyhq/shared/types/tx';
+} from '@unionkeyhq/shared/types/fee';
+import type { IDecodedTx } from '@unionkeyhq/shared/types/tx';
 
 import { ContextJotaiActionsBase } from '../../utils/ContextJotaiActionsBase';
 

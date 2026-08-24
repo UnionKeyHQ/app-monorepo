@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { StyleSheet } from 'react-native';
 
-import type { IStackProps } from '@onekeyhq/components';
+import type { IStackProps } from '@unionkeyhq/components';
 import {
   Badge,
   HeightTransition,
@@ -12,9 +12,9 @@ import {
   SizableText,
   Stack,
   XStack,
-} from '@onekeyhq/components';
-import type { ITokenProps } from '@onekeyhq/kit/src/components/Token';
-import { Token } from '@onekeyhq/kit/src/components/Token';
+} from '@unionkeyhq/components';
+import type { ITokenProps } from '@unionkeyhq/kit/src/components/Token';
+import { Token } from '@unionkeyhq/kit/src/components/Token';
 
 import { Layout } from './utils/Layout';
 
@@ -346,7 +346,7 @@ const BadgeGallery = () => (
                       tokens: [
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                       ],
                       label: 'Label',
@@ -355,7 +355,7 @@ const BadgeGallery = () => (
                       tokens: [
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                       ],
                       label: 'Label',
@@ -364,7 +364,7 @@ const BadgeGallery = () => (
                       tokens: [
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                       ],
                       label: 'Label',
@@ -375,7 +375,7 @@ const BadgeGallery = () => (
                       tokens: [
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                       ],
                       label: 'Label',
@@ -384,15 +384,15 @@ const BadgeGallery = () => (
                       tokens: [
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                       ],
                       label: 'Label',
@@ -401,7 +401,7 @@ const BadgeGallery = () => (
                       tokens: [
                         {
                           tokenImageUri:
-                            'https://uni.onekey-asset.com/static/chain/btc.png',
+                            'https://uni.unionkey.io/static/chain/btc.png',
                         },
                       ],
                       label: 'Label',

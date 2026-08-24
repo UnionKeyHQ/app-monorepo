@@ -6,46 +6,46 @@ import type {
   IEncodedTx,
   ISignedTxPro,
   IUnsignedMessage,
-} from '@onekeyhq/core/src/types';
-import appGlobals from '@onekeyhq/shared/src/appGlobals';
+} from '@unionkeyhq/core/src/types';
+import appGlobals from '@unionkeyhq/shared/src/appGlobals';
 import {
   backgroundClass,
   backgroundMethod,
-} from '@onekeyhq/shared/src/background/backgroundDecorators';
-import { getNetworkImplsFromDappScope } from '@onekeyhq/shared/src/background/backgroundUtils';
+} from '@unionkeyhq/shared/src/background/backgroundDecorators';
+import { getNetworkImplsFromDappScope } from '@unionkeyhq/shared/src/background/backgroundUtils';
 import {
   IMPL_BTC,
   IMPL_EVM,
   IMPL_TBTC,
-} from '@onekeyhq/shared/src/engine/engineConsts';
-import { OneKeyPlainTextError } from '@onekeyhq/shared/src/errors';
+} from '@unionkeyhq/shared/src/engine/engineConsts';
+import { UnionKeyPlainTextError } from '@unionkeyhq/shared/src/errors';
 import {
   EAppEventBusNames,
   appEventBus,
-} from '@onekeyhq/shared/src/eventBus/appEventBus';
-import { defaultLogger } from '@onekeyhq/shared/src/logger/logger';
-import platformEnv from '@onekeyhq/shared/src/platformEnv';
-import { parseRPCResponse } from '@onekeyhq/shared/src/request/utils';
+} from '@unionkeyhq/shared/src/eventBus/appEventBus';
+import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
+import platformEnv from '@unionkeyhq/shared/src/platformEnv';
+import { parseRPCResponse } from '@unionkeyhq/shared/src/request/utils';
 import {
   EDAppConnectionModal,
   EModalRoutes,
   EModalSignatureConfirmRoutes,
   ERootRoutes,
-} from '@onekeyhq/shared/src/routes';
-import accountUtils from '@onekeyhq/shared/src/utils/accountUtils';
-import { ensureSerializable } from '@onekeyhq/shared/src/utils/assertUtils';
-import { memoizee } from '@onekeyhq/shared/src/utils/cacheUtils';
-import extUtils from '@onekeyhq/shared/src/utils/extUtils';
-import networkUtils from '@onekeyhq/shared/src/utils/networkUtils';
-import { buildModalRouteParams } from '@onekeyhq/shared/src/utils/routeUtils';
-import { sidePanelState } from '@onekeyhq/shared/src/utils/sidePanelUtils';
-import timerUtils from '@onekeyhq/shared/src/utils/timerUtils';
-import uriUtils from '@onekeyhq/shared/src/utils/uriUtils';
-import { implToNamespaceMap } from '@onekeyhq/shared/src/walletConnect/constant';
-import { EAccountSelectorSceneName } from '@onekeyhq/shared/types';
-import type { IDappSourceInfo, IServerNetwork } from '@onekeyhq/shared/types';
-import type { INetworkAccount } from '@onekeyhq/shared/types/account';
-import { EAlignPrimaryAccountMode } from '@onekeyhq/shared/types/dappConnection';
+} from '@unionkeyhq/shared/src/routes';
+import accountUtils from '@unionkeyhq/shared/src/utils/accountUtils';
+import { ensureSerializable } from '@unionkeyhq/shared/src/utils/assertUtils';
+import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
+import extUtils from '@unionkeyhq/shared/src/utils/extUtils';
+import networkUtils from '@unionkeyhq/shared/src/utils/networkUtils';
+import { buildModalRouteParams } from '@unionkeyhq/shared/src/utils/routeUtils';
+import { sidePanelState } from '@unionkeyhq/shared/src/utils/sidePanelUtils';
+import timerUtils from '@unionkeyhq/shared/src/utils/timerUtils';
+import uriUtils from '@unionkeyhq/shared/src/utils/uriUtils';
+import { implToNamespaceMap } from '@unionkeyhq/shared/src/walletConnect/constant';
+import { EAccountSelectorSceneName } from '@unionkeyhq/shared/types';
+import type { IDappSourceInfo, IServerNetwork } from '@unionkeyhq/shared/types';
+import type { INetworkAccount } from '@unionkeyhq/shared/types/account';
+import { EAlignPrimaryAccountMode } from '@unionkeyhq/shared/types/dappConnection';
 import {
   type IConnectedAccountInfo,
   type IConnectionAccountInfo,
@@ -53,9 +53,9 @@ import {
   type IConnectionItemWithStorageType,
   type IConnectionStorageType,
   type IGetDAppAccountInfoParams,
-} from '@onekeyhq/shared/types/dappConnection';
-import { EServiceEndpointEnum } from '@onekeyhq/shared/types/endpoint';
-import type { IAccountToken } from '@onekeyhq/shared/types/token';
+} from '@unionkeyhq/shared/types/dappConnection';
+import { EServiceEndpointEnum } from '@unionkeyhq/shared/types/endpoint';
+import type { IAccountToken } from '@unionkeyhq/shared/types/token';
 
 import { settingsPersistAtom } from '../states/jotai/atoms';
 import { vaultFactory } from '../vaults/factory';
@@ -132,10 +132,10 @@ class ServiceDApp extends ServiceBase {
       try {
         return await new Promise((resolve, reject) => {
           if (!request.origin) {
-            throw new OneKeyPlainTextError('origin is required');
+            throw new UnionKeyPlainTextError('origin is required');
           }
           if (!request.scope) {
-            throw new OneKeyPlainTextError('scope is required');
+            throw new UnionKeyPlainTextError('scope is required');
           }
           const id = this.backgroundApi.servicePromise.createCallback({
             resolve,
