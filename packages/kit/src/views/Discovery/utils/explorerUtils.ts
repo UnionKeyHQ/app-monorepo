@@ -125,9 +125,9 @@ export function processWebSiteUrl(url?: string): string | undefined {
   try {
     const urlObj = new URL(uriUtils.validateUrl(url));
 
-    // add fp=onekey to searchParams when visit babylon
+    // add fp=unionkey to searchParams when visiting Babylon
     if (urlObj.hostname === 'btcstaking.babylonlabs.io') {
-      urlObj.searchParams.set('fp', 'onekey');
+      urlObj.searchParams.set('fp', 'unionkey');
       return urlObj.toString();
     }
 

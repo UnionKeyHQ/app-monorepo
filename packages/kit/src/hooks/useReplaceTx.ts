@@ -134,13 +134,13 @@ function useReplaceTx({
             id: ETranslations.tx_accelerate_speed_up_with_accelerator_dialog_desc,
           }),
           onConfirm: async () => {
-            // https://www.f2pool.com/user/tx-acc?from=onekey&txid={txid}
+            // https://www.f2pool.com/user/tx-acc?from=unionkey&txid={txid}
             handleOpenWebSite({
               switchToMultiTabBrowser: gtMd,
               navigation,
               useCurrentWindow: false,
               webSite: {
-                url: `https://www.f2pool.com/user/tx-acc?from=onekey&txid=${decodedTx.txid}`,
+                url: `https://www.f2pool.com/user/tx-acc?from=unionkey&txid=${decodedTx.txid}`,
                 title: 'F2Pool',
                 logo: undefined,
                 sortIndex: undefined,
@@ -180,7 +180,7 @@ function useReplaceTx({
     if (!networkUtils.isBTCNetwork(networkId)) {
       return;
     }
-    // https://www.f2pool.com/user/tx-acc?from=onekey&txid={txid}
+    // https://www.f2pool.com/user/tx-acc?query={txid}
     handleOpenWebSite({
       switchToMultiTabBrowser: gtMd,
       navigation,
