@@ -11,25 +11,19 @@ import { ETranslations } from '@unionkeyhq/shared/src/locale';
 import { defaultLogger } from '@unionkeyhq/shared/src/logger/logger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { EOnboardingPages } from '@unionkeyhq/shared/src/routes';
-import { usePromiseResult } from '@unionkeyhq/kit/src/hooks/usePromiseResult';
+
 import { Action } from './Action';
 
 export function Actions() {
   const navigation = useAppNavigation();
   const intl = useIntl();
-  
+
   const handleCreateWalletPress = () => {
     void backgroundApiProxy.servicePassword.promptPasswordVerify().then(() => {
       navigation.push(EOnboardingPages.BeforeShowRecoveryPhrase);
       defaultLogger.account.wallet.onboard({ onboardMethod: 'createWallet' });
     });
   };
-  const { result: hasHardwareWallet } = usePromiseResult(async () => {  
-    const { wallets } = await backgroundApiProxy.serviceAccount.getWallets({  
-      nestedHiddenWallets: false,  
-    });  
-    return wallets.some((w) => w.type === 'hw');  
-  }, []);  
   const handleImportWalletPress = async () => {
     navigation.push(EOnboardingPages.ImportWalletOptions);
     defaultLogger.account.wallet.onboard({ onboardMethod: 'importWallet' });
@@ -131,44 +125,24 @@ export function Actions() {
         onPress={handleConnectHardwareWallet}
         testID="hardware-wallet"
       />
-      {/* <ActionList  
-    placement="top"  
-    floatingPanelProps={{  
-      width: 344,  
-    }}  
-    title={intl.formatMessage({  
-      id: ETranslations.onboarding_create_or_import_wallet,  
-    })}  
-    renderTrigger={  
-      <Action  
-        label={intl.formatMessage({  
-          id: ETranslations.onboarding_create_or_import_wallet,  
-        })}  
-        testID="onboarding-create-or-import-wallet"  
-      />  
-    }  
-    {...(platformEnv.isWebDappMode ? { items } : { sections })}  
-  />   */}
-{/* {hasHardwareWallet && (  
-  <ActionList  
-    placement="top"  
-    floatingPanelProps={{  
-      width: 344,  
-    }}  
-    title={intl.formatMessage({  
-      id: ETranslations.onboarding_create_or_import_wallet,  
-    })}  
-    renderTrigger={  
-      <Action  
-        label={intl.formatMessage({  
-          id: ETranslations.onboarding_create_or_import_wallet,  
-        })}  
-        testID="onboarding-create-or-import-wallet"  
-      />  
-    }  
-    {...(platformEnv.isWebDappMode ? { items } : { sections })}  
-  />  
-)} */}
+      <ActionList
+        placement="top"
+        floatingPanelProps={{
+          width: 344,
+        }}
+        title={intl.formatMessage({
+          id: ETranslations.onboarding_create_or_import_wallet,
+        })}
+        renderTrigger={
+          <Action
+            label={intl.formatMessage({
+              id: ETranslations.onboarding_create_or_import_wallet,
+            })}
+            testID="onboarding-create-or-import-wallet"
+          />
+        }
+        {...(platformEnv.isWebDappMode ? { items } : { sections })}
+      />
     </Stack>
   );
 }
