@@ -27,6 +27,10 @@ module.exports = {
   },
   'extraResources': [
     {
+      'from': '../../node_modules/@onekeyfe/hd-web-sdk/build',
+      'to': 'static/js-sdk',
+    },
+    {
       'from': 'build/static/images/icons/512x512.png',
       'to': 'static/images/icons/512x512.png',
     },

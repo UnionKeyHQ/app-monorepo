@@ -1,16 +1,14 @@
 import {
-  HARDWARE_SDK_IFRAME_SRC_ONEKEYCN,
-  HARDWARE_SDK_IFRAME_SRC_ONEKEYSO,
+  HARDWARE_SDK_IFRAME_SRC_UNIONKEY,
   HARDWARE_SDK_VERSION,
 } from '@unionkeyhq/shared/src/config/appConfig';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
-import { EOnekeyDomain } from '../../types';
-
 import { importHardwareSDK, importHardwareSDKLowLevel } from './sdk-loader';
 
+import type { EOnekeyDomain } from '../../types';
 import type {
   ConnectSettings,
   CoreApi,
@@ -21,13 +19,8 @@ import type {
 let HardwareSDK: CoreApi;
 let HardwareLowLevelSDK: LowLevelCoreApi;
 
-export const generateConnectSrc = (hardwareConnectSrc?: EOnekeyDomain) => {
-  let connectSrc = `${HARDWARE_SDK_IFRAME_SRC_ONEKEYSO}/${HARDWARE_SDK_VERSION}/`;
-  if (hardwareConnectSrc === EOnekeyDomain.ONEKEY_CN) {
-    connectSrc = `${HARDWARE_SDK_IFRAME_SRC_ONEKEYCN}/${HARDWARE_SDK_VERSION}/`;
-  }
-  return connectSrc;
-};
+export const generateConnectSrc = () =>
+  `${HARDWARE_SDK_IFRAME_SRC_UNIONKEY}/${HARDWARE_SDK_VERSION}/`;
 
 export const getHardwareSDKInstance = memoizee(
   async (params: {
@@ -49,7 +42,7 @@ export const getHardwareSDKInstance = memoizee(
       HardwareSDK = await importHardwareSDK();
 
       if (!platformEnv.isNative) {
-        let connectSrc = generateConnectSrc(params.hardwareConnectSrc);
+        let connectSrc = generateConnectSrc();
         if (platformEnv.isDesktop) {
           // @ts-expect-error
           const { sdkConnectSrc } = window.ONEKEY_DESKTOP_GLOBALS ?? {};

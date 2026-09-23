@@ -4,7 +4,7 @@ import { getSdkError } from '@walletconnect-v2/utils';
 import { debounce, isNil } from 'lodash';
 
 import unlockUtils from '@unionkeyhq/kit/src/components/AppLock/unlockUtils';
-import type { OneKeyWalletConnector } from '@unionkeyhq/kit/src/components/WalletConnect/OneKeyWalletConnector';
+import type { UnionKeyWalletConnector } from '@unionkeyhq/kit/src/components/WalletConnect/UnionKeyWalletConnector';
 import type { IWalletConnectRequestOptions } from '@unionkeyhq/kit/src/components/WalletConnect/types';
 import walletConnectUtils from '@unionkeyhq/kit/src/components/WalletConnect/utils/walletConnectUtils';
 import type {
@@ -169,7 +169,7 @@ class ProviderApiWalletConnect extends WalletConnectClientForWallet {
   }: {
     networkImpl: string;
     payload: IJsonRpcRequest;
-    connector?: OneKeyWalletConnector; // v1
+    connector?: UnionKeyWalletConnector; // v1
     sessionRequest?: Web3WalletTypes.SessionRequest; // v2
   }) {
     return new Promise((resolve, reject) => {

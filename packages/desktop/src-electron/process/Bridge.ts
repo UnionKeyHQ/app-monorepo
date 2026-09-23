@@ -8,7 +8,7 @@ import type { Status } from './BaseProcess';
 
 class BridgeProcess extends BaseProcess {
   constructor() {
-    super('bridge', 'onekeyd', {
+    super('bridge', 'unionkeyd', {
       startupThrottleTime: 3,
     });
     logger.info('logger file name =====> :', logger.transports.file.file);

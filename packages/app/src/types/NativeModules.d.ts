@@ -1,7 +1,7 @@
 import type {
   CardInfo,
   Callback as LiteCallback,
-} from '../hardware/OnekeyLite/types';
+} from '../hardware/UnionKeyLite/types';
 import type { NativeModule } from 'react-native';
 
 export interface PermissionManagerInterface extends NativeModule {

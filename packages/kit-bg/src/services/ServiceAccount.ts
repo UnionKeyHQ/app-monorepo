@@ -469,13 +469,17 @@ class ServiceAccount extends ServiceBase {
     actions.push(unlock());
     actions.push(release());
 
-    const wallets = await serviceAccount.initWallets({ noDispatch: true });
-    actions.push(updateWallets(wallets));
-
-    timelinePerfTrace.mark({
-      name: ETimelinePerfNames.createHDWallet,
-      title: 'serviceAccount.createHDWallet >> initWallets DONE',
-    });
+    // Do not block wallet creation on a full wallet-list reload. IndexedDB has
+    // already committed the wallet at this point, and a stalled reload would
+    // otherwise leave onboarding spinning forever even though creation
+    // succeeded.
+    const currentWallets = appSelector((s) => s.runtime.wallets);
+    actions.push(
+      updateWallets([
+        ...currentWallets.filter((item) => item.id !== wallet.id),
+        wallet,
+      ]),
+    );
 
     if (dispatchActionDelay) {
       setTimeout(() => dispatch(...actions), dispatchActionDelay);
@@ -496,6 +500,21 @@ class ServiceAccount extends ServiceBase {
         password,
       });
     }
+
+    serviceAccount
+      .initWallets()
+      .then(() => {
+        timelinePerfTrace.mark({
+          name: ETimelinePerfNames.createHDWallet,
+          title: 'serviceAccount.createHDWallet >> initWallets DONE',
+        });
+      })
+      .catch((error) => {
+        debugLogger.common.error(
+          'Failed to refresh wallets after HD wallet creation',
+          error,
+        );
+      });
 
     timelinePerfTrace.mark({
       name: ETimelinePerfNames.createHDWallet,

@@ -11,7 +11,7 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import { refreshConnectedSites } from '../../store/reducers/refresher';
 
-import { OneKeyWalletConnector } from './OneKeyWalletConnector';
+import { UnionKeyWalletConnector } from './UnionKeyWalletConnector';
 import {
   WALLET_CONNECT_BRIDGE,
   WALLET_CONNECT_CONNECTION_TIMEOUT,
@@ -29,12 +29,12 @@ import type {
 } from '@walletconnect/types';
 
 // Same to
-//  class OneKeyWalletConnect extends Connector {
+//  class UnionKeyWalletConnect extends Connector {
 export type IWalletConnectClientEventDestroy = {
-  connector?: OneKeyWalletConnector;
+  connector?: UnionKeyWalletConnector;
 };
 export type IWalletConnectClientEventRpc = {
-  connector?: OneKeyWalletConnector;
+  connector?: UnionKeyWalletConnector;
   error?: Error | null;
   payload?: IJsonRpcRequest;
 };
@@ -71,7 +71,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
 
   clientMeta!: IClientMeta;
 
-  connector?: OneKeyWalletConnector | null = null; // v1 client
+  connector?: UnionKeyWalletConnector | null = null; // v1 client
 
   web3walletV2?: IWeb3Wallet; // v2 client
 
@@ -84,7 +84,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
     logName,
     timeout,
   }: {
-    connector: OneKeyWalletConnector;
+    connector: UnionKeyWalletConnector;
     logName: string;
     timeout: number;
   }) {
@@ -100,7 +100,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
     });
   }
 
-  async _destroyConnector(connector?: OneKeyWalletConnector | null) {
+  async _destroyConnector(connector?: UnionKeyWalletConnector | null) {
     if (connector) {
       debugLogger.walletConnect.info(
         'try to disconnect prev connection...',
@@ -147,8 +147,8 @@ export class WalletConnectClientBase extends CrossEventEmitter {
     // node_modules/@walletconnect/core/dist/esm/url.js will generate random bridge url
     connectorOpts.bridge = connectorOpts.bridge || WALLET_CONNECT_BRIDGE;
     // establish new ws transport here
-    // subscribe (_subscribeToSessionRequest) on new OneKeyWalletConnector()
-    const connector = new OneKeyWalletConnector(this.sessionStorage, {
+    // subscribe (_subscribeToSessionRequest) on new UnionKeyWalletConnector()
+    const connector = new UnionKeyWalletConnector(this.sessionStorage, {
       clientMeta: this.clientMeta,
       isWalletSide: this.isWalletSide,
       ...connectorOpts,
@@ -194,7 +194,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
     }
   }
 
-  async setupConnector(connector?: OneKeyWalletConnector) {
+  async setupConnector(connector?: UnionKeyWalletConnector) {
     if (!connector) {
       return;
     }
@@ -268,7 +268,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
 
     const session = await this.sessionStorage.getSession();
     if (session) {
-      const lastConnector = new OneKeyWalletConnector(this.sessionStorage, {
+      const lastConnector = new UnionKeyWalletConnector(this.sessionStorage, {
         session,
         isWalletSide: this.isWalletSide,
       });
@@ -277,7 +277,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
   }
 
   addEventListener(
-    connector: OneKeyWalletConnector,
+    connector: UnionKeyWalletConnector,
     eventName: string,
     handler?: (remoteError: Error | null, payload: IJsonRpcRequest) => any,
     {
@@ -311,7 +311,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
     );
   }
 
-  unregisterEvents(connector?: OneKeyWalletConnector | null) {
+  unregisterEvents(connector?: UnionKeyWalletConnector | null) {
     if (!connector) {
       return;
     }
@@ -320,7 +320,7 @@ export class WalletConnectClientBase extends CrossEventEmitter {
     Object.values(this.EVENT_NAMES).forEach((event) => connector.off(event));
   }
 
-  registerEvents(connector?: OneKeyWalletConnector) {
+  registerEvents(connector?: UnionKeyWalletConnector) {
     if (!connector) {
       return;
     }

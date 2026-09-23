@@ -25,8 +25,8 @@ rm -rf ./packages/app/.expo
 rm -rf ./packages/app/__generated__
 rm -rf ./packages/app/ios/Pods
 rm -rf ./packages/app/ios/build
-rm -rf ./packages/app/ios/OneKeyWallet/web-embed
-rm -rf ./packages/app/ios/OneKeyWallet.xcworkspace/xcuserdata
+rm -rf ./packages/app/ios/UnionKeyWallet/web-embed
+rm -rf ./packages/app/ios/UnionKeyWallet.xcworkspace/xcuserdata
 rm -rf ./packages/app/src/public/static/connect
 rm -rf ./packages/app/android/.gradle
 rm -rf ./packages/app/android/build

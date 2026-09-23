@@ -20,6 +20,7 @@ import {
   RootRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
 import type { ModalScreenProps } from '@unionkeyhq/kit/src/routes/types';
+import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/deviceNameUtils';
 
 import type { RouteProp } from '@react-navigation/core';
 
@@ -115,7 +116,7 @@ const SetupHardwareModal: FC = () => {
 
   return (
     <Modal
-      header={device.name ?? ''}
+      header={normalizeHardwareDeviceName(device.name)}
       headerDescription={intl.formatMessage({ id: 'content__not_actived' })}
       footer={null}
       scrollViewProps={{

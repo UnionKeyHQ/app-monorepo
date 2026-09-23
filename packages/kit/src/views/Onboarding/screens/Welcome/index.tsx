@@ -6,14 +6,13 @@ import { useIntl } from 'react-intl';
 
 import {
   Box,
-  Divider,
-  Hidden,
-  Icon,
+  Button,
   Image,
+  Menu,
   Text,
   useUserDevice,
 } from '@unionkeyhq/components';
-import ContentHardwareImage from '@unionkeyhq/kit/assets/onboarding/welcome_hardware.png';
+import LogoPressImage from '@unionkeyhq/kit/assets/onboarding/welcome_hardware.png';
 import {
   AppUIEventBusNames,
   appUIEventBus,
@@ -32,8 +31,6 @@ import Layout from '../../Layout';
 import { useOnboardingContext } from '../../OnboardingContext';
 import { EOnboardingRoutes } from '../../routes/enums';
 
-import { ConnectThirdPartyWallet } from './ConnectThirdPartyWallet';
-import PressableListItem from './PressableListItem';
 import TermsOfService from './TermsOfService';
 
 import type { IOnboardingRoutesParams } from '../../routes/types';
@@ -156,83 +153,65 @@ const Welcome = () => {
         scaleFade
         disableAnimation={disableAnimation}
       >
-        <Icon name="BrandLogoIllus" size={48} />
-        <Text
-          typography={{ sm: 'DisplayXLarge', md: 'Display2XLarge' }}
-          mt={6}
-          flexGrow={1}
-        >
-          {intl.formatMessage({ id: 'onboarding__landing_welcome_title' })}
-          {'\n'}
-          <Text color="text-subdued">
+        <Box flex={1} alignItems="center" justifyContent="center">
+          <Image
+            source={LogoPressImage}
+            w={{ base: '220px', sm: '320px' }}
+            h={{ base: '220px', sm: '320px' }}
+            resizeMode="contain"
+          />
+        </Box>
+        <Box mt="auto" alignItems="center">
+          <Text
+            typography={{ sm: 'DisplayXLarge', md: 'Display2XLarge' }}
+            textAlign="center"
+          >
+            {intl.formatMessage({ id: 'onboarding__landing_welcome_title' })}
+          </Text>
+          <Text mt={2} color="text-subdued" textAlign="center">
             {intl.formatMessage({ id: 'onboarding__landing_welcome_desc' })}
           </Text>
-        </Text>
-        <Box
-          flexDir={{ sm: 'row' }}
-          flexWrap={{ sm: 'wrap' }}
-          mt={{ base: isSmallHeight ? 8 : 16, sm: 20 }}
-          mx={-2}
-        >
-          <Box flexDirection={{ sm: 'row' }} w={{ sm: '100%' }}>
-            <PressableListItem
-              icon="PlusCircleOutline"
-              label={intl.formatMessage({
-                id: 'action__create_wallet',
-              })}
-              description={intl.formatMessage({
-                id: 'content__create_wallet_desc',
-              })}
-              roundedBottom={{ base: 0, sm: 'xl' }}
-              onPress={onPressCreateWallet}
-            />
-            <PressableListItem
-              icon="ArrowDownCircleOutline"
-              label={intl.formatMessage({
-                id: 'action__import_wallet',
-              })}
-              description={intl.formatMessage({
-                id: 'content__onboarding_import_wallet_desc',
-              })}
-              mt="-1px"
-              mb={{ base: 6, sm: 0 }}
-              roundedTop={{ base: 0, sm: 'xl' }}
-              onPress={onPressImportWallet}
-            />
-            <PressableListItem
-              icon="UsbCableOutline"
-              label={intl.formatMessage({
-                id: 'action__connect_hardware_wallet',
-              })}
-              description={intl.formatMessage({
-                id: 'content__conenct_hardware_wallet_desc',
-              })}
-              onPress={onPressHardwareWallet}
-              overflow="hidden"
-            >
-              <Hidden till="sm">
-                <Box position="absolute" zIndex={-1} right="0" top="0">
-                  <Image
-                    source={ContentHardwareImage}
-                    w="256px"
-                    h="207px"
-                    opacity={0.75}
-                  />
-                </Box>
-              </Hidden>
-            </PressableListItem>
-          </Box>
         </Box>
-        <Hidden till="sm">
-          <Box flexDirection="row" alignItems="center" mt="24px" mb="-12px">
-            <Divider flex={1} />
-            <Text mx="14px" typography="Subheading" color="text-disabled">
-              {intl.formatMessage({ id: 'content__or_lowercase' })}
-            </Text>
-            <Divider flex={1} />
-          </Box>
-        </Hidden>
-        <ConnectThirdPartyWallet onPress={onPressThirdPartyWallet} />
+        <Box w="full" maxW="384px" alignSelf="center" mt={8}>
+          <Button
+            size="xl"
+            type="primary"
+            leftIconName="UsbCableOutline"
+            onPress={onPressHardwareWallet}
+          >
+            {intl.formatMessage({ id: 'action__connect_hardware_wallet' })}
+          </Button>
+          <Menu
+            w="344px"
+            placement="top"
+            trigger={(triggerProps) => (
+              <Button size="xl" mt={3} {...triggerProps}>
+                {intl.formatMessage({ id: 'action__create_wallet' })}
+                {' / '}
+                {intl.formatMessage({ id: 'action__import_wallet' })}
+              </Button>
+            )}
+          >
+            <Menu.CustomItem
+              icon="PlusCircleOutline"
+              onPress={onPressCreateWallet}
+            >
+              {intl.formatMessage({ id: 'action__create_wallet' })}
+            </Menu.CustomItem>
+            <Menu.CustomItem
+              icon="ArrowDownCircleOutline"
+              onPress={onPressImportWallet}
+            >
+              {intl.formatMessage({ id: 'action__import_wallet' })}
+            </Menu.CustomItem>
+            <Menu.CustomItem
+              icon="LinkOutline"
+              onPress={onPressThirdPartyWallet}
+            >
+              {intl.formatMessage({ id: 'action__connect_wallet' })}
+            </Menu.CustomItem>
+          </Menu>
+        </Box>
       </Layout>
       <TermsOfService />
     </>

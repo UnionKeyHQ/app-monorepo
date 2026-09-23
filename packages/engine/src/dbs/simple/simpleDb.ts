@@ -11,6 +11,7 @@ import { SimpleDbEntityTokens } from './entity/SimpleDbEntityPresetTokens';
 import { SimpleDbEntityPwKey } from './entity/SimpleDbEntityPwKey';
 import { SimpleDbEntitySetting } from './entity/SimpleDbEntitySetting';
 import { SimpleDbEntitySwap } from './entity/SimpleDbEntitySwap';
+import { SimpleDbEntityUnionKeyTrade } from './entity/SimpleDbEntityUnionKeyTrade';
 import { SimpleDbEntityUrlInfo } from './entity/SimpleDbEntityUrlInfo';
 import { SimpleDbEntityUtxoAccounts } from './entity/SimpleDbEntityUtxoAccounts';
 import { SimpleDbEntityWalletConnect } from './entity/SimpleDbEntityWalletConnect';
@@ -23,6 +24,8 @@ class SimpleDb {
   lastActivity = new SimpleDbEntityLastActivity();
 
   swap = new SimpleDbEntitySwap();
+
+  unionKeyTrade = new SimpleDbEntityUnionKeyTrade();
 
   token = new SimpleDbEntityTokens();
 

@@ -387,7 +387,7 @@ function SendProgress({
           : error?.message ?? '';
         if (
           error.className !==
-          OneKeyErrorClassNames.OneKeyWalletConnectModalCloseError
+          OneKeyErrorClassNames.UnionKeyWalletConnectModalCloseError
         ) {
           if (!deviceUtils.showErrorToast(error)) {
             ToastManager.show(

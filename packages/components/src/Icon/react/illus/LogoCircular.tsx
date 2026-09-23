@@ -1,12 +1,9 @@
-import Svg, { SvgProps, Path } from 'react-native-svg';
+import Svg, { Path, SvgProps } from 'react-native-svg';
+
 const SvgLogoCircular = (props: SvgProps) => (
-  <Svg viewBox="0 0 32 32" fill="none" accessibilityRole="image" {...props}>
-    <Path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0Zm-3.005 6.785h4.45v7.335h-2.759V9.146h-2.472l.78-2.361ZM16 25.215a5.076 5.076 0 1 0 0-10.152 5.076 5.076 0 0 0 0 10.152Zm0-2.304a2.772 2.772 0 1 0 0-5.544 2.772 2.772 0 0 0 0 5.544Z"
-      fill="currentColor"
-    />
+  <Svg viewBox="0 0 296 296" fill="none" accessibilityRole="image" {...props}>
+    <Path d="M216 90.2v112.58c0 24.422-19.798 44.22-44.22 44.22h-47.56C99.798 247 80 227.202 80 202.78V90.2L148 51l68 39.2Zm-108.477 21.412v64.057c0 22.354 18.123 40.477 40.477 40.477s40.476-18.123 40.476-40.477v-64.057L148 85.479l-40.477 26.133Z" fill="currentColor" />
+    <Path d="M133.434 61.778h29.143v129.333h-29.143z" fill="currentColor" />
   </Svg>
 );
 export default SvgLogoCircular;

@@ -67,7 +67,7 @@ def __xcode_15_workaround(installer)
   end
 end
 
-target 'OneKeyWallet' do
+target 'UnionKeyWallet' do
   use_expo_modules!
   post_integrate do |installer|
     begin

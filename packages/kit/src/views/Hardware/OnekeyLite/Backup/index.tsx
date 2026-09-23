@@ -5,12 +5,12 @@ import { useNavigation, useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { Platform } from 'react-native';
 
-import type { NfcConnectUiState } from '@unionkeyhq/app/src/hardware/OnekeyLite';
-import OnekeyLite from '@unionkeyhq/app/src/hardware/OnekeyLite';
+import type { NfcConnectUiState } from '@unionkeyhq/app/src/hardware/UnionKeyLite';
+import UnionKeyLite from '@unionkeyhq/app/src/hardware/UnionKeyLite';
 import type {
   CallbackError,
   CardInfo,
-} from '@unionkeyhq/app/src/hardware/OnekeyLite/types';
+} from '@unionkeyhq/app/src/hardware/UnionKeyLite/types';
 import { ToastManager } from '@unionkeyhq/components';
 import type { ButtonType } from '@unionkeyhq/components/src/Button';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
@@ -105,8 +105,8 @@ const Backup: FC = () => {
     }
 
     stateNfcSearch();
-    OnekeyLite.cancel();
-    OnekeyLite.setMnemonic(
+    UnionKeyLite.cancel();
+    UnionKeyLite.setMnemonic(
       backupData,
       pinCode,
       async (error: CallbackError, data: boolean | null, state: CardInfo) => {
@@ -150,7 +150,7 @@ const Backup: FC = () => {
       case 'connect':
       case 'transfer':
         if (Platform.OS === 'ios') return;
-        OnekeyLite.cancel();
+        UnionKeyLite.cancel();
         goBack();
         break;
 
@@ -162,7 +162,7 @@ const Backup: FC = () => {
 
   const handlerNfcConnectState = (event: NfcConnectUiState) => {
     debugLogger.onekeyLite.debug(
-      'Onekey Lite Reset handler NfcConnectState',
+      'UnionKey Lite Reset handler NfcConnectState',
       event,
     );
 
@@ -181,14 +181,14 @@ const Backup: FC = () => {
   };
 
   useEffect(() => {
-    OnekeyLite.addConnectListener(handlerNfcConnectState);
+    UnionKeyLite.addConnectListener(handlerNfcConnectState);
 
     if (Platform.OS !== 'ios') {
       startNfcScan();
     }
 
     return () => {
-      OnekeyLite.removeConnectListeners();
+      UnionKeyLite.removeConnectListeners();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -227,7 +227,7 @@ const Backup: FC = () => {
           goBack();
         }}
         onIntoNfcSetting={() => {
-          OnekeyLite.intoSetting();
+          UnionKeyLite.intoSetting();
           goBack();
         }}
         onDialogClose={() => setErrorCode(0)}

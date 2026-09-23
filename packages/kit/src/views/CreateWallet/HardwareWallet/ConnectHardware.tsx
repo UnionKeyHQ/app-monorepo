@@ -44,6 +44,7 @@ import type {
 } from '@unionkeyhq/kit/src/routes/types';
 import type { SearchDevice } from '@unionkeyhq/kit/src/utils/hardware';
 import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
+import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/deviceNameUtils';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
@@ -376,7 +377,7 @@ const ConnectHardwareModal: FC = () => {
             userSelect: 'none',
           }}
           text={{
-            label: item.name,
+            label: normalizeHardwareDeviceName(item.name),
             size: 'sm',
           }}
         />

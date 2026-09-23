@@ -17,7 +17,7 @@ function proxyimg(base: string) {
 
 type SwappingViaLogosProps = { sources?: string[]; size?: number };
 
-export const OneKeyLogo: FC<SwappingViaLogosProps> = ({ size }) => {
+export const UnionKeyLogo: FC<SwappingViaLogosProps> = ({ size }) => {
   const imageSize = size || 4;
   return (
     <Box
@@ -41,7 +41,7 @@ export const SwappingViaLogos: FC<SwappingViaLogosProps> = ({
 }) => {
   const imageSize = size || 4;
   if (!sources || sources.length === 0) {
-    return <OneKeyLogo />;
+    return <UnionKeyLogo />;
   }
   if (sources.length === 1) {
     return (

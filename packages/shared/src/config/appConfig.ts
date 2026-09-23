@@ -8,16 +8,18 @@ export const COVALENT_API_KEY = process.env.COVALENT_KEY!;
 
 export const JPUSH_KEY = process.env.JPUSH_KEY!;
 
-export const HARDWARE_SDK_IFRAME_SRC_ONEKEYSO =
+export const HARDWARE_SDK_IFRAME_SRC_UNIONKEY =
   process.env.HARDWARE_SDK_CONNECT_SRC || 'https://jssdk.onekey.so';
-
-export const HARDWARE_SDK_IFRAME_SRC_ONEKEYCN =
-  process.env.HARDWARE_SDK_CONNECT_SRC_ONEKEYCN || 'https://jssdk.onekeycn.com';
 
 export const HARDWARE_SDK_VERSION = '0.3.47';
 
-export const HARDWARE_BRIDGE_DOWNLOAD_URL =
-  'https://unionkey.io/desktop';
+export const HARDWARE_BRIDGE_DOWNLOAD_URL = 'https://unionkey.io/bridge';
+
+export const HARDWARE_FIRMWARE_URL = 'https://unionkey.io/firmware';
+
+export const HARDWARE_LITE_URL = 'https://unionkey.io/lite';
+
+export const HARDWARE_STORE_URL = 'https://unionkey.io/hardware';
 
 export const CERTIFICATE_URL = 'https://unionkey.io/school.html';
 

@@ -3,7 +3,7 @@
 
 import type { IExternalAccountInfoWalletImage } from '@unionkeyhq/engine/src/dbs/simple/entity/SimpleDbEntityWalletConnect';
 
-import type { OneKeyWalletConnector } from './OneKeyWalletConnector';
+import type { UnionKeyWalletConnector } from './UnionKeyWalletConnector';
 import type { SessionTypes } from '@walletconnect-v2/types';
 import type {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -44,7 +44,7 @@ export type WalletService = {
 };
 
 export type IWalletConnectRequestOptions = {
-  connector?: OneKeyWalletConnector; // v1
+  connector?: UnionKeyWalletConnector; // v1
   sessionV2?: SessionTypes.Struct; // v2
   proposal?: Web3WalletTypes.SessionProposal; // v2
   sessionRequest?: Web3WalletTypes.SessionRequest; // v2

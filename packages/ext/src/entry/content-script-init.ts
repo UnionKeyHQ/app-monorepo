@@ -10,7 +10,7 @@ import '@unionkeyhq/shared/src/polyfills/polyfillsExtContentScript';
 import { consts } from '@onekeyfe/cross-inpage-provider-core';
 import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
 
-import type { IOneKeyWalletInfo } from '@unionkeyhq/kit-bg/src/providers/ProviderApiPrivate';
+import type { IUnionKeyWalletInfo } from '@unionkeyhq/kit-bg/src/providers/ProviderApiPrivate';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -64,7 +64,7 @@ bridgeSetup.contentScript.setupMessagePort();
 if (process.env.NODE_ENV !== 'production') {
   try {
     if (consts.WALLET_INFO_LOACAL_KEY) {
-      const walletInfo: IOneKeyWalletInfo = JSON.parse(
+      const walletInfo: IUnionKeyWalletInfo = JSON.parse(
         localStorage.getItem(consts.WALLET_INFO_LOACAL_KEY) || '{}',
       );
       console.log(walletInfo);

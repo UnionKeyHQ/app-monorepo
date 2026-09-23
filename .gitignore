@@ -41,6 +41,9 @@ web-build/
 /inpage-provider-bak
 /packages/shared/src/web/index.html
 
+# Local runtime state; never publish it with application source.
+/.codex-runtime/
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

@@ -321,7 +321,7 @@ function isWalletConnectV2({ uri }: { uri: string }): boolean {
   return Boolean(info && info.v2 && info.v2?.parsed?.version === 2);
 }
 
-function buildOneKeyWalletConnectDeepLinkUrl({ uri }: { uri: string }) {
+function buildUnionKeyWalletConnectDeepLinkUrl({ uri }: { uri: string }) {
   return `${ONEKEY_APP_DEEP_LINK}/wc?uri=${encodeURIComponent(uri || '')}`;
 }
 
@@ -482,7 +482,7 @@ export default {
   buildOpenWalletAppUrl,
   dappOpenWalletApp,
   openConnectToDappModal,
-  buildOneKeyWalletConnectDeepLinkUrl,
+  buildUnionKeyWalletConnectDeepLinkUrl,
   isWalletConnectV2,
   convertToSessionNamespacesV2,
   getChainIdFromNamespaceChainV2,

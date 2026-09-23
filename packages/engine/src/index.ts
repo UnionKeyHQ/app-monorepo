@@ -29,6 +29,7 @@ import {
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/deviceNameUtils';
 import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import {
   COINTYPE_NEXA,
@@ -493,8 +494,8 @@ class Engine {
     const walletName =
       name ??
       features.label ??
-      features.ble_name ??
-      `UnionKey ${serialNo.slice(-4)}`;
+      (normalizeHardwareDeviceName(features.ble_name) ||
+        `UnionKey ${serialNo.slice(-4)}`);
     const wallet = await this.dbApi.addHWWallet({
       id,
       name: walletName,

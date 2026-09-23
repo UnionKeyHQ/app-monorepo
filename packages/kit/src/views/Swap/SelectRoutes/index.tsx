@@ -11,6 +11,7 @@ import {
 import { useIntl } from 'react-intl';
 
 import {
+  Badge,
   Box,
   CustomSkeleton,
   Image,
@@ -23,6 +24,7 @@ import {
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useAppSelector, useNavigation } from '../../../hooks';
 import { ArrivalTime } from '../components/ArrivalTime';
+import { getBestSwapQuoteResponse } from '../quoteUtils';
 import { stringifyTokens } from '../utils';
 
 import { AmountLimit } from './AmountLimit';
@@ -37,6 +39,7 @@ type RoutesProps = {
 type RouteOptionProps = {
   response: FetchQuoteResponse;
   index: number;
+  isBest?: boolean;
 };
 
 const SelectRoutesContext = createContext({
@@ -101,7 +104,7 @@ const ProviderNames = ({ providers }: { providers?: Provider[] }) => {
   );
 };
 
-const RouteOption: FC<RouteOptionProps> = ({ response, index }) => {
+const RouteOption: FC<RouteOptionProps> = ({ response, index, isBest }) => {
   const intl = useIntl();
   const inputToken = useAppSelector((s) => s.swap.inputToken);
   const outputToken = useAppSelector((s) => s.swap.outputToken);
@@ -158,9 +161,19 @@ const RouteOption: FC<RouteOptionProps> = ({ response, index }) => {
             </Box>
           </Box>
           <Box>
-            <Typography.Body1Strong maxW="32" numberOfLines={1}>
-              {name || 'UnionKey Swap'}
-            </Typography.Body1Strong>
+            <Box flexDirection="row" alignItems="center">
+              <Typography.Body1Strong maxW="32" numberOfLines={1}>
+                {name || 'UnionKey Swap'}
+              </Typography.Body1Strong>
+              {isBest ? (
+                <Badge
+                  ml="2"
+                  size="sm"
+                  type="success"
+                  title={intl.formatMessage({ id: 'form__best_rate' })}
+                />
+              ) : null}
+            </Box>
             <ArrivalTime typography="Body2" value={data?.arrivalTime} />
           </Box>
         </Box>
@@ -183,16 +196,36 @@ const Routes: FC<RoutesProps> = ({ responses }) => {
   const data = responses.map((res, index) => ({ ...res, index }));
   const limited = data.filter((item) => item.limited);
   const notLimited = data.filter((item) => !item.limited);
+  const bestResponse = getBestSwapQuoteResponse({ responses: notLimited });
+  const bestProviderName = bestResponse?.data?.providers?.[0]?.name;
 
   return (
     <ScrollView>
       <Box>
+        {bestResponse?.data ? (
+          <Box
+            mb="4"
+            p="4"
+            borderRadius="xl"
+            borderWidth={1}
+            borderColor="border-default"
+            bgColor="surface-subdued"
+          >
+            <Typography.Body1Strong>
+              {intl.formatMessage({ id: 'form__best_rate' })}
+            </Typography.Body1Strong>
+            <Typography.Body2 mt="1" color="text-subdued">
+              {bestProviderName || 'UnionKey Swap'}
+            </Typography.Body2>
+          </Box>
+        ) : null}
         <Box>
           {notLimited.map((item) => (
             <RouteOption
               key={item.data?.type ?? ''}
               response={item}
               index={item.index}
+              isBest={item === bestResponse}
             />
           ))}
         </Box>

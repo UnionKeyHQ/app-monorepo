@@ -15,7 +15,7 @@ import {
 import { EOnekeyDomain } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
-import { useAppSelector, useNavigation } from '../../hooks';
+import { useNavigation } from '../../hooks';
 import { setHardwareConnectSrc } from '../../store/reducers/settings';
 
 import { showRefreshExtSheet } from './RefreshExtSheet';
@@ -42,14 +42,10 @@ function HardwareBridgeSettings() {
   const isSmallScreen = useIsVerticalLayout();
 
   const { dispatch, serviceHardware } = backgroundApiProxy;
-  const hardwareConnectSrc = useAppSelector(
-    (s) => s.settings.hardwareConnectSrc,
-  );
-
   const onSetHardwareConnectSrc = useCallback(
     (item: IBridgeSettingItem) => {
       dispatch(setHardwareConnectSrc(item.label));
-      serviceHardware.updateSettings({ hardwareConnectSrc: item.label });
+      serviceHardware.updateSettings();
       showRefreshExtSheet();
     },
     [dispatch, serviceHardware],
@@ -67,17 +63,10 @@ function HardwareBridgeSettings() {
       {
         label: EOnekeyDomain.ONEKEY_SO,
         description: intl.formatMessage({ id: 'form__default' }),
-        isActive: hardwareConnectSrc === EOnekeyDomain.ONEKEY_SO,
-      },
-      {
-        label: EOnekeyDomain.ONEKEY_CN,
-        description: intl.formatMessage({
-          id: 'form__optimized_for_china_mainland_network',
-        }),
-        isActive: hardwareConnectSrc === EOnekeyDomain.ONEKEY_CN,
+        isActive: true,
       },
     ],
-    [intl, hardwareConnectSrc],
+    [intl],
   );
 
   const sectionBoardWidth = useMemo(() => {
@@ -109,13 +98,14 @@ function HardwareBridgeSettings() {
       >
         {hardwareSDKOptions.map((item) => (
           <Pressable
+            key={item.label}
             onPress={() => {
               onSetHardwareConnectSrc(item);
             }}
           >
             <HStack alignItems="center" justifyContent="space-between">
               <VStack>
-                <Text typography="Body1Strong">{item.label}</Text>
+                <Text typography="Body1Strong">UnionKey</Text>
                 <Text typography="Body2" color="text-subdued">
                   {item.description}
                 </Text>

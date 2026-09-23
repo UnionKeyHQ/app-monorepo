@@ -8,7 +8,7 @@ index 1f3903d..8d51f0e 100644
                  : reactContext.getExternalCacheDir() + "/logs";
 -        String logPrefix = reactContext.getPackageName();
 +        // String logPrefix = reactContext.getPackageName();
-+        String logPrefix = "so.onekey.app.wallet";
++        String logPrefix = "so.unionkey.app.wallet";
  
          LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
  

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { CardErrors } from '@unionkeyhq/app/src/hardware/OnekeyLite/types';
+import { CardErrors } from '@unionkeyhq/app/src/hardware/UnionKeyLite/types';
 import { Dialog } from '@unionkeyhq/components';
 import type { OnCloseCallback } from '@unionkeyhq/components/src/Dialog/components/FooterButton';
 

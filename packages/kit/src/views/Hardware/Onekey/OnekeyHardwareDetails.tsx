@@ -28,6 +28,7 @@ import {
   RootRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
 import { getDeviceFirmwareVersion } from '@unionkeyhq/kit/src/utils/hardware/OneKeyHardware';
+import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/deviceNameUtils';
 import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
@@ -178,7 +179,7 @@ const OnekeyHardwareDetails: FC<OnekeyHardwareDetailsModalProps> = ({
         titleColor="text-default"
         describeColor="text-subdued"
         title={intl.formatMessage({ id: 'content__bluetooth_name' })}
-        describe={deviceFeatures?.ble_name ?? '-'}
+        describe={normalizeHardwareDeviceName(deviceFeatures?.ble_name) || '-'}
       />
 
       <WrapperItem

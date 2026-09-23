@@ -17,6 +17,7 @@ import {
   SubmitRequestModalRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
 import type { ModalScreenProps } from '@unionkeyhq/kit/src/routes/types';
+import { HARDWARE_STORE_URL } from '@unionkeyhq/shared/src/config/appConfig';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
@@ -184,7 +185,7 @@ const HelpSelector: FC = () => {
           break;
         case 'shop':
           openUrlByWebview(
-            'https://unionkey.io/',
+            HARDWARE_STORE_URL,
             intl.formatMessage({ id: 'title__buy_onekey_hardware' }),
           );
           break;

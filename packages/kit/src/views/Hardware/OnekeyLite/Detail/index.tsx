@@ -37,6 +37,7 @@ import {
   RootRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
 import type { ModalScreenProps } from '@unionkeyhq/kit/src/routes/types';
+import { HARDWARE_LITE_URL } from '@unionkeyhq/shared/src/config/appConfig';
 
 type OptionType = 'restore' | 'change_pin' | 'reset' | 'backup';
 
@@ -64,7 +65,7 @@ const OnekeyLiteDetail: FC = () => {
   const [controlledWallets, setControlledWallets] = useState<Wallet[]>([]);
 
   useEffect(() => {
-    setUrl(`https://lite.onekey.so/?language=${locale}`);
+    setUrl(`${HARDWARE_LITE_URL}?language=${locale}`);
   }, [locale]);
 
   useEffect(() => {

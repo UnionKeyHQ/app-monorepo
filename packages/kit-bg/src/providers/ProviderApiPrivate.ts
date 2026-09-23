@@ -29,7 +29,7 @@ import type {
   JsBridgeDesktopHost,
 } from '@onekeyfe/onekey-cross-webview';
 
-export interface IOneKeyWalletInfo {
+export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;
   platform?: string;
   version?: string;
@@ -148,7 +148,7 @@ class ProviderApiPrivate extends ProviderApiBase {
     return { success: 'wallet_sendSiteMetadata: save to DB' };
   }
 
-  getWalletInfo(): IOneKeyWalletInfo {
+  getWalletInfo(): IUnionKeyWalletInfo {
     const disableExt = !!this.backgroundApi.appSelector(
       (s) => s.settings.disableExt,
     );

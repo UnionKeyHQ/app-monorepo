@@ -5,12 +5,12 @@ import { useNavigation } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 import { Platform } from 'react-native';
 
-import type { NfcConnectUiState } from '@unionkeyhq/app/src/hardware/OnekeyLite';
-import OnekeyLite from '@unionkeyhq/app/src/hardware/OnekeyLite';
+import type { NfcConnectUiState } from '@unionkeyhq/app/src/hardware/UnionKeyLite';
+import UnionKeyLite from '@unionkeyhq/app/src/hardware/UnionKeyLite';
 import type {
   CallbackError,
   CardInfo,
-} from '@unionkeyhq/app/src/hardware/OnekeyLite/types';
+} from '@unionkeyhq/app/src/hardware/UnionKeyLite/types';
 import type { ButtonType } from '@unionkeyhq/components/src/Button';
 import type { OnekeyLiteResetRoutesParams } from '@unionkeyhq/kit/src/routes';
 import type { ModalScreenProps } from '@unionkeyhq/kit/src/routes/types';
@@ -83,8 +83,8 @@ const Reset: FC = () => {
 
   const startNfcScan = () => {
     stateNfcSearch();
-    OnekeyLite.cancel();
-    OnekeyLite.reset(
+    UnionKeyLite.cancel();
+    UnionKeyLite.reset(
       (error: CallbackError, data: boolean | null, state: CardInfo) => {
         console.log('state', state);
         if (data) {
@@ -112,7 +112,7 @@ const Reset: FC = () => {
       case 'connect':
       case 'transfer':
         if (Platform.OS === 'ios') return;
-        OnekeyLite.cancel();
+        UnionKeyLite.cancel();
         goBack();
         break;
 
@@ -123,7 +123,7 @@ const Reset: FC = () => {
   };
 
   const handlerNfcConnectState = (event: NfcConnectUiState) => {
-    console.log('Onekey Lite Reset handler NfcConnectState', event);
+    console.log('UnionKey Lite Reset handler NfcConnectState', event);
 
     switch (event.code) {
       case 1:
@@ -140,14 +140,14 @@ const Reset: FC = () => {
   };
 
   useEffect(() => {
-    OnekeyLite.addConnectListener(handlerNfcConnectState);
+    UnionKeyLite.addConnectListener(handlerNfcConnectState);
 
     if (Platform.OS !== 'ios') {
       startNfcScan();
     }
 
     return () => {
-      OnekeyLite.removeConnectListeners();
+      UnionKeyLite.removeConnectListeners();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -173,7 +173,7 @@ const Reset: FC = () => {
           goBack();
         }}
         onIntoNfcSetting={() => {
-          OnekeyLite.intoSetting();
+          UnionKeyLite.intoSetting();
           goBack();
         }}
         onDialogClose={() => setErrorCode(0)}

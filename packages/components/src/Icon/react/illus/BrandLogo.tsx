@@ -1,27 +1,12 @@
-import Svg, { SvgProps, G, Path, Defs, ClipPath } from 'react-native-svg';
+import Svg, { SvgProps, Path, Rect } from 'react-native-svg';
 const SvgBrandLogo = (props: SvgProps) => (
-  <Svg fill="none" viewBox="0 0 27 27" accessibilityRole="image" {...props}>
-    <G clipPath="url(#a)">
-      <Path
-        d="M26.918 13.459c0 9.291-4.168 13.459-13.46 13.459C4.169 26.918 0 22.75 0 13.458 0 4.169 4.167 0 13.459 0c9.291 0 13.459 4.167 13.459 13.459Z"
-        fill="#44D62C"
-      />
-      <Path
-        d="M14.675 5.707H10.93l-.657 1.986h2.08v4.184h2.32v-6.17Z"
-        fill="#000"
-      />
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M17.729 16.94a4.27 4.27 0 1 1-8.54 0 4.27 4.27 0 0 1 8.54 0Zm-1.939 0a2.332 2.332 0 1 1-4.663 0 2.332 2.332 0 0 1 4.663 0Z"
-        fill="#000"
-      />
-    </G>
-    <Defs>
-      <ClipPath id="a">
-        <Path fill="#fff" d="M0 0h27v27H0z" />
-      </ClipPath>
-    </Defs>
+  <Svg fill="none" viewBox="0 0 296 296" accessibilityRole="image" {...props}>
+    <Rect width={296} height={296} rx={64} fill="#000" />
+    <Path
+      d="M216 90.2v112.58c0 24.422-19.798 44.22-44.22 44.22h-47.56C99.798 247 80 227.202 80 202.78V90.2L148 51l68 39.2Zm-108.477 21.412v64.057c0 22.354 18.123 40.477 40.477 40.477s40.476-18.123 40.476-40.477v-64.057L148 85.479l-40.477 26.133Z"
+      fill="#FD6303"
+    />
+    <Rect x={133.434} y={61.778} width={29.143} height={129.333} fill="#FD6303" />
   </Svg>
 );
 export default SvgBrandLogo;

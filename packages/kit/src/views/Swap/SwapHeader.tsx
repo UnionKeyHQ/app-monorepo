@@ -1,77 +1,56 @@
-import { useCallback } from 'react';
-
 import { useIntl } from 'react-intl';
 
-import {
-  Badge,
-  Box,
-  Pressable,
-  ToastManager,
-  Typography,
-} from '@unionkeyhq/components';
+import { Box, Pressable, Typography } from '@unionkeyhq/components';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
-import { useAppSelector } from '../../hooks';
 import { setMode } from '../../store/reducers/swap';
 
-import { limitOrderNetworkIds } from './config';
 import { HistoryButton } from './HistoryButton';
 
-export const SwapHeaderTab = () => {
-  const intl = useIntl();
-  const swapMode = useAppSelector((s) => s.swap.mode);
-  const inputToken = useAppSelector((s) => s.swap.inputToken);
-  const isSwap = swapMode === 'swap';
+export type ISwapView = 'trade' | 'nft';
 
-  const setLimitOrderMode = useCallback(() => {
-    if (!inputToken || !limitOrderNetworkIds.includes(inputToken.networkId)) {
-      ToastManager.show(
-        {
-          title: intl.formatMessage(
-            {
-              id: 'limit_orders_are_only_supported_for_str',
-            },
-            { '0': 'ETH, BSC, Polygon' },
-          ),
-        },
-        { type: 'default' },
-      );
-    }
-    backgroundApiProxy.serviceLimitOrder.setDefaultTokens();
-    backgroundApiProxy.dispatch(setMode('limit'));
-  }, [inputToken, intl]);
+export const SwapHeaderTab = ({
+  activeView = 'trade',
+  onViewChange,
+}: {
+  activeView?: ISwapView;
+  onViewChange?: (view: ISwapView) => void;
+}) => {
+  const intl = useIntl();
 
   return (
     <Box flexDirection="row" alignItems="center" h="30px">
       <Pressable
         mr="3"
-        onPress={() => backgroundApiProxy.dispatch(setMode('swap'))}
+        onPress={() => {
+          onViewChange?.('trade');
+          backgroundApiProxy.dispatch(setMode('swap'));
+        }}
       >
         <Typography.Body1Strong
-          color={isSwap ? 'text-default' : 'text-disabled'}
+          color={activeView === 'trade' ? 'text-default' : 'text-disabled'}
         >
           {intl.formatMessage({ id: 'title__swap' })}
         </Typography.Body1Strong>
       </Pressable>
-      <Pressable
-        onPress={setLimitOrderMode}
-        flexDirection="row"
-        alignItems="center"
-      >
+      <Pressable onPress={() => onViewChange?.('nft')}>
         <Typography.Body1Strong
-          color={!isSwap ? 'text-default' : 'text-disabled'}
+          color={activeView === 'nft' ? 'text-default' : 'text-disabled'}
         >
-          {intl.formatMessage({ id: 'form__limit' })}
+          NFT
         </Typography.Body1Strong>
-        <Box ml="1">
-          <Badge type="info" size="sm" title="Beta" />
-        </Box>
       </Pressable>
     </Box>
   );
 };
 
-export const SwapHeader = () => (
+export const SwapHeader = ({
+  activeView,
+  onViewChange,
+}: {
+  activeView?: ISwapView;
+  onViewChange?: (view: ISwapView) => void;
+}) => (
   <Box
     width="full"
     flexDirection="row"
@@ -79,7 +58,7 @@ export const SwapHeader = () => (
     justifyContent="space-between"
     alignItems="center"
   >
-    <SwapHeaderTab />
+    <SwapHeaderTab activeView={activeView} onViewChange={onViewChange} />
     <HistoryButton />
   </Box>
 );

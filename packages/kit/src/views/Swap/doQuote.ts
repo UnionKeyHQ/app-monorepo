@@ -1,5 +1,3 @@
-import BigNumber from 'bignumber.js';
-
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import {
   setError,
@@ -10,6 +8,7 @@ import {
 } from '../../store/reducers/swap';
 
 import { SwapQuoter } from './quoter';
+import { getBestSwapQuoteResponse } from './quoteUtils';
 import { dangerRefs } from './refs';
 import { QuoterType, SwapError } from './typings';
 import { getTokenAmountString } from './utils';
@@ -24,61 +23,9 @@ const refs: { params: FetchQuoteParams | undefined; count: number } = {
 const findBestResponse = async (
   responses: FetchQuoteResponse[],
 ): Promise<FetchQuoteResponse | undefined> => {
-  const items = responses.filter(
-    (item) => !item.limited && item.data !== undefined,
-  ) as Required<Pick<FetchQuoteResponse, 'data'>>[];
-  if (items.length > 0) {
-    const selectedQuoter =
-      await backgroundApiProxy.serviceSwap.getCurrentUserSelectedQuoter();
-    if (selectedQuoter) {
-      const finded = items.find((item) => item.data.type === selectedQuoter);
-      if (finded) {
-        return finded;
-      }
-    }
-    if (items.length === 1) {
-      return items[0];
-    }
-    items.sort((a, b) => {
-      const amountA = a.data.estimatedBuyAmount ?? a.data.buyAmount;
-      const amountB = b.data.estimatedBuyAmount ?? b.data.buyAmount;
-      return Number(amountB) - Number(amountA);
-    });
-    return items[0];
-  }
-  const notNullResponses = responses.filter(
-    (res) => res.data,
-  ) as Required<FetchQuoteResponse>[];
-  if (notNullResponses.length === 0) {
-    return;
-  }
-  if (notNullResponses.length === 1) {
-    return notNullResponses[0];
-  }
-  let selectedRes = notNullResponses[0];
-  let currentPriority: BigNumber | undefined;
-  for (let i = 0; i < notNullResponses.length; i += 1) {
-    const item = notNullResponses[i];
-    const max = item?.limited?.max;
-    const min = item?.limited?.min;
-    const sellAmount = new BigNumber(item.data.sellAmount);
-    const values: BigNumber.Value[] = [];
-    if (!sellAmount.isNaN() && max) {
-      values.push(sellAmount.minus(max).abs());
-    }
-    if (!sellAmount.isNaN() && min) {
-      values.push(sellAmount.minus(min).abs());
-    }
-    let priority: BigNumber | undefined;
-    if (values.length) {
-      priority = BigNumber.min(...values);
-    }
-    if (priority && (!currentPriority || priority.lt(currentPriority))) {
-      selectedRes = item;
-      currentPriority = priority;
-    }
-  }
-  return selectedRes;
+  const selectedQuoter =
+    await backgroundApiProxy.serviceSwap.getCurrentUserSelectedQuoter();
+  return getBestSwapQuoteResponse({ responses, selectedQuoter });
 };
 
 const refreshQuotes = async (params: FetchQuoteParams) => {

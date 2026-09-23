@@ -107,7 +107,7 @@ def reactNativeArchitectures() {
 android {
     ndkVersion rootProject.ext.ndkVersion
     compileSdkVersion rootProject.ext.compileSdkVersion
-    namespace 'so.onekey.app.wallet'
+    namespace 'so.unionkey.app.wallet'
     
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11

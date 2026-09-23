@@ -16,8 +16,6 @@ import type { HomeRoutesParams } from '@unionkeyhq/kit/src/routes/types';
 import { openUrlExternal } from '@unionkeyhq/kit/src/utils/openUrl';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
-import { useAppSelector } from '../../../hooks';
-
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type NavigationProps = NativeStackNavigationProp<
@@ -29,10 +27,6 @@ export const HardwareBridgeSection = () => {
   const intl = useIntl();
   const navigation = useNavigation<NavigationProps>();
   const { themeVariant } = useTheme();
-
-  const hardwareConnectSrc = useAppSelector(
-    (s) => s.settings.hardwareConnectSrc,
-  );
 
   const showBridgePortSetting = useMemo<boolean>(
     () => !!(platformEnv.isExtension || platformEnv.isWeb),
@@ -88,7 +82,7 @@ export const HardwareBridgeSection = () => {
               typography={{ sm: 'Body1Strong', md: 'Body2Strong' }}
               color="text-subdued"
             >
-              {hardwareConnectSrc}
+              UnionKey
             </Text>
             <Icon name="ChevronRightMini" color="icon-subdued" size={20} />
           </Box>

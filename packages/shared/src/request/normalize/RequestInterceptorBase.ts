@@ -9,7 +9,10 @@ export enum RequestLibNames {
 }
 
 // TODO baseURL support like https://github.com/zurfyx/fetch-absolute/blob/master/index.js
-function isOneKeyUrl({ url }: { url: string }) {
+function getFirstPartyRequestTarget({ url }: { url: string }) {
+  if (url.includes('unionkey.io')) {
+    return 'unionkey' as const;
+  }
   const hosts = [
     'onekey.so',
     'onekeycn.com',
@@ -21,10 +24,10 @@ function isOneKeyUrl({ url }: { url: string }) {
   ];
   for (const host of hosts) {
     if (url.includes(host)) {
-      return true;
+      return 'legacy' as const;
     }
   }
-  return false;
+  return undefined;
 }
 
 function generateTraceParent(requestId: string) {
@@ -45,12 +48,13 @@ export abstract class RequestInterceptorBase {
   }
 
   interceptRequest({ url }: { url: string }) {
-    if (url && isOneKeyUrl({ url })) {
+    const requestTarget = url ? getFirstPartyRequestTarget({ url }) : undefined;
+    if (requestTarget) {
       const requestId = uuid.v4() as string;
       this.setHeader(
         this.normalizeHeaderKey('X-Request-By'),
         JSON.stringify({
-          agent: `OneKey/${this.requestLibName}`,
+          agent: `UnionKey/${this.requestLibName}`,
           isNativeIOS: platformEnv.isNativeIOS,
           isNativeAndroid: platformEnv.isNativeAndroid,
           isDesktop: platformEnv.isDesktop,
@@ -61,7 +65,19 @@ export abstract class RequestInterceptorBase {
           requestId,
         }),
       );
-      this.setHeader(this.normalizeHeaderKey('x-onekey-request-id'), requestId);
+      this.setHeader(
+        this.normalizeHeaderKey('x-unionkey-request-id'),
+        requestId,
+      );
+      // The legacy API still requires its original request-id header. Keep it
+      // only for that compatibility path while UnionKey services use the new
+      // first-party header above.
+      if (requestTarget === 'legacy') {
+        this.setHeader(
+          this.normalizeHeaderKey('x-onekey-request-id'),
+          requestId,
+        );
+      }
       this.setHeader(
         this.normalizeHeaderKey('traceparent'),
         generateTraceParent(requestId),

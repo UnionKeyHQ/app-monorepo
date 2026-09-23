@@ -43,10 +43,7 @@ import { isPassphraseWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
-import type {
-  EOnekeyDomain,
-  IOneKeyDeviceFeatures,
-} from '@unionkeyhq/shared/types';
+import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import ServiceBase from './ServiceBase';
 
@@ -938,14 +935,10 @@ class ServiceHardware extends ServiceBase {
   }
 
   @backgroundMethod()
-  async updateSettings({
-    hardwareConnectSrc,
-  }: {
-    hardwareConnectSrc?: EOnekeyDomain;
-  }) {
+  async updateSettings() {
     try {
       const hardwareSDK = await this.getSDKInstance();
-      const connectSrc = generateConnectSrc(hardwareConnectSrc);
+      const connectSrc = generateConnectSrc();
       if (hardwareSDK && hardwareSDK.updateSettings) {
         const res = await hardwareSDK?.updateSettings({ connectSrc });
         debugLogger.hardwareSDK.debug(

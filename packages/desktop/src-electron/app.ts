@@ -60,7 +60,10 @@ const staticPath = isDev
 const preloadJsUrl = path.join(staticPath, 'preload.js');
 
 const sdkConnectSrc = isDev
-  ? `file://${path.join(staticPath, 'js-sdk/')}`
+  ? `file://${path.join(
+      __dirname,
+      '../../../node_modules/@onekeyfe/hd-web-sdk/build/',
+    )}`
   : path.join('/static', 'js-sdk/');
 
 const isMac = process.platform === 'darwin';
@@ -220,7 +223,7 @@ function createMainWindow() {
     browserWindow.webContents.openDevTools();
   }
 
-  const desktopDevPort = process.env.DESKTOP_DEV_PORT || '3001';
+  const desktopDevPort = process.env.DESKTOP_DEV_PORT || '3011';
   const src = isDev
     ? `http://localhost:${desktopDevPort}/`
     : formatUrl({

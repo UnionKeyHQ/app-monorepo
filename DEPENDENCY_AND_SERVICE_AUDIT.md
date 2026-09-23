@@ -1,6 +1,6 @@
 # UnionKey dependency and service audit
 
-Last reviewed: 2026-09-17
+Last reviewed: 2026-09-23
 
 This document distinguishes UnionKey product identity from upstream attribution,
 third-party package identity, persistent compatibility identifiers, and external
@@ -37,28 +37,26 @@ versions in this repository.
 The license files shipped by each dependency must remain in binary notices and
 software-bill-of-materials output where required by its license.
 
-## Git-hosted dependencies requiring provenance capture
+## Git-hosted dependency mirrors
 
-The lockfile currently resolves the reviewed legacy forks to these commits:
+Git-hosted dependencies now resolve from UnionKeyHQ mirrors. Each mirror keeps
+its upstream license and provenance; the application lockfile pins the reviewed
+commit so migration does not silently change dependency behavior.
 
-| Dependency | Resolved commit |
+| Dependency | UnionKeyHQ commit |
 | --- | --- |
 | React Native WebView root override | `834d8096f8cfd78a961fb7a13f06f0cc64b2c9c3` |
 | React Native animated charts | `f2b637d09b4f25f0a55f181e9ef926e5372bf1b0` |
 | BitcoinJS fork | `234b061f93c77b178f93abfdca35fd9a067a4a30` |
 | Coinselect fork | `91e8db20cf3464143cb9d404dee6de7fabb3b04a` |
-| JCore React Native | `2cadf288224242cec715a2e260f872235c58874c` |
-| JPush React Native | `f10dfb5fe18fc042e6d4a82ec12f6b1d431adac7` |
+| JCore React Native | `e2c7911883e07c4ddbc06eccbb82184ed3997581` |
+| JPush React Native | `7b1b27e64faa22ef24187509870fedff3017414b` |
 | React Native cloud filesystem | `450b00b11555e8e9523adf5c5d0726b5ae966d9e` |
-| React Native nested scroll view | `934c32e47caecad93fc4abc5f28cc8bb29ecdaf6` |
+| React Native nested scroll view | `4e131c42be8e4d32bcf948de4bff5214116fef76` |
+| React Native WebView mobile fork | `c69bc9b12f5fecbeef1dfce4ffc7f186f2baa234` |
 
-The mobile workspace also references a separate React Native WebView branch;
-its resolved commit must be captured from the lockfile before release.
-
-Before a public release, record the exact resolved commit and license for each
-dependency. Mirror only when the license permits redistribution, keep upstream
-copyright notices, and pin the mirror to the same reviewed commit. Changing the
-organization name without preserving provenance is not an acceptable migration.
+Mirroring does not transfer upstream authorship. Copyright notices and license
+files remain part of each dependency.
 
 ## External service migration
 
@@ -75,7 +73,6 @@ organization name without preserving provenance is not an acceptable migration.
 
 ## Compatibility identifiers retained intentionally
 
-- The `OneKeyWallet` iOS project, target and directory names.
 - Existing storage/database keys such as `OneKeyStorage`.
 - Existing WalletConnect storage keys and legacy deep-link schemes.
 - Hardware SDK types, command fields and device protocol identifiers.

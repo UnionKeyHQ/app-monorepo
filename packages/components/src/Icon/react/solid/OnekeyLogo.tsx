@@ -1,17 +1,13 @@
 import Svg, { SvgProps, Path } from 'react-native-svg';
 const SvgOnekeyLogo = (props: SvgProps) => (
   <Svg
-    viewBox="0 0 24 24"
+    viewBox="0 0 296 296"
     fill="currentColor"
     accessibilityRole="image"
     {...props}
   >
-    <Path d="M12 15.887a1.56 1.56 0 1 0 0-3.118 1.56 1.56 0 0 0 0 3.118Z" />
-    <Path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M12 21c6.213 0 9-2.787 9-9s-2.787-9-9-9-9 2.787-9 9 2.787 9 9 9ZM10.31 6.816h2.503v4.126h-1.552V8.145H9.87l.438-1.329ZM12 17.184a2.855 2.855 0 1 0 0-5.711 2.855 2.855 0 0 0 0 5.71Z"
-    />
+    <Path d="M216 90.2v112.58c0 24.422-19.798 44.22-44.22 44.22h-47.56C99.798 247 80 227.202 80 202.78V90.2L148 51l68 39.2Zm-108.477 21.412v64.057c0 22.354 18.123 40.477 40.477 40.477s40.476-18.123 40.476-40.477v-64.057L148 85.479l-40.477 26.133Z" />
+    <Path d="M133.434 61.778h29.143v129.333h-29.143z" />
   </Svg>
 );
 export default SvgOnekeyLogo;

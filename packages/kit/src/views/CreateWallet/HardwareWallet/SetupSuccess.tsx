@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 import { Center, Icon, Modal, Typography } from '@unionkeyhq/components';
 import useModalClose from '@unionkeyhq/components/src/Modal/Container/useModalClose';
 import type { CreateWalletRoutesParams } from '@unionkeyhq/kit/src/routes/Root/Modal/CreateWallet';
+import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/deviceNameUtils';
 
 import { useNavigationActions } from '../../../hooks';
 import {
@@ -77,7 +78,7 @@ const SetupSuccessModal: FC = () => {
 
   return (
     <Modal
-      header={device.name ?? ''}
+      header={normalizeHardwareDeviceName(device.name)}
       headerDescription={intl.formatMessage({ id: 'content__activated' })}
       secondaryActionTranslationId="action__close"
       secondaryActionProps={{

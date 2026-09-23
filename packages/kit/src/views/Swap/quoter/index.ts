@@ -8,7 +8,10 @@ import type { IEncodedTxBtc } from '@unionkeyhq/engine/src/vaults/impl/btc/types
 import type { IEncodedTxEvm } from '@unionkeyhq/engine/src/vaults/impl/evm/Vault';
 import { IDecodedTxStatus } from '@unionkeyhq/engine/src/vaults/types';
 import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
-import { IMPL_APTOS, IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
+import {
+  IMPL_APTOS,
+  IMPL_EVM,
+} from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
@@ -474,13 +477,15 @@ export class SwapQuoter {
   parseRequestId(res: AxiosResponse<any, any>): string | undefined {
     try {
       const { headers } = res.config;
-      let requestId = headers?.['x-onekey-request-id'] as string | undefined;
+      let requestId = headers?.['x-unionkey-request-id'] as string | undefined;
+      requestId ??= headers?.['x-onekey-request-id'] as string | undefined;
       if (!requestId) {
         const data = headers?.['X-Request-By'];
         if (typeof data === 'string') {
           const meta = JSON.parse(data);
           // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-          requestId = meta['x-onekey-request-id'];
+          requestId =
+            meta['x-unionkey-request-id'] ?? meta['x-onekey-request-id'];
         }
       }
       return requestId;

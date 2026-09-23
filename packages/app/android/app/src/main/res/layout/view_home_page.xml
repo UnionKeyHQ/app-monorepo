@@ -32,7 +32,7 @@
                 android:orientation="vertical"
                 app:layout_scrollFlags="scroll|enterAlways">
 
-                <so.onekey.app.wallet.widget.SlidingTabLayout2
+                <so.unionkey.app.wallet.widget.SlidingTabLayout2
                     android:id="@+id/layout_tab"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
