@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable camelcase */
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import type { CommonMessage } from '@unionkeyhq/engine/src/types/message';
 import { CommonMessageTypes } from '@unionkeyhq/engine/src/types/message';
@@ -26,7 +26,7 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyhq/cross-inpage-provider-types';
 
 const { decodeAddress, encodeAddress } = polkadotSdk;
 

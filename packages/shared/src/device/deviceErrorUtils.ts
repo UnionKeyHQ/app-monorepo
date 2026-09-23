@@ -1,4 +1,4 @@
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import type { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
 import * as Error from '@unionkeyhq/kit/src/utils/hardware/errors';

@@ -5,7 +5,7 @@ import 'setimmediate';
 // eslint-disable-next-line import/order
 import '@unionkeyhq/shared/src/polyfills';
 
-import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
+import { bridgeSetup } from '@unionkeyhq/extension-bridge-hosted';
 // @ts-ignore
 import axiosAdapter from '@vespaiach/axios-fetch-adapter';
 import axios from 'axios';

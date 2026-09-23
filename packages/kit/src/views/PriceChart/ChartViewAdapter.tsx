@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 
-import { ChartPathProvider } from '@onekeyfe/react-native-animated-charts';
+import { ChartPathProvider } from '@unionkeyhq/react-native-animated-charts';
 
 import { Box } from '@unionkeyhq/components';
 

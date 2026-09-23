@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 import { isFunction } from 'lodash';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -27,15 +27,15 @@ import type {
   IBackgroundApiInternalCallMessage,
 } from './IBackgroundApi';
 import type ProviderApiBase from './providers/ProviderApiBase';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyhq/cross-inpage-provider-core';
 import type {
   IInjectedProviderNamesStrings,
   IJsBridgeMessagePayload,
   IJsBridgeReceiveHandler,
   IJsonRpcRequest,
   IJsonRpcResponse,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+} from '@unionkeyhq/cross-inpage-provider-types';
+import type { JsBridgeExtBackground } from '@unionkeyhq/extension-bridge-hosted';
 
 const PRIVATE_WHITE_LIST_ORIGIN = [
   'https://onekey.so',

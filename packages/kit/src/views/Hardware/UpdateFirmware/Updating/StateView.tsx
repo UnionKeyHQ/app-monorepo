@@ -12,7 +12,7 @@ import {
 } from '@unionkeyhq/components';
 import type { LocaleIds } from '@unionkeyhq/components/src/locale';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 export type StateViewType =
   | 'pre-check-failure'

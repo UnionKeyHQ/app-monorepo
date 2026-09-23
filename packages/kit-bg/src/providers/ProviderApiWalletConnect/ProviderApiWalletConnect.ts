@@ -37,7 +37,7 @@ import { WalletConnectRequestProxyEvm } from './WalletConnectRequestProxyEvm';
 
 import type { IBackgroundApi } from '../../IBackgroundApi';
 import type { WalletConnectRequestProxy } from './WalletConnectRequestProxy';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 import type { SessionTypes } from '@walletconnect-v2/types';
 import type {
   IWeb3Wallet,

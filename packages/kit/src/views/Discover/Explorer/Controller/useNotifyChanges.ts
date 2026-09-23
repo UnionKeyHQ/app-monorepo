@@ -17,7 +17,7 @@ import {
 
 import { useWebTabs } from './useWebTabs';
 
-import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
+import type { IElectronWebView } from '@unionkeyhq/cross-inpage-provider-types';
 
 const notifyChanges = throttle(
   (url: string, fromScene?: string) => {

@@ -4,8 +4,8 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { DAppItemType, WebSiteHistory } from '../type';
-import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IElectronWebView } from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 import type { WebView } from 'react-native-webview';
 
 export interface WebSiteType {

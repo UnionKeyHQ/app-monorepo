@@ -2,8 +2,8 @@
 import type { LocaleIds } from '@unionkeyhq/components/src/locale';
 import type { IBackgroundApi } from '@unionkeyhq/kit-bg/src/IBackgroundApi';
 
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
-import type { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
+import type { JsBridgeBase } from '@unionkeyhq/cross-inpage-provider-core';
+import type { ProviderPrivate } from '@unionkeyhq/unionkey-private-provider';
 import type { EnhancedStore } from '@reduxjs/toolkit';
 import type WebView from 'react-native-webview';
 

@@ -26,7 +26,7 @@ import type {
   IWalletConnectClientEventRpc,
   IWalletConnectClientOptions,
 } from './WalletConnectClient';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 import type {
   IClientMeta,
   IQRCodeModal,

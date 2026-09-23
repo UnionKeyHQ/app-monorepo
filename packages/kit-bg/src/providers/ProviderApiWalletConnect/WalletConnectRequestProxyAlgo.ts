@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import type { IWalletConnectRequestOptions } from '@unionkeyhq/kit/src/components/WalletConnect/types';
 

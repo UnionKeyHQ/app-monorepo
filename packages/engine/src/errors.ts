@@ -1,4 +1,4 @@
-import { Web3RpcError } from '@onekeyfe/cross-inpage-provider-errors';
+import { Web3RpcError } from '@unionkeyhq/cross-inpage-provider-errors';
 import { get } from 'lodash';
 
 /* eslint max-classes-per-file: "off" */

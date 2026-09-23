@@ -8,7 +8,7 @@ import { getMoneroUtilInstance } from '@unionkeyhq/engine/src/vaults/impl/xmr/sd
 import { MoneroEvent } from '@unionkeyhq/shared/src/engine/xmrConsts';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const ProvideResponseMethod = 'chainWebEmbedResponse';
 

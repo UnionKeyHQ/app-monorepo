@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable camelcase */
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import walletConnectUtils from '@unionkeyhq/kit/src/components/WalletConnect/utils/walletConnectUtils';
 import extUtils from '@unionkeyhq/kit/src/utils/extUtils';
@@ -23,11 +23,11 @@ import type ProviderApiEthereum from './ProviderApiEthereum';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 import type {
   IWebViewWrapperRef,
   JsBridgeDesktopHost,
-} from '@onekeyfe/onekey-cross-webview';
+} from '@unionkeyhq/unionkey-cross-webview';
 
 export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;

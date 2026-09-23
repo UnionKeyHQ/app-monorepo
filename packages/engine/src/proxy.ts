@@ -4,7 +4,7 @@
 
 import { Buffer } from 'buffer';
 
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
 import BigNumber from 'bignumber.js';
 
 import { ProviderController as BaseProviderController } from '@unionkeyhq/blockchain-libs/src/provider';

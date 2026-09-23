@@ -66,7 +66,7 @@ import type {
   IVaultSettings,
 } from './types';
 import type { VaultHelperBase } from './VaultHelperBase';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 export type IVaultInitConfig = {
   keyringCreator: (vault: VaultBase) => Promise<KeyringBase>;

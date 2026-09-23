@@ -10,12 +10,12 @@ import type {
   IProcessAutoTypingProps,
   IProcessAutoTypingRef,
 } from './ProcessAutoTyping';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyhq/cross-inpage-provider-core';
 import type {
   IJsBridgeReceiveHandler,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+} from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 
 export type IProcessAutoTypingWebViewProps = IProcessAutoTypingProps & {
   onContentLoaded?: () => void; // currently works in NativeWebView only

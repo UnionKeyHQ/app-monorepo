@@ -1,5 +1,5 @@
 import type { IDecodedTxDirection, ITransferInfo } from '../../types';
-import type { PROTO } from '@onekeyfe/hd-core';
+import type { PROTO } from '@unionkeyhq/hd-core';
 
 export type BIP32Path = number[];
 

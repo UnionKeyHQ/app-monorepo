@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { forwardRef, useImperativeHandle } from 'react';
 
-import { useWebViewBridge } from '@onekeyfe/onekey-cross-webview';
+import { useWebViewBridge } from '@unionkeyhq/unionkey-cross-webview';
 
 import { useIsVerticalLayout } from '@unionkeyhq/components';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
@@ -14,7 +14,7 @@ import { DesktopWebView } from './DesktopWebView';
 // @ts-ignore
 
 import type { InpageProviderWebViewProps } from './types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 
 const DESKTOP_USER_AGENT_MOCK = undefined;
 

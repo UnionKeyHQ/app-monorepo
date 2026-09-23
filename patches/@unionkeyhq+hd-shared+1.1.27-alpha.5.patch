@@ -1,7 +1,8 @@
-diff --git a/node_modules/@onekeyfe/hd-transport-react-native/src/constants.ts b/node_modules/@onekeyfe/hd-transport-react-native/src/constants.ts
---- a/node_modules/@onekeyfe/hd-transport-react-native/src/constants.ts
-+++ b/node_modules/@onekeyfe/hd-transport-react-native/src/constants.ts
-@@ -8,6 +8,7 @@ export const isOnekeyDevice = (name: string | null, id?: string): boolean => {
+diff --git a/node_modules/@unionkeyhq/hd-shared/src/constants.ts b/node_modules/@unionkeyhq/hd-shared/src/constants.ts
+--- a/node_modules/@unionkeyhq/hd-shared/src/constants.ts
++++ b/node_modules/@unionkeyhq/hd-shared/src/constants.ts
+@@ -96,7 +96,8 @@ export const isOnekeyDevice = (name: string | null, id?: string): boolean => {
+ 
    // 过滤 BixinKeyxxx 和 Kxxxx 和 Txxxx
    // i 忽略大小写模式
 -  const re = /(BixinKey\d{10})|(K\d{4})|(T\d{4})|(Touch\s\w{4})|(Pro\s\w{4})/i;
@@ -10,10 +11,10 @@ diff --git a/node_modules/@onekeyfe/hd-transport-react-native/src/constants.ts b
    if (name && re.exec(name)) {
      return true;
    }
-diff --git a/node_modules/@onekeyfe/hd-transport-react-native/dist/index.js b/node_modules/@onekeyfe/hd-transport-react-native/dist/index.js
---- a/node_modules/@onekeyfe/hd-transport-react-native/dist/index.js
-+++ b/node_modules/@onekeyfe/hd-transport-react-native/dist/index.js
-@@ -114,7 +114,7 @@ const isOnekeyDevice = (name, id) => {
+diff --git a/node_modules/@unionkeyhq/hd-shared/dist/index.js b/node_modules/@unionkeyhq/hd-shared/dist/index.js
+--- a/node_modules/@unionkeyhq/hd-shared/dist/index.js
++++ b/node_modules/@unionkeyhq/hd-shared/dist/index.js
+@@ -446,7 +446,7 @@ const isOnekeyDevice = (name, id) => {
      if ((_a = id === null || id === void 0 ? void 0 : id.startsWith) === null || _a === void 0 ? void 0 : _a.call(id, 'MI')) {
          return true;
      }

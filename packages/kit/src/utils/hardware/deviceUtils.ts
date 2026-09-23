@@ -1,5 +1,5 @@
 /* eslint-disable no-promise-executor-return */
-import { HardwareErrorCode, createDeferred } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode, createDeferred } from '@unionkeyhq/hd-shared';
 import { isEmpty } from 'lodash';
 import BleManager from 'react-native-ble-manager';
 import semver from 'semver';
@@ -30,8 +30,8 @@ import type {
   SearchDevice,
   Success,
   Unsuccessful,
-} from '@onekeyfe/hd-core';
-import type { Deferred } from '@onekeyfe/hd-shared';
+} from '@unionkeyhq/hd-core';
+import type { Deferred } from '@unionkeyhq/hd-shared';
 
 type IPollFn<T> = (time?: number, index?: number, rate?: number) => T;
 

@@ -6,7 +6,7 @@ import {
   useRef,
 } from 'react';
 
-import { JsBridgeNativeHost } from '@onekeyfe/onekey-cross-webview';
+import { JsBridgeNativeHost } from '@unionkeyhq/unionkey-cross-webview';
 import { WebView } from 'react-native-webview';
 
 import { useTheme } from '@unionkeyhq/components';
@@ -17,8 +17,8 @@ import { checkOneKeyCardGoogleOauthUrl } from '../../utils/uriUtils';
 
 import ErrorView from './ErrorView';
 
-import type { InpageProviderWebViewProps } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { InpageProviderWebViewProps } from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 import type { WebViewMessageEvent, WebViewProps } from 'react-native-webview';
 
 export type NativeWebViewProps = WebViewProps & InpageProviderWebViewProps;

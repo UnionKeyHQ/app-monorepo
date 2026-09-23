@@ -1,8 +1,8 @@
 import type {
   IInjectedProviderNamesStrings,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { Features, IDeviceType } from '@onekeyfe/hd-core';
+} from '@unionkeyhq/cross-inpage-provider-types';
+import type { Features, IDeviceType } from '@unionkeyhq/hd-core';
 
 export type IOneKeyDeviceType = IDeviceType;
 

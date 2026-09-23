@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/lines-between-class-members, lines-between-class-members, max-classes-per-file, camelcase, @typescript-eslint/no-unused-vars, @typescript-eslint/require-await */
 
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 import uuid from 'react-native-uuid';
 
 // import { ETHMessageTypes } from '@unionkeyhq/engine/src/types/message';
@@ -26,7 +26,7 @@ import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 
 /**
  * @type Transaction

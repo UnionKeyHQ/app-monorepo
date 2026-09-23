@@ -1,5 +1,5 @@
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 import BigNumber from 'bignumber.js';
 import { Psbt } from 'bitcoinjs-lib';
 import { isNil } from 'lodash';
@@ -40,7 +40,7 @@ import { RestfulRequest } from '@unionkeyhq/shared/src/request/RestfulRequest';
 import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyhq/cross-inpage-provider-types';
 import type * as BitcoinJS from 'bitcoinjs-lib';
 
 @backgroundClass()

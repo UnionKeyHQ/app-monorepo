@@ -6,8 +6,8 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useThemeProviderVariant } from '../../provider/ThemeProvider';
 
-import type { IJsBridgeReceiveHandler } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IJsBridgeReceiveHandler } from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 
 // /onboarding/auto_typing
 export function WebViewWebEmbed({

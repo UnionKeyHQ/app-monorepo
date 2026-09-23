@@ -165,7 +165,7 @@ import type {
   ITransferInfo,
   IVaultSettings,
 } from './vaults/types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const updateTokenCache: {
   [networkId: string]: boolean;

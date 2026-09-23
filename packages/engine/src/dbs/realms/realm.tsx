@@ -102,7 +102,7 @@ import type {
   StoredPrivateKeyCredential,
   StoredSeedCredential,
 } from '../base';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 const DB_PATH = 'OneKey.realm';
 const SCHEMA_VERSION = 19;

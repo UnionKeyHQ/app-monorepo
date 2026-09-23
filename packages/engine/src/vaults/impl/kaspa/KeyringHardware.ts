@@ -26,7 +26,7 @@ import {
   toTransaction,
 } from './sdk/transaction';
 
-import type { KaspaSignTransactionParams } from '@onekeyfe/hd-core';
+import type { KaspaSignTransactionParams } from '@unionkeyhq/hd-core';
 
 // @ts-ignore
 export class KeyringHardware extends KeyringHardwareBase {

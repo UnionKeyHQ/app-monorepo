@@ -5,7 +5,7 @@ import { OffscreenApiProxyBase } from '../OffscreenApiProxyBase';
 import type OffscreenApiAdaSdk from '../OffscreenApiAdaSdk';
 import type OffscreenApiXmrSdk from '../OffscreenApiXmrSdk';
 import type { IOffscreenApi } from './IOffscreenApi';
-import type { LowLevelCoreApi } from '@onekeyfe/hd-core';
+import type { LowLevelCoreApi } from '@unionkeyhq/hd-core';
 
 class OffscreenApiProxy extends OffscreenApiProxyBase implements IOffscreenApi {
   hardwareSDKLowLevel: LowLevelCoreApi = this._createProxyModule(

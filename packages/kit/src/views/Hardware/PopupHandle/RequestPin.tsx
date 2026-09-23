@@ -26,7 +26,7 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import BaseRequestView from './BaseRequest';
 
 import type { BaseRequestViewProps } from './BaseRequest';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 export const PINCodeMaxLength = 9;
 

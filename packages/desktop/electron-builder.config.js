@@ -27,7 +27,7 @@ module.exports = {
   },
   'extraResources': [
     {
-      'from': '../../node_modules/@onekeyfe/hd-web-sdk/build',
+      'from': '../../node_modules/@unionkeyhq/hd-web-sdk/build',
       'to': 'static/js-sdk',
     },
     {

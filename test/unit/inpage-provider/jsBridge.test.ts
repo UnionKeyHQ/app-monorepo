@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { JsBridgeSimple } from '@onekeyfe/cross-inpage-provider-core';
+import { JsBridgeSimple } from '@unionkeyhq/cross-inpage-provider-core';
 
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyhq/cross-inpage-provider-types';
 
 describe('CrossInpageProvider Tests', () => {
   it('two bridge communication', async () => {

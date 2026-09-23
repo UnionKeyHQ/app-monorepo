@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { wait } from '@onekeyfe/hd-core';
+import { wait } from '@unionkeyhq/hd-core';
 import { useIntl } from 'react-intl';
 
 import {

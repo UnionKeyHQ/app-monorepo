@@ -1,4 +1,4 @@
-import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
+import { bridgeSetup } from '@unionkeyhq/extension-bridge-hosted';
 
 import store from '@unionkeyhq/kit/src/store';
 import type { IDispatchActionBroadcastParams } from '@unionkeyhq/shared/src/background/backgroundUtils';
@@ -10,7 +10,7 @@ import {
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 
 function init() {
   const jsBridgeReceiveHandler = (payload: IJsBridgeMessagePayload) => {

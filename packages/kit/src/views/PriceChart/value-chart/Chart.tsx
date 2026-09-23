@@ -2,7 +2,7 @@ import {
   ChartDot,
   ChartPath,
   useChartData,
-} from '@onekeyfe/react-native-animated-charts';
+} from '@unionkeyhq/react-native-animated-charts';
 import { throttle } from 'lodash';
 import { View } from 'react-native';
 import { runOnJS, useAnimatedReaction } from 'react-native-reanimated';

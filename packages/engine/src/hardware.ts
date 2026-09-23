@@ -4,7 +4,7 @@
 import { splitSignature } from '@ethersproject/bytes';
 import { keccak256 } from '@ethersproject/keccak256';
 import { serialize } from '@ethersproject/transactions';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
 import { BigNumber } from 'bignumber.js';
 import { TypedDataUtils } from 'eth-sig-util';
 
@@ -32,7 +32,7 @@ import type {
   EVMTransactionEIP1559,
   Success,
   Unsuccessful,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 
 /**
  * get Eth address from the hardware wallet with the specified derivation path

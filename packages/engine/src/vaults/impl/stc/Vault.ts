@@ -77,7 +77,7 @@ import type {
   IUnsignedTxPro,
 } from '../../types';
 import type { IEncodedTxSTC } from './types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const MAIN_TOKEN_ADDRESS = '0x00000000000000000000000000000001::STC::STC';
 const DEFAULT_GAS_LIMIT_NATIVE_TRANSFER = '105547';

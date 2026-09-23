@@ -43,7 +43,7 @@ import { useDeviceMenu } from '../hooks/useDeviceMenu';
 
 import type { CollectiblesRoutesParams } from '../../../../../../routes/Root/Modal/Collectibles';
 import type { ModalScreenProps } from '../../../../../../routes/types';
-import type { DeviceUploadResourceParams } from '@onekeyfe/hd-core';
+import type { DeviceUploadResourceParams } from '@unionkeyhq/hd-core';
 
 type NavigationProps = ModalScreenProps<CollectiblesRoutesParams>;
 

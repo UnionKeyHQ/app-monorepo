@@ -1,8 +1,8 @@
 import { TransactionBlock } from '@mysten/sui.js';
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable camelcase */
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 import { get } from 'lodash';
 
 import { parseNetworkId } from '@unionkeyhq/engine/src/managers/network';
@@ -30,11 +30,11 @@ import type {
   SuiTransactionBlockResponse,
   SuiTransactionBlockResponseOptions,
 } from '@mysten/sui.js';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyhq/cross-inpage-provider-types';
 import type {
   PermissionType,
   SuiChainType,
-} from '@onekeyfe/onekey-sui-provider';
+} from '@unionkeyhq/unionkey-sui-provider';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AccountInfo {

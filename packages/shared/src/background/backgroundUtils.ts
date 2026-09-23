@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 import axios from 'axios';
 import {
   isArray,
@@ -38,7 +38,7 @@ import { NotAutoPrintError } from '../errors/common-errors';
 import debugLogger from '../logger/debugLogger';
 import platformEnv from '../platformEnv';
 
-import type { IInjectedProviderNamesStrings } from '@onekeyfe/cross-inpage-provider-types';
+import type { IInjectedProviderNamesStrings } from '@unionkeyhq/cross-inpage-provider-types';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Method } from 'axios';
 import type { AnyAction } from 'redux';

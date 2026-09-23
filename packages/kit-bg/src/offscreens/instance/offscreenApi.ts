@@ -4,7 +4,7 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import type { IBackgroundApiInternalCallMessage } from '../../IBackgroundApi';
 import type { IOffscreenApi } from './IOffscreenApi';
-import type { LowLevelCoreApi } from '@onekeyfe/hd-core';
+import type { LowLevelCoreApi } from '@unionkeyhq/hd-core';
 
 let HardwareLowLevelSDK: LowLevelCoreApi;
 

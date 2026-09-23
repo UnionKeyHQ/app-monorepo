@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { useIntl } from 'react-intl';
 
 import {
@@ -21,7 +21,7 @@ import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 import DisablePassphraseDialog from './DisablePassphraseDialog';
 import EnablePassphraseDialog from './EnablePassphraseDialog';
 
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 function DeviceAdvancedSettings({
   walletId,

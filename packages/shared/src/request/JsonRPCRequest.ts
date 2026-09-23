@@ -8,7 +8,7 @@ import {
   ResponseError,
 } from '@unionkeyhq/shared/src/errors/request-errors';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 type JsonRpcParams = undefined | { [p: string]: any } | Array<any>;
 

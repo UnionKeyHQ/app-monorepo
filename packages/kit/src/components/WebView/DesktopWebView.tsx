@@ -10,8 +10,8 @@ import {
   useState,
 } from 'react';
 
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
-import { JsBridgeDesktopHost } from '@onekeyfe/onekey-cross-webview';
+import { consts } from '@unionkeyhq/cross-inpage-provider-core';
+import { JsBridgeDesktopHost } from '@unionkeyhq/unionkey-cross-webview';
 import { Freeze } from 'react-freeze';
 
 import { waitForDataLoaded } from '@unionkeyhq/shared/src/background/backgroundUtils';
@@ -25,8 +25,8 @@ import ErrorView from './ErrorView';
 import type {
   IElectronWebView,
   InpageProviderWebViewProps,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+} from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 import type { LoadURLOptions } from 'electron';
 
 interface IElectronWebViewExt extends IElectronWebView {

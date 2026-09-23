@@ -9,8 +9,8 @@ import extUtils from '../../utils/extUtils';
 
 import InpageProviderWebView from './InpageProviderWebView';
 
-import type { IJsBridgeReceiveHandler } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IJsBridgeReceiveHandler } from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 import type {
   WebViewNavigation,
   WebViewOpenWindowEvent,

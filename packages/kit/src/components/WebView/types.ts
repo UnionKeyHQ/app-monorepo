@@ -1,4 +1,4 @@
-import type { InpageProviderWebViewProps as InpageWebViewProps } from '@onekeyfe/cross-inpage-provider-types';
+import type { InpageProviderWebViewProps as InpageWebViewProps } from '@unionkeyhq/cross-inpage-provider-types';
 import type { WebViewSource } from 'react-native-webview/lib/WebViewTypes';
 
 export interface InpageProviderWebViewProps extends InpageWebViewProps {

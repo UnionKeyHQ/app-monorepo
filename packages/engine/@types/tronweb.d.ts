@@ -168,7 +168,7 @@ declare module 'tronweb' {
       getTransaction: (string) => Promise<ITransactionWithResult>;
       getTransactionInfo: (string) => Promise<ITransactionInfo>;
       getNodeInfo: (
-        callback?: import('@onekeyfe/onekey-tron-provider/dist/types').Callback,
+        callback?: import('@unionkeyhq/unionkey-tron-provider/dist/types').Callback,
       ) => Promise<any>;
     };
 

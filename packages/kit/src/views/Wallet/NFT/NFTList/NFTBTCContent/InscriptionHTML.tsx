@@ -6,8 +6,8 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import WebView from '../../../../../components/WebView';
 
 import type { InscriptionContentProps } from '../type';
-import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IElectronWebView } from '@unionkeyhq/cross-inpage-provider-types';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 
 function InscriptionHTML({
   size,

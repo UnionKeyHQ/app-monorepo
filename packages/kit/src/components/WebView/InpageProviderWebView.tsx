@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 import type { InpageProviderWebViewProps } from './types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 
 const InpageProviderWebView: FC<InpageProviderWebViewProps> = forwardRef(
   ({ src = '', scrolling }: InpageProviderWebViewProps, ref: any) => {

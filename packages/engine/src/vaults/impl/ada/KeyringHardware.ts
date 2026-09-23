@@ -24,7 +24,7 @@ import type {
 import type { IUnsignedMessageEvm } from '../evm/Vault';
 import type { IEncodedTxADA } from './types';
 import type AdaVault from './Vault';
-import type { CardanoGetAddressMethodParams } from '@onekeyfe/hd-core';
+import type { CardanoGetAddressMethodParams } from '@unionkeyhq/hd-core';
 
 const PATH_PREFIX = `m/1852'/${COIN_TYPE}'`;
 const ProtocolMagic = 764824073;

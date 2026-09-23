@@ -4,7 +4,7 @@ import { memo, useCallback, useEffect } from 'react';
 import { Center, Text } from '@unionkeyhq/components';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const LibLoader = async () => import('@onekeyfe/cardano-coin-selection-asmjs');
 

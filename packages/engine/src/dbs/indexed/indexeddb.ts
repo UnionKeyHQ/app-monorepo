@@ -90,7 +90,7 @@ import type {
   StoredPrivateKeyCredential,
   StoredSeedCredential,
 } from '../base';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 type TokenBinding = {
   accountId: string;

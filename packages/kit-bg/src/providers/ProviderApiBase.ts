@@ -11,7 +11,7 @@ import type {
   IInjectedProviderNamesStrings,
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 
 export type IProviderBaseBackgroundNotifyInfo = {
   send: (data: any) => void;

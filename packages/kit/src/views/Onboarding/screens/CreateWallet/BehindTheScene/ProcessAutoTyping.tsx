@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { CrossEventEmitter } from '@onekeyfe/cross-inpage-provider-core';
+import { CrossEventEmitter } from '@unionkeyhq/cross-inpage-provider-core';
 import { useIntl } from 'react-intl';
 
 import {

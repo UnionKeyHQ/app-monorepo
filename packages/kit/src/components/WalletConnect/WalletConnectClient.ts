@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/order
 import './utils/walletConnectV2SdkShims';
 
-import { CrossEventEmitter } from '@onekeyfe/cross-inpage-provider-core';
+import { CrossEventEmitter } from '@unionkeyhq/cross-inpage-provider-core';
 import { getSdkError } from '@walletconnect-v2/utils';
 
 import { backgroundMethod } from '@unionkeyhq/shared/src/background/backgroundDecorators';
@@ -19,7 +19,7 @@ import {
 
 import type { IWalletConnectRequestOptions, WalletService } from './types';
 import type { WalletConnectSessionStorage } from './WalletConnectSessionStorage';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 import type { ICore, SessionTypes } from '@walletconnect-v2/types';
 import type { IWeb3Wallet } from '@walletconnect-v2/web3wallet';
 import type {

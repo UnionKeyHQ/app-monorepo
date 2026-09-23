@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
 
-import type { KnownDevice } from '@onekeyfe/hd-core';
+import type { KnownDevice } from '@unionkeyhq/hd-core';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export type HardwareUiEventPayload = {

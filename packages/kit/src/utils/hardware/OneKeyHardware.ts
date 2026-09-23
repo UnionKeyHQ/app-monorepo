@@ -1,8 +1,8 @@
-import { getDeviceTypeByDeviceId as getDeviceTypeByDeviceIdUtil } from '@onekeyfe/hd-core';
+import { getDeviceTypeByDeviceId as getDeviceTypeByDeviceIdUtil } from '@unionkeyhq/hd-core';
 
 import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
-import type { IDeviceType, IVersionArray } from '@onekeyfe/hd-core';
+import type { IDeviceType, IVersionArray } from '@unionkeyhq/hd-core';
 
 export const getDeviceTypeByDeviceId = (deviceId?: string): IDeviceType =>
   getDeviceTypeByDeviceIdUtil(deviceId);

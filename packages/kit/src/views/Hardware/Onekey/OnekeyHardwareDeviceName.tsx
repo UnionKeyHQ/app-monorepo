@@ -29,7 +29,7 @@ import type {
 } from '@unionkeyhq/shared/types';
 
 import type { OnekeyHardwareModalRoutes } from '../../../routes/routesEnum';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 import type { RouteProp } from '@react-navigation/core';
 
 type FieldValues = { name: string };

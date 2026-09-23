@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import type VaultTron from '@unionkeyhq/engine/src/vaults/impl/tron/Vault';
 import { getActiveWalletAccount } from '@unionkeyhq/kit/src/hooks';
@@ -16,7 +16,7 @@ import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 import type { SignedTransaction } from 'tronweb';
 
 export type WatchAssetParameters = {

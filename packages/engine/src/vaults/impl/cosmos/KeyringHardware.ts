@@ -1,5 +1,5 @@
 import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
-import { HardwareError } from '@onekeyfe/hd-shared';
+import { HardwareError } from '@unionkeyhq/hd-shared';
 import BigNumber from 'bignumber.js';
 
 import type { DBVariantAccount } from '@unionkeyhq/engine/src/types/account';

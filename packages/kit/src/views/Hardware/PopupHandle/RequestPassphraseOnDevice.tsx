@@ -16,7 +16,7 @@ import { setPendingRememberWalletConnectId } from '@unionkeyhq/kit/src/store/red
 import BaseRequestView from './BaseRequest';
 
 import type { BaseRequestViewProps } from './BaseRequest';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 type RequestPassphraseOnDeviceViewProps = {
   connectId: string;

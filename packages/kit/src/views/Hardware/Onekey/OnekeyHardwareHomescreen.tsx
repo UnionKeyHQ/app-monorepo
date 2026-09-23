@@ -32,7 +32,7 @@ import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import type { OnekeyHardwareModalRoutes } from '../../../routes/routesEnum';
-import type { DeviceUploadResourceParams } from '@onekeyfe/hd-core';
+import type { DeviceUploadResourceParams } from '@unionkeyhq/hd-core';
 import type { RouteProp } from '@react-navigation/core';
 import type { ImageInfo } from 'expo-image-picker';
 import type { MessageDescriptor } from 'react-intl';

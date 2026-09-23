@@ -53,7 +53,7 @@ import { ENetworkStatus } from '@unionkeyhq/shared/types';
 import ServiceBase from './ServiceBase';
 
 import type ProviderApiBase from '../providers/ProviderApiBase';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const accountSelectorActions = reducerAccountSelector.actions;
 

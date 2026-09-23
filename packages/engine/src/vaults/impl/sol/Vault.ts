@@ -136,7 +136,7 @@ import type {
   TransferInstructionAccounts,
   TransferInstructionArgs,
 } from '@metaplex-foundation/mpl-token-metadata';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 import type { AccountInfo, TransactionInstruction } from '@solana/web3.js';
 
 export default class Vault extends VaultBase {

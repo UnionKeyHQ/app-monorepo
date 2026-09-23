@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import type VaultNear from '@unionkeyhq/engine/src/vaults/impl/near/Vault';
 import { getActiveWalletAccount } from '@unionkeyhq/kit/src/hooks';
@@ -19,7 +19,7 @@ import type ProviderApiPrivate from './ProviderApiPrivate';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 
 @backgroundClass()
 class ProviderApiNear extends ProviderApiBase {

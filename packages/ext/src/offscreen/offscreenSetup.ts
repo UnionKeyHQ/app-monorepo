@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unused-vars */
-import { bridgeSetup } from '@onekeyfe/extension-bridge-hosted';
+import { bridgeSetup } from '@unionkeyhq/extension-bridge-hosted';
 
 import offscreenApi from '@unionkeyhq/kit-bg/src/offscreens/instance/offscreenApi';
 import type { IOffscreenApiMessagePayload } from '@unionkeyhq/kit-bg/src/offscreens/types';

@@ -52,7 +52,7 @@ import type ServiceToken from './services/ServiceToken';
 import type ServiceTransaction from './services/ServiceTransaction';
 import type ServiceUtxos from './services/ServiceUtxos';
 import type ServiceWalletConnect from './services/ServiceWalletConnect';
-import type { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import type { JsBridgeBase } from '@unionkeyhq/cross-inpage-provider-core';
 import type {
   IInjectedProviderNames,
   IInjectedProviderNamesStrings,
@@ -60,8 +60,8 @@ import type {
   IJsBridgeReceiveHandler,
   IJsonRpcRequest,
   IJsonRpcResponse,
-} from '@onekeyfe/cross-inpage-provider-types';
-import type { JsBridgeExtBackground } from '@onekeyfe/extension-bridge-hosted';
+} from '@unionkeyhq/cross-inpage-provider-types';
+import type { JsBridgeExtBackground } from '@unionkeyhq/extension-bridge-hosted';
 
 export type IBackgroundApiInternalCallMessage = IJsonRpcRequest & {
   service: string;

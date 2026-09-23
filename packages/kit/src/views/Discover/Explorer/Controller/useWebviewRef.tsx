@@ -5,7 +5,7 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { crossWebviewLoadUrl, getWebviewWrapperRef } from '../explorerUtils';
 
 import type { OnWebviewNavigation } from '../explorerUtils';
-import type { IElectronWebView } from '@onekeyfe/cross-inpage-provider-types';
+import type { IElectronWebView } from '@unionkeyhq/cross-inpage-provider-types';
 
 export const useWebviewRef = ({
   ref,

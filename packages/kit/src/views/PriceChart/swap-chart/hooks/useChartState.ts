@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { wait } from '@onekeyfe/hd-core';
+import { wait } from '@unionkeyhq/hd-core';
 
 import type { Token } from '@unionkeyhq/engine/src/types/token';
 

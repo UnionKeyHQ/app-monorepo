@@ -5,7 +5,7 @@ import { BigInteger } from 'biginteger';
 import BigNumber from 'bignumber.js';
 
 import type { IEncodedTxDynex, ISignTxParams } from './types';
-import type { DnxSignature } from '@onekeyfe/hd-core';
+import type { DnxSignature } from '@unionkeyhq/hd-core';
 
 const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 185;
 const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 29;

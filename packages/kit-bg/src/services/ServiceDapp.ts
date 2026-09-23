@@ -1,4 +1,4 @@
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
 import { cloneDeep, debounce } from 'lodash';
 
 import { isAccountCompatibleWithNetwork } from '@unionkeyhq/engine/src/managers/account';
@@ -62,7 +62,7 @@ import ServiceBase from './ServiceBase';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 import type { SessionTypes } from '@walletconnect-v2/types';
 
 type CommonRequestParams = {

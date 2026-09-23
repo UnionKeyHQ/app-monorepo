@@ -1,6 +1,6 @@
 # UnionKey dependency and service audit
 
-Last reviewed: 2026-09-23
+Last reviewed: 2026-09-24
 
 This document distinguishes UnionKey product identity from upstream attribution,
 third-party package identity, persistent compatibility identifiers, and external
@@ -27,12 +27,20 @@ versions in this repository.
 
 | Package group | Pinned version | Declared license | Decision |
 | --- | ---: | --- | --- |
-| `@onekeyfe/cross-inpage-provider-*` | 1.1.59 | Apache-2.0 | Retain package identity and attribution |
-| `@onekeyfe/extension-bridge-hosted` | 1.1.59 | Apache-2.0 | Retain until a tested UnionKey replacement exists |
-| `@onekeyfe/onekey-cross-webview` | 1.1.59 | Apache-2.0 | Retain package identity and attribution |
-| `@onekeyfe/hd-*` | 0.3.47 | ISC | Retain for hardware/firmware compatibility |
+| `@unionkeyhq/cross-inpage-provider-*` | 2.2.71 | Apache-2.0 | Migration prepared; only the registry-published subset is release-ready |
+| `@unionkeyhq/extension-bridge-hosted` | 2.2.71 | Apache-2.0 | Prepared but not yet present in the public registry |
+| `@unionkeyhq/unionkey-cross-webview` | 2.2.71 | Apache-2.0 | Prepared but not yet present in the public registry |
+| `@unionkeyhq/hd-*` | 1.1.27-alpha.5 | ISC | UnionKey-published hardware SDK; retain protocol compatibility |
 | `@onekeyfe/react-native-ble-plx` | 3.0.0 | Apache-2.0 | Retain or replace only after mobile regression testing |
 | `@onekeyfe/cardano-coin-selection*` | 1.0.0/1.1.0 | MIT | Retain package identity and attribution |
+
+The UnionKey npm organization is active and the hardware SDK packages used by
+this application are published. Cross-provider publication is still in
+progress: the core, types, events, errors, empty and desktop bridge packages
+are public, while the hosted/injected extension bridges, webview and remaining
+runtime provider packages must be published before the application lockfile
+can be regenerated. The application must not be released with package names
+that do not resolve from the public registry.
 
 The license files shipped by each dependency must remain in binary notices and
 software-bill-of-materials output where required by its license.
@@ -70,6 +78,15 @@ files remain part of each dependency.
 | WalletConnect v1 | `walletconnectbridge.onekey.so` | Legacy compatibility | Replace with an operated compatible bridge or remove v1 after migration |
 | Product APIs | `data`, `swap`, `portfolio`, `discover`, `ticket` hosts | Blocking dependency | Document API contracts and deploy UnionKey equivalents before switching |
 | Test/sandbox hosts | `*.onekeytest.com` | Development dependency | Replace with isolated UnionKey staging services or remove dead fixtures |
+
+`https://api.unionkey.io/config.json` and
+`https://api.unionkey.io/pre-config.json` were verified on 2026-09-24. They
+currently provide application update metadata, signed desktop download data,
+Android download data and UnionKey Touch firmware metadata. They do not
+establish compatible replacements for chain RPC, the hosted hardware SDK,
+WalletConnect v1, product APIs or the desktop hardware bridge. The bridge
+entries in the current configuration are empty and must not be treated as a
+deployable bridge release.
 
 ## Compatibility identifiers retained intentionally
 

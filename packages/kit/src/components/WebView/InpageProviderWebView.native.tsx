@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 
-import { useWebViewBridge } from '@onekeyfe/onekey-cross-webview';
+import { useWebViewBridge } from '@unionkeyhq/unionkey-cross-webview';
 import { Box, Progress } from 'native-base';
 
 import { Center, Spinner } from '@unionkeyhq/components';
@@ -13,7 +13,7 @@ import injectedNativeCode from './injectedNative.text-js';
 import { NativeWebView } from './NativeWebView';
 
 import type { InpageProviderWebViewProps } from './types';
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 import type { WebViewProps } from 'react-native-webview';
 
 const InpageProviderWebView: FC<InpageProviderWebViewProps> = forwardRef(

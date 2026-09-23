@@ -17,11 +17,7 @@ import { useSettings } from '@unionkeyhq/kit/src/hooks/redux';
 import { useHelpLink } from '@unionkeyhq/kit/src/hooks/useHelpLink';
 import { setDevMode } from '@unionkeyhq/kit/src/store/reducers/settings';
 
-import {
-  openUrl,
-  openUrlByWebview,
-  openUrlExternal,
-} from '../../../utils/openUrl';
+import { openUrl, openUrlByWebview } from '../../../utils/openUrl';
 
 import AppRateSectionItem from './AppRateSectionItem';
 import AutoUpdateSectionItem from './AutoUpdateSectionItem';
@@ -191,7 +187,7 @@ export const AboutSection = () => {
           borderBottomColor="divider"
           onPress={() =>
             openUrl(
-              'https://www.onekey.so',
+              'https://unionkey.io',
               intl.formatMessage({
                 id: 'form__website',
               }),
@@ -207,52 +203,6 @@ export const AboutSection = () => {
             {intl.formatMessage({
               id: 'form__website',
             })}
-          </Text>
-          <Icon
-            name="ArrowTopRightOnSquareMini"
-            color="icon-subdued"
-            size={20}
-          />
-        </Pressable>
-        <Pressable
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          py={4}
-          px={{ base: 4, md: 6 }}
-          borderBottomWidth="1"
-          borderBottomColor="divider"
-          onPress={() => openUrlExternal('https://www.discord.gg/onekey')}
-        >
-          <Icon name="DiscordOutline" />
-          <Text
-            typography={{ sm: 'Body1Strong', md: 'Body2Strong' }}
-            flex={1}
-            mx={3}
-          >
-            Discord
-          </Text>
-          <Icon
-            name="ArrowTopRightOnSquareMini"
-            color="icon-subdued"
-            size={20}
-          />
-        </Pressable>
-        <Pressable
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          py={4}
-          px={{ base: 4, md: 6 }}
-          onPress={() => openUrlExternal('https://www.twitter.com/onekeyhq')}
-        >
-          <Icon name="TwitterOutline" />
-          <Text
-            typography={{ sm: 'Body1Strong', md: 'Body2Strong' }}
-            flex={1}
-            mx={3}
-          >
-            Twitter
           </Text>
           <Icon
             name="ArrowTopRightOnSquareMini"

@@ -1,7 +1,7 @@
 import { Buffer } from 'buffer';
 
 import { bytesToHex } from '@noble/hashes/utils';
-import { ResourceType } from '@onekeyfe/hd-transport';
+import { ResourceType } from '@unionkeyhq/hd-transport';
 import axios from 'axios';
 import { SaveFormat, manipulateAsync } from 'expo-image-manipulator';
 import { Image } from 'react-native';
@@ -14,7 +14,7 @@ import { formatBytes } from './homescreens';
 import type {
   DeviceUploadResourceParams,
   IDeviceType,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 import type { Action } from 'expo-image-manipulator';
 
 export type NFTMetaData = {

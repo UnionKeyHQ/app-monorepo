@@ -138,7 +138,7 @@ import type {
   EVMDecodedItemERC20Transfer,
 } from './decoder/decoder';
 import type { IRpcTxEvm } from './types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const EVM_L2_NETWORKS_REQUIRE_L1_FEE: string[] = [
   OnekeyNetwork.optimism,

@@ -18,7 +18,7 @@ import type {
   ISignCredentialOptions,
 } from '../../types';
 import type { IEncodedTxTron } from './types';
-import type { TronTransactionContract } from '@onekeyfe/hd-core';
+import type { TronTransactionContract } from '@unionkeyhq/hd-core';
 
 const PATH_PREFIX = `m/44'/${COIN_TYPE}'/0'/0`;
 

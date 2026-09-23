@@ -1,4 +1,4 @@
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 

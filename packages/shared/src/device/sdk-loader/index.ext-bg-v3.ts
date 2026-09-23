@@ -1,7 +1,7 @@
-import type { CoreApi, LowLevelCoreApi } from '@onekeyfe/hd-core';
+import type { CoreApi, LowLevelCoreApi } from '@unionkeyhq/hd-core';
 
 export const importHardwareSDK = async () => {
-  const sdkLib = await import('@onekeyfe/hd-web-sdk');
+  const sdkLib = await import('@unionkeyhq/hd-web-sdk');
   const sdk =
     // @ts-ignore
     (sdkLib.HardwareSDKTopLevel as CoreApi) ||

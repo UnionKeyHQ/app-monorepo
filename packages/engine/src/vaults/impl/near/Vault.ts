@@ -65,7 +65,7 @@ import type {
   IUnsignedTxPro,
 } from '../../types';
 import type { INearAccountStorageBalance, NearAccessKey } from './types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 // TODO extends evm/Vault
 export default class Vault extends VaultBase {

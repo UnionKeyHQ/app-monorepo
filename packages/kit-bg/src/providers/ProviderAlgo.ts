@@ -1,5 +1,5 @@
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import type VaultAlgo from '@unionkeyhq/engine/src/vaults/impl/algo/Vault';
 import { getActiveWalletAccount } from '@unionkeyhq/kit/src/hooks';
@@ -14,7 +14,7 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import ProviderApiBase from './ProviderApiBase';
 
 import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
-import type { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsBridgeMessagePayload } from '@unionkeyhq/cross-inpage-provider-types';
 
 @backgroundClass()
 class ProviderApiAlgo extends ProviderApiBase {

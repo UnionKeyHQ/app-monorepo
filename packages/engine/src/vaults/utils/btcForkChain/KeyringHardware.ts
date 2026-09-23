@@ -37,8 +37,8 @@ import type {
   UTXO,
 } from './types';
 import type BTCForkVault from './VaultBtcFork';
-import type { RefTransaction } from '@onekeyfe/hd-core';
-import type { Messages } from '@onekeyfe/hd-transport';
+import type { RefTransaction } from '@unionkeyhq/hd-core';
+import type { Messages } from '@unionkeyhq/hd-transport';
 
 export class KeyringHardware extends KeyringHardwareBase {
   override async signTransaction(

@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import type { LocaleIds } from '@unionkeyhq/components/src/locale';
 import type { OneKeyHardwareErrorPayload } from '@unionkeyhq/engine/src/errors';

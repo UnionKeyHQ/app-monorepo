@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { get } from 'lodash';
 
 import { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
@@ -60,7 +60,7 @@ import type {
   Success,
   UiResponseEvent,
   Unsuccessful,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 
 type ConnectedEvent = { device: KnownDevice };
 

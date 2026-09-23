@@ -30,7 +30,7 @@ import '@unionkeyhq/shared/src/web/index.css';
 import WebEmbedWebviewAgentCardano from './src/views/WebEmbedWebviewAgentCardano';
 import WebEmbedWebviewAgentMonero from './src/views/WebEmbedWebviewAgentMonero';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 function useRouteQuery() {
   const { search } = useLocation();

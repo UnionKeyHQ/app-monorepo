@@ -6,7 +6,7 @@ import {
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 type JsonRpcParams = undefined | { [p: string]: any } | Array<any>;
 

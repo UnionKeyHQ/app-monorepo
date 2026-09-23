@@ -16,7 +16,7 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import { useShowWebEmbedWebviewAgent } from '../../hooks/useSettingsDevMode';
 
-import type { IWebViewWrapperRef } from '@onekeyfe/onekey-cross-webview';
+import type { IWebViewWrapperRef } from '@unionkeyhq/unionkey-cross-webview';
 
 const ChainWebEmbedView = forwardRef(
   (

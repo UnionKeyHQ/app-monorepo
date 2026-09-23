@@ -11,7 +11,7 @@ import ConfirmOnTouch from '@unionkeyhq/kit/assets/animations/confirm-on-touch.j
 import BaseRequestView from './BaseRequest';
 
 import type { BaseRequestViewProps } from './BaseRequest';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 
 const getConfirmAnimation = (type: IDeviceType) => {
   switch (type) {

@@ -1,7 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-unused-vars */
 import { useCallback, useEffect, useState } from 'react';
 
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
 
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { toPlainErrorObject } from '@unionkeyhq/shared/src/utils/errorUtils';

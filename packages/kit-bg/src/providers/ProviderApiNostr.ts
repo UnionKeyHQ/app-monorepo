@@ -1,5 +1,5 @@
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyhq/cross-inpage-provider-errors';
+import { IInjectedProviderNames } from '@unionkeyhq/cross-inpage-provider-types';
 
 import { getNip19EncodedPubkey } from '@unionkeyhq/engine/src/vaults/impl/nostr/helper/NostrSDK';
 import type {
@@ -29,7 +29,7 @@ import type { IProviderBaseBackgroundNotifyInfo } from './ProviderApiBase';
 import type {
   IJsBridgeMessagePayload,
   IJsonRpcRequest,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyhq/cross-inpage-provider-types';
 
 interface HardwareDecryptionQueueItem {
   request: IJsBridgeMessagePayload;

@@ -18,7 +18,7 @@ import type { ModalScreenProps } from '@unionkeyhq/kit/src/routes/types';
 import { openUrl } from '@unionkeyhq/kit/src/utils/openUrl';
 
 import type { CreateWalletModalRoutes } from '../../../routes/routesEnum';
-import type { IDeviceType } from '@onekeyfe/hd-core';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
 import type { RouteProp } from '@react-navigation/native';
 
 export type SetupNewDeviceType = 'SetupNew' | 'Restore';

@@ -62,7 +62,7 @@ const preloadJsUrl = path.join(staticPath, 'preload.js');
 const sdkConnectSrc = isDev
   ? `file://${path.join(
       __dirname,
-      '../../../node_modules/@onekeyfe/hd-web-sdk/build/',
+      '../../../node_modules/@unionkeyhq/hd-web-sdk/build/',
     )}`
   : path.join('/static', 'js-sdk/');
 

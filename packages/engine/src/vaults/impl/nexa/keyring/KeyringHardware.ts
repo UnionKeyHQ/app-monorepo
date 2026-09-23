@@ -27,7 +27,7 @@ import {
 } from '../utils';
 
 import type { INexaInputSignature } from '../types';
-import type { NexaAddress, Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { NexaAddress, Success, Unsuccessful } from '@unionkeyhq/hd-core';
 
 const SIGN_TYPE = 'Schnorr';
 

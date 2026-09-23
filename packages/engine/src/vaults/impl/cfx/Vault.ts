@@ -80,7 +80,7 @@ import type {
 } from '../../types';
 import type { AddressValidation } from '../../utils/btcForkChain/types';
 import type { IEncodedTxCfx, ITxOnChainHistoryResp } from './types';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const { Conflux, address: confluxAddress } = sdkCfx;
 
