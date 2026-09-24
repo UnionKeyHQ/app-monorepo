@@ -23,7 +23,7 @@ import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
-import LogoOneKey from '../../../../assets/onboarding/logo_onekey.png';
+import LogoUnionKey from '../../../../assets/onboarding/logo_unionkey.png';
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useNavigationActions } from '../../../hooks';
 import { usePromiseResult } from '../../../hooks/usePromiseResult';
@@ -119,9 +119,9 @@ export function DialogConfirmMismatchOrContinue(
             />
             <VStack>
               <HStack>
-                <Image source={LogoOneKey} borderRadius="6px" size={6} />
+                <Image source={LogoUnionKey} borderRadius="6px" size={6} />
                 <Text typography="Body1Strong" ml={3}>
-                  OneKey
+                  UnionKey
                 </Text>
               </HStack>
               <HStack justifyContent="space-between" py={3}>

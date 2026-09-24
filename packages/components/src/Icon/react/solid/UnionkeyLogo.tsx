@@ -1,5 +1,5 @@
 import Svg, { SvgProps, Path } from 'react-native-svg';
-const SvgOnekeyLogo = (props: SvgProps) => (
+const SvgUnionkeyLogo = (props: SvgProps) => (
   <Svg
     viewBox="0 0 296 296"
     fill="currentColor"
@@ -10,4 +10,4 @@ const SvgOnekeyLogo = (props: SvgProps) => (
     <Path d="M133.434 61.778h29.143v129.333h-29.143z" />
   </Svg>
 );
-export default SvgOnekeyLogo;
+export default SvgUnionkeyLogo;

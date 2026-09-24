@@ -18,7 +18,7 @@ import DeviceMobile from '@unionkeyhq/kit/assets/onboarding/device_classic_touch
 import DeviceAll from '@unionkeyhq/kit/assets/onboarding/device_mini_classic_touch.png';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import ImgMetaMask from '@unionkeyhq/kit/assets/onboarding/logo_metamask.png';
-import OneKeyLite from '@unionkeyhq/kit/assets/onekey-lite.png';
+import UnionKeyLite from '@unionkeyhq/kit/assets/unionkey-lite.png';
 import supportedNFC from '@unionkeyhq/shared/src/detector/nfc';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
@@ -146,7 +146,7 @@ function ConnectOneKeyLiteButton() {
         _pressed={{ bgColor: 'surface-pressed' }}
         onPress={() => showOneKeyLiteModal()}
       >
-        <Image source={OneKeyLite} size={8} />
+        <Image source={UnionKeyLite} size={8} />
         <Text
           flex={1}
           mx={3}

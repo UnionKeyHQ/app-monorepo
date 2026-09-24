@@ -87,7 +87,7 @@ export const DefaultSection = () => {
                 navigation.navigate(HomeRoutes.ScreenOnekeyLiteDetail);
               }}
             >
-              <Icon name="OnekeyLiteOutline" />
+              <Icon name="UnionkeyLiteOutline" />
               <Text
                 typography={{ sm: 'Body1Strong', md: 'Body2Strong' }}
                 flex="1"

@@ -1,4 +1,4 @@
-import OnekeyLogo from '@unionkeyhq/kit/assets/logo_round.png';
+import UnionkeyLogo from '@unionkeyhq/kit/assets/logo_round.png';
 import AptosMartianLogo from '@unionkeyhq/kit/assets/walletLogo/aptos_martian.png';
 import AptosPetraLogo from '@unionkeyhq/kit/assets/walletLogo/aptos_petra.png';
 import UniSatLogo from '@unionkeyhq/kit/assets/walletLogo/btc_unisat.png';
@@ -60,7 +60,7 @@ export const CWalletSwitchDefaultConfig: Record<string, WalletSwitchItem> = {
     enable: false,
   },
   'SUI-onekey': {
-    logo: OnekeyLogo,
+    logo: UnionkeyLogo,
     title: 'UnionKey (Sui)',
     propertyKeys: ['onekey-sui'],
     enable: true,
@@ -72,7 +72,7 @@ export const CWalletSwitchDefaultConfig: Record<string, WalletSwitchItem> = {
     enable: true,
   },
   'SOLANA-onekey': {
-    logo: OnekeyLogo,
+    logo: UnionkeyLogo,
     title: 'UnionKey (Solana)',
     propertyKeys: ['onekey-solana'],
     enable: true,
@@ -108,7 +108,7 @@ export const CWalletSwitchDefaultConfig: Record<string, WalletSwitchItem> = {
     enable: true,
   },
   'POLKADOT-onekey': {
-    logo: OnekeyLogo,
+    logo: UnionkeyLogo,
     title: 'UnionKey (Polkadot)',
     propertyKeys: ['onekey-polkadot'],
     enable: true,

@@ -63,7 +63,7 @@ export const UtilSection = () => {
               stackNavigation.navigate(HomeRoutes.WalletSwitch);
             }}
           >
-            <Icon name="OnekeyLogoOutline" />
+            <Icon name="UnionkeyLogoOutline" />
             <Text
               typography={{ sm: 'Body1Strong', md: 'Body2Strong' }}
               flex="1"

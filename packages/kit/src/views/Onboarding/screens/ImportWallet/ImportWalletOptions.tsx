@@ -198,7 +198,7 @@ export const OptionOneKeyLite: FC<OptionProps> = ({
   <Option
     title={title}
     description={description}
-    icon="OnekeyLiteOutline"
+    icon="UnionkeyLiteOutline"
     onPress={onPress}
   >
     <Center>
@@ -269,7 +269,7 @@ export const OptioniCloud: FC<OptionProps> = ({
     isDisabled={isDisabled}
     isLoading={isLoading}
   >
-    <IconToIconIllus leftIcon="CloudSolid" rightIcon="OnekeyLogoSolid" />
+    <IconToIconIllus leftIcon="CloudSolid" rightIcon="UnionkeyLogoSolid" />
   </Option>
 );
 
@@ -286,6 +286,6 @@ export const OptionGoogleDrive: FC<OptionProps> = ({
     isDisabled={isDisabled}
     isLoading={isLoading}
   >
-    <IconToIconIllus leftIcon="CloudSolid" rightIcon="OnekeyLogoSolid" />
+    <IconToIconIllus leftIcon="CloudSolid" rightIcon="UnionkeyLogoSolid" />
   </Option>
 );

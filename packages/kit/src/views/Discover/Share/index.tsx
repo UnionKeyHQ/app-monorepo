@@ -68,7 +68,7 @@ export const ShareView = () => {
       default: {
         url: `file://${uri}`,
         title: 'Share',
-        filename: 'onekey_share.png',
+        filename: 'unionkey_share.png',
         failOnCancel: true,
       },
     });
