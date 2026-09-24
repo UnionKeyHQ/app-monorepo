@@ -6,7 +6,8 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
-const LibLoader = async () => import('@onekeyfe/cardano-coin-selection-asmjs');
+const LibLoader = async () =>
+  import('@unionkeyhq/cardano-coin-selection-asmjs');
 
 const getCardanoApi = async () => {
   const Loader = await LibLoader();

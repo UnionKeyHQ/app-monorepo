@@ -9,7 +9,7 @@
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx"
   },
   "dependencies": {
-    "@onekeyfe/cardano-coin-selection-asmjs": "1.1.0",
+    "@unionkeyhq/cardano-coin-selection-asmjs": "1.1.0",
     "@unionkeyhq/components": "*",
     "@unionkeyhq/engine": "*",
     "@unionkeyhq/kit": "*",

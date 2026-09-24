@@ -31,8 +31,8 @@ versions in this repository.
 | `@unionkeyhq/extension-bridge-hosted` | 2.2.71 | Apache-2.0 | Prepared but not yet present in the public registry |
 | `@unionkeyhq/unionkey-cross-webview` | 2.2.71 | Apache-2.0 | Prepared but not yet present in the public registry |
 | `@unionkeyhq/hd-*` | 1.1.27-alpha.5 | ISC | UnionKey-published hardware SDK; retain protocol compatibility |
-| `@onekeyfe/react-native-ble-plx` | 3.0.0 | Apache-2.0 | Retain or replace only after mobile regression testing |
-| `@onekeyfe/cardano-coin-selection*` | 1.0.0/1.1.0 | MIT | Retain package identity and attribution |
+| `@unionkeyhq/react-native-ble-plx` | 3.0.1 | Apache-2.0 | UnionKeyHQ fork prepared; preserve Polidea attribution and run mobile regression tests |
+| `@unionkeyhq/cardano-coin-selection*` | 1.0.0/1.1.0 | MIT | UnionKeyHQ fork and browser/ASMJS builds prepared; preserve upstream attribution |
 
 The UnionKey npm organization is active and the hardware SDK packages used by
 this application are published. Cross-provider publication is still in
