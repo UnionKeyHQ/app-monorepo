@@ -62,6 +62,9 @@ commit so migration does not silently change dependency behavior.
 | React Native cloud filesystem | `450b00b11555e8e9523adf5c5d0726b5ae966d9e` |
 | React Native nested scroll view | `4e131c42be8e4d32bcf948de4bff5214116fef76` |
 | React Native WebView mobile fork | `c69bc9b12f5fecbeef1dfce4ffc7f186f2baa234` |
+| React Native BLE PLX fork | `b56d5aa` on `UnionKeyHQ/react-native-ble-plx` |
+| Cardano coin selection browser build | `41a82cf` on `UnionKeyHQ/coin-selection` |
+| Cardano coin selection ASMJS build | `e402f09` on the `unionkey-asmjs` branch |
 
 Mirroring does not transfer upstream authorship. Copyright notices and license
 files remain part of each dependency.
