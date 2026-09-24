@@ -56,11 +56,8 @@ module.exports = {
     },
   ],
   'permissions': [
-    'https://dapp-server.onekey.so/*', // allow CORS requests in firefox
     // 'http://localhost:8545/',
     // 'https://*.infura.io/',
-    '*://*.onekeycn.com/*',
-    '*://*.onekeytest.com/*',
     // '*://*.eth/',
     'storage',
     'unlimitedStorage',

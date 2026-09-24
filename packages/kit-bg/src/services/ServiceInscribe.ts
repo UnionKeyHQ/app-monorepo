@@ -1013,7 +1013,7 @@ export default class ServiceInscribe extends ServiceBase {
       /*
       // min relay fee not met, 13753 < 13766
 
-      fetch("https://node.onekeytest.com/getblock-btc-mainnet", {
+      fetch("https://your-bitcoin-rpc.example", {
         "body": "[{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"getmempoolinfo\",\"params\":[]}]",
         "method": "POST",
       });

@@ -166,9 +166,9 @@ const consoleFunc = (msg: string, props: IConsoleFuncProps) => {
   }
 };
 
-const NATIVE_LOG_DIR_PATH = `${RNFS?.CachesDirectoryPath || 'OneKey'}/logs`;
+const NATIVE_LOG_DIR_PATH = `${RNFS?.CachesDirectoryPath || 'UnionKey'}/logs`;
 const NATIVE_LOG_ZIP_DIR_PATH = `${
-  RNFS?.CachesDirectoryPath || 'OneKey'
+  RNFS?.CachesDirectoryPath || 'UnionKey'
 }/log_zip`;
 
 const removeLogZipDir = async () => {

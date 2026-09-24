@@ -38,8 +38,8 @@ const FormGallery = () => {
       value: 'https://google.com',
     },
     {
-      label: 'https://rpc.onekey.so/eth',
-      value: 'https://rpc.onekey.so/eth',
+      label: 'https://cloudflare-eth.com',
+      value: 'https://cloudflare-eth.com',
     },
     {
       label: 'https://baidu.com',
@@ -108,7 +108,7 @@ const FormGallery = () => {
               name="url"
               control={control}
               label="rpcUrl"
-              defaultValue="https://rpc.onekey.so/eth"
+              defaultValue="https://cloudflare-eth.com"
               formControlProps={{ zIndex: 10 }}
             >
               <Form.Select

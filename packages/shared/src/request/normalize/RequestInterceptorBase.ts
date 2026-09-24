@@ -13,18 +13,10 @@ function getFirstPartyRequestTarget({ url }: { url: string }) {
   if (url.includes('unionkey.io')) {
     return 'unionkey' as const;
   }
-  const hosts = [
-    'onekey.so',
-    'onekeycn.com',
-    'onekeytest.com',
-    'localhost',
-    '127.0.0.1',
-    '192.168',
-    // 'onekey-asset.com',
-  ];
+  const hosts = ['localhost', '127.0.0.1', '192.168'];
   for (const host of hosts) {
     if (url.includes(host)) {
-      return 'legacy' as const;
+      return 'local' as const;
     }
   }
   return undefined;

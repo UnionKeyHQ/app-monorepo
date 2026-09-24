@@ -38,7 +38,7 @@ import type {
 import type { JsBridgeExtBackground } from '@unionkeyhq/extension-bridge-hosted';
 
 const PRIVATE_WHITE_LIST_ORIGIN = [
-  'https://onekey.so',
+  'https://unionkey.io',
   'http://localhost:3008', // iOS simulator DEV localhost for web-embed
   'http://localhost:8081', // iOS simulator DEV localhost for web-embed
   'null', // Android DEV localhost for web-embed. url like file://
@@ -57,7 +57,7 @@ const PRIVATE_WHITE_LIST_ORIGIN = [
 function isPrivateAllowedOrigin(origin?: string) {
   return (
     origin &&
-    (origin?.endsWith('.onekey.so') ||
+    (origin?.endsWith('.unionkey.io') ||
       PRIVATE_WHITE_LIST_ORIGIN.includes(origin))
   );
 }

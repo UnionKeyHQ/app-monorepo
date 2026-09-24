@@ -100,7 +100,7 @@ export const uploadMetricsInfo = async (
   deviceInfo: MetrixDeviceInfo,
 ) =>
   uploadMetricsLogFile(
-    'https://perf.onekeytest.com/api/logs/upload',
+    process.env.METRICS_UPLOAD_URL || 'https://api.unionkey.io/api/logs/upload',
     unitTestName,
     password,
     JSON.stringify({

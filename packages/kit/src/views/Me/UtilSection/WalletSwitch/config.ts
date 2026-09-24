@@ -61,7 +61,7 @@ export const CWalletSwitchDefaultConfig: Record<string, WalletSwitchItem> = {
   },
   'SUI-onekey': {
     logo: OnekeyLogo,
-    title: 'OneKey(Sui)',
+    title: 'UnionKey (Sui)',
     propertyKeys: ['onekey-sui'],
     enable: true,
   },
@@ -73,7 +73,7 @@ export const CWalletSwitchDefaultConfig: Record<string, WalletSwitchItem> = {
   },
   'SOLANA-onekey': {
     logo: OnekeyLogo,
-    title: 'OneKey(Solana)',
+    title: 'UnionKey (Solana)',
     propertyKeys: ['onekey-solana'],
     enable: true,
   },
@@ -109,7 +109,7 @@ export const CWalletSwitchDefaultConfig: Record<string, WalletSwitchItem> = {
   },
   'POLKADOT-onekey': {
     logo: OnekeyLogo,
-    title: 'OneKey(Polkadot)',
+    title: 'UnionKey (Polkadot)',
     propertyKeys: ['onekey-polkadot'],
     enable: true,
   },

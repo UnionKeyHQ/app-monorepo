@@ -15,7 +15,7 @@ const network: DBNetwork = {
   logoURI: 'https://uni.onekey-asset.com/static/chain/near.png',
   name: 'Near Mainnet',
   position: 33,
-  rpcURL: 'https://node.onekey.so/near',
+  rpcURL: 'https://rpc.mainnet.near.org',
   symbol: 'NEAR',
 };
 

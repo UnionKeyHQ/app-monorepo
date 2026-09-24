@@ -395,7 +395,7 @@ export const Debug = () => {
                   searchParams,
                   hash,
                 } = new URL(
-                  'https://github.com:80/OneKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aclosed#link',
+                  'https://github.com:80/UnionKeyHQ/app-monorepo/pulls?q=is%3Apr+is%3Aclosed#link',
                 );
                 console.log({
                   href,
@@ -444,7 +444,7 @@ export const Debug = () => {
             <Pressable
               {...pressableProps}
               onPress={() => {
-                openUrlByWebview('https://dapp-example.test.onekey.so/');
+                openUrlByWebview('https://unionkey.io/');
               }}
             >
               <Typography.Body1>Dapp Test</Typography.Body1>
@@ -465,7 +465,7 @@ export const Debug = () => {
                       // type: 'Send',
                       // networkId,
                       // accountId,
-                      query: `{"sourceInfo":{"id":0,"origin":"https://swap.onekey.so","scope":"ethereum","data":{
+                      query: `{"sourceInfo":{"id":0,"origin":"https://unionkey.io","scope":"ethereum","data":{
 
                       "method":"eth_sendTransaction","params":[
                       {
@@ -528,7 +528,7 @@ export const Debug = () => {
                       query: `{
   "sourceInfo": {
     "id": 0,
-    "origin": "https://swap.onekey.so",
+    "origin": "https://unionkey.io",
     "scope": "ethereum",
     "data": {
       "method": "eth_sendTransaction",
@@ -573,7 +573,7 @@ export const Debug = () => {
                       // accountId,
                       query: `{
 
-                      "sourceInfo":{"id":2,"origin":"https://dapp-example.onekeytest.com","scope":"ethereum","data":{
+                      "sourceInfo":{"id":2,"origin":"https://unionkey.io","scope":"ethereum","data":{
 
                       "method":"personal_sign","params":["0x4578616d706c652060706572736f6e616c5f7369676e60206d657373616765","${accountAddress}","Example password"],"jsonrpc":"2.0"}},
 

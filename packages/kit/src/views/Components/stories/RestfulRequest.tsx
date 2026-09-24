@@ -18,7 +18,7 @@ type GasPriceRequestData = {
 
 const Request: FC = () => {
   const { data, error, mutate } = useSWR<RequestPayload<GasPriceRequestData>>(
-    'https://defi.onekey.so/onestep/api/v1/gas_price?chain_id=1',
+    'https://api.unionkey.io/config.json',
   );
 
   if (error)

@@ -10,7 +10,7 @@ import {
 } from '@unionkeyhq/components';
 
 const Select1 = () => {
-  const [value, setValue] = useState('https://rpc.onekey.so/eth');
+  const [value, setValue] = useState('https://cloudflare-eth.com');
   return (
     <Select
       onChange={(v) => setValue(v)}
@@ -20,11 +20,11 @@ const Select1 = () => {
         width: '280px',
         zIndex: 5,
       }}
-      defaultValue="https://rpc.onekey.so/eth"
+      defaultValue="https://cloudflare-eth.com"
       options={[
         {
-          label: 'https://rpc.onekey.so/eth',
-          value: 'https://rpc.onekey.so/eth',
+          label: 'https://cloudflare-eth.com',
+          value: 'https://cloudflare-eth.com',
         },
         {
           label: 'https://google.com',
@@ -49,11 +49,11 @@ const SelectGallery = () => (
           width: '280px',
           zIndex: 4,
         }}
-        defaultValue="https://rpc.onekey.so/eth"
+        defaultValue="https://cloudflare-eth.com"
         options={[
           {
-            label: 'https://rpc.onekey.so/eth',
-            value: 'https://rpc.onekey.so/eth',
+            label: 'https://cloudflare-eth.com',
+            value: 'https://cloudflare-eth.com',
           },
           {
             label: 'https://google.com',
@@ -75,8 +75,8 @@ const SelectGallery = () => (
         footer={null}
         options={[
           {
-            label: 'https://rpc.onekey.so/eth',
-            value: 'https://rpc.onekey.so/eth',
+            label: 'https://cloudflare-eth.com',
+            value: 'https://cloudflare-eth.com',
           },
           {
             label: 'https://google.com',
@@ -120,8 +120,8 @@ const SelectGallery = () => (
         footer={null}
         options={[
           {
-            label: 'https://rpc.onekey.so/eth',
-            value: 'https://rpc.onekey.so/eth',
+            label: 'https://cloudflare-eth.com',
+            value: 'https://cloudflare-eth.com',
           },
           {
             label: 'https://google.com',

@@ -11,8 +11,7 @@ type ITestResponseData = {
   };
 };
 
-const TEST_URL = 'https://node.onekeytest.com/health';
-// const TEST_URL = 'https://fiat.onekeycn.com/setting/list';
+const TEST_URL = 'https://api.unionkey.io/config.json';
 
 async function testUrlResponse({
   name,
@@ -171,7 +170,7 @@ function createSuperAgentTests({
   ];
 }
 
-// try{$$axios.get('https://node.onekeytest.com/health')}catch(error){console.error('axios ERROR >>>>>>> :',error)}
+// try{$$axios.get('https://api.unionkey.io/config.json')}catch(error){console.error('axios ERROR >>>>>>> :',error)}
 export async function requestsInterceptTest2(): Promise<
   ITestResponseData | undefined
 > {

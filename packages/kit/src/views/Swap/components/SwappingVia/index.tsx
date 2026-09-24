@@ -12,7 +12,7 @@ type SwappingViaProps = {
 };
 
 function proxyimg(base: string) {
-  return `https://node.onekey.so/proxyimg?base=${base}`;
+  return base;
 }
 
 type SwappingViaLogosProps = { sources?: string[]; size?: number };

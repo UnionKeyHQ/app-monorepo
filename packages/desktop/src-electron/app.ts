@@ -27,7 +27,7 @@ import initProcess, { restartBridge } from './process/index';
 
 import type { PrefType } from './preload';
 
-const ONEKEY_APP_DEEP_LINK_NAME = 'onekey-wallet';
+const ONEKEY_APP_DEEP_LINK_NAME = 'unionkey-wallet';
 const WALLET_CONNECT_DEEP_LINK_NAME = 'wc';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call

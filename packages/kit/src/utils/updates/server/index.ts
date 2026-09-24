@@ -181,7 +181,7 @@ function handleReleaseInfo(
     webPackages.push({
       os: 'website',
       channel: 'Direct',
-      download: 'https://app.onekey.so',
+      download: 'https://unionkey.io',
       version: forceUpdateVersion ?? '0.0.0',
       forceUpdateVersion,
     });
@@ -209,9 +209,7 @@ export async function getReleaseInfo(): Promise<PackagesInfo | null> {
 export async function getPreReleaseInfo(): Promise<PackagesInfo | null> {
   const key = Math.random().toString();
   return axios
-    .get<AppReleases>(
-      `${UNIONKEY_API_BASE_URL}/pre-config.json?nocache=${key}`,
-    )
+    .get<AppReleases>(`${UNIONKEY_API_BASE_URL}/pre-config.json?nocache=${key}`)
     .then((releasesVersionResponse) => {
       const releasesVersion = releasesVersionResponse.data;
       return handleReleaseInfo(releasesVersion);

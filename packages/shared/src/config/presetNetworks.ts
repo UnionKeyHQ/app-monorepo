@@ -64,10 +64,6 @@ const serverPresetNetworks = [
         'indexer': 'https://algosigner.api.purestake.io/mainnet/indexer',
         'url': 'https://algosigner.api.purestake.io/mainnet/algod',
       },
-      {
-        'indexer': 'https://algosigner.api.purestake.io/mainnet/indexer',
-        'url': 'https://node.onekey.so/algo',
-      },
     ],
     'shortcode': 'algo',
     'shortname': 'ALGO',
@@ -161,9 +157,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://rpc.mainnet.aptos.fernlabs.xyz',
-      },
-      {
-        'url': 'https://node.onekey.so/apt',
       },
     ],
     'shortcode': 'apt',
@@ -306,9 +299,6 @@ const serverPresetNetworks = [
     'name': 'Bitcoin',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/btc',
-      },
-      {
         'url': 'https://1rpc.io/btc',
       },
     ],
@@ -356,9 +346,6 @@ const serverPresetNetworks = [
     'rpcURLs': [
       {
         'url': 'https://main.confluxrpc.com',
-      },
-      {
-        'url': 'https://node.onekey.so/cfx',
       },
     ],
     'shortcode': 'cfx',
@@ -456,9 +443,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://rest-akash.ecostake.com',
       },
-      {
-        'url': 'https://node.onekey.so/akash',
-      },
     ],
     'shortcode': 'akash',
     'shortname': 'Akash',
@@ -520,9 +504,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://lcd-cosmoshub.blockapsis.com',
-      },
-      {
-        'url': 'https://node.onekey.so/cosmos',
       },
     ],
     'shortcode': 'cosmoshub',
@@ -591,9 +572,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://rest-cryptoorgchain.ecostake.com',
       },
-      {
-        'url': 'https://node.onekey.so/crypto',
-      },
     ],
     'shortcode': 'cryptoorgchain',
     'shortname': 'Crypto.org',
@@ -661,9 +639,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://fetch-api.polkachu.com',
       },
-      {
-        'url': 'https://node.onekey.so/fetch',
-      },
     ],
     'shortcode': 'fetch',
     'shortname': 'Fetch.ai',
@@ -728,9 +703,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://api.juno.silknodes.io',
       },
-      {
-        'url': 'https://node.onekey.so/juno',
-      },
     ],
     'shortcode': 'juno',
     'shortname': 'Juno',
@@ -794,9 +766,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://osmosis-lcd.quickapi.com',
-      },
-      {
-        'url': 'https://node.onekey.so/osmosis',
       },
     ],
     'shortcode': 'osmosis',
@@ -983,9 +952,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://api.secret.forbole.com/',
-      },
-      {
-        'url': 'https://node.onekey.so/secret',
       },
     ],
     'shortcode': 'secretnetwork',
@@ -1524,9 +1490,6 @@ const serverPresetNetworks = [
     'name': 'Ethereum',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/eth',
-      },
-      {
         'url': 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
       },
       {
@@ -1642,9 +1605,6 @@ const serverPresetNetworks = [
         'url': 'https://mainnet.optimism.io',
       },
       {
-        'url': 'https://node.onekey.so/optimism',
-      },
-      {
         'url': 'https://1rpc.io/op',
       },
     ],
@@ -1713,9 +1673,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://gnosischain-rpc.gateway.pokt.network',
       },
-      {
-        'url': 'https://node.onekey.so/xdai',
-      },
     ],
     'shortcode': 'xdai',
     'shortname': 'GNO',
@@ -1767,9 +1724,6 @@ const serverPresetNetworks = [
     'rpcURLs': [
       {
         'url': 'https://mainnet.ethereumpow.org',
-      },
-      {
-        'url': 'https://node.onekey.so/ethw',
       },
     ],
     'shortcode': 'ethw',
@@ -1863,9 +1817,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://http-mainnet-node.defibox.com',
       },
-      {
-        'url': 'https://node.onekey.so/heco',
-      },
     ],
     'shortcode': 'heco',
     'shortname': 'HECO',
@@ -1908,9 +1859,6 @@ const serverPresetNetworks = [
     'rpcURLs': [
       {
         'url': 'https://mainnet.aurora.dev',
-      },
-      {
-        'url': 'https://node.onekey.so/aurora',
       },
       {
         'url': 'https://1rpc.io/aurora',
@@ -1990,9 +1938,6 @@ const serverPresetNetworks = [
         'url': 'https://matic-mainnet-archive-rpc.bwarelabs.com',
       },
       {
-        'url': 'https://node.onekey.so/polygon',
-      },
-      {
         'url': 'https://1rpc.io/matic',
       },
       {
@@ -2069,9 +2014,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://rpc.vvs.finance',
       },
-      {
-        'url': 'https://node.onekey.so/cronos',
-      },
     ],
     'shortcode': 'cronos',
     'shortname': 'CRO',
@@ -2143,9 +2085,6 @@ const serverPresetNetworks = [
         'url': 'https://rpc.ankr.com/fantom',
       },
       {
-        'url': 'https://node.onekey.so/fantom',
-      },
-      {
         'url': 'https://1rpc.io/ftm',
       },
     ],
@@ -2202,9 +2141,6 @@ const serverPresetNetworks = [
         'url':
           'https://boba-mainnet.gateway.pokt.network/v1/lb/623ad21b20354900396fed7f',
       },
-      {
-        'url': 'https://node.onekey.so/boba',
-      },
     ],
     'shortcode': 'boba',
     'shortname': 'Boba',
@@ -2255,9 +2191,6 @@ const serverPresetNetworks = [
     'logoURI': 'https://uni.onekey-asset.com/static/chain/fil.png',
     'name': 'Filecoin FEVM',
     'rpcURLs': [
-      {
-        'url': 'https://node.onekey.so/fevm',
-      },
       {
         'url': 'https://rpc.ankr.com/filecoin',
       },
@@ -2358,9 +2291,6 @@ const serverPresetNetworks = [
         'url': 'https://rpc.ankr.com/arbitrum',
       },
       {
-        'url': 'https://node.onekey.so/arbitrum',
-      },
-      {
         'url': 'https://1rpc.io/arb',
       },
     ],
@@ -2416,9 +2346,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://forno.celo.org',
-      },
-      {
-        'url': 'https://node.onekey.so/celo',
       },
       {
         'url': 'https://1rpc.io/celo',
@@ -2483,9 +2410,6 @@ const serverPresetNetworks = [
         'url': 'https://rpc.ankr.com/avalanche',
       },
       {
-        'url': 'https://node.onekey.so/avalanche',
-      },
-      {
         'url': 'https://1rpc.io/avax/c',
       },
     ],
@@ -2539,9 +2463,6 @@ const serverPresetNetworks = [
     'rpcURLs': [
       {
         'url': 'https://rpc.etherfair.org',
-      },
-      {
-        'url': 'https://node.onekey.so/etf',
       },
     ],
     'shortcode': 'etf',
@@ -2643,9 +2564,6 @@ const serverPresetNetworks = [
         'url': 'https://bscrpc.com',
       },
       {
-        'url': 'https://node.onekey.so/bsc',
-      },
-      {
         'url': 'https://1rpc.io/bnb',
       },
       {
@@ -2698,9 +2616,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://www.ethercluster.com/etc',
       },
-      {
-        'url': 'https://node.onekey.so/etc',
-      },
     ],
     'shortcode': 'etc',
     'shortname': 'ETC',
@@ -2751,9 +2666,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://exchainrpc.okex.org',
       },
-      {
-        'url': 'https://node.onekey.so/okt',
-      },
     ],
     'shortcode': 'okt',
     'shortname': 'OKC',
@@ -2796,9 +2708,6 @@ const serverPresetNetworks = [
     'rpcURLs': [
       {
         'url': 'https://geth.mvm.dev',
-      },
-      {
-        'url': 'https://node.onekey.so/mvm',
       },
     ],
     'shortcode': 'mvm',
@@ -3245,9 +3154,6 @@ const serverPresetNetworks = [
     'name': 'Filecoin',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/fil',
-      },
-      {
         'url': 'https://api.node.glif.io/rpc/v0',
       },
     ],
@@ -3430,10 +3336,6 @@ const serverPresetNetworks = [
       },
       {
         'indexer': 'https://helper.mainnet.near.org',
-        'url': 'https://node.onekey.so/near',
-      },
-      {
-        'indexer': 'https://helper.mainnet.near.org',
         'url': 'https://1rpc.io/near',
       },
     ],
@@ -3534,9 +3436,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://solana-api.projectserum.com/',
       },
-      {
-        'url': 'https://node.onekey.so/sol',
-      },
     ],
     'shortcode': 'sol',
     'shortname': 'SOL',
@@ -3626,9 +3525,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://main-seed.starcoin.org',
       },
-      {
-        'url': 'https://node.onekey.so/stc',
-      },
     ],
     'shortcode': 'stc',
     'shortname': 'STC',
@@ -3707,9 +3603,6 @@ const serverPresetNetworks = [
     'logoURI': 'https://uni.onekey-asset.com/static/chain/sui.png',
     'name': 'SUI',
     'rpcURLs': [
-      {
-        'url': 'https://node.onekey.so/sui',
-      },
       {
         'url': 'https://wallet-rpc.mainnet.sui.io/',
       },
@@ -3876,9 +3769,6 @@ const serverPresetNetworks = [
     'rpcURLs': [
       {
         'url': 'https://tron-mainnet.token.im',
-      },
-      {
-        'url': 'https://node.onekey.so/trx',
       },
     ],
     'shortcode': 'trx',
@@ -4064,9 +3954,6 @@ const serverPresetNetworks = [
     'logoURI': 'https://uni.onekey-asset.com/static/chain/lnd.png',
     'name': 'Lightning Network',
     'rpcURLs': [
-      {
-        'url': 'https://node.onekey.so/btc',
-      },
       {
         'url': 'https://1rpc.io/btc',
       },

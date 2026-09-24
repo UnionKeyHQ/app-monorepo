@@ -11,8 +11,7 @@ export const WALLET_CONNECT_STORAGE_KEY_DAPP_SIDE =
 
 export const WALLET_CONNECT_WALLETS_LIST =
   'https://explorer.walletconnect.com/registry?type=wallet';
-// export const WALLET_CONNECT_BRIDGE = 'https://bridge.walletconnect.org'; // official bridge
-export const WALLET_CONNECT_BRIDGE = 'https://walletconnectbridge.onekey.so'; // OneKey self-host bridge
+export const WALLET_CONNECT_BRIDGE = 'https://bridge.walletconnect.org';
 export const WALLET_CONNECT_PROTOCOL = 'wc';
 export const WALLET_CONNECT_VERSION = 1;
 export const WALLET_CONNECT_V2_PROJECT_ID = '5e21f5018bfdeb78af03187a432a301d';
@@ -35,8 +34,8 @@ export const WALLET_CONNECT_SEND_SHOW_DISCONNECT_BUTTON_DELAY =
 export const WALLET_CONNECT_IS_NATIVE_QRCODE_MODAL = platformEnv.isNative;
 // export const WALLET_CONNECT_IS_NATIVE_QRCODE_MODAL = true;
 
-export const ONEKEY_APP_DEEP_LINK_NAME = 'onekey-wallet';
-export const ONEKEY_APP_DEEP_LINK = `${ONEKEY_APP_DEEP_LINK_NAME}://`; // onekey:// will open onekey legacy
+export const ONEKEY_APP_DEEP_LINK_NAME = 'unionkey-wallet';
+export const ONEKEY_APP_DEEP_LINK = `${ONEKEY_APP_DEEP_LINK_NAME}://`;
 export const WALLET_CONNECT_DEEP_LINK_NAME = 'wc';
 export const WALLET_CONNECT_DEEP_LINK = `${WALLET_CONNECT_DEEP_LINK_NAME}://`;
 

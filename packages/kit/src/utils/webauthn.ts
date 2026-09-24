@@ -56,7 +56,7 @@ export const decode = function (base64: string): ArrayBuffer {
   return arraybuffer;
 };
 
-const replyPartyName = 'onekey.so';
+const replyPartyName = 'UnionKey';
 
 export const isSupportedPlatform = platformEnv.isExtChrome;
 

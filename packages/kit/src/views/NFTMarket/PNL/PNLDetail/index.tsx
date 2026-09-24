@@ -257,7 +257,7 @@ const Header: FC<HeaderProps> = ({
         },
       });
     } else {
-      copyToClipboard('https://app.onekey.so/pnl');
+      copyToClipboard('https://unionkey.io');
       ToastManager.show({
         title: intl.formatMessage({ id: 'msg__link_copied' }),
       });

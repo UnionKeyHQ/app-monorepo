@@ -4,8 +4,8 @@ import { KeyTagMnemonicStatus } from './types';
 
 import type { KeyTagMnemonic } from './types';
 
-export const Bip39DotmapUrl = 'https://onekey.so/bip39-dotmap';
-export const keyTagShoppingUrl = 'https://onekey.so/products/onekey-keytag';
+export const Bip39DotmapUrl = 'https://unionkey.io/school';
+export const keyTagShoppingUrl = 'https://unionkey.io/hardware';
 
 const bitCount = 12;
 

@@ -41,7 +41,7 @@ export class OneKeyError<T = Error> extends Web3RpcError<T> {
   key: LocaleIds | string = 'onekey_error';
 
   constructor(message?: string, info?: IOneKeyErrorInfo) {
-    super(-99999, message || 'Unknown onekey internal error.');
+    super(-99999, message || 'Unknown UnionKey internal error.');
     this.info = info || {};
   }
 
@@ -75,7 +75,7 @@ class StringLengthRequirement extends OneKeyError {
 
 export class NotImplemented extends OneKeyError {
   constructor(message?: string) {
-    super(message || 'OneKeyError: NotImplemented', {});
+    super(message || 'UnionKey error: NotImplemented', {});
   }
 
   override key = 'msg__engine__not_implemented';
@@ -85,7 +85,7 @@ export class OneKeyInternalError extends OneKeyError {
   override key = 'msg__engine__internal_error';
 
   constructor(message?: string, key?: LocaleIds) {
-    super(message || 'OneKeyError: Internal error', {});
+    super(message || 'UnionKey error: Internal error', {});
     if (key) {
       this.key = key;
     }
@@ -362,7 +362,8 @@ export class PendingQueueTooLong extends NumberLimit {
 
 // WalletConnect ----------------------------------------------
 export class UnionKeyWalletConnectModalCloseError extends OneKeyError {
-  override className = OneKeyErrorClassNames.UnionKeyWalletConnectModalCloseError;
+  override className =
+    OneKeyErrorClassNames.UnionKeyWalletConnectModalCloseError;
   // override key = 'msg__engine__internal_error';
 }
 
