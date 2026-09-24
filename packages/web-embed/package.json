@@ -9,7 +9,7 @@
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx"
   },
   "dependencies": {
-    "@unionkeyhq/cardano-coin-selection-asmjs": "1.1.0",
+    "@unionkeyhq/cardano-coin-selection-asmjs": "https://github.com/UnionKeyHQ/coin-selection/releases/download/v1.0.0-unionkey/unionkeyhq-cardano-coin-selection-asmjs-1.1.0.tgz",
     "@unionkeyhq/components": "*",
     "@unionkeyhq/engine": "*",
     "@unionkeyhq/kit": "*",
