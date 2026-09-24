@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
+import { EDeviceType, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { get } from 'lodash';
 
 import { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
@@ -66,7 +66,7 @@ type ConnectedEvent = { device: KnownDevice };
 
 @backgroundClass()
 class ServiceHardware extends ServiceBase {
-  connectedDeviceType: IDeviceType = 'classic';
+  connectedDeviceType: IDeviceType = EDeviceType.Classic;
 
   registeredEvents = false;
 
@@ -404,7 +404,10 @@ class ServiceHardware extends ServiceBase {
           updateType: firmwareType,
           forcedUpdateRes,
           version,
-          platform: platformEnv.symbol ?? 'web',
+          platform:
+            platformEnv.symbol === 'webEmbed'
+              ? 'web-embed'
+              : platformEnv.symbol ?? 'web',
         },
       );
 
@@ -904,7 +907,10 @@ class ServiceHardware extends ServiceBase {
         platformEnv.isNative ? connectId : undefined,
         {
           updateType: 'firmware',
-          platform: platformEnv.symbol ?? 'web',
+          platform:
+            platformEnv.symbol === 'webEmbed'
+              ? 'web-embed'
+              : platformEnv.symbol ?? 'web',
           isUpdateBootloader: true,
         },
       );

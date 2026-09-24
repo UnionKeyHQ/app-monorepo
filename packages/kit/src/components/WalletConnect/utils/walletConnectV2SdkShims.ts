@@ -85,7 +85,7 @@ Object.defineProperty(Store.prototype, 'storageKey', {
 Object.defineProperty(Store2.prototype, 'storageKey', {
   get() {
     const self = this as Store2<any, any>;
-    return getStorageKey({ core: self.core, self });
+    return getStorageKey({ core: self.core as unknown as ICore, self });
   },
 });
 

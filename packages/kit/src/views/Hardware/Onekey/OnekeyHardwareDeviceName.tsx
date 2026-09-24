@@ -45,8 +45,10 @@ type DeviceNameProps = {
 };
 
 const defaultName: Record<IOneKeyDeviceType, string> = {
+  'unknown': 'UnionKey',
   'classic': 'UnionKey Classic',
   'classic1s': 'UnionKey Classic 1S',
+  'classicpure': 'UnionKey Classic Pure',
   'mini': 'UnionKey Mini',
   'touch': 'UnionKey Touch',
   'pro': 'UnionKey Pro',

@@ -1,14 +1,17 @@
-import { getDeviceTypeByDeviceId as getDeviceTypeByDeviceIdUtil } from '@unionkeyhq/hd-core';
+import { EDeviceType } from '@unionkeyhq/hd-shared';
 
 import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import type { IDeviceType, IVersionArray } from '@unionkeyhq/hd-core';
 
-export const getDeviceTypeByDeviceId = (deviceId?: string): IDeviceType =>
-  getDeviceTypeByDeviceIdUtil(deviceId);
+// Device IDs no longer encode a reliable model in the current SDK. Callers use
+// this only for presentation, so return the explicit unknown model until device
+// features are available instead of guessing from an opaque identifier.
+export const getDeviceTypeByDeviceId = (_deviceId?: string): IDeviceType =>
+  EDeviceType.Unknown;
 
 export const isHwClassic = (deviceType: string | undefined): boolean =>
-  deviceType === 'classic';
+  deviceType === EDeviceType.Classic;
 
 export const getDeviceFirmwareVersion = (
   features: IOneKeyDeviceFeatures | undefined,

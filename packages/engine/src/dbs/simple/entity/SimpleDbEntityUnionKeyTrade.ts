@@ -16,9 +16,9 @@ export interface IUnionKeyTradeData {
 }
 
 export class SimpleDbEntityUnionKeyTrade extends SimpleDbEntityBase<IUnionKeyTradeData> {
-  entityName = 'unionKeyTrade';
+  override entityName = 'unionKeyTrade';
 
-  readonly enableCache = false;
+  override readonly enableCache = false;
 
   async getAssistTasks() {
     const data = await this.getRawData();

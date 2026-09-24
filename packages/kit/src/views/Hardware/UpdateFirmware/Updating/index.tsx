@@ -258,7 +258,7 @@ const UpdatingModal: FC = () => {
         setStateViewInfo({ type: 'device-not-found' });
         break;
 
-      case HardwareErrorCode.DeviceUnexpectedBootloaderMode:
+      case HardwareErrorCode.DeviceUnexpectedMode:
         setStateViewInfo({ type: 'reboot-bootloader-failure' });
         break;
 

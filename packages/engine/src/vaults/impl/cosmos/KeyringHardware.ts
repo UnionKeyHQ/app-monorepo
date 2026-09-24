@@ -106,6 +106,9 @@ export class KeyringHardware extends KeyringHardwareBase {
     let index = 0;
     for (const addressInfo of publicKeyResponse.payload) {
       const { path, publicKey } = addressInfo;
+      if (!publicKey) {
+        throw new OneKeyInternalError('Unable to get public key from device.');
+      }
       const pubkey = hexToBytes(publicKey);
       const address = pubkeyToBaseAddress(curve, pubkey);
       const name = (names || [])[index] || `COSMOS #${indexes[index] + 1}`;

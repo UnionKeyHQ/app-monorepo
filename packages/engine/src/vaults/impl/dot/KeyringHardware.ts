@@ -179,6 +179,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       deviceId,
       {
         path: dbAccount.path,
+        prefix: (await this.getChainInfoImplOptions()).addressPrefix,
         network: chainId,
         rawTx: bytesToHex(message),
         ...passphraseState,

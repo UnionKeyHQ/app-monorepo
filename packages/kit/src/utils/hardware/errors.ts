@@ -175,7 +175,7 @@ export class FirmwareVersionTooLow extends OneKeyHardwareError {
 }
 
 export class NotInBootLoaderMode extends OneKeyHardwareError {
-  override code = HardwareErrorCode.DeviceUnexpectedBootloaderMode;
+  override code = HardwareErrorCode.DeviceUnexpectedMode;
 }
 
 export class FirmwareDownloadFailed extends OneKeyHardwareError {

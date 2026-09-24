@@ -1,5 +1,9 @@
 /* eslint-disable no-promise-executor-return */
-import { HardwareErrorCode, createDeferred } from '@unionkeyhq/hd-shared';
+import {
+  EDeviceType,
+  HardwareErrorCode,
+  createDeferred,
+} from '@unionkeyhq/hd-shared';
 import { isEmpty } from 'lodash';
 import BleManager from 'react-native-ble-manager';
 import semver from 'semver';
@@ -42,7 +46,7 @@ const POLL_INTERVAL_RATE = 1.5;
 let searchPromise: Deferred<void> | null = null;
 
 class DeviceUtils {
-  connectedDeviceType: IDeviceType = 'classic';
+  connectedDeviceType: IDeviceType = EDeviceType.Classic;
 
   scanMap: Record<string, boolean> = {};
 
@@ -407,8 +411,6 @@ class DeviceUtils {
         return new Error.DeviceNotSame(payload);
       case HardwareErrorCode.DeviceNotFound:
         return new Error.DeviceNotFind(payload);
-      case HardwareErrorCode.DeviceUnexpectedBootloaderMode:
-        return new Error.NotInBootLoaderMode(payload);
       case HardwareErrorCode.DeviceInterruptedFromOutside:
         return new Error.UserCancelFromOutside(payload);
       case HardwareErrorCode.DeviceInterruptedFromUser:

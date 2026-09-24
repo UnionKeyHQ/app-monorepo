@@ -300,7 +300,11 @@ export async function waitForDataLoaded({
 
 export const MAX_LOG_LENGTH = 1000;
 
-const scopeNetwork: Record<IInjectedProviderNamesStrings, string | undefined> =
+const STARCOIN_PROVIDER_NAME = 'starcoin' as IInjectedProviderNamesStrings;
+
+const scopeNetwork: Partial<
+  Record<IInjectedProviderNamesStrings, string | undefined>
+> =
   {
     'btc': IMPL_BTC,
     'ethereum': IMPL_EVM,
@@ -308,7 +312,7 @@ const scopeNetwork: Record<IInjectedProviderNamesStrings, string | undefined> =
     'conflux': IMPL_CFX,
     'solana': IMPL_SOL,
     'sollet': IMPL_SOL,
-    'starcoin': IMPL_STC,
+    [STARCOIN_PROVIDER_NAME]: IMPL_STC,
     'aptos': IMPL_APTOS,
     'martian': IMPL_APTOS,
     'tron': IMPL_TRON,
@@ -326,7 +330,7 @@ const scopeNetwork: Record<IInjectedProviderNamesStrings, string | undefined> =
 export const ENABLED_DAPP_SCOPE: IInjectedProviderNamesStrings[] = [
   IInjectedProviderNames.btc,
   IInjectedProviderNames.ethereum,
-  IInjectedProviderNames.starcoin,
+  STARCOIN_PROVIDER_NAME,
   IInjectedProviderNames.near,
   IInjectedProviderNames.solana,
   IInjectedProviderNames.aptos,

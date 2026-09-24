@@ -61,15 +61,6 @@ export abstract class RequestInterceptorBase {
         this.normalizeHeaderKey('x-unionkey-request-id'),
         requestId,
       );
-      // The legacy API still requires its original request-id header. Keep it
-      // only for that compatibility path while UnionKey services use the new
-      // first-party header above.
-      if (requestTarget === 'legacy') {
-        this.setHeader(
-          this.normalizeHeaderKey('x-onekey-request-id'),
-          requestId,
-        );
-      }
       this.setHeader(
         this.normalizeHeaderKey('traceparent'),
         generateTraceParent(requestId),

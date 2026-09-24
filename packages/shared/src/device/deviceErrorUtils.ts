@@ -61,8 +61,6 @@ export function convertDeviceError(payload: any): OneKeyHardwareError {
       return new Error.DeviceNotSame(payload);
     case HardwareErrorCode.DeviceNotFound:
       return new Error.DeviceNotFind(payload);
-    case HardwareErrorCode.DeviceUnexpectedBootloaderMode:
-      return new Error.NotInBootLoaderMode(payload);
     case HardwareErrorCode.DeviceInterruptedFromOutside:
       return new Error.UserCancelFromOutside(payload);
     case HardwareErrorCode.DeviceInterruptedFromUser:

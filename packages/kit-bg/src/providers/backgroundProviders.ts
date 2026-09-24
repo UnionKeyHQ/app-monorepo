@@ -20,6 +20,8 @@ import ProviderApiWebln from './ProviderApiWebln';
 import type { IBackgroundApi, IBackgroundApiBridge } from '../IBackgroundApi';
 import type ProviderApiBase from './ProviderApiBase';
 
+const STARCOIN_PROVIDER_NAME = 'starcoin';
+
 function createBackgroundProviders({
   backgroundApi,
 }: {
@@ -35,7 +37,7 @@ function createBackgroundProviders({
     [IInjectedProviderNames.solana]: new ProviderApiSolana({
       backgroundApi,
     }),
-    [IInjectedProviderNames.starcoin]: new ProviderApiStarcoin({
+    [STARCOIN_PROVIDER_NAME]: new ProviderApiStarcoin({
       backgroundApi,
     }),
     [IInjectedProviderNames.near]: new ProviderApiNear({

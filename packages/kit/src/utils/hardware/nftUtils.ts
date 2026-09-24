@@ -231,6 +231,7 @@ export const generateUploadNFTParams = async (
     suffix: 'jpg',
     dataHex: bytesToHex(data?.arrayBuffer as Uint8Array),
     thumbnailDataHex: bytesToHex(zoomData?.arrayBuffer as Uint8Array),
+    blurDataHex: bytesToHex(zoomData?.arrayBuffer as Uint8Array),
     nftMetaData,
   };
 

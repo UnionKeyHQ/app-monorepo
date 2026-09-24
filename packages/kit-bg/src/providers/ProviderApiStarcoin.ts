@@ -101,7 +101,7 @@ function convertToEthereumChainResult(result: Network | undefined | null) {
 
 @backgroundClass()
 class ProviderApiStarcoin extends ProviderApiBase {
-  public providerName = IInjectedProviderNames.starcoin;
+  public providerName = 'starcoin' as IInjectedProviderNames;
   async _getCurrentUnlockState() {
     return Promise.resolve(true);
   }

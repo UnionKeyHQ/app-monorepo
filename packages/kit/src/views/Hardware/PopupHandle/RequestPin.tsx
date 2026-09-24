@@ -34,6 +34,7 @@ const getEnterPinCodeAnimation = (type: IDeviceType) => {
   switch (type) {
     case 'classic':
     case 'classic1s':
+    case 'classicpure':
       return EnterPinCodeOnClassic;
     case 'mini':
       return EnterPinCodeOnMini;
@@ -42,8 +43,7 @@ const getEnterPinCodeAnimation = (type: IDeviceType) => {
     case 'pro':
       return EnterPinCodeOnPro;
     default:
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-case-declarations
-      const checkType: never = type;
+      return EnterPinCodeOnClassic;
   }
 };
 

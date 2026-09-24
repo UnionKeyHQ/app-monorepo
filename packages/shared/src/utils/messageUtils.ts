@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import BigNumber from 'bignumber.js';
 import { TYPED_MESSAGE_SCHEMA, typedSignatureHash } from 'eth-sig-util';
-import { addHexPrefix, isHexString, isValidAddress } from 'ethereumjs-util';
+import { addHexPrefix, isValidAddress } from 'ethereumjs-util';
 import { validate } from 'jsonschema';
 
 import { OneKeyError } from '@unionkeyhq/engine/src/errors';
@@ -17,7 +17,7 @@ function isValidHexAddress(
   const addressToCheck = allowNonPrefixed
     ? addHexPrefix(possibleAddress)
     : possibleAddress;
-  if (!isHexString(addressToCheck)) {
+  if (!/^0x[0-9a-fA-F]*$/.test(addressToCheck)) {
     return false;
   }
 

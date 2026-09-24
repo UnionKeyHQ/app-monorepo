@@ -4,6 +4,8 @@ import { MotiView } from 'moti';
 import { PermissionsAndroid, Platform } from 'react-native';
 import RootSiblingsManager from 'react-native-root-siblings';
 
+import { EDeviceType } from '@unionkeyhq/hd-shared';
+
 import { OverlayContainer } from '@unionkeyhq/components';
 import { CloseBackDrop } from '@unionkeyhq/components/src/Select';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
@@ -77,7 +79,7 @@ export default async function showHardwarePopup({
   const { UI_RESPONSE } = await CoreSDKLoader();
 
   if (uiRequest === CUSTOM_UI_RESPONSE.CUSTOM_REQUEST_PIN_ON_DEVICE) {
-    const deviceType = payload?.deviceType ?? 'classic';
+    const deviceType = payload?.deviceType ?? EDeviceType.Classic;
     serviceHardware.sendUiResponse({
       type: UI_RESPONSE.RECEIVE_PIN,
       payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
@@ -103,7 +105,7 @@ export default async function showHardwarePopup({
   }
 
   if (uiRequest === UI_REQUEST.REQUEST_PIN) {
-    const deviceType = payload?.deviceType ?? 'classic';
+    const deviceType = payload?.deviceType ?? EDeviceType.Classic;
 
     let onDeviceInputPin = true;
     if (payload?.deviceId) {
@@ -162,7 +164,7 @@ export default async function showHardwarePopup({
   }
 
   if (uiRequest === UI_REQUEST.REQUEST_BUTTON) {
-    const deviceType = payload?.deviceType ?? 'classic';
+    const deviceType = payload?.deviceType ?? EDeviceType.Classic;
 
     popupView = (
       <RequestConfirmView
@@ -176,7 +178,7 @@ export default async function showHardwarePopup({
   }
 
   if (uiRequest === UI_REQUEST.REQUEST_PASSPHRASE_ON_DEVICE) {
-    const deviceType = payload?.deviceType ?? 'classic';
+    const deviceType = payload?.deviceType ?? EDeviceType.Classic;
     popupType = 'inputPassphrase';
 
     popupView = (

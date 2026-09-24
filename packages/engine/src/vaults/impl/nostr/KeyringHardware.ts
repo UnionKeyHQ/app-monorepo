@@ -52,7 +52,8 @@ export class KeyringHardware extends KeyringHardwareBase {
     const ret = [];
     let index = 0;
     for (const addressInfo of response.payload) {
-      const { publickey, path, npub } = addressInfo;
+      const { pub, publicKey, path, npub } = addressInfo;
+      const publickey = pub ?? publicKey;
       if (publickey && npub) {
         const name = `Nostr #${indexes[index] + 1}`;
         ret.push({

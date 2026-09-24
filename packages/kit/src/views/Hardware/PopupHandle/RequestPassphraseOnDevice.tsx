@@ -28,6 +28,7 @@ const getEnterPassphraseAnimation = (type: IDeviceType) => {
   switch (type) {
     case 'classic':
     case 'classic1s':
+    case 'classicpure':
       return EnterPassphraseOnClassic;
     case 'mini':
       return EnterPassphraseOnMini;
@@ -36,8 +37,7 @@ const getEnterPassphraseAnimation = (type: IDeviceType) => {
     case 'pro':
       return EnterPassphraseOnPro;
     default:
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-case-declarations
-      const checkType: never = type;
+      return EnterPassphraseOnClassic;
   }
 };
 

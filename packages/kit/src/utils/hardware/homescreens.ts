@@ -292,6 +292,7 @@ export const generateUploadResParams = async (
     suffix: 'jpeg',
     dataHex: bytesToHex(data?.arrayBuffer as Uint8Array),
     thumbnailDataHex: bytesToHex(zoomData?.arrayBuffer as Uint8Array),
+    blurDataHex: bytesToHex(zoomData?.arrayBuffer as Uint8Array),
     nftMetaData: '',
   };
 

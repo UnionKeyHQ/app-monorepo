@@ -17,6 +17,7 @@ const getConfirmAnimation = (type: IDeviceType) => {
   switch (type) {
     case 'classic1s':
     case 'classic':
+    case 'classicpure':
       return ConfirmOnClassic;
     case 'mini':
       return ConfirmOnMini;
@@ -25,8 +26,7 @@ const getConfirmAnimation = (type: IDeviceType) => {
     case 'pro':
       return ConfirmOnPro;
     default:
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-case-declarations
-      const checkType: never = type;
+      return ConfirmOnClassic;
   }
 };
 
