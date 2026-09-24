@@ -79,6 +79,7 @@
     "ripple-keypairs": "^1.1.4",
     "tiny-lru": "^8.0.2",
     "tronweb": "^5.1.0",
+    "web3-utils": "1.10.4",
     "xrpl": "^2.5.0"
   },
   "react-native": {
