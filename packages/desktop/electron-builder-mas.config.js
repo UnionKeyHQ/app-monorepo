@@ -67,7 +67,7 @@ module.exports = {
     'entitlements': 'entitlements.mas.plist',
     'entitlementsInherit': 'entitlements.mas.inherit.plist',
     'entitlementsLoginHelper': 'entitlements.mas.loginhelper.plist',
-    'provisioningProfile': 'OneKey_Mac_App.provisionprofile',
+    'provisioningProfile': 'UnionKey_Mac_App.provisionprofile',
     'extendInfo': {
       'ElectronTeamID': 'BVJ3FU5H2K',
       'ITSAppUsesNonExemptEncryption': false,

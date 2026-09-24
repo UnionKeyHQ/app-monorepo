@@ -543,7 +543,7 @@
       return;
     }
     if (weakSelf.version == OKNFCLiteVersionV1) {
-      /// https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/10551684/Lite
+      /// Preserve the hardware-card compatibility response.
       mnc = responseData.toHexString;
     } else {
       mnc = parseRespon;

@@ -132,7 +132,7 @@
 }
 
 - (NFCISO7816APDU *)importMnemonic:(NSString *)mnemonic {
-    /// https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/10551684/Lite
+    /// Preserve the hardware-card compatibility response.
     if (_version == OKNFCLiteVersionV2) {
         return [OKNFCBridge buildAPDUWith_cla:0x80 ins:0x3B p1:0x00 p2:0x00 data:mnemonic encrypt:YES];
     } else {
