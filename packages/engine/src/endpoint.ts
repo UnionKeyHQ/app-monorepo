@@ -10,37 +10,37 @@ const endpointsMap: Record<
   { prd: string; test: string }
 > = {
   fiat: {
-    prd: 'https://api.onekeycn.com/api',
-    test: 'https://api-sandbox.onekeytest.com/api',
+    prd: 'https://api.unionkey.io/api',
+    test: 'https://api-sandbox.unionkey.io/api',
     // test: 'http://127.0.0.1:9000/api',
   },
   wss: {
-    prd: 'wss://api.onekeycn.com',
-    test: 'wss://api-sandbox.onekeytest.com',
+    prd: 'wss://api.unionkey.io',
+    test: 'wss://api-sandbox.unionkey.io',
   },
   covalent: {
-    prd: 'https://node.onekey.so/covalent/client1-HghTg3a33',
-    test: 'https://node.onekeytest.com/covalent/client1-HghTg3a33',
+    prd: 'https://api.unionkey.io/covalent/client1-HghTg3a33',
+    test: 'https://api-sandbox.unionkey.io/covalent/client1-HghTg3a33',
   },
   mempool: {
-    prd: 'https://node.onekey.so/mempool',
-    test: 'https://node.onekeytest.com/mempool',
+    prd: 'https://api.unionkey.io/mempool',
+    test: 'https://api-sandbox.unionkey.io/mempool',
   },
   getblock: {
-    prd: 'https://node.onekey.so/getblock-{chain}-{network}',
-    test: 'https://node.onekeytest.com/getblock-{chain}-{network}',
+    prd: 'https://api.unionkey.io/getblock-{chain}-{network}',
+    test: 'https://api-sandbox.unionkey.io/getblock-{chain}-{network}',
   },
   algosigner: {
-    prd: 'https://node.onekey.so/algosigner/{network}/indexer',
-    test: 'https://node.onekeytest.com/algosigner/{network}/indexer',
+    prd: 'https://api.unionkey.io/algosigner/{network}/indexer',
+    test: 'https://api-sandbox.unionkey.io/algosigner/{network}/indexer',
   },
   tronscan: {
-    prd: 'https://node.onekey.so/tronscan',
-    test: 'https://node.onekeytest.com/tronscan',
+    prd: 'https://api.unionkey.io/tronscan',
+    test: 'https://api-sandbox.unionkey.io/tronscan',
   },
   solscan: {
-    prd: 'https://node.onekey.so/solscan',
-    test: 'https://node.onekeytest.com/solscan',
+    prd: 'https://api.unionkey.io/solscan',
+    test: 'https://api-sandbox.unionkey.io/solscan',
   },
 };
 

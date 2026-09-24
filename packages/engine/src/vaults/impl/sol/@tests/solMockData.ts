@@ -13,7 +13,7 @@ const network: DBNetwork = {
   feeSymbol: 'SOL',
   id: 'sol--501',
   impl: 'sol',
-  logoURI: 'https://uni.onekey-asset.com/static/chain/cfx.png',
+  logoURI: 'https://uni.unionkey.io/static/chain/cfx.png',
   name: 'tsol',
   position: 33,
   rpcURL: 'https://api.devnet.solana.com',

@@ -12,7 +12,7 @@ import {
   useIsVerticalLayout,
   useTheme,
 } from '@unionkeyhq/components';
-import { EOnekeyDomain } from '@unionkeyhq/shared/types';
+import { EUnionKeyDomain } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { useNavigation } from '../../hooks';
@@ -30,7 +30,7 @@ type NavigationProps = NativeStackNavigationProp<
 >;
 
 type IBridgeSettingItem = {
-  label: EOnekeyDomain;
+  label: EUnionKeyDomain;
   description: string;
   isActive: boolean | undefined;
 };
@@ -61,7 +61,7 @@ function HardwareBridgeSettings() {
   const hardwareSDKOptions = useMemo<IBridgeSettingItem[]>(
     () => [
       {
-        label: EOnekeyDomain.ONEKEY_SO,
+        label: EUnionKeyDomain.UNIONKEY,
         description: intl.formatMessage({ id: 'form__default' }),
         isActive: true,
       },

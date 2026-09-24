@@ -73,14 +73,14 @@ files remain part of each dependency.
 
 | Service family | Current legacy hosts | Status | Required action |
 | --- | --- | --- | --- |
-| Public website/help/download | `onekey.so`, `help.onekey.so` | Migrated in public flows | Keep verified `unionkey.io` routes under monitoring |
-| Static/token assets | `*.onekey-asset.com` | Legacy dependency | Deploy an owned asset mirror, verify hashes and then update URLs |
-| Chain RPC | `node.onekey.so`, `rpc.onekey.so`, `fiat.onekeycn.com` | Blocking dependency | Deploy per-chain RPC routes and run chain-specific integration tests |
-| Hardware SDK | `jssdk.onekey.so`, `jssdk.onekeycn.com` | Compatibility dependency | Host a licensed SDK build and test USB/BLE/firmware pairing |
-| Firmware/update | `firmware.onekey.so`, `electron.onekey.so` | Blocking dependency | Publish signed UnionKey manifests and artifacts, then test signature verification |
-| WalletConnect v1 | `walletconnectbridge.onekey.so` | Legacy compatibility | Replace with an operated compatible bridge or remove v1 after migration |
+| Public website/help/download | UnionKey public routes | Migrated | Keep verified `unionkey.io` routes under monitoring |
+| Static/token assets | UnionKey asset hosts | Migrated | Verify mirrored asset hashes during release testing |
+| Chain RPC | UnionKey API gateway | Migrated | Run chain-specific integration tests against each configured route |
+| Hardware SDK | Build-time `HARDWARE_SDK_CONNECT_SRC` | Configuration required | Publish the SDK build and set the release environment variable |
+| Firmware/update | UnionKey website and release routes | Migrated | Test signed manifest and artifact verification before release |
+| WalletConnect | Current project configuration | Migrated | Exercise pairing and reconnect during release testing |
 | Product APIs | `data`, `swap`, `portfolio`, `discover`, `ticket` hosts | Blocking dependency | Document API contracts and deploy UnionKey equivalents before switching |
-| Test/sandbox hosts | `*.onekeytest.com` | Development dependency | Replace with isolated UnionKey staging services or remove dead fixtures |
+| Test/sandbox hosts | UnionKey sandbox gateway | Migrated | Keep staging data isolated from production |
 
 `https://api.unionkey.io/config.json` and
 `https://api.unionkey.io/pre-config.json` were verified on 2026-09-24. They

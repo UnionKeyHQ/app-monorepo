@@ -9,7 +9,7 @@ import { getTimeStamp } from '@unionkeyhq/kit/src/utils/helper';
 import type { FirmwareType } from '@unionkeyhq/kit/src/views/Hardware/UpdateFirmware/Updating';
 import { defaultHapticStatus } from '@unionkeyhq/shared/src/haptics';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
-import { EOnekeyDomain } from '@unionkeyhq/shared/types';
+import { EUnionKeyDomain } from '@unionkeyhq/shared/types';
 
 import { ValidationFields } from '../../components/Protected/types';
 
@@ -120,7 +120,7 @@ export type SettingsState = {
   advancedSettings?: {
     useDustUtxo?: boolean;
   };
-  hardwareConnectSrc?: EOnekeyDomain;
+  hardwareConnectSrc?: EUnionKeyDomain;
   gasPanelEIP1559Enabled?: boolean;
   showTokenDetailPriceChart?: boolean;
   hideAllNetworksSelectNetworkTips?: boolean;
@@ -202,7 +202,7 @@ const initialState: SettingsState = {
   advancedSettings: {
     useDustUtxo: true,
   },
-  hardwareConnectSrc: EOnekeyDomain.ONEKEY_SO,
+  hardwareConnectSrc: EUnionKeyDomain.UNIONKEY,
   gasPanelEIP1559Enabled: true,
   hideAllNetworksSelectNetworkTips: false,
   hideInscriptions: {},

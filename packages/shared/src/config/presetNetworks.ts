@@ -11,11 +11,11 @@ const serverPresetNetworks = [
     'id': 'ada--0',
     'impl': 'ada',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/ada.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/ada.png',
     'name': 'Cardano',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/ada',
+        'url': 'https://api.unionkey.io/ada',
       },
     ],
     'shortcode': 'ada',
@@ -57,7 +57,7 @@ const serverPresetNetworks = [
     'id': 'algo--4160',
     'impl': 'algo',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/algo.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/algo.png',
     'name': 'Algorand',
     'rpcURLs': [
       {
@@ -105,7 +105,7 @@ const serverPresetNetworks = [
     'id': 'algo--1',
     'impl': 'algo',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/talgo.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/talgo.png',
     'name': 'Algorand Testnet',
     'rpcURLs': [
       {
@@ -143,7 +143,7 @@ const serverPresetNetworks = [
     'id': 'aptos--1',
     'impl': 'aptos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/apt.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/apt.png',
     'name': 'Aptos',
     'rpcURLs': [
       {
@@ -196,7 +196,7 @@ const serverPresetNetworks = [
     'id': 'aptos--2',
     'impl': 'aptos',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tapt.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tapt.png',
     'name': 'Aptos Testnet',
     'rpcURLs': [
       {
@@ -235,14 +235,14 @@ const serverPresetNetworks = [
     'id': 'bch--0',
     'impl': 'bch',
     'isTestnet': false,
-    'logoURI': 'https://common.onekey-asset.com/chain/bch.png',
+    'logoURI': 'https://common.unionkey.io/chain/bch.png',
     'name': 'Bitcoin Cash',
     'rpcURLs': [
       {
-        'url': 'https://fiat.onekeycn.com/book/bch',
+        'url': 'https://api.unionkey.io/book/bch',
       },
       {
-        'url': 'https://node.onekey.so/bch',
+        'url': 'https://api.unionkey.io/bch',
       },
     ],
     'shortcode': 'bch',
@@ -295,7 +295,7 @@ const serverPresetNetworks = [
     'id': 'btc--0',
     'impl': 'btc',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/btc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/btc.png',
     'name': 'Bitcoin',
     'rpcURLs': [
       {
@@ -341,7 +341,7 @@ const serverPresetNetworks = [
     'id': 'cfx--1029',
     'impl': 'cfx',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/cfx.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/cfx.png',
     'name': 'Conflux',
     'rpcURLs': [
       {
@@ -383,7 +383,7 @@ const serverPresetNetworks = [
     'id': 'cfx--1',
     'impl': 'cfx',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tcfx.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tcfx.png',
     'name': 'Conflux Testnet',
     'rpcURLs': [
       {
@@ -431,7 +431,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--akashnet-2',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/akash.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/akash.png',
     'name': 'Akash',
     'rpcURLs': [
       {
@@ -493,7 +493,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--cosmoshub-4',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/cosmos.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/cosmos.png',
     'name': 'Cosmos',
     'rpcURLs': [
       {
@@ -557,7 +557,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--crypto-org-chain-mainnet-1',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/cryptoorg.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/cryptoorg.png',
     'name': 'Crypto.org',
     'rpcURLs': [
       {
@@ -624,7 +624,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--fetchhub-4',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/fetch.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/fetch.png',
     'name': 'Fetch.ai',
     'rpcURLs': [
       {
@@ -688,7 +688,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--juno-1',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/juno.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/juno.png',
     'name': 'Juno',
     'rpcURLs': [
       {
@@ -752,7 +752,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--osmosis-1',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/osmosis.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/osmosis.png',
     'name': 'Osmosis',
     'rpcURLs': [
       {
@@ -820,7 +820,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--celestia',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/celestia.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/celestia.png',
     'name': 'Celestia',
     'rpcURLs': [
       {
@@ -883,7 +883,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--phoenix-1',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/terra2.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/terra2.png',
     'name': 'Terra',
     'rpcURLs': [
       {
@@ -938,7 +938,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--secret-4',
     'impl': 'cosmos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/secret.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/secret.png',
     'name': 'Secret Network',
     'rpcURLs': [
       {
@@ -1003,7 +1003,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--theta-testnet-001',
     'impl': 'cosmos',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/cosmos.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/cosmos.png',
     'name': 'Cosmos Testnet',
     'rpcURLs': [
       {
@@ -1058,7 +1058,7 @@ const serverPresetNetworks = [
     'id': 'cosmos--bbn-test-3',
     'impl': 'cosmos',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/babylontestnet.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/babylontestnet.png',
     'name': 'Babylon Testnet',
     'rpcURLs': [
       {
@@ -1096,14 +1096,14 @@ const serverPresetNetworks = [
     'id': 'doge--0',
     'impl': 'doge',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/doge.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/doge.png',
     'name': 'Dogecoin',
     'rpcURLs': [
       {
-        'url': 'https://fiat.onekeycn.com/book/doge',
+        'url': 'https://api.unionkey.io/book/doge',
       },
       {
-        'url': 'https://node.onekey.so/doge',
+        'url': 'https://api.unionkey.io/doge',
       },
     ],
     'shortcode': 'doge',
@@ -1153,7 +1153,7 @@ const serverPresetNetworks = [
     'id': 'dot--astar',
     'impl': 'dot',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/astar.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/astar.png',
     'name': 'Astar',
     'rpcURLs': [
       {
@@ -1216,7 +1216,7 @@ const serverPresetNetworks = [
     'id': 'dot--kusama',
     'impl': 'dot',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/kusama.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/kusama.png',
     'name': 'Kusama',
     'rpcURLs': [
       {
@@ -1279,7 +1279,7 @@ const serverPresetNetworks = [
     'id': 'dot--polkadot',
     'impl': 'dot',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/polkadot.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/polkadot.png',
     'name': 'Polkadot',
     'rpcURLs': [
       {
@@ -1339,7 +1339,7 @@ const serverPresetNetworks = [
     'id': 'dot--westend',
     'impl': 'dot',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/polkadot.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/polkadot.png',
     'name': 'Polkadot Westend',
     'rpcURLs': [
       {
@@ -1388,7 +1388,7 @@ const serverPresetNetworks = [
     'id': 'dot--manta',
     'impl': 'dot',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/manta.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/manta.png',
     'name': 'Manta Atlantic',
     'rpcURLs': [
       {
@@ -1431,7 +1431,7 @@ const serverPresetNetworks = [
     'id': 'dot--joystream',
     'impl': 'dot',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/joystream.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/joystream.png',
     'name': 'Joystream',
     'rpcURLs': [
       {
@@ -1486,7 +1486,7 @@ const serverPresetNetworks = [
     'id': 'evm--1',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/eth.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/eth.png',
     'name': 'Ethereum',
     'rpcURLs': [
       {
@@ -1598,7 +1598,7 @@ const serverPresetNetworks = [
     'id': 'evm--10',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/optimism.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/optimism.png',
     'name': 'Optimism',
     'rpcURLs': [
       {
@@ -1655,7 +1655,7 @@ const serverPresetNetworks = [
     'id': 'evm--100',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/gno.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/gno.png',
     'name': 'Gnosis Chain',
     'rpcURLs': [
       {
@@ -1719,7 +1719,7 @@ const serverPresetNetworks = [
     'id': 'evm--10001',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/ethw.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/ethw.png',
     'name': 'EthereumPoW',
     'rpcURLs': [
       {
@@ -1761,7 +1761,7 @@ const serverPresetNetworks = [
     'id': 'evm--1030',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/cfx.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/cfx.png',
     'name': 'Conflux eSpace',
     'rpcURLs': [
       {
@@ -1808,7 +1808,7 @@ const serverPresetNetworks = [
     'id': 'evm--128',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/heco.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/heco.png',
     'name': 'Huobi ECO Chain',
     'rpcURLs': [
       {
@@ -1854,7 +1854,7 @@ const serverPresetNetworks = [
     'id': 'evm--1313161554',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/aurora.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/aurora.png',
     'name': 'Aurora',
     'rpcURLs': [
       {
@@ -1913,7 +1913,7 @@ const serverPresetNetworks = [
     'id': 'evm--137',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/polygon.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/polygon.png',
     'name': 'Polygon',
     'rpcURLs': [
       {
@@ -1993,7 +1993,7 @@ const serverPresetNetworks = [
     'id': 'evm--25',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/cronos.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/cronos.png',
     'name': 'Cronos',
     'rpcURLs': [
       {
@@ -2063,7 +2063,7 @@ const serverPresetNetworks = [
     'id': 'evm--250',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/fantom.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/fantom.png',
     'name': 'Fantom',
     'rpcURLs': [
       {
@@ -2128,7 +2128,7 @@ const serverPresetNetworks = [
     'id': 'evm--288',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/boba_1.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/boba_1.png',
     'name': 'Boba Network',
     'rpcURLs': [
       {
@@ -2188,7 +2188,7 @@ const serverPresetNetworks = [
     'id': 'evm--314',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/fil.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/fil.png',
     'name': 'Filecoin FEVM',
     'rpcURLs': [
       {
@@ -2233,7 +2233,7 @@ const serverPresetNetworks = [
     'id': 'evm--324',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/zksyncera.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/zksyncera.png',
     'name': 'zkSync Era Mainnet',
     'rpcURLs': [
       {
@@ -2281,7 +2281,7 @@ const serverPresetNetworks = [
     'id': 'evm--42161',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/arbitrum.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/arbitrum.png',
     'name': 'Arbitrum',
     'rpcURLs': [
       {
@@ -2338,7 +2338,7 @@ const serverPresetNetworks = [
     'id': 'evm--42220',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/celo.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/celo.png',
     'name': 'Celo',
     'rpcURLs': [
       {
@@ -2400,7 +2400,7 @@ const serverPresetNetworks = [
     'id': 'evm--43114',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/avalanche.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/avalanche.png',
     'name': 'Avalanche',
     'rpcURLs': [
       {
@@ -2458,7 +2458,7 @@ const serverPresetNetworks = [
     'id': 'evm--513100',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/etf.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/etf.png',
     'name': 'Ethereum Fair',
     'rpcURLs': [
       {
@@ -2509,7 +2509,7 @@ const serverPresetNetworks = [
     'id': 'evm--56',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/bsc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/bsc.png',
     'name': 'BNB Smart Chain',
     'rpcURLs': [
       {
@@ -2610,7 +2610,7 @@ const serverPresetNetworks = [
     'id': 'evm--61',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/etc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/etc.png',
     'name': 'Ethereum Classic',
     'rpcURLs': [
       {
@@ -2660,7 +2660,7 @@ const serverPresetNetworks = [
     'id': 'evm--66',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/okt.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/okt.png',
     'name': 'OKX Chain',
     'rpcURLs': [
       {
@@ -2703,7 +2703,7 @@ const serverPresetNetworks = [
     'id': 'evm--73927',
     'impl': 'evm',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/mvm.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/mvm.png',
     'name': 'Mixin Virtual Machine',
     'rpcURLs': [
       {
@@ -2740,7 +2740,7 @@ const serverPresetNetworks = [
     'id': 'evm--256',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/theco.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/theco.png',
     'name': 'Huobi ECO Chain Testnet',
     'rpcURLs': [
       {
@@ -2777,7 +2777,7 @@ const serverPresetNetworks = [
     'id': 'evm--28',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/boba.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/boba.png',
     'name': 'Boba Network Rinkeby Testnet',
     'rpcURLs': [
       {
@@ -2816,7 +2816,7 @@ const serverPresetNetworks = [
     'id': 'evm--421611',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tarbitrum.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tarbitrum.png',
     'name': 'Arbitrum Rinkeby',
     'rpcURLs': [
       {
@@ -2853,7 +2853,7 @@ const serverPresetNetworks = [
     'id': 'evm--421613',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tarbitrum.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tarbitrum.png',
     'name': 'Arbitrum Goerli',
     'rpcURLs': [
       {
@@ -2902,7 +2902,7 @@ const serverPresetNetworks = [
     'id': 'evm--5',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/teth.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/teth.png',
     'name': 'Ethereum Görli (Goerli) Testnet',
     'rpcURLs': [
       {
@@ -2945,7 +2945,7 @@ const serverPresetNetworks = [
     'id': 'evm--534353',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tscroll.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tscroll.png',
     'name': 'Scroll Alpha Testnet',
     'rpcURLs': [
       {
@@ -2982,7 +2982,7 @@ const serverPresetNetworks = [
     'id': 'evm--65',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tokt.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tokt.png',
     'name': 'OKX Chain Testnet',
     'rpcURLs': [
       {
@@ -3024,7 +3024,7 @@ const serverPresetNetworks = [
     'id': 'evm--69',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/toptimism.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/toptimism.png',
     'name': 'Optimistic Kovan Testnet',
     'rpcURLs': [
       {
@@ -3067,7 +3067,7 @@ const serverPresetNetworks = [
     'id': 'evm--80001',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tpolygon.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tpolygon.png',
     'name': 'Polygon Mumbai Testnet',
     'rpcURLs': [
       {
@@ -3113,7 +3113,7 @@ const serverPresetNetworks = [
     'id': 'evm--97',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tbsc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tbsc.png',
     'name': 'Binance Smart Chain Testnet',
     'rpcURLs': [
       {
@@ -3150,7 +3150,7 @@ const serverPresetNetworks = [
     'id': 'fil--314',
     'impl': 'fil',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/fil.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/fil.png',
     'name': 'Filecoin',
     'rpcURLs': [
       {
@@ -3193,7 +3193,7 @@ const serverPresetNetworks = [
     'id': 'fil--314159',
     'impl': 'fil',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/fil.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/fil.png',
     'name': 'Filecoin Calibration Testnet',
     'rpcURLs': [
       {
@@ -3232,7 +3232,7 @@ const serverPresetNetworks = [
     'id': 'kaspa--kaspa',
     'impl': 'kaspa',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/kas.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/kas.png',
     'name': 'Kaspa',
     'rpcURLs': [
       {
@@ -3274,14 +3274,14 @@ const serverPresetNetworks = [
     'id': 'ltc--0',
     'impl': 'ltc',
     'isTestnet': false,
-    'logoURI': 'https://common.onekey-asset.com/chain/ltc.png',
+    'logoURI': 'https://common.unionkey.io/chain/ltc.png',
     'name': 'Litecoin',
     'rpcURLs': [
       {
-        'url': 'https://fiat.onekeycn.com/book/ltc',
+        'url': 'https://api.unionkey.io/book/ltc',
       },
       {
-        'url': 'https://node.onekey.so/ltc',
+        'url': 'https://api.unionkey.io/ltc',
       },
     ],
     'shortcode': 'ltc',
@@ -3327,7 +3327,7 @@ const serverPresetNetworks = [
     'id': 'near--0',
     'impl': 'near',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/near.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/near.png',
     'name': 'Near',
     'rpcURLs': [
       {
@@ -3379,7 +3379,7 @@ const serverPresetNetworks = [
     'id': 'near--1',
     'impl': 'near',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/near.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/near.png',
     'name': 'Near Testnet',
     'rpcURLs': [
       {
@@ -3427,7 +3427,7 @@ const serverPresetNetworks = [
     'id': 'sol--101',
     'impl': 'sol',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/sol.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/sol.png',
     'name': 'Solana',
     'rpcURLs': [
       {
@@ -3477,7 +3477,7 @@ const serverPresetNetworks = [
     'id': 'sol--103',
     'impl': 'sol',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tsol.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tsol.png',
     'name': 'Solana Devnet',
     'rpcURLs': [
       {
@@ -3519,7 +3519,7 @@ const serverPresetNetworks = [
     'id': 'stc--1',
     'impl': 'stc',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/stc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/stc.png',
     'name': 'Starcoin',
     'rpcURLs': [
       {
@@ -3562,7 +3562,7 @@ const serverPresetNetworks = [
     'id': 'stc--251',
     'impl': 'stc',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tstc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tstc.png',
     'name': 'Starcoin barnard',
     'rpcURLs': [
       {
@@ -3600,7 +3600,7 @@ const serverPresetNetworks = [
     'id': 'sui--mainnet',
     'impl': 'sui',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/sui.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/sui.png',
     'name': 'SUI',
     'rpcURLs': [
       {
@@ -3645,7 +3645,7 @@ const serverPresetNetworks = [
     'id': 'sui--8888883',
     'impl': 'sui',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/sui.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/sui.png',
     'name': 'SUI TestNet',
     'rpcURLs': [
       {
@@ -3687,11 +3687,11 @@ const serverPresetNetworks = [
     'id': 'tbtc--0',
     'impl': 'tbtc',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/tbtc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/tbtc.png',
     'name': 'Bitcoin Testnet',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/tbtc',
+        'url': 'https://api.unionkey.io/tbtc',
       },
     ],
     'shortcode': 'tbtc',
@@ -3724,11 +3724,11 @@ const serverPresetNetworks = [
     'id': 'tbtc--1',
     'impl': 'tbtc',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/sbtc.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/sbtc.png',
     'name': 'Bitcoin Signet',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/sbtc',
+        'url': 'https://api.unionkey.io/sbtc',
       },
     ],
     'shortcode': 'sbtc',
@@ -3764,7 +3764,7 @@ const serverPresetNetworks = [
     'id': 'tron--0x2b6653dc',
     'impl': 'tron',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/filled_trx.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/filled_trx.png',
     'name': 'Tron',
     'rpcURLs': [
       {
@@ -3810,7 +3810,7 @@ const serverPresetNetworks = [
     'id': 'tron--0x94a9059e',
     'impl': 'tron',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/ttrx.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/ttrx.png',
     'name': 'Tron Shasta Testnet',
     'rpcURLs': [
       {
@@ -3844,18 +3844,18 @@ const serverPresetNetworks = [
     'balance2FeeDecimals': 12,
     'chainId': '0',
     'clientApi': {
-      'mymonero': 'https://node.onekey.so/mymonero',
+      'mymonero': 'https://api.unionkey.io/mymonero',
     },
     'code': 'xmr',
     'decimals': 12,
     'id': 'xmr--0',
     'impl': 'xmr',
     'isTestnet': false,
-    'logoURI': 'https://common.onekey-asset.com/chain/monero.png',
+    'logoURI': 'https://common.unionkey.io/chain/monero.png',
     'name': 'Monero',
     'rpcURLs': [
       {
-        'url': 'https://node.onekey.so/xmr',
+        'url': 'https://api.unionkey.io/xmr',
       },
     ],
     'shortcode': 'xmr',
@@ -3894,7 +3894,7 @@ const serverPresetNetworks = [
     'id': 'xrp--0',
     'impl': 'xrp',
     'isTestnet': false,
-    'logoURI': 'https://common.onekey-asset.com/chain/xrp.png',
+    'logoURI': 'https://common.unionkey.io/chain/xrp.png',
     'name': 'Ripple',
     'rpcURLs': [
       {
@@ -3951,7 +3951,7 @@ const serverPresetNetworks = [
     'id': 'lightning--0',
     'impl': 'lightning',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/lnd.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/lnd.png',
     'name': 'Lightning Network',
     'rpcURLs': [
       {
@@ -3987,7 +3987,7 @@ const serverPresetNetworks = [
     'id': 'tlightning--0',
     'impl': 'tlightning',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/lnd.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/lnd.png',
     'name': 'Lightning Network Testnet',
     'rpcURLs': [],
     'shortcode': 'tlightning',
@@ -4018,7 +4018,7 @@ const serverPresetNetworks = [
     'id': 'evm--51178',
     'impl': 'evm',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/topsideprealpha.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/topsideprealpha.png',
     'name': 'Opside Testnet Pre-Alpha Network',
     'rpcURLs': [
       {
@@ -4055,7 +4055,7 @@ const serverPresetNetworks = [
     'id': 'nexa--0',
     'impl': 'nexa',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/nexa.png',
     'name': 'Nexa',
     'rpcURLs': [
       {
@@ -4092,7 +4092,7 @@ const serverPresetNetworks = [
     'id': 'nexa--testnet',
     'impl': 'nexa',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/nexa.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/nexa.png',
     'name': 'Nexa Testnet',
     'rpcURLs': [
       {
@@ -4125,7 +4125,7 @@ const serverPresetNetworks = [
     'chainId': '59144',
     'code': 'linea',
     'id': 'evm--59144',
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/linea.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/linea.png',
     'name': 'Linea',
     'rpcURLs': [
       {
@@ -4171,7 +4171,7 @@ const serverPresetNetworks = [
     'chainId': '8453',
     'code': 'base',
     'id': 'evm--8453',
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/base.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/base.png',
     'name': 'Base',
     'rpcURLs': [
       {
@@ -4223,7 +4223,7 @@ const serverPresetNetworks = [
     'chainId': '5000',
     'code': 'mantle',
     'id': 'evm--5000',
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/mantle.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/mantle.png',
     'name': 'Mantle',
     'rpcURLs': [
       {
@@ -4275,7 +4275,7 @@ const serverPresetNetworks = [
     'id': 'nervos--mainnet',
     'impl': 'nervos',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/nervos.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/nervos.png',
     'name': 'Nervos',
     'rpcURLs': [
       {
@@ -4327,7 +4327,7 @@ const serverPresetNetworks = [
     'id': 'nervos--testnet',
     'impl': 'nervos',
     'isTestnet': true,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/nervos.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/nervos.png',
     'name': 'Nervos Testnet',
     'rpcURLs': [
       {
@@ -4380,7 +4380,7 @@ const serverPresetNetworks = [
     'id': 'neurai--0',
     'impl': 'neurai',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/neurai.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/neurai.png',
     'name': 'Neurai',
     'rpcURLs': [
       {
@@ -4422,7 +4422,7 @@ const serverPresetNetworks = [
     'id': 'dynex--0',
     'impl': 'dynex',
     'isTestnet': false,
-    'logoURI': 'https://uni.onekey-asset.com/static/chain/dynex.png',
+    'logoURI': 'https://uni.unionkey.io/static/chain/dynex.png',
     'name': 'Dynex',
     'rpcURLs': [
       {

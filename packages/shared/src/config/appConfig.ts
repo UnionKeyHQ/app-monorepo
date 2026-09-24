@@ -9,7 +9,7 @@ export const COVALENT_API_KEY = process.env.COVALENT_KEY!;
 export const JPUSH_KEY = process.env.JPUSH_KEY!;
 
 export const HARDWARE_SDK_IFRAME_SRC_UNIONKEY =
-  process.env.HARDWARE_SDK_CONNECT_SRC || 'https://jssdk.onekey.so';
+  process.env.HARDWARE_SDK_CONNECT_SRC || '';
 
 export const HARDWARE_SDK_VERSION = '0.3.47';
 

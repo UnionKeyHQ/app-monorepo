@@ -382,7 +382,7 @@ const ViewInBrowserSelector: FC<ViewInBrowserSelectorProps> = ({ tx }) => {
           networkId: '',
           header: intl.formatMessage({ id: 'form__provider_uppercase' }),
           label: 'Socketscan',
-          logoURI: 'https://common.onekey-asset.com/logo/SocketBridge.png',
+          logoURI: 'https://common.unionkey.io/logo/SocketBridge.png',
           value: 'Socketscan',
           url: `https://socketscan.io/tx/${tx.hash}`,
         },

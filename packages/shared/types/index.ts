@@ -69,7 +69,7 @@ export type IServerNetwork = {
   extensions: Record<string, unknown>;
 };
 
-export enum EOnekeyDomain {
-  ONEKEY_SO = 'onekey.so',
-  ONEKEY_CN = 'onekeycn.com',
+export enum EUnionKeyDomain {
+  UNIONKEY = 'unionkey.io',
+  UNIONKEY_API = 'api.unionkey.io',
 }

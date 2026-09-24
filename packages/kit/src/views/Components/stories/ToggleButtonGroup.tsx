@@ -6,7 +6,7 @@ import type { ToggleButtonProps } from '@unionkeyhq/components/src/ToggleButtonG
 const buttons: ToggleButtonProps[] = [
   {
     text: 'BTC',
-    leftImage: 'https://uni.onekey-asset.com/static/chain/btc.png',
+    leftImage: 'https://uni.unionkey.io/static/chain/btc.png',
   },
   {
     text: '',
@@ -14,7 +14,7 @@ const buttons: ToggleButtonProps[] = [
   },
   {
     text: '',
-    leftImage: 'https://uni.onekey-asset.com/static/chain/bsc.png',
+    leftImage: 'https://uni.unionkey.io/static/chain/bsc.png',
   },
   {
     text: 'polygon',

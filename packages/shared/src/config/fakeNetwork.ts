@@ -24,7 +24,7 @@ const allNetwork = {
   shortcode: 'allnetworks',
   extensions: {},
   clientApi: {},
-  logoURI: 'https://common.onekey-asset.com/chain/all.png',
+  logoURI: 'https://common.unionkey.io/chain/all.png',
 } as unknown as IServerNetwork;
 
 export const FAKE_ALL_NETWORK = allNetwork;
@@ -53,7 +53,7 @@ const nostrNetwork = {
   shortcode: 'nostr',
   extensions: {},
   clientApi: {},
-  logoURI: 'https://common.onekey-asset.com/chain/all.png',
+  logoURI: 'https://common.unionkey.io/chain/all.png',
 } as unknown as IServerNetwork;
 
 export const FAKE_NOSTR_NETWORK = nostrNetwork;

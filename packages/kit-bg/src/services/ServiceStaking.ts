@@ -758,7 +758,7 @@ export default class ServiceStaking extends ServiceBase {
       symbol: 'stETH',
       decimals: 18,
       logoURI:
-        'https://common.onekey-asset.com/token/evm-1/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png',
+        'https://common.unionkey.io/token/evm-1/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png',
     };
     if (networkId === OnekeyNetwork.eth) {
       baseToken.id = `${OnekeyNetwork.eth}--${MainnetLidoContractAddress}`;

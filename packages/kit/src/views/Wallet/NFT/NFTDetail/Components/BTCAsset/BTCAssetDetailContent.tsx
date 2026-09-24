@@ -477,7 +477,7 @@ function BTCAssetDetailContent({
                 const isMainNet = networkId === OnekeyNetwork.btc;
                 const host = isMainNet
                   ? 'https://ordinals.com'
-                  : 'https://tbtc-ordinals.onekey.so';
+                  : 'https://api.unionkey.io/tbtc-ordinals';
                 openUrl(`${host}/inscription/${asset.inscription_id}`);
               }}
               title={intl.formatMessage({

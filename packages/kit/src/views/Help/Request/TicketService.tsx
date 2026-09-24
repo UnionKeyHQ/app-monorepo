@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import type { RequestPayload, UploadAttachmentsPayload } from './types';
 
-const host = 'https://ticket.onekey.so';
+const host = 'https://api.unionkey.io/ticket';
 
 export const listUri = (instanceId: string, updatedAt?: string) =>
   `${host}/api/tickets?instanceId=${instanceId}&updatedAt=${updatedAt ?? ''}`;

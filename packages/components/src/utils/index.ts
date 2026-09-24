@@ -13,7 +13,7 @@ export const shortenAddress = (address: string, chars = 4) => {
   return `${address.slice(0, prevOffset)}...${address.slice(-chars)}`;
 };
 
-export const CDN_PREFIX = 'https://onekey-asset.com/';
+export const CDN_PREFIX = 'https://uni.unionkey.io/';
 
 export const numberToString = (value: number): string => {
   const eFormat = value.toExponential();

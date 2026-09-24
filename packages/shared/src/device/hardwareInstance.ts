@@ -8,7 +8,7 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import { importHardwareSDK, importHardwareSDKLowLevel } from './sdk-loader';
 
-import type { EOnekeyDomain } from '../../types';
+import type { EUnionKeyDomain } from '../../types';
 import type {
   ConnectSettings,
   CoreApi,
@@ -25,7 +25,7 @@ export const generateConnectSrc = () =>
 export const getHardwareSDKInstance = memoizee(
   async (params: {
     isPreRelease: boolean;
-    hardwareConnectSrc?: EOnekeyDomain;
+    hardwareConnectSrc?: EUnionKeyDomain;
   }) =>
     // eslint-disable-next-line no-async-promise-executor
     new Promise<CoreApi>(async (resolve, reject) => {

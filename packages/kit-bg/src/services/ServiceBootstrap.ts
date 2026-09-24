@@ -44,8 +44,8 @@ import ServiceBase from './ServiceBase';
 // should upate AUTO_SWITCH_DEFAULT_RPC_AT_VERSION version first
 const defaultNetworkRpcs: Record<string, string> = {
   'aptos--1': 'https://fullnode.mainnet.aptoslabs.com',
-  'bch--0': 'https://fiat.onekeycn.com/book/bch',
-  'btc--0': 'https://rpc.onekey.so/btc/',
+  'bch--0': 'https://api.unionkey.io/book/bch',
+  'btc--0': 'https://api.unionkey.io/btc/',
   'evm--1': 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
   'evm--10': 'https://mainnet.optimism.io',
   'evm--100': 'https://rpc.gnosischain.com',
@@ -67,8 +67,8 @@ const defaultNetworkRpcs: Record<string, string> = {
   'sol--101': 'https://solana-mainnet.phantom.tech/',
   'stc--1': 'https://main-seed.starcoin.org',
   'tron--0x2b6653dc': 'https://tron-mainnet.token.im',
-  'ltc--0': 'https://fiat.onekeycn.com/book/ltc',
-  'doge--0': 'https://fiat.onekeycn.com/book/doge',
+  'ltc--0': 'https://api.unionkey.io/book/ltc',
+  'doge--0': 'https://api.unionkey.io/book/doge',
   'cfx--1029': 'https://main.confluxrpc.com',
   'algo--4160': 'https://algosigner.api.purestake.io/mainnet/algod',
   'evm--73927': 'https://geth.mvm.dev',
@@ -238,7 +238,7 @@ export default class ServiceBootstrap extends ServiceBase {
       const onekeyRpc = Object.values(getPresetNetworks())
         .find((item) => item.id === n.id)
         ?.rpcURLs?.find((rpc) =>
-          rpc.url?.startsWith('https://node.onekey.so/'),
+          rpc.url?.startsWith('https://api.unionkey.io/'),
         )?.url;
       const isUserSwitched = userSwitchedNetworkRpcFlag?.[n.id] ?? false;
       if (

@@ -355,11 +355,11 @@ export default class ServiceNameResolver extends ServiceBase {
         uns: {
           locations: {
             Layer1: {
-              url: 'https://node.onekey.so/eth',
+              url: 'https://api.unionkey.io/eth',
               network: 'mainnet',
             },
             Layer2: {
-              url: 'https://node.onekey.so/polygon',
+              url: 'https://api.unionkey.io/polygon',
               network: 'polygon-mainnet',
             },
           },
