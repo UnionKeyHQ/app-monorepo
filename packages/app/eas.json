@@ -97,7 +97,8 @@
   "submit": {
     "production-store": {
       "ios": {
-        "ascAppId": "6756090484"
+        "ascAppId": "6756090484",
+        "appleTeamId": "8M3ACVVAGM"
       }
     }
   }
