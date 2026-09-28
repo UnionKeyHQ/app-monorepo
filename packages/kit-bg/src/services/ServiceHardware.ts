@@ -295,14 +295,11 @@ class ServiceHardware extends ServiceBase {
 
   @backgroundMethod()
   async unlockDevice(connectId: string) {
-    const hardwareSDK = await this.getSDKInstance();
-    const response = await hardwareSDK?.deviceUnlock(connectId);
-
-    if (response?.success) {
-      return response.payload;
-    }
-
-    return Promise.reject(deviceUtils.convertDeviceError(response?.payload));
+    // Keep the firmware-compatible unlock flow used by UnionKey 6.0.
+    // The SDK selects GetPassphraseState for supported Touch/Pro firmware and
+    // falls back to GetAddress for older devices, both of which trigger the
+    // required confirmation on-device.
+    return this.getPassphraseState(connectId, true);
   }
 
   @backgroundMethod()
@@ -312,7 +309,7 @@ class ServiceHardware extends ServiceBase {
       return features;
     }
 
-    // Send the real UnLockDevice command and wait for confirmation on-device.
+    // Ask the SDK to unlock using the command supported by this firmware.
     await this.unlockDevice(connectId);
 
     const refreshedFeatures = await this.getFeatures(connectId);

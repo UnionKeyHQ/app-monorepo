@@ -96,15 +96,33 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
     success: boolean;
   }>({ isLoading: false, errorKey: '', success: false });
 
+  const ensureDeviceUnlocked = useCallback(
+    async (connectId: string) => {
+      let timeoutId: ReturnType<typeof setTimeout> | undefined;
+      try {
+        return await Promise.race([
+          serviceHardware.ensureDeviceUnlocked(connectId),
+          new Promise<never>((_, reject) => {
+            timeoutId = setTimeout(
+              () => reject(new Error('Hardware unlock timeout')),
+              30 * 1000,
+            );
+          }),
+        ]);
+      } finally {
+        if (timeoutId) clearTimeout(timeoutId);
+      }
+    },
+    [serviceHardware],
+  );
+
   const handleUnlockDevice = useCallback(async () => {
     const deviceConnectId = device?.mac;
     if (!deviceConnectId) return;
 
     setIsCheckingDevice(true);
     try {
-      const features = await serviceHardware.ensureDeviceUnlocked(
-        deviceConnectId,
-      );
+      const features = await ensureDeviceUnlocked(deviceConnectId);
       setIsDeviceUnlocked(features.unlocked !== false);
     } catch (error) {
       setIsDeviceUnlocked(false);
@@ -112,7 +130,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
     } finally {
       setIsCheckingDevice(false);
     }
-  }, [device?.mac, serviceHardware]);
+  }, [device?.mac, ensureDeviceUnlocked]);
 
   const handleGetDeviceSigResponse = useCallback(async () => {
     const deviceConnectId = device?.mac;
@@ -138,7 +156,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
 
     let sigResponse = null;
     try {
-      await serviceHardware.ensureDeviceUnlocked(deviceConnectId);
+      await ensureDeviceUnlocked(deviceConnectId);
       sigResponse = await serviceHardware.getDeviceCertWithSig(
         deviceConnectId,
         dataHex,
@@ -201,7 +219,13 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
         success: false,
       });
     }
-  }, [device?.mac, device?.deviceType, serviceHardware, dispatch]);
+  }, [
+    device?.mac,
+    device?.deviceType,
+    ensureDeviceUnlocked,
+    serviceHardware,
+    dispatch,
+  ]);
 
   useEffect(() => {
     (async () => {
@@ -212,7 +236,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
 
         setIsCheckingDevice(true);
         try {
-          const features = await serviceHardware.ensureDeviceUnlocked(d.mac);
+          const features = await ensureDeviceUnlocked(d.mac);
           setIsDeviceUnlocked(features.unlocked !== false);
         } catch (error) {
           setIsDeviceUnlocked(false);
@@ -228,7 +252,14 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
         deviceUtils.showErrorToast(err, 'action__connection_timeout');
       }
     })();
-  }, [engine, intl, navigation, serviceHardware, walletId]);
+  }, [
+    engine,
+    ensureDeviceUnlocked,
+    intl,
+    navigation,
+    serviceHardware,
+    walletId,
+  ]);
 
   const verifyChildren = useMemo(() => {
     if (!hasStarted) {
