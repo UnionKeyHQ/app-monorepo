@@ -1,9 +1,23 @@
 /* eslint-disable no-nested-ternary */
-import { EDeviceType, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { get } from 'lodash';
 
 import { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
 import type { DevicePayload } from '@unionkeyhq/engine/src/types/device';
+import type {
+  BleReleaseInfoEvent,
+  CoreMessage,
+  DeviceSendSupportFeatures,
+  DeviceSettingsParams,
+  DeviceSupportFeaturesPayload,
+  DeviceUploadResourceParams,
+  IDeviceType,
+  KnownDevice,
+  ReleaseInfoEvent,
+  Success,
+  UiResponseEvent,
+  Unsuccessful,
+} from '@unionkeyhq/hd-core';
+import { EDeviceType, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import {
   addConnectedConnectId,
   removeConnectedConnectId,
@@ -46,21 +60,6 @@ import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
 import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import ServiceBase from './ServiceBase';
-
-import type {
-  BleReleaseInfoEvent,
-  CoreMessage,
-  DeviceSendSupportFeatures,
-  DeviceSettingsParams,
-  DeviceSupportFeaturesPayload,
-  DeviceUploadResourceParams,
-  IDeviceType,
-  KnownDevice,
-  ReleaseInfoEvent,
-  Success,
-  UiResponseEvent,
-  Unsuccessful,
-} from '@unionkeyhq/hd-core';
 
 type ConnectedEvent = { device: KnownDevice };
 
@@ -298,6 +297,24 @@ class ServiceHardware extends ServiceBase {
   async unlockDevice(connectId: string) {
     // only unlock device when device is locked
     return this.getPassphraseState(connectId, true);
+  }
+
+  @backgroundMethod()
+  async ensureDeviceUnlocked(connectId: string) {
+    const features = await this.getFeatures(connectId);
+    if (features.unlocked !== false) {
+      return features;
+    }
+
+    // This sends an actual unlock request to the device. The SDK emits the
+    // PIN/passphrase UI events and waits for the user to finish on-device.
+    await this.unlockDevice(connectId);
+
+    const refreshedFeatures = await this.getFeatures(connectId);
+    if (refreshedFeatures.unlocked === false) {
+      throw new Error('Hardware device is still locked');
+    }
+    return refreshedFeatures;
   }
 
   @backgroundMethod()

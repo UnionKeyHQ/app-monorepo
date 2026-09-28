@@ -81,7 +81,7 @@ const DeviceStatusCheckModal: FC = () => {
       try {
         // 30s timeout for device connection
         const result = await Promise.race([
-          serviceHardware.getFeatures(device.connectId ?? ''),
+          serviceHardware.ensureDeviceUnlocked(device.connectId ?? ''),
           // eslint-disable-next-line no-promise-executor-return
           new Promise((_, reject) => setTimeout(reject, 30 * 1000)),
         ]);

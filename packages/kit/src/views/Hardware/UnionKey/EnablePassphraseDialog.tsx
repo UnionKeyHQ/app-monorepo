@@ -32,6 +32,7 @@ const EnablePassphraseDialog: FC<EnablePassphraseDialogProps> = ({
       () =>
         showDialog(
           <HardwareLoadingDialog
+            connectId={deviceConnectId}
             onHandler={() =>
               serviceHardware
                 .applySettings(deviceConnectId, {

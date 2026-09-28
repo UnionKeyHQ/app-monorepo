@@ -110,6 +110,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
 
     let sigResponse = null;
     try {
+      await serviceHardware.ensureDeviceUnlocked(deviceConnectId);
       sigResponse = await serviceHardware.getDeviceCertWithSig(
         deviceConnectId,
         dataHex,

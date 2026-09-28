@@ -29,8 +29,8 @@ import {
   HardwareUpdateModalRoutes,
   ManagerWalletModalRoutes,
   ModalRoutes,
-  UnionKeyHardwareModalRoutes,
   RootRoutes,
+  UnionKeyHardwareModalRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
 import {
   forgetPassphraseWallet,
@@ -198,6 +198,7 @@ function HardwareMenuOptions({
 
     showDialog(
       <HardwareLoadingDialog
+        connectId={deviceConnectId}
         onHandler={() =>
           serviceHardware
             .checkFirmwareUpdate(deviceConnectId)
@@ -272,7 +273,8 @@ function HardwareMenuOptions({
           navigation.navigate(RootRoutes.Modal, {
             screen: ModalRoutes.UnionKeyHardware,
             params: {
-              screen: UnionKeyHardwareModalRoutes.UnionKeyHardwareDeviceNameModal,
+              screen:
+                UnionKeyHardwareModalRoutes.UnionKeyHardwareDeviceNameModal,
               params: {
                 walletId: wallet?.id ?? '',
                 deviceName: '',
@@ -291,7 +293,8 @@ function HardwareMenuOptions({
             navigation.navigate(RootRoutes.Modal, {
               screen: ModalRoutes.UnionKeyHardware,
               params: {
-                screen: UnionKeyHardwareModalRoutes.UnionKeyHardwareHomeScreenModal,
+                screen:
+                  UnionKeyHardwareModalRoutes.UnionKeyHardwareHomeScreenModal,
                 params: {
                   walletId: wallet?.id ?? '',
                   deviceType: hwInfo?.hwWalletType ?? 'classic',

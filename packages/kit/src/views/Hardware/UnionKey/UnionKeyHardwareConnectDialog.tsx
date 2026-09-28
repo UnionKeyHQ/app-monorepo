@@ -11,16 +11,15 @@ import {
   Typography,
 } from '@unionkeyhq/components';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
+import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
 
 export type HardwareLoadingDialogProps = {
-  deviceId?: string;
   connectId?: string;
   onHandler?: () => Promise<any>;
   onClose?: () => void;
 };
 
 const HardwareLoadingDialog: FC<HardwareLoadingDialogProps> = ({
-  deviceId,
   connectId,
   onHandler,
   onClose,
@@ -29,16 +28,21 @@ const HardwareLoadingDialog: FC<HardwareLoadingDialogProps> = ({
   const { serviceHardware } = backgroundApiProxy;
   const [isRunning, setIsRunning] = useState(false);
 
-  const handleContinue = useCallback(() => {
+  const handleContinue = useCallback(async () => {
     setIsRunning(true);
-    if (deviceId && connectId) {
-      serviceHardware.getFeatures(connectId).finally(() => onClose?.());
-    } else if (onHandler) {
-      onHandler().finally(() => onClose?.());
-    } else {
+    try {
+      if (connectId) {
+        await serviceHardware.ensureDeviceUnlocked(connectId);
+      }
+      if (onHandler) {
+        await onHandler();
+      }
       onClose?.();
+    } catch (error) {
+      setIsRunning(false);
+      deviceUtils.showErrorToast(error, 'msg__hardware_default_error');
     }
-  }, [connectId, deviceId, onClose, onHandler, serviceHardware]);
+  }, [connectId, onClose, onHandler, serviceHardware]);
 
   return (
     <Dialog visible>

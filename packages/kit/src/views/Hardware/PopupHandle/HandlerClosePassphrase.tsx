@@ -27,6 +27,7 @@ const HandlerClosePassphraseView: FC<HandlerClosePassphraseViewProps> = ({
       () =>
         showDialog(
           <HardwareLoadingDialog
+            connectId={deviceConnectId}
             onHandler={() =>
               serviceHardware
                 .applySettings(deviceConnectId, {

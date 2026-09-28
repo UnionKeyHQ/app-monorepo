@@ -22,6 +22,7 @@ const DisablePassphraseDialog: FC<DisablePassphraseDialogProps> = ({
 
   return (
     <HardwareLoadingDialog
+      connectId={deviceConnectId}
       onClose={onClose}
       onHandler={() =>
         serviceHardware
