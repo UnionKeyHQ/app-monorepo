@@ -55,7 +55,7 @@ import {
   requestsInterceptTest2,
 } from './requestsInterceptTest';
 
-interface IOneKeyPerfCheckPayload {
+interface IUnionKeyPerfCheckPayload {
   testID?: string;
   componentName?: string;
 
@@ -66,12 +66,12 @@ interface IOneKeyPerfCheckPayload {
     perfCheckContentLength?: number;
   };
 }
-const perfCheckResult: Record<string, IOneKeyPerfCheckPayload> = {};
+const perfCheckResult: Record<string, IUnionKeyPerfCheckPayload> = {};
 function usePerfCheck({ enablePerfCheck }: { enablePerfCheck?: boolean }) {
   useEffect(() => {
     if (enablePerfCheck && platformEnv.isRuntimeBrowser) {
       const handler = ((event: CustomEvent) => {
-        const payload: IOneKeyPerfCheckPayload = event.detail;
+        const payload: IUnionKeyPerfCheckPayload = event.detail;
         const id =
           payload?.testID ||
           [payload?.componentName, payload?.flatListInfo?.cellKey]
@@ -81,9 +81,9 @@ function usePerfCheck({ enablePerfCheck }: { enablePerfCheck?: boolean }) {
           perfCheckResult[id] = payload;
         }
       }) as any;
-      window.addEventListener('OneKeyEventPerfCheck', handler);
+      window.addEventListener('UnionKeyEventPerfCheck', handler);
       return () => {
-        window.removeEventListener('OneKeyEventPerfCheck', handler);
+        window.removeEventListener('UnionKeyEventPerfCheck', handler);
       };
     }
   }, [enablePerfCheck]);
@@ -226,7 +226,7 @@ export const DevSettingSection = () => {
           />
         </Container.Item>
         <Container.Item
-          title={intl.formatMessage({ id: 'action__test_onekey_service' })}
+          title={intl.formatMessage({ id: 'action__test_unionkey_service' })}
           subDescribe={`范围: \n[token、价格、余额、推送、历史记录] \n ${fiatEndpoint}\n ${getSocketEndpoint()} \n ${getCovalentApiEndpoint()}`}
           titleColor="text-critical"
         >
@@ -278,7 +278,7 @@ export const DevSettingSection = () => {
                   timelinePerfTrace.getTimelineData();
                 copyToClipboard(
                   JSON.stringify({
-                    $$onekeyPerfTrace: global?.$$onekeyPerfTrace,
+                    $$unionKeyPerfTrace: global?.$$unionKeyPerfTrace,
                     perfCheckResult,
                     timelinePerfTraceData,
                   }),
@@ -286,7 +286,7 @@ export const DevSettingSection = () => {
                 ToastManager.show({
                   title: intl.formatMessage({ id: 'msg__copied' }),
                 });
-                console.log('$$onekeyPerfTrace', global?.$$onekeyPerfTrace);
+                console.log('$$unionKeyPerfTrace', global?.$$unionKeyPerfTrace);
                 console.log('perfCheckResult', perfCheckResult);
                 console.log('timelinePerfTraceData', timelinePerfTraceData);
               }}

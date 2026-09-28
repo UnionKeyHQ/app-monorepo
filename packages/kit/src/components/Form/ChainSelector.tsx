@@ -7,7 +7,7 @@ import { isAllNetworks } from '@unionkeyhq/engine/src/managers/network';
 import type { Network } from '@unionkeyhq/engine/src/types/network';
 import { useManageNetworks } from '@unionkeyhq/kit/src/hooks';
 import { useGeneral } from '@unionkeyhq/kit/src/hooks/redux';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import type { ControllerProps, FieldValues } from 'react-hook-form';
 
@@ -32,7 +32,7 @@ function FormChainSelector<TFieldValues extends FieldValues = FieldValues>({
 
   let defaultNetworkId =
     networkId ?? isAllNetworks(currentNetworkId)
-      ? OnekeyNetwork.eth
+      ? UnionKeyNetwork.eth
       : currentNetworkId;
 
   // If selectableNetworks is specified and currenct selected network not in

@@ -13,8 +13,8 @@ import {
   Typography,
   useForm,
 } from '@unionkeyhq/components';
-import type { OneKeyError } from '@unionkeyhq/engine/src/errors';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import { BulkTypeEnum } from '@unionkeyhq/engine/src/types/batchTransfer';
 import type { GoPlusAddressSecurity } from '@unionkeyhq/engine/src/types/goplus';
 import { GoPlusSupportApis } from '@unionkeyhq/engine/src/types/goplus';
@@ -375,13 +375,13 @@ function PreSendAddress() {
         } catch (error: any) {
           console.error('nftSendConfirm ERROR: ', error);
 
-          const { key: errorKey = '', className } = error as OneKeyError;
+          const { key: errorKey = '', className } = error as UnionKeyError;
           if (errorKey) {
             let data = {};
             if (
               errorKey === 'form__amount_invalid' &&
               className ===
-                OneKeyErrorClassNames.OneKeyErrorInsufficientNativeBalance
+                UnionKeyErrorClassNames.UnionKeyErrorInsufficientNativeBalance
             ) {
               data = {
                 0: nativeToken?.symbol || '',

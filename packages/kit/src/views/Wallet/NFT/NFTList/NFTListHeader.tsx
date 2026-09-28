@@ -14,7 +14,7 @@ import {
   useActiveWalletAccount,
   useAppSelector,
 } from '@unionkeyhq/kit/src/hooks';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { FormatCurrencyNumber } from '../../../../components/Format';
 import { showHomeNFTSettings } from '../../../Overlay/HomeNFTSettings';
@@ -37,7 +37,7 @@ const NFTListHeader = () => {
       : intl.formatMessage({ id: 'form__floor_price' });
 
   const isBtcNetwork = useMemo(
-    () => networkId === OnekeyNetwork.btc || networkId === OnekeyNetwork.tbtc,
+    () => networkId === UnionKeyNetwork.btc || networkId === UnionKeyNetwork.tbtc,
     [networkId],
   );
 

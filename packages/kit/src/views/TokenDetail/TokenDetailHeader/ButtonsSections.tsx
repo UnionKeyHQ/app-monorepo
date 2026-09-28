@@ -16,7 +16,7 @@ import { isValidCoingeckoId } from '@unionkeyhq/engine/src/managers/token';
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import type { Network } from '@unionkeyhq/engine/src/types/network';
 import type { Token as TokenType } from '@unionkeyhq/engine/src/types/token';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { freezedEmptyObject } from '@unionkeyhq/shared/src/consts/sharedConsts';
 import {
   isLightningNetworkByImpl,
@@ -165,9 +165,9 @@ export const ButtonsSection: FC = () => {
             if (isLightningNetwork) {
               setTimeout(() => {
                 backgroundApiProxy.serviceSwap.switchToNativeOutputToken(
-                  n.id === OnekeyNetwork.lightning
-                    ? OnekeyNetwork.btc
-                    : OnekeyNetwork.tbtc,
+                  n.id === UnionKeyNetwork.lightning
+                    ? UnionKeyNetwork.btc
+                    : UnionKeyNetwork.tbtc,
                 );
               }, 50);
             }

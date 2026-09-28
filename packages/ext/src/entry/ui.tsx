@@ -18,7 +18,7 @@ function init() {
   // **** must be after popupSizeFix();
   // resizeEventOptimize();
 
-  global.$$onekeyPerfTrace?.log({
+  global.$$unionKeyPerfTrace?.log({
     name: '[EXT]: ui.tsx init() / KitProviderExt render()',
   });
   initUi();

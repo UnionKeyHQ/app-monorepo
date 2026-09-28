@@ -6,11 +6,11 @@ const isJest =
 const isDev = process.env.NODE_ENV !== 'production';
 const isProduction = process.env.NODE_ENV === 'production';
 
-const isWeb = process.env.ONEKEY_PLATFORM === 'web';
-const isWebEmbed = process.env.ONEKEY_PLATFORM === 'webEmbed';
-const isDesktop = process.env.ONEKEY_PLATFORM === 'desktop';
-const isExtension = process.env.ONEKEY_PLATFORM === 'ext';
-const isNative = process.env.ONEKEY_PLATFORM === 'app';
+const isWeb = process.env.UNIONKEY_PLATFORM === 'web';
+const isWebEmbed = process.env.UNIONKEY_PLATFORM === 'webEmbed';
+const isDesktop = process.env.UNIONKEY_PLATFORM === 'desktop';
+const isExtension = process.env.UNIONKEY_PLATFORM === 'ext';
+const isNative = process.env.UNIONKEY_PLATFORM === 'app';
 
 const isExtChrome = process.env.EXT_CHANNEL === 'chrome';
 const isExtFirefox = process.env.EXT_CHANNEL === 'firefox';

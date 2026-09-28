@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import type { IAccount } from '@unionkeyhq/engine/src/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
@@ -27,7 +27,7 @@ export function useConnectAndCreateExternalAccount({
   const { externalWallet } = useActiveWalletAccount();
 
   const connectToWcWalletDirectly = useCallback(async () => {
-    let preloadingNetworkId = networkId || OnekeyNetwork.eth;
+    let preloadingNetworkId = networkId || UnionKeyNetwork.eth;
     let isConnected = false;
     const walletId = externalWallet?.id;
     let addedAccount: IAccount | undefined;

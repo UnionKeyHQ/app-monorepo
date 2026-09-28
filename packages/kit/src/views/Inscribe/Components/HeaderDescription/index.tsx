@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { HStack, Text, Token } from '@unionkeyhq/components';
 import type { Network } from '@unionkeyhq/engine/src/types/network';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 const HeaderDescription: FC<{ network?: Network | null }> = ({ network }) => {
   if (!network) return null;
@@ -16,7 +16,7 @@ const HeaderDescription: FC<{ network?: Network | null }> = ({ network }) => {
         }}
       />
       <Text typography="Caption" color="text-subdued">{`Bitcoin${
-        network.id === OnekeyNetwork.tbtc ? ' Testnet' : ''
+        network.id === UnionKeyNetwork.tbtc ? ' Testnet' : ''
       }`}</Text>
     </HStack>
   );

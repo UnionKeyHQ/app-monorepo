@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js';
 
 import {
-  OneKeyErrorClassNames,
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyErrorClassNames,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
 } from '@unionkeyhq/engine/src/errors';
 import { getNextAccountId } from '@unionkeyhq/engine/src/managers/derivation';
 import type { IAccount } from '@unionkeyhq/engine/src/types';
@@ -89,7 +89,7 @@ export default class ServiceDerivationPath extends ServiceBase {
     const usedTemplate =
       template || (shouldQuickCreate && quickCreateAccountInfo?.template);
     if (!usedTemplate) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'create account should pass template param.',
       );
     }
@@ -98,7 +98,7 @@ export default class ServiceDerivationPath extends ServiceBase {
       (v) => v.template === usedTemplate,
     );
     if (!accountInfo) {
-      throw new OneKeyInternalError('can not find accountInfo.');
+      throw new UnionKeyInternalError('can not find accountInfo.');
     }
     const { prefix, category } = accountInfo;
 
@@ -159,7 +159,7 @@ export default class ServiceDerivationPath extends ServiceBase {
       walletId,
     );
     if (!device) {
-      throw new OneKeyInternalError(`Device not found.`);
+      throw new UnionKeyInternalError(`Device not found.`);
     }
     try {
       const address = await vault.keyring.getAddress({
@@ -169,7 +169,7 @@ export default class ServiceDerivationPath extends ServiceBase {
       });
 
       if (!address) {
-        throw new OneKeyInternalError(`Address not found.`);
+        throw new UnionKeyInternalError(`Address not found.`);
       }
 
       let accountExist = true;
@@ -189,10 +189,10 @@ export default class ServiceDerivationPath extends ServiceBase {
       };
     } catch (e: any) {
       const { className } = e || {};
-      if (className === OneKeyErrorClassNames.OneKeyHardwareError) {
+      if (className === UnionKeyErrorClassNames.UnionKeyHardwareError) {
         throw e;
       } else {
-        throw new OneKeyHardwareError({
+        throw new UnionKeyHardwareError({
           message: 'Failed to get address',
         });
       }
@@ -241,7 +241,7 @@ export default class ServiceDerivationPath extends ServiceBase {
       walletId,
     );
     if (!device) {
-      throw new OneKeyInternalError(`Device not found.`);
+      throw new UnionKeyInternalError(`Device not found.`);
     }
     const bundle = fullPaths
       ? fullPaths.map((path) => ({ path, showOnOneKey: confirmOnDevice }))

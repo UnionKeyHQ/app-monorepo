@@ -11,8 +11,8 @@ import semver from 'semver';
 import { ToastManager } from '@unionkeyhq/components';
 import type { LocaleIds } from '@unionkeyhq/components/src/locale';
 import { formatMessage } from '@unionkeyhq/components/src/Provider';
-import type { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
@@ -24,7 +24,7 @@ import showHardwarePopup from '../../views/Hardware/PopupHandle/showHardwarePopu
 import { CUSTOM_UI_RESPONSE } from '../../views/Hardware/PopupHandle/showHardwarePopup.consts';
 
 import * as Error from './errors';
-import { getDeviceFirmwareVersion } from './OneKeyHardware';
+import { getDeviceFirmwareVersion } from './UnionKeyHardware';
 
 import type { HardwarePopup } from '../../views/Hardware/PopupHandle/showHardwarePopup.consts';
 import type { IResourceUpdateInfo, SYSFirmwareInfo } from '../updates/type';
@@ -262,14 +262,14 @@ class DeviceUtils {
         return false;
       }
 
-      if (code === Error.CustomOneKeyHardwareError.NeedOneKeyBridge) {
+      if (code === Error.CustomUnionKeyHardwareError.NeedUnionKeyBridge) {
         this.delayShowHardwarePopup({
-          uiRequest: CUSTOM_UI_RESPONSE.CUSTOM_NEED_ONEKEY_BRIDGE,
+          uiRequest: CUSTOM_UI_RESPONSE.CUSTOM_NEED_UNIONKEY_BRIDGE,
         });
         return true;
       }
 
-      if (className === OneKeyErrorClassNames.OneKeyHardwareError) {
+      if (className === UnionKeyErrorClassNames.UnionKeyHardwareError) {
         const { data } = error || {};
 
         const errorMessage = formatMessage({ id: key }, info ?? {});
@@ -337,7 +337,7 @@ class DeviceUtils {
         let errorMessage;
 
         // Ignore key
-        const ignoreKeys = ['msg__engine__internal_error', 'onekey_error'];
+        const ignoreKeys = ['msg__engine__internal_error', 'unionkey_error'];
 
         if (key && !ignoreKeys.includes(key)) {
           errorMessage = formatMessage({ id: key }, info);
@@ -345,7 +345,7 @@ class DeviceUtils {
           errorMessage = formatMessage({ id: defKey }, info);
         } else if (ignoreKeys.includes(key) && message && !isEmpty(message)) {
           errorMessage = message;
-        } else if (key && key !== 'onekey_error') {
+        } else if (key && key !== 'unionkey_error') {
           errorMessage = formatMessage({ id: key }, info);
         }
 
@@ -366,7 +366,7 @@ class DeviceUtils {
     return false;
   }
 
-  convertDeviceError(payload: any): OneKeyHardwareError {
+  convertDeviceError(payload: any): UnionKeyHardwareError {
     // handle ext error
     const {
       code,
@@ -479,9 +479,9 @@ class DeviceUtils {
       case HardwareErrorCode.ActionCancelled:
         return new Error.UserCancel(payload);
       case HardwareErrorCode.BridgeNotInstalled:
-        return new Error.NeedOneKeyBridge(payload);
-      case Error.CustomOneKeyHardwareError.NeedOneKeyBridge:
-        return new Error.NeedOneKeyBridge(payload);
+        return new Error.NeedUnionKeyBridge(payload);
+      case Error.CustomUnionKeyHardwareError.NeedUnionKeyBridge:
+        return new Error.NeedUnionKeyBridge(payload);
       case HardwareErrorCode.BridgeNetworkError:
         return new Error.BridgeNetworkError(payload);
       case HardwareErrorCode.BridgeTimeoutError:

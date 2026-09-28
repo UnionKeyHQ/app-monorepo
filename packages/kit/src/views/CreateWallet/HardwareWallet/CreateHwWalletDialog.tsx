@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useIntl } from 'react-intl';
 
 import { Dialog, Spinner, ToastManager } from '@unionkeyhq/components';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import type { Device } from '@unionkeyhq/engine/src/types/device';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 
@@ -40,7 +40,7 @@ const CreateHwWalletDialog: FC<CreateHwWalletDialogProps> = ({
       })
       .catch((e) => {
         const { className, data } = e || {};
-        if (className === OneKeyErrorClassNames.OneKeyAlreadyExistWalletError) {
+        if (className === UnionKeyErrorClassNames.UnionKeyAlreadyExistWalletError) {
           const { walletName: existsWalletName } = data || {};
           if (existsWalletName) {
             ToastManager.show(

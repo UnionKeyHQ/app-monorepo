@@ -19,7 +19,7 @@ import txOfflineIcon from '@unionkeyhq/kit/assets/transaction/status/tx_offline.
 import txPendingIcon from '@unionkeyhq/kit/assets/transaction/status/tx_pending.png';
 import txSuccessedIcon from '@unionkeyhq/kit/assets/transaction/status/tx_successed.png';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isLightningNetworkByNetworkId } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { TabRoutes } from '../../../routes/routesEnum';
@@ -78,7 +78,7 @@ function TxDetailStatusInfoBox(props: Props) {
             { type: 'default' },
           );
           checkToken = await backgroundApiProxy.engine.getNativeTokenInfo(
-            OnekeyNetwork.eth,
+            UnionKeyNetwork.eth,
           );
         }
       }
@@ -90,9 +90,9 @@ function TxDetailStatusInfoBox(props: Props) {
         .then(() => {
           if (isLightningNetwork) {
             backgroundApiProxy.serviceSwap.switchToNativeOutputToken(
-              decodedTx.networkId === OnekeyNetwork.lightning
-                ? OnekeyNetwork.btc
-                : OnekeyNetwork.tbtc,
+              decodedTx.networkId === UnionKeyNetwork.lightning
+                ? UnionKeyNetwork.btc
+                : UnionKeyNetwork.tbtc,
             );
           }
         });

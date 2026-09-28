@@ -9,7 +9,7 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import simpleDb from '../../../dbs/simple/simpleDb';
 import {
   InvalidAddress,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   WrongPassword,
 } from '../../../errors';
 import { isAccountCompatibleWithNetwork } from '../../../managers/account';
@@ -378,7 +378,7 @@ export default class Vault extends VaultBase {
       }
     }
 
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

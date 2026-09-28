@@ -2,8 +2,8 @@ import { flatten, isNil, pick } from 'lodash';
 
 import simpleDb from '@unionkeyhq/engine/src/dbs/simple/simpleDb';
 import {
-  OneKeyAlreadyExistWalletError,
-  OneKeyErrorClassNames,
+  UnionKeyAlreadyExistWalletError,
+  UnionKeyErrorClassNames,
   TooManyHWPassphraseWallets,
 } from '@unionkeyhq/engine/src/errors';
 import { HW_PASSPHRASE_WALLET_MAX_NUM } from '@unionkeyhq/engine/src/limits';
@@ -61,7 +61,7 @@ import {
   backgroundMethod,
   bindThis,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   COINTYPE_ETH,
   IMPL_ADA,
@@ -89,7 +89,7 @@ import timelinePerfTrace, {
 import type { Avatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
 import { randomAvatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
 import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import ServiceBase from './ServiceBase';
 
@@ -738,7 +738,7 @@ class ServiceAccount extends ServiceBase {
     const { watchingWallet } = getActiveWalletAccount();
     const id = watchingWallet?.nextAccountIds?.global;
     const name = id ? `Account #${id}` : '';
-    const networkId = OnekeyNetwork.eth;
+    const networkId = UnionKeyNetwork.eth;
     // TODO remove prev temp account
     // TODO set new account is temp
     const account = await engine.addWatchingOrExternalAccount({
@@ -809,7 +809,7 @@ class ServiceAccount extends ServiceBase {
     );
     // fallback to ETH if network not enabled or exists
     if (!isNetworkEnabled) {
-      networkId = OnekeyNetwork.eth;
+      networkId = UnionKeyNetwork.eth;
     }
 
     const { engine } = this.backgroundApi;
@@ -959,7 +959,7 @@ class ServiceAccount extends ServiceBase {
     existDeviceId: string | undefined;
     networkId: string;
     wallets: Wallet[];
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
     avatar?: Avatar;
     connectId: string;
     passphraseState?: string;
@@ -1016,7 +1016,7 @@ class ServiceAccount extends ServiceBase {
         });
       } catch (e: any) {
         const { className, data } = e || {};
-        if (className === OneKeyErrorClassNames.OneKeyAlreadyExistWalletError) {
+        if (className === UnionKeyErrorClassNames.UnionKeyAlreadyExistWalletError) {
           const { walletId: existsWalletId } = data || {};
           serviceAccount.initWallets();
           serviceAccount.autoChangeAccount({
@@ -1060,7 +1060,7 @@ class ServiceAccount extends ServiceBase {
     connectId,
     onlyPassphrase,
   }: {
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
     avatar?: Avatar;
     connectId: string;
     onlyPassphrase?: boolean;
@@ -1144,7 +1144,7 @@ class ServiceAccount extends ServiceBase {
         walletId = result?.wallet?.id;
       } catch (e: any) {
         const { className, data } = e || {};
-        if (className === OneKeyErrorClassNames.OneKeyAlreadyExistWalletError) {
+        if (className === UnionKeyErrorClassNames.UnionKeyAlreadyExistWalletError) {
           const { walletId: existsWalletId } = data || {};
           needTryRemember = true;
           walletId = existsWalletId;
@@ -1175,7 +1175,7 @@ class ServiceAccount extends ServiceBase {
         walletId: walletNormalExist.id ?? null,
       });
 
-      throw new OneKeyAlreadyExistWalletError(
+      throw new UnionKeyAlreadyExistWalletError(
         walletNormalExist.id,
         walletNormalExist.name,
       );
@@ -1714,7 +1714,7 @@ class ServiceAccount extends ServiceBase {
     // TODO: Lightning account
     if (account.type === AccountType.VARIANT) {
       if (
-        [OnekeyNetwork.lightning, OnekeyNetwork.tlightning].includes(networkId)
+        [UnionKeyNetwork.lightning, UnionKeyNetwork.tlightning].includes(networkId)
       ) {
         const address = await vault.getFetchBalanceAddress(account);
         return { address };

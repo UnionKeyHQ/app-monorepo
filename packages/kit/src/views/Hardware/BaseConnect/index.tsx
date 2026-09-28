@@ -113,7 +113,7 @@ const HardwareConnect: FC<HardwareConnectViewProps> = ({
         hideSecondaryAction
         header={title}
         onClose={() => {
-          debugLogger.onekeyLite.debug('HardwareConnect: onClose');
+          debugLogger.unionKeyLite.debug('HardwareConnect: onClose');
 
           onCloseConnect?.();
         }}
@@ -199,7 +199,7 @@ const HardwareConnect: FC<HardwareConnectViewProps> = ({
             <Icon name="CursorClickOutline" size={48} />
             <Typography.DisplayMedium px={12} mt={5} textAlign="center">
               {intl.formatMessage({
-                id: 'content__place_your_onekey_lite_close_to_the_back_of_here',
+                id: 'content__place_your_unionkey_lite_close_to_the_back_of_here',
               })}
             </Typography.DisplayMedium>
           </Box>

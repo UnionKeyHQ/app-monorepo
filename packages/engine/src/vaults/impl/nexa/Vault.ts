@@ -5,7 +5,7 @@ import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
 import { getTimeDurationMs } from '@unionkeyhq/kit/src/utils/helper';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { InvalidAddress, OneKeyInternalError } from '../../../errors';
+import { InvalidAddress, UnionKeyInternalError } from '../../../errors';
 import {
   type Account,
   AccountType,
@@ -350,7 +350,7 @@ export default class Vault extends VaultBase {
       const maximumAmount = confirmedUTXOs
         .slice(0, client.MAX_TX_NUM_VIN)
         .reduce((acc, cur) => acc.plus(cur.value), new BigNumber(0));
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `Too many vins, The maximum amount for this transfer is ${maximumAmount
           .shiftedBy(-network.decimals)
           .toFixed()} ${network.symbol}.`,
@@ -420,7 +420,7 @@ export default class Vault extends VaultBase {
       );
       return decrypt(password, encryptedPrivateKey).toString('hex');
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

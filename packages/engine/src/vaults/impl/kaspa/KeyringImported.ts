@@ -1,6 +1,6 @@
 import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
 
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import { Signer } from '@unionkeyhq/engine/src/proxy';
 import { secp256k1 } from '@unionkeyhq/engine/src/secret/curves';
 import { AccountType } from '@unionkeyhq/engine/src/types/account';
@@ -30,16 +30,16 @@ export class KeyringImported extends KeyringImportedBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Kaspa signers number should be 1.');
+      throw new UnionKeyInternalError('Kaspa signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -53,7 +53,7 @@ export class KeyringImported extends KeyringImportedBase {
     const { privateKey, name } = params;
 
     if (privateKey.length !== 32) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
 
     const chainId = await this.getNetworkChainId();

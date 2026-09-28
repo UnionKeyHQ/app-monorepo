@@ -3,7 +3,7 @@ import { arrayify, hexlify } from '@ethersproject/bytes';
 import axios from 'axios';
 import BigNumber from 'bignumber.js';
 
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { check } from '@unionkeyhq/shared/src/utils/assertUtils';
 
@@ -42,8 +42,8 @@ type IDecodedPayload =
   | { type: 'other'; payload: IDecodedOtherTxPayload };
 
 const historyAPIURLs: Record<string, string> = {
-  [OnekeyNetwork.stc]: 'https://api.stcscan.io/v2/transaction/main/byAddress',
-  [OnekeyNetwork.tstc]:
+  [UnionKeyNetwork.stc]: 'https://api.stcscan.io/v2/transaction/main/byAddress',
+  [UnionKeyNetwork.tstc]:
     'https://api.stcscan.io/v2/transaction/barnard/byAddress',
 };
 

@@ -2,7 +2,7 @@
 import { EDeviceType, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { get } from 'lodash';
 
-import { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
 import type { DevicePayload } from '@unionkeyhq/engine/src/types/device';
 import {
   addConnectedConnectId,
@@ -43,7 +43,7 @@ import { isPassphraseWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import ServiceBase from './ServiceBase';
 
@@ -74,7 +74,7 @@ class ServiceHardware extends ServiceBase {
 
   stopConnect = false;
 
-  featuresCache: Record<string, IOneKeyDeviceFeatures> = {};
+  featuresCache: Record<string, IUnionKeyDeviceFeatures> = {};
 
   async getSDKInstance() {
     const { enable, preReleaseUpdate } =
@@ -132,7 +132,7 @@ class ServiceHardware extends ServiceBase {
 
         instance.on(
           DEVICE.FEATURES,
-          async (features: IOneKeyDeviceFeatures) => {
+          async (features: IUnionKeyDeviceFeatures) => {
             if (!features || !features.device_id) return;
 
             try {
@@ -264,7 +264,7 @@ class ServiceHardware extends ServiceBase {
       } catch (e: any) {
         const { data } = e || {};
         const { reconnect } = data || {};
-        if (e instanceof OneKeyHardwareError && !reconnect) {
+        if (e instanceof UnionKeyHardwareError && !reconnect) {
           return Promise.reject(e);
         }
       }
@@ -510,7 +510,7 @@ class ServiceHardware extends ServiceBase {
    * Change the pin of the hardware wallet
    * @param remove {boolean}
    * @returns {Promise<Success>}
-   * @throws {OneKeyHardwareError}
+   * @throws {UnionKeyHardwareError}
    */
   @backgroundMethod()
   async changePin(connectId: string, remove = false) {
@@ -640,7 +640,7 @@ class ServiceHardware extends ServiceBase {
   }
 
   @backgroundMethod()
-  async getConnectId(features: IOneKeyDeviceFeatures) {
+  async getConnectId(features: IUnionKeyDeviceFeatures) {
     const deviceId = features.device_id;
     if (!deviceId) return null;
     try {
@@ -681,7 +681,7 @@ class ServiceHardware extends ServiceBase {
 
   private _checkPassphraseEnableStatus(
     deviceId: string,
-    features: IOneKeyDeviceFeatures,
+    features: IUnionKeyDeviceFeatures,
   ) {
     try {
       if (typeof features.passphrase_protection === 'boolean') {
@@ -720,7 +720,7 @@ class ServiceHardware extends ServiceBase {
   @backgroundMethod()
   private async _checkFirmwareUpdate(
     payload: ReleaseInfoEvent['payload'] & {
-      features?: IOneKeyDeviceFeatures;
+      features?: IUnionKeyDeviceFeatures;
       connectId?: string;
     },
   ): Promise<void> {
@@ -794,7 +794,7 @@ class ServiceHardware extends ServiceBase {
   @backgroundMethod()
   private async _checkBleFirmwareUpdate(
     payload: BleReleaseInfoEvent['payload'] & {
-      features: IOneKeyDeviceFeatures;
+      features: IUnionKeyDeviceFeatures;
     },
   ) {
     const connectId = await this.getConnectId(payload.features);
@@ -843,7 +843,7 @@ class ServiceHardware extends ServiceBase {
   }
 
   @backgroundMethod()
-  async syncDeviceLabel(features: IOneKeyDeviceFeatures, walletId: string) {
+  async syncDeviceLabel(features: IUnionKeyDeviceFeatures, walletId: string) {
     const { engine } = this.backgroundApi;
     const { label } = features;
     try {

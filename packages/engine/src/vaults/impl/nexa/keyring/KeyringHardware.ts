@@ -1,4 +1,4 @@
-import { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
 import { slicePathTemplate } from '@unionkeyhq/engine/src/managers/derivation';
 import { getAccountNameInfoByImpl } from '@unionkeyhq/engine/src/managers/impl';
 import { AccountType } from '@unionkeyhq/engine/src/types/account';
@@ -69,7 +69,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
     if (!addressesResponse.success) {
       debugLogger.common.error(addressesResponse.payload);

@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useGeneral } from '@unionkeyhq/kit/src/hooks/redux';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   AppUIEventBusNames,
   appUIEventBus,
@@ -41,13 +41,13 @@ function ChainWebEmbed() {
     };
   } = useMemo(
     () => ({
-      [OnekeyNetwork.ada]: {
+      [UnionKeyNetwork.ada]: {
         Component: ChainWebEmbedViewCardano,
         chainRef: cardanoRef,
         chainCallbackRef: cardanoCallbackRef,
         webviewCallback: cardanoWebviewCallback,
       },
-      [OnekeyNetwork.xmr]: {
+      [UnionKeyNetwork.xmr]: {
         Component: ChainWebEmbedViewMonero,
         chainRef: moneroRef,
         chainCallbackRef: moneroCallbackRef,

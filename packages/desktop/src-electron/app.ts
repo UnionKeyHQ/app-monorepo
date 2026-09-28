@@ -27,7 +27,7 @@ import initProcess, { restartBridge } from './process/index';
 
 import type { PrefType } from './preload';
 
-const ONEKEY_APP_DEEP_LINK_NAME = 'unionkey-wallet';
+const UNIONKEY_APP_DEEP_LINK_NAME = 'unionkey-wallet';
 const WALLET_CONNECT_DEEP_LINK_NAME = 'wc';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -243,7 +243,7 @@ function createMainWindow() {
 
   browserWindow.webContents.on('did-finish-load', () => {
     console.log('browserWindow >>>> did-finish-load');
-    browserWindow.webContents.send('SET_ONEKEY_DESKTOP_GLOBALS', {
+    browserWindow.webContents.send('SET_UNIONKEY_DESKTOP_GLOBALS', {
       resourcesPath: (global as any).resourcesPath,
       staticPath: `file://${staticPath}`,
       preloadJsUrl: `file://${preloadJsUrl}?timestamp=${Date.now()}`,
@@ -593,23 +593,23 @@ if (isDev) {
 if (process.defaultApp) {
   if (process.argv.length >= 2) {
     app.setAsDefaultProtocolClient(
-      ONEKEY_APP_DEEP_LINK_NAME,
+      UNIONKEY_APP_DEEP_LINK_NAME,
       process.execPath,
       // reassign args to argv[1]  ?
       [path.resolve(process.argv[1])],
     );
   }
 } else {
-  app.setAsDefaultProtocolClient(ONEKEY_APP_DEEP_LINK_NAME);
+  app.setAsDefaultProtocolClient(UNIONKEY_APP_DEEP_LINK_NAME);
 }
 if (!app.isDefaultProtocolClient(WALLET_CONNECT_DEEP_LINK_NAME)) {
   // Define custom protocol handler. Deep linking works on packaged versions of the application!
   app.setAsDefaultProtocolClient(WALLET_CONNECT_DEEP_LINK_NAME);
 }
 // also define `protocols` at packages/desktop/electron-builder.config.js
-if (!app.isDefaultProtocolClient(ONEKEY_APP_DEEP_LINK_NAME)) {
+if (!app.isDefaultProtocolClient(UNIONKEY_APP_DEEP_LINK_NAME)) {
   // Define custom protocol handler. Deep linking works on packaged versions of the application!
-  app.setAsDefaultProtocolClient(ONEKEY_APP_DEEP_LINK_NAME);
+  app.setAsDefaultProtocolClient(UNIONKEY_APP_DEEP_LINK_NAME);
 }
 
 if (isWin) {

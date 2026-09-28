@@ -9,7 +9,7 @@ index 304b87e..1ac7ba9 100644
 -  return dispatcher.useEffect(create, deps);
 +  var createWithLog = create;
 +  if (typeof localStorage !== 'undefined'
-+    && localStorage.getItem('@onekey_debug_useEffect_log')) {
++    && localStorage.getItem('@unionkey_debug_useEffect_log')) {
 +    createWithLog = () => {
 +      // let stack = '';
 +      // try{

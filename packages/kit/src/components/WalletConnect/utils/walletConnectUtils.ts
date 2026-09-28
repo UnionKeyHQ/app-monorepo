@@ -23,7 +23,7 @@ import {
 import { EXT_HTML_FILES } from '../../../utils/extUtils.getHtml';
 import { getTimeDurationMs } from '../../../utils/helper';
 import unlockUtils from '../../AppLock/unlockUtils';
-import { ONEKEY_APP_DEEP_LINK } from '../walletConnectConsts';
+import { UNIONKEY_APP_DEEP_LINK } from '../walletConnectConsts';
 
 import type { WalletService } from '../types';
 import type { ISessionStatusPro } from '../WalletConnectClientForDapp';
@@ -36,7 +36,7 @@ import type { IClientMeta } from '@walletconnect/types';
 
 let connectionRedirectUrl = '';
 if (platformEnv.isNative || platformEnv.isDesktop) {
-  connectionRedirectUrl = ONEKEY_APP_DEEP_LINK;
+  connectionRedirectUrl = UNIONKEY_APP_DEEP_LINK;
 } else if (platformEnv.isExtension) {
   connectionRedirectUrl = chrome.runtime.getURL(EXT_HTML_FILES.uiExpandTab);
 } else {
@@ -322,7 +322,7 @@ function isWalletConnectV2({ uri }: { uri: string }): boolean {
 }
 
 function buildUnionKeyWalletConnectDeepLinkUrl({ uri }: { uri: string }) {
-  return `${ONEKEY_APP_DEEP_LINK}/wc?uri=${encodeURIComponent(uri || '')}`;
+  return `${UNIONKEY_APP_DEEP_LINK}/wc?uri=${encodeURIComponent(uri || '')}`;
 }
 
 function isEvmNamespaceV2(namespace?: string) {

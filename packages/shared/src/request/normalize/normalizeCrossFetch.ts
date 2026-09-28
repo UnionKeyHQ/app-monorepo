@@ -63,7 +63,7 @@ export function normalizeCrossFetch({
   fetch: ICrossFetch;
 }): ICrossFetch {
   // @ts-ignore
-  if (fetch && fetch.isNormalizedByOneKey) {
+  if (fetch && fetch.isNormalizedByUnionKey) {
     return fetch;
   }
 
@@ -131,10 +131,10 @@ export function normalizeCrossFetch({
         .then((res) => res.clone())
     );
   };
-  newFetch.isNormalizedByOneKey = true;
+  newFetch.isNormalizedByUnionKey = true;
 
   // @ts-ignore
-  if (global.fetch && !global.fetch.isNormalizedByOneKey) {
+  if (global.fetch && !global.fetch.isNormalizedByUnionKey) {
     // **** for global instance of fetch
     global.fetch = newFetch;
   }

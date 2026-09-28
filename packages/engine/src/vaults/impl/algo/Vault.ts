@@ -18,7 +18,7 @@ import {
   InvalidTokenAddress,
   MimimumBalanceRequired,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   RecipientHasNotActived,
 } from '../../../errors';
 import {
@@ -129,7 +129,7 @@ export default class Vault extends VaultBase {
     );
 
     if (!token) {
-      throw new OneKeyInternalError(`Token not found: ${assetId || 'ALGO'}`);
+      throw new UnionKeyInternalError(`Token not found: ${assetId || 'ALGO'}`);
     }
 
     const suggestedParams = await this.getSuggestedParams();
@@ -679,7 +679,7 @@ export default class Vault extends VaultBase {
       );
       return sdk.mnemonicFromSeed(decrypt(password, encryptedPrivateKey));
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -775,7 +775,7 @@ export default class Vault extends VaultBase {
             assetId.toString(),
           );
           if (typeof token === 'undefined') {
-            throw new OneKeyInternalError('Failed to get token info.');
+            throw new UnionKeyInternalError('Failed to get token info.');
           }
 
           if (

@@ -1,16 +1,16 @@
 import type { ComponentProps, FC } from 'react';
 
 import { Text } from '@unionkeyhq/components';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 export const floorPriceSymbolMap: Record<string, string> = {
-  [OnekeyNetwork.eth]: 'ETH',
-  [OnekeyNetwork.optimism]: 'ETH',
-  [OnekeyNetwork.bsc]: 'BNB',
-  [OnekeyNetwork.polygon]: 'MATIC',
-  [OnekeyNetwork.arbitrum]: 'ETH',
-  [OnekeyNetwork.sol]: 'SOL',
-  [OnekeyNetwork.avalanche]: 'AVAX',
+  [UnionKeyNetwork.eth]: 'ETH',
+  [UnionKeyNetwork.optimism]: 'ETH',
+  [UnionKeyNetwork.bsc]: 'BNB',
+  [UnionKeyNetwork.polygon]: 'MATIC',
+  [UnionKeyNetwork.arbitrum]: 'ETH',
+  [UnionKeyNetwork.sol]: 'SOL',
+  [UnionKeyNetwork.avalanche]: 'AVAX',
 };
 type Props = {
   prefix?: string;

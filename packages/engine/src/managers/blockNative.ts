@@ -1,10 +1,10 @@
 import axios from 'axios';
 import BigNumber from 'bignumber.js';
 
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { SEPERATOR } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { NotImplemented, OneKeyInternalError } from '../errors';
+import { NotImplemented, UnionKeyInternalError } from '../errors';
 
 import type {
   BlockNativeGasAPIResponse,
@@ -12,7 +12,7 @@ import type {
 } from '../types/blockNative';
 
 const BLOCK_NATIVE_BASE_URL = 'https://api.blocknative.com';
-const SUPPORTED_CHAIN: string[] = [OnekeyNetwork.eth, OnekeyNetwork.polygon];
+const SUPPORTED_CHAIN: string[] = [UnionKeyNetwork.eth, UnionKeyNetwork.polygon];
 
 const getBlockNativeGasInfo = async ({
   networkId,
@@ -68,7 +68,7 @@ const getBlockNativeGasInfo = async ({
     };
   }
 
-  throw new OneKeyInternalError('block native bad response');
+  throw new UnionKeyInternalError('block native bad response');
 };
 
 export { getBlockNativeGasInfo };

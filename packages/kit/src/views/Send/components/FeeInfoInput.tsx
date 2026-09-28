@@ -382,8 +382,8 @@ function FeeInfoInputForConfirmLite({
       feeInfoError;
 
     let message: string | null = null;
-    if (className === 'OneKeyError') {
-      if (key !== 'onekey_error') {
+    if (className === 'UnionKeyError') {
+      if (key !== 'unionkey_error') {
         message = intl.formatMessage({
           // @ts-expect-error
           id: feeInfoError.key,

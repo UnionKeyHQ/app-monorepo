@@ -1,4 +1,4 @@
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { HardwareDisabledInfo, XmrDisabledInfo } from './XmrDisabledInfo';
 
@@ -8,13 +8,13 @@ export function NetWorkDisabledInfo({
   networkId?: string;
   accountId?: string;
 }) {
-  if (networkId === OnekeyNetwork.xmr) {
+  if (networkId === UnionKeyNetwork.xmr) {
     return <XmrDisabledInfo />;
   }
 
   if (
     networkId &&
-    [OnekeyNetwork.lightning, OnekeyNetwork.tlightning].includes(networkId)
+    [UnionKeyNetwork.lightning, UnionKeyNetwork.tlightning].includes(networkId)
   ) {
     return <HardwareDisabledInfo networkId={networkId} />;
   }

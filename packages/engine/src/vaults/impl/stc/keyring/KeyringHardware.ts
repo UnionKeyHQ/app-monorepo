@@ -9,7 +9,7 @@ import { convertDeviceError } from '@unionkeyhq/shared/src/device/deviceErrorUti
 import { COINTYPE_STC as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError } from '../../../../errors';
+import { UnionKeyHardwareError } from '../../../../errors';
 import { AccountType } from '../../../../types/account';
 import { KeyringHardwareBase } from '../../../keyring/KeyringHardwareBase';
 import { StarcoinTypes, utils } from '../sdk';
@@ -43,7 +43,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     } = unsignedTx;
 
     if (!senderPublicKey) {
-      throw new OneKeyHardwareError(Error('senderPublicKey is required'));
+      throw new UnionKeyHardwareError(Error('senderPublicKey is required'));
     }
 
     const { connectId, deviceId } = await this.getHardwareInfo();
@@ -98,7 +98,7 @@ export class KeyringHardware extends KeyringHardwareBase {
           );
         } catch (error: any) {
           debugLogger.common.error(error);
-          throw new OneKeyHardwareError(error);
+          throw new UnionKeyHardwareError(error);
         }
 
         if (!response.success) {
@@ -145,7 +145,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         });
       } catch (error: any) {
         debugLogger.common.error(error);
-        throw new OneKeyHardwareError(error);
+        throw new UnionKeyHardwareError(error);
       }
 
       if (!response.success) {
@@ -170,7 +170,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
     if (!addressesResponse.success) {
       debugLogger.common.error(addressesResponse.payload);

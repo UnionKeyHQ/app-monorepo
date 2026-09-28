@@ -23,7 +23,7 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   PendingQueueTooLong,
 } from '../../../errors';
 import { Verifier, extractResponseError } from '../../../proxy';
@@ -131,7 +131,7 @@ export default class Vault extends VaultBase {
       } as IDecodedTxLegacy;
     } else {
       // shouldn't happen.
-      throw new OneKeyInternalError('Incorrect decodedTx.');
+      throw new UnionKeyInternalError('Incorrect decodedTx.');
     }
 
     return Promise.resolve(result);
@@ -179,7 +179,7 @@ export default class Vault extends VaultBase {
             tokenAddress,
           );
           if (typeof token === 'undefined') {
-            throw new OneKeyInternalError('Failed to get token info.');
+            throw new UnionKeyInternalError('Failed to get token info.');
           }
           actionKey = 'tokenTransfer';
           actionType = IDecodedTxActionType.TOKEN_TRANSFER;
@@ -263,7 +263,7 @@ export default class Vault extends VaultBase {
         tokenAddress,
       );
       if (typeof token === 'undefined') {
-        throw new OneKeyInternalError('Failed to get token info.');
+        throw new UnionKeyInternalError('Failed to get token info.');
       }
       return Promise.resolve({
         from,
@@ -464,7 +464,7 @@ export default class Vault extends VaultBase {
         // Native STC transfer, give a default limit.
         limit = DEFAULT_GAS_LIMIT_NATIVE_TRANSFER;
       } else {
-        throw new OneKeyInternalError('', 'msg__broadcast_tx_Insufficient_fee');
+        throw new UnionKeyInternalError('', 'msg__broadcast_tx_Insufficient_fee');
       }
     }
 
@@ -493,10 +493,10 @@ export default class Vault extends VaultBase {
   }): Promise<IEncodedTxSTC> {
     const { price, limit } = params.feeInfoValue;
     if (typeof price !== 'undefined' && typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
     const network = await this.getNetwork();
 
@@ -520,7 +520,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -590,7 +590,7 @@ export default class Vault extends VaultBase {
                 tokenAddress,
               );
               if (typeof token === 'undefined') {
-                throw new OneKeyInternalError('Failed to get token info.');
+                throw new UnionKeyInternalError('Failed to get token info.');
               }
             }
 

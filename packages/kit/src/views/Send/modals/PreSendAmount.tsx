@@ -28,7 +28,7 @@ import {
 } from '@unionkeyhq/components';
 import { shortenAddress } from '@unionkeyhq/components/src/utils';
 import { getClipboard } from '@unionkeyhq/components/src/utils/ClipboardUtils';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isLightningNetworkByNetworkId } from '@unionkeyhq/shared/src/engine/engineConsts';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
@@ -339,7 +339,7 @@ function PreSendAmount() {
   );
 
   const shouldShowFrozenBalance = useMemo(() => {
-    if (network?.settings.isBtcForkChain || network?.id === OnekeyNetwork.sol) {
+    if (network?.settings.isBtcForkChain || network?.id === UnionKeyNetwork.sol) {
       return false;
     }
     return new BigNumber(frozenBalance ?? '0').isGreaterThan(0);

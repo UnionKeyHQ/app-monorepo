@@ -155,7 +155,7 @@ export function extractResponseError(e: unknown): unknown {
     }
   }
   // Otherwise, throw the original error out.
-  // TODO: see whether to wrap it into a gerinic OneKeyError.
+  // TODO: see whether to wrap it into a gerinic UnionKeyError.
   return e;
 }
 

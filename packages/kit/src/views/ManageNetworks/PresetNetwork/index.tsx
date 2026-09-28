@@ -17,7 +17,7 @@ import {
   useForm,
   useIsVerticalLayout,
 } from '@unionkeyhq/components';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useDebounce } from '../../../hooks';
@@ -66,7 +66,7 @@ function getColor(value: number) {
 
 async function measure(
   url: string,
-  networkId: string = OnekeyNetwork.eth,
+  networkId: string = UnionKeyNetwork.eth,
 ): Promise<number> {
   const { responseTime } =
     await backgroundApiProxy.serviceNetwork.getRPCEndpointStatus(

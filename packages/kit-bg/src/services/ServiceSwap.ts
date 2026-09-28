@@ -68,7 +68,7 @@ import {
   backgroundMethod,
   bindThis,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isLightningNetworkByNetworkId } from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   AppEventBusNames,
@@ -131,7 +131,7 @@ export default class ServiceSwap extends ServiceBase {
       chainId: '1',
     } as ServerToken;
 
-    const network = await engine.getNetwork(OnekeyNetwork.eth);
+    const network = await engine.getNetwork(UnionKeyNetwork.eth);
     const nativeToken = await engine.getNativeTokenInfo(network.id);
     const inputToken = appSelector((s) => s.swap.inputToken);
     if (nativeToken && !inputToken) {

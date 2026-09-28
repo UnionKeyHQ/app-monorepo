@@ -9,15 +9,15 @@ import type WebView from 'react-native-webview';
 
 declare const self: ServiceWorkerGlobalScope;
 
-type IWindowOneKeyHub = {
+type IWindowUnionKeyHub = {
   $private: ProviderPrivate;
 };
 declare global {
   // eslint-disable-next-line
-  // var onekey: WindowOneKey;
+  // var onekey: WindowUnionKey;
 
   var $appIsReduxReady: boolean;
-  var $onekey: IWindowOneKeyHub;
+  var $onekey: IWindowUnionKeyHub;
   var $backgroundApiProxy: IBackgroundApi;
   var $backgroundApi: IBackgroundApi;
 
@@ -34,9 +34,9 @@ declare global {
   var $$localforage: any;
   var $$navigationActions: any;
   var $$wcTransports: any;
-  var $$onekeyDisabledSetTimeout: boolean | undefined;
-  var $$onekeyDisabledSetInterval: boolean | undefined;
-  var $$onekeyPerfTrace:
+  var $$unionKeyDisabledSetTimeout: boolean | undefined;
+  var $$unionKeyDisabledSetInterval: boolean | undefined;
+  var $$unionKeyPerfTrace:
     | {
         log: (options: { name: string; payload?: any }) => void;
         timeline: Array<{
@@ -56,18 +56,18 @@ declare global {
     // All website
     ethereum: any;
     web3: any;
-    $onekey: IWindowOneKeyHub;
+    $onekey: IWindowUnionKeyHub;
 
     // Native App webview content
     ReactNativeWebView: WebView;
 
     // Desktop internal (main,renderer)
-    // ONEKEY_DESKTOP_GLOBALS: Record<any, any>;
+    UNIONKEY_DESKTOP_GLOBALS: Record<string, any>;
 
     // Ext internal (ui,background,contentScript)
     extJsBridgeUiToBg: JsBridgeBase;
     extJsBridgeOffscreenToBg: JsBridgeBase;
-    ONEKEY_DESKTOP_DEEP_LINKS: any[];
+    UNIONKEY_DESKTOP_DEEP_LINKS: any[];
   }
 }
 

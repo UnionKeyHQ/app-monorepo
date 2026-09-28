@@ -31,7 +31,7 @@ const settings: IVaultSettings = Object.freeze({
       template: `m/44'/${COINTYPE_SOL}'/${INDEX_PLACEHOLDER}'/0'`,
       coinType: COINTYPE_SOL,
       label: { id: 'form__bip44_standard' },
-      desc: 'OneKey, Phantom, Sollet',
+      desc: 'UnionKey, Phantom, Sollet',
       recommended: true,
     },
     ledgerLive: {

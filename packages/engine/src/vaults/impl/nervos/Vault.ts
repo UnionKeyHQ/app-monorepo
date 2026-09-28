@@ -16,7 +16,7 @@ import {
   ChangeLessThanMinInputCapacityError,
   InvalidAddress,
   MinimumTransferAmountError,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '@unionkeyhq/engine/src/errors';
 import type { DBSimpleAccount } from '@unionkeyhq/engine/src/types/account';
 import type { PartialTokenInfo } from '@unionkeyhq/engine/src/types/provider';
@@ -277,7 +277,7 @@ export default class Vault extends VaultBase {
         tokenAddress,
       );
       if (!token) {
-        throw new OneKeyInternalError('Invalid token address');
+        throw new UnionKeyInternalError('Invalid token address');
       }
       amountValue = new BigNumber(amount).shiftedBy(token.decimals).toFixed();
       // token transfer
@@ -455,7 +455,7 @@ export default class Vault extends VaultBase {
     ) {
       debugLogger.common.error('Fee is too high, transaction: ', txs);
 
-      throw new OneKeyInternalError('Fee is too high');
+      throw new UnionKeyInternalError('Fee is too high');
     }
 
     const ret = {
@@ -500,7 +500,7 @@ export default class Vault extends VaultBase {
       ) ?? outputs[0];
 
     if (!toAddressOutput) {
-      throw new OneKeyInternalError('No to address output found');
+      throw new UnionKeyInternalError('No to address output found');
     }
 
     const toAddress = scriptToAddress(toAddressOutput.cellOutput.lock, {
@@ -680,7 +680,7 @@ export default class Vault extends VaultBase {
         error || {};
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       const errorMessage = `${errorCode ?? ''} ${message}`;
-      throw new OneKeyInternalError(errorMessage);
+      throw new UnionKeyInternalError(errorMessage);
     }
   }
 

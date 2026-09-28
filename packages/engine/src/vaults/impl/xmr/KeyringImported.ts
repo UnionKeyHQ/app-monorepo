@@ -1,7 +1,7 @@
 import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
 import { COINTYPE_XMR as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { AccountType } from '../../../types/account';
 import { KeyringImportedBase } from '../../keyring/KeyringImportedBase';
 
@@ -34,7 +34,7 @@ export class KeyringImported extends KeyringImportedBase {
       });
 
     if (!publicSpendKey || !publicViewKey) {
-      throw new OneKeyInternalError('Unable to get public spend/view key.');
+      throw new UnionKeyInternalError('Unable to get public spend/view key.');
     }
 
     const address = moneroApi.pubKeysToAddress(

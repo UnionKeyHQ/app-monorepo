@@ -16,7 +16,7 @@ import {
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import { useActiveWalletAccount } from '@unionkeyhq/kit/src/hooks';
 import { getDeviceTypeByDeviceId } from '@unionkeyhq/kit/src/utils/hardware';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import FormChainSelector from '../../components/Form/ChainSelector';
 import WalletAvatar from '../../components/WalletSelector/WalletAvatar';
@@ -115,7 +115,7 @@ const PreviewSend: FC<PreviewSendProps> = () => {
                   <WalletAvatar
                     walletImage={wallet?.type}
                     hwWalletType={
-                      (wallet?.deviceType as IOneKeyDeviceType) ||
+                      (wallet?.deviceType as IUnionKeyDeviceType) ||
                       getDeviceTypeByDeviceId(wallet?.associatedDevice)
                     }
                     avatar={wallet?.avatar}

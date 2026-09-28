@@ -52,15 +52,15 @@ export type ModalRoutesParams = {
   [ModalRoutes.SubmitRequest]: NavigatorScreenParams<SubModalRoutesParams.SubmitRequestModalRoutesParams>;
   [ModalRoutes.HistoryRequest]: NavigatorScreenParams<SubModalRoutesParams.HistoryRequestModalRoutesParams>;
   [ModalRoutes.Send]: NavigatorScreenParams<SubModalRoutesParams.SendRoutesParams>;
-  [ModalRoutes.OnekeyLiteReset]: NavigatorScreenParams<SubModalRoutesParams.OnekeyLiteResetRoutesParams>;
-  [ModalRoutes.OnekeyLiteChangePinInputPin]: NavigatorScreenParams<SubModalRoutesParams.OnekeyLiteChangePinRoutesParams>;
+  [ModalRoutes.UnionKeyLiteReset]: NavigatorScreenParams<SubModalRoutesParams.UnionKeyLiteResetRoutesParams>;
+  [ModalRoutes.UnionKeyLiteChangePinInputPin]: NavigatorScreenParams<SubModalRoutesParams.UnionKeyLiteChangePinRoutesParams>;
   [ModalRoutes.DappConnectionModal]: NavigatorScreenParams<SubModalRoutesParams.DappConnectionRoutesParams>;
   [ModalRoutes.Password]: NavigatorScreenParams<SubModalRoutesParams.PasswordRoutesParams>;
   [ModalRoutes.ManageToken]: NavigatorScreenParams<SubModalRoutesParams.ManageTokenRoutesParams>;
   [ModalRoutes.Collectibles]: NavigatorScreenParams<SubModalRoutesParams.CollectiblesRoutesParams>;
   [ModalRoutes.EnableLocalAuthentication]: NavigatorScreenParams<SubModalRoutesParams.EnableLocalAuthenticationRoutesParams>;
   [ModalRoutes.ManageNetwork]: NavigatorScreenParams<SubModalRoutesParams.ManageNetworkRoutesParams>;
-  [ModalRoutes.OnekeyHardware]: NavigatorScreenParams<SubModalRoutesParams.OnekeyHardwareRoutesParams>;
+  [ModalRoutes.UnionKeyHardware]: NavigatorScreenParams<SubModalRoutesParams.UnionKeyHardwareRoutesParams>;
   [ModalRoutes.HardwareUpdate]: NavigatorScreenParams<SubModalRoutesParams.HardwareUpdateRoutesParams>;
   [ModalRoutes.Discover]: NavigatorScreenParams<SubModalRoutesParams.DiscoverRoutesParams>;
   [ModalRoutes.Swap]: NavigatorScreenParams<SubModalRoutesParams.SwapRoutesParams>;
@@ -134,7 +134,7 @@ export type HomeRoutesParams = {
     accountId?: string;
     networkId?: string;
   };
-  [HomeRoutes.ScreenOnekeyLiteDetail]: undefined;
+  [HomeRoutes.ScreenUnionKeyLiteDetail]: undefined;
   [HomeRoutes.ExploreScreen]: {
     onItemSelect?: (item: DAppItemType) => Promise<boolean>;
   };

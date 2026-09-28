@@ -1,7 +1,7 @@
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { CosmwasmQuery } from './CosmwasmQuery';
-import { OneKeyQuery } from './OneKeyQuery';
+import { UnionKeyQuery } from './UnionKeyQuery';
 import { SecretwasmQuery } from './SecretwasmQuery';
 
 import type { AxiosInstance } from 'axios';
@@ -51,12 +51,12 @@ class QueryRegistry {
 
 export const queryRegistry = new QueryRegistry();
 const cosmwasmQuery = new CosmwasmQuery();
-queryRegistry.register(OnekeyNetwork.juno, cosmwasmQuery);
-// queryRegistry.register(OnekeyNetwork.terra, cosmwasmQuery); // terra2
-queryRegistry.register(OnekeyNetwork.osmosis, cosmwasmQuery);
-queryRegistry.register(OnekeyNetwork.secretnetwork, new SecretwasmQuery());
+queryRegistry.register(UnionKeyNetwork.juno, cosmwasmQuery);
+// queryRegistry.register(UnionKeyNetwork.terra, cosmwasmQuery); // terra2
+queryRegistry.register(UnionKeyNetwork.osmosis, cosmwasmQuery);
+queryRegistry.register(UnionKeyNetwork.secretnetwork, new SecretwasmQuery());
 
-const oneKeyQuery = new OneKeyQuery();
-queryRegistry.register(OnekeyNetwork.cosmoshub, oneKeyQuery);
-queryRegistry.register(OnekeyNetwork.akash, oneKeyQuery);
-queryRegistry.register(OnekeyNetwork.fetch, oneKeyQuery);
+const unionKeyQuery = new UnionKeyQuery();
+queryRegistry.register(UnionKeyNetwork.cosmoshub, unionKeyQuery);
+queryRegistry.register(UnionKeyNetwork.akash, unionKeyQuery);
+queryRegistry.register(UnionKeyNetwork.fetch, unionKeyQuery);

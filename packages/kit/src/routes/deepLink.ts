@@ -9,8 +9,8 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import walletConnectUtils from '../components/WalletConnect/utils/walletConnectUtils';
 import {
-  ONEKEY_APP_DEEP_LINK,
-  ONEKEY_APP_DEEP_LINK_NAME,
+  UNIONKEY_APP_DEEP_LINK,
+  UNIONKEY_APP_DEEP_LINK_NAME,
   WALLET_CONNECT_DEEP_LINK,
   WALLET_CONNECT_DEEP_LINK_NAME,
 } from '../components/WalletConnect/walletConnectConsts';
@@ -64,8 +64,8 @@ const processDeepLinkUrl = memoizee(
       //        unionkey-wallet://wc
       // unionkey-wallet://wc?uri=wc%3Afa75a793-a3fb-48e4-8629-8f1f034ec6eb%401%3Fbridge%3Dhttps%253A%252F%252Fy.bridge.walletconnect.org%26key%3D9e97f71a32b4e629cb60106295dca54d733d124da480b4031d0d848b678fd610/
       if (
-        scheme === ONEKEY_APP_DEEP_LINK ||
-        scheme === ONEKEY_APP_DEEP_LINK_NAME
+        scheme === UNIONKEY_APP_DEEP_LINK ||
+        scheme === UNIONKEY_APP_DEEP_LINK_NAME
       ) {
         if (
           (path === WALLET_CONNECT_DEEP_LINK_NAME && !hostname) ||

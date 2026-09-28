@@ -54,7 +54,7 @@ export enum HomeRoutes {
   NFTPNLScreen = 'NFTPNLScreen',
 
   // ****  Me Tab
-  ScreenOnekeyLiteDetail = 'OnekeyLiteDetailScreen',
+  ScreenUnionKeyLiteDetail = 'UnionKeyLiteDetailScreen',
   Protected = 'Protected',
   WalletSwitch = 'WalletSwitch',
   VolumeHaptic = 'VolumeHaptic',
@@ -168,15 +168,15 @@ export enum ModalRoutes {
   SubmitRequest = 'SubmitRequest',
   HistoryRequest = 'HistoryRequest',
   TransactionDetail = 'TransactionDetail',
-  OnekeyLiteReset = 'OnekeyLiteReset',
-  OnekeyLiteChangePinInputPin = 'OnekeyLiteChangePinInputPin',
+  UnionKeyLiteReset = 'UnionKeyLiteReset',
+  UnionKeyLiteChangePinInputPin = 'UnionKeyLiteChangePinInputPin',
   DappConnectionModal = 'DappConnectionModal',
   Password = 'Password',
   ManageToken = 'ManageToken',
   Collectibles = 'Collectibles',
   EnableLocalAuthentication = 'EnableLocalAuthentication',
   ManageNetwork = 'ManageNetwork',
-  OnekeyHardware = 'OnekeyHardware',
+  UnionKeyHardware = 'UnionKeyHardware',
   HardwareUpdate = 'HardwareUpdate',
   Discover = 'Discover',
   Swap = 'Swap',
@@ -262,12 +262,12 @@ export enum CreateWalletModalRoutes {
   CreateWatchedAccount = 'CreateWatchedAccount',
   CreateImportedAccount = 'CreateImportedAccount',
 
-  // Onekey Lite backup
-  OnekeyLiteRestorePinCodeVerifyModal = 'OnekeyLiteRestorePinCodeVerifyModal',
-  OnekeyLiteRestoreModal = 'OnekeyLiteRestoreModal',
-  OnekeyLiteRestoreDoneModal = 'OnekeyLiteRestoreDoneModal',
-  OnekeyLiteBackupPinCodeVerifyModal = 'OnekeyLiteBackupPinCodeVerifyModal',
-  OnekeyLiteBackupModal = 'OnekeyLiteBackupModal',
+  // UnionKey Lite backup
+  UnionKeyLiteRestorePinCodeVerifyModal = 'UnionKeyLiteRestorePinCodeVerifyModal',
+  UnionKeyLiteRestoreModal = 'UnionKeyLiteRestoreModal',
+  UnionKeyLiteRestoreDoneModal = 'UnionKeyLiteRestoreDoneModal',
+  UnionKeyLiteBackupPinCodeVerifyModal = 'UnionKeyLiteBackupPinCodeVerifyModal',
+  UnionKeyLiteBackupModal = 'UnionKeyLiteBackupModal',
 
   AddExistingWalletModal = 'AddExistingWalletModal',
   AddImportedOrWatchingAccountModal = 'AddImportedOrWatchingAccountModal',
@@ -305,26 +305,26 @@ export enum BackupWalletModalRoutes {
   BackupWalletMnemonicModal = 'BackupWalletMnemonicModal',
 }
 
-export enum OnekeyHardwareModalRoutes {
-  OnekeyHardwareDetailsModal = 'OnekeyHardwareDetailsModal',
-  OnekeyHardwareVerifyModal = 'OnekeyHardwareVerifyModal',
-  OnekeyHardwareConnectModal = 'OnekeyHardwareConnectModal',
-  OnekeyHardwarePinCodeModal = 'OnekeyHardwarePinCodeModal',
-  OnekeyHardwareConfirmModal = 'OnekeyHardwareConfirmModal',
-  OnekeyDeviceWalletNameModal = 'OnekeyDeviceWalletNameModal',
-  OnekeyHardwareDeviceNameModal = 'OnekeyHardwareDeviceNameModal',
-  OnekeyHardwareHomeScreenModal = 'OnekeyHardwareHomeScreenModal',
+export enum UnionKeyHardwareModalRoutes {
+  UnionKeyHardwareDetailsModal = 'UnionKeyHardwareDetailsModal',
+  UnionKeyHardwareVerifyModal = 'UnionKeyHardwareVerifyModal',
+  UnionKeyHardwareConnectModal = 'UnionKeyHardwareConnectModal',
+  UnionKeyHardwarePinCodeModal = 'UnionKeyHardwarePinCodeModal',
+  UnionKeyHardwareConfirmModal = 'UnionKeyHardwareConfirmModal',
+  UnionKeyDeviceWalletNameModal = 'UnionKeyDeviceWalletNameModal',
+  UnionKeyHardwareDeviceNameModal = 'UnionKeyHardwareDeviceNameModal',
+  UnionKeyHardwareHomeScreenModal = 'UnionKeyHardwareHomeScreenModal',
 }
 
-export enum OnekeyLiteChangePinModalRoutes {
-  OnekeyLiteChangePinInputPinModal = 'OnekeyLiteChangePinInputPinModal',
-  OnekeyLiteChangePinSetModal = 'OnekeyLiteChangePinSetModal',
-  OnekeyLiteChangePinRepeatModal = 'OnekeyLiteChangePinRepeatModal',
-  OnekeyLiteChangePinModal = 'OnekeyLiteChangePinModal',
+export enum UnionKeyLiteChangePinModalRoutes {
+  UnionKeyLiteChangePinInputPinModal = 'UnionKeyLiteChangePinInputPinModal',
+  UnionKeyLiteChangePinSetModal = 'UnionKeyLiteChangePinSetModal',
+  UnionKeyLiteChangePinRepeatModal = 'UnionKeyLiteChangePinRepeatModal',
+  UnionKeyLiteChangePinModal = 'UnionKeyLiteChangePinModal',
 }
 
-export enum OnekeyLiteResetModalRoutes {
-  OnekeyLiteResetModal = 'OnekeyLiteResetModal',
+export enum UnionKeyLiteResetModalRoutes {
+  UnionKeyLiteResetModal = 'UnionKeyLiteResetModal',
 }
 
 export enum HardwareUpdateModalRoutes {

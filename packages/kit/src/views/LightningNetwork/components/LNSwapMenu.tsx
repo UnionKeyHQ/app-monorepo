@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
 import type { ICON_NAMES } from '@unionkeyhq/components';
 import { Box, IconButton, Typography } from '@unionkeyhq/components';
 import BaseMenu from '@unionkeyhq/kit/src/views/Overlay/BaseMenu';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isLightningNetworkByNetworkId } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
@@ -35,19 +35,19 @@ function LNSwapMenu({
       if (!isLightningNetwork) {
         throw new Error('should be lightning network');
       }
-      const isTestnet = networkId === OnekeyNetwork.tlightning;
+      const isTestnet = networkId === UnionKeyNetwork.tlightning;
       let inputNetworkId: string;
       let outputNetworkId: string;
       if (isWithdraw) {
         inputNetworkId = isTestnet
-          ? OnekeyNetwork.tlightning
-          : OnekeyNetwork.lightning;
-        outputNetworkId = isTestnet ? OnekeyNetwork.tbtc : OnekeyNetwork.btc;
+          ? UnionKeyNetwork.tlightning
+          : UnionKeyNetwork.lightning;
+        outputNetworkId = isTestnet ? UnionKeyNetwork.tbtc : UnionKeyNetwork.btc;
       } else {
-        inputNetworkId = isTestnet ? OnekeyNetwork.tbtc : OnekeyNetwork.btc;
+        inputNetworkId = isTestnet ? UnionKeyNetwork.tbtc : UnionKeyNetwork.btc;
         outputNetworkId = isTestnet
-          ? OnekeyNetwork.tlightning
-          : OnekeyNetwork.lightning;
+          ? UnionKeyNetwork.tlightning
+          : UnionKeyNetwork.lightning;
       }
       await backgroundApiProxy.serviceSwap.setNativInputAndOutputToken(
         inputNetworkId,

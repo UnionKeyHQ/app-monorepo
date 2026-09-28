@@ -39,7 +39,7 @@ import {
   RootRoutes,
   TabRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   IMPL_EVM,
   isBTCNetwork,
@@ -194,7 +194,7 @@ const FlatListGasPriceItem = ({ item, index }: FlatListItemProps) => {
   const isVertical = useIsVerticalLayout();
   const { networkId } = useActiveWalletAccount();
   const { network } = useNetwork({
-    networkId: isAllNetworks(networkId) ? OnekeyNetwork.eth : networkId,
+    networkId: isAllNetworks(networkId) ? UnionKeyNetwork.eth : networkId,
   });
   const price = useNetworkPrices(network?.id);
   const appNavigation = useAppNavigation();
@@ -516,7 +516,7 @@ const ToolsPage: FC = () => {
         if (selectedNetwork?.id) {
           const activeNetwokId = supportedNetworks.includes(selectedNetwork?.id)
             ? selectedNetwork?.id
-            : OnekeyNetwork.eth;
+            : UnionKeyNetwork.eth;
           appNavigation.navigate(RootRoutes.Modal, {
             screen: ModalRoutes.GasPanel,
             params: {

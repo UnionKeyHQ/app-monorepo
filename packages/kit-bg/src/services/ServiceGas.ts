@@ -9,7 +9,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import ServiceBase from './ServiceBase';
 
@@ -48,7 +48,7 @@ class ServiceGas extends ServiceBase {
       } else {
         value = item.price || Number(item.baseFee).toFixed(0) || '';
       }
-      if (networkId === OnekeyNetwork.btc) {
+      if (networkId === UnionKeyNetwork.btc) {
         const network = await engine.getNetwork(networkId);
         value = `${new BigNumber(value)
           .shiftedBy(network?.feeDecimals ?? 8)

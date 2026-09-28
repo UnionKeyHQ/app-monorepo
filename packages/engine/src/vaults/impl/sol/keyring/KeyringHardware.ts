@@ -11,7 +11,7 @@ import {
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { NotImplemented, OneKeyHardwareError } from '../../../../errors';
+import { NotImplemented, UnionKeyHardwareError } from '../../../../errors';
 import { getAccountNameInfoByTemplate } from '../../../../managers/impl';
 import { AccountType } from '../../../../types/account';
 import { KeyringHardwareBase } from '../../../keyring/KeyringHardwareBase';
@@ -90,7 +90,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
     if (!addressesResponse.success) {
       debugLogger.common.error(addressesResponse.payload);

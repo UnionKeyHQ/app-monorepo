@@ -23,7 +23,7 @@ import type { NFTAsset } from '@unionkeyhq/engine/src/types/nft';
 import { WALLET_TYPE_WATCHING } from '@unionkeyhq/engine/src/types/wallet';
 import { generateUploadNFTParams } from '@unionkeyhq/kit/src/utils/hardware/nftUtils';
 import NFTDetailMenu from '@unionkeyhq/kit/src/views/Overlay/NFTDetailMenu';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import backgroundApiProxy from '../../../../../../background/instance/backgroundApiProxy';
@@ -81,7 +81,7 @@ function SOLAssetDetailContent({
   useEffect(() => {
     (async () => {
       if (network?.id) {
-        if (network.id === OnekeyNetwork.sol) {
+        if (network.id === UnionKeyNetwork.sol) {
           const data = (await serviceNFT.fetchAsset({
             chain: network.id,
             tokenId: outerAsset.tokenAddress as string,

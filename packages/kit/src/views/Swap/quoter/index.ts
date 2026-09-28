@@ -7,7 +7,7 @@ import type { IEncodedTxAptos } from '@unionkeyhq/engine/src/vaults/impl/apt/typ
 import type { IEncodedTxBtc } from '@unionkeyhq/engine/src/vaults/impl/btc/types';
 import type { IEncodedTxEvm } from '@unionkeyhq/engine/src/vaults/impl/evm/Vault';
 import { IDecodedTxStatus } from '@unionkeyhq/engine/src/vaults/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   IMPL_APTOS,
   IMPL_EVM,
@@ -259,10 +259,10 @@ export class SwapQuoter {
     if (
       !tokenIn.tokenIdOnNetwork &&
       [
-        OnekeyNetwork.btc,
-        OnekeyNetwork.doge,
-        OnekeyNetwork.ltc,
-        OnekeyNetwork.bch,
+        UnionKeyNetwork.btc,
+        UnionKeyNetwork.doge,
+        UnionKeyNetwork.ltc,
+        UnionKeyNetwork.bch,
       ].includes(networkIn.id)
     ) {
       result = await backgroundApiProxy.engine.buildEncodedTxFromTransfer({
@@ -290,7 +290,7 @@ export class SwapQuoter {
     }
     if (
       !tokenIn.tokenIdOnNetwork &&
-      [OnekeyNetwork.cosmoshub].includes(networkIn.id)
+      [UnionKeyNetwork.cosmoshub].includes(networkIn.id)
     ) {
       result = await backgroundApiProxy.engine.buildEncodedTxFromTransfer({
         networkId: networkIn.id,

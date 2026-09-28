@@ -179,7 +179,7 @@ class ProviderApiPrivate extends ProviderApiBase {
     }
     return {
       enableExtContentScriptReloadButton: showContentScriptReloadButton,
-      platform: process.env.ONEKEY_PLATFORM,
+      platform: process.env.UNIONKEY_PLATFORM,
       version: process.env.VERSION,
       buildNumber: process.env.BUILD_NUMBER,
       disableExt,
@@ -238,7 +238,7 @@ class ProviderApiPrivate extends ProviderApiBase {
         // ** or you can update logger settings in Dapp console directly
         //    ** (all logger settings in Wallet should be disabled first)
         /*
-        window.localStorage.setItem('$$ONEKEY_DEBUG_LOGGER', 'jsBridge,ethereum');
+        window.localStorage.setItem('$$UNIONKEY_DEBUG_LOGGER', 'jsBridge,ethereum');
         window.location.reload();
          */
       },

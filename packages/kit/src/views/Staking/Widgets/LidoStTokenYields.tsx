@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 import { Box, Typography } from '@unionkeyhq/components';
 import Pressable from '@unionkeyhq/components/src/Pressable/Pressable';
 import type { Token } from '@unionkeyhq/engine/src/types/token';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import {
   useActiveWalletAccount,
@@ -44,7 +44,7 @@ const LidoStTokenYieldsContent: FC<LidoStTokenYieldsContentProps> = ({
   const lidoApr = useMemo(() => {
     if (!ethStakingApr) return undefined;
     const items =
-      networkId === OnekeyNetwork.eth
+      networkId === UnionKeyNetwork.eth
         ? ethStakingApr.mainnet
         : ethStakingApr.testnet;
     return `${formatAmount(items.lido, 2)}%`;

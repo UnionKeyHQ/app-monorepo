@@ -13,7 +13,7 @@ import {
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import * as errors from './errors';
-import { OneKeyValidatorError, OneKeyValidatorTip } from './errors';
+import { UnionKeyValidatorError, UnionKeyValidatorTip } from './errors';
 import * as limits from './limits';
 import { decodePassword } from './secret/encryptors/aes256';
 import { UserInputCategory } from './types/credential';
@@ -360,7 +360,7 @@ class Validators {
     try {
       const v = typeof value === 'string' ? new BigNumber(value) : value;
       if (!v || v.isNaN() || v.isLessThan(new BigNumber(minLimit))) {
-        throw new OneKeyValidatorError(
+        throw new UnionKeyValidatorError(
           'form__gas_limit_invalid_min',
           minI18nData,
         );
@@ -371,16 +371,16 @@ class Validators {
           new BigNumber(highValue).times(FEE_LIMIT_HIGH_VALUE_TIMES),
         )
       ) {
-        throw new OneKeyValidatorTip('form__gas_limit_invalid_too_much');
+        throw new UnionKeyValidatorTip('form__gas_limit_invalid_too_much');
       }
     } catch (e) {
       if (
-        e instanceof OneKeyValidatorError ||
-        e instanceof OneKeyValidatorTip
+        e instanceof UnionKeyValidatorError ||
+        e instanceof UnionKeyValidatorTip
       ) {
         throw e;
       }
-      throw new OneKeyValidatorError(
+      throw new UnionKeyValidatorError(
         'form__gas_limit_invalid_min',
         minI18nData,
       );
@@ -417,18 +417,18 @@ class Validators {
 
     const valueBN = new BigNumber(value);
     if (!minGasPrice && valueBN.isLessThanOrEqualTo(0)) {
-      throw new OneKeyValidatorError('form__gas_price_invalid_min_str', {
+      throw new UnionKeyValidatorError('form__gas_price_invalid_min_str', {
         0: 0,
       });
     }
 
     if (!valueBN || valueBN.isNaN() || valueBN.isLessThan(minAmount)) {
-      throw new OneKeyValidatorError('form__gas_price_invalid_min_str', {
+      throw new UnionKeyValidatorError('form__gas_price_invalid_min_str', {
         0: minAmount,
       });
     }
     if (lowValue && valueBN.isLessThan(lowValue)) {
-      throw new OneKeyValidatorTip('form__gas_price_invalid_too_low', {});
+      throw new UnionKeyValidatorTip('form__gas_price_invalid_too_low', {});
     }
     if (
       highValue &&
@@ -436,7 +436,7 @@ class Validators {
         new BigNumber(highValue).times(FEE_PRICE_HIGH_VALUE_TIMES),
       )
     ) {
-      throw new OneKeyValidatorTip('form__gas_price_invalid_too_much', {});
+      throw new UnionKeyValidatorTip('form__gas_price_invalid_too_much', {});
     }
 
     return Promise.resolve();
@@ -468,7 +468,7 @@ class Validators {
         v.isLessThanOrEqualTo('0') ||
         v.isLessThan(minAmount)
       ) {
-        throw new OneKeyValidatorError('form__max_fee_invalid_too_low', {
+        throw new UnionKeyValidatorError('form__max_fee_invalid_too_low', {
           0: minAmount,
         });
       }
@@ -477,7 +477,7 @@ class Validators {
           ? new BigNumber(maxPriorityFee)
           : maxPriorityFee;
       if (v.isLessThan(pv)) {
-        throw new OneKeyValidatorError(
+        throw new UnionKeyValidatorError(
           'msg__custom_fee_warning_max_fee_is_lower_than_priority_fee',
         );
       }
@@ -485,26 +485,26 @@ class Validators {
       if (highValue) {
         const networkMax = new BigNumber(highValue);
         if (v.isGreaterThan(networkMax.times(FEE_PRICE_HIGH_VALUE_TIMES))) {
-          throw new OneKeyValidatorTip(
+          throw new UnionKeyValidatorTip(
             'msg__custom_fee_warning_max_fee_is_high',
           );
         }
       }
       if (lowValue) {
         if (v.isLessThan(lowValue)) {
-          throw new OneKeyValidatorTip(
+          throw new UnionKeyValidatorTip(
             'msg__custom_fee_warning_max_fee_is_low',
           );
         }
       }
     } catch (e) {
       if (
-        e instanceof OneKeyValidatorError ||
-        e instanceof OneKeyValidatorTip
+        e instanceof UnionKeyValidatorError ||
+        e instanceof UnionKeyValidatorTip
       ) {
         throw e;
       }
-      throw new OneKeyValidatorError('form__max_fee_invalid_too_low');
+      throw new UnionKeyValidatorError('form__max_fee_invalid_too_low');
     }
     return Promise.resolve();
   }
@@ -533,13 +533,13 @@ class Validators {
         v.isLessThanOrEqualTo('0') ||
         v.isLessThan(minAmount)
       ) {
-        throw new OneKeyValidatorError('form__max_priority_fee_invalid_min', {
+        throw new UnionKeyValidatorError('form__max_priority_fee_invalid_min', {
           0: minAmount,
         });
       }
       if (lowValue) {
         if (v.isLessThan(new BigNumber(lowValue))) {
-          throw new OneKeyValidatorTip(
+          throw new UnionKeyValidatorTip(
             'msg__custom_fee_warning_priority_fee_is_low',
           );
         }
@@ -550,20 +550,20 @@ class Validators {
             new BigNumber(highValue).times(FEE_PRICE_HIGH_VALUE_TIMES),
           )
         ) {
-          throw new OneKeyValidatorTip(
+          throw new UnionKeyValidatorTip(
             'msg__custom_fee_warning_priority_fee_is_high',
           );
         }
       }
     } catch (e) {
       if (
-        e instanceof OneKeyValidatorError ||
-        e instanceof OneKeyValidatorTip
+        e instanceof UnionKeyValidatorError ||
+        e instanceof UnionKeyValidatorTip
       ) {
         throw e;
       }
       // TODO return original error message
-      throw new OneKeyValidatorError('form__max_priority_fee_invalid_min');
+      throw new UnionKeyValidatorError('form__max_priority_fee_invalid_min');
     }
     return Promise.resolve();
   }

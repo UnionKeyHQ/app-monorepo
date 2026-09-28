@@ -27,7 +27,7 @@ import { isAllNetworks } from '@unionkeyhq/engine/src/managers/network';
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import type { NFTBTCAssetModel } from '@unionkeyhq/engine/src/types/nft';
 import { WALLET_TYPE_WATCHING } from '@unionkeyhq/engine/src/types/wallet';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   AppUIEventBusNames,
   appUIEventBus,
@@ -474,7 +474,7 @@ function BTCAssetDetailContent({
           {!!asset.timestamp && (
             <DetailItem
               onPress={() => {
-                const isMainNet = networkId === OnekeyNetwork.btc;
+                const isMainNet = networkId === UnionKeyNetwork.btc;
                 const host = isMainNet
                   ? 'https://ordinals.com'
                   : 'https://api.unionkey.io/tbtc-ordinals';

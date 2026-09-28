@@ -4,7 +4,7 @@ import { bytesToHex } from '@noble/hashes/utils';
 import * as necc from '@noble/secp256k1';
 import BigNumber from 'bignumber.js';
 
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import ecc from '@unionkeyhq/engine/src/vaults/utils/btcForkChain/provider/nobleSecp256k1Wrapper';
 import {
   hexlify,
@@ -47,7 +47,7 @@ export function toTransaction(tx: IEncodedTxKaspa): Transaction {
   }
 
   if (sendAmount.isLessThan(0)) {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Insufficient Balance.',
       'msg__insufficient_balance',
     );

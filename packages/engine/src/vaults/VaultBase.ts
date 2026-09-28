@@ -24,7 +24,7 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyError,
+  UnionKeyError,
   PendingQueueTooLong,
 } from '../errors';
 import { getAccountNameInfoByImpl } from '../managers/impl';
@@ -737,7 +737,7 @@ export abstract class VaultBase extends VaultBaseChainOnly {
     const onChainNextNonce = resp[0]?.nonce;
 
     if (isNil(onChainNextNonce)) {
-      throw new OneKeyError('Get on-chain nonce failed.');
+      throw new UnionKeyError('Get on-chain nonce failed.');
     }
 
     // TODO: Although 100 history items should be enough to cover all the

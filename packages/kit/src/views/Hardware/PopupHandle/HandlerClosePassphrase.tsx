@@ -8,7 +8,7 @@ import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgrou
 import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
 import { showDialog } from '@unionkeyhq/kit/src/utils/overlayUtils';
 
-import HardwareLoadingDialog from '../Onekey/OnekeyHardwareConnectDialog';
+import HardwareLoadingDialog from '../UnionKey/UnionKeyHardwareConnectDialog';
 
 type HandlerClosePassphraseViewProps = {
   deviceConnectId: string;

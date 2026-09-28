@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
 import { Modal, VStack } from '@unionkeyhq/components';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { useAppSelector } from '../../../hooks';
 import { formatAmount } from '../../../utils/priceUtils';
@@ -26,7 +26,7 @@ const ETHPool = () => {
       return [];
     }
     const data =
-      networkId === OnekeyNetwork.goerli
+      networkId === UnionKeyNetwork.goerli
         ? ethStakingApr.testnet
         : ethStakingApr.mainnet;
     return [

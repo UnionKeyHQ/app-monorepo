@@ -7,8 +7,8 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import {
   NotImplemented,
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import { AccountType } from '../../../types/account';
 import { KeyringHardwareBase } from '../../keyring/KeyringHardwareBase';
@@ -53,7 +53,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -149,9 +149,9 @@ export class KeyringHardware extends KeyringHardwareBase {
       const protocolIndicator = address[1];
 
       if (!validateNetworkPrefix(networkPrefix))
-        throw new OneKeyInternalError('Invalid filecoin network.');
+        throw new UnionKeyInternalError('Invalid filecoin network.');
       if (parseInt(protocolIndicator) !== ProtocolIndicator.SECP256K1)
-        throw new OneKeyInternalError('Invalid filecoin protocol indicator.');
+        throw new UnionKeyInternalError('Invalid filecoin protocol indicator.');
 
       const decodedData = Buffer.from(
         base32Decode(address.substring(2).toUpperCase(), 'RFC4648'),
@@ -164,7 +164,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         Buffer.from(newAddress.getChecksum()).toString('hex') !==
         Buffer.from(checksum).toString('hex')
       )
-        throw new OneKeyInternalError('Invalid filecoin checksum network.');
+        throw new UnionKeyInternalError('Invalid filecoin checksum network.');
 
       return newAddress;
     };

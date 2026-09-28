@@ -2,7 +2,7 @@ import { groupBy } from 'lodash';
 
 import simpleDb from '@unionkeyhq/engine/src/dbs/simple/simpleDb';
 import { getFiatEndpoint } from '@unionkeyhq/engine/src/endpoint';
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import * as nft from '@unionkeyhq/engine/src/managers/nft';
 import { NFTDataType } from '@unionkeyhq/engine/src/managers/nft';
 import type {
@@ -22,7 +22,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import ServiceBase from './ServiceBase';
 
@@ -129,7 +129,7 @@ class ServiceNFT extends ServiceBase {
   @backgroundMethod()
   async getMarketRanking({ chain, time }: { chain?: string; time?: string }) {
     const url = `${this.baseUrl}/market/ranking?chain=${
-      chain ?? OnekeyNetwork.eth
+      chain ?? UnionKeyNetwork.eth
     }&time=${time ?? '1d'}`;
     const { data, success } = await this.client
       .get<NFTServiceResp<NFTMarketRanking[]>>(url)
@@ -168,7 +168,7 @@ class ServiceNFT extends ServiceBase {
       if (ignoreError) {
         return [];
       }
-      throw new OneKeyInternalError('data load error');
+      throw new UnionKeyInternalError('data load error');
     }
     return data;
   }

@@ -2,17 +2,17 @@ import uuid from 'react-native-uuid';
 
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 
 import type { AccountType, DBAccount } from '../types/account';
 
 // uuid.v5('onekey', '00000000-0000-0000-0000-000000000000')
-// const ONEKEY_NAMESPACE = '30303338-6435-5664-a334-323538396638';
-// uuid.v5('HDAccount', ONEKEY_NAMESPACE)
+// const UNIONKEY_NAMESPACE = '30303338-6435-5664-a334-323538396638';
+// uuid.v5('HDAccount', UNIONKEY_NAMESPACE)
 const HD_ACCOUNT_NAMESPACE = '31626535-3739-5531-a536-306136356236';
-// uuid.v5('ImportedAccount', ONEKEY_NAMESPACE)
+// uuid.v5('ImportedAccount', UNIONKEY_NAMESPACE)
 const IMPORTED_ACCOUNT_NAMESPACE = '36383162-6565-5764-a462-343664326230';
-// uuid.v5('WatchingAccount', ONEKEY_NAMESPACE)
+// uuid.v5('WatchingAccount', UNIONKEY_NAMESPACE)
 const WATCHING_ACCOUNT_NAMESPACE = '62363931-3936-5332-b633-636233663336';
 
 export const HDWALLET_BACKUP_VERSION = 1;
@@ -58,7 +58,7 @@ export function getHDAccountUUID(account: DBAccount): string {
     account.id,
     account.name,
   );
-  throw new OneKeyInternalError('Unable to get UUID for account');
+  throw new UnionKeyInternalError('Unable to get UUID for account');
 }
 
 export function getImportedAccountUUID(account: DBAccount): string {

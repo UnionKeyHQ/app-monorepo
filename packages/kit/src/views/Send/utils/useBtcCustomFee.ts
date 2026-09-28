@@ -4,11 +4,11 @@ import { useCallback, useEffect, useState } from 'react';
 import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
-import type { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import {
-  OneKeyErrorClassNames,
-  OneKeyValidatorError,
-  OneKeyValidatorTip,
+  UnionKeyErrorClassNames,
+  UnionKeyValidatorError,
+  UnionKeyValidatorTip,
 } from '@unionkeyhq/engine/src/errors';
 import type {
   IEncodedTx,
@@ -50,7 +50,7 @@ export function useBtcCustomFeeForm({
       const max = 1000000;
       const valueBN = new BigNumber(value);
       if (valueBN.isLessThanOrEqualTo(min) || valueBN.isGreaterThan(max)) {
-        throw new OneKeyValidatorError(
+        throw new UnionKeyValidatorError(
           'msg__enter_a_fee_rate_between_str_and_str',
           {
             min: '0',
@@ -72,18 +72,18 @@ export function useBtcCustomFeeForm({
           });
         }
       } catch (e) {
-        throw new OneKeyValidatorError('msg__insufficient_balance');
+        throw new UnionKeyValidatorError('msg__insufficient_balance');
       }
 
       if (valueBN.shiftedBy(-8).isLessThan(lowValue)) {
-        throw new OneKeyValidatorTip(
+        throw new UnionKeyValidatorTip(
           'msg__fee_rate_is_low_for_current_network',
         );
       }
       if (
         valueBN.shiftedBy(-8).isGreaterThan(new BigNumber(highValue).times(10))
       ) {
-        throw new OneKeyValidatorTip('msg__fee_rate_is_higher_than_necessary');
+        throw new UnionKeyValidatorTip('msg__fee_rate_is_higher_than_necessary');
       }
     },
     [accountId, encodedTx, networkId],
@@ -101,8 +101,8 @@ export function useBtcCustomFeeForm({
         });
         setGasPriceTip(null);
       } catch (error) {
-        const e = error as OneKeyError;
-        if (e?.className === OneKeyErrorClassNames.OneKeyValidatorError) {
+        const e = error as UnionKeyError;
+        if (e?.className === UnionKeyErrorClassNames.UnionKeyValidatorError) {
           setGasPriceTip({
             type: 'error',
             message: intl.formatMessage(
@@ -114,7 +114,7 @@ export function useBtcCustomFeeForm({
           });
           return false;
         }
-        if (e?.className === OneKeyErrorClassNames.OneKeyValidatorTip) {
+        if (e?.className === UnionKeyErrorClassNames.UnionKeyValidatorTip) {
           setGasPriceTip({
             type: 'warn',
             message: intl.formatMessage(

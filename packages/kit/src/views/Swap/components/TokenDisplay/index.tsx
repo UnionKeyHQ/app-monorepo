@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@unionkeyhq/components';
 import type { Token } from '@unionkeyhq/engine/src/types/token';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { useNetwork } from '../../../../hooks';
 import { truncate } from '../../utils';
@@ -20,7 +20,7 @@ type TokenDisplayProps = {
 export const TokenDisplay: FC<TokenDisplayProps> = ({ token }) => {
   const { network } = useNetwork({ networkId: token.networkId });
   const networkName =
-    network?.id === OnekeyNetwork.goerli ? 'Ethereum Testnet' : network?.name;
+    network?.id === UnionKeyNetwork.goerli ? 'Ethereum Testnet' : network?.name;
   return (
     <Box flexDirection="row" alignItems="center">
       <Box position="relative">

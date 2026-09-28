@@ -2,7 +2,7 @@
 
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 import { isAccountCompatibleWithNetwork } from '../managers/account';
 
 import { createVaultInstance } from './factory';
@@ -52,7 +52,7 @@ export class VaultFactory {
         networkId &&
         !isAccountCompatibleWithNetwork(accountId, networkId)
       ) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           `NetworkId and AccountId are incompatible: accountId=${accountId}, networkId=${networkId}`,
         );
       }

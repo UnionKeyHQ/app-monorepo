@@ -1,5 +1,5 @@
 import type { NFTBTCAssetModel } from '@unionkeyhq/engine/src/types/nft';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import InscriptionHTML from './InscriptionHTML';
 import InscriptionImage from './InscriptionImage';
@@ -58,7 +58,7 @@ function ComponentWithContentType({
     return InscriptionLogo;
   }
   if (contentType === InscriptionContentType.Text) {
-    if (networkId === OnekeyNetwork.tbtc) {
+    if (networkId === UnionKeyNetwork.tbtc) {
       // return InscriptionUnknow;
       return sizeType === 'list'
         ? InscriptionTextTestnet

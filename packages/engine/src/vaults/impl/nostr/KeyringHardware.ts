@@ -2,7 +2,7 @@ import { convertDeviceError } from '@unionkeyhq/shared/src/device/deviceErrorUti
 import { COINTYPE_NOSTR } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError } from '../../../errors';
+import { UnionKeyHardwareError } from '../../../errors';
 import { AccountType, type DBAccount } from '../../../types/account';
 import { KeyringHardwareBase } from '../../keyring/KeyringHardwareBase';
 
@@ -41,7 +41,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.hardwareSDK.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -95,7 +95,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.hardwareSDK.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -133,7 +133,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.hardwareSDK.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -162,7 +162,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.hardwareSDK.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {

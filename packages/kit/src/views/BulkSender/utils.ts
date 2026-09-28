@@ -7,11 +7,11 @@ import { TraderExampleType } from './types';
 import type { TokenTrader } from './types';
 
 const RECEIVER_EXAMPLE_URL_EXCEL =
-  'https://onekey-devops.s3.ap-southeast-1.amazonaws.com/send_ERC20.xlsx';
+  'https://raw.githubusercontent.com/UnionKeyHQ/app-monorepo/main/docs/examples/send_ERC20.csv';
 const RECEIVER_EXAMPLE_URL_CSV =
-  'https://onekey-devops.s3.ap-southeast-1.amazonaws.com/send_ERC20.csv';
+  'https://raw.githubusercontent.com/UnionKeyHQ/app-monorepo/main/docs/examples/send_ERC20.csv';
 const RECEIVER_EXAMPLE_URL_TXT =
-  'https://onekey-devops.s3.ap-southeast-1.amazonaws.com/send_ERC20.txt';
+  'https://raw.githubusercontent.com/UnionKeyHQ/app-monorepo/main/docs/examples/send_ERC20.txt';
 
 export function encodeTrader({
   trader,

@@ -1,4 +1,4 @@
-import { NotImplemented, OneKeyInternalError } from '../../errors';
+import { NotImplemented, UnionKeyInternalError } from '../../errors';
 
 import { KeyringSoftwareBase } from './KeyringSoftwareBase';
 
@@ -21,7 +21,7 @@ export abstract class KeyringImportedBase extends KeyringSoftwareBase {
       password,
     )) as ExportedPrivateKeyCredential;
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get credential.');
+      throw new UnionKeyInternalError('Unable to get credential.');
     }
 
     return { '': privateKey };

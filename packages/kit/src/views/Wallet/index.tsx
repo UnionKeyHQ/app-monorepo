@@ -15,7 +15,7 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import IdentityAssertion from '../../components/IdentityAssertion';
 import { LazyRenderCurrentHomeTab } from '../../components/LazyRenderCurrentHomeTab';
-import { OneKeyPerfTraceLog } from '../../components/OneKeyPerfTraceLog';
+import { UnionKeyPerfTraceLog } from '../../components/UnionKeyPerfTraceLog';
 import { useAppLock } from '../../hooks/useAppLock';
 import { useHomeTabName } from '../../hooks/useHomeTabName';
 import { useHtmlPreloadSplashLogoRemove } from '../../hooks/useHtmlPreloadSplashLogoRemove';
@@ -73,7 +73,7 @@ const WalletTabs: FC = () => {
       >
         <LazyRenderCurrentHomeTab homeTabName={WalletHomeTabEnum.Tokens}>
           <Tabs.ScrollView>
-            <OneKeyPerfTraceLog name="App RootTabHome AssetsList render" />
+            <UnionKeyPerfTraceLog name="App RootTabHome AssetsList render" />
             <GuideToPushFirstTimeCheck />
             <HomeTokenAssetsList
               walletId={walletId}

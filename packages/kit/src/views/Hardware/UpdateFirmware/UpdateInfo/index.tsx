@@ -37,7 +37,7 @@ import type {
 } from '@unionkeyhq/kit/src/utils/updates/type';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import NeedBridgeDialog from '../../../../components/NeedBridgeDialog';
 import { deviceUtils } from '../../../../utils/hardware';
@@ -66,7 +66,7 @@ const UpdateInfoModal: FC = () => {
   const { deviceUpdates } = useSettings();
 
   const [device, setDevice] = useState<Device>();
-  const [features, setFeatures] = useState<IOneKeyDeviceFeatures>();
+  const [features, setFeatures] = useState<IUnionKeyDeviceFeatures>();
   const [bleFirmware, setBleFirmware] = useState<BLEFirmwareInfo>();
   const [sysFirmware, setSysFirmware] = useState<SYSFirmwareInfo>();
   const [resourceUpdateInfo, setResourceUpdateInfo] =
@@ -92,7 +92,7 @@ const UpdateInfoModal: FC = () => {
         <Box my="24px">
           <Text typography="Body1Strong">
             {intl.formatMessage({
-              id: 'content__connect_onekey_desktop_to_upgrade',
+              id: 'content__connect_unionkey_desktop_to_upgrade',
             })}
           </Text>
           <Text mt="8px" typography="Body2" color="text-subdued">
@@ -131,7 +131,7 @@ const UpdateInfoModal: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const firstCheckBatteryRef = useRef(true);
   const checkBatteryLevel = useCallback(
-    (deviceFeatures?: IOneKeyDeviceFeatures) => {
+    (deviceFeatures?: IUnionKeyDeviceFeatures) => {
       if (!deviceFeatures) return true;
       if (
         deviceFeatures.battery_level === undefined ||
@@ -214,7 +214,7 @@ const UpdateInfoModal: FC = () => {
 
       const connectId = findDevice.mac;
 
-      let deviceFeatures: IOneKeyDeviceFeatures;
+      let deviceFeatures: IUnionKeyDeviceFeatures;
       setIsLoading(true);
       try {
         deviceFeatures = await serviceHardware.getFeatures(connectId ?? '');

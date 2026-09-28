@@ -187,7 +187,7 @@ class AppUpdates {
       case 'AppStore':
         canOpenURL('itms-apps://').then((supported) => {
           if (supported) {
-            LinkingOpenURL('itms-apps://itunes.apple.com/app/id1609559473');
+            LinkingOpenURL('itms-apps://itunes.apple.com/app/id6756090484');
           } else {
             this._openUrl(versionInfo.package.download);
           }

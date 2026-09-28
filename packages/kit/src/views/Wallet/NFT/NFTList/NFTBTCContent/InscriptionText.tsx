@@ -6,7 +6,7 @@ import { isNil, isString } from 'lodash';
 
 import { Box, Text } from '@unionkeyhq/components';
 import type { NFTBTCAssetModel } from '@unionkeyhq/engine/src/types/nft';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import InscriptionUnknow from './InscriptionUnknow';
 
@@ -20,7 +20,7 @@ function useTestnetRemoteTextContent({ asset }: { asset: NFTBTCAssetModel }) {
     const isUrl =
       contentUrl &&
       (contentUrl?.startsWith('http://') || contentUrl?.startsWith('https://'));
-    if (networkId === OnekeyNetwork.tbtc && isUrl && contentUrl) {
+    if (networkId === UnionKeyNetwork.tbtc && isUrl && contentUrl) {
       axios.get(contentUrl).then((res) => {
         const { data } = res;
         if (!isNil(data)) {

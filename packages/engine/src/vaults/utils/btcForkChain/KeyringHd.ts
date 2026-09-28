@@ -11,7 +11,7 @@ import {
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { toPsbtNetwork } from '@unionkeyhq/shared/src/providerApis/ProviderApiBtc/ProviderApiBtc.utils';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { slicePathTemplate } from '../../../managers/derivation';
 import { getAccountNameInfoByTemplate } from '../../../managers/impl';
 import { Signer } from '../../../proxy';
@@ -42,7 +42,7 @@ export class KeyringHd extends KeyringHdBase {
     const { password } = options;
     const { psbtHex, inputsToSign } = unsignedTx;
     if (typeof password === 'undefined') {
-      throw new OneKeyInternalError('Software signing requires a password.');
+      throw new UnionKeyInternalError('Software signing requires a password.');
     }
 
     const dbAccount = (await this.getDbAccount()) as DBUTXOAccount;
@@ -102,7 +102,7 @@ export class KeyringHd extends KeyringHdBase {
       fullPath.split('/').slice(-2).join('/'),
     );
     if (relPaths.length === 0) {
-      throw new OneKeyInternalError('No signers would be chosen.');
+      throw new UnionKeyInternalError('No signers would be chosen.');
     }
     const privateKeys = await this.getPrivateKeys(password, relPaths);
     const ret: Record<string, Signer> = {};
@@ -231,7 +231,7 @@ export class KeyringHd extends KeyringHdBase {
       usedIndexes.map((index) => `${index.toString()}'`),
     );
     if (pubkeyInfos.length !== usedIndexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const { public: xpubVersionBytes } =

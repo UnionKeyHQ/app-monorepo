@@ -5,7 +5,7 @@ import { merge } from 'lodash';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import {
-  ONEKEY_APP_DEEP_LINK,
+  UNIONKEY_APP_DEEP_LINK,
   WALLET_CONNECT_DEEP_LINK,
 } from '../components/WalletConnect/walletConnectConsts';
 import { getExtensionIndexHtml } from '../utils/extUtils.getHtml';
@@ -310,7 +310,7 @@ const buildLinking = (): LinkingOptions<any> => {
     generateScreenHierarchyRouteConfigList(normalRouteWhiteList);
   return {
     enabled: true,
-    prefixes: [prefix, ONEKEY_APP_DEEP_LINK, WALLET_CONNECT_DEEP_LINK],
+    prefixes: [prefix, UNIONKEY_APP_DEEP_LINK, WALLET_CONNECT_DEEP_LINK],
     /**
      * Only change url at whitelist routes, or return home page
      */

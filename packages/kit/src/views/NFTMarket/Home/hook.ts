@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
 import type { Network } from '@unionkeyhq/engine/src/types/network';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { useNetworks } from '../../../hooks/redux';
 
-const ethNetwokId = OnekeyNetwork.eth;
+const ethNetwokId = UnionKeyNetwork.eth;
 
 export function useDefaultNetWork() {
   const networks = useNetworks();

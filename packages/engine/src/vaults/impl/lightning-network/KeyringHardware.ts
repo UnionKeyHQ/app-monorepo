@@ -12,7 +12,7 @@ import {
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError, OneKeyInternalError } from '../../../errors';
+import { UnionKeyHardwareError, UnionKeyInternalError } from '../../../errors';
 import { slicePathTemplate } from '../../../managers/derivation';
 import { AccountType, type DBVariantAccount } from '../../../types/account';
 import { KeyringHardwareBase } from '../../keyring/KeyringHardwareBase';
@@ -69,7 +69,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       console.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success || !response.payload) {
@@ -78,7 +78,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     }
 
     if (response.payload.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const client = await (this.vault as LightningVault).getClient();
@@ -263,7 +263,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const { signature, publickey } = response.payload;
     if (!signature || !publickey) {
-      throw new OneKeyInternalError('Unable to get signature or publickey');
+      throw new UnionKeyInternalError('Unable to get signature or publickey');
     }
 
     const loginURL = url;

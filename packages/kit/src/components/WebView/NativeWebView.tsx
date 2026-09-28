@@ -13,7 +13,7 @@ import { useTheme } from '@unionkeyhq/components';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import { openUrlExternal } from '../../utils/openUrl';
-import { checkOneKeyCardGoogleOauthUrl } from '../../utils/uriUtils';
+import { checkUnionKeyCardGoogleOauthUrl } from '../../utils/uriUtils';
 
 import ErrorView from './ErrorView';
 
@@ -85,7 +85,7 @@ const NativeWebView = forwardRef(
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, no-unsafe-optional-chaining
       const { url } = syntheticEvent?.nativeEvent;
       try {
-        if (checkOneKeyCardGoogleOauthUrl({ url })) {
+        if (checkUnionKeyCardGoogleOauthUrl({ url })) {
           openUrlExternal(url);
           webviewRef.current?.stopLoading();
         }

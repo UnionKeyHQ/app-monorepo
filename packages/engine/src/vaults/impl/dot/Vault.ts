@@ -15,7 +15,7 @@ import {
   InvalidAddress,
   InvalidTransferValue,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '@unionkeyhq/engine/src/errors';
 import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
 import type {
@@ -564,7 +564,7 @@ export default class Vault extends VaultBase {
       );
 
       if (typeof token === 'undefined') {
-        throw new OneKeyInternalError('Failed to get token info.');
+        throw new UnionKeyInternalError('Failed to get token info.');
       }
 
       amountValue = new BigNumber(amount).shiftedBy(token.decimals).toFixed();
@@ -831,10 +831,10 @@ export default class Vault extends VaultBase {
     const { price, limit } = params.feeInfoValue;
 
     if (!price || typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
 
     const network = await this.getNetwork();
@@ -1032,7 +1032,7 @@ export default class Vault extends VaultBase {
       };
     } catch (error: any) {
       // It's already been dealt with in the waitPendingTransaction
-      if (error instanceof OneKeyInternalError) {
+      if (error instanceof UnionKeyInternalError) {
         throw error;
       }
 
@@ -1041,7 +1041,7 @@ export default class Vault extends VaultBase {
         message.indexOf('Invalid Transaction: Inability to pay some fees') !==
         -1
       ) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           message,
           'msg__broadcast_dot_tx_Insufficient_fee',
         );
@@ -1050,13 +1050,13 @@ export default class Vault extends VaultBase {
       if (
         message.indexOf('Invalid Transaction: Transaction is outdated') !== -1
       ) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           message,
           'msg__broadcast_dot_tx_outdated',
         );
       }
 
-      throw new OneKeyInternalError(message);
+      throw new UnionKeyInternalError(message);
     }
   }
 
@@ -1069,7 +1069,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -1138,7 +1138,7 @@ export default class Vault extends VaultBase {
           //   actionKey = 'tokenTransfer';
           //   token = await this.engine.ensureTokenInDB(this.networkId, coinType);
           //   if (typeof token === 'undefined') {
-          //     throw new OneKeyInternalError('Failed to get token info.');
+          //     throw new UnionKeyInternalError('Failed to get token info.');
           //   }
           // }
 

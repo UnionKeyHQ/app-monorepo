@@ -1,7 +1,7 @@
 import { bytesToHex } from '@noble/hashes/utils';
 
 import type { ExportedSeedCredential } from '@unionkeyhq/engine/src/dbs/base';
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import { getAccountNameInfoByImpl } from '@unionkeyhq/engine/src/managers/impl';
 import { Signer } from '@unionkeyhq/engine/src/proxy';
 import { mnemonicFromEntropy } from '@unionkeyhq/engine/src/secret';
@@ -59,7 +59,7 @@ export class KeyringHd extends KeyringHdBase {
       password,
     )) as ExportedSeedCredential;
     if (typeof entropy === 'undefined') {
-      throw new OneKeyInternalError('Unable to get credential.');
+      throw new UnionKeyInternalError('Unable to get credential.');
     }
 
     const mnemonic = mnemonicFromEntropy(entropy, password);
@@ -81,16 +81,16 @@ export class KeyringHd extends KeyringHdBase {
     const selectedAddress = dbAccount.address;
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Polkadot signers number should be 1.');
+      throw new UnionKeyInternalError('Polkadot signers number should be 1.');
     } else if (addresses[0] !== selectedAddress) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const privateKeys = await this.getPrivateKeys(password);
 
     const { [dbAccount.path]: privateKey } = privateKeys;
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -119,7 +119,7 @@ export class KeyringHd extends KeyringHdBase {
     });
 
     if (publicKeys.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get public key.');
+      throw new UnionKeyInternalError('Unable to get public key.');
     }
 
     const ret = [];
@@ -165,7 +165,7 @@ export class KeyringHd extends KeyringHdBase {
 
     const senderPublicKey = unsignedTx.inputs?.[0]?.publicKey;
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
 
     const [signature] = await signer.sign(Buffer.from(message));

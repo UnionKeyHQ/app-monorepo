@@ -16,12 +16,12 @@ import type {
 import { NFTChainMap } from '@unionkeyhq/engine/src/types/nft';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import { EOverviewScanTaskType } from '@unionkeyhq/kit/src/views/Overview/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isBTCNetwork } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import simpleDb from '../dbs/simple/simpleDb';
 import { getFiatEndpoint } from '../endpoint';
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 import {
   Erc1155MethodSelectors,
   Erc721MethodSelectors,
@@ -254,7 +254,7 @@ export function NFTDataType(networkId: string) {
   if (isBTCNetwork(networkId)) {
     return 'btc';
   }
-  if (networkId === OnekeyNetwork.sol) {
+  if (networkId === UnionKeyNetwork.sol) {
     return 'sol';
   }
   return 'evm';
@@ -332,7 +332,7 @@ export async function fetchAsset({
 }) {
   let apiUrl;
   const endpoint = getFiatEndpoint();
-  if (OnekeyNetwork.sol === chain) {
+  if (UnionKeyNetwork.sol === chain) {
     apiUrl = `${endpoint}/NFT/asset?chain=${chain}&tokenId=${tokenId}`;
   } else {
     apiUrl = `${endpoint}/NFT/asset?chain=${chain}&contractAddress=${
@@ -396,7 +396,7 @@ export async function batchAsset({
     if (ignoreError) {
       return undefined;
     }
-    throw new OneKeyInternalError('data load error');
+    throw new UnionKeyInternalError('data load error');
   }
   return data;
 }

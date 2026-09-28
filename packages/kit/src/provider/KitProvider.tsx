@@ -46,7 +46,7 @@ const KitProvider: FC<LaunchProps> = (propsRaw) => {
   const {
     UIApplicationLaunchOptionsRemoteNotificationKey: launchNotification,
   } = props;
-  global.$$onekeyPerfTrace?.log({
+  global.$$unionKeyPerfTrace?.log({
     name: 'KitProvider render',
     payload: props,
   });

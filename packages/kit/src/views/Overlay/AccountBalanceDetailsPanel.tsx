@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 
 import { Box, Icon, Skeleton, Typography } from '@unionkeyhq/components';
 import type { IBalanceDetails } from '@unionkeyhq/engine/src/vaults/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { useActiveWalletAccount, useNativeToken } from '../../hooks';
@@ -136,7 +136,7 @@ export function AccountBalanceDetailsPanel({
       return <Skeleton shape="DisplayXLarge" />;
     }
 
-    if (networkId === OnekeyNetwork.sol) {
+    if (networkId === UnionKeyNetwork.sol) {
       return (
         <>
           <Typography.DisplayXLarge>

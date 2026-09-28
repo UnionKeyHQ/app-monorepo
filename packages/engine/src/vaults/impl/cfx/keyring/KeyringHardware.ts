@@ -12,7 +12,7 @@ import { COINTYPE_CFX as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineC
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { toBigIntHex } from '@unionkeyhq/shared/src/utils/numberUtils';
 
-import { NotImplemented, OneKeyHardwareError } from '../../../../errors';
+import { NotImplemented, UnionKeyHardwareError } from '../../../../errors';
 import { AccountType } from '../../../../types/account';
 import { ETHMessageTypes } from '../../../../types/message';
 import { KeyringHardwareBase } from '../../../keyring/KeyringHardwareBase';
@@ -125,7 +125,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!addressesResponse.success) {

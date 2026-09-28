@@ -13,7 +13,7 @@ import {
   InvalidAddress,
   InvalidTransferValue,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import {
   IDecodedTxActionType,
@@ -167,7 +167,7 @@ export default class Vault extends VaultBase {
         .toString('hex')
         .toUpperCase()}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

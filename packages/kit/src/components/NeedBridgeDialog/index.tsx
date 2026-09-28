@@ -39,15 +39,15 @@ const NeedBridgeDialog: FC<NeedBridgeDialogProps> = ({
   const title = useMemo<MessageDescriptor['id']>(
     () =>
       update
-        ? 'title__requires_updating_of_onekey_bridge'
-        : 'modal__need_install_onekey_bridge',
+        ? 'title__requires_updating_of_unionkey_bridge'
+        : 'modal__need_install_unionkey_bridge',
     [update],
   );
   const content = useMemo<MessageDescriptor['id']>(
     () =>
       update
-        ? 'content__onekey_bridge_str_is_now_available_do_you_want_to_download'
-        : 'modal__need_install_onekey_bridge_desc',
+        ? 'content__unionkey_bridge_str_is_now_available_do_you_want_to_download'
+        : 'modal__need_install_unionkey_bridge_desc',
     [update],
   );
 

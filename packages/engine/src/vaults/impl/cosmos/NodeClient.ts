@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-import { OneKeyError, OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError, UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 
 import type {
   AccountInfo,
@@ -92,7 +92,7 @@ export class CosmosNodeClient {
       )
       .then((res) => res.data.tx_response)
       .catch((err: AxiosError) => {
-        throw new OneKeyError(err.response?.status.toString());
+        throw new UnionKeyError(err.response?.status.toString());
       });
   }
 
@@ -114,18 +114,18 @@ export class CosmosNodeClient {
 
     if (code != null && code !== 0) {
       if (rawLog.indexOf('account sequence mismatch') !== -1) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           rawLog,
           'msg__broadcast_tx_sequence_number_error',
         );
       }
       if (rawLog.indexOf('insufficient fees') !== -1) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           rawLog,
           'msg__broadcast_tx_Insufficient_fee',
         );
       }
-      throw new OneKeyInternalError(rawLog);
+      throw new UnionKeyInternalError(rawLog);
     }
 
     return resp.data.tx_response?.txhash ?? null;

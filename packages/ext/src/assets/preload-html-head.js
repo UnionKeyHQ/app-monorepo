@@ -4,17 +4,17 @@
 - packages/ext/src/assets/preload-html-head.js
  */
 (function () {
-  // $$onekeyPerfTrace start ----------------------------------------------
-  window.$$onekeyPerfTrace = {
+  // $$unionKeyPerfTrace start ----------------------------------------------
+  window.$$unionKeyPerfTrace = {
     timeline: [],
     log: ({ name, payload }) => {
       const lastStat =
-        window.$$onekeyPerfTrace.timeline[
-          window.$$onekeyPerfTrace.timeline.length - 1
+        window.$$unionKeyPerfTrace.timeline[
+          window.$$unionKeyPerfTrace.timeline.length - 1
         ];
       const perfNow = window.performance.now();
       const time = new Date().toLocaleString();
-      window.$$onekeyPerfTrace.timeline.push({
+      window.$$unionKeyPerfTrace.timeline.push({
         lag: parseInt(String(lastStat ? perfNow - lastStat.elapsed : 0), 10),
         name,
         time,
@@ -22,17 +22,17 @@
         payload,
       });
       // keep limited array length to avoid memory leak
-      window.$$onekeyPerfTrace.timeline =
-        window.$$onekeyPerfTrace.timeline.slice(-200);
+      window.$$unionKeyPerfTrace.timeline =
+        window.$$unionKeyPerfTrace.timeline.slice(-200);
     },
   };
-  window.$$onekeyPerfTrace.log({
+  window.$$unionKeyPerfTrace.log({
     name: 'APP_START: preload-html-head.js start',
   });
-  // $$onekeyPerfTrace end ----------------------------------------------
+  // $$unionKeyPerfTrace end ----------------------------------------------
 
   // themePreload start ----------------------------------------------
-  const theme = localStorage.getItem('ONEKEY_THEME_PRELOAD');
+  const theme = localStorage.getItem('UNIONKEY_THEME_PRELOAD');
   if (theme === 'dark') {
     document.documentElement.style.backgroundColor = 'rgb(19, 19, 27)';
   }
@@ -58,7 +58,7 @@ window.removeEventListener('resize',handler);
   }
   function optimizeResize() {
     const resizeEventMap = new Map();
-    window.$$onekeyWindowResizeEventMap = resizeEventMap;
+    window.$$unionKeyWindowResizeEventMap = resizeEventMap;
     // @ts-ignore
     window.addEventListenerOld = window.addEventListener;
     window.removeEventListenerOld = window.removeEventListener;

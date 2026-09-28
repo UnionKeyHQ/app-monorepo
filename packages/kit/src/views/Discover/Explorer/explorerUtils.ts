@@ -149,8 +149,8 @@ export function crossWebviewLoadUrl({
 const injectToPauseWebsocket = `
 (function(){
   if (window.WebSocket) {
-    if (!window.$$onekeyWebSocketSend) {
-      window.$$onekeyWebSocketSend = window.WebSocket.prototype.send;
+    if (!window.$$unionKeyWebSocketSend) {
+      window.$$unionKeyWebSocketSend = window.WebSocket.prototype.send;
     }
     window.WebSocket.prototype.send = () => {};
   }
@@ -161,9 +161,9 @@ const injectToResumeWebsocket = `
 (function(){
   if (
     window.WebSocket &&
-    window.$$onekeyWebSocketSend
+    window.$$unionKeyWebSocketSend
   ) {
-    window.WebSocket.prototype.send = window.$$onekeyWebSocketSend;
+    window.WebSocket.prototype.send = window.$$unionKeyWebSocketSend;
   }
 })()
 `;

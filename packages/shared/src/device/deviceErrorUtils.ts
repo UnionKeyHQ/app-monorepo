@@ -1,6 +1,6 @@
 import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
-import type { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
 import * as Error from '@unionkeyhq/kit/src/utils/hardware/errors';
 
 import debugLogger from '../logger/debugLogger';
@@ -20,7 +20,7 @@ function caputureSpecialError(code: number, message: string) {
   return null;
 }
 
-export function convertDeviceError(payload: any): OneKeyHardwareError {
+export function convertDeviceError(payload: any): UnionKeyHardwareError {
   // handle ext error
   const {
     code,
@@ -126,9 +126,9 @@ export function convertDeviceError(payload: any): OneKeyHardwareError {
     case HardwareErrorCode.ActionCancelled:
       return new Error.UserCancel(payload);
     case HardwareErrorCode.BridgeNotInstalled:
-      return new Error.NeedOneKeyBridge(payload);
-    case Error.CustomOneKeyHardwareError.NeedOneKeyBridge:
-      return new Error.NeedOneKeyBridge(payload);
+      return new Error.NeedUnionKeyBridge(payload);
+    case Error.CustomUnionKeyHardwareError.NeedUnionKeyBridge:
+      return new Error.NeedUnionKeyBridge(payload);
     case HardwareErrorCode.BridgeNetworkError:
       return new Error.BridgeNetworkError(payload);
     case HardwareErrorCode.BridgeTimeoutError:

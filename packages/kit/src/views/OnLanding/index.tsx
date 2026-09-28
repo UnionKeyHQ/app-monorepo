@@ -56,7 +56,7 @@ export default function OnLanding() {
       <Center maxW="375px" w="full" p="6">
         <Icon name="BrandLogoIllus" size={90} />
         <Typography.DisplayLarge mt="8">
-          {intl.formatMessage({ id: 'title__continuing_to_oneKey' })}
+          {intl.formatMessage({ id: 'title__continuing_to_unionKey' })}
         </Typography.DisplayLarge>
         <Typography.Body1Strong mt="16">
           {intl.formatMessage({ id: 'title__have_installed_the_app' })}
@@ -69,10 +69,10 @@ export default function OnLanding() {
           borderRadius="full"
           onPress={onLaunchApp}
         >
-          {intl.formatMessage({ id: 'title__launch_onekey' })}
+          {intl.formatMessage({ id: 'title__launch_unionkey' })}
         </Button>
         <Typography.Body1Strong mt="16">
-          {intl.formatMessage({ id: 'title__havent_installed_onekey' })}
+          {intl.formatMessage({ id: 'title__havent_installed_unionkey' })}
         </Typography.Body1Strong>
         <Button
           size="xl"

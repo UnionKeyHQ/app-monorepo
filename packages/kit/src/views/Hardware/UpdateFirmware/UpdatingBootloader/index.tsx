@@ -7,7 +7,7 @@ import { useKeepAwake } from 'expo-keep-awake';
 import { useIntl } from 'react-intl';
 
 import { Modal, ToastManager } from '@unionkeyhq/components';
-import type { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import { useAppSelector } from '@unionkeyhq/kit/src/hooks/redux';
 import type { HardwareUpdateRoutesParams } from '@unionkeyhq/kit/src/routes/Root/Modal/HardwareUpdate';
@@ -19,7 +19,7 @@ import {
   appUIEventBus,
 } from '@unionkeyhq/shared/src/eventBus/appUIEventBus';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import { HardwareUpdateModalRoutes } from '../../../../routes/routesEnum';
 import {
@@ -78,7 +78,7 @@ const UpdatingBootloader: FC = () => {
   const connectId = useMemo(() => device?.mac ?? '', [device]);
 
   const deviceType = useMemo(
-    () => device?.deviceType as IOneKeyDeviceType | undefined,
+    () => device?.deviceType as IUnionKeyDeviceType | undefined,
     [device],
   );
 
@@ -221,7 +221,7 @@ const UpdatingBootloader: FC = () => {
     }
   }, [deviceType, connectId, dispatch, updateEvent]);
 
-  const handleErrors = (error: OneKeyHardwareError) => {
+  const handleErrors = (error: UnionKeyHardwareError) => {
     const { className, key, code } = error || {};
 
     switch (code) {
@@ -316,7 +316,7 @@ const UpdatingBootloader: FC = () => {
         }
         break;
       default:
-        if (className === 'OneKeyHardwareError') {
+        if (className === 'UnionKeyHardwareError') {
           setStateViewInfo({
             type: 'common_error',
             content: {
@@ -391,7 +391,7 @@ const UpdatingBootloader: FC = () => {
         return;
       }
     } catch (e) {
-      handleErrors(e as OneKeyHardwareError);
+      handleErrors(e as UnionKeyHardwareError);
       return;
     }
     serviceHardware

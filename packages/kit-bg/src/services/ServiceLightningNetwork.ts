@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { mnemonicToSeedSync } from 'bip39';
 
 import type { ExportedSeedCredential } from '@unionkeyhq/engine/src/dbs/base';
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import { mnemonicFromEntropy } from '@unionkeyhq/engine/src/secret';
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import connectors from '@unionkeyhq/engine/src/vaults/impl/lightning-network/connectors';
@@ -235,11 +235,11 @@ export default class ServiceLightningNetwork extends ServiceBase {
         },
       );
       if (response.status >= 500) {
-        throw new OneKeyError('Recipient server error');
+        throw new UnionKeyError('Recipient server error');
       }
 
       if (!Object.prototype.hasOwnProperty.call(response.data, 'pr')) {
-        throw new OneKeyError((response.data as LNURLError).reason);
+        throw new UnionKeyError((response.data as LNURLError).reason);
       }
       return response.data as LNURLPaymentInfo;
     } catch (e: any) {
@@ -314,7 +314,7 @@ export default class ServiceLightningNetwork extends ServiceBase {
       if (response.data.status.toUpperCase() === 'OK') {
         return response.data;
       }
-      throw new OneKeyError(response.data.reason);
+      throw new UnionKeyError(response.data.reason);
     } catch (e) {
       console.error(e);
       const error = e as AxiosError<LNURLError>;

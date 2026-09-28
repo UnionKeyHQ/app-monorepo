@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
 
 import { Center, HStack, Modal, Spinner, Switch } from '@unionkeyhq/components';
 import type { IGasInfo } from '@unionkeyhq/engine/src/types/gas';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { useNativeToken, useSettings } from '../../hooks';
@@ -23,7 +23,7 @@ import type { RouteProp } from '@react-navigation/native';
 
 type RouteProps = RouteProp<GasPanelRoutesParams, GasPanelRoutes.GasPanelModal>;
 
-const DEFAULT_NETWORK = OnekeyNetwork.eth;
+const DEFAULT_NETWORK = UnionKeyNetwork.eth;
 const REFRESH_GAS_INFO_INTERVAL = 6000;
 
 function GasPanel() {

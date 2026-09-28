@@ -3,7 +3,7 @@ import { CoinType, newSecp256k1Address } from '@glif/filecoin-address';
 import { secp256k1 } from '@unionkeyhq/engine/src/secret/curves';
 import { COINTYPE_FIL as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { Signer } from '../../../proxy';
 import { AccountType } from '../../../types/account';
 import { KeyringImportedBase } from '../../keyring/KeyringImportedBase';
@@ -24,9 +24,9 @@ export class KeyringImported extends KeyringImportedBase {
     const selectedAddress = dbAccount.addresses[this.networkId];
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('FIL signers number should be 1.');
+      throw new UnionKeyInternalError('FIL signers number should be 1.');
     } else if (addresses[0] !== selectedAddress) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const [privateKey] = Object.values(await this.getPrivateKeys(password));
@@ -40,7 +40,7 @@ export class KeyringImported extends KeyringImportedBase {
     const { name, privateKey } = params;
     const network = await this.getNetwork();
     if (privateKey.length !== 32) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
     const pub = secp256k1.publicFromPrivate(privateKey);
     const pubUncompressed = secp256k1.transformPublicKey(pub);

@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import { useIntl } from 'react-intl';
 
 import { Alert, Box } from '@unionkeyhq/components';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isLightningNetworkByNetworkId } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
@@ -100,7 +100,7 @@ export function LightningNetworkAlert({
 
 export function PreSendAmountAlert(props: Props) {
   const { networkId, accountId, amount } = props;
-  if (networkId === OnekeyNetwork.xmr) {
+  if (networkId === UnionKeyNetwork.xmr) {
     return <XmrAlert {...props} />;
   }
 

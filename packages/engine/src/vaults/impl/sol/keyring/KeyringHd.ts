@@ -4,7 +4,7 @@ import { batchGetPublicKeys } from '@unionkeyhq/engine/src/secret';
 import type { SignedTx, UnsignedTx } from '@unionkeyhq/engine/src/types/provider';
 import { COINTYPE_SOL as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../../errors';
+import { UnionKeyInternalError } from '../../../../errors';
 import { slicePathTemplate } from '../../../../managers/derivation';
 import { getAccountNameInfoByTemplate } from '../../../../managers/impl';
 import { Signer } from '../../../../proxy';
@@ -24,16 +24,16 @@ export class KeyringHd extends KeyringHdBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('SOL signers number should be 1.');
+      throw new UnionKeyInternalError('SOL signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing');
+      throw new UnionKeyInternalError('Wrong address required for signing');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -60,7 +60,7 @@ export class KeyringHd extends KeyringHdBase {
     );
 
     if (pubkeyInfos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get public keys');
+      throw new UnionKeyInternalError('Unable to get public keys');
     }
 
     const impl = await this.getNetworkImpl();

@@ -20,12 +20,12 @@ import {
   useIsVerticalLayout,
 } from '@unionkeyhq/components';
 import type {
-  OneKeyError,
-  OneKeyValidatorError,
+  UnionKeyError,
+  UnionKeyValidatorError,
 } from '@unionkeyhq/engine/src/errors';
 import {
   NotImplemented,
-  OneKeyErrorClassNames,
+  UnionKeyErrorClassNames,
 } from '@unionkeyhq/engine/src/errors';
 import { getBlockNativeGasInfo } from '@unionkeyhq/engine/src/managers/blockNative';
 import type { BlockNativeGasInfo } from '@unionkeyhq/engine/src/types/blockNative';
@@ -63,8 +63,8 @@ export type CustomAlert = {
   message: string;
 } | null;
 
-function printError(error: OneKeyError | any) {
-  const e = error as OneKeyError;
+function printError(error: UnionKeyError | any) {
+  const e = error as UnionKeyError;
   console.error({
     message: e.message,
     key: e.key,
@@ -376,9 +376,9 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                   setMaxFeeTip(null);
                 } catch (error) {
                   printError(error);
-                  const e = error as OneKeyValidatorError;
+                  const e = error as UnionKeyValidatorError;
                   if (
-                    e?.className === OneKeyErrorClassNames.OneKeyValidatorError
+                    e?.className === UnionKeyErrorClassNames.UnionKeyValidatorError
                   ) {
                     setMaxFeeTip({
                       type: 'error',
@@ -393,7 +393,7 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                   }
 
                   if (
-                    e?.className === OneKeyErrorClassNames.OneKeyValidatorTip
+                    e?.className === UnionKeyErrorClassNames.UnionKeyValidatorTip
                   ) {
                     setMaxFeeTip({
                       type: 'warn',
@@ -464,11 +464,11 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                     setMaxPriorityFeeTip(null);
                   } catch (error) {
                     printError(error);
-                    const e = error as OneKeyError;
+                    const e = error as UnionKeyError;
 
                     if (
                       e?.className ===
-                      OneKeyErrorClassNames.OneKeyValidatorError
+                      UnionKeyErrorClassNames.UnionKeyValidatorError
                     ) {
                       setMaxPriorityFeeTip({
                         type: 'error',
@@ -482,7 +482,7 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                       return false;
                     }
                     if (
-                      e?.className === OneKeyErrorClassNames.OneKeyValidatorTip
+                      e?.className === UnionKeyErrorClassNames.UnionKeyValidatorTip
                     ) {
                       setMaxPriorityFeeTip({
                         type: 'warn',
@@ -589,9 +589,9 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                   setGasPriceTip(null);
                 } catch (error) {
                   printError(error);
-                  const e = error as OneKeyError;
+                  const e = error as UnionKeyError;
                   if (
-                    e?.className === OneKeyErrorClassNames.OneKeyValidatorError
+                    e?.className === UnionKeyErrorClassNames.UnionKeyValidatorError
                   ) {
                     setGasPriceTip({
                       type: 'error',
@@ -605,7 +605,7 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                     return false;
                   }
                   if (
-                    e?.className === OneKeyErrorClassNames.OneKeyValidatorTip
+                    e?.className === UnionKeyErrorClassNames.UnionKeyValidatorTip
                   ) {
                     setGasPriceTip({
                       type: 'warn',
@@ -648,10 +648,10 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                 setGasLimitTip(null);
               } catch (error) {
                 printError(error);
-                const e = error as OneKeyError;
+                const e = error as UnionKeyError;
 
                 if (
-                  e?.className === OneKeyErrorClassNames.OneKeyValidatorError
+                  e?.className === UnionKeyErrorClassNames.UnionKeyValidatorError
                 ) {
                   setGasLimitTip({
                     type: 'error',
@@ -664,7 +664,7 @@ export function SendEditFeeCustomForm(props: ICustomFeeFormProps) {
                   });
                   return false;
                 }
-                if (e?.className === OneKeyErrorClassNames.OneKeyValidatorTip) {
+                if (e?.className === UnionKeyErrorClassNames.UnionKeyValidatorTip) {
                   setGasLimitTip({
                     type: 'warn',
                     message: intl.formatMessage(

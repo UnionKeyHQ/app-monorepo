@@ -151,7 +151,7 @@ const LNURLPayRequest = () => {
         console.error(e);
         setIsLoading(false);
         const { key, info } = e;
-        if (key && key !== 'onekey_error') {
+        if (key && key !== 'unionkey_error') {
           ToastManager.show(
             {
               title: intl.formatMessage(
@@ -239,7 +239,7 @@ const LNURLPayRequest = () => {
         setIsLoading(false);
         let message = '';
         const { key, info } = e;
-        if (key && key !== 'onekey_error') {
+        if (key && key !== 'unionkey_error') {
           message = intl.formatMessage(
             {
               id: key,

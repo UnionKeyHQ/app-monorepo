@@ -116,7 +116,7 @@ function normalizeConfig({
       }),
       new webpack.DefinePlugin({
         // TODO use babelTools `transform-inline-environment-variables` instead
-        'process.env.ONEKEY_BUILD_TYPE': JSON.stringify(platform),
+        'process.env.UNIONKEY_BUILD_TYPE': JSON.stringify(platform),
         'process.env.EXT_INJECT_RELOAD_BUTTON': JSON.stringify(
           process.env.EXT_INJECT_RELOAD_BUTTON,
         ),

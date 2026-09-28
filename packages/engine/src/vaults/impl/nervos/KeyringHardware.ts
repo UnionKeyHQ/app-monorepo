@@ -6,8 +6,8 @@ import {
 import { bytesToHex } from '@noble/hashes/utils';
 
 import {
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
 } from '@unionkeyhq/engine/src/errors';
 import { slicePathTemplate } from '@unionkeyhq/engine/src/managers/derivation';
 import { getAccountNameInfoByImpl } from '@unionkeyhq/engine/src/managers/impl';
@@ -64,7 +64,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
     if (!addressesResponse.success) {
       debugLogger.common.error(addressesResponse.payload);
@@ -152,7 +152,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const witnessHex = txSkeleton.witnesses.get(0);
     if (!witnessHex) {
-      throw new OneKeyInternalError('Transaction serialization failure');
+      throw new UnionKeyInternalError('Transaction serialization failure');
     }
 
     const transaction = createTransactionFromSkeleton(txSkeleton);

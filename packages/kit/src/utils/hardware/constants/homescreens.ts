@@ -1,4 +1,4 @@
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import { T1Data, TouchData } from './homescreensData';
 
@@ -68,7 +68,7 @@ export const homescreenTouch = [
   'wallpaper-4',
 ];
 
-export const getHomescreenKeys = (type: IOneKeyDeviceType) => {
+export const getHomescreenKeys = (type: IUnionKeyDeviceType) => {
   switch (type) {
     case 'classic':
     case 'classic1s':
@@ -91,7 +91,7 @@ export type HomescreenItem = {
 
 export type HomescreenMap = Record<string, HomescreenItem>;
 
-export const getHomescreenData = (type: IOneKeyDeviceType) => {
+export const getHomescreenData = (type: IUnionKeyDeviceType) => {
   switch (type) {
     case 'classic1s':
     case 'classic':

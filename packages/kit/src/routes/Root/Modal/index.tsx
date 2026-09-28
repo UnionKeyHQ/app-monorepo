@@ -30,14 +30,14 @@ const EnableLocalAuthenticationModal = createLazyComponent(
   () => import('./EnableLocalAuthentication'),
 );
 const BuyModal = createLazyComponent(() => import('./FiatPay'));
-const OnekeyHardwareModal = createLazyComponent(
-  () => import('./HardwareOnekey'),
+const UnionKeyHardwareModal = createLazyComponent(
+  () => import('./HardwareUnionKey'),
 );
-const HardwareOnekeyLitePinModal = createLazyComponent(
-  () => import('./HardwareOnekeyLiteChangePin'),
+const HardwareUnionKeyLitePinModal = createLazyComponent(
+  () => import('./HardwareUnionKeyLiteChangePin'),
 );
-const HardwareOnekeyResetModal = createLazyComponent(
-  () => import('./HardwareOnekeyLiteReset'),
+const HardwareUnionKeyResetModal = createLazyComponent(
+  () => import('./HardwareUnionKeyLiteReset'),
 );
 const HardwareUpdateModal = createLazyComponent(
   () => import('./HardwareUpdate'),
@@ -154,12 +154,12 @@ const modalStackScreenList = [
     component: PasswordModal,
   },
   {
-    name: ModalRoutes.OnekeyLiteReset,
-    component: HardwareOnekeyResetModal,
+    name: ModalRoutes.UnionKeyLiteReset,
+    component: HardwareUnionKeyResetModal,
   },
   {
-    name: ModalRoutes.OnekeyLiteChangePinInputPin,
-    component: HardwareOnekeyLitePinModal,
+    name: ModalRoutes.UnionKeyLiteChangePinInputPin,
+    component: HardwareUnionKeyLitePinModal,
   },
   {
     name: ModalRoutes.DappConnectionModal,
@@ -190,8 +190,8 @@ const modalStackScreenList = [
     component: ManageNetworkModal,
   },
   {
-    name: ModalRoutes.OnekeyHardware,
-    component: OnekeyHardwareModal,
+    name: ModalRoutes.UnionKeyHardware,
+    component: UnionKeyHardwareModal,
   },
   {
     name: ModalRoutes.HardwareUpdate,

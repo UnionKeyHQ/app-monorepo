@@ -87,7 +87,7 @@ const UpdateAlert: FC = () => {
         <Box flex={1} mt={0.5}>
           <Text flex={1} typography="Body2Strong" color="text-default">
             {intl.formatMessage(
-              { id: 'msg__update_to_onekey_str_is_available' },
+              { id: 'msg__update_to_unionkey_str_is_available' },
               { 0: lastVersion?.package?.version ?? '' },
             )}
           </Text>

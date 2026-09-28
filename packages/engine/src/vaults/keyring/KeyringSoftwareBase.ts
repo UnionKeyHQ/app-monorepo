@@ -1,6 +1,6 @@
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyInternalError } from '../../errors';
+import { UnionKeyInternalError } from '../../errors';
 
 import { KeyringBase } from './KeyringBase';
 
@@ -33,7 +33,7 @@ export abstract class KeyringSoftwareBase extends KeyringBase {
   ): Promise<ISignedTxPro> {
     const { password } = options;
     if (typeof password === 'undefined') {
-      throw new OneKeyInternalError('Software signing requires a password.');
+      throw new UnionKeyInternalError('Software signing requires a password.');
     }
     const signers = await this.getSigners(
       password,
@@ -58,7 +58,7 @@ export abstract class KeyringSoftwareBase extends KeyringBase {
   ): Promise<string[]> {
     const { password } = options;
     if (typeof password === 'undefined') {
-      throw new OneKeyInternalError('Software signing requires a password.');
+      throw new UnionKeyInternalError('Software signing requires a password.');
     }
 
     const dbAccount = await this.getDbAccount();

@@ -14,7 +14,7 @@ import { getDeviceTypeByDeviceId } from '@unionkeyhq/kit/src/utils/hardware';
 import { isPassphraseWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
 import type { Avatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
 import { defaultAvatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import type {
   DeviceStatusType,
@@ -27,7 +27,7 @@ type WalletAvatarProps = {
   avatarBgColor?: string;
   walletImage?: string | 'hw' | 'imported' | 'watching' | 'hd' | 'external';
   circular?: boolean;
-  hwWalletType?: IOneKeyDeviceType;
+  hwWalletType?: IUnionKeyDeviceType;
   avatar?: Avatar;
   status?: DeviceState;
   isPassphrase?: boolean;
@@ -261,7 +261,7 @@ export function useHardwareWalletInfo({
       deviceStatus = convertDeviceStatus(statusType); // hw status
       isPassphrase = isPassphraseWallet(wallet); // hw hiddenWallet
     }
-    let hwWalletType = deviceType as IOneKeyDeviceType;
+    let hwWalletType = deviceType as IUnionKeyDeviceType;
     if (!hwWalletType) {
       hwWalletType = getDeviceTypeByDeviceId(deviceId);
     }

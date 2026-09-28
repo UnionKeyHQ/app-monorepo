@@ -117,7 +117,7 @@ const NavigationApp = () => {
     });
   }, [instanceId]);
 
-  global.$$onekeyPerfTrace?.log({
+  global.$$unionKeyPerfTrace?.log({
     name: 'NavigationProvider/NavigationApp render',
     payload: {
       instanceId,

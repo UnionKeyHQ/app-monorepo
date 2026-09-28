@@ -3,7 +3,7 @@ import { sealTransaction } from '@ckb-lumos/helpers';
 import { bytesToHex } from '@noble/hashes/utils';
 
 import type { ExportedSeedCredential } from '@unionkeyhq/engine/src/dbs/base';
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import { slicePathTemplate } from '@unionkeyhq/engine/src/managers/derivation';
 import { getAccountNameInfoByImpl } from '@unionkeyhq/engine/src/managers/impl';
 import { Signer } from '@unionkeyhq/engine/src/proxy';
@@ -40,16 +40,16 @@ export class KeyringHd extends KeyringHdBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Nervos signers number should be 1.');
+      throw new UnionKeyInternalError('Nervos signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -76,7 +76,7 @@ export class KeyringHd extends KeyringHdBase {
     );
 
     if (pubKeyInfos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
     const chainId = await this.getNetworkChainId();
     const config = getConfig(chainId);
@@ -126,7 +126,7 @@ export class KeyringHd extends KeyringHdBase {
       serializeTransactionMessage(txSkeleton);
 
     if (!message) {
-      throw new OneKeyInternalError('Unable to serialize transaction message.');
+      throw new UnionKeyInternalError('Unable to serialize transaction message.');
     }
 
     const [signature, recoveryParam] = await signer.sign(

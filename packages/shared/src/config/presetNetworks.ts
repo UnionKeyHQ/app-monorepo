@@ -1531,9 +1531,6 @@ const serverPresetNetworks = [
       {
         'url': 'https://1rpc.io/eth',
       },
-      {
-        'url': 'https://onekey-eth.rpc.blxrbdn.com',
-      },
     ],
     'shortcode': 'eth',
     'shortname': 'ETH',
@@ -1939,9 +1936,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://1rpc.io/matic',
-      },
-      {
-        'url': 'https://onekey-polygon.rpc.blxrbdn.com',
       },
     ],
     'shortcode': 'polygon',
@@ -2565,9 +2559,6 @@ const serverPresetNetworks = [
       },
       {
         'url': 'https://1rpc.io/bnb',
-      },
-      {
-        'url': 'https://onekey-bnb.rpc.blxrbdn.com',
       },
     ],
     'shortcode': 'bsc',
@@ -4464,4 +4455,4 @@ serverPresetNetworks.push(FAKE_NOSTR_NETWORK);
 
 export { serverPresetNetworks };
 
-export const OnekeyNetworkUpdatedAt = 1685492989977;
+export const UnionKeyNetworkUpdatedAt = 1685492989977;

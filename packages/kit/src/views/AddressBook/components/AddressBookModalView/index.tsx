@@ -14,7 +14,7 @@ import {
 import NameServiceResolver, {
   useNameServiceStatus,
 } from '@unionkeyhq/kit/src/components/NameServiceResolver';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../../background/instance/backgroundApiProxy';
 import AddressInput from '../../../../components/AddressInput';
@@ -160,7 +160,7 @@ const ModalView: FC<ModalViewProps> = ({
                 hideHelpText
                 control={control}
                 name="networkId"
-                disabledNetworkIds={[OnekeyNetwork.lightning]}
+                disabledNetworkIds={[UnionKeyNetwork.lightning]}
               />
               <Form.Item
                 control={control}

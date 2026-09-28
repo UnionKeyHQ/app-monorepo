@@ -490,7 +490,7 @@ const SwapSlippage = () => {
   return <SwapSlippageContent />;
 };
 
-const SwapOnekeyFee = () => {
+const SwapUnionKeyFee = () => {
   const intl = useIntl();
   const quote = useAppSelector((s) => s.swap.quote);
   if (!quote) {
@@ -506,11 +506,11 @@ const SwapOnekeyFee = () => {
     >
       <Box flexDirection="row" alignItems="center">
         <Typography.Body2 color="text-subdued" mr="1">
-          {intl.formatMessage({ id: 'form__included_onekey_fee' })}
+          {intl.formatMessage({ id: 'form__included_unionkey_fee' })}
         </Typography.Body2>
         <SwapTooltip
           label={intl.formatMessage({
-            id: 'form__included_onekey_fee_desc',
+            id: 'form__included_unionkey_fee_desc',
           })}
         />
       </Box>
@@ -629,7 +629,7 @@ const SwapMoreQuote = () => {
           <SwapSlippage />
           <SwapPriceImpact />
           <SwapProtocalsFees />
-          <SwapOnekeyFee />
+          <SwapUnionKeyFee />
           <SwapArrivalTime />
         </Box>
         <Center h="9">

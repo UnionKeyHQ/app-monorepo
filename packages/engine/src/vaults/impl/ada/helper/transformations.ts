@@ -99,12 +99,12 @@ export type CardanoOutput =
       tokenBundle?: CardanoAssetGroup[];
     };
 
-export const transformToOneKeyInputs = (
+export const transformToUnionKeyInputs = (
   utxos: Utxo[],
-  onekeyUtxos: IAdaUTXO[],
+  unionKeyUtxos: IAdaUTXO[],
 ): CardanoInput[] =>
   utxos.map((utxo) => {
-    const utxoWithPath = onekeyUtxos.find(
+    const utxoWithPath = unionKeyUtxos.find(
       (u) => u.tx_hash === utxo.txHash && +u.output_index === utxo.outputIndex,
     );
     if (!utxoWithPath)
@@ -168,7 +168,7 @@ export const transformToTokenBundle = (assets: Asset[]) => {
   return assetsByPolicy;
 };
 
-export const transformToOneKeyOutputs = (
+export const transformToUnionKeyOutputs = (
   outputs: FinalOutput[],
   changeAddressParameters: CardanoAddressParameters,
 ): CardanoOutput[] =>

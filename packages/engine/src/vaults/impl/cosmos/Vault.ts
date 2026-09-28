@@ -8,7 +8,7 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '@unionkeyhq/engine/src/errors';
 import { parseNetworkId } from '@unionkeyhq/engine/src/managers/network';
 import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
@@ -52,7 +52,7 @@ import {
   stripHexPrefix,
 } from '@unionkeyhq/engine/src/vaults/utils/hexUtils';
 import { VaultBase } from '@unionkeyhq/engine/src/vaults/VaultBase';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
@@ -72,7 +72,7 @@ import { TxAminoBuilder } from './sdk/amino/TxAminoBuilder';
 import { defaultAminoMsgOpts } from './sdk/amino/types';
 import { MessageType } from './sdk/message';
 import { queryRegistry } from './sdk/query/IQuery';
-import { OneKeyQuery } from './sdk/query/OneKeyQuery';
+import { UnionKeyQuery } from './sdk/query/UnionKeyQuery';
 import { serializeSignedTx } from './sdk/txBuilder';
 import { TxMsgBuilder } from './sdk/txMsgBuilder';
 import {
@@ -95,8 +95,8 @@ import type { Coin } from 'cosmjs-types/cosmos/base/v1beta1/coin';
 
 const GAS_STEP_MULTIPLIER = 10000;
 const GAS_ADJUSTMENT: Record<string, string> = {
-  // [OnekeyNetwork.terra]: '2',
-  [OnekeyNetwork.juno]: '1.2',
+  // [UnionKeyNetwork.terra]: '2',
+  [UnionKeyNetwork.juno]: '1.2',
   default: '1.3',
 };
 const GAS_PRICE = ['0.01', '0.025', '0.04'];
@@ -231,7 +231,7 @@ export default class Vault extends VaultBase {
     if (this.isIbcToken(tokenAddress)) {
       const normalizationAddress =
         this.normalIBCAddress(tokenAddress) ?? tokenAddress;
-      const query = new OneKeyQuery();
+      const query = new UnionKeyQuery();
       const results = await query.fetchAssertInfos(this.networkId);
 
       if (!results) {
@@ -355,7 +355,7 @@ export default class Vault extends VaultBase {
     const tokens = [];
 
     if (ibcTokenAddresses.size > 0) {
-      const query = new OneKeyQuery();
+      const query = new UnionKeyQuery();
       const results = await query.fetchAssertInfos(this.networkId);
       if (!results) {
         return Promise.resolve([]);
@@ -440,10 +440,10 @@ export default class Vault extends VaultBase {
     const { price, limit } = params.feeInfoValue;
 
     if (!price || typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
     const network = await this.getNetwork();
 
@@ -637,7 +637,7 @@ export default class Vault extends VaultBase {
       );
 
       if (typeof token === 'undefined') {
-        throw new OneKeyInternalError('Failed to get token info.');
+        throw new UnionKeyInternalError('Failed to get token info.');
       }
 
       const amountValue = new BigNumber(amount)
@@ -886,13 +886,13 @@ export default class Vault extends VaultBase {
         txid,
       };
     } catch (error: any) {
-      if (error instanceof OneKeyInternalError) {
+      if (error instanceof UnionKeyInternalError) {
         throw error;
       }
 
       const { errorCode, message } = error || {};
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      throw new OneKeyInternalError(`${errorCode ?? ''} ${message}`);
+      throw new UnionKeyInternalError(`${errorCode ?? ''} ${message}`);
     }
   }
 
@@ -929,7 +929,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -949,7 +949,7 @@ export default class Vault extends VaultBase {
     const dbAccount = (await this.getDbAccount()) as DBVariantAccount;
     const chainInfo = await this.getChainInfo();
 
-    const mintScanQuery = new OneKeyQuery();
+    const mintScanQuery = new UnionKeyQuery();
     const explorerTxs =
       (await mintScanQuery.fetchAccountTxs(
         this.networkId,

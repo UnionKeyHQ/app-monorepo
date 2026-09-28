@@ -111,7 +111,7 @@ const HelpSelector: FC = () => {
           },
         },
         {
-          label: intl.formatMessage({ id: 'title__buy_onekey_hardware' }),
+          label: intl.formatMessage({ id: 'title__buy_unionkey_hardware' }),
           value: 'shop',
           iconProps: {
             name: isSmallScreen ? 'ShoppingBagOutline' : 'ShoppingBagMini',
@@ -186,7 +186,7 @@ const HelpSelector: FC = () => {
         case 'shop':
           openUrlByWebview(
             HARDWARE_STORE_URL,
-            intl.formatMessage({ id: 'title__buy_onekey_hardware' }),
+            intl.formatMessage({ id: 'title__buy_unionkey_hardware' }),
           );
           break;
         case 'download':

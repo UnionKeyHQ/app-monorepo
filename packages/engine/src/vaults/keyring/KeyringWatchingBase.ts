@@ -2,7 +2,7 @@
 
 import type { SignedTx, UnsignedTx } from '@unionkeyhq/engine/src/types/provider';
 
-import { OneKeyInternalError } from '../../errors';
+import { UnionKeyInternalError } from '../../errors';
 
 import { KeyringBase } from './KeyringBase';
 
@@ -13,7 +13,7 @@ export abstract class KeyringWatchingBase extends KeyringBase {
     unsignedTx: UnsignedTx,
     options: ISignCredentialOptions,
   ): Promise<SignedTx> {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'signTransaction is not supported for watching accounts',
     );
   }
@@ -22,13 +22,13 @@ export abstract class KeyringWatchingBase extends KeyringBase {
     messages: any[],
     options: ISignCredentialOptions,
   ): Promise<string[]> {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'signMessage is not supported for watching accounts',
     );
   }
 
   // prepareAccounts(params: any): Promise<Array<any>> {
-  //   throw new OneKeyInternalError(
+  //   throw new UnionKeyInternalError(
   //     'prepareAccounts is not supported for watching accounts',
   //   );
   // }

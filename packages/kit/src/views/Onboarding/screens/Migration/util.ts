@@ -5,7 +5,7 @@ import type { DeviceInfo } from '@unionkeyhq/engine/src/types/migrate';
 import store from '@unionkeyhq/kit/src/store';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
-import { ONEKEY_APP_DEEP_LINK } from '../../../../components/WalletConnect/walletConnectConsts';
+import { UNIONKEY_APP_DEEP_LINK } from '../../../../components/WalletConnect/walletConnectConsts';
 
 function parseCloudData(cloudData: any) {
   const {
@@ -113,21 +113,21 @@ function deviceInfo() {
   const { version, buildNumber } = store.getState().settings;
   return {
     deviceName: deviceName ?? 'unknown',
-    platform: process.env.ONEKEY_PLATFORM ?? 'unknown',
+    platform: process.env.UNIONKEY_PLATFORM ?? 'unknown',
     channel: platformEnv.distributionChannel,
     version,
     buildNumber,
   };
 }
 
-const OneKeyMigrateQRCodePrefix = `${ONEKEY_APP_DEEP_LINK}migrate/`;
+const UnionKeyMigrateQRCodePrefix = `${UNIONKEY_APP_DEEP_LINK}migrate/`;
 
 const MigrationEnable = !platformEnv.isWeb;
 
 export {
   parseDeviceInfo,
   deviceInfo,
-  OneKeyMigrateQRCodePrefix,
+  UnionKeyMigrateQRCodePrefix,
   MigrationEnable,
   generatePassword,
   randomString,

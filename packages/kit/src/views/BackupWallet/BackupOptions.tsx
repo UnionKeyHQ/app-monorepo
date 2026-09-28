@@ -15,7 +15,7 @@ import { useWallet } from '../../hooks/useWallet';
 import { KeyTagRoutes } from '../KeyTag/Routes/enums';
 import {
   OptionKeyTag,
-  OptionOneKeyLite,
+  OptionUnionKeyLite,
   OptionRecoveryPhrase,
 } from '../Onboarding/screens/ImportWallet/ImportWalletOptions';
 
@@ -75,16 +75,16 @@ const BackupWalletOptionsView: FC<BackupWalletViewProps> = () => {
               onPress={onManual}
             />
             {supportedNFC && (
-              <OptionOneKeyLite
-                title={intl.formatMessage({ id: 'backup__onekey_lite_backup' })}
+              <OptionUnionKeyLite
+                title={intl.formatMessage({ id: 'backup__unionkey_lite_backup' })}
                 description={intl.formatMessage({
-                  id: 'backup__onekey_lite_backup_desc',
+                  id: 'backup__unionkey_lite_backup_desc',
                 })}
                 onPress={onLite}
               />
             )}
             <OptionKeyTag
-              title={intl.formatMessage({ id: 'form__onekey_keytag' })}
+              title={intl.formatMessage({ id: 'form__unionkey_keytag' })}
               description={intl.formatMessage({
                 id: 'form__record_your_recovery_phrase_like_a_dot_punching_game',
               })}

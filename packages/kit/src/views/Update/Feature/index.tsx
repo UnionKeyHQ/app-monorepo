@@ -49,7 +49,7 @@ const UpdateFeature: FC = () => {
           <>
             <Typography.DisplayMedium>
               {intl.formatMessage(
-                { id: 'modal__what_is_new_in_onekey_str' },
+                { id: 'modal__what_is_new_in_unionkey_str' },
                 { 0: newVersion },
               )}
             </Typography.DisplayMedium>

@@ -16,7 +16,7 @@ const KitProviderDesktop = createLazyKitProvider({
 });
 
 const App: FC = function () {
-  global.$$onekeyPerfTrace?.log({
+  global.$$unionKeyPerfTrace?.log({
     name: '[DESKTOP]: App.tsx KitProviderDesktop render()',
   });
 

@@ -7,7 +7,7 @@ import {
   isLightningNetwork,
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 import { AccountType } from '../types/account';
 import {
   WALLET_TYPE_EXTERNAL,
@@ -46,7 +46,7 @@ function getCoinTypeFromAccountId(accountId: string): string {
       }
     }
   }
-  throw new OneKeyInternalError(`Invalid accountId ${accountId}.`);
+  throw new UnionKeyInternalError(`Invalid accountId ${accountId}.`);
 }
 
 function getWalletIdFromAccountId(accountId: string): string {
@@ -54,7 +54,7 @@ function getWalletIdFromAccountId(accountId: string): string {
   if (walletId !== accountId) {
     return walletId;
   }
-  throw new OneKeyInternalError(`Invalid accountId ${accountId}.`);
+  throw new UnionKeyInternalError(`Invalid accountId ${accountId}.`);
 }
 
 function getWalletTypeFromAccountId(accountId: string): string {
@@ -62,7 +62,7 @@ function getWalletTypeFromAccountId(accountId: string): string {
   if (walletType) {
     return walletType;
   }
-  throw new OneKeyInternalError(`Invalid accountId ${accountId}.`);
+  throw new UnionKeyInternalError(`Invalid accountId ${accountId}.`);
 }
 
 function isAccountCompatibleWithNetwork(accountId: string, networkId: string) {

@@ -4,9 +4,9 @@ import type {
 } from '@unionkeyhq/cross-inpage-provider-types';
 import type { Features, IDeviceType } from '@unionkeyhq/hd-core';
 
-export type IOneKeyDeviceType = IDeviceType;
+export type IUnionKeyDeviceType = IDeviceType;
 
-export type IOneKeyDeviceFeatures = Features;
+export type IUnionKeyDeviceFeatures = Features;
 
 export type IDappSourceInfo = {
   id: string | number; // ServicePromise callback id to reject/resolve

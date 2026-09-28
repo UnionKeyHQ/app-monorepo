@@ -40,7 +40,7 @@ const BackupDone: FC<BackupDoneProps> = ({ password, walletId }) => {
             screen: ModalRoutes.CreateWallet,
             params: {
               screen:
-                CreateWalletModalRoutes.OnekeyLiteBackupPinCodeVerifyModal,
+                CreateWalletModalRoutes.UnionKeyLiteBackupPinCodeVerifyModal,
               params: {
                 walletId,
                 backupData: mnemonic,

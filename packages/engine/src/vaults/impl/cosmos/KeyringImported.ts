@@ -1,6 +1,6 @@
 import { sha256 } from '@noble/hashes/sha256';
 
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import { Signer } from '@unionkeyhq/engine/src/proxy';
 import type { CurveName } from '@unionkeyhq/engine/src/secret';
 import { ed25519, secp256k1 } from '@unionkeyhq/engine/src/secret/curves';
@@ -32,16 +32,16 @@ export class KeyringImported extends KeyringImportedBase {
     const selectedAddress = dbAccount.address;
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Cosmos signers number should be 1.');
+      throw new UnionKeyInternalError('Cosmos signers number should be 1.');
     } else if (addresses[0] !== selectedAddress) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
     const chainInfo = await this.getChainInfo();
     return {
@@ -60,7 +60,7 @@ export class KeyringImported extends KeyringImportedBase {
       case 'secp256k1':
         return secp256k1;
       default:
-        throw new OneKeyInternalError('Unsupported curve');
+        throw new UnionKeyInternalError('Unsupported curve');
     }
   }
 
@@ -69,7 +69,7 @@ export class KeyringImported extends KeyringImportedBase {
   ): Promise<Array<DBVariantAccount>> {
     const { privateKey, name } = params;
     if (privateKey.length !== 32) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
 
     const chainInfo = await this.getChainInfo();
@@ -110,7 +110,7 @@ export class KeyringImported extends KeyringImportedBase {
 
     const senderPublicKey = unsignedTx.inputs?.[0]?.publicKey;
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
 
     const encodedTx = unsignedTx.payload.encodedTx as IEncodedTxCosmos;

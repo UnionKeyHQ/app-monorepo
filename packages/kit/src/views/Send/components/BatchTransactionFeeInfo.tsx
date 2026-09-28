@@ -16,7 +16,7 @@ import {
   Tooltip,
   VStack,
 } from '@unionkeyhq/components';
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import type {
   IEncodedTx,
   IFeeInfoPayload,
@@ -125,8 +125,8 @@ function BatchTransactionFeeInfo(props: Props) {
     }
 
     let message: string | null = null;
-    if (feeInfoError instanceof OneKeyError) {
-      if (feeInfoError.key !== 'onekey_error') {
+    if (feeInfoError instanceof UnionKeyError) {
+      if (feeInfoError.key !== 'unionkey_error') {
         message = intl.formatMessage({
           // @ts-expect-error
           id: feeInfoError.key,

@@ -96,7 +96,7 @@ export async function generateExportedCredentialForImportedAccount(
 }
 
 /*
- * @param xprv xprv string, 165 length, generate from OneKey wallet
+ * @param xprv xprv string, 165 length, generate from UnionKey wallet
  */
 export function decodePrivateKeyByXprv(xprv: string) {
   const decodeXprv = bech32.decode(xprv);

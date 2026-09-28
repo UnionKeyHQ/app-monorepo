@@ -86,7 +86,7 @@ declare global {
 }
 
 ipcRenderer.on(
-  'SET_ONEKEY_DESKTOP_GLOBALS',
+  'SET_UNIONKEY_DESKTOP_GLOBALS',
   (
     _,
     globals: {
@@ -94,18 +94,18 @@ ipcRenderer.on(
     },
   ) => {
     // for DesktopWebView:
-    //    const { preloadJsUrl } = window.ONEKEY_DESKTOP_GLOBALS;
-    window.ONEKEY_DESKTOP_GLOBALS = globals;
-    // contextBridge.exposeInMainWorld('ONEKEY_DESKTOP_GLOBALS', globals);
+    //    const { preloadJsUrl } = window.UNIONKEY_DESKTOP_GLOBALS;
+    window.UNIONKEY_DESKTOP_GLOBALS = globals;
+    // contextBridge.exposeInMainWorld('UNIONKEY_DESKTOP_GLOBALS', globals);
   },
 );
 
-window.ONEKEY_DESKTOP_DEEP_LINKS = window.ONEKEY_DESKTOP_DEEP_LINKS || [];
+window.UNIONKEY_DESKTOP_DEEP_LINKS = window.UNIONKEY_DESKTOP_DEEP_LINKS || [];
 ipcRenderer.on('OPEN_URL_DEEP_LINK_MESSAGE', (event, data) => {
-  if (window.ONEKEY_DESKTOP_DEEP_LINKS) {
-    window.ONEKEY_DESKTOP_DEEP_LINKS.push(data);
+  if (window.UNIONKEY_DESKTOP_DEEP_LINKS) {
+    window.UNIONKEY_DESKTOP_DEEP_LINKS.push(data);
   }
-  window.ONEKEY_DESKTOP_DEEP_LINKS = window.ONEKEY_DESKTOP_DEEP_LINKS.slice(-5);
+  window.UNIONKEY_DESKTOP_DEEP_LINKS = window.UNIONKEY_DESKTOP_DEEP_LINKS.slice(-5);
 });
 
 const validChannels = [

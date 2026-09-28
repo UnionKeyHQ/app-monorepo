@@ -16,7 +16,7 @@ import type { Wallet } from '@unionkeyhq/engine/src/types/wallet';
 import WalletAvatar from '@unionkeyhq/kit/src/components/WalletSelector/WalletAvatar';
 import { getDeviceTypeByDeviceId } from '@unionkeyhq/kit/src/utils/hardware';
 import { isPassphraseWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useDerivationPath } from '../../../components/NetworkAccountSelector/hooks/useDerivationPath';
@@ -125,7 +125,7 @@ const WalletAccounts = forwardRef<IWalletAccountsRefType, IProps>(
             walletImage={wallet.type}
             avatar={wallet.avatar}
             hwWalletType={
-              (wallet.deviceType as IOneKeyDeviceType) ||
+              (wallet.deviceType as IUnionKeyDeviceType) ||
               getDeviceTypeByDeviceId(wallet.associatedDevice)
             }
             isPassphrase={isPassphraseWallet(wallet)}

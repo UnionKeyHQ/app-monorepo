@@ -59,7 +59,7 @@ const WalletSwitch = () => {
         <Icon name="InformationCircleMini" />
         <Typography.Body2Strong ml={2}>
           {intl.formatMessage({
-            id: 'content__when_the_option_is_turned_on_the_inject_cnonection_method_for_that_wallet_will_be_overridden_by_onekey',
+            id: 'content__when_the_option_is_turned_on_the_inject_cnonection_method_for_that_wallet_will_be_overridden_by_unionkey',
           })}
         </Typography.Body2Strong>
         <Box />

@@ -1,7 +1,7 @@
 import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
 
 import type { ExportedSeedCredential } from '@unionkeyhq/engine/src/dbs/base';
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import { slicePathTemplate } from '@unionkeyhq/engine/src/managers/derivation';
 import { getAccountNameInfoByImpl } from '@unionkeyhq/engine/src/managers/impl';
 import { Signer } from '@unionkeyhq/engine/src/proxy';
@@ -36,16 +36,16 @@ export class KeyringHd extends KeyringHdBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Kaspa signers number should be 1.');
+      throw new UnionKeyInternalError('Kaspa signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -73,7 +73,7 @@ export class KeyringHd extends KeyringHdBase {
     );
 
     if (pubKeyInfos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const { prefix } = getAccountNameInfoByImpl(COIN_IMPL).default;

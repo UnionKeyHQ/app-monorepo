@@ -14,7 +14,7 @@ import { shortenAddress } from '@unionkeyhq/components/src/utils';
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import type { Wallet } from '@unionkeyhq/engine/src/types/wallet';
 import { getDeviceTypeByDeviceId } from '@unionkeyhq/kit/src/utils/hardware';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import WalletAvatar from '../../../components/WalletSelector/WalletAvatar';
@@ -96,7 +96,7 @@ const MyWallet = () => {
           avatar={section.wallet.avatar}
           walletImage={section.wallet.type}
           hwWalletType={
-            (section.wallet.deviceType as IOneKeyDeviceType) ||
+            (section.wallet.deviceType as IUnionKeyDeviceType) ||
             getDeviceTypeByDeviceId(section.wallet.associatedDevice)
           }
           size="sm"

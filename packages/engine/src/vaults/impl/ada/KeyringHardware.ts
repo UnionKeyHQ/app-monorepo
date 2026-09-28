@@ -4,15 +4,15 @@ import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import { COINTYPE_ADA as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError, OneKeyInternalError } from '../../../errors';
+import { UnionKeyHardwareError, UnionKeyInternalError } from '../../../errors';
 import { AccountType } from '../../../types/account';
 import { KeyringHardwareBase } from '../../keyring/KeyringHardwareBase';
 
 import { getChangeAddress } from './helper/cardanoUtils';
 import sdk from './helper/sdk';
 import {
-  transformToOneKeyInputs,
-  transformToOneKeyOutputs,
+  transformToUnionKeyInputs,
+  transformToUnionKeyOutputs,
 } from './helper/transformations';
 import { NetworkId } from './types';
 
@@ -80,7 +80,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success || !response.payload) {
@@ -89,7 +89,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     }
 
     if (response.payload.length !== usedIndexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const client = await (this.vault as AdaVault).getClient();
@@ -244,7 +244,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     } else {
       cardanoParams = {
         signingMode: PROTO.CardanoTxSigningMode.ORDINARY_TRANSACTION,
-        outputs: transformToOneKeyOutputs(
+        outputs: transformToUnionKeyOutputs(
           outputs,
           changeAddress.addressParameters,
         ),
@@ -258,7 +258,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const res = await HardwareSDK.cardanoSignTransaction(connectId, deviceId, {
       ...passphraseState,
-      inputs: transformToOneKeyInputs(inputs, utxos),
+      inputs: transformToUnionKeyInputs(inputs, utxos),
       derivationType,
       ...cardanoParams,
     } as any);

@@ -19,7 +19,7 @@ import { getTimeDurationMs } from '@unionkeyhq/kit/src/utils/helper';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
-import { InvalidAddress, OneKeyInternalError } from '../../../errors';
+import { InvalidAddress, UnionKeyInternalError } from '../../../errors';
 import { isAccountCompatibleWithNetwork } from '../../../managers/account';
 import {
   IDecodedTxActionType,
@@ -312,7 +312,7 @@ export default class Vault extends VaultBase {
         }),
       ).toString('hex');
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

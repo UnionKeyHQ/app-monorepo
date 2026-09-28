@@ -9,7 +9,7 @@ import { convertDeviceError } from '@unionkeyhq/shared/src/device/deviceErrorUti
 import { COINTYPE_COSMOS as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError, OneKeyInternalError } from '../../../errors';
+import { UnionKeyHardwareError, UnionKeyInternalError } from '../../../errors';
 import { KeyringHardwareBase } from '../../keyring/KeyringHardwareBase';
 import { stripHexPrefix } from '../../utils/hexUtils';
 
@@ -51,7 +51,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!response.success) {
@@ -95,7 +95,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
     if (!publicKeyResponse.success) {
       debugLogger.common.error(publicKeyResponse.payload);
@@ -107,7 +107,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     for (const addressInfo of publicKeyResponse.payload) {
       const { path, publicKey } = addressInfo;
       if (!publicKey) {
-        throw new OneKeyInternalError('Unable to get public key from device.');
+        throw new UnionKeyInternalError('Unable to get public key from device.');
       }
       const pubkey = hexToBytes(publicKey);
       const address = pubkeyToBaseAddress(curve, pubkey);
@@ -189,7 +189,7 @@ export class KeyringHardware extends KeyringHardwareBase {
 
     const senderPublicKey = unsignedTx.inputs?.[0]?.publicKey;
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
 
     const encodedTx = unsignedTx.payload.encodedTx as IEncodedTxCosmos;

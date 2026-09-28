@@ -19,7 +19,7 @@ import {
   InsufficientBalance,
   InvalidAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   PreviousAccountIsEmpty,
 } from '../../../errors';
 import { getLastAccountId } from '../../../managers/derivation';
@@ -420,7 +420,7 @@ export default class Vault extends VaultBase {
       tokenAddress ?? '',
     );
     if (!token || isUndefined(token.decimals)) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `Token not found: ${tokenAddress || 'main'}`,
       );
     }

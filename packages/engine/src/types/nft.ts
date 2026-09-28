@@ -1,16 +1,16 @@
 // safe import
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 export const NFTChainMap: Record<string, string> = {
-  [OnekeyNetwork.eth]: 'eth',
-  [OnekeyNetwork.optimism]: 'optimism',
-  [OnekeyNetwork.bsc]: 'bsc',
-  [OnekeyNetwork.polygon]: 'polygon',
-  [OnekeyNetwork.arbitrum]: 'arbitrum',
-  [OnekeyNetwork.sol]: 'sol',
-  [OnekeyNetwork.avalanche]: 'avalanche',
-  [OnekeyNetwork.btc]: 'btc',
-  [OnekeyNetwork.tbtc]: 'tbtc',
+  [UnionKeyNetwork.eth]: 'eth',
+  [UnionKeyNetwork.optimism]: 'optimism',
+  [UnionKeyNetwork.bsc]: 'bsc',
+  [UnionKeyNetwork.polygon]: 'polygon',
+  [UnionKeyNetwork.arbitrum]: 'arbitrum',
+  [UnionKeyNetwork.sol]: 'sol',
+  [UnionKeyNetwork.avalanche]: 'avalanche',
+  [UnionKeyNetwork.btc]: 'btc',
+  [UnionKeyNetwork.tbtc]: 'tbtc',
 };
 
 export type IErcNftType = 'erc721' | 'erc1155';

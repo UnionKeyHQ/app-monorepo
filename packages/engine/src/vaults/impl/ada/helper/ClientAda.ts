@@ -6,7 +6,7 @@ import { getFiatEndpoint } from '@unionkeyhq/engine/src/endpoint';
 import { getTimeDurationMs } from '@unionkeyhq/kit/src/utils/helper';
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
-import { OneKeyInternalError } from '../../../../errors';
+import { UnionKeyInternalError } from '../../../../errors';
 
 import type { Token } from '../../../../types/token';
 import type {
@@ -196,7 +196,7 @@ class ClientAda {
         isUndefined(metadata?.decimals) &&
         isUndefined(dangerouseFallbackDecimals)
       ) {
-        throw new OneKeyInternalError(`Invalid token address: ${asset}`);
+        throw new UnionKeyInternalError(`Invalid token address: ${asset}`);
       }
 
       return {

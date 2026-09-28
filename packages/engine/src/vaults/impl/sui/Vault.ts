@@ -33,8 +33,8 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyError,
-  OneKeyInternalError,
+  UnionKeyError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import {
   IDecodedTxActionType,
@@ -51,7 +51,7 @@ import { KeyringHd } from './KeyringHd';
 import { KeyringImported } from './KeyringImported';
 import { KeyringWatching } from './KeyringWatching';
 import { parseTransferObjects } from './parses/Transaction';
-import { OneKeyJsonRpcProvider } from './provider/OnekeyJsonRpcProvider';
+import { UnionKeyJsonRpcProvider } from './provider/UnionKeyJsonRpcProvider';
 import settings from './settings';
 import {
   GAS_SAFE_OVERHEAD,
@@ -119,7 +119,7 @@ export default class Vault extends VaultBase {
 
   getSuiClient(url: string) {
     // client: jayson > cross-fetch
-    return new OneKeyJsonRpcProvider(
+    return new UnionKeyJsonRpcProvider(
       new Connection({
         fullnode: url,
         faucet: 'https://faucet.testnet.sui.io/gas',
@@ -278,10 +278,10 @@ export default class Vault extends VaultBase {
   }): Promise<IEncodedTxSUI> {
     const { price, limit } = params.feeInfoValue;
     if (typeof price !== 'undefined' && typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
 
     const newTx = TransactionBlock.from(params.encodedTx.rawTx);
@@ -317,7 +317,7 @@ export default class Vault extends VaultBase {
     const sender = await this.getAccountAddress();
     const transactionBlock = TransactionBlock.from(encodedTx.rawTx);
 
-    if (!transactionBlock) throw new OneKeyError('Invalid transaction data.');
+    if (!transactionBlock) throw new UnionKeyError('Invalid transaction data.');
 
     const actions: IDecodedTxAction[] = [];
 
@@ -344,13 +344,13 @@ export default class Vault extends VaultBase {
               if (!action.isNative) {
                 actionKey = 'tokenTransfer';
                 if (!action.coinType)
-                  throw new OneKeyInternalError('Invalid coin type');
+                  throw new UnionKeyInternalError('Invalid coin type');
                 token = await this.engine.ensureTokenInDB(
                   this.networkId,
                   normalizeSuiCoinType(action.coinType),
                 );
 
-                if (!token) throw new OneKeyInternalError('Invalid coin type');
+                if (!token) throw new UnionKeyInternalError('Invalid coin type');
               }
               actions.push({
                 type: action.type,
@@ -488,7 +488,7 @@ export default class Vault extends VaultBase {
       );
 
       if (typeof token === 'undefined') {
-        throw new OneKeyInternalError('Failed to get token info.');
+        throw new UnionKeyInternalError('Failed to get token info.');
       }
 
       amountValue = new BigNumber(amount).shiftedBy(token.decimals).toFixed();
@@ -619,7 +619,7 @@ export default class Vault extends VaultBase {
           total = total.plus(amount);
           selectCoins.push(coin);
         } else {
-          throw new OneKeyInternalError('Insufficient balance');
+          throw new UnionKeyInternalError('Insufficient balance');
         }
       } while (total.isLessThan(gasLimit));
 
@@ -679,15 +679,15 @@ export default class Vault extends VaultBase {
           ? gasBudget
           : baseComputationCostWithOverhead;
 
-        // Only onekey max send can pass, other cases must be simulated successfully
+        // Only UnionKey max send can pass, other cases must be simulated successfully
         if (gasUsed.isEqualTo(0)) {
           // Exec failure
-          throw new OneKeyError();
+          throw new UnionKeyError();
         }
 
         limit = gasUsed.multipliedBy(1.1).toFixed();
       } else {
-        throw new OneKeyError();
+        throw new UnionKeyError();
       }
     } catch (error) {
       const transactionBlock = TransactionBlock.from(encodedTx.rawTx);
@@ -700,7 +700,7 @@ export default class Vault extends VaultBase {
         const { inputs } = transactionBlock.blockData;
         limit = computeGasBudget(inputs.length).toString();
       } else {
-        throw new OneKeyError();
+        throw new UnionKeyError();
       }
     }
 
@@ -736,7 +736,7 @@ export default class Vault extends VaultBase {
           scheme = 'Secp256k1';
           break;
         default:
-          throw new OneKeyInternalError('Unsupported signature scheme');
+          throw new UnionKeyInternalError('Unsupported signature scheme');
       }
 
       if (!signature) {
@@ -772,12 +772,12 @@ export default class Vault extends VaultBase {
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       const errorMessage = `${errorCode ?? ''} ${message}`;
       if (message.indexOf('Insufficient gas:') !== -1) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           errorMessage,
           'msg__broadcast_tx_Insufficient_fee',
         );
       } else {
-        throw new OneKeyInternalError(errorMessage);
+        throw new UnionKeyInternalError(errorMessage);
       }
     }
   }
@@ -791,7 +791,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

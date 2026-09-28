@@ -29,7 +29,7 @@ import {
   HardwareUpdateModalRoutes,
   ManagerWalletModalRoutes,
   ModalRoutes,
-  OnekeyHardwareModalRoutes,
+  UnionKeyHardwareModalRoutes,
   RootRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
 import {
@@ -39,8 +39,8 @@ import {
 import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
 import { getHomescreenKeys } from '@unionkeyhq/kit/src/utils/hardware/constants/homescreens';
 import { showDialog } from '@unionkeyhq/kit/src/utils/overlayUtils';
-import showDeviceAdvancedSettings from '@unionkeyhq/kit/src/views/Hardware/Onekey/DeviceAdvancedSettingsBottomSheetModal';
-import HardwareLoadingDialog from '@unionkeyhq/kit/src/views/Hardware/Onekey/OnekeyHardwareConnectDialog';
+import showDeviceAdvancedSettings from '@unionkeyhq/kit/src/views/Hardware/UnionKey/DeviceAdvancedSettingsBottomSheetModal';
+import HardwareLoadingDialog from '@unionkeyhq/kit/src/views/Hardware/UnionKey/UnionKeyHardwareConnectDialog';
 import ManagerWalletDeleteDialog from '@unionkeyhq/kit/src/views/ManagerWallet/DeleteWallet';
 import type { DeleteWalletProp } from '@unionkeyhq/kit/src/views/ManagerWallet/DeleteWallet';
 
@@ -111,9 +111,9 @@ function HardwarePassphraseMenuOptions({
       <WalletMenuItem
         onPress={() => {
           navigation.navigate(RootRoutes.Modal, {
-            screen: ModalRoutes.OnekeyHardware,
+            screen: ModalRoutes.UnionKeyHardware,
             params: {
-              screen: OnekeyHardwareModalRoutes.OnekeyDeviceWalletNameModal,
+              screen: UnionKeyHardwareModalRoutes.UnionKeyDeviceWalletNameModal,
               params: {
                 walletId: wallet?.id ?? '',
               },
@@ -270,9 +270,9 @@ function HardwareMenuOptions({
       <WalletMenuItem
         onPress={() => {
           navigation.navigate(RootRoutes.Modal, {
-            screen: ModalRoutes.OnekeyHardware,
+            screen: ModalRoutes.UnionKeyHardware,
             params: {
-              screen: OnekeyHardwareModalRoutes.OnekeyHardwareDeviceNameModal,
+              screen: UnionKeyHardwareModalRoutes.UnionKeyHardwareDeviceNameModal,
               params: {
                 walletId: wallet?.id ?? '',
                 deviceName: '',
@@ -289,9 +289,9 @@ function HardwareMenuOptions({
         <WalletMenuItem
           onPress={() => {
             navigation.navigate(RootRoutes.Modal, {
-              screen: ModalRoutes.OnekeyHardware,
+              screen: ModalRoutes.UnionKeyHardware,
               params: {
-                screen: OnekeyHardwareModalRoutes.OnekeyHardwareHomeScreenModal,
+                screen: UnionKeyHardwareModalRoutes.UnionKeyHardwareHomeScreenModal,
                 params: {
                   walletId: wallet?.id ?? '',
                   deviceType: hwInfo?.hwWalletType ?? 'classic',
@@ -307,9 +307,9 @@ function HardwareMenuOptions({
       <WalletMenuItem
         onPress={() => {
           navigation.navigate(RootRoutes.Modal, {
-            screen: ModalRoutes.OnekeyHardware,
+            screen: ModalRoutes.UnionKeyHardware,
             params: {
-              screen: OnekeyHardwareModalRoutes.OnekeyHardwareDetailsModal,
+              screen: UnionKeyHardwareModalRoutes.UnionKeyHardwareDetailsModal,
               params: {
                 walletId: wallet?.id ?? '',
               },

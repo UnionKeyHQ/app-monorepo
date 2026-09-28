@@ -7,7 +7,7 @@ function buildEnvExposedToClientDangerously({ platform }) {
     'NODE_ENV',
     'VERSION',
     'BUILD_NUMBER',
-    'ONEKEY_PLATFORM',
+    'UNIONKEY_PLATFORM',
     'EXT_INJECT_MODE',
     'EXT_CHANNEL',
     'ANDROID_CHANNEL',

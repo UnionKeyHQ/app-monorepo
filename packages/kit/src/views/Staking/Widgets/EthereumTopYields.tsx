@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
 
 import { Box, Pressable, Typography } from '@unionkeyhq/components';
 import type { Token } from '@unionkeyhq/engine/src/types/token';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import {
@@ -50,7 +50,7 @@ const EthereumTopYieldsContent: FC<EthereumTopYieldsContentProps> = ({
   const topApr = useMemo(() => {
     if (!ethStakingApr) return undefined;
     const items =
-      networkId === OnekeyNetwork.eth
+      networkId === UnionKeyNetwork.eth
         ? ethStakingApr.mainnet
         : ethStakingApr.testnet;
     return items.kele > items.lido

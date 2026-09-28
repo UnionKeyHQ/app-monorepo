@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/native';
 
 import { useIsVerticalLayout } from '@unionkeyhq/components';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
 import { useAppSelector, useNavigation } from '../hooks';
@@ -269,13 +269,13 @@ export function useNavigationActions() {
   const sendToken = useCallback(
     ({ accountId, networkId }: { accountId: string; networkId: string }) => {
       const skipSelectTokenNetwork: string[] = [
-        OnekeyNetwork.btc,
-        OnekeyNetwork.doge,
-        OnekeyNetwork.ltc,
-        OnekeyNetwork.bch,
-        OnekeyNetwork.lightning,
-        OnekeyNetwork.tlightning,
-        OnekeyNetwork.tbtc,
+        UnionKeyNetwork.btc,
+        UnionKeyNetwork.doge,
+        UnionKeyNetwork.ltc,
+        UnionKeyNetwork.bch,
+        UnionKeyNetwork.lightning,
+        UnionKeyNetwork.tlightning,
+        UnionKeyNetwork.tbtc,
       ];
       if (skipSelectTokenNetwork.includes(networkId)) {
         navigation.navigate(RootRoutes.Modal, {

@@ -13,7 +13,7 @@ import {
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError, OneKeyInternalError } from '../../../errors';
+import { UnionKeyHardwareError, UnionKeyInternalError } from '../../../errors';
 import { slicePathTemplate } from '../../../managers/derivation';
 import { getAccountNameInfoByTemplate } from '../../../managers/impl';
 import { AccountType } from '../../../types/account';
@@ -217,7 +217,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       console.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (
@@ -231,7 +231,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     }
 
     if (response.payload.length !== usedIndexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const ret = [];

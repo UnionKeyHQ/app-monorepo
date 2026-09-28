@@ -1,6 +1,6 @@
 import { batchGetPrivateKeys } from '@unionkeyhq/engine/src/secret';
 
-import { OneKeyInternalError } from '../../errors';
+import { UnionKeyInternalError } from '../../errors';
 
 import { KeyringSoftwareBase } from './KeyringSoftwareBase';
 
@@ -23,7 +23,7 @@ export abstract class KeyringHdBase extends KeyringSoftwareBase {
       password,
     )) as ExportedSeedCredential;
     if (typeof seed === 'undefined') {
-      throw new OneKeyInternalError('Unable to get credential.');
+      throw new UnionKeyInternalError('Unable to get credential.');
     }
 
     const { curve } = await this.engine.providerManager.getChainInfoByNetworkId(

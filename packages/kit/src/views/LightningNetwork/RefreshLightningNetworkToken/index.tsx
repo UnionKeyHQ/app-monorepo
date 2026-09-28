@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useIntl } from 'react-intl';
 
 import { ToastManager } from '@unionkeyhq/components';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isHdWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
@@ -27,7 +27,7 @@ export default function RefreshLightningNetworkToken({
     }
     if (
       !networkId ||
-      ![OnekeyNetwork.lightning, OnekeyNetwork.tlightning].includes(networkId)
+      ![UnionKeyNetwork.lightning, UnionKeyNetwork.tlightning].includes(networkId)
     ) {
       return;
     }

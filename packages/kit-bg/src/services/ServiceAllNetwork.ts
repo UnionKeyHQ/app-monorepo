@@ -34,7 +34,7 @@ import {
   bindThis,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import { FAKE_ALL_NETWORK } from '@unionkeyhq/shared/src/config/fakeNetwork';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   IMPL_EVM,
   IMPL_SOL,
@@ -87,12 +87,12 @@ export default class ServiceAllNetwork extends ServiceBase {
     const isValidUtxoAccount =
       account.type === AccountType.UTXO &&
       !![
-        OnekeyNetwork.btc,
-        OnekeyNetwork.ltc,
-        OnekeyNetwork.bch,
-        OnekeyNetwork.doge,
-        OnekeyNetwork.ada,
-        OnekeyNetwork.nexa,
+        UnionKeyNetwork.btc,
+        UnionKeyNetwork.ltc,
+        UnionKeyNetwork.bch,
+        UnionKeyNetwork.doge,
+        UnionKeyNetwork.ada,
+        UnionKeyNetwork.nexa,
       ].find((nid) => isAccountCompatibleWithNetwork(account.id, nid));
     const replaceStr =
       isValidUtxoAccount || isLightningNetwork(account.coinType)
@@ -225,7 +225,7 @@ export default class ServiceAllNetwork extends ServiceBase {
         !n.settings.hideInAllNetworksMode &&
         networkIsPreset(n.id) &&
         networkAccountsMap[n.id] &&
-        ![OnekeyNetwork.fevm, OnekeyNetwork.cfxespace].includes(n.id),
+        ![UnionKeyNetwork.fevm, UnionKeyNetwork.cfxespace].includes(n.id),
     );
 
     for (const n of networks) {
@@ -375,7 +375,7 @@ export default class ServiceAllNetwork extends ServiceBase {
         !n.settings.hideInAllNetworksMode &&
         networkIsPreset(n.id) &&
         !isAllNetworks(n.id) &&
-        ![OnekeyNetwork.fevm, OnekeyNetwork.cfxespace].includes(n.id),
+        ![UnionKeyNetwork.fevm, UnionKeyNetwork.cfxespace].includes(n.id),
     );
 
     const networksWithAccounts: NetworkWithAccounts[] = [];

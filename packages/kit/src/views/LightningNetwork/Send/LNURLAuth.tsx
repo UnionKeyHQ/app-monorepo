@@ -87,7 +87,7 @@ const LNURLAuth = () => {
     if (lnurlDetails.action === 'register') {
       setMessages({
         allowText: intl.formatMessage({
-          id: 'content__allow_dapp_to_register_with_onekey',
+          id: 'content__allow_dapp_to_register_with_unionkey',
         }),
         title: intl.formatMessage({
           id: 'title__lnurl_register',
@@ -102,7 +102,7 @@ const LNURLAuth = () => {
     if (lnurlDetails.action === 'link') {
       setMessages({
         allowText: intl.formatMessage({
-          id: 'content__allow_dapp_to_link_with_onekey',
+          id: 'content__allow_dapp_to_link_with_unionkey',
         }),
         title: intl.formatMessage({
           id: 'title__lnurl_link',
@@ -117,7 +117,7 @@ const LNURLAuth = () => {
     if (lnurlDetails.action === 'auth') {
       setMessages({
         allowText: intl.formatMessage({
-          id: 'content__allow_dapp_to_connect_with_onekey',
+          id: 'content__allow_dapp_to_connect_with_unionkey',
         }),
         title: intl.formatMessage({
           id: 'title__lnurl_authentication',
@@ -131,7 +131,7 @@ const LNURLAuth = () => {
     }
     setMessages({
       allowText: intl.formatMessage({
-        id: 'content__allow_dapp_to_login_with_onekey',
+        id: 'content__allow_dapp_to_login_with_unionkey',
       }),
       title: intl.formatMessage({
         id: 'title__lnurl_login',
@@ -176,7 +176,7 @@ const LNURLAuth = () => {
           {connectTip(
             'CheckSolid',
             intl.formatMessage({
-              id: 'content__allow_dapp_to_register_with_onekey',
+              id: 'content__allow_dapp_to_register_with_unionkey',
             }),
           )}
           {connectTip(
@@ -225,7 +225,7 @@ const LNURLAuth = () => {
         }, 300);
       } catch (e: any) {
         const { key, info } = e;
-        if (key && key !== 'onekey_error') {
+        if (key && key !== 'unionkey_error') {
           ToastManager.show(
             {
               title: intl.formatMessage(

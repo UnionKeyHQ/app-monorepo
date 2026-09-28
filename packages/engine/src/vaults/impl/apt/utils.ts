@@ -8,9 +8,9 @@ import type { UnsignedTx } from '@unionkeyhq/engine/src/types/provider';
 
 import {
   InvalidAccount,
-  OneKeyError,
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import { IDecodedTxActionType } from '../../types';
 import { hexlify, stripHexPrefix } from '../../utils/hexUtils';
@@ -188,7 +188,7 @@ export async function generateUnsignedTransaction(
   }
 
   if (!senderPublicKey) {
-    throw new OneKeyHardwareError(Error('senderPublicKey is required'));
+    throw new UnionKeyHardwareError(Error('senderPublicKey is required'));
   }
 
   let rawTxn;
@@ -197,7 +197,7 @@ export async function generateUnsignedTransaction(
     rawTxn = TxnBuilderTypes.RawTransaction.deserialize(deserializer);
   } else {
     if (!func) {
-      throw new OneKeyError('generate transaction error: function is empty');
+      throw new UnionKeyError('generate transaction error: function is empty');
     }
     rawTxn = await client.generateTransaction(
       sender,
@@ -217,10 +217,10 @@ export async function generateUnsignedTransaction(
   return rawTxn;
 }
 
-export function convertRpcError(error: string): OneKeyError {
+export function convertRpcError(error: string): UnionKeyError {
   // more: https://github.com/aptos-labs/aptos-core/blob/1b3348636fd24a8eb413c34f2ebb2c76c25e10d5/developer-docs-site/docs/guides/handle-aptos-errors.md
   if (error.indexOf('EACCOUNT_DOES_NOT_EXIST') !== -1) {
-    return new OneKeyInternalError(
+    return new UnionKeyInternalError(
       error,
       'msg__error_aptso_account_does_not_exist',
     );
@@ -229,36 +229,36 @@ export function convertRpcError(error: string): OneKeyError {
     error.indexOf('EINSUFFICIENT_BALANCE') !== -1 ||
     error.indexOf('INSUFFICIENT_BALANCE_FOR_TRANSACTION_FEE') !== -1
   ) {
-    return new OneKeyInternalError(error, 'msg__error_aptos_insufficient_coin');
+    return new UnionKeyInternalError(error, 'msg__error_aptos_insufficient_coin');
   }
 
   if (error.indexOf('ECOIN_STORE_NOT_PUBLISHED') !== -1) {
-    return new OneKeyInternalError(
+    return new UnionKeyInternalError(
       error,
       'msg__error_aptos_account_has_not_registered_token',
     );
   }
 
   if (error.indexOf('ECOLLECTION_ALREADY_EXISTS') !== -1) {
-    return new OneKeyInternalError(
+    return new UnionKeyInternalError(
       error,
       'msg__error_aptos_collection_already_exists',
     );
   }
   if (error.indexOf('ECOLLECTION_NOT_PUBLISHED') !== -1) {
-    return new OneKeyInternalError(
+    return new UnionKeyInternalError(
       error,
       'msg__error_aptos_cannot_find_collection',
     );
   }
 
   if (error.indexOf('ETOKEN_DATA_ALREADY_EXISTS') !== -1) {
-    return new OneKeyInternalError(
+    return new UnionKeyInternalError(
       error,
       'msg__error_aptos_nft_token_already_exists',
     );
   }
-  return new OneKeyError(error);
+  return new UnionKeyError(error);
 }
 
 export function waitPendingTransaction(
@@ -282,7 +282,7 @@ export function waitPendingTransaction(
         const { errorCode } = error;
         // ignore transaction not found
         if (errorCode !== 'transaction_not_found') {
-          return Promise.reject(new OneKeyError(errorCode));
+          return Promise.reject(new UnionKeyError(errorCode));
         }
       }
     }
@@ -297,7 +297,7 @@ export function waitPendingTransaction(
       );
     }
     if (retry > retryCount) {
-      return Promise.reject(new OneKeyError('transaction timeout'));
+      return Promise.reject(new UnionKeyError('transaction timeout'));
     }
 
     return new Promise(
@@ -528,7 +528,7 @@ export async function transactionPayloadToTxPayload(
     };
   }
   // TODO: TxnBuilderTypes.TransactionPayloadScript、TransactionPayloadModuleBundle
-  throw new OneKeyHardwareError(Error('not support'));
+  throw new UnionKeyHardwareError(Error('not support'));
 }
 
 export function formatFullMessage(message: SignMessageRequest): string {

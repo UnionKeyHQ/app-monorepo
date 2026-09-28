@@ -13,7 +13,7 @@ import type { SignedTx } from '@unionkeyhq/engine/src/types/provider';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { toPsbtNetwork } from '@unionkeyhq/shared/src/providerApis/ProviderApiBtc/ProviderApiBtc.utils';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { Signer } from '../../../proxy';
 import { AccountType } from '../../../types/account';
 import { BtcMessageTypes } from '../../../types/message';
@@ -44,7 +44,7 @@ export class KeyringImported extends KeyringImportedBase {
     const { password } = options;
     const { psbtHex, inputsToSign } = unsignedTx;
     if (typeof password === 'undefined') {
-      throw new OneKeyInternalError('Software signing requires a password.');
+      throw new UnionKeyInternalError('Software signing requires a password.');
     }
     const signers = await this.getSigners(
       password,
@@ -88,7 +88,7 @@ export class KeyringImported extends KeyringImportedBase {
 
     const relPaths = Object.keys(relPathToAddress);
     if (relPaths.length === 0) {
-      throw new OneKeyInternalError('No signers would be chosen.');
+      throw new UnionKeyInternalError('No signers would be chosen.');
     }
 
     const ret: Record<string, Signer> = {};
@@ -166,7 +166,7 @@ export class KeyringImported extends KeyringImportedBase {
       }
     }
     if (xpub === '') {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
 
     const firstAddressRelPath = '0/0';

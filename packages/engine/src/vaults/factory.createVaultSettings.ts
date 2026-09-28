@@ -31,7 +31,7 @@ import {
   IMPL_XRP,
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 import { getNetworkImpl } from '../managers/network.utils';
 
 import type { IVaultSettings } from './types';
@@ -139,7 +139,7 @@ export function createVaultSettings(options: {
     return require('./impl/dynex/settings').default as IVaultSettings;
   }
 
-  throw new OneKeyInternalError(
+  throw new UnionKeyInternalError(
     `VaultSettings not found for: networkId=${options.networkId ?? ''}, impl=${
       impl ?? ''
     }`,

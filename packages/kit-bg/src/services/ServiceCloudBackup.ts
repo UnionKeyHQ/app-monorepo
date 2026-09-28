@@ -51,10 +51,10 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import ServiceBase from './ServiceBase';
 
 // uuid.v5('onekey', '00000000-0000-0000-0000-000000000000')
-// const ONEKEY_NAMESPACE = '30303338-6435-5664-a334-323538396638';
-// uuid.v5('Contact', ONEKEY_NAMESPACE)
+// const UNIONKEY_NAMESPACE = '30303338-6435-5664-a334-323538396638';
+// uuid.v5('Contact', UNIONKEY_NAMESPACE)
 const CONTACT_NAMESPACE = '63363334-3563-5463-a336-666666353665';
-// uuid.v5('Backup device', ONEKEY_NAMESPACE)
+// uuid.v5('Backup device', UNIONKEY_NAMESPACE)
 const BACKUP_DEVICE_NAMESPACE = '38366232-6538-5532-b461-393837633133';
 
 function getContactUUID({

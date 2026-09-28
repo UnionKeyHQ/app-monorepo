@@ -88,7 +88,7 @@ function getOriginFromUrl({ url }: { url: string }): string {
   return '';
 }
 
-export function checkOneKeyCardGoogleOauthUrl({
+export function checkUnionKeyCardGoogleOauthUrl({
   url,
 }: {
   url: string;

@@ -28,7 +28,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/deviceNameUtils';
 import { CoreSDKLoader } from '@unionkeyhq/shared/src/device/hardwareInstance';
 import {
@@ -45,7 +45,7 @@ import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import type { Avatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
 import { getValidUnsignedMessage } from '@unionkeyhq/shared/src/utils/messageUtils';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import { DbApi } from './dbs';
 import { DEFAULT_VERIFY_STRING, checkPassword } from './dbs/base';
@@ -53,8 +53,8 @@ import simpleDb from './dbs/simple/simpleDb';
 import {
   AccountAlreadyExists,
   NotImplemented,
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
 } from './errors';
 import {
   generateFakeAllnetworksAccount,
@@ -325,7 +325,7 @@ class Engine {
     if (typeof wallet !== 'undefined') {
       return wallet;
     }
-    throw new OneKeyInternalError(`Wallet ${walletId} not found.`);
+    throw new UnionKeyInternalError(`Wallet ${walletId} not found.`);
   }
 
   @backgroundMethod()
@@ -392,7 +392,7 @@ class Engine {
     try {
       rs = revealableSeedFromMnemonic(usedMnemonic, password);
     } catch {
-      throw new OneKeyInternalError('Invalid mnemonic.');
+      throw new UnionKeyInternalError('Invalid mnemonic.');
     }
 
     timelinePerfTrace.mark({
@@ -427,7 +427,7 @@ class Engine {
           }
         });
       } else {
-        networks = [autoAddAccountNetworkId || OnekeyNetwork.eth];
+        networks = [autoAddAccountNetworkId || UnionKeyNetwork.eth];
       }
 
       await Promise.all(
@@ -455,7 +455,7 @@ class Engine {
       return result;
     }
 
-    throw new OneKeyInternalError('Invalid mnemonic.');
+    throw new UnionKeyInternalError('Invalid mnemonic.');
   }
 
   @backgroundMethod()
@@ -468,7 +468,7 @@ class Engine {
   }: {
     name?: string;
     avatar?: Avatar;
-    features: IOneKeyDeviceFeatures;
+    features: IUnionKeyDeviceFeatures;
     connectId: string;
     passphraseState?: string;
   }): Promise<Wallet> {
@@ -478,14 +478,14 @@ class Engine {
     await this.validator.validateHWWalletNumber();
 
     if (!features.initialized) {
-      throw new OneKeyHardwareError({
+      throw new UnionKeyHardwareError({
         message: 'Hardware wallet not initialized.',
       });
     }
     const id = generateUUID();
     const serialNo = features.onekey_serial ?? features.serial_no ?? '';
     if (id.length === 0) {
-      throw new OneKeyInternalError('Bad device identity.');
+      throw new UnionKeyInternalError('Bad device identity.');
     }
     const { getDeviceType, getDeviceUUID } = await CoreSDKLoader();
     const deviceId = features.device_id ?? '';
@@ -513,18 +513,18 @@ class Engine {
         await this.addHdOrHwAccounts({
           password: '',
           walletId: wallet.id,
-          networkId: OnekeyNetwork.btc,
+          networkId: UnionKeyNetwork.btc,
         });
         await this.addHdOrHwAccounts({
           password: '',
           walletId: wallet.id,
-          networkId: OnekeyNetwork.eth,
+          networkId: UnionKeyNetwork.eth,
         });
       }
     } catch (e) {
       await this.removeWallet(wallet.id, '');
-      if (e instanceof OneKeyHardwareError) throw e;
-      throw new OneKeyInternalError('Failed to create HW Wallet.');
+      if (e instanceof UnionKeyHardwareError) throw e;
+      throw new UnionKeyInternalError('Failed to create HW Wallet.');
     }
     return this.getWallet(wallet.id);
   }
@@ -569,7 +569,7 @@ class Engine {
   removeWallet(walletId: string, password: string): Promise<void> {
     // Remove a wallet, raise an error if trying to remove the imported or watching wallet.
     if (!walletCanBeRemoved(walletId)) {
-      throw new OneKeyInternalError(`Wallet ${walletId} cannot be removed.`);
+      throw new UnionKeyInternalError(`Wallet ${walletId} cannot be removed.`);
     }
     return this.dbApi.removeWallet(walletId, password);
   }
@@ -593,7 +593,7 @@ class Engine {
   ): Promise<string> {
     // Reveal the wallet seed, raise an error if wallet isn't HD, doesn't exist or password is wrong.
     if (!walletIsHD(walletId)) {
-      throw new OneKeyInternalError(`Wallet ${walletId} is not an HD wallet.`);
+      throw new UnionKeyInternalError(`Wallet ${walletId} is not an HD wallet.`);
     }
     const credential = (await this.dbApi.getCredential(
       walletId,
@@ -606,7 +606,7 @@ class Engine {
   confirmHDWalletBackuped(walletId: string): Promise<Wallet> {
     // Confirm that the wallet seed is backed up. Raise an error if wallet isn't HD, doesn't exist. Nothing happens if the wallet is already backed up before this call.
     if (!walletIsHD(walletId)) {
-      throw new OneKeyInternalError(`Wallet ${walletId} is not an HD wallet.`);
+      throw new UnionKeyInternalError(`Wallet ${walletId} is not an HD wallet.`);
     }
     return this.dbApi.confirmHDWalletBackuped(walletId);
   }
@@ -776,7 +776,7 @@ class Engine {
     const { path } = await this.dbApi.getAccount(accountId);
     const device = await this.getHWDeviceByWalletId(walletId);
     if (!device) {
-      throw new OneKeyInternalError(`Device not found.`);
+      throw new UnionKeyInternalError(`Device not found.`);
     }
 
     try {
@@ -786,14 +786,14 @@ class Engine {
       });
 
       if (!address) {
-        throw new OneKeyInternalError(`Address not found.`);
+        throw new UnionKeyInternalError(`Address not found.`);
       }
       return address;
     } catch (e) {
-      if (e instanceof OneKeyHardwareError) {
+      if (e instanceof UnionKeyHardwareError) {
         throw e;
       } else {
-        throw new OneKeyHardwareError({
+        throw new UnionKeyHardwareError({
           message: 'Failed to get address',
         });
       }
@@ -815,31 +815,31 @@ class Engine {
     // TODO: need a method to get default network from coinType.
     // network shortcode
     const networkId = {
-      '60': OnekeyNetwork.eth,
-      '61': OnekeyNetwork.etc,
-      '503': OnekeyNetwork.cfx,
-      '397': OnekeyNetwork.near,
-      '0': OnekeyNetwork.btc,
-      '1': OnekeyNetwork.tbtc,
-      '101010': OnekeyNetwork.stc,
-      '501': OnekeyNetwork.sol,
-      '195': OnekeyNetwork.trx,
-      '637': OnekeyNetwork.apt,
-      '3': OnekeyNetwork.doge,
-      '2': OnekeyNetwork.ltc,
-      '145': OnekeyNetwork.bch,
-      '283': OnekeyNetwork.algo,
-      '144': OnekeyNetwork.xrp,
-      '118': OnekeyNetwork.cosmoshub,
-      '1815': OnekeyNetwork.ada,
-      '461': OnekeyNetwork.fil,
-      '784': OnekeyNetwork.sui,
-      '354': OnekeyNetwork.dot,
-      '128': OnekeyNetwork.xmr,
-      '111111': OnekeyNetwork.kaspa,
-      '29223': OnekeyNetwork.nexa,
-      '1900': OnekeyNetwork.xna,
-      '29538': OnekeyNetwork.dnx,
+      '60': UnionKeyNetwork.eth,
+      '61': UnionKeyNetwork.etc,
+      '503': UnionKeyNetwork.cfx,
+      '397': UnionKeyNetwork.near,
+      '0': UnionKeyNetwork.btc,
+      '1': UnionKeyNetwork.tbtc,
+      '101010': UnionKeyNetwork.stc,
+      '501': UnionKeyNetwork.sol,
+      '195': UnionKeyNetwork.trx,
+      '637': UnionKeyNetwork.apt,
+      '3': UnionKeyNetwork.doge,
+      '2': UnionKeyNetwork.ltc,
+      '145': UnionKeyNetwork.bch,
+      '283': UnionKeyNetwork.algo,
+      '144': UnionKeyNetwork.xrp,
+      '118': UnionKeyNetwork.cosmoshub,
+      '1815': UnionKeyNetwork.ada,
+      '461': UnionKeyNetwork.fil,
+      '784': UnionKeyNetwork.sui,
+      '354': UnionKeyNetwork.dot,
+      '128': UnionKeyNetwork.xmr,
+      '111111': UnionKeyNetwork.kaspa,
+      '29223': UnionKeyNetwork.nexa,
+      '1900': UnionKeyNetwork.xna,
+      '29538': UnionKeyNetwork.dnx,
     }[coinType];
     if (typeof networkId === 'undefined') {
       throw new NotImplemented('Unsupported network.');
@@ -894,7 +894,7 @@ class Engine {
     // Search importable HD accounts.
     const wallet = await this.dbApi.getWallet(walletId);
     if (typeof wallet === 'undefined') {
-      throw new OneKeyInternalError(`Wallet ${walletId} not found.`);
+      throw new UnionKeyInternalError(`Wallet ${walletId} not found.`);
     }
 
     const indexes = Array.from(Array(limit).keys())
@@ -1000,7 +1000,7 @@ class Engine {
       this.dbApi.getNetwork(networkId),
     ]);
     if (typeof wallet === 'undefined') {
-      throw new OneKeyInternalError(`Wallet ${walletId} not found.`);
+      throw new UnionKeyInternalError(`Wallet ${walletId} not found.`);
     }
 
     const { impl } = dbNetwork;
@@ -1011,7 +1011,7 @@ class Engine {
         : getDefaultAccountNameInfoByImpl(impl);
     const { coinType } = accountNameInfo;
     if (!coinType) {
-      throw new OneKeyInternalError(`coinType of impl=${impl} not found.`);
+      throw new UnionKeyInternalError(`coinType of impl=${impl} not found.`);
     }
     const nextIndex = getNextAccountId(
       wallet.nextAccountIds,
@@ -1019,12 +1019,12 @@ class Engine {
     );
     const usedIndexes = indexes || [nextIndex];
     if (isAddInitFirstAccountOnly && nextIndex > 0) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'isAddInitFirstAccountOnly=true, skip adding next account',
       );
     }
     if (usedIndexes.some((index) => index >= 2 ** 31)) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Invalid child index, should be less than 2^31.',
       );
     }
@@ -1086,7 +1086,7 @@ class Engine {
       console.error(e);
     }
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Invalid credential to import.');
+      throw new UnionKeyInternalError('Invalid credential to import.');
     }
 
     const encryptedPrivateKey = encrypt(password, privateKey);
@@ -1347,7 +1347,7 @@ class Engine {
         getNetworkIdFromTokenId(token.id),
       )
     ) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `Cannot add token ${token.id} to account ${accountId}: incompatible.`,
       );
     }
@@ -1425,7 +1425,7 @@ class Engine {
       tokenIdOnNetwork,
     );
     if (!isAccountCompatibleWithNetwork(accountId, networkId)) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `account ${accountId} and network ${networkId} isn't compatible.`,
       );
     }
@@ -1451,7 +1451,7 @@ class Engine {
       tokenIdOnNetwork,
     );
     if (!isAccountCompatibleWithNetwork(accountId, networkId)) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `account ${accountId} and network ${networkId} isn't compatible.`,
       );
     }
@@ -1897,7 +1897,7 @@ class Engine {
         get(error, 'message', undefined) === 'Wrong response<429>';
 
       if (axiosError || jsonRpcError) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           'Wrong response<429>',
           'msg__network_request_too_many',
         );
@@ -1945,7 +1945,7 @@ class Engine {
     const vault = await this.getVault({ networkId, accountId });
     const impl = await vault.getNetworkImpl();
     if (impl !== IMPL_EVM) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `networkId: ${networkId} dont support deposit`,
       );
     }
@@ -1973,7 +1973,7 @@ class Engine {
     const vault = await this.getVault({ networkId, accountId });
     const impl = await vault.getNetworkImpl();
     if (impl !== IMPL_EVM) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `networkId: ${networkId} dont support withdraw`,
       );
     }
@@ -2435,7 +2435,7 @@ class Engine {
     impl = IMPL_EVM,
   ): Promise<{ chainId: string; existingNetwork: Network | undefined }> {
     if (rpcURL.length === 0) {
-      throw new OneKeyInternalError('Empty RPC URL.');
+      throw new UnionKeyInternalError('Empty RPC URL.');
     }
 
     let chainId = '';
@@ -2466,7 +2466,7 @@ class Engine {
     useCache = true,
   ): Promise<IClientEndpointStatus> {
     if (rpcURL.length === 0) {
-      throw new OneKeyInternalError('Empty RPC URL.');
+      throw new UnionKeyInternalError('Empty RPC URL.');
     }
     if (useCache) {
       return {
@@ -2493,7 +2493,7 @@ class Engine {
   @backgroundMethod()
   async addNetwork(impl: string, params: AddNetworkParams): Promise<Network> {
     if (params.rpcURL === '') {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'addNetwork: empty value is not allowed for RPC URL.',
       );
     }
@@ -2503,7 +2503,7 @@ class Engine {
         params.explorerURL = u.toString();
       } catch (error) {
         console.error(error);
-        throw new OneKeyInternalError('addNetwork invalid URL');
+        throw new UnionKeyInternalError('addNetwork invalid URL');
       }
     }
 
@@ -2518,12 +2518,12 @@ class Engine {
         break;
       }
       default:
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           `addNetwork: unsupported implementation ${impl} specified`,
         );
     }
     if (typeof networkId === 'undefined') {
-      throw new OneKeyInternalError('addNetwork: failed to get network id.');
+      throw new UnionKeyInternalError('addNetwork: failed to get network id.');
     }
     const dbObj = await this.dbApi.addNetwork(
       getEVMNetworkToCreate(`${impl}--${networkId}`, params),
@@ -2578,7 +2578,7 @@ class Engine {
     params: UpdateNetworkParams,
   ): Promise<Network> {
     if (Object.keys(params).length === 0) {
-      throw new OneKeyInternalError('updateNetwork: params is empty.');
+      throw new UnionKeyInternalError('updateNetwork: params is empty.');
     }
     if (params.explorerURL) {
       try {
@@ -2586,17 +2586,17 @@ class Engine {
         params.explorerURL = u.toString();
       } catch (error) {
         console.error(error);
-        throw new OneKeyInternalError('updateNetwork invalid URL');
+        throw new UnionKeyInternalError('updateNetwork invalid URL');
       }
     }
     if (networkIsPreset(networkId)) {
       if (typeof params.name !== 'undefined') {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           'Cannot update name of a preset network.',
         );
       }
       if (typeof params.symbol !== 'undefined') {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           'Cannot update symbol of a preset network.',
         );
       }
@@ -2609,7 +2609,7 @@ class Engine {
   @backgroundMethod()
   async deleteNetwork(networkId: string): Promise<void> {
     if (networkIsPreset(networkId)) {
-      throw new OneKeyInternalError('Preset network cannot be deleted.');
+      throw new UnionKeyInternalError('Preset network cannot be deleted.');
     }
     this.listEnabledNetworksGroupedByVault.clear();
     return this.dbApi.deleteNetwork(networkId);
@@ -2846,7 +2846,7 @@ class Engine {
   }) {
     if (localPassword.length === 0 && (await this.isMasterPasswordSet())) {
       debugLogger.cloudBackup.error('Local password required.');
-      throw new OneKeyInternalError('Local password required.');
+      throw new UnionKeyInternalError('Local password required.');
     }
 
     const backupObject = JSON.parse(data) as BackupObject;

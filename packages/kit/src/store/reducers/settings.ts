@@ -209,7 +209,7 @@ const initialState: SettingsState = {
   migrationVersions: { fixBtcPubKey: '' },
 };
 
-export const THEME_PRELOAD_STORAGE_KEY = 'ONEKEY_THEME_PRELOAD';
+export const THEME_PRELOAD_STORAGE_KEY = 'UNIONKEY_THEME_PRELOAD';
 export const setThemePreloadToLocalStorage = debounce(
   (value: string, forceUpdate = true) => {
     try {

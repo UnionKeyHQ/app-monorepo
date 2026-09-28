@@ -1,6 +1,6 @@
 import { getTimeDurationMs } from '@unionkeyhq/kit/src/utils/helper';
 
-import { OnekeyNetwork } from '../config/networkIds';
+import { UnionKeyNetwork } from '../config/networkIds';
 
 const SEPERATOR = '--';
 const INDEX_PLACEHOLDER = '$$INDEX$$';
@@ -179,10 +179,10 @@ export enum SocketEvents {
 }
 
 export const enabledAccountDynamicNetworkIds: string[] = [
-  OnekeyNetwork.eth,
-  OnekeyNetwork.polygon,
-  OnekeyNetwork.arbitrum,
-  OnekeyNetwork.optimism,
+  UnionKeyNetwork.eth,
+  UnionKeyNetwork.polygon,
+  UnionKeyNetwork.arbitrum,
+  UnionKeyNetwork.optimism,
 ];
 
 function getSupportedImpls() {
@@ -267,7 +267,7 @@ export {
   getSupportedFakeNetworks,
 };
 
-// switch network default rpc to onekey rpc node
+// switch the default network RPC to a UnionKey-operated node
 export const AUTO_SWITCH_DEFAULT_RPC_AT_VERSION = '3.21.0';
 
 export const PRICE_EXPIRED_TIME = getTimeDurationMs({ minute: 15 });
@@ -289,9 +289,9 @@ export const isLightningNetwork = (coinType: string) =>
 export const isLightningNetworkByImpl = (impl?: string) =>
   impl === IMPL_LIGHTNING || impl === IMPL_LIGHTNING_TESTNET;
 export const isLightningNetworkByNetworkId = (networkId?: string) =>
-  networkId === OnekeyNetwork.lightning ||
-  networkId === OnekeyNetwork.tlightning;
+  networkId === UnionKeyNetwork.lightning ||
+  networkId === UnionKeyNetwork.tlightning;
 export const isBTCNetwork = (networkId?: string) =>
-  networkId === OnekeyNetwork.btc ||
-  networkId === OnekeyNetwork.tbtc ||
-  networkId === OnekeyNetwork.sbtc;
+  networkId === UnionKeyNetwork.btc ||
+  networkId === UnionKeyNetwork.tbtc ||
+  networkId === UnionKeyNetwork.sbtc;

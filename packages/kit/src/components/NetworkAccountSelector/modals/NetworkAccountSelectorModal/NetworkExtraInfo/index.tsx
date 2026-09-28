@@ -1,4 +1,4 @@
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { XmrExtraInfo } from './XmrExtraInfo';
 
@@ -9,7 +9,7 @@ export function NetWorkExtraInfo({
   networkId?: string;
   accountId?: string;
 }) {
-  if (networkId === OnekeyNetwork.xmr) {
+  if (networkId === UnionKeyNetwork.xmr) {
     if (accountId) return <XmrExtraInfo />;
     return null;
   }

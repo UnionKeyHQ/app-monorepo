@@ -24,7 +24,7 @@ export function buildAccountLandingLink({
 }) {
   const url = `/account/${address}/${networkId || ''}`;
   const webOrigin = 'https://unionkey.io';
-  // return `${ONEKEY_APP_DEEP_LINK}${url}`;
+  // return `${UNIONKEY_APP_DEEP_LINK}${url}`;
   return `${webOrigin}${url}`;
 }
 

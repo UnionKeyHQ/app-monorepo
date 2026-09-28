@@ -23,7 +23,7 @@ import {
 } from '@unionkeyhq/components';
 import type { IEncodedTxEvm } from '@unionkeyhq/engine/src/vaults/impl/evm/Vault';
 import type { ModalScreenProps } from '@unionkeyhq/kit/src/routes/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { AutoSizeText } from '../../../components/AutoSizeText';
@@ -191,7 +191,7 @@ export default function ETHStaking() {
 
   const aprValue = useStakingAprValue(
     source,
-    networkId === OnekeyNetwork.goerli,
+    networkId === UnionKeyNetwork.goerli,
   );
 
   useEffect(() => {

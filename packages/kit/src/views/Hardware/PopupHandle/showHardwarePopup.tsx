@@ -259,7 +259,7 @@ export default async function showHardwarePopup({
     return;
   }
 
-  if (uiRequest === CUSTOM_UI_RESPONSE.CUSTOM_NEED_ONEKEY_BRIDGE) {
+  if (uiRequest === CUSTOM_UI_RESPONSE.CUSTOM_NEED_UNIONKEY_BRIDGE) {
     showDialog(<NeedBridgeDialog />);
     return;
   }

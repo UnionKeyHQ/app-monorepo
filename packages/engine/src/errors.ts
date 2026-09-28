@@ -5,26 +5,26 @@ import { get } from 'lodash';
 
 import type { LocaleIds } from '@unionkeyhq/components/src/locale';
 
-export enum OneKeyErrorClassNames {
-  OneKeyError = 'OneKeyError',
-  OneKeyHardwareError = 'OneKeyHardwareError',
-  OneKeyValidatorError = 'OneKeyValidatorError',
-  OneKeyValidatorTip = 'OneKeyValidatorTip',
-  OneKeyAbortError = 'OneKeyAbortError',
+export enum UnionKeyErrorClassNames {
+  UnionKeyError = 'UnionKeyError',
+  UnionKeyHardwareError = 'UnionKeyHardwareError',
+  UnionKeyValidatorError = 'UnionKeyValidatorError',
+  UnionKeyValidatorTip = 'UnionKeyValidatorTip',
+  UnionKeyAbortError = 'UnionKeyAbortError',
   UnionKeyWalletConnectModalCloseError = 'UnionKeyWalletConnectModalCloseError',
-  OneKeyAlreadyExistWalletError = 'OneKeyAlreadyExistWalletError',
-  OneKeyErrorInsufficientNativeBalance = 'OneKeyErrorInsufficientNativeBalance',
+  UnionKeyAlreadyExistWalletError = 'UnionKeyAlreadyExistWalletError',
+  UnionKeyErrorInsufficientNativeBalance = 'UnionKeyErrorInsufficientNativeBalance',
 }
 
-export type IOneKeyErrorInfo = Record<string | number, string | number>;
+export type IUnionKeyErrorInfo = Record<string | number, string | number>;
 
-export type OneKeyHardwareErrorData = {
+export type UnionKeyHardwareErrorData = {
   reconnect?: boolean | undefined;
   connectId?: string;
   deviceId?: string;
 };
 
-export type OneKeyHardwareErrorPayload = {
+export type UnionKeyHardwareErrorPayload = {
   code?: number;
   error?: string;
   message?: string;
@@ -33,14 +33,14 @@ export type OneKeyHardwareErrorPayload = {
   deviceId?: string;
 };
 
-export class OneKeyError<T = Error> extends Web3RpcError<T> {
-  className = OneKeyErrorClassNames.OneKeyError;
+export class UnionKeyError<T = Error> extends Web3RpcError<T> {
+  className = UnionKeyErrorClassNames.UnionKeyError;
 
-  info: IOneKeyErrorInfo;
+  info: IUnionKeyErrorInfo;
 
-  key: LocaleIds | string = 'onekey_error';
+  key: LocaleIds | string = 'unionkey_error';
 
-  constructor(message?: string, info?: IOneKeyErrorInfo) {
+  constructor(message?: string, info?: IUnionKeyErrorInfo) {
     super(-99999, message || 'Unknown UnionKey internal error.');
     this.info = info || {};
   }
@@ -52,7 +52,7 @@ export class OneKeyError<T = Error> extends Web3RpcError<T> {
   }
 }
 
-class NumberLimit extends OneKeyError {
+class NumberLimit extends UnionKeyError {
   override key = 'generic_number_limitation';
 
   constructor(limit: number) {
@@ -60,7 +60,7 @@ class NumberLimit extends OneKeyError {
   }
 }
 
-class StringLengthRequirement extends OneKeyError {
+class StringLengthRequirement extends UnionKeyError {
   override key = 'generic_string_length_requirement';
 
   constructor(minLength: number, maxLength: number) {
@@ -73,7 +73,7 @@ class StringLengthRequirement extends OneKeyError {
 
 // Generic errors.
 
-export class NotImplemented extends OneKeyError {
+export class NotImplemented extends UnionKeyError {
   constructor(message?: string) {
     super(message || 'UnionKey error: NotImplemented', {});
   }
@@ -81,7 +81,7 @@ export class NotImplemented extends OneKeyError {
   override key = 'msg__engine__not_implemented';
 }
 
-export class OneKeyInternalError extends OneKeyError {
+export class UnionKeyInternalError extends UnionKeyError {
   override key = 'msg__engine__internal_error';
 
   constructor(message?: string, key?: LocaleIds) {
@@ -92,10 +92,10 @@ export class OneKeyInternalError extends OneKeyError {
   }
 }
 
-export class OneKeyHardwareError<
-  T extends OneKeyHardwareErrorData = OneKeyHardwareErrorData,
-> extends OneKeyError<T> {
-  override className = OneKeyErrorClassNames.OneKeyHardwareError;
+export class UnionKeyHardwareError<
+  T extends UnionKeyHardwareErrorData = UnionKeyHardwareErrorData,
+> extends UnionKeyError<T> {
+  override className = UnionKeyErrorClassNames.UnionKeyHardwareError;
 
   codeHardware?: string;
 
@@ -104,8 +104,8 @@ export class OneKeyHardwareError<
   static handleErrorParams(
     params?: any,
     errorParams?: Record<string | number, string>,
-  ): IOneKeyErrorInfo {
-    const info: IOneKeyErrorInfo = {};
+  ): IUnionKeyErrorInfo {
+    const info: IUnionKeyErrorInfo = {};
     Object.keys(errorParams || {}).forEach((key) => {
       const valueKey = errorParams?.[key];
       if (valueKey) {
@@ -118,18 +118,18 @@ export class OneKeyHardwareError<
   }
 
   /**
-   * create OneKeyHardwareError from OneKeyHardware error payload
+   * create UnionKeyHardwareError from UnionKeyHardware error payload
    * @param errorPayload Hardware error payload
    * @param errorParams Hardware Error params, key is i18n placeholder, value is error payload key
    */
   constructor(
-    errorPayload?: OneKeyHardwareErrorPayload,
+    errorPayload?: UnionKeyHardwareErrorPayload,
     errorParams?: Record<string | number, string>,
     data?: T,
   ) {
     super(
       errorPayload?.error ?? errorPayload?.message ?? 'Unknown hardware error',
-      OneKeyHardwareError.handleErrorParams(
+      UnionKeyHardwareError.handleErrorParams(
         errorPayload?.params,
         errorParams,
       ) || {},
@@ -145,19 +145,19 @@ export class OneKeyHardwareError<
   }
 }
 
-export class OneKeyHardwareAbortError extends OneKeyError {
-  override className = OneKeyErrorClassNames.OneKeyAbortError;
+export class UnionKeyHardwareAbortError extends UnionKeyError {
+  override className = UnionKeyErrorClassNames.UnionKeyAbortError;
 
   override key = 'msg__engine__internal_error';
 }
 
-export class OneKeyAlreadyExistWalletError extends OneKeyHardwareError<
+export class UnionKeyAlreadyExistWalletError extends UnionKeyHardwareError<
   {
     walletId: string;
     walletName: string | undefined;
-  } & OneKeyHardwareErrorData
+  } & UnionKeyHardwareErrorData
 > {
-  override className = OneKeyErrorClassNames.OneKeyAlreadyExistWalletError;
+  override className = UnionKeyErrorClassNames.UnionKeyAlreadyExistWalletError;
 
   override key: LocaleIds = 'msg__wallet_already_exist';
 
@@ -166,47 +166,47 @@ export class OneKeyAlreadyExistWalletError extends OneKeyHardwareError<
   }
 }
 
-export class OneKeyValidatorError extends OneKeyError {
-  override className = OneKeyErrorClassNames.OneKeyValidatorError;
+export class UnionKeyValidatorError extends UnionKeyError {
+  override className = UnionKeyErrorClassNames.UnionKeyValidatorError;
 
-  override key = 'onekey_error_validator';
+  override key = 'unionkey_error_validator';
 
-  constructor(key: string, info?: IOneKeyErrorInfo, message?: string) {
+  constructor(key: string, info?: IUnionKeyErrorInfo, message?: string) {
     super(message, info);
     this.key = key;
   }
 }
 
-export class OneKeyValidatorTip extends OneKeyError {
-  override className = OneKeyErrorClassNames.OneKeyValidatorTip;
+export class UnionKeyValidatorTip extends UnionKeyError {
+  override className = UnionKeyErrorClassNames.UnionKeyValidatorTip;
 
-  override key = 'onekey_tip_validator';
+  override key = 'unionkey_tip_validator';
 
-  constructor(key: string, info?: IOneKeyErrorInfo, message?: string) {
+  constructor(key: string, info?: IUnionKeyErrorInfo, message?: string) {
     super(message, info);
     this.key = key;
   }
 }
 
-export class FailedToTransfer extends OneKeyError {
+export class FailedToTransfer extends UnionKeyError {
   override key = 'msg__engine__failed_to_transfer';
 }
 
-export class WrongPassword extends OneKeyError {
+export class WrongPassword extends UnionKeyError {
   override key = 'msg__engine__incorrect_password';
 }
 
-export class PasswordStrengthValidationFailed extends OneKeyError {
+export class PasswordStrengthValidationFailed extends UnionKeyError {
   override key = 'msg__password_validation';
 }
 
 // Simple input errors.
 
-export class InvalidMnemonic extends OneKeyError {
+export class InvalidMnemonic extends UnionKeyError {
   override key = 'msg__engine__invalid_mnemonic';
 }
 
-export class MimimumBalanceRequired extends OneKeyError {
+export class MimimumBalanceRequired extends UnionKeyError {
   override key = 'msg__str_minimum_balance_is_str';
 
   constructor(token: string, amount: string) {
@@ -214,7 +214,7 @@ export class MimimumBalanceRequired extends OneKeyError {
   }
 }
 
-export class RecipientHasNotActived extends OneKeyError {
+export class RecipientHasNotActived extends UnionKeyError {
   override key = 'msg__recipient_hasnt_activated_str';
 
   constructor(tokenName: string) {
@@ -222,62 +222,62 @@ export class RecipientHasNotActived extends OneKeyError {
   }
 }
 
-export class InvalidAddress extends OneKeyError {
+export class InvalidAddress extends UnionKeyError {
   override key = 'msg__engine__incorrect_address';
 
-  constructor(message?: string, info?: IOneKeyErrorInfo) {
+  constructor(message?: string, info?: IUnionKeyErrorInfo) {
     super(message || 'InvalidAddress.', info);
   }
 }
 
-export class InvalidSameAddress extends OneKeyError {
+export class InvalidSameAddress extends UnionKeyError {
   override key = 'form__address_cannot_send_to_myself';
 
-  constructor(message?: string, info?: IOneKeyErrorInfo) {
+  constructor(message?: string, info?: IUnionKeyErrorInfo) {
     super(message || 'InvalidAddress.', info);
   }
 }
 
-export class InvalidAccount extends OneKeyError {
+export class InvalidAccount extends UnionKeyError {
   override key = 'msg__engine__account_not_activated';
 
-  constructor(message?: string, info?: IOneKeyErrorInfo) {
+  constructor(message?: string, info?: IUnionKeyErrorInfo) {
     super(message || 'InvalidAccount.', info);
   }
 }
 
-export class InvalidTokenAddress extends OneKeyError {
+export class InvalidTokenAddress extends UnionKeyError {
   override key = 'msg__engine__incorrect_token_address';
 }
 
-export class InvalidTransferValue extends OneKeyError {
+export class InvalidTransferValue extends UnionKeyError {
   override key = 'msg__engine__incorrect_transfer_value';
 
-  constructor(key?: string, info?: IOneKeyErrorInfo) {
+  constructor(key?: string, info?: IUnionKeyErrorInfo) {
     super('Invalid Transfer Value', info);
     this.key = key ?? 'msg__engine__incorrect_transfer_value';
   }
 }
 
-export class TransferValueTooSmall extends OneKeyError {
+export class TransferValueTooSmall extends UnionKeyError {
   override key = 'msg__amount_too_small';
 
-  constructor(key?: string, info?: IOneKeyErrorInfo) {
+  constructor(key?: string, info?: IUnionKeyErrorInfo) {
     super('Transfer Value too small', info);
     this.key = key ?? 'msg__amount_too_small';
   }
 }
 
 // **** only for Native Token  InsufficientBalance
-export class InsufficientBalance extends OneKeyError {
+export class InsufficientBalance extends UnionKeyError {
   override className =
-    OneKeyErrorClassNames.OneKeyErrorInsufficientNativeBalance;
+    UnionKeyErrorClassNames.UnionKeyErrorInsufficientNativeBalance;
 
   // For situations that utxo selection failed.
   override key = 'form__amount_invalid';
 }
 
-export class InsufficientGasFee extends OneKeyError {
+export class InsufficientGasFee extends UnionKeyError {
   override key = 'msg__suggest_reserving_str_as_gas_fee';
 
   constructor(token: string, amount: string) {
@@ -298,17 +298,17 @@ export class AccountNameLengthError extends StringLengthRequirement {
   }
 }
 
-export class WatchedAccountTradeError extends OneKeyError {
+export class WatchedAccountTradeError extends UnionKeyError {
   override key = 'form__error_trade_with_watched_acocunt';
 }
 
 // Limitations.
 
-export class AccountAlreadyExists extends OneKeyError {
+export class AccountAlreadyExists extends UnionKeyError {
   override key = 'msg__engine__account_already_exists';
 }
 
-export class PreviousAccountIsEmpty extends OneKeyError {
+export class PreviousAccountIsEmpty extends UnionKeyError {
   override key = 'content__previous_str_account_is_empty';
 
   constructor(accountTypeStr: string, key?: LocaleIds) {
@@ -361,65 +361,65 @@ export class PendingQueueTooLong extends NumberLimit {
 }
 
 // WalletConnect ----------------------------------------------
-export class UnionKeyWalletConnectModalCloseError extends OneKeyError {
+export class UnionKeyWalletConnectModalCloseError extends UnionKeyError {
   override className =
-    OneKeyErrorClassNames.UnionKeyWalletConnectModalCloseError;
+    UnionKeyErrorClassNames.UnionKeyWalletConnectModalCloseError;
   // override key = 'msg__engine__internal_error';
 }
 
-export class FailedToEstimatedGasError extends OneKeyError {
+export class FailedToEstimatedGasError extends UnionKeyError {
   override key = 'msg__estimated_gas_failure';
 }
 
 // Lightning Network ----------------------------------------------
-export class InvalidLightningPaymentRequest extends OneKeyError {
+export class InvalidLightningPaymentRequest extends UnionKeyError {
   override key = 'msg__invalid_lightning_payment_request';
 }
 
-export class InvoiceAlreadPaid extends OneKeyError {
+export class InvoiceAlreadPaid extends UnionKeyError {
   override key = 'msg__invoice_is_already_paid';
 }
 
-export class NoRouteFoundError extends OneKeyError {
+export class NoRouteFoundError extends UnionKeyError {
   override key = 'msg__no_route_found';
 }
 
-export class ChannelInsufficientLiquidityError extends OneKeyError {
+export class ChannelInsufficientLiquidityError extends UnionKeyError {
   override key = 'msg__insufficient_liquidity_of_lightning_node_channels';
 }
 
-export class BadAuthError extends OneKeyError {
+export class BadAuthError extends UnionKeyError {
   override key = 'msg__authentication_failed_verify_again';
 }
 
-export class InvoiceExpiredError extends OneKeyError {
+export class InvoiceExpiredError extends UnionKeyError {
   override key = 'msg__the_invoice_has_expired';
 }
 
-export class MaxSendAmountError extends OneKeyError {
+export class MaxSendAmountError extends UnionKeyError {
   override key = 'msg__the_sending_amount_cannot_exceed_int_sats';
 
-  constructor(key: string, info?: IOneKeyErrorInfo, message?: string) {
+  constructor(key: string, info?: IUnionKeyErrorInfo, message?: string) {
     super(message, info);
   }
 }
 
-export class NotEnoughBalanceIncludeTenSatsError extends OneKeyError {
+export class NotEnoughBalanceIncludeTenSatsError extends UnionKeyError {
   override key =
     'msg__insufficient_balance_make_sure_at_least_10_sats_reserved_for_potential_fee_fluctuations';
 }
 
-export class NotEnoughBalanceIncludeOnePercentError extends OneKeyError {
+export class NotEnoughBalanceIncludeOnePercentError extends UnionKeyError {
   override key =
     'msg__insufficient_balance_make_sure_at_least_1_percent_ofinvoice_amount_reserved_for_potential_fee_fluctuations';
 }
 
-export class TaprootAddressError extends OneKeyError {
+export class TaprootAddressError extends UnionKeyError {
   override key =
     'msg__invalid_address_ordinal_can_only_be_sent_to_taproot_address';
 }
 
-export class InscribeFileTooLargeError extends OneKeyError {
+export class InscribeFileTooLargeError extends UnionKeyError {
   override key = 'msg__file_size_should_less_than_str';
 
   constructor(key?: LocaleIds) {
@@ -430,11 +430,11 @@ export class InscribeFileTooLargeError extends OneKeyError {
   }
 }
 
-export class UtxoNotFoundError extends OneKeyError {
+export class UtxoNotFoundError extends UnionKeyError {
   override key = 'msg__nft_does_not_exist';
 }
 
-export class MinimumTransferBalanceRequiredError extends OneKeyError {
+export class MinimumTransferBalanceRequiredError extends UnionKeyError {
   override key =
     'msg__the_minimum_value_for_transffering_to_a_new_account_is_str_str';
 
@@ -446,7 +446,7 @@ export class MinimumTransferBalanceRequiredError extends OneKeyError {
   }
 }
 
-export class MinimumTransferBalanceRequiredForSendingAssetError extends OneKeyError {
+export class MinimumTransferBalanceRequiredForSendingAssetError extends UnionKeyError {
   override key =
     'msg__sending_str_requires_an_account_balance_of_at_least_str_str';
 
@@ -459,7 +459,7 @@ export class MinimumTransferBalanceRequiredForSendingAssetError extends OneKeyEr
   }
 }
 
-export class ChangeLessThanMinInputCapacityError extends OneKeyError {
+export class ChangeLessThanMinInputCapacityError extends UnionKeyError {
   override key = 'msg__the_balance_after_the_tx_must_not_be_less_than_str';
 
   constructor(amount: string) {
@@ -470,7 +470,7 @@ export class ChangeLessThanMinInputCapacityError extends OneKeyError {
   }
 }
 
-export class MinimumTransferAmountError extends OneKeyError {
+export class MinimumTransferAmountError extends UnionKeyError {
   override key = 'form__str_minimum_transfer';
 
   constructor(amount: string) {
@@ -482,10 +482,10 @@ export class MinimumTransferAmountError extends OneKeyError {
 }
 
 // all networks ----------------------------------------------
-export class AllNetworksMinAccountsError extends OneKeyError {
+export class AllNetworksMinAccountsError extends UnionKeyError {
   override key = 'msg__you_need_str_accounts_on_any_network_to_create';
 }
 
-export class AllNetworksUpto3LimitsError extends OneKeyError {
+export class AllNetworksUpto3LimitsError extends UnionKeyError {
   override key = 'msg__currently_supports_up_to_str_all_networks_accounts';
 }

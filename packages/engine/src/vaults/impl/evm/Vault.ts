@@ -31,7 +31,7 @@ import type {
   SendConfirmPayloadInfo,
 } from '@unionkeyhq/kit/src/views/Send/types';
 import lib0xSequenceMulticall from '@unionkeyhq/shared/src/asyncModules/lib0xSequenceMulticall';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   COINTYPE_ETC,
   HISTORY_CONSTS,
@@ -43,7 +43,7 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 import { toBigIntHex } from '@unionkeyhq/shared/src/utils/numberUtils';
 
 import simpleDb from '../../../dbs/simple/simpleDb';
-import { NotImplemented, OneKeyInternalError } from '../../../errors';
+import { NotImplemented, UnionKeyInternalError } from '../../../errors';
 import * as covalentApi from '../../../managers/covalent';
 import { getAccountNameInfoByImpl } from '../../../managers/impl';
 import {
@@ -141,9 +141,9 @@ import type { IRpcTxEvm } from './types';
 import type { IJsonRpcRequest } from '@unionkeyhq/cross-inpage-provider-types';
 
 const EVM_L2_NETWORKS_REQUIRE_L1_FEE: string[] = [
-  OnekeyNetwork.optimism,
-  OnekeyNetwork.toptimism,
-  OnekeyNetwork.base,
+  UnionKeyNetwork.optimism,
+  UnionKeyNetwork.toptimism,
+  UnionKeyNetwork.base,
 ];
 
 const ERC721 = ERC721MetadataArtifact.abi;
@@ -1251,7 +1251,7 @@ export default class Vault extends VaultBase {
         unsignedTx = await this.buildUnsignedTxFromEncodedTx({
           ...encodedTxWithFakePriceAndNonce,
           // the estimated limit will be insufficient when value is 0x0 on filecoin evm
-          value: this.networkId === OnekeyNetwork.fevm ? '0x1' : '0x0',
+          value: this.networkId === UnionKeyNetwork.fevm ? '0x1' : '0x0',
         });
       } catch (e) {
         console.error(e);
@@ -1386,7 +1386,7 @@ export default class Vault extends VaultBase {
       const keyring = this.keyring as KeyringSoftwareBase;
       const { password } = options;
       if (typeof password === 'undefined') {
-        throw new OneKeyInternalError('password required');
+        throw new UnionKeyInternalError('password required');
       }
       const { [dbAccount.address]: signer } = await keyring.getSigners(
         password,
@@ -1408,7 +1408,7 @@ export default class Vault extends VaultBase {
       const keyring = this.keyring as KeyringSoftwareBase;
       const { password } = options;
       if (typeof password === 'undefined') {
-        throw new OneKeyInternalError('password required');
+        throw new UnionKeyInternalError('password required');
       }
       const { [dbAccount.address]: signer } = await keyring.getSigners(
         password,
@@ -1512,7 +1512,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -2024,7 +2024,7 @@ export default class Vault extends VaultBase {
   > {
     const network = await this.getNetwork();
     let accountNameInfo = getAccountNameInfoByImpl(network.impl);
-    if (network.id !== OnekeyNetwork.etc) {
+    if (network.id !== UnionKeyNetwork.etc) {
       accountNameInfo = omit(accountNameInfo, 'etcNative');
     }
     return accountNameInfo;
@@ -2037,7 +2037,7 @@ export default class Vault extends VaultBase {
     accounts: DBAccount[];
     networkId: string;
   }): Promise<DBAccount[]> {
-    if (networkId !== OnekeyNetwork.etc) {
+    if (networkId !== UnionKeyNetwork.etc) {
       return accounts.filter((account) => account.coinType !== COINTYPE_ETC);
     }
     return Promise.resolve(accounts);
@@ -2055,8 +2055,8 @@ export default class Vault extends VaultBase {
     shouldReloadAccountList: boolean;
     shouldChangeActiveAccount: boolean;
   }> {
-    const prevNetworkIsEtc = previousNetwork?.id === OnekeyNetwork.etc;
-    const newNetworkIsEtc = newNetwork?.id === OnekeyNetwork.etc;
+    const prevNetworkIsEtc = previousNetwork?.id === UnionKeyNetwork.etc;
+    const newNetworkIsEtc = newNetwork?.id === UnionKeyNetwork.etc;
     const newNetworkIsEvm = newNetwork?.impl === IMPL_EVM && !newNetworkIsEtc;
     const prevNetworkIsOtherEvm =
       previousNetwork?.impl === IMPL_EVM && !prevNetworkIsEtc;

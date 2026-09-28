@@ -23,7 +23,7 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import { isAccountCompatibleWithNetwork } from '../../../managers/account';
 import { extractResponseError, fillUnsignedTx } from '../../../proxy';
@@ -460,7 +460,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

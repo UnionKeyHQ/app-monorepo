@@ -39,7 +39,7 @@ import {
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 import bufferUitls from '@unionkeyhq/shared/src/utils/bufferUtils';
 
-import { OneKeyInternalError } from './errors';
+import { UnionKeyInternalError } from './errors';
 import { getBlockNativeGasInfo } from './managers/blockNative';
 import { getCurveByImpl } from './managers/impl';
 import { getMetaMaskGasInfo } from './managers/metaMask';
@@ -214,7 +214,7 @@ function extractResponseError(e: unknown): unknown {
     }
   }
   // Otherwise, throw the original error out.
-  // TODO: see whether to wrap it into a gerinic OneKeyError.
+  // TODO: see whether to wrap it into a gerinic UnionKeyError.
   return e;
 }
 
@@ -239,7 +239,7 @@ class ProviderController extends BaseProviderController {
   public getVerifier(networkId: string, pub: string): IVerifier {
     const provider = this.providers[networkId];
     if (typeof provider === 'undefined') {
-      throw new OneKeyInternalError('Provider not found.');
+      throw new UnionKeyInternalError('Provider not found.');
     }
 
     const { curve } = this.providers[networkId].chainInfo;
@@ -274,7 +274,7 @@ class ProviderController extends BaseProviderController {
     if (typeof client !== 'undefined' && filterClient(client)) {
       return Promise.resolve(client);
     }
-    return Promise.reject(new OneKeyInternalError('Unable to init client.'));
+    return Promise.reject(new UnionKeyInternalError('Unable to init client.'));
   }
 
   override async getProvider(networkId: string): Promise<BaseProvider> {
@@ -298,7 +298,7 @@ class ProviderController extends BaseProviderController {
     if (typeof provider !== 'undefined') {
       return Promise.resolve(provider);
     }
-    return Promise.reject(new OneKeyInternalError('Unable to init provider.'));
+    return Promise.reject(new UnionKeyInternalError('Unable to init provider.'));
   }
 
   override requireChainImpl(impl: string): any {

@@ -23,8 +23,8 @@ import type {
   ModalScreenProps,
   RootRoutesParams,
 } from '@unionkeyhq/kit/src/routes/types';
-import { CustomOneKeyHardwareError } from '@unionkeyhq/kit/src/utils/hardware/errors';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import { CustomUnionKeyHardwareError } from '@unionkeyhq/kit/src/utils/hardware/errors';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import { closeExtensionWindowIfOnboardingFinished } from '../../../hooks/useOnboardingRequired';
 import { setOnBoardingLoadingBehindModal } from '../../../store/reducers/runtime';
@@ -73,7 +73,7 @@ const DeviceStatusCheckModal: FC = () => {
   useEffect(() => {
     // If device and account are ready, go to success page
     async function main() {
-      let features: IOneKeyDeviceFeatures | null = null;
+      let features: IUnionKeyDeviceFeatures | null = null;
       try {
         // 30s timeout for device connection
         const result = await Promise.race([
@@ -81,11 +81,11 @@ const DeviceStatusCheckModal: FC = () => {
           // eslint-disable-next-line no-promise-executor-return
           new Promise((_, reject) => setTimeout(reject, 30 * 1000)),
         ]);
-        features = result as IOneKeyDeviceFeatures;
+        features = result as IUnionKeyDeviceFeatures;
       } catch (e: any) {
         safeGoBack();
         const { code } = e || {};
-        if (code === CustomOneKeyHardwareError.NeedOneKeyBridge) {
+        if (code === CustomUnionKeyHardwareError.NeedUnionKeyBridge) {
           showDialog(<NeedBridgeDialog />);
           return;
         }

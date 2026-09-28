@@ -75,7 +75,7 @@ const NostrGetPublicKeyModal = () => {
         }, 300);
       } catch (e: any) {
         const { key, info } = e;
-        if (key && key !== 'onekey_error') {
+        if (key && key !== 'unionkey_error') {
           ToastManager.show(
             {
               title: intl.formatMessage(

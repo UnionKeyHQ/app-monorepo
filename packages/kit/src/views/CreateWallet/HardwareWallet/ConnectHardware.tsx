@@ -24,8 +24,8 @@ import ClassicDeviceIcon from '@unionkeyhq/components/img/deviceIcon_classic.png
 import MiniDeviceIcon from '@unionkeyhq/components/img/deviceIcon_mini.png';
 import ProDeviceIcon from '@unionkeyhq/components/img/deviceicon_pro.png';
 import TouchDeviceIcon from '@unionkeyhq/components/img/deviceicon_touch.png';
-import type { OneKeyHardwareError } from '@unionkeyhq/engine/src/errors';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyHardwareError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import type { Device } from '@unionkeyhq/engine/src/types/device';
 import type { Wallet } from '@unionkeyhq/engine/src/types/wallet';
 import KeepDeviceAroundSource from '@unionkeyhq/kit/assets/wallet/keep_device_close.png';
@@ -48,7 +48,7 @@ import { normalizeHardwareDeviceName } from '@unionkeyhq/shared/src/device/devic
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 import { equalsIgnoreCase } from '@unionkeyhq/shared/src/utils/stringUtils';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import {
   BleLocationServiceError,
@@ -71,7 +71,7 @@ type RouteProps = RouteProp<
 >;
 
 const getDeviceIcon = (
-  type: IOneKeyDeviceType,
+  type: IUnionKeyDeviceType,
 ): import('react-native').ImageSourcePropType | undefined => {
   switch (type) {
     case 'classic':
@@ -177,15 +177,15 @@ const ConnectHardwareModal: FC = () => {
       return;
     }
     if (
-      (checkBridge as unknown as OneKeyHardwareError).className ===
-      OneKeyErrorClassNames.OneKeyHardwareError
+      (checkBridge as unknown as UnionKeyHardwareError).className ===
+      UnionKeyErrorClassNames.UnionKeyHardwareError
     ) {
       if (platformEnv.isDesktop) {
         window.desktopApi.reloadBridgeProcess();
         ToastManager.show(
           {
             title: intl.formatMessage({
-              id: (checkBridge as unknown as OneKeyHardwareError).key,
+              id: (checkBridge as unknown as UnionKeyHardwareError).key,
             }),
           },
           {

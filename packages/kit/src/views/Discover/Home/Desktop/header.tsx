@@ -169,7 +169,7 @@ export const Header = () => {
           </Box>
           <Typography.Body2 color="text-subdued" mt="4">
             {intl.formatMessage({
-              id: 'form__explore_web3_world_with_onekey_a_safer_and_simpler_way',
+              id: 'form__explore_web3_world_with_unionkey_a_safer_and_simpler_way',
             })}
           </Typography.Body2>
         </Center>

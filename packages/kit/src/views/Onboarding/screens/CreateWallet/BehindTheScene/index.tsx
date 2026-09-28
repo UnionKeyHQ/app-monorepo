@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@unionkeyhq/components';
 import type { LocaleIds } from '@unionkeyhq/components/src/locale';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import CreatingWalletImage from '@unionkeyhq/kit/assets/icon_01mdpi.png';
 import CreatingStepImage from '@unionkeyhq/kit/assets/icon_02mdpi.png';
 import AccountsStepImage from '@unionkeyhq/kit/assets/icon_03mdpi.png';
@@ -25,7 +25,7 @@ import timelinePerfTrace, {
   ETimelinePerfNames,
 } from '@unionkeyhq/shared/src/perf/timelinePerfTrace';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import backgroundApiProxy from '../../../../../background/instance/backgroundApiProxy';
 import useAppNavigation from '../../../../../hooks/useAppNavigation';
@@ -86,7 +86,7 @@ function BehindTheSceneCreatingWallet({
   const startCreatingHardwareWallet = useCallback(async () => {
     try {
       const device: SearchDevice | undefined = isHardwareCreating?.device;
-      const features: IOneKeyDeviceFeatures | undefined =
+      const features: IUnionKeyDeviceFeatures | undefined =
         isHardwareCreating?.features;
       if (!device || !features) {
         return false;
@@ -123,7 +123,7 @@ function BehindTheSceneCreatingWallet({
         setTimeout(() => navigation.goBack(), 300);
       }
       const { className, message, data } = e || {};
-      if (className === OneKeyErrorClassNames.OneKeyAlreadyExistWalletError) {
+      if (className === UnionKeyErrorClassNames.UnionKeyAlreadyExistWalletError) {
         setTimeout(() => {
           const { walletName: existsWalletName } = data || {};
           if (existsWalletName) {
@@ -141,7 +141,7 @@ function BehindTheSceneCreatingWallet({
         }, 600 + 500);
 
         onPressOnboardingFinished?.();
-      } else if (className === OneKeyErrorClassNames.OneKeyHardwareError) {
+      } else if (className === UnionKeyErrorClassNames.UnionKeyHardwareError) {
         deviceUtils.showErrorToast(e);
       } else {
         ToastManager.show(

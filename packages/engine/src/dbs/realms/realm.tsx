@@ -19,10 +19,10 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import {
   AccountAlreadyExists,
   NotImplemented,
-  OneKeyAlreadyExistWalletError,
-  OneKeyError,
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyAlreadyExistWalletError,
+  UnionKeyError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
   TooManyDerivedAccounts,
   TooManyExternalAccounts,
   TooManyImportedAccounts,
@@ -97,7 +97,7 @@ import type {
   DBAPI,
   ExportedCredential,
   ExportedPrivateKeyCredential,
-  OneKeyContext,
+  UnionKeyContext,
   SetWalletNameAndAvatarParams,
   StoredPrivateKeyCredential,
   StoredSeedCredential,
@@ -116,7 +116,7 @@ class RealmDB implements DBAPI {
 
   /**
    * set update flag to true when you want to update preset networks
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   constructor(update = false) {
@@ -201,7 +201,7 @@ class RealmDB implements DBAPI {
       .catch((error: any) => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.error('Failed to open the realm', error.message);
-        throw new OneKeyInternalError('Failed to open the realm');
+        throw new UnionKeyInternalError('Failed to open the realm');
       });
   }
 
@@ -214,7 +214,7 @@ class RealmDB implements DBAPI {
     }
   }
 
-  getContext(): Promise<OneKeyContext | null | undefined> {
+  getContext(): Promise<UnionKeyContext | null | undefined> {
     try {
       const context = this.realm!.objectForPrimaryKey<ContextSchema>(
         'Context',
@@ -223,7 +223,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(context ? context.internalObj : context);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -235,7 +235,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (!checkPassword(context.internalObj, oldPassword)) {
         return Promise.reject(new WrongPassword());
@@ -287,7 +287,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -301,7 +301,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -314,7 +314,7 @@ class RealmDB implements DBAPI {
       );
 
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
 
       if (context.backupUUID !== '') {
@@ -327,7 +327,7 @@ class RealmDB implements DBAPI {
       });
       return Promise.resolve(backupUUID);
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -338,7 +338,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (!checkPassword(context.internalObj, password)) {
         return Promise.reject(new WrongPassword());
@@ -353,7 +353,7 @@ class RealmDB implements DBAPI {
         ),
       );
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -372,7 +372,7 @@ class RealmDB implements DBAPI {
    * add a new network, the added network will be added to the end of the list
    * @param network
    * @returns {Promise<DBNetwork>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: network must not exist, the new added network will be present in the head of the list
    */
   addNetwork(network: DBNetwork): Promise<DBNetwork> {
@@ -383,7 +383,7 @@ class RealmDB implements DBAPI {
       );
       if (networkFind) {
         return Promise.reject(
-          new OneKeyInternalError(`Network ${network.id} already exist.`),
+          new UnionKeyInternalError(`Network ${network.id} already exist.`),
         );
       }
       const position: number =
@@ -411,7 +411,7 @@ class RealmDB implements DBAPI {
       });
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve(network);
   }
@@ -427,7 +427,7 @@ class RealmDB implements DBAPI {
       this.realm!.objectForPrimaryKey<NetworkSchema>('Network', networkId);
     if (!network) {
       return Promise.reject(
-        new OneKeyInternalError(`Network ${networkId} not found.`),
+        new UnionKeyInternalError(`Network ${networkId} not found.`),
       );
     }
     return Promise.resolve(network.internalObj);
@@ -437,7 +437,7 @@ class RealmDB implements DBAPI {
    * update network list.
    * @param networks list of tuples of network id and enabled flag
    * @returns {Promise<void>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: networks must include all networks exist
    */
   updateNetworkList(
@@ -483,7 +483,7 @@ class RealmDB implements DBAPI {
       });
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }
@@ -511,7 +511,7 @@ class RealmDB implements DBAPI {
       );
       if (!network) {
         return Promise.reject(
-          new OneKeyInternalError(`Network ${networkId} to update not found.`),
+          new UnionKeyInternalError(`Network ${networkId} to update not found.`),
         );
       }
       this.realm!.write(() => {
@@ -539,7 +539,7 @@ class RealmDB implements DBAPI {
    * delete network by given network id
    * @param networkId
    * @returns {Promise<void>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: network must exist and must be not preset
    */
   deleteNetwork(networkId: string): Promise<void> {
@@ -554,18 +554,18 @@ class RealmDB implements DBAPI {
         });
       } else if (!network) {
         return Promise.reject(
-          new OneKeyInternalError(`Network ${networkId} not found.`),
+          new UnionKeyInternalError(`Network ${networkId} not found.`),
         );
       } else {
         return Promise.reject(
-          new OneKeyInternalError(
+          new UnionKeyInternalError(
             `Network ${networkId} is preset. delete is forbidden.`,
           ),
         );
       }
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }
@@ -574,7 +574,7 @@ class RealmDB implements DBAPI {
    * add new customer token
    * @param token
    * @returns {Promise<Token>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: token must not exist.
    */
   addToken(token: Token): Promise<Token> {
@@ -599,7 +599,7 @@ class RealmDB implements DBAPI {
       });
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve(token);
   }
@@ -608,7 +608,7 @@ class RealmDB implements DBAPI {
    * get token by id
    * @param tokenId
    * @returns {Promise<Token>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   getToken(tokenId: string): Promise<Token | undefined> {
     try {
@@ -622,7 +622,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(token.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -631,7 +631,7 @@ class RealmDB implements DBAPI {
    * @param networkId
    * @param accountId optional
    * @returns {Promise<Token[]>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   getTokens(networkId: string, accountId?: string): Promise<Token[]> {
     let tokens: Realm.Results<TokenSchema> | undefined;
@@ -648,7 +648,7 @@ class RealmDB implements DBAPI {
         );
         if (!account) {
           return Promise.reject(
-            new OneKeyInternalError(`Account ${accountId} not found.`),
+            new UnionKeyInternalError(`Account ${accountId} not found.`),
           );
         }
         tokens = account.tokens?.filtered('networkId == $0', networkId);
@@ -656,7 +656,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve((tokens || []).map((token) => token.internalObj));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -665,7 +665,7 @@ class RealmDB implements DBAPI {
    * @param accountId
    * @param tokenId
    * @returns {Promise<void>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: token and account must exist already
    */
   addTokenToAccount(accountId: string, tokenId: string): Promise<Token> {
@@ -680,12 +680,12 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       if (!token) {
         return Promise.reject(
-          new OneKeyInternalError(`Token ${tokenId} not found.`),
+          new UnionKeyInternalError(`Token ${tokenId} not found.`),
         );
       }
       this.realm!.write(() => {
@@ -694,7 +694,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(token.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -703,7 +703,7 @@ class RealmDB implements DBAPI {
    * @param accountId
    * @param tokenId
    * @returns {Promise<void>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: token and account must exist already
    */
   removeTokenFromAccount(accountId: string, tokenId: string): Promise<void> {
@@ -718,12 +718,12 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       if (!token) {
         return Promise.reject(
-          new OneKeyInternalError(`Token ${tokenId} not found.`),
+          new UnionKeyInternalError(`Token ${tokenId} not found.`),
         );
       }
       this.realm!.write(() => {
@@ -734,7 +734,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -752,7 +752,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
 
       const wallets = this.realm!.objects<WalletSchema>('Wallet');
@@ -771,7 +771,7 @@ class RealmDB implements DBAPI {
       );
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -779,7 +779,7 @@ class RealmDB implements DBAPI {
    * get a certain wallet by id
    * @param walletId
    * @returns {Promise<Wallet | undefined>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   getWallet(walletId: string): Promise<Wallet | undefined> {
     try {
@@ -793,7 +793,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(wallet.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -806,7 +806,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(wallet.map((w) => w.internalObj));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -815,7 +815,7 @@ class RealmDB implements DBAPI {
    * @param walletId
    * @param account
    * @returns {Promise<DBAccount>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    * @NOTE: account must be not exit and wallet must be exist already(exclude watching wallet)
    */
   addAccountToWallet(
@@ -830,7 +830,7 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       const accountFind = this.realm!.objectForPrimaryKey<AccountSchema>(
@@ -880,7 +880,7 @@ class RealmDB implements DBAPI {
 
             if (!account.template) {
               return Promise.reject(
-                new OneKeyInternalError(`Account should has template field`),
+                new UnionKeyInternalError(`Account should has template field`),
               );
             }
             const impl = getImplByCoinType(account.coinType);
@@ -931,12 +931,12 @@ class RealmDB implements DBAPI {
             );
             if (!context) {
               return Promise.reject(
-                new OneKeyInternalError('Context not found.'),
+                new UnionKeyInternalError('Context not found.'),
               );
             }
             if (!importedCredential) {
               return Promise.reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   'Imported credential required for adding imported accounts.',
                 ),
               );
@@ -968,17 +968,17 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account);
     } catch (error: any) {
       console.error(error);
-      if (error instanceof OneKeyError) {
+      if (error instanceof UnionKeyError) {
         return Promise.reject(error);
       }
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
   /**
    * get a list of all accounts
    * @returns {Promise<DBAccount[]>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    *
    */
   getAllAccounts(): Promise<Array<DBAccount>> {
@@ -987,7 +987,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(accounts.map((account) => account.internalObj));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -995,7 +995,7 @@ class RealmDB implements DBAPI {
    * get account list by given account id list
    * @param accountIds
    * @returns {Promise<DBAccount[]>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    *
    */
   getAccounts(accountIds: string[]): Promise<DBAccount[]> {
@@ -1007,7 +1007,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(accounts.map((account) => account.internalObj));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1029,14 +1029,14 @@ class RealmDB implements DBAPI {
 
       if (entries.length === 0) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${address} not found.`),
+          new UnionKeyInternalError(`Account ${address} not found.`),
         );
       }
       return Promise.resolve(entries[0].internalObj);
     } catch (error: any) {
       debugLogger.common.error(error);
       return Promise.reject(
-        new OneKeyInternalError(`Account ${address} not found.`),
+        new UnionKeyInternalError(`Account ${address} not found.`),
       );
     }
   }
@@ -1045,7 +1045,7 @@ class RealmDB implements DBAPI {
    * get a certain account by id
    * @param accountId
    * @returns {Promise<DBAccount>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   getAccount(accountId: string): Promise<DBAccount> {
     try {
@@ -1055,13 +1055,13 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1071,7 +1071,7 @@ class RealmDB implements DBAPI {
    * @param rs
    * @param name
    * @returns
-   * @throws { OneKeyInternalError, WrongPassword }
+   * @throws { UnionKeyInternalError, WrongPassword }
    */
   createHDWallet({
     password,
@@ -1088,7 +1088,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (!checkPassword(context.internalObj, password)) {
         return Promise.reject(new WrongPassword());
@@ -1124,10 +1124,10 @@ class RealmDB implements DBAPI {
       if (wallet) {
         return Promise.resolve((wallet as WalletSchema).internalObj);
       }
-      return Promise.reject(new OneKeyInternalError('Wallet creation failed.'));
+      return Promise.reject(new UnionKeyInternalError('Wallet creation failed.'));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1172,7 +1172,7 @@ class RealmDB implements DBAPI {
         }
 
         return await Promise.reject(
-          new OneKeyAlreadyExistWalletError(
+          new UnionKeyAlreadyExistWalletError(
             hasExistWallet.id,
             hasExistWallet.name,
           ),
@@ -1203,7 +1203,7 @@ class RealmDB implements DBAPI {
       );
       if (!foundDevice) {
         return await Promise.reject(
-          new OneKeyInternalError(`Device ${id} not found.`),
+          new UnionKeyInternalError(`Device ${id} not found.`),
         );
       }
       let wallet = this.realm!.objectForPrimaryKey<WalletSchema>(
@@ -1213,7 +1213,7 @@ class RealmDB implements DBAPI {
 
       if (wallet && !passphraseState) {
         return await Promise.reject(
-          new OneKeyAlreadyExistWalletError(wallet.id, wallet.name),
+          new UnionKeyAlreadyExistWalletError(wallet.id, wallet.name),
         );
       }
 
@@ -1241,10 +1241,10 @@ class RealmDB implements DBAPI {
 
       return await Promise.resolve(wallet!.internalObj);
     } catch (error: any) {
-      if (error instanceof OneKeyHardwareError) {
+      if (error instanceof UnionKeyHardwareError) {
         return Promise.reject(error);
       }
-      return Promise.reject(new OneKeyInternalError(error?.message ?? ''));
+      return Promise.reject(new UnionKeyInternalError(error?.message ?? ''));
     }
   }
 
@@ -1253,7 +1253,7 @@ class RealmDB implements DBAPI {
    * @param walletId
    * @param password
    * @returns {Promise<void>}
-   * @throws {OneKeyInternalError, WrongPassword}
+   * @throws {UnionKeyInternalError, WrongPassword}
    * @NOTE: associated accounts will be removed and credential will be removed if necessary(hw is not necessary)
    */
   removeWallet(walletId: string, password: string): Promise<void> {
@@ -1264,7 +1264,7 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       if (
@@ -1272,7 +1272,7 @@ class RealmDB implements DBAPI {
         (wallet.type as string) !== WALLET_TYPE_HW
       ) {
         return Promise.reject(
-          new OneKeyInternalError('Only HD or HW wallet can be removed.'),
+          new UnionKeyInternalError('Only HD or HW wallet can be removed.'),
         );
       }
       const context = this.realm!.objectForPrimaryKey<ContextSchema>(
@@ -1280,7 +1280,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (wallet.type === WALLET_TYPE_HD) {
         // Only check password for HD wallet deletion.
@@ -1332,7 +1332,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1341,7 +1341,7 @@ class RealmDB implements DBAPI {
    * @param walletId
    * @param name
    * @returns {Promise<Wallet>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   setWalletNameAndAvatar(
     walletId: string,
@@ -1354,7 +1354,7 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       if (
@@ -1362,7 +1362,7 @@ class RealmDB implements DBAPI {
         (wallet.type as string) !== WALLET_TYPE_HW
       ) {
         return Promise.reject(
-          new OneKeyInternalError('Only HD or HW wallet name can be set.'),
+          new UnionKeyInternalError('Only HD or HW wallet name can be set.'),
         );
       }
       this.realm!.write(() => {
@@ -1376,7 +1376,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(wallet.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1391,7 +1391,7 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       if (
@@ -1399,7 +1399,7 @@ class RealmDB implements DBAPI {
         (wallet.type as string) !== WALLET_TYPE_HW
       ) {
         return Promise.reject(
-          new OneKeyInternalError('Only HD or HW wallet name can be set.'),
+          new UnionKeyInternalError('Only HD or HW wallet name can be set.'),
         );
       }
       this.realm!.write(() => {
@@ -1410,7 +1410,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(wallet.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1419,7 +1419,7 @@ class RealmDB implements DBAPI {
    * @param credentialId wallet or account id
    * @param password
    * @returns {Promise<ExportedCredential>}
-   * @throws {OneKeyInternalError, WrongPassword}
+   * @throws {UnionKeyInternalError, WrongPassword}
    * @NOTE: this method is only used for hd wallet
    */
   getCredential(
@@ -1432,7 +1432,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (!checkPassword(context.internalObj, password)) {
         return Promise.reject(new WrongPassword());
@@ -1443,7 +1443,7 @@ class RealmDB implements DBAPI {
       );
       if (!credential) {
         return Promise.reject(
-          new OneKeyInternalError(`Credential ${credentialId} not found.`),
+          new UnionKeyInternalError(`Credential ${credentialId} not found.`),
         );
       }
 
@@ -1467,7 +1467,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(exprotedCredential);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1476,14 +1476,14 @@ class RealmDB implements DBAPI {
   ): Promise<ExportedPrivateKeyCredential> {
     try {
       if (!credential) {
-        return Promise.reject(new OneKeyInternalError('Credential required.'));
+        return Promise.reject(new UnionKeyInternalError('Credential required.'));
       }
       const context = this.realm!.objectForPrimaryKey<ContextSchema>(
         'Context',
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (!checkPassword(context.internalObj, credential.password)) {
         return Promise.reject(new WrongPassword());
@@ -1494,7 +1494,7 @@ class RealmDB implements DBAPI {
       );
       if (existCredential) {
         return Promise.reject(
-          new OneKeyInternalError(
+          new UnionKeyInternalError(
             `${credential.id} credential has alerday exists.`,
           ),
         );
@@ -1512,7 +1512,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve({ privateKey: credential.privateKey });
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1520,7 +1520,7 @@ class RealmDB implements DBAPI {
    *  change the wallet backup status if necessary
    * @param walletId
    * @returns {Promise<Wallet>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   confirmHDWalletBackuped(walletId: string): Promise<Wallet> {
     try {
@@ -1530,12 +1530,12 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       if (wallet.type !== WALLET_TYPE_HD) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} is not an HD wallet.`),
+          new UnionKeyInternalError(`Wallet ${walletId} is not an HD wallet.`),
         );
       }
       if (!wallet.backuped) {
@@ -1546,7 +1546,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(wallet.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1554,7 +1554,7 @@ class RealmDB implements DBAPI {
    *  change the wallet pending status if necessary
    * @param walletId
    * @returns {Promise<Wallet>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    */
   confirmWalletCreated(walletId: string): Promise<Wallet> {
     try {
@@ -1563,14 +1563,14 @@ class RealmDB implements DBAPI {
         walletId,
       );
       if (!wallet) {
-        return Promise.reject(new OneKeyInternalError('Wallet not found.'));
+        return Promise.reject(new UnionKeyInternalError('Wallet not found.'));
       }
       const context = this.realm!.objectForPrimaryKey<ContextSchema>(
         'Context',
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       this.realm!.write(() => {
         if (context.pendingWallets?.has(walletId)) {
@@ -1580,7 +1580,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(wallet.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1611,7 +1611,7 @@ class RealmDB implements DBAPI {
         }
       }
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }
@@ -1622,7 +1622,7 @@ class RealmDB implements DBAPI {
    * @param accountId
    * @param password
    * @returns {Promise<void>}
-   * @throws {OneKeyInternalError, WrongPassword}
+   * @throws {UnionKeyInternalError, WrongPassword}
    *
    */
   removeAccount(
@@ -1639,12 +1639,12 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       if (wallet.accounts!.filtered('id == $0', accountId).length === 0) {
         return Promise.reject(
-          new OneKeyInternalError(
+          new UnionKeyInternalError(
             `Account ${accountId} associated with Wallet ${walletId} not found.`,
           ),
         );
@@ -1655,7 +1655,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       if (wallet.type in [WALLET_TYPE_HD, WALLET_TYPE_IMPORTED]) {
@@ -1664,7 +1664,7 @@ class RealmDB implements DBAPI {
           MAIN_CONTEXT,
         );
         if (!context) {
-          return Promise.reject(new OneKeyInternalError('Context not found.'));
+          return Promise.reject(new UnionKeyInternalError('Context not found.'));
         }
         if (
           !checkPassword(context.internalObj, password) &&
@@ -1698,7 +1698,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1713,7 +1713,7 @@ class RealmDB implements DBAPI {
       );
       if (!wallet) {
         return Promise.reject(
-          new OneKeyInternalError(`Wallet ${walletId} not found.`),
+          new UnionKeyInternalError(`Wallet ${walletId} not found.`),
         );
       }
       const context = this.realm!.objectForPrimaryKey<ContextSchema>(
@@ -1721,7 +1721,7 @@ class RealmDB implements DBAPI {
         MAIN_CONTEXT,
       );
       if (!context) {
-        return Promise.reject(new OneKeyInternalError('Context not found.'));
+        return Promise.reject(new UnionKeyInternalError('Context not found.'));
       }
       if (wallet.type === WALLET_TYPE_HD) {
         // Only check password for HD wallet deletion.
@@ -1749,7 +1749,7 @@ class RealmDB implements DBAPI {
       });
       return Promise.resolve();
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1758,7 +1758,7 @@ class RealmDB implements DBAPI {
    * @param accountId
    * @param name new name
    * @returns {Promise<DBAccount>}
-   * @throws {OneKeyInternalError}
+   * @throws {UnionKeyInternalError}
    *
    */
   setAccountName(accountId: string, name: string): Promise<DBAccount> {
@@ -1769,7 +1769,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       this.realm!.write(() => {
@@ -1778,7 +1778,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1793,7 +1793,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       this.realm!.write(() => {
@@ -1802,7 +1802,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1818,7 +1818,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       this.realm!.write(() => {
@@ -1832,7 +1832,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1841,7 +1841,7 @@ class RealmDB implements DBAPI {
    * @param accountId
    * @param networkId
    * @param address
-   * @throws {OneKeyInternalError, NotImplemented}
+   * @throws {UnionKeyInternalError, NotImplemented}
    */
   updateAccountAddresses(
     accountId: string,
@@ -1855,7 +1855,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       switch (account.type) {
@@ -1870,7 +1870,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1890,7 +1890,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       switch (account.type) {
@@ -1911,7 +1911,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1931,7 +1931,7 @@ class RealmDB implements DBAPI {
       );
       if (!account) {
         return Promise.reject(
-          new OneKeyInternalError(`Account ${accountId} not found.`),
+          new UnionKeyInternalError(`Account ${accountId} not found.`),
         );
       }
       switch (account.type) {
@@ -1958,7 +1958,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve(account.internalObj);
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -1985,7 +1985,7 @@ class RealmDB implements DBAPI {
         });
       });
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }
@@ -2013,7 +2013,7 @@ class RealmDB implements DBAPI {
         });
       });
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }
@@ -2030,7 +2030,7 @@ class RealmDB implements DBAPI {
         });
       }
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }
@@ -2057,7 +2057,7 @@ class RealmDB implements DBAPI {
         ret.push(entry.internalObj);
       });
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve(ret);
   }
@@ -2108,7 +2108,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -2124,7 +2124,7 @@ class RealmDB implements DBAPI {
       );
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -2136,13 +2136,13 @@ class RealmDB implements DBAPI {
       );
       if (!device) {
         return Promise.reject(
-          new OneKeyInternalError(`Device ${deviceId} not found.`),
+          new UnionKeyInternalError(`Device ${deviceId} not found.`),
         );
       }
       return Promise.resolve(fromDBDeviceToDevice(device.internalObj));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -2154,14 +2154,14 @@ class RealmDB implements DBAPI {
 
       if (devices.length === 0) {
         return Promise.reject(
-          new OneKeyInternalError(`Device ${deviceId} not found.`),
+          new UnionKeyInternalError(`Device ${deviceId} not found.`),
         );
       }
       const device = devices[0];
       return Promise.resolve(fromDBDeviceToDevice(device.internalObj));
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -2173,7 +2173,7 @@ class RealmDB implements DBAPI {
 
       if (devices.length === 0) {
         return Promise.reject(
-          new OneKeyInternalError(`Device ${deviceId} not found.`),
+          new UnionKeyInternalError(`Device ${deviceId} not found.`),
         );
       }
       const device = devices[0];
@@ -2188,7 +2188,7 @@ class RealmDB implements DBAPI {
       return Promise.resolve();
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -2198,7 +2198,7 @@ class RealmDB implements DBAPI {
       walletId,
     );
     if (!wallet) {
-      return Promise.reject(new OneKeyInternalError('Wallet not found.'));
+      return Promise.reject(new UnionKeyInternalError('Wallet not found.'));
     }
     this.realm!.write(() => {
       wallet.name = name;
@@ -2346,13 +2346,13 @@ class RealmDB implements DBAPI {
       );
       if (!customFee) {
         return Promise.reject(
-          new OneKeyInternalError(`Custom fee of ${networkId} not found.`),
+          new UnionKeyInternalError(`Custom fee of ${networkId} not found.`),
         );
       }
 
       return Promise.resolve(customFee.internalObj);
     } catch (error: any) {
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
   }
 
@@ -2397,7 +2397,7 @@ class RealmDB implements DBAPI {
       }
     } catch (error: any) {
       console.error(error);
-      return Promise.reject(new OneKeyInternalError(error));
+      return Promise.reject(new UnionKeyInternalError(error));
     }
     return Promise.resolve();
   }

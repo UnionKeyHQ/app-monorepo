@@ -24,7 +24,7 @@ const AnimatedSplashView = memo(
     children?: ReactNode | undefined;
     initDataReady: boolean;
   }) => {
-    global.$$onekeyPerfTrace?.log({
+    global.$$unionKeyPerfTrace?.log({
       name: `AppLoading SplashScreen render`,
       payload: {
         initDataReady,
@@ -55,7 +55,7 @@ const AnimatedSplashView = memo(
           logoImage={logoImage}
           backgroundColor={bgColor}
           // backgroundColor={platformEnv.isExtension ? 'rbga(0,0,0,0)' : bgColor}
-          // same size to onekey-index-html-preload-image at index.html.ejs
+          // same size to unionkey-index-html-preload-image at index.html.ejs
           //      background img not working
           logoHeight={platformEnv.isRuntimeBrowser ? '80px' : '100%'}
           logoWidth={platformEnv.isRuntimeBrowser ? '80px' : '100%'}

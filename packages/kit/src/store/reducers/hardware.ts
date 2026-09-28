@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
-import type { IOneKeyDeviceType } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceType } from '@unionkeyhq/shared/types';
 
 import type { KnownDevice } from '@unionkeyhq/hd-core';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export type HardwareUiEventPayload = {
   type?: string;
-  deviceType?: IOneKeyDeviceType;
+  deviceType?: IUnionKeyDeviceType;
   deviceId: string;
   deviceConnectId: string;
   deviceBootLoaderMode?: boolean;

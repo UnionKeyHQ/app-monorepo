@@ -2,7 +2,7 @@ import { sha256 } from '@noble/hashes/sha256';
 import BigNumber from 'bignumber.js';
 
 import type { ExportedSeedCredential } from '@unionkeyhq/engine/src/dbs/base';
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import { Signer } from '@unionkeyhq/engine/src/proxy';
 import { batchGetPublicKeys } from '@unionkeyhq/engine/src/secret';
 import type { DBVariantAccount } from '@unionkeyhq/engine/src/types/account';
@@ -39,16 +39,16 @@ export class KeyringHd extends KeyringHdBase {
     const selectedAddress = dbAccount.address;
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Cosmos signers number should be 1.');
+      throw new UnionKeyInternalError('Cosmos signers number should be 1.');
     } else if (addresses[0] !== selectedAddress) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
     const chainInfo = await this.getChainInfo();
     return {
@@ -84,7 +84,7 @@ export class KeyringHd extends KeyringHdBase {
     );
 
     if (pubkeyInfos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const ret = [];
@@ -130,7 +130,7 @@ export class KeyringHd extends KeyringHdBase {
 
     const senderPublicKey = unsignedTx.inputs?.[0]?.publicKey;
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
 
     const encodedTx = unsignedTx.payload.encodedTx as IEncodedTxCosmos;

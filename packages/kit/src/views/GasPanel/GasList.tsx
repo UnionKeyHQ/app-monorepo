@@ -15,7 +15,7 @@ import {
 import type { IGasInfo } from '@unionkeyhq/engine/src/types/gas';
 import type { EIP1559Fee } from '@unionkeyhq/engine/src/types/network';
 import type { IFeeInfo } from '@unionkeyhq/engine/src/vaults/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { useNetworkSimple } from '../../hooks';
@@ -161,7 +161,7 @@ function GasList(props: Props) {
                 color: 'text-subdued',
               }}
               formatOptions={{
-                fixed: selectedNetworkId === OnekeyNetwork.polygon ? 4 : 2,
+                fixed: selectedNetworkId === UnionKeyNetwork.polygon ? 4 : 2,
               }}
               onlyCurrency
             />

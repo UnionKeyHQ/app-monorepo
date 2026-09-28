@@ -1,7 +1,7 @@
 import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
 import { COINTYPE_XMR as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { slicePathTemplate } from '../../../managers/derivation';
 import { getAccountNameInfoByTemplate } from '../../../managers/impl';
 import { batchGetPrivateKeys } from '../../../secret';
@@ -52,7 +52,7 @@ export class KeyringHd extends KeyringHdBase {
     const rawPrivateKey = decrypt(password, privateKeyInfo.extendedKey.key);
 
     if (!rawPrivateKey) {
-      throw new OneKeyInternalError('Unable to get raw private key.');
+      throw new UnionKeyInternalError('Unable to get raw private key.');
     }
 
     const ret = [];
@@ -66,7 +66,7 @@ export class KeyringHd extends KeyringHdBase {
         });
 
       if (!publicSpendKey || !publicViewKey) {
-        throw new OneKeyInternalError('Unable to get public spend/view key.');
+        throw new UnionKeyInternalError('Unable to get public spend/view key.');
       }
 
       const path = `${pathPrefix}/${pathSuffix.replace(
@@ -128,7 +128,7 @@ export class KeyringHd extends KeyringHdBase {
     const rawPrivateKey = decrypt(password, privateKeyInfo.extendedKey.key);
 
     if (!rawPrivateKey) {
-      throw new OneKeyInternalError('Unable to get raw private key.');
+      throw new UnionKeyInternalError('Unable to get raw private key.');
     }
 
     const { publicSpendKey, privateViewKey, privateSpendKey } =

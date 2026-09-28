@@ -31,7 +31,7 @@ import {
   IMPL_XRP,
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 import { getNetworkImpl } from '../managers/network.utils';
 import {
   WALLET_TYPE_EXTERNAL,
@@ -162,7 +162,7 @@ export async function createVaultHelperInstance(
   if (impl === IMPL_DYNEX) {
     return new VaultHelperDynex(options);
   }
-  throw new OneKeyInternalError(
+  throw new UnionKeyInternalError(
     `VaultHelper Class not found for: networkId=${options.networkId}, accountId=${options.accountId}`,
   );
 }
@@ -190,7 +190,7 @@ export async function createKeyringInstance(vault: VaultBase) {
   }
 
   if (!keyring) {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       `Keyring Class not found for: walletId=${walletId}`,
     );
   }
@@ -320,7 +320,7 @@ export async function createVaultInstance(options: IVaultOptions) {
     vault = new VaultDynex(options);
   }
   if (!vault) {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       `Vault Class not found for: networkId=${options.networkId}, accountId=${options.accountId}`,
     );
   }

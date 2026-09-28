@@ -2,7 +2,7 @@ import { builder } from '@mysten/sui.js';
 import BigNumber from 'bignumber.js';
 import { get } from 'lodash';
 
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import { IDecodedTxActionType } from '@unionkeyhq/engine/src/vaults/types';
 
 import { SUI_NATIVE_COIN } from '../utils';
@@ -168,7 +168,7 @@ export function waitPendingTransaction(
         // ignore transaction not found
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         if (error.code !== -32000 && error.code !== -32602) {
-          return Promise.reject(new OneKeyError(error));
+          return Promise.reject(new UnionKeyError(error));
         }
       }
     }
@@ -180,7 +180,7 @@ export function waitPendingTransaction(
     }
 
     if (retry > retryCount) {
-      return Promise.reject(new OneKeyError('transaction timeout'));
+      return Promise.reject(new UnionKeyError('transaction timeout'));
     }
 
     return new Promise(

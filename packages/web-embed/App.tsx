@@ -138,7 +138,7 @@ function OnboardingAutoTyping() {
 }
 
 // @ts-ignore
-const appSettings = window.WEB_EMBED_ONEKEY_APP_SETTINGS || {
+const appSettings = window.WEB_EMBED_UNIONKEY_APP_SETTINGS || {
   themeVariant: 'light',
   localeVariant: 'en-US',
   enableHaptics: true,

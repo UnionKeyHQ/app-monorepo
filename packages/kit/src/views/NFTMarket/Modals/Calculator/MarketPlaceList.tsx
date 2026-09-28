@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 
 import { ListItem, Modal, NetImage } from '@unionkeyhq/components';
 import type { MarketPlace } from '@unionkeyhq/engine/src/types/nft';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../../background/instance/backgroundApiProxy';
 
@@ -30,7 +30,7 @@ const MarketPlaceList: FC = () => {
   useEffect(() => {
     (async () => {
       const data = await serviceNFT.getMarketPlaces({
-        chain: OnekeyNetwork.eth,
+        chain: UnionKeyNetwork.eth,
       });
       if (data) {
         updateListData(data);

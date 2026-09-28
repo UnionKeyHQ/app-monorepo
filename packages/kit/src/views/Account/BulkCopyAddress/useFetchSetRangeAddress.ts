@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 
 import { ToastManager } from '@unionkeyhq/components';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import type { ImportableHDAccount } from '@unionkeyhq/engine/src/types/account';
 import { INDEX_PLACEHOLDER } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
@@ -232,7 +232,7 @@ export function useFetchSetRangeAddress({
       } catch (e: any) {
         debugLogger.common.info('getHWAddressByTemplate error: ', e);
         const { className } = e || {};
-        if (className === OneKeyErrorClassNames.OneKeyHardwareError) {
+        if (className === UnionKeyErrorClassNames.UnionKeyHardwareError) {
           deviceUtils.showErrorToast(e);
         } else {
           ToastManager.show({

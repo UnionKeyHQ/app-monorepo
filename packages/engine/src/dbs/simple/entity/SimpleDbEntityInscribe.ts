@@ -1,5 +1,5 @@
 import type { Networks } from '@unionkeyhq/engine/src/vaults/impl/btc/inscribe/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import { SimpleDbEntityBase } from './SimpleDbEntityBase';
 
@@ -35,10 +35,10 @@ export class SimpleDbEntityInscribe extends SimpleDbEntityBase<ISimpleDbEntityIn
 
   async getItems(networkId: string): Promise<IInscriptionHistory[]> {
     const rawData = await this.getRawData();
-    if (networkId === OnekeyNetwork.btc) {
+    if (networkId === UnionKeyNetwork.btc) {
       return rawData?.orderListsMainNet ?? [];
     }
-    if (networkId === OnekeyNetwork.tbtc) {
+    if (networkId === UnionKeyNetwork.tbtc) {
       return rawData?.orderListsTestNet ?? [];
     }
     return [];

@@ -1,1 +1,1 @@
-export type BackupType = 'iCloud' | 'OnekeyLite' | 'Manual' | 'showMnemonics';
+export type BackupType = 'iCloud' | 'UnionKeyLite' | 'Manual' | 'showMnemonics';

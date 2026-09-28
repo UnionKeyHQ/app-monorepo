@@ -22,7 +22,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type NavigationProps = NativeStackNavigationProp<
   HomeRoutesParams,
-  HomeRoutes.ScreenOnekeyLiteDetail
+  HomeRoutes.ScreenUnionKeyLiteDetail
 >;
 
 export const DefaultSection = () => {
@@ -84,7 +84,7 @@ export const DefaultSection = () => {
               py={4}
               px={{ base: 4, md: 6 }}
               onPress={() => {
-                navigation.navigate(HomeRoutes.ScreenOnekeyLiteDetail);
+                navigation.navigate(HomeRoutes.ScreenUnionKeyLiteDetail);
               }}
             >
               <Icon name="UnionkeyLiteOutline" />
@@ -95,7 +95,7 @@ export const DefaultSection = () => {
                 mx={3}
               >
                 {intl.formatMessage({
-                  id: 'app__hardware_name_onekey_lite',
+                  id: 'app__hardware_name_unionkey_lite',
                 })}
               </Text>
               <Box>
@@ -126,7 +126,7 @@ export const DefaultSection = () => {
             mx={3}
           >
             {intl.formatMessage({
-              id: 'form__onekey_keytag',
+              id: 'form__unionkey_keytag',
             })}
           </Text>
           <Box>

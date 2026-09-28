@@ -9,7 +9,7 @@ import type {
   IBaseMenuOptions,
   IMenu,
 } from '@unionkeyhq/kit/src/views/Overlay/BaseMenu';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isHardwareWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
 
 import { useNavigation } from '../../../hooks';
@@ -49,7 +49,7 @@ const RecoverAccountMenu: FC<
   const navigation = useNavigation<NavigationProps['navigation']>();
   const showFindAddressByPath = useMemo(
     () =>
-      ([OnekeyNetwork.btc, OnekeyNetwork.tbtc] as string[]).includes(networkId),
+      ([UnionKeyNetwork.btc, UnionKeyNetwork.tbtc] as string[]).includes(networkId),
     [networkId],
   );
   const { onCreateAccountByAddressIndex } = useCreateBtcCustomAccount({

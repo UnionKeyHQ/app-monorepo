@@ -12,7 +12,7 @@ import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
 import {
   InvalidAddress,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   WatchedAccountTradeError,
 } from '../../../errors';
 import { extractResponseError } from '../../../proxy';
@@ -522,7 +522,7 @@ export default class Vault extends VaultBase {
       const publicKey = ed25519.publicFromPrivate(privateKey);
       return `ed25519:${baseEncode(Buffer.concat([privateKey, publicKey]))}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

@@ -1,6 +1,6 @@
 import { isNil } from 'lodash';
 
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { SEPERATOR } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import { buildCrossHooksWithOptions } from './buildCrossHooks';
@@ -20,7 +20,7 @@ export const {
 
   let shouldHideInscriptions = false;
 
-  if (networkId === OnekeyNetwork.btc || networkId === OnekeyNetwork.tbtc) {
+  if (networkId === UnionKeyNetwork.btc || networkId === UnionKeyNetwork.tbtc) {
     const state = hideInscriptions?.[accountId];
     if (isNil(state)) {
       // taproot enable inscriptions by default

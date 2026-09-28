@@ -49,7 +49,7 @@ export const openAppReview = async (unlimitedTimes?: boolean) => {
   );
 };
 
-const APP_STORE_LINK = `itms-apps://apps.apple.com/app/id1609559473?action=write-review`;
+const APP_STORE_LINK = `itms-apps://apps.apple.com/app/id6756090484?action=write-review`;
 const PLAY_STORE_LINK = `market://details?id=so.unionkey.app.wallet`;
 
 export const openAppStoryWriteReview = () => {

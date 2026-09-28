@@ -19,7 +19,7 @@ import {
   Text,
 } from '@unionkeyhq/components';
 import type { Collection, MarketPlace } from '@unionkeyhq/engine/src/types/nft';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../../background/instance/backgroundApiProxy';
 import { useDebounce } from '../../../../hooks';
@@ -35,7 +35,7 @@ type NavigationProps = NativeStackNavigationProp<
 
 const CalculatorModal: FC = () => {
   const intl = useIntl();
-  const [network, setNetWork] = useState<string>(OnekeyNetwork.eth);
+  const [network, setNetWork] = useState<string>(UnionKeyNetwork.eth);
 
   const { serviceNFT } = backgroundApiProxy;
   const navigation = useNavigation<NavigationProps>();
@@ -130,7 +130,7 @@ const CalculatorModal: FC = () => {
   useEffect(() => {
     (async () => {
       const data = await serviceNFT.getMarketPlaces({
-        chain: OnekeyNetwork.eth,
+        chain: UnionKeyNetwork.eth,
       });
       if (data) {
         allMarketPlace.current = data;

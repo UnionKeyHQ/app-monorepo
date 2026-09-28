@@ -43,7 +43,7 @@ import {
   bindThis,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
 import { fetchData } from '@unionkeyhq/shared/src/background/backgroundUtils';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { SocketEvents } from '@unionkeyhq/shared/src/engine/engineConsts';
 import {
   AppEventBusNames,
@@ -458,10 +458,10 @@ export default class ServiceNotification extends ServiceBase {
     async (
       addresses: string[],
       chains: string[] = [
-        OnekeyNetwork.eth,
-        OnekeyNetwork.polygon,
-        OnekeyNetwork.arbitrum,
-        OnekeyNetwork.optimism,
+        UnionKeyNetwork.eth,
+        UnionKeyNetwork.polygon,
+        UnionKeyNetwork.arbitrum,
+        UnionKeyNetwork.optimism,
       ],
     ) => {
       if (!addresses.length) {

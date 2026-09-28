@@ -19,11 +19,11 @@ import RestoreHardwareWalletDescription from '../../../views/CreateWallet/Hardwa
 import SetupHardware from '../../../views/CreateWallet/HardwareWallet/SetupHardware';
 import SetupNewDevice from '../../../views/CreateWallet/HardwareWallet/SetupNewDevice';
 import SetupSuccess from '../../../views/CreateWallet/HardwareWallet/SetupSuccess';
-import OnekeyLiteBackup from '../../../views/Hardware/OnekeyLite/Backup';
-import OnekeyLiteBackupPinCode from '../../../views/Hardware/OnekeyLite/PinCode/BackupPinCodeVerify';
-import OnekeyLiteRestorePinCode from '../../../views/Hardware/OnekeyLite/PinCode/RestorePinCodeVerify';
-import OnekeyLiteRestore from '../../../views/Hardware/OnekeyLite/Restore';
-import OnekeyLiteRestoreDoneView from '../../../views/Hardware/OnekeyLite/Restore/Done';
+import UnionKeyLiteBackup from '../../../views/Hardware/UnionKeyLite/Backup';
+import UnionKeyLiteBackupPinCode from '../../../views/Hardware/UnionKeyLite/PinCode/BackupPinCodeVerify';
+import UnionKeyLiteRestorePinCode from '../../../views/Hardware/UnionKeyLite/PinCode/RestorePinCodeVerify';
+import UnionKeyLiteRestore from '../../../views/Hardware/UnionKeyLite/Restore';
+import UnionKeyLiteRestoreDoneView from '../../../views/Hardware/UnionKeyLite/Restore/Done';
 import { CreateWalletModalRoutes } from '../../routesEnum';
 
 import { buildModalStackNavigatorOptions } from './buildModalStackNavigatorOptions';
@@ -33,9 +33,9 @@ import type { WalletService } from '../../../components/WalletConnect/types';
 import type { SearchDevice } from '../../../utils/hardware';
 import type { SetupNewDeviceType } from '../../../views/CreateWallet/HardwareWallet/SetupNewDevice';
 import type {
-  OnekeyLiteModalRoutes,
-  OnekeyLiteRoutesParams,
-} from '../../../views/Hardware/OnekeyLite/routes';
+  UnionKeyLiteModalRoutes,
+  UnionKeyLiteRoutesParams,
+} from '../../../views/Hardware/UnionKeyLite/routes';
 
 export type IAddExistingWalletMode =
   | 'all'
@@ -105,12 +105,12 @@ export type CreateWalletRoutesParams = {
   [CreateWalletModalRoutes.AddImportedOrWatchingAccountModal]: IAddImportedOrWatchingAccountModalParams;
   [CreateWalletModalRoutes.AddImportedAccountDoneModal]: IAddImportedAccountDoneModalParams;
 
-  // Onekey Lite Backup & Restore
-  [CreateWalletModalRoutes.OnekeyLiteRestorePinCodeVerifyModal]: OnekeyLiteRoutesParams[OnekeyLiteModalRoutes.OnekeyLiteRestorePinCodeVerifyModal];
-  [CreateWalletModalRoutes.OnekeyLiteRestoreModal]: OnekeyLiteRoutesParams[OnekeyLiteModalRoutes.OnekeyLiteRestoreModal];
-  [CreateWalletModalRoutes.OnekeyLiteRestoreDoneModal]: OnekeyLiteRoutesParams[OnekeyLiteModalRoutes.OnekeyLiteRestoreDoneModal];
-  [CreateWalletModalRoutes.OnekeyLiteBackupPinCodeVerifyModal]: OnekeyLiteRoutesParams[OnekeyLiteModalRoutes.OnekeyLiteBackupPinCodeVerifyModal];
-  [CreateWalletModalRoutes.OnekeyLiteBackupModal]: OnekeyLiteRoutesParams[OnekeyLiteModalRoutes.OnekeyLiteBackupModal];
+  // UnionKey Lite Backup & Restore
+  [CreateWalletModalRoutes.UnionKeyLiteRestorePinCodeVerifyModal]: UnionKeyLiteRoutesParams[UnionKeyLiteModalRoutes.UnionKeyLiteRestorePinCodeVerifyModal];
+  [CreateWalletModalRoutes.UnionKeyLiteRestoreModal]: UnionKeyLiteRoutesParams[UnionKeyLiteModalRoutes.UnionKeyLiteRestoreModal];
+  [CreateWalletModalRoutes.UnionKeyLiteRestoreDoneModal]: UnionKeyLiteRoutesParams[UnionKeyLiteModalRoutes.UnionKeyLiteRestoreDoneModal];
+  [CreateWalletModalRoutes.UnionKeyLiteBackupPinCodeVerifyModal]: UnionKeyLiteRoutesParams[UnionKeyLiteModalRoutes.UnionKeyLiteBackupPinCodeVerifyModal];
+  [CreateWalletModalRoutes.UnionKeyLiteBackupModal]: UnionKeyLiteRoutesParams[UnionKeyLiteModalRoutes.UnionKeyLiteBackupModal];
   [CreateWalletModalRoutes.WalletConnectQrcodeModal]: {
     connectToWalletService: (
       walletService: WalletService,
@@ -158,26 +158,26 @@ const modalRoutes = [
     component: AppWalletDone,
   },
 
-  // Onekey Lite backup
+  // UnionKey Lite backup
   {
-    name: CreateWalletModalRoutes.OnekeyLiteRestorePinCodeVerifyModal,
-    component: OnekeyLiteRestorePinCode,
+    name: CreateWalletModalRoutes.UnionKeyLiteRestorePinCodeVerifyModal,
+    component: UnionKeyLiteRestorePinCode,
   },
   {
-    name: CreateWalletModalRoutes.OnekeyLiteRestoreModal,
-    component: OnekeyLiteRestore,
+    name: CreateWalletModalRoutes.UnionKeyLiteRestoreModal,
+    component: UnionKeyLiteRestore,
   },
   {
-    name: CreateWalletModalRoutes.OnekeyLiteRestoreDoneModal,
-    component: OnekeyLiteRestoreDoneView,
+    name: CreateWalletModalRoutes.UnionKeyLiteRestoreDoneModal,
+    component: UnionKeyLiteRestoreDoneView,
   },
   {
-    name: CreateWalletModalRoutes.OnekeyLiteBackupPinCodeVerifyModal,
-    component: OnekeyLiteBackupPinCode,
+    name: CreateWalletModalRoutes.UnionKeyLiteBackupPinCodeVerifyModal,
+    component: UnionKeyLiteBackupPinCode,
   },
   {
-    name: CreateWalletModalRoutes.OnekeyLiteBackupModal,
-    component: OnekeyLiteBackup,
+    name: CreateWalletModalRoutes.UnionKeyLiteBackupModal,
+    component: UnionKeyLiteBackup,
   },
   {
     name: CreateWalletModalRoutes.AddExistingWalletModal,

@@ -2,7 +2,7 @@ import assert from 'assert';
 
 import { Connection, getTransaction } from '@mysten/sui.js';
 
-import { OneKeyJsonRpcProvider } from '../provider/OnekeyJsonRpcProvider';
+import { UnionKeyJsonRpcProvider } from '../provider/UnionKeyJsonRpcProvider';
 import { GAS_TYPE_ARG } from '../utils';
 
 import { parseTransferObjects } from './Transaction';
@@ -10,14 +10,14 @@ import { parseTransferObjects } from './Transaction';
 jest.setTimeout(3 * 60 * 1000);
 
 describe('Sui parse Transaction Tests', () => {
-  const mainnetClient = new OneKeyJsonRpcProvider(
+  const mainnetClient = new UnionKeyJsonRpcProvider(
     new Connection({
       fullnode: 'https://fullnode.mainnet.sui.io',
       faucet: 'https://faucet.testnet.sui.io/gas',
     }),
   );
 
-  // const testnetClient = new OneKeyJsonRpcProvider(
+  // const testnetClient = new UnionKeyJsonRpcProvider(
   //   new Connection({
   //     fullnode: 'https://fullnode.testnet.sui.io',
   //     faucet: 'https://faucet.testnet.sui.io/gas',

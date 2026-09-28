@@ -14,7 +14,7 @@ import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import { isBRC20Token } from '@unionkeyhq/shared/src/utils/tokenUtils';
 
 import { getFiatEndpoint } from '../endpoint';
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 
 import type { Tool } from '../types/token';
 
@@ -57,7 +57,7 @@ function getNetworkIdFromTokenId(tokenId: string): string {
   if (impl && chainId && tokenIdOnNetwork) {
     return `${impl}${SEPERATOR}${chainId}`;
   }
-  throw new OneKeyInternalError(`Invalid tokenId ${tokenId}.`);
+  throw new UnionKeyInternalError(`Invalid tokenId ${tokenId}.`);
 }
 
 export const isValidTokenId = (tokenId: string) => tokenId?.includes(SEPERATOR);

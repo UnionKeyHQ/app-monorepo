@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 
 import { ToastManager } from '@unionkeyhq/components';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import { getDefaultAccountNameInfoByImpl } from '@unionkeyhq/engine/src/managers/impl';
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import {
@@ -225,7 +225,7 @@ export function useFetchWalletAddress({
           } catch (e: any) {
             debugLogger.common.info('Fetch Wallet Accounts error: ', e);
             const { className } = e || {};
-            if (className === OneKeyErrorClassNames.OneKeyHardwareError) {
+            if (className === UnionKeyErrorClassNames.UnionKeyHardwareError) {
               deviceUtils.showErrorToast(e);
             } else {
               ToastManager.show(
@@ -325,7 +325,7 @@ export function useFetchWalletAddress({
         } catch (e: any) {
           debugLogger.common.info('Fetch Wallet Accounts error: ', e);
           const { className } = e || {};
-          if (className === OneKeyErrorClassNames.OneKeyHardwareError) {
+          if (className === UnionKeyErrorClassNames.UnionKeyHardwareError) {
             deviceUtils.showErrorToast(e);
           } else {
             ToastManager.show(

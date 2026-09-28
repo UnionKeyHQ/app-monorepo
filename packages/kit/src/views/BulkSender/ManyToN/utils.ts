@@ -2,7 +2,7 @@ import BigNumber from 'bignumber.js';
 import { isNil } from 'lodash';
 
 import { ToastManager } from '@unionkeyhq/components';
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import { BulkTypeEnum } from '@unionkeyhq/engine/src/types/batchTransfer';
 import type { Token } from '@unionkeyhq/engine/src/types/token';
@@ -35,7 +35,7 @@ const randomBetween = ({
   const maxBN = new BigNumber(max);
 
   if (minBN.isGreaterThan(maxBN)) {
-    throw new OneKeyError('Min must be less than or equal to max');
+    throw new UnionKeyError('Min must be less than or equal to max');
   }
   const difference = maxBN.minus(minBN);
   const random = BigNumber.random(randomDecimals);
@@ -59,7 +59,7 @@ export const getTransferAmount = async ({
 }) => {
   if (amountType === AmountTypeEnum.Custom) {
     if (isNil(senderItem.amount)) {
-      throw new OneKeyError('Can not get sender amount value');
+      throw new UnionKeyError('Can not get sender amount value');
     }
     return senderItem.amount;
   }
@@ -301,7 +301,7 @@ export const verifyBulkTransferBeforeConfirm = async ({
 
     if (amountType === AmountTypeEnum.Custom) {
       if (isNil(senderItem.amount)) {
-        throw new OneKeyError('Can not get sender amount value');
+        throw new UnionKeyError('Can not get sender amount value');
       }
       senderAmount = senderItem.amount;
     } else if (amountType === AmountTypeEnum.Fixed) {
@@ -316,7 +316,7 @@ export const verifyBulkTransferBeforeConfirm = async ({
     const senderTokenBalance = tokensBalance?.[senderAccountId];
 
     if (isNil(senderNativeTokenBalance) || isNil(senderTokenBalance)) {
-      throw new OneKeyError('Can not get sender balance value.');
+      throw new UnionKeyError('Can not get sender balance value.');
     }
 
     if (token.isNative) {

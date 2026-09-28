@@ -5,8 +5,8 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useIntl } from 'react-intl';
 
 import { Box, Center, Spinner, ToastManager } from '@unionkeyhq/components';
-import type { OneKeyError } from '@unionkeyhq/engine/src/errors';
-import { OneKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyErrorClassNames } from '@unionkeyhq/engine/src/errors';
 import type {
   IEncodedTx,
   ISignedTxPro,
@@ -214,7 +214,7 @@ const SendAuth: FC<EnableLocalAuthenticationProps> = ({
         }
       }
     } catch (e) {
-      const error = e as OneKeyError;
+      const error = e as UnionKeyError;
       debugLogger.common.error(error);
       if (backRouteName) {
         // navigation.navigate(backRouteName);
@@ -264,7 +264,7 @@ const SendAuth: FC<EnableLocalAuthenticationProps> = ({
           : error?.message ?? '';
         if (
           error.className !==
-          OneKeyErrorClassNames.UnionKeyWalletConnectModalCloseError
+          UnionKeyErrorClassNames.UnionKeyWalletConnectModalCloseError
         ) {
           if (!deviceUtils.showErrorToast(error)) {
             ToastManager.show(

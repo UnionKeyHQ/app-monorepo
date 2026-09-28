@@ -15,7 +15,7 @@ import { ed25519 } from '@unionkeyhq/engine/src/secret/curves';
 import type { UnsignedTx } from '@unionkeyhq/engine/src/types/provider';
 import { COINTYPE_SUI as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { Signer } from '../../../proxy';
 import { AccountType } from '../../../types/account';
 import { KeyringImportedBase } from '../../keyring/KeyringImportedBase';
@@ -36,16 +36,16 @@ export class KeyringImported extends KeyringImportedBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Starcoin signers number should be 1.');
+      throw new UnionKeyInternalError('Starcoin signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -58,7 +58,7 @@ export class KeyringImported extends KeyringImportedBase {
   ): Promise<Array<DBSimpleAccount>> {
     const { privateKey, name } = params;
     if (privateKey.length !== 32) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
 
     const pubkey = ed25519.publicFromPrivate(privateKey);
@@ -97,7 +97,7 @@ export class KeyringImported extends KeyringImportedBase {
     const signer = signers[sender];
     const senderPublicKey = unsignedTx.inputs?.[0]?.publicKey;
     if (!senderPublicKey) {
-      throw new OneKeyInternalError('Unable to get sender public key.');
+      throw new UnionKeyInternalError('Unable to get sender public key.');
     }
     const { encodedTx } = unsignedTx.payload;
     const txnBytes = await toTransaction(client, sender, encodedTx);

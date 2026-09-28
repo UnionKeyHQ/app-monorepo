@@ -103,8 +103,8 @@ const SecondaryContent: FC<SecondaryContentProps> = ({
           description: 'content__what_is_private_key_desc',
         },
         {
-          title: 'content__safe_to_enter_into_onekey',
-          description: 'content__safe_to_enter_into_onekey_desc',
+          title: 'content__safe_to_enter_into_unionkey',
+          description: 'content__safe_to_enter_into_unionkey_desc',
         },
         {
           title: 'content__where_find_private_key',

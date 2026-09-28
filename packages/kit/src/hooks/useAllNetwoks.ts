@@ -12,7 +12,7 @@ import type {
   Network,
   PresetNetwork,
 } from '@unionkeyhq/engine/src/types/network';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isLightningNetworkByNetworkId } from '@unionkeyhq/shared/src/engine/engineConsts';
 
 import backgroundApiProxy from '../background/instance/backgroundApiProxy';
@@ -51,7 +51,7 @@ export const useAllNetworksIncludedNetworks = (enabledOnly = true) => {
           !n.settings?.validationRequired &&
           !n.settings.hideInAllNetworksMode &&
           !!presetNetworks?.[n.id] &&
-          ![OnekeyNetwork.fevm, OnekeyNetwork.cfxespace].includes(n.id);
+          ![UnionKeyNetwork.fevm, UnionKeyNetwork.cfxespace].includes(n.id);
         if (enabledOnly) {
           return isMatch && n.enabled;
         }

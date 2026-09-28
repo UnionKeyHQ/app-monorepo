@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import type { ITransferInfo } from '@unionkeyhq/engine/src/vaults/types';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   AppUIEventBusNames,
   appUIEventBus,
@@ -42,7 +42,7 @@ const ensureSDKReady: IEnsureSDKReady = async () =>
         debugLogger.common.debug('ensure web embed exist resolve callback');
         resolve(true);
       },
-      OnekeyNetwork.ada,
+      UnionKeyNetwork.ada,
     );
   });
 

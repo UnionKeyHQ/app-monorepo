@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../../background/instance/backgroundApiProxy';
 import { useDebounce } from '../../../../hooks';
@@ -31,7 +31,7 @@ export function useSearchAddress({
   const valildAddress = useCallback(async (address: string) => {
     try {
       await backgroundApiProxy.validator.validateAddress(
-        OnekeyNetwork.eth,
+        UnionKeyNetwork.eth,
         address,
       );
       return true;
@@ -43,7 +43,7 @@ export function useSearchAddress({
   const getAddress = useCallback(async (address: string) => {
     const result = await backgroundApiProxy.serviceRevoke.getAddress(
       address,
-      OnekeyNetwork.eth,
+      UnionKeyNetwork.eth,
     );
     return result;
   }, []);

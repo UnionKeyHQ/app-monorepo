@@ -1,6 +1,6 @@
 import { formatServerToken } from '@unionkeyhq/engine/src/managers/token';
 import type { ServerToken } from '@unionkeyhq/engine/src/types/token';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import type { Token } from '../../store/typings';
 import type { Provider } from './typings';
@@ -9,48 +9,48 @@ export const swftcCustomerSupportUrl =
   'https://tawk.to/chat/6520bf666fcfe87d54b751ef/1hc3unaha';
 
 export const zeroXenabledNetworkIds: string[] = [
-  OnekeyNetwork.eth,
-  OnekeyNetwork.bsc,
-  OnekeyNetwork.polygon,
-  OnekeyNetwork.fantom,
-  OnekeyNetwork.avalanche,
-  OnekeyNetwork.celo,
-  OnekeyNetwork.optimism,
-  OnekeyNetwork.arbitrum,
+  UnionKeyNetwork.eth,
+  UnionKeyNetwork.bsc,
+  UnionKeyNetwork.polygon,
+  UnionKeyNetwork.fantom,
+  UnionKeyNetwork.avalanche,
+  UnionKeyNetwork.celo,
+  UnionKeyNetwork.optimism,
+  UnionKeyNetwork.arbitrum,
 ];
 
 const serverURL = 'https://api.unionkey.io/swap';
 export const quoterServerEndpoints: Record<string, string> = {
-  [OnekeyNetwork.heco]: `${serverURL}/swap/v1/quote`,
-  [OnekeyNetwork.goerli]: 'https://goerli.api.0x.org/swap/v1/quote',
+  [UnionKeyNetwork.heco]: `${serverURL}/swap/v1/quote`,
+  [UnionKeyNetwork.goerli]: 'https://goerli.api.0x.org/swap/v1/quote',
 };
 
 export const estimatedTime: Record<string, number> = {
-  [OnekeyNetwork.eth]: 60,
-  [OnekeyNetwork.bsc]: 30,
-  [OnekeyNetwork.polygon]: 30,
-  [OnekeyNetwork.fantom]: 30,
-  [OnekeyNetwork.avalanche]: 30,
-  [OnekeyNetwork.celo]: 60,
-  [OnekeyNetwork.optimism]: 60,
-  [OnekeyNetwork.heco]: 15,
-  [OnekeyNetwork.okt]: 15,
+  [UnionKeyNetwork.eth]: 60,
+  [UnionKeyNetwork.bsc]: 30,
+  [UnionKeyNetwork.polygon]: 30,
+  [UnionKeyNetwork.fantom]: 30,
+  [UnionKeyNetwork.avalanche]: 30,
+  [UnionKeyNetwork.celo]: 60,
+  [UnionKeyNetwork.optimism]: 60,
+  [UnionKeyNetwork.heco]: 15,
+  [UnionKeyNetwork.okt]: 15,
 };
 
 export const networkProviderInfos: Record<string, Provider[]> = {
-  [OnekeyNetwork.okt]: [
+  [UnionKeyNetwork.okt]: [
     {
       name: 'CherrySwap',
       logoUrl: 'https://common.unionkey.io/logo/CherrySwap.png',
     },
   ],
-  [OnekeyNetwork.heco]: [
+  [UnionKeyNetwork.heco]: [
     {
       name: 'MDex',
       logoUrl: 'https://common.unionkey.io/logo/MdexSwap.png',
     },
   ],
-  [OnekeyNetwork.xdai]: [
+  [UnionKeyNetwork.xdai]: [
     {
       name: 'HoneySwap',
       logoUrl: 'https://common.unionkey.io/logo/HoneySwap.png',
@@ -59,9 +59,9 @@ export const networkProviderInfos: Record<string, Provider[]> = {
 };
 
 export const limitOrderNetworkIds = [
-  OnekeyNetwork.eth,
-  OnekeyNetwork.bsc,
-  OnekeyNetwork.polygon,
+  UnionKeyNetwork.eth,
+  UnionKeyNetwork.bsc,
+  UnionKeyNetwork.polygon,
 ] as string[];
 
 const WETH = {
@@ -98,9 +98,9 @@ const WMATIC = {
 } as ServerToken;
 
 export const WETH9: Record<string, Token> = {
-  [OnekeyNetwork.eth]: formatServerToken(WETH),
-  [OnekeyNetwork.bsc]: formatServerToken(WBNB),
-  [OnekeyNetwork.polygon]: formatServerToken(WMATIC),
+  [UnionKeyNetwork.eth]: formatServerToken(WETH),
+  [UnionKeyNetwork.bsc]: formatServerToken(WBNB),
+  [UnionKeyNetwork.polygon]: formatServerToken(WMATIC),
 };
 
 export function wrapToken(token: Token) {
@@ -114,7 +114,7 @@ export const ZeroExchangeAddress = '0xdef1c0ded9bec7f1a1670819833240f027b25eff';
 
 export const networkIdDontSupportRecipientAddress: string[] = [
   // jupitor
-  OnekeyNetwork.sol,
+  UnionKeyNetwork.sol,
   // openocean
-  OnekeyNetwork.apt,
+  UnionKeyNetwork.apt,
 ];

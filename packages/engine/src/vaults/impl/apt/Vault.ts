@@ -24,8 +24,8 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyError,
-  OneKeyInternalError,
+  UnionKeyError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import {
   IDecodedTxActionType,
@@ -294,10 +294,10 @@ export default class Vault extends VaultBase {
   }): Promise<IEncodedTxAptos> {
     const { price, limit } = params.feeInfoValue;
     if (typeof price !== 'undefined' && typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
     const network = await this.getNetwork();
 
@@ -487,7 +487,7 @@ export default class Vault extends VaultBase {
       );
 
       if (typeof token === 'undefined') {
-        throw new OneKeyInternalError('Failed to get token info.');
+        throw new UnionKeyInternalError('Failed to get token info.');
       }
 
       amountValue = new BigNumber(amount).shiftedBy(token.decimals).toFixed();
@@ -672,14 +672,14 @@ export default class Vault extends VaultBase {
       if (tx && tx.length !== 0) {
         const simulationTx = tx?.[0];
 
-        const isOnekeyNativeTransfer =
+        const isUnionKeyNativeTransfer =
           encodedTx.function === APTOS_NATIVE_TRANSFER_FUNC;
 
         const gasUsed = new BigNumber(simulationTx.gas_used);
-        // Only onekey max send can pass, other cases must be simulated successfully
+        // Only UnionKey max send can pass, other cases must be simulated successfully
         if (
           gasUsed.isEqualTo(0) ||
-          (!isOnekeyNativeTransfer && !simulationTx.success)
+          (!isUnionKeyNativeTransfer && !simulationTx.success)
         ) {
           // Exec failure
           throw convertRpcError(simulationTx.vm_status);
@@ -698,7 +698,7 @@ export default class Vault extends VaultBase {
         throw new Error();
       }
     } catch (error) {
-      if (error instanceof OneKeyError) {
+      if (error instanceof UnionKeyError) {
         throw error;
       }
 
@@ -773,7 +773,7 @@ export default class Vault extends VaultBase {
       };
     } catch (error: any) {
       // It's already been dealt with in the waitPendingTransaction
-      if (error instanceof OneKeyInternalError) {
+      if (error instanceof UnionKeyInternalError) {
         throw error;
       }
 
@@ -791,7 +791,7 @@ export default class Vault extends VaultBase {
       );
       return `0x${decrypt(password, encryptedPrivateKey).toString('hex')}`;
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -874,7 +874,7 @@ export default class Vault extends VaultBase {
             actionKey = 'tokenTransfer';
             token = await this.engine.ensureTokenInDB(this.networkId, coinType);
             if (typeof token === 'undefined') {
-              throw new OneKeyInternalError('Failed to get token info.');
+              throw new UnionKeyInternalError('Failed to get token info.');
             }
           } else {
             encodedTx.to = to;

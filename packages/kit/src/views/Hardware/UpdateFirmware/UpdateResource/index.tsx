@@ -214,7 +214,7 @@ const UpdateWarningModal: FC = () => {
                 setResError('');
                 setConfirmChooseDisk(false);
                 message = intl.formatMessage({
-                  id: 'msg__unable_to_access_disk_onekey_data',
+                  id: 'msg__unable_to_access_disk_unionkey_data',
                 });
                 return;
               case ERRORS.DOWNLOAD_FAILED:

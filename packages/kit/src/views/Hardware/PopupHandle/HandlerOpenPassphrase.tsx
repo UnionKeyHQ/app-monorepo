@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
 
-import EnablePassphraseDialog from '../Onekey/EnablePassphraseDialog';
+import EnablePassphraseDialog from '../UnionKey/EnablePassphraseDialog';
 
 type HandlerOpenPassphraseViewProps = {
   deviceConnectId: string;

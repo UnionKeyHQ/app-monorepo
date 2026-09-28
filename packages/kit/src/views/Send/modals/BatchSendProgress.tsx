@@ -13,8 +13,8 @@ import {
   ToastManager,
 } from '@unionkeyhq/components';
 import {
-  OneKeyError,
-  OneKeyErrorClassNames,
+  UnionKeyError,
+  UnionKeyErrorClassNames,
 } from '@unionkeyhq/engine/src/errors';
 import { BulkTypeEnum } from '@unionkeyhq/engine/src/types/batchTransfer';
 import { TransactionStatus } from '@unionkeyhq/engine/src/types/provider';
@@ -177,7 +177,7 @@ function SendProgress({
       }
 
       if (!senderAccountId) {
-        throw new OneKeyError('Can not get sender account id.');
+        throw new UnionKeyError('Can not get sender account id.');
       }
 
       setCurrentTxInterval(transferInfo?.txInterval);
@@ -352,7 +352,7 @@ function SendProgress({
         });
       }
     } catch (e) {
-      const error = e as OneKeyError;
+      const error = e as UnionKeyError;
       debugLogger.common.error(error);
       if (backRouteName) {
         // navigation.navigate(backRouteName);
@@ -387,7 +387,7 @@ function SendProgress({
           : error?.message ?? '';
         if (
           error.className !==
-          OneKeyErrorClassNames.UnionKeyWalletConnectModalCloseError
+          UnionKeyErrorClassNames.UnionKeyWalletConnectModalCloseError
         ) {
           if (!deviceUtils.showErrorToast(error)) {
             ToastManager.show(

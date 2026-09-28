@@ -13,7 +13,7 @@ import {
   useIsVerticalLayout,
 } from '@unionkeyhq/components';
 import LNSwapMenu from '@unionkeyhq/kit/src/views/LightningNetwork/components/LNSwapMenu';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   isBTCNetwork,
   isLightningNetworkByImpl,
@@ -123,7 +123,7 @@ const AccountOption: FC<AccountOptionProps> = memo(
               { type: 'default' },
             );
             token = await backgroundApiProxy.engine.getNativeTokenInfo(
-              OnekeyNetwork.eth,
+              UnionKeyNetwork.eth,
             );
           }
         }
@@ -135,9 +135,9 @@ const AccountOption: FC<AccountOptionProps> = memo(
               // Switch to LN to BTC swap if is lightning network
               if (isLightningNetwork) {
                 backgroundApiProxy.serviceSwap.switchToNativeOutputToken(
-                  n.id === OnekeyNetwork.lightning
-                    ? OnekeyNetwork.btc
-                    : OnekeyNetwork.tbtc,
+                  n.id === UnionKeyNetwork.lightning
+                    ? UnionKeyNetwork.btc
+                    : UnionKeyNetwork.tbtc,
                 );
               }
             });

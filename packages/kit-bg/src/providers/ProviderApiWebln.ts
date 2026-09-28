@@ -124,7 +124,7 @@ class ProviderApiWebln extends ProviderApiBase {
   public async getInfo() {
     return Promise.resolve({
       node: {
-        alias: 'OneKey',
+        alias: 'UnionKey',
       },
       methods: [
         'getInfo',

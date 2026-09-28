@@ -1,7 +1,7 @@
 import { slicePathTemplate } from '@unionkeyhq/engine/src/managers/derivation';
 import { batchGetPublicKeys } from '@unionkeyhq/engine/src/secret';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import {
   getAccountNameInfoByImpl,
   getAccountNameInfoByTemplate,
@@ -19,16 +19,16 @@ export class KeyringHd extends KeyringHdBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('EVM signers number should be 1.');
+      throw new UnionKeyInternalError('EVM signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -56,7 +56,7 @@ export class KeyringHd extends KeyringHdBase {
     );
 
     if (pubkeyInfos.length !== indexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const ret = [];

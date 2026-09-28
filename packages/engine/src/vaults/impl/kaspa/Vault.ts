@@ -5,7 +5,7 @@ import { groupBy } from 'lodash';
 
 import {
   InvalidAddress,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '@unionkeyhq/engine/src/errors';
 import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
 import type { DBSimpleAccount } from '@unionkeyhq/engine/src/types/account';
@@ -209,7 +209,7 @@ export default class Vault extends VaultBase {
       .toFixed();
 
     if (new BigNumber(amountValue).isLessThan(DUST_AMOUNT)) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Amount is too small',
         'msg__amount_too_small',
       );
@@ -250,7 +250,7 @@ export default class Vault extends VaultBase {
     }
     const { token: tokenAddress } = transferInfo;
     if (tokenAddress)
-      throw new OneKeyInternalError('Kaspa does not support token transfer');
+      throw new UnionKeyInternalError('Kaspa does not support token transfer');
 
     const client = await this.getClient();
     const { address: from } = await this.getDbAccount();
@@ -284,7 +284,7 @@ export default class Vault extends VaultBase {
         massAndSize.mass > MAX_ORPHAN_TX_MASS ||
         massAndSize.txSize > MAX_BLOCK_SIZE
       ) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           'Transaction size is too large',
           'msg__broadcast_kaspa_tx_max_allowed_size',
         );
@@ -450,7 +450,7 @@ export default class Vault extends VaultBase {
     const dataFee = this.minimumRequiredTransactionRelayFee(mass);
 
     if (txSize > MAX_BLOCK_SIZE) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Transaction size is too large',
         'msg__broadcast_kaspa_tx_max_allowed_size',
       );
@@ -477,10 +477,10 @@ export default class Vault extends VaultBase {
     const { price, limit } = params.feeInfoValue;
 
     if (typeof price !== 'undefined' && typeof price !== 'string') {
-      throw new OneKeyInternalError('Invalid gas price.');
+      throw new UnionKeyInternalError('Invalid gas price.');
     }
     if (typeof limit !== 'string') {
-      throw new OneKeyInternalError('Invalid fee limit');
+      throw new UnionKeyInternalError('Invalid fee limit');
     }
 
     return Promise.resolve({
@@ -519,7 +519,7 @@ export default class Vault extends VaultBase {
       );
       return privateKey.toWIF();
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

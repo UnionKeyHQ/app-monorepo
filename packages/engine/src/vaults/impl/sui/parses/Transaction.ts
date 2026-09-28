@@ -4,8 +4,8 @@ import { GAS_TYPE_ARG } from '../utils';
 
 import type {
   GetPastObjectRequest,
-  OneKeyJsonRpcProvider,
-} from '../provider/OnekeyJsonRpcProvider';
+  UnionKeyJsonRpcProvider,
+} from '../provider/UnionKeyJsonRpcProvider';
 import type {
   ProgrammableTransaction,
   SuiArgument,
@@ -14,7 +14,7 @@ import type {
 
 export async function parseTransactionGasPayment(params: {
   payments?: SuiGasData['payment'] | undefined; // Payment
-  client?: OneKeyJsonRpcProvider;
+  client?: UnionKeyJsonRpcProvider;
 }) {
   const gasAmounts: Map<string, bigint> = new Map();
 
@@ -65,7 +65,7 @@ export async function parseTransactionGasPayment(params: {
 async function parseTransactionSplitCoinsInput(
   argument: [SuiArgument, SuiArgument[]],
   inputs: ProgrammableTransaction['inputs'], // Inputs
-  client?: OneKeyJsonRpcProvider,
+  client?: UnionKeyJsonRpcProvider,
 ) {
   const [paymentObj, numObj] = argument;
   let coin = '';
@@ -121,7 +121,7 @@ async function parseTransactionSplitCoinsInput(
 async function parseTransactionSplitCoins(params: {
   argument: [SuiArgument, SuiArgument[]];
   inputs: ProgrammableTransaction['inputs']; // Inputs
-  client?: OneKeyJsonRpcProvider;
+  client?: UnionKeyJsonRpcProvider;
 }) {
   const gasAmounts: Map<string, bigint> = new Map();
   const { coin, amounts } = await parseTransactionSplitCoinsInput(
@@ -147,7 +147,7 @@ export async function parseTransferObjects(params: {
   actions: ProgrammableTransaction['transactions']; // Results
   inputs: ProgrammableTransaction['inputs']; // Inputs
   payments?: SuiGasData['payment'] | undefined; // Payment
-  client?: OneKeyJsonRpcProvider;
+  client?: UnionKeyJsonRpcProvider;
 }) {
   let receive = '';
   const amounts: Map<string, bigint> = new Map();

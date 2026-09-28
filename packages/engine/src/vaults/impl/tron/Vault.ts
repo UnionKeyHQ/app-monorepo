@@ -20,7 +20,7 @@ import {
   InsufficientBalance,
   InvalidAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import { batchTransferContractAddress } from '../../../presets/batchTransferContractAddress';
 import { extractResponseError } from '../../../proxy';
@@ -638,7 +638,7 @@ export default class Vault extends VaultBase {
       tokenAddress || '',
     );
     if (!token) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `Token not found: ${tokenAddress || 'TRX'}`,
       );
     }
@@ -679,7 +679,7 @@ export default class Vault extends VaultBase {
           from,
         );
         if (!result) {
-          throw new OneKeyInternalError(
+          throw new UnionKeyInternalError(
             'Unable to build token transfer transaction',
           );
         }
@@ -811,7 +811,7 @@ export default class Vault extends VaultBase {
     );
 
     if (!result) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Unable to build batch transfer token transaction',
       );
     }
@@ -936,7 +936,7 @@ export default class Vault extends VaultBase {
       approveInfo.from,
     );
     if (!result) {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         'Unable to build token approve transaction',
       );
     }
@@ -1166,7 +1166,7 @@ export default class Vault extends VaultBase {
     );
 
     if (typeof ret.code !== 'undefined') {
-      throw new OneKeyInternalError(
+      throw new UnionKeyInternalError(
         `${ret.code} ${Buffer.from(ret.message || '', 'hex').toString()}`,
       );
     }
@@ -1187,7 +1187,7 @@ export default class Vault extends VaultBase {
       );
       return decrypt(password, encryptedPrivateKey).toString('hex');
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

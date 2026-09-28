@@ -810,12 +810,12 @@ function OnboardingAddExistingWallet({
   );
 }
 
-function OneKeyLiteRecoveryButton() {
+function UnionKeyLiteRecoveryButton() {
   const intl = useIntl();
   const navigation = useNavigation<NavigationProps['navigation']>();
   const startRestorePinVerifyModal = useCallback(() => {
     navigation.navigate(
-      CreateWalletModalRoutes.OnekeyLiteRestorePinCodeVerifyModal,
+      CreateWalletModalRoutes.UnionKeyLiteRestorePinCodeVerifyModal,
     );
   }, [navigation]);
 
@@ -827,7 +827,7 @@ function OneKeyLiteRecoveryButton() {
       iconSize={16}
       onPress={() => startRestorePinVerifyModal()}
     >
-      {intl.formatMessage({ id: 'action__restore_with_onekey_lite' })}
+      {intl.formatMessage({ id: 'action__restore_with_unionkey_lite' })}
     </Button>
   );
 }
@@ -890,7 +890,7 @@ const AddExistingWallet = () => {
         <Box>
           <Box flex={1} />
           <Box h={2} />
-          <OneKeyLiteRecoveryButton />
+          <UnionKeyLiteRecoveryButton />
         </Box>
       ) : null,
     [mode],

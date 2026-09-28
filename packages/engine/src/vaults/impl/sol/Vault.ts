@@ -61,8 +61,8 @@ import {
   MinimumTransferBalanceRequiredError,
   MinimumTransferBalanceRequiredForSendingAssetError,
   NotImplemented,
-  OneKeyError,
-  OneKeyInternalError,
+  UnionKeyError,
+  UnionKeyInternalError,
   PendingQueueTooLong,
 } from '../../../errors';
 import { getAccountNameInfoByImpl } from '../../../managers/impl';
@@ -781,7 +781,7 @@ export default class Vault extends VaultBase {
         tokenAddress ?? '',
       );
       if (!token) {
-        throw new OneKeyInternalError(
+        throw new UnionKeyInternalError(
           `Token not found: ${tokenAddress || 'main'}`,
         );
       }
@@ -1462,7 +1462,7 @@ export default class Vault extends VaultBase {
         ]),
       );
     }
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }

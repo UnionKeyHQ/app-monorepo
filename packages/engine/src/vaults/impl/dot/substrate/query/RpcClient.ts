@@ -1,7 +1,7 @@
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import { addHexPrefix } from '@unionkeyhq/engine/src/vaults/utils/hexUtils';
 
 import { RPCBody } from './RPCBody';
@@ -37,9 +37,9 @@ export abstract class JsonRpcClient {
       })
       .catch((error: AxiosError) => {
         if (typeof error === 'string') {
-          throw new OneKeyError(error);
+          throw new UnionKeyError(error);
         } else {
-          throw new OneKeyError(error.message);
+          throw new UnionKeyError(error.message);
         }
       });
   }

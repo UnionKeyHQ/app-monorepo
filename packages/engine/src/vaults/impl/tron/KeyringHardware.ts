@@ -7,7 +7,7 @@ import { convertDeviceError } from '@unionkeyhq/shared/src/device/deviceErrorUti
 import { COINTYPE_TRON as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { NotImplemented, OneKeyHardwareError } from '../../../errors';
+import { NotImplemented, UnionKeyHardwareError } from '../../../errors';
 import { AccountType } from '../../../types/account';
 import { KeyringHardwareBase } from '../../keyring/KeyringHardwareBase';
 
@@ -210,7 +210,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       );
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
     if (!addressesResponse.success) {
       debugLogger.common.error(addressesResponse.payload);

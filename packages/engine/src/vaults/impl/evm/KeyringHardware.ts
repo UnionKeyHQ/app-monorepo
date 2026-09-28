@@ -6,8 +6,8 @@ import { IMPL_EVM } from '@unionkeyhq/shared/src/engine/engineConsts';
 import * as engineUtils from '@unionkeyhq/shared/src/engine/engineUtils';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError } from '../../../errors';
-import * as OneKeyHardware from '../../../hardware';
+import { UnionKeyHardwareError } from '../../../errors';
+import * as UnionKeyHardware from '../../../hardware';
 import { slicePathTemplate } from '../../../managers/derivation';
 import {
   getAccountNameInfoByImpl,
@@ -33,7 +33,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     const chainId = await this.getNetworkChainId();
     const { connectId, deviceId } = await this.getHardwareInfo();
     const passphraseState = await this.getWalletPassphraseState();
-    return OneKeyHardware.ethereumSignTransaction(
+    return UnionKeyHardware.ethereumSignTransaction(
       HardwareSDK,
       connectId,
       deviceId,
@@ -55,7 +55,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     const passphraseState = await this.getWalletPassphraseState();
     return Promise.all(
       messages.map((message) =>
-        OneKeyHardware.ethereumSignMessage({
+        UnionKeyHardware.ethereumSignMessage({
           HardwareSDK,
           connectId,
           deviceId,
@@ -114,7 +114,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         });
       } catch (e: any) {
         debugLogger.engine.error(e);
-        throw new OneKeyHardwareError(e);
+        throw new UnionKeyHardwareError(e);
       }
 
       if (!response.success) {
@@ -151,7 +151,7 @@ export class KeyringHardware extends KeyringHardwareBase {
         }));
       }
     } else {
-      addressInfos = await OneKeyHardware.getXpubs(
+      addressInfos = await UnionKeyHardware.getXpubs(
         HardwareSDK,
         IMPL_EVM,
         paths,
@@ -197,7 +197,7 @@ export class KeyringHardware extends KeyringHardwareBase {
     const chainId = await this.getNetworkChainId();
     const { connectId, deviceId } = await this.getHardwareInfo();
     const passphraseState = await this.getWalletPassphraseState();
-    const address = await OneKeyHardware.ethereumGetAddress(
+    const address = await UnionKeyHardware.ethereumGetAddress(
       HardwareSDK,
       connectId,
       deviceId,

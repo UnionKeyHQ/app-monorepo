@@ -234,7 +234,7 @@ export enum LoggerNames {
   notification = 'notification',
   autoUpdate = 'autoUpdate',
   migrate = 'migrate',
-  onekeyLite = 'onekeyLite',
+  unionKeyLite = 'unionKeyLite',
   native = 'native',
   staking = 'staking',
   allNetworks = 'allNetworks',
@@ -291,7 +291,7 @@ const debugLogger: Record<
   [LoggerNames.notification]: Cache.createLogger(LoggerNames.notification),
   [LoggerNames.autoUpdate]: Cache.createLogger(LoggerNames.autoUpdate),
   [LoggerNames.migrate]: Cache.createLogger(LoggerNames.migrate),
-  [LoggerNames.onekeyLite]: Cache.createLogger(LoggerNames.onekeyLite),
+  [LoggerNames.unionKeyLite]: Cache.createLogger(LoggerNames.unionKeyLite),
   [LoggerNames.native]: Cache.createLogger(LoggerNames.native),
   [LoggerNames.staking]: Cache.createLogger(LoggerNames.staking),
   [LoggerNames.allNetworks]: Cache.createLogger(LoggerNames.allNetworks),
@@ -316,7 +316,7 @@ if (platformEnv.isNative) {
   removePreviousLogFile();
 }
 
-const DEBUG_LOGGER_STORAGE_KEY = '$$ONEKEY_DEBUG_LOGGER';
+const DEBUG_LOGGER_STORAGE_KEY = '$$UNIONKEY_DEBUG_LOGGER';
 
 const shouldUseLocalStorage =
   platformEnv.isDesktop ||

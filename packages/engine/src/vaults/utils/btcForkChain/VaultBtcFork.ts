@@ -48,7 +48,7 @@ import {
   InvalidAddress,
   InvalidTokenAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
   PreviousAccountIsEmpty,
   UtxoNotFoundError,
 } from '../../../errors';
@@ -409,12 +409,12 @@ export default class VaultBtcFork extends VaultBase {
         password,
       )) as ExportedPrivateKeyCredential;
       if (typeof privateKey === 'undefined') {
-        throw new OneKeyInternalError('Unable to get credential.');
+        throw new UnionKeyInternalError('Unable to get credential.');
       }
       return bs58check.encode(decrypt(password, privateKey));
     }
 
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Only credential of HD or imported accounts can be exported',
     );
   }
@@ -1572,7 +1572,7 @@ export default class VaultBtcFork extends VaultBase {
         return utxosInfo;
       } catch (e) {
         console.error(e);
-        throw new OneKeyInternalError('Failed to get UTXOs of the account.');
+        throw new UnionKeyInternalError('Failed to get UTXOs of the account.');
       }
     },
     {
@@ -1636,7 +1636,7 @@ export default class VaultBtcFork extends VaultBase {
         );
       } catch (e) {
         console.error(e);
-        throw new OneKeyInternalError('Failed to get fee rates.');
+        throw new UnionKeyInternalError('Failed to get fee rates.');
       }
     },
     {

@@ -16,7 +16,7 @@ import {
 } from '@unionkeyhq/kit/src/hooks/redux';
 import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import { useNetwork } from '../../hooks';
 
@@ -27,7 +27,7 @@ import { ValidationFields } from './types';
 type ProtectedOptions = {
   isLocalAuthentication?: boolean;
   withEnableAuthentication?: boolean;
-  deviceFeatures?: IOneKeyDeviceFeatures;
+  deviceFeatures?: IUnionKeyDeviceFeatures;
 };
 
 type ProtectedProps = {
@@ -64,7 +64,7 @@ const Protected: FC<ProtectedProps> = ({
   const intl = useIntl();
   const { network } = useNetwork({ networkId });
   const { engine, serviceHardware, serviceApp } = backgroundApiProxy;
-  const [deviceFeatures, setDeviceFeatures] = useState<IOneKeyDeviceFeatures>();
+  const [deviceFeatures, setDeviceFeatures] = useState<IUnionKeyDeviceFeatures>();
   const [password, setPassword] = useState('');
   const [withEnableAuthentication, setWithEnableAuthentication] =
     useState<boolean>();
@@ -139,7 +139,7 @@ const Protected: FC<ProtectedProps> = ({
         return;
       }
 
-      let features: IOneKeyDeviceFeatures | null = null;
+      let features: IUnionKeyDeviceFeatures | null = null;
       try {
         const featuresCache = await serviceHardware.getFeatursByWalletId(
           walletDetail.id,

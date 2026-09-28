@@ -16,10 +16,10 @@ const WelcomeContent = () => {
     <Box>
       <Center mt="8" mb="10">
         <Typography.DisplayLarge>
-          {intl.formatMessage({ id: 'title__welcome_to_onekey_swap' })}
+          {intl.formatMessage({ id: 'title__welcome_to_unionkey_swap' })}
         </Typography.DisplayLarge>
         <Typography.Body2 color="text-subdued" mt="2">
-          {intl.formatMessage({ id: 'title__welcome_to_onekey_swap_desc' })}
+          {intl.formatMessage({ id: 'title__welcome_to_unionkey_swap_desc' })}
         </Typography.Body2>
       </Center>
       <Box>

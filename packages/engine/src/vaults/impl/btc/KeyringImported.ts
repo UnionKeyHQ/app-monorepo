@@ -4,7 +4,7 @@ import { omit } from 'lodash';
 import { secp256k1 } from '@unionkeyhq/engine/src/secret/curves';
 import { KeyringImported as KeyringImportedBtcFork } from '@unionkeyhq/engine/src/vaults/utils/btcForkChain/KeyringImported';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { AccountType } from '../../../types/account';
 import { AddressEncodings } from '../../utils/btcForkChain/types';
 import {
@@ -57,7 +57,7 @@ export class KeyringImported extends KeyringImportedBtcFork {
       }
     }
     if (xpub === '') {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
 
     let addressEncoding;

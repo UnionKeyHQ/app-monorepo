@@ -55,7 +55,7 @@ import {
   SEPERATOR,
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 
 import {
   getAccountNameInfoByTemplate,
@@ -135,14 +135,14 @@ function getDerivationPaths(
   indexes: Array<number>,
 ): { prefix: string; depth: number; relPaths: Array<string> } {
   if (indexes.some((index) => index >= 2 ** 31)) {
-    throw new OneKeyInternalError(
+    throw new UnionKeyInternalError(
       'Invalid child index, should be less than 2^31.',
     );
   }
 
   const template = derivationPathTemplates[coinType];
   if (typeof template === 'undefined') {
-    throw new OneKeyInternalError(`Unsupported coinType ${coinType}.`);
+    throw new UnionKeyInternalError(`Unsupported coinType ${coinType}.`);
   }
   const [prefix, suffix] = template.split(INCREMENT_LEVEL_TAG);
   const relPaths = indexes.map((index) => `${index}${suffix}`);

@@ -526,7 +526,7 @@ const CreateOrder: FC = () => {
             </Box>
             <Text color="text-success" typography="Caption" mt="8px">
               {intl.formatMessage({
-                id: 'content__onekey_does_not_charge_any_service_fees',
+                id: 'content__unionkey_does_not_charge_any_service_fees',
               })}
             </Text>
           </ScrollView>

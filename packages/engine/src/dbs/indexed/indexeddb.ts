@@ -18,8 +18,8 @@ import {
 import {
   AccountAlreadyExists,
   NotImplemented,
-  OneKeyAlreadyExistWalletError,
-  OneKeyInternalError,
+  UnionKeyAlreadyExistWalletError,
+  UnionKeyInternalError,
   TooManyDerivedAccounts,
   TooManyExternalAccounts,
   TooManyImportedAccounts,
@@ -85,7 +85,7 @@ import type {
   DBAPI,
   ExportedCredential,
   ExportedPrivateKeyCredential,
-  OneKeyContext,
+  UnionKeyContext,
   SetWalletNameAndAvatarParams,
   StoredPrivateKeyCredential,
   StoredSeedCredential,
@@ -201,7 +201,7 @@ class IndexedDBApi implements DBAPI {
       };
 
       request.onerror = (_event) => {
-        reject(new OneKeyInternalError('Failed to open DB.'));
+        reject(new UnionKeyInternalError('Failed to open DB.'));
       };
 
       request.onupgradeneeded = (versionChangedEvent) => {
@@ -273,7 +273,7 @@ class IndexedDBApi implements DBAPI {
     };
   }
 
-  getContext(): Promise<OneKeyContext | null | undefined> {
+  getContext(): Promise<UnionKeyContext | null | undefined> {
     return this.ready.then(
       (db) =>
         new Promise((resolve, _reject) => {
@@ -282,7 +282,7 @@ class IndexedDBApi implements DBAPI {
             .objectStore(CONTEXT_STORE_NAME)
             .get(MAIN_CONTEXT);
           request.onsuccess = (_event) => {
-            resolve(request.result as OneKeyContext);
+            resolve(request.result as UnionKeyContext);
           };
         }),
     );
@@ -297,7 +297,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to update password.'));
+            reject(new UnionKeyInternalError('Failed to update password.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -306,7 +306,7 @@ class IndexedDBApi implements DBAPI {
           const contextStore = transaction.objectStore(CONTEXT_STORE_NAME);
           const getMainContextRequest = contextStore.get(MAIN_CONTEXT);
           getMainContextRequest.onsuccess = (_event) => {
-            const context = getMainContextRequest.result as OneKeyContext;
+            const context = getMainContextRequest.result as UnionKeyContext;
             if (!checkPassword(context, oldPassword)) {
               reject(new WrongPassword());
               return;
@@ -381,7 +381,7 @@ class IndexedDBApi implements DBAPI {
           db.close();
           const deleteRequest = indexedDB.deleteDatabase(DB_NAME);
           deleteRequest.onerror = (_devent) => {
-            reject(new OneKeyInternalError('Failed to delete db.'));
+            reject(new UnionKeyInternalError('Failed to delete db.'));
           };
           deleteRequest.onsuccess = (_devent) => {
             resolve();
@@ -401,7 +401,7 @@ class IndexedDBApi implements DBAPI {
           const contextStore = transaction.objectStore(CONTEXT_STORE_NAME);
           const getMainContextRequest = contextStore.get(MAIN_CONTEXT);
           getMainContextRequest.onsuccess = (_event) => {
-            const context = getMainContextRequest.result as OneKeyContext;
+            const context = getMainContextRequest.result as UnionKeyContext;
             const { backupUUID } = context;
             if (!isNil(backupUUID)) {
               resolve(backupUUID);
@@ -466,7 +466,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add network.'));
+            reject(new UnionKeyInternalError('Failed to add network.'));
           };
 
           transaction.oncomplete = (_tevent) => {
@@ -486,7 +486,7 @@ class IndexedDBApi implements DBAPI {
 
               if (v.id === network.id) {
                 reject(
-                  new OneKeyInternalError(
+                  new UnionKeyInternalError(
                     `Network ${network.id} already exists.`,
                   ),
                 );
@@ -513,7 +513,7 @@ class IndexedDBApi implements DBAPI {
               resolve(request.result);
             } else {
               reject(
-                new OneKeyInternalError(`Network ${networkId} not found.`),
+                new UnionKeyInternalError(`Network ${networkId} not found.`),
               );
             }
           };
@@ -533,7 +533,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to update network list.'));
+            reject(new UnionKeyInternalError('Failed to update network list.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -573,7 +573,7 @@ class IndexedDBApi implements DBAPI {
               const contextStore = transaction.objectStore(CONTEXT_STORE_NAME);
               const getMainContextRequest = contextStore.get(MAIN_CONTEXT);
               getMainContextRequest.onsuccess = (_cevent) => {
-                const context = getMainContextRequest.result as OneKeyContext;
+                const context = getMainContextRequest.result as UnionKeyContext;
                 if (isNil(context)) {
                   // shouldn't happen
                   console.error('Cannot get main context');
@@ -606,7 +606,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to update network.'));
+            reject(new UnionKeyInternalError('Failed to update network.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -623,7 +623,7 @@ class IndexedDBApi implements DBAPI {
               ret = dbObj;
             } else {
               reject(
-                new OneKeyInternalError(`Network ${networkId} not found.`),
+                new UnionKeyInternalError(`Network ${networkId} not found.`),
               );
             }
           };
@@ -640,7 +640,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to delete network.'));
+            reject(new UnionKeyInternalError('Failed to delete network.'));
           };
 
           transaction.oncomplete = (_tevent) => {
@@ -662,7 +662,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add token.'));
+            reject(new UnionKeyInternalError('Failed to add token.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -760,14 +760,14 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add token to account.'));
+            reject(new UnionKeyInternalError('Failed to add token to account.'));
           };
           transaction.oncomplete = (_tevent) => {
             if (!isNil(token)) {
               resolve(token);
             } else {
               reject(
-                new OneKeyInternalError('Failed to add token to account.'),
+                new UnionKeyInternalError('Failed to add token to account.'),
               );
             }
           };
@@ -818,7 +818,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = (_tevent) => {
             reject(
-              new OneKeyInternalError('Failed to remove token from account.'),
+              new UnionKeyInternalError('Failed to remove token from account.'),
             );
           };
           transaction.oncomplete = (_tevent) => {
@@ -886,8 +886,8 @@ class IndexedDBApi implements DBAPI {
               .objectStore(CONTEXT_STORE_NAME)
               .get(MAIN_CONTEXT);
             getMainContextRequest.onsuccess = (_cevent) => {
-              const context: OneKeyContext =
-                getMainContextRequest.result as OneKeyContext;
+              const context: UnionKeyContext =
+                getMainContextRequest.result as UnionKeyContext;
               if (!isNil(context)) {
                 const pendingWallets = context.pendingWallets || [];
                 ret = (request.result as Array<Wallet>).filter(
@@ -963,7 +963,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to create HD wallet.'));
+            reject(new UnionKeyInternalError('Failed to create HD wallet.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -972,8 +972,8 @@ class IndexedDBApi implements DBAPI {
           const contextStore = transaction.objectStore(CONTEXT_STORE_NAME);
           const getMainContextRequest = contextStore.get(MAIN_CONTEXT);
           getMainContextRequest.onsuccess = (_cevent) => {
-            const context: OneKeyContext =
-              getMainContextRequest.result as OneKeyContext;
+            const context: UnionKeyContext =
+              getMainContextRequest.result as UnionKeyContext;
             if (!checkPassword(context, password)) {
               reject(new WrongPassword());
               return;
@@ -1040,7 +1040,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add HW Wallet.'));
+            reject(new UnionKeyInternalError('Failed to add HW Wallet.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -1074,7 +1074,7 @@ class IndexedDBApi implements DBAPI {
                   ret = hasExistWallet;
                 }
                 reject(
-                  new OneKeyAlreadyExistWalletError(
+                  new UnionKeyAlreadyExistWalletError(
                     hasExistWallet.id,
                     hasExistWallet.name,
                   ),
@@ -1105,7 +1105,7 @@ class IndexedDBApi implements DBAPI {
               getNewDeviceRequest.onsuccess = () => {
                 const newDevice = getNewDeviceRequest.result as Device;
                 if (isNil(newDevice)) {
-                  throw new OneKeyInternalError(
+                  throw new UnionKeyInternalError(
                     `Device ${deviceUUID} not found.`,
                   );
                 }
@@ -1116,7 +1116,7 @@ class IndexedDBApi implements DBAPI {
 
                   if (wallet && !passphraseState) {
                     reject(
-                      new OneKeyAlreadyExistWalletError(wallet.id, wallet.name),
+                      new UnionKeyAlreadyExistWalletError(wallet.id, wallet.name),
                     );
                     return;
                   }
@@ -1172,7 +1172,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to remove wallet.'));
+            reject(new UnionKeyInternalError('Failed to remove wallet.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -1183,7 +1183,7 @@ class IndexedDBApi implements DBAPI {
           getWalletRequest.onsuccess = (_wevent) => {
             const wallet = getWalletRequest.result as Wallet;
             if (isNil(wallet)) {
-              reject(new OneKeyInternalError(`Wallet ${walletId} not found.`));
+              reject(new UnionKeyInternalError(`Wallet ${walletId} not found.`));
               return;
             }
             if (
@@ -1191,7 +1191,7 @@ class IndexedDBApi implements DBAPI {
               (wallet.type as string) !== WALLET_TYPE_HW
             ) {
               reject(
-                new OneKeyInternalError('Only HD or HW wallet can be removed.'),
+                new UnionKeyInternalError('Only HD or HW wallet can be removed.'),
               );
               return;
             }
@@ -1201,8 +1201,8 @@ class IndexedDBApi implements DBAPI {
                 .objectStore(CONTEXT_STORE_NAME)
                 .get(MAIN_CONTEXT);
               getMainContextRequest.onsuccess = (_cevent) => {
-                const context: OneKeyContext =
-                  getMainContextRequest.result as OneKeyContext;
+                const context: UnionKeyContext =
+                  getMainContextRequest.result as UnionKeyContext;
                 if (wallet.type === WALLET_TYPE_HD) {
                   // Only check password for HD wallet deletion.
                   if (!checkPassword(context, password)) {
@@ -1268,7 +1268,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to set wallet name.'));
+            reject(new UnionKeyInternalError('Failed to set wallet name.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -1279,7 +1279,7 @@ class IndexedDBApi implements DBAPI {
           getWalletRequest.onsuccess = (_wevent) => {
             const wallet = getWalletRequest.result as Wallet;
             if (isNil(wallet)) {
-              reject(new OneKeyInternalError(`Wallet ${walletId} not found.`));
+              reject(new UnionKeyInternalError(`Wallet ${walletId} not found.`));
               return;
             }
             if (
@@ -1287,7 +1287,7 @@ class IndexedDBApi implements DBAPI {
               (wallet.type as string) !== WALLET_TYPE_HW
             ) {
               reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   'Only HD or HW wallet name can be set.',
                 ),
               );
@@ -1319,7 +1319,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to set wallet name.'));
+            reject(new UnionKeyInternalError('Failed to set wallet name.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -1330,7 +1330,7 @@ class IndexedDBApi implements DBAPI {
           getWalletRequest.onsuccess = (_wevent) => {
             const wallet = getWalletRequest.result as Wallet;
             if (isNil(wallet)) {
-              reject(new OneKeyInternalError(`Wallet ${walletId} not found.`));
+              reject(new UnionKeyInternalError(`Wallet ${walletId} not found.`));
               return;
             }
             if (
@@ -1338,7 +1338,7 @@ class IndexedDBApi implements DBAPI {
               (wallet.type as string) !== WALLET_TYPE_HW
             ) {
               reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   'Only HD or HW wallet name can be set.',
                 ),
               );
@@ -1367,8 +1367,8 @@ class IndexedDBApi implements DBAPI {
             .objectStore(CONTEXT_STORE_NAME)
             .get(MAIN_CONTEXT);
           getMainContextRequest.onsuccess = (_cevent) => {
-            const context: OneKeyContext =
-              getMainContextRequest.result as OneKeyContext;
+            const context: UnionKeyContext =
+              getMainContextRequest.result as UnionKeyContext;
             if (!checkPassword(context, password)) {
               reject(new WrongPassword());
               return;
@@ -1379,7 +1379,7 @@ class IndexedDBApi implements DBAPI {
             getCredentialRequest.onsuccess = (_creevent) => {
               if (isNil(getCredentialRequest.result)) {
                 reject(
-                  new OneKeyInternalError(
+                  new UnionKeyInternalError(
                     `Cannot find seed of wallet ${credentialId}.`,
                   ),
                 );
@@ -1423,7 +1423,7 @@ class IndexedDBApi implements DBAPI {
       (db) =>
         new Promise((resolve, reject) => {
           if (!credential) {
-            reject(new OneKeyInternalError('Credential required.'));
+            reject(new UnionKeyInternalError('Credential required.'));
             return;
           }
           const transaction = db.transaction(
@@ -1434,8 +1434,8 @@ class IndexedDBApi implements DBAPI {
             .objectStore(CONTEXT_STORE_NAME)
             .get(MAIN_CONTEXT);
           getMainContextRequest.onsuccess = (_cevent) => {
-            const context: OneKeyContext =
-              getMainContextRequest.result as OneKeyContext;
+            const context: UnionKeyContext =
+              getMainContextRequest.result as UnionKeyContext;
             if (!checkPassword(context, credential.password)) {
               reject(new WrongPassword());
               return;
@@ -1446,7 +1446,7 @@ class IndexedDBApi implements DBAPI {
             getCredentialRequest.onsuccess = (_creevent) => {
               if (getCredentialRequest.result) {
                 reject(
-                  new OneKeyInternalError(
+                  new UnionKeyInternalError(
                     `${credential.id} credential has alerday exists.`,
                   ),
                 );
@@ -1478,7 +1478,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = (_tevent) => {
             reject(
-              new OneKeyInternalError('Failed to confirm HD wallet backup.'),
+              new UnionKeyInternalError('Failed to confirm HD wallet backup.'),
             );
           };
           transaction.oncomplete = (_tevent) => {
@@ -1490,12 +1490,12 @@ class IndexedDBApi implements DBAPI {
           getWalletRequest.onsuccess = (_wevent) => {
             const wallet = getWalletRequest.result as Wallet;
             if (isNil(wallet)) {
-              reject(new OneKeyInternalError(`Wallet ${walletId} not found.`));
+              reject(new UnionKeyInternalError(`Wallet ${walletId} not found.`));
               return;
             }
             if (wallet.type !== WALLET_TYPE_HD) {
               reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   `Wallet ${walletId} is not an HD wallet.`,
                 ),
               );
@@ -1522,7 +1522,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = (_tevent) => {
             reject(
-              new OneKeyInternalError('Failed to confirm HD wallet created.'),
+              new UnionKeyInternalError('Failed to confirm HD wallet created.'),
             );
           };
           transaction.oncomplete = (_tevent) => {
@@ -1532,8 +1532,8 @@ class IndexedDBApi implements DBAPI {
           const contextStore = transaction.objectStore(CONTEXT_STORE_NAME);
           const getMainContextRequest = contextStore.get(MAIN_CONTEXT);
           getMainContextRequest.onsuccess = (_cevent) => {
-            const context: OneKeyContext =
-              getMainContextRequest.result as OneKeyContext;
+            const context: UnionKeyContext =
+              getMainContextRequest.result as UnionKeyContext;
             if ((context.pendingWallets || []).includes(walletId)) {
               context.pendingWallets = (context.pendingWallets || []).filter(
                 (pendingId) => pendingId !== walletId,
@@ -1549,7 +1549,7 @@ class IndexedDBApi implements DBAPI {
               const wallet = getWalletRequest.result as Wallet;
               if (isNil(wallet)) {
                 reject(
-                  new OneKeyInternalError(`Wallet ${walletId} not found.`),
+                  new UnionKeyInternalError(`Wallet ${walletId} not found.`),
                 );
                 return;
               }
@@ -1588,8 +1588,8 @@ class IndexedDBApi implements DBAPI {
               .objectStore(CONTEXT_STORE_NAME)
               .get(MAIN_CONTEXT);
             getMainContextRequest.onsuccess = (_cevent) => {
-              const context: OneKeyContext =
-                getMainContextRequest.result as OneKeyContext;
+              const context: UnionKeyContext =
+                getMainContextRequest.result as UnionKeyContext;
               if (!isNil(context)) {
                 const pendingWallets = context.pendingWallets || [];
                 if (pendingWallets.length > 0) {
@@ -1661,14 +1661,14 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add account to wallet.'));
+            reject(new UnionKeyInternalError('Failed to add account to wallet.'));
           };
           transaction.oncomplete = (_tevent) => {
             if (!isNil(ret)) {
               resolve(ret);
             } else {
               reject(
-                new OneKeyInternalError('Failed to add account to wallet.'),
+                new UnionKeyInternalError('Failed to add account to wallet.'),
               );
             }
           };
@@ -1681,7 +1681,7 @@ class IndexedDBApi implements DBAPI {
           const getWalletRequest: IDBRequest = walletStore.get(walletId);
           getWalletRequest.onsuccess = async (_gevent) => {
             if (getWalletRequest.result === 'undefined') {
-              reject(new OneKeyInternalError(`Wallet ${walletId} not found.`));
+              reject(new UnionKeyInternalError(`Wallet ${walletId} not found.`));
               return;
             }
             const wallet = getWalletRequest.result as Wallet;
@@ -1735,7 +1735,7 @@ class IndexedDBApi implements DBAPI {
 
                 if (!account.template) {
                   reject(
-                    new OneKeyInternalError(
+                    new UnionKeyInternalError(
                       `Account should has template field`,
                     ),
                   );
@@ -1778,11 +1778,11 @@ class IndexedDBApi implements DBAPI {
                     );
                     return;
                   }
-                  const context: OneKeyContext =
-                    getMainContextRequest.result as OneKeyContext;
+                  const context: UnionKeyContext =
+                    getMainContextRequest.result as UnionKeyContext;
                   if (!importedCredential) {
                     reject(
-                      new OneKeyInternalError(
+                      new UnionKeyInternalError(
                         'Imported credential required for adding imported accounts.',
                       ),
                     );
@@ -1903,7 +1903,7 @@ class IndexedDBApi implements DBAPI {
                 cursor.continue();
               }
             } else {
-              reject(new OneKeyInternalError(`Account ${address} not found.`));
+              reject(new UnionKeyInternalError(`Account ${address} not found.`));
             }
           };
         }),
@@ -1923,7 +1923,7 @@ class IndexedDBApi implements DBAPI {
               resolve(request.result);
             } else {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
             }
           };
@@ -1994,7 +1994,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to remove account.'));
+            reject(new UnionKeyInternalError('Failed to remove account.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -2006,7 +2006,7 @@ class IndexedDBApi implements DBAPI {
             const wallet = getWalletRequest.result as Wallet;
             if (isNil(wallet) || !wallet.accounts.includes(accountId)) {
               reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   'Failed to remove account, wallet or account not found.',
                 ),
               );
@@ -2022,8 +2022,8 @@ class IndexedDBApi implements DBAPI {
                 .objectStore(CONTEXT_STORE_NAME)
                 .get(MAIN_CONTEXT);
               getMainContextRequest.onsuccess = (_cevent) => {
-                const context: OneKeyContext =
-                  getMainContextRequest.result as OneKeyContext;
+                const context: UnionKeyContext =
+                  getMainContextRequest.result as UnionKeyContext;
                 if (!checkPassword(context, password) && !skipPasswordCheck) {
                   reject(new WrongPassword());
                   return;
@@ -2061,7 +2061,7 @@ class IndexedDBApi implements DBAPI {
         new Promise((resolve, reject) => {
           const transaction = db.transaction([ACCOUNT_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to set account name.'));
+            reject(new UnionKeyInternalError('Failed to set account name.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -2073,7 +2073,7 @@ class IndexedDBApi implements DBAPI {
             const account = getAccountRequest.result as DBAccount;
             if (isNil(account)) {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
               return;
             }
@@ -2095,7 +2095,7 @@ class IndexedDBApi implements DBAPI {
         new Promise((resolve, reject) => {
           const transaction = db.transaction([ACCOUNT_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to set account name.'));
+            reject(new UnionKeyInternalError('Failed to set account name.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -2107,7 +2107,7 @@ class IndexedDBApi implements DBAPI {
             const account = getAccountRequest.result as DBAccount;
             if (isNil(account)) {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
               return;
             }
@@ -2130,7 +2130,7 @@ class IndexedDBApi implements DBAPI {
         new Promise((resolve, reject) => {
           const transaction = db.transaction([ACCOUNT_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to set account name.'));
+            reject(new UnionKeyInternalError('Failed to set account name.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -2142,7 +2142,7 @@ class IndexedDBApi implements DBAPI {
             const account = getAccountRequest.result as DBAccount;
             if (isNil(account)) {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
               return;
             }
@@ -2177,7 +2177,7 @@ class IndexedDBApi implements DBAPI {
             const account = getAccountRequest.result as DBAccount;
             if (isNil(account)) {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
               return;
             }
@@ -2220,7 +2220,7 @@ class IndexedDBApi implements DBAPI {
             let utxoAccount: DBUTXOAccount;
             if (isNil(account)) {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
               return;
             }
@@ -2272,7 +2272,7 @@ class IndexedDBApi implements DBAPI {
             let utxoAccount: DBUTXOAccount;
             if (isNil(account)) {
               reject(
-                new OneKeyInternalError(`Account ${accountId} not found.`),
+                new UnionKeyInternalError(`Account ${accountId} not found.`),
               );
               return;
             }
@@ -2321,7 +2321,7 @@ class IndexedDBApi implements DBAPI {
         new Promise((resolve, reject) => {
           const transaction = db.transaction([HISTORY_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add history entry.'));
+            reject(new UnionKeyInternalError('Failed to add history entry.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -2351,7 +2351,7 @@ class IndexedDBApi implements DBAPI {
           const transaction = db.transaction([HISTORY_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
             reject(
-              new OneKeyInternalError(
+              new UnionKeyInternalError(
                 'Failed to update History Entry statuses.',
               ),
             );
@@ -2383,7 +2383,7 @@ class IndexedDBApi implements DBAPI {
         new Promise((resolve, reject) => {
           const transaction = db.transaction([HISTORY_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add history entry.'));
+            reject(new UnionKeyInternalError('Failed to add history entry.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -2407,7 +2407,7 @@ class IndexedDBApi implements DBAPI {
           const ret: Array<HistoryEntry> = [];
           const transaction = db.transaction([HISTORY_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to add history entry.'));
+            reject(new UnionKeyInternalError('Failed to add history entry.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve(ret);
@@ -2477,9 +2477,9 @@ class IndexedDBApi implements DBAPI {
           });
           addDeviceRequest.onsuccess = () => resolve();
           addDeviceRequest.onerror = () =>
-            reject(new OneKeyInternalError(`Failed to create device.`));
+            reject(new UnionKeyInternalError(`Failed to create device.`));
         } else {
-          reject(new OneKeyInternalError(`Device ${name} has alerday exists.`));
+          reject(new UnionKeyInternalError(`Device ${name} has alerday exists.`));
         }
       };
     });
@@ -2515,7 +2515,7 @@ class IndexedDBApi implements DBAPI {
             if (!isNil(request.result)) {
               resolve(fromDBDeviceToDevice(request.result));
             } else {
-              reject(new OneKeyInternalError(`Device ${deviceId} not found.`));
+              reject(new UnionKeyInternalError(`Device ${deviceId} not found.`));
             }
           };
         }),
@@ -2538,9 +2538,9 @@ class IndexedDBApi implements DBAPI {
 
               if (device) resolve(fromDBDeviceToDevice(device));
 
-              reject(new OneKeyInternalError(`Device ${deviceId} not found.`));
+              reject(new UnionKeyInternalError(`Device ${deviceId} not found.`));
             } else {
-              reject(new OneKeyInternalError(`Device ${deviceId} not found.`));
+              reject(new UnionKeyInternalError(`Device ${deviceId} not found.`));
             }
           };
         }),
@@ -2556,7 +2556,7 @@ class IndexedDBApi implements DBAPI {
             'readwrite',
           );
           transaction.onerror = () => {
-            reject(new OneKeyInternalError('Failed to update wallet name.'));
+            reject(new UnionKeyInternalError('Failed to update wallet name.'));
           };
           transaction.oncomplete = () => {
             resolve();
@@ -2568,7 +2568,7 @@ class IndexedDBApi implements DBAPI {
           getWalletRequest.onsuccess = () => {
             const wallet = getWalletRequest.result;
             if (isNil(wallet)) {
-              reject(new OneKeyInternalError('Wallet not found.'));
+              reject(new UnionKeyInternalError('Wallet not found.'));
               return;
             }
             walletStore.put(Object.assign(wallet, { name }));
@@ -2582,7 +2582,7 @@ class IndexedDBApi implements DBAPI {
             getDeviceRequest.onsuccess = () => {
               const device = getDeviceRequest.result;
               if (isNil(device)) {
-                reject(new OneKeyInternalError('Device not found.'));
+                reject(new UnionKeyInternalError('Device not found.'));
                 return;
               }
               deviceStore.put(Object.assign(device, { name }));
@@ -2598,7 +2598,7 @@ class IndexedDBApi implements DBAPI {
         new Promise((resolve, reject) => {
           const transaction = db.transaction([DEVICE_STORE_NAME], 'readwrite');
           transaction.onerror = (_tevent) => {
-            reject(new OneKeyInternalError('Failed to update device.'));
+            reject(new UnionKeyInternalError('Failed to update device.'));
           };
           transaction.oncomplete = (_tevent) => {
             resolve();
@@ -2626,7 +2626,7 @@ class IndexedDBApi implements DBAPI {
                 );
               } else {
                 reject(
-                  new OneKeyInternalError(`Device ${deviceId} not found.`),
+                  new UnionKeyInternalError(`Device ${deviceId} not found.`),
                 );
               }
             }
@@ -2653,7 +2653,7 @@ class IndexedDBApi implements DBAPI {
             );
             transaction.onerror = () => {
               reject(
-                new OneKeyInternalError('Failed to add account derivation.'),
+                new UnionKeyInternalError('Failed to add account derivation.'),
               );
             };
 
@@ -2732,7 +2732,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = () => {
             reject(
-              new OneKeyInternalError(
+              new UnionKeyInternalError(
                 'Failed to delete account derivation by account id.',
               ),
             );
@@ -2776,7 +2776,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = () => {
             reject(
-              new OneKeyInternalError(
+              new UnionKeyInternalError(
                 'Failed to delete account derivation by wallet id.',
               ),
             );
@@ -2821,7 +2821,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = () => {
             reject(
-              new OneKeyInternalError(
+              new UnionKeyInternalError(
                 'Failed to delete account derivation by account id.',
               ),
             );
@@ -2869,7 +2869,7 @@ class IndexedDBApi implements DBAPI {
           );
           transaction.onerror = () => {
             reject(
-              new OneKeyInternalError(
+              new UnionKeyInternalError(
                 'Failed to get account derivation by wallet id.',
               ),
             );
@@ -2908,7 +2908,7 @@ class IndexedDBApi implements DBAPI {
       const getExistRecordRequest = derivationStore.get(id);
       getExistRecordRequest.onsuccess = (_event) => {
         if (isNil(getExistRecordRequest.result)) {
-          reject(new OneKeyInternalError(`AccountDerivation ${id} not found.`));
+          reject(new UnionKeyInternalError(`AccountDerivation ${id} not found.`));
         }
         const accountDerivation = getExistRecordRequest.result;
         resolve(accountDerivation);
@@ -2960,7 +2960,7 @@ class IndexedDBApi implements DBAPI {
 
             request.onerror = () => {
               reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   `Update custom fee failed for ${networkId}`,
                 ),
               );
@@ -2973,7 +2973,7 @@ class IndexedDBApi implements DBAPI {
 
             request.onerror = () => {
               reject(
-                new OneKeyInternalError(
+                new UnionKeyInternalError(
                   `Delete custom fee failed for ${networkId}`,
                 ),
               );

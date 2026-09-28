@@ -3,7 +3,7 @@ import { withTabLayout } from '@unionkeyhq/components/src/Layout/withTabLayout';
 import { toFocusedLazy } from '../../../../../components/LazyRenderWhenFocus';
 import AdvancedSettings from '../../../../../views/AdvancedSettings';
 import ClearCache from '../../../../../views/ClearCache';
-import OnekeyLiteDetail from '../../../../../views/Hardware/OnekeyLite/Detail';
+import UnionKeyLiteDetail from '../../../../../views/Hardware/UnionKeyLite/Detail';
 import HardwareBridgeSettings from '../../../../../views/HardwareBridgeSettings';
 import MeScreen from '../../../../../views/Me';
 import VolumeHaptic from '../../../../../views/Me/GenaralSection/VolumeHaptic';
@@ -33,8 +33,8 @@ const config: TabRouteConfig = {
   ),
   children: [
     {
-      name: HomeRoutes.ScreenOnekeyLiteDetail,
-      component: OnekeyLiteDetail,
+      name: HomeRoutes.ScreenUnionKeyLiteDetail,
+      component: UnionKeyLiteDetail,
     },
     {
       name: HomeRoutes.Protected,

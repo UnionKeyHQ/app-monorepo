@@ -54,7 +54,7 @@ export function WebViewWebEmbed({
       nativeWebviewSource={nativeWebviewSource}
       nativeInjectedJavaScriptBeforeContentLoaded={`
         window.location.hash = "${routePath || ''}";
-        window.WEB_EMBED_ONEKEY_APP_SETTINGS = {
+        window.WEB_EMBED_UNIONKEY_APP_SETTINGS = {
           themeVariant: "${themeVariant}",
           localeVariant: "${localeVariant}",
         };

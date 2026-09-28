@@ -8,7 +8,7 @@ export function toPlainErrorObject(error: {
   // Web3RpcError
   code?: any;
   data?: any;
-  // OneKeyError
+  // UnionKeyError
   className?: any;
   info?: any;
   key?: any;

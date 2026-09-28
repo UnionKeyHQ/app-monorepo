@@ -56,7 +56,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { JsonRPCRequest } from '@unionkeyhq/shared/src/request/JsonRPCRequest';
 import appStorage from '@unionkeyhq/shared/src/storage/appStorage';
 import bufferUtils from '@unionkeyhq/shared/src/utils/bufferUtils';
@@ -618,7 +618,7 @@ export default class ServiceInscribe extends ServiceBase {
     apiMempool: string;
     apiGetblock: string;
   }> {
-    if (networkId === OnekeyNetwork.btc) {
+    if (networkId === UnionKeyNetwork.btc) {
       return Promise.resolve({
         network: 'main',
         // TODO use current BTC vault blockbook api
@@ -626,7 +626,7 @@ export default class ServiceInscribe extends ServiceBase {
         apiGetblock: getGetblockEndpoint({ chain: 'btc', network: 'mainnet' }),
       });
     }
-    if (networkId === OnekeyNetwork.tbtc) {
+    if (networkId === UnionKeyNetwork.tbtc) {
       return Promise.resolve({
         network: 'testnet',
         apiMempool: getMempoolEndpoint({ network: 'testnet' }),

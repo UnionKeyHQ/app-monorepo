@@ -1,6 +1,6 @@
 import Realm from 'realm';
 
-import type { OneKeyContext } from '../../base';
+import type { UnionKeyContext } from '../../base';
 
 class ContextSchema extends Realm.Object {
   public id!: string;
@@ -28,7 +28,7 @@ class ContextSchema extends Realm.Object {
     },
   };
 
-  get internalObj(): OneKeyContext {
+  get internalObj(): UnionKeyContext {
     return {
       id: this.id,
       nextHD: this.nextHD,

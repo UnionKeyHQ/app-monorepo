@@ -8,7 +8,7 @@ import {
   IMPL_TBTC,
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../../errors';
+import { UnionKeyInternalError } from '../../../../errors';
 import { batchGetPublicKeys } from '../../../../secret';
 import { getAccountDefaultByPurpose } from '../../../utils/btcForkChain/utils';
 
@@ -53,7 +53,7 @@ export const generateNativeSegwitAccounts = async ({
     usedIndexes.map((index) => `${index.toString()}'`),
   );
   if (pubkeyInfos.length !== usedIndexes.length) {
-    throw new OneKeyInternalError('Unable to get publick key.');
+    throw new UnionKeyInternalError('Unable to get publick key.');
   }
   const { public: xpubVersionBytes } =
     (network.segwitVersionBytes || {})[addressEncoding] || network.bip32;

@@ -5,7 +5,7 @@ import type { SignedTx, UnsignedTx } from '@unionkeyhq/engine/src/types/provider
 import { COINTYPE_XRP as COIN_TYPE } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { Signer } from '../../../proxy';
 import { AccountType } from '../../../types/account';
 import { KeyringImportedBase } from '../../keyring/KeyringImportedBase';
@@ -26,16 +26,16 @@ export class KeyringImported extends KeyringImportedBase {
     const dbAccount = await this.getDbAccount();
 
     if (addresses.length !== 1) {
-      throw new OneKeyInternalError('Starcoin signers number should be 1.');
+      throw new UnionKeyInternalError('Starcoin signers number should be 1.');
     } else if (addresses[0] !== dbAccount.address) {
-      throw new OneKeyInternalError('Wrong address required for signing.');
+      throw new UnionKeyInternalError('Wrong address required for signing.');
     }
 
     const { [dbAccount.path]: privateKey } = await this.getPrivateKeys(
       password,
     );
     if (typeof privateKey === 'undefined') {
-      throw new OneKeyInternalError('Unable to get signer.');
+      throw new UnionKeyInternalError('Unable to get signer.');
     }
 
     return {
@@ -48,7 +48,7 @@ export class KeyringImported extends KeyringImportedBase {
   ): Promise<DBSimpleAccount[]> {
     const { privateKey, name } = params;
     if (privateKey.length !== 32 && privateKey.length !== 33) {
-      throw new OneKeyInternalError('Invalid private key.');
+      throw new UnionKeyInternalError('Invalid private key.');
     }
 
     const pubkey = secp256k1.publicFromPrivate(privateKey);

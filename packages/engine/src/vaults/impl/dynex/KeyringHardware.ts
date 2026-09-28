@@ -9,7 +9,7 @@ import {
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
-import { OneKeyHardwareError } from '../../../errors';
+import { UnionKeyHardwareError } from '../../../errors';
 import { slicePathTemplate } from '../../../managers/derivation';
 import { getAccountNameInfoByImpl } from '../../../managers/impl';
 import { AccountType } from '../../../types/account';
@@ -51,7 +51,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       });
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
 
     if (!addressesResponse.success) {
@@ -65,7 +65,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       const { address, path } = addressInfo;
 
       if (isNil(address)) {
-        throw new OneKeyHardwareError({ message: 'Get Dynex Address error.' });
+        throw new UnionKeyHardwareError({ message: 'Get Dynex Address error.' });
       }
       const name = (names || [])[index] || `${prefix} #${indexes[index] + 1}`;
       const addressRelPath = '0/0';
@@ -137,7 +137,7 @@ export class KeyringHardware extends KeyringHardwareBase {
       }));
     } catch (error: any) {
       debugLogger.common.error(error);
-      throw new OneKeyHardwareError(error);
+      throw new UnionKeyHardwareError(error);
     }
   }
 

@@ -488,8 +488,8 @@ const ViewInBrowser: FC<ViewInBrowserProps> = ({ tx }) => {
   );
 };
 
-type TransactionOneKeyFeesProps = { tx: TransactionDetails };
-const TransactionOneKeyFees: FC<TransactionOneKeyFeesProps> = ({ tx }) => {
+type TransactionUnionKeyFeesProps = { tx: TransactionDetails };
+const TransactionUnionKeyFees: FC<TransactionUnionKeyFeesProps> = ({ tx }) => {
   const from = tx.tokens?.from;
   const to = tx.tokens?.to;
   let feeText = '';
@@ -687,9 +687,9 @@ const Transaction: FC<TransactionProps & { showViewInBrowser?: boolean }> = ({
           ) : null}
           {tx.percentageFee ? (
             <TransactionField
-              label={intl.formatMessage({ id: 'form__included_onekey_fee' })}
+              label={intl.formatMessage({ id: 'form__included_unionkey_fee' })}
             >
-              <TransactionOneKeyFees tx={tx} />
+              <TransactionUnionKeyFees tx={tx} />
             </TransactionField>
           ) : null}
           {swftcOrderId ? (

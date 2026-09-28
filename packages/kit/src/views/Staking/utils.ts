@@ -2,7 +2,7 @@ import { isAccountCompatibleWithNetwork } from '@unionkeyhq/engine/src/managers/
 import type { Account } from '@unionkeyhq/engine/src/types/account';
 import type { ManageNetworkModalRoutes } from '@unionkeyhq/kit/src/views/ManageNetworks/types';
 import { type ManageNetworkRoutesParams } from '@unionkeyhq/kit/src/views/ManageNetworks/types';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
 import { SwapQuoter } from '../Swap/quoter';
@@ -31,13 +31,13 @@ const assembleTokenAddress = (params: {
 };
 
 const tokensSupportETHStake: string[] = [
-  OnekeyNetwork.eth,
-  OnekeyNetwork.goerli,
+  UnionKeyNetwork.eth,
+  UnionKeyNetwork.goerli,
 ];
 
 const tokenSupportMaticStake: string[] = [
-  `${OnekeyNetwork.eth}--${MainnetMaticContractAddress}`,
-  `${OnekeyNetwork.goerli}--${TestnetMaticContractAddress}`,
+  `${UnionKeyNetwork.eth}--${MainnetMaticContractAddress}`,
+  `${UnionKeyNetwork.goerli}--${TestnetMaticContractAddress}`,
 ];
 
 export enum StakingTypes {
@@ -77,8 +77,8 @@ export const coingeckoId2StakingTypes: Record<
 };
 
 const stakingType2NetworkIds: Record<string, string[] | undefined> = {
-  [StakingTypes.eth]: [OnekeyNetwork.eth, OnekeyNetwork.goerli],
-  [StakingTypes.matic]: [OnekeyNetwork.eth, OnekeyNetwork.goerli],
+  [StakingTypes.eth]: [UnionKeyNetwork.eth, UnionKeyNetwork.goerli],
+  [StakingTypes.matic]: [UnionKeyNetwork.eth, UnionKeyNetwork.goerli],
 };
 
 export const getRecommendNetworkIdByStakingType = (stakingType: string) =>
@@ -132,10 +132,10 @@ export const getLidoTokenEvmAddress = (
   if (!networkId) {
     return undefined;
   }
-  if (networkId === OnekeyNetwork.goerli && !tokenIdOnNetwork) {
+  if (networkId === UnionKeyNetwork.goerli && !tokenIdOnNetwork) {
     return TestnetLidoContractAddress;
   }
-  if (networkId === OnekeyNetwork.eth && !tokenIdOnNetwork) {
+  if (networkId === UnionKeyNetwork.eth && !tokenIdOnNetwork) {
     return MainnetLidoContractAddress;
   }
   return undefined;
@@ -144,10 +144,10 @@ export const getLidoTokenEvmAddress = (
 export const isSTETH = (networkId?: string, tokenIdOnNetwork?: string) => {
   if (networkId && tokenIdOnNetwork) {
     return (
-      (networkId === OnekeyNetwork.goerli &&
+      (networkId === UnionKeyNetwork.goerli &&
         tokenIdOnNetwork.toLowerCase() ===
           TestnetLidoContractAddress.toLowerCase()) ||
-      (networkId === OnekeyNetwork.eth &&
+      (networkId === UnionKeyNetwork.eth &&
         tokenIdOnNetwork.toLowerCase() ===
           MainnetLidoContractAddress.toLowerCase())
     );

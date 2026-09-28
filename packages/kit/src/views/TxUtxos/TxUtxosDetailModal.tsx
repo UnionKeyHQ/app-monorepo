@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/core';
 import { useIntl } from 'react-intl';
 
 import { Modal, Spinner } from '@unionkeyhq/components';
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import type { IEncodedTxBtc } from '@unionkeyhq/engine/src/vaults/impl/btc/types';
 import type { BlockBookTxDetail } from '@unionkeyhq/engine/src/vaults/utils/btcForkChain/types';
 import type { TransactionDetailRoutesParams } from '@unionkeyhq/kit/src/routes/Root/Modal/TransactionDetail';
@@ -56,7 +56,7 @@ function TxUtxosDetailModal() {
         })),
       );
     } catch (e) {
-      throw new OneKeyError("Can't get transaction detail info.");
+      throw new UnionKeyError("Can't get transaction detail info.");
     }
     setIsLoading(false);
   }, [decodedTx.networkId, decodedTx.txid]);

@@ -34,19 +34,19 @@ export const WALLET_CONNECT_SEND_SHOW_DISCONNECT_BUTTON_DELAY =
 export const WALLET_CONNECT_IS_NATIVE_QRCODE_MODAL = platformEnv.isNative;
 // export const WALLET_CONNECT_IS_NATIVE_QRCODE_MODAL = true;
 
-export const ONEKEY_APP_DEEP_LINK_NAME = 'unionkey-wallet';
-export const ONEKEY_APP_DEEP_LINK = `${ONEKEY_APP_DEEP_LINK_NAME}://`;
+export const UNIONKEY_APP_DEEP_LINK_NAME = 'unionkey-wallet';
+export const UNIONKEY_APP_DEEP_LINK = `${UNIONKEY_APP_DEEP_LINK_NAME}://`;
 export const WALLET_CONNECT_DEEP_LINK_NAME = 'wc';
 export const WALLET_CONNECT_DEEP_LINK = `${WALLET_CONNECT_DEEP_LINK_NAME}://`;
 
 export const WALLET_CONNECT_PROTOCOL_PREFIXES = [
-  ONEKEY_APP_DEEP_LINK_NAME,
+  UNIONKEY_APP_DEEP_LINK_NAME,
   WALLET_CONNECT_DEEP_LINK_NAME,
   'ethereum',
 ];
 
 const platformName = [
-  process.env.ONEKEY_PLATFORM ?? '',
+  process.env.UNIONKEY_PLATFORM ?? '',
   process.env.EXT_CHANNEL ?? '',
   Platform.OS ?? '',
 ]

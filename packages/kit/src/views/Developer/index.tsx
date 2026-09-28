@@ -19,7 +19,7 @@ import {
   VStack,
 } from '@unionkeyhq/components';
 import { getClipboard } from '@unionkeyhq/components/src/utils/ClipboardUtils';
-import type { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import type { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import { batchTransferContractAddress } from '@unionkeyhq/engine/src/presets/batchTransferContractAddress';
 import { INSCRIPTION_PADDING_SATS_VALUES } from '@unionkeyhq/engine/src/vaults/impl/btc/inscribe/consts';
 import type { ISignedTxPro } from '@unionkeyhq/engine/src/vaults/types';
@@ -805,7 +805,7 @@ export const Debug = () => {
                     title: 'Batch create wallets done!',
                   });
                 } catch (error) {
-                  const e = error as OneKeyError | undefined;
+                  const e = error as UnionKeyError | undefined;
                   console.error(error);
 
                   let msg = e?.message;
@@ -861,11 +861,11 @@ export const Debug = () => {
                   if (platformEnv.isRuntimeBrowser) {
                     if (status === '0') {
                       localStorage.removeItem(
-                        '$$OnekeyReactRenderTrackerEnabled',
+                        '$$UnionKeyReactRenderTrackerEnabled',
                       );
                     } else {
                       localStorage.setItem(
-                        '$$OnekeyReactRenderTrackerEnabled',
+                        '$$UnionKeyReactRenderTrackerEnabled',
                         'true',
                       );
                     }

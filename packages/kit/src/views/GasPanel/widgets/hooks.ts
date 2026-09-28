@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 import backgroundApiProxy from '../../../background/instance/backgroundApiProxy';
 import { useAppSelector } from '../../../hooks';
@@ -11,7 +11,7 @@ export function useNetworkPrices(networkId?: string) {
   const activeNetwokId =
     networkId && supportedNetworks.includes(networkId)
       ? networkId
-      : OnekeyNetwork.eth;
+      : UnionKeyNetwork.eth;
   const price = networkPrices?.[activeNetwokId];
   useEffect(() => {
     backgroundApiProxy.serviceGas.refreshGasPrice({

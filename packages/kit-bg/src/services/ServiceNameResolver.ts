@@ -9,7 +9,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import {
   COINTYPE_BTC,
   COINTYPE_DOGE,
@@ -45,9 +45,9 @@ export default class ServiceNameResolver extends ServiceBase {
         shownSymbol: 'ENS',
         supportImplsMap: {
           'evm--*': ['eth'],
-          [OnekeyNetwork.btc]: ['btc'],
-          [OnekeyNetwork.ltc]: ['ltc'],
-          [OnekeyNetwork.doge]: ['doge'],
+          [UnionKeyNetwork.btc]: ['btc'],
+          [UnionKeyNetwork.ltc]: ['ltc'],
+          [UnionKeyNetwork.doge]: ['doge'],
         },
         resolver: this.resolveENS.bind(this),
       },
@@ -56,12 +56,12 @@ export default class ServiceNameResolver extends ServiceBase {
         shownSymbol: '.bit',
         supportImplsMap: {
           'evm--*': ['eth', 'bsc', 'etc', 'polygon', 'celo'],
-          [OnekeyNetwork.btc]: ['btc'],
-          [OnekeyNetwork.near]: ['near'],
-          [OnekeyNetwork.sol]: ['sol'],
-          [OnekeyNetwork.trx]: ['trx'],
-          [OnekeyNetwork.ltc]: ['ltc'],
-          [OnekeyNetwork.doge]: ['doge'],
+          [UnionKeyNetwork.btc]: ['btc'],
+          [UnionKeyNetwork.near]: ['near'],
+          [UnionKeyNetwork.sol]: ['sol'],
+          [UnionKeyNetwork.trx]: ['trx'],
+          [UnionKeyNetwork.ltc]: ['ltc'],
+          [UnionKeyNetwork.doge]: ['doge'],
         },
         resolver: this.resolveDotBit.bind(this),
       },
@@ -82,22 +82,22 @@ export default class ServiceNameResolver extends ServiceBase {
             'FTM.VERSION.ERC20',
             'FTM.VERSION.OPERA',
           ],
-          [OnekeyNetwork.ada]: ['ADA'],
-          [OnekeyNetwork.algo]: ['ALGO'],
-          [OnekeyNetwork.apt]: ['APT'],
-          [OnekeyNetwork.sui]: ['SUI'],
-          [OnekeyNetwork.bch]: ['BCH'],
-          [OnekeyNetwork.btc]: ['BTC'],
-          [OnekeyNetwork.cfx]: ['CFX'],
-          [OnekeyNetwork.doge]: ['DOGE'],
-          [OnekeyNetwork.fil]: ['FIL'],
-          [OnekeyNetwork.ltc]: ['LTC'],
-          [OnekeyNetwork.near]: ['NEAR'],
-          [OnekeyNetwork.sol]: ['SOL'],
-          [OnekeyNetwork.trx]: ['TRX'],
-          [OnekeyNetwork.xrp]: ['XRP'],
-          [OnekeyNetwork.cosmoshub]: ['ATOM'],
-          [OnekeyNetwork.fetch]: ['FET.version.FETCHAI'],
+          [UnionKeyNetwork.ada]: ['ADA'],
+          [UnionKeyNetwork.algo]: ['ALGO'],
+          [UnionKeyNetwork.apt]: ['APT'],
+          [UnionKeyNetwork.sui]: ['SUI'],
+          [UnionKeyNetwork.bch]: ['BCH'],
+          [UnionKeyNetwork.btc]: ['BTC'],
+          [UnionKeyNetwork.cfx]: ['CFX'],
+          [UnionKeyNetwork.doge]: ['DOGE'],
+          [UnionKeyNetwork.fil]: ['FIL'],
+          [UnionKeyNetwork.ltc]: ['LTC'],
+          [UnionKeyNetwork.near]: ['NEAR'],
+          [UnionKeyNetwork.sol]: ['SOL'],
+          [UnionKeyNetwork.trx]: ['TRX'],
+          [UnionKeyNetwork.xrp]: ['XRP'],
+          [UnionKeyNetwork.cosmoshub]: ['ATOM'],
+          [UnionKeyNetwork.fetch]: ['FET.version.FETCHAI'],
         },
         resolver: this.resolveUnstoppableDomains.bind(this),
       },
@@ -113,7 +113,7 @@ export default class ServiceNameResolver extends ServiceBase {
         pattern: /^0x[a-fA-F0-9]{40}$/,
         shownSymbol: 'FIL',
         supportImplsMap: {
-          [OnekeyNetwork.fil]: ['fil'],
+          [UnionKeyNetwork.fil]: ['fil'],
         },
         resolver: this.resolveFilEvm.bind(this),
         networkRequired: true,
@@ -123,11 +123,11 @@ export default class ServiceNameResolver extends ServiceBase {
         shownSymbol: 'STAR',
         supportImplsMap: {
           'evm--*': ['eth'],
-          [OnekeyNetwork.apt]: ['APT'],
-          [OnekeyNetwork.ltc]: ['LTC'],
-          [OnekeyNetwork.sui]: ['SUI'],
-          [OnekeyNetwork.btc]: ['BTC'],
-          [OnekeyNetwork.doge]: ['DOGE'],
+          [UnionKeyNetwork.apt]: ['APT'],
+          [UnionKeyNetwork.ltc]: ['LTC'],
+          [UnionKeyNetwork.sui]: ['SUI'],
+          [UnionKeyNetwork.btc]: ['BTC'],
+          [UnionKeyNetwork.doge]: ['DOGE'],
         },
         resolver: this.resolveStarDomains.bind(this),
       },
@@ -286,7 +286,7 @@ export default class ServiceNameResolver extends ServiceBase {
     const { engine } = this.backgroundApi;
 
     // always using ETH mainnet for name resolve
-    const chainOnlyVault = await engine.getChainOnlyVault(OnekeyNetwork.eth);
+    const chainOnlyVault = await engine.getChainOnlyVault(UnionKeyNetwork.eth);
     try {
       const ethersProvider = await chainOnlyVault.getEthersProvider();
       const resolver = await ethersProvider.getResolver(name);
@@ -405,7 +405,7 @@ export default class ServiceNameResolver extends ServiceBase {
     try {
       for (const net of netWorks) {
         const chainOnlyVault = await engine.getChainOnlyVault(
-          Object.getOwnPropertyDescriptor(OnekeyNetwork, net)?.value,
+          Object.getOwnPropertyDescriptor(UnionKeyNetwork, net)?.value,
         );
         const provider = await chainOnlyVault.getEthersProvider();
         const chainId = await chainOnlyVault.getNetworkChainId();
@@ -438,7 +438,7 @@ export default class ServiceNameResolver extends ServiceBase {
   async resolveFilEvm(name: string) {
     const { engine } = this.backgroundApi;
 
-    const chainOnlyVault = await engine.getChainOnlyVault(OnekeyNetwork.fil);
+    const chainOnlyVault = await engine.getChainOnlyVault(UnionKeyNetwork.fil);
     const filEvmAddress = await chainOnlyVault.validateAddress(name);
     return [
       {

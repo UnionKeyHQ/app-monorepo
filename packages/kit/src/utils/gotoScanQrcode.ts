@@ -1,7 +1,7 @@
 import walletConnectUtils from '../components/WalletConnect/utils/walletConnectUtils';
 import { getAppNavigation } from '../hooks/useAppNavigation';
 import { ModalRoutes, RootRoutes } from '../routes/routesEnum';
-import { OneKeyMigrateQRCodePrefix } from '../views/Onboarding/screens/Migration/util';
+import { UnionKeyMigrateQRCodePrefix } from '../views/Onboarding/screens/Migration/util';
 import {
   ScanQrcodeRoutes,
   ScanSubResultCategory,
@@ -13,7 +13,7 @@ export const handleScanResult = (data: string) => {
   const scanResult: ScanResult = { type: ScanSubResultCategory.TEXT, data };
   if (data.startsWith('https://') || data.startsWith('http://')) {
     scanResult.type = ScanSubResultCategory.URL;
-  } else if (data.startsWith(OneKeyMigrateQRCodePrefix)) {
+  } else if (data.startsWith(UnionKeyMigrateQRCodePrefix)) {
     scanResult.type = ScanSubResultCategory.MIGRATE;
   } else if (/^wc:.+@.+\?.+/.test(data)) {
     // wc:{topic...}@{version...}?bridge={url...}&key={key...}

@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import { get } from 'lodash';
 
-import { OneKeyInternalError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyInternalError } from '@unionkeyhq/engine/src/errors';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import { submitTransactionFromString } from './transaction';
@@ -125,11 +125,11 @@ export class RestAPIClient {
         const message: string = get(error, 'response.data.error', '');
 
         if (message.match(/payment of \d+ is dust/)) {
-          throw new OneKeyInternalError(message, 'msg__amount_too_small');
+          throw new UnionKeyInternalError(message, 'msg__amount_too_small');
         }
 
         if (message.toLowerCase().indexOf('insufficient balance') !== -1) {
-          throw new OneKeyInternalError(
+          throw new UnionKeyInternalError(
             message,
             'msg__broadcast_dot_tx_Insufficient_fee',
           );
@@ -140,13 +140,13 @@ export class RestAPIClient {
             .toLowerCase()
             .indexOf('is larger than max allowed size of 100000') !== -1
         ) {
-          throw new OneKeyInternalError(
+          throw new UnionKeyInternalError(
             message,
             'msg__broadcast_kaspa_tx_max_allowed_size',
           );
         }
 
-        throw new OneKeyInternalError(message);
+        throw new UnionKeyInternalError(message);
       });
   }
 

@@ -1,4 +1,4 @@
-import { OnekeyNetworkUpdatedAt } from '@unionkeyhq/shared/src/config/presetNetworks';
+import { UnionKeyNetworkUpdatedAt } from '@unionkeyhq/shared/src/config/presetNetworks';
 import type { IServerNetwork } from '@unionkeyhq/shared/types';
 
 import { getFiatEndpoint } from '../../../endpoint';
@@ -50,7 +50,7 @@ export class SimpleDbEntityServerNetworks extends SimpleDbEntityBase<ISimpleDbEn
   async getTimestamp() {
     const data = await this.getData();
     const endpoint = getFiatEndpoint();
-    return data.updateTimestampMap?.[endpoint] || OnekeyNetworkUpdatedAt;
+    return data.updateTimestampMap?.[endpoint] || UnionKeyNetworkUpdatedAt;
   }
 
   async getData(): Promise<ISimpleDbEntityServerNetworksData> {

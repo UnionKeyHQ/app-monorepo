@@ -18,8 +18,8 @@ import { toBigIntHex } from '@unionkeyhq/shared/src/utils/numberUtils';
 
 import {
   NotImplemented,
-  OneKeyHardwareError,
-  OneKeyInternalError,
+  UnionKeyHardwareError,
+  UnionKeyInternalError,
 } from './errors';
 import { ETHMessageTypes } from './types/message';
 
@@ -39,7 +39,7 @@ import type {
  * @param path drivation path
  * @param display show address on the screen
  * @returns
- * @throws {OneKeyHardwareError}
+ * @throws {UnionKeyHardwareError}
  */
 export async function ethereumGetAddress(
   HardwareSDK: CoreApi,
@@ -60,7 +60,7 @@ export async function ethereumGetAddress(
     });
   } catch (error: any) {
     console.error(error);
-    throw new OneKeyHardwareError(error);
+    throw new UnionKeyHardwareError(error);
   }
   if (response.success && !!response.payload?.address) {
     return engineUtils.fixAddressCase({
@@ -92,7 +92,7 @@ export function nearSignTransaction(...args: any[]): Promise<any> {
  * @param path drivation path
  * @param display show address on the screen
  * @returns
- * @throws {OneKeyHardwareError}
+ * @throws {UnionKeyHardwareError}
  */
 export async function solanaGetAddress(
   path: string | number[],
@@ -100,19 +100,19 @@ export async function solanaGetAddress(
 ): Promise<string> {
   // let response;
   // try {
-  //   response = await OneKeyConnect.solanaGetAddress(
+  //   response = await UnionKeyConnect.solanaGetAddress(
   //     path,
   //     // showOnTrezor: display,
   //   );
   // } catch (error: any) {
   //   console.error(error);
-  //   throw new OneKeyHardwareError(error);
+  //   throw new UnionKeyHardwareError(error);
   // }
   // if (response.success) {
   //   return response.payload.address;
   // }
   // console.error(response.payload);
-  // throw new OneKeyHardwareError(`solanaGetAddress: ${response.payload.error}`);
+  // throw new UnionKeyHardwareError(`solanaGetAddress: ${response.payload.error}`);
   console.error('Not implemented', path, display);
   return Promise.reject(new Error('not implemented'));
 }
@@ -230,7 +230,7 @@ export async function ethereumSignMessage({
  * sign Eth transaction with the hardware wallet
  * @param params
  * @returns
- * @throws {OneKeyHardwareError}
+ * @throws {UnionKeyHardwareError}
  */
 export async function ethereumSignTransaction(
   HardwareSDK: CoreApi,
@@ -257,7 +257,7 @@ export async function ethereumSignTransaction(
     typeof unsignedTx.feeLimit === 'undefined' ||
     typeof unsignedTx.nonce === 'undefined'
   ) {
-    throw new OneKeyInternalError('Incomplete unsigned tx.');
+    throw new UnionKeyInternalError('Incomplete unsigned tx.');
   }
 
   const isEip1559 = unsignedTx.payload?.EIP1559Enabled;
@@ -313,7 +313,7 @@ export async function ethereumSignTransaction(
     });
   } catch (error: any) {
     console.error(error);
-    throw new OneKeyHardwareError(error);
+    throw new UnionKeyHardwareError(error);
   }
 
   if (response.success) {
@@ -375,7 +375,7 @@ export async function getXpubs(
     }
   } catch (error: any) {
     console.error(error);
-    throw new OneKeyHardwareError(error);
+    throw new UnionKeyHardwareError(error);
   }
 
   if (response.success) {

@@ -66,11 +66,11 @@ const LoggerGallery = () => {
       <Button
         onPress={() => {
           if (global.localStorage) {
-            const key = '@onekey_debug_useEffect_log';
+            const key = '@unionkey_debug_useEffect_log';
             const value = global.localStorage.getItem(key) ? '' : 'on';
             global.localStorage.setItem(key, value);
             console.log(
-              `localStorage setItem:  @onekey_debug_useEffect_log=${value}`,
+              `localStorage setItem:  @unionkey_debug_useEffect_log=${value}`,
             );
           }
         }}

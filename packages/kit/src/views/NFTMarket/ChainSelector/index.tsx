@@ -14,15 +14,15 @@ import {
 } from '@unionkeyhq/components';
 import type { Network } from '@unionkeyhq/engine/src/types/network';
 import { useManageNetworks } from '@unionkeyhq/kit/src/hooks';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 
 const ChainSelectorNetWorks = [
-  OnekeyNetwork.eth,
-  OnekeyNetwork.bsc,
-  OnekeyNetwork.optimism,
-  OnekeyNetwork.polygon,
-  OnekeyNetwork.arbitrum,
-  OnekeyNetwork.avalanche,
+  UnionKeyNetwork.eth,
+  UnionKeyNetwork.bsc,
+  UnionKeyNetwork.optimism,
+  UnionKeyNetwork.polygon,
+  UnionKeyNetwork.arbitrum,
+  UnionKeyNetwork.avalanche,
 ];
 
 type Props = {

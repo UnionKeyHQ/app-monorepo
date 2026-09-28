@@ -18,7 +18,7 @@ import { waitForDataLoaded } from '@unionkeyhq/shared/src/background/backgroundU
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
 import backgroundApiProxy from '../../background/instance/backgroundApiProxy';
-import { checkOneKeyCardGoogleOauthUrl } from '../../utils/uriUtils';
+import { checkUnionKeyCardGoogleOauthUrl } from '../../utils/uriUtils';
 
 import ErrorView from './ErrorView';
 
@@ -38,7 +38,7 @@ interface IElectronWebViewExt extends IElectronWebView {
 const isDev = process.env.NODE_ENV !== 'production';
 
 function usePreloadJsUrl() {
-  const { preloadJsUrl } = window.ONEKEY_DESKTOP_GLOBALS ?? {};
+  const { preloadJsUrl } = window.UNIONKEY_DESKTOP_GLOBALS ?? {};
   useEffect(() => {
     if (preloadJsUrl) {
       return;
@@ -46,7 +46,7 @@ function usePreloadJsUrl() {
     const timer = setTimeout(() => {
       if (!preloadJsUrl) {
         console.error(`Webview render failed:
-      Please send messages of channel SET_ONEKEY_DESKTOP_GLOBALS at app start
+      Please send messages of channel SET_UNIONKEY_DESKTOP_GLOBALS at app start
       `);
       }
     }, 3000);
@@ -85,7 +85,7 @@ const DesktopWebView = forwardRef(
       try {
         const checkGoogleOauth = (checkUrl: string) => {
           try {
-            if (checkOneKeyCardGoogleOauthUrl({ url: checkUrl })) {
+            if (checkUnionKeyCardGoogleOauthUrl({ url: checkUrl })) {
               const originUA = electronWebView.getUserAgent();
               const updatedUserAgent = originUA.replace(
                 / Electron\/[\d.]+/,

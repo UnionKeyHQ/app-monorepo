@@ -42,7 +42,7 @@ import backgroundApiProxy from '../../../../../background/instance/backgroundApi
 import { gotoScanQrcode } from '../../../../../utils/gotoScanQrcode';
 import { EOnboardingRoutes } from '../../../routes/enums';
 import {
-  OneKeyMigrateQRCodePrefix,
+  UnionKeyMigrateQRCodePrefix,
   addressWithoutHttp,
   parseCloudData,
   parseDeviceInfo,
@@ -231,7 +231,7 @@ const QRCodeView: FC<{
           shadow="depth.1"
         >
           <QRCode
-            value={`${OneKeyMigrateQRCodePrefix}${qrcode}`}
+            value={`${UnionKeyMigrateQRCodePrefix}${qrcode}`}
             size={170}
             logo={qrcodeLogo}
             logoSize={36}
@@ -289,11 +289,11 @@ const EnterLinkView: FC = () => {
             type="plain"
             onPress={() => {
               gotoScanQrcode((data) => {
-                if (data.startsWith(OneKeyMigrateQRCodePrefix)) {
+                if (data.startsWith(UnionKeyMigrateQRCodePrefix)) {
                   if (setContext) {
                     setContext((ctx) => ({
                       ...ctx,
-                      inputValue: data.replace(OneKeyMigrateQRCodePrefix, ''),
+                      inputValue: data.replace(UnionKeyMigrateQRCodePrefix, ''),
                     }));
                   }
                 }

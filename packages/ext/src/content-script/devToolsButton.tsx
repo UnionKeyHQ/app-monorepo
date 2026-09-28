@@ -1,6 +1,6 @@
-const BTN_ID = 'onekey-inpage-debug-dev-tools-button';
+const BTN_ID = 'unionkey-inpage-debug-dev-tools-button';
 const BTN_TEXT = 'RELOAD';
-const IFRAME_ID = 'onekey-inpage-debug-dev-tools-iframe';
+const IFRAME_ID = 'unionkey-inpage-debug-dev-tools-iframe';
 const IFRAME_URL = chrome.runtime.getURL('ui-content-script-iframe.html');
 
 // iframe is a HACK for background service-worker updating.

@@ -20,7 +20,7 @@ import {
   permissionRequired,
   providerApiMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { IMPL_COSMOS } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
@@ -188,7 +188,7 @@ class ProviderApiCosmos extends ProviderApiBase {
     if (!network) return Promise.resolve(undefined);
 
     const vault = (await this.backgroundApi.engine.getVault({
-      networkId: OnekeyNetwork.cosmoshub,
+      networkId: UnionKeyNetwork.cosmoshub,
       accountId,
     })) as VaultCosmos;
 

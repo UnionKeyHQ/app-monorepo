@@ -1,6 +1,6 @@
 function interceptTimeout(
   method: 'setTimeout' | 'setInterval',
-  checkProp: '$$onekeyDisabledSetTimeout' | '$$onekeyDisabledSetInterval',
+  checkProp: '$$unionKeyDisabledSetTimeout' | '$$unionKeyDisabledSetInterval',
 ) {
   const methodOld = global[method];
 
@@ -22,31 +22,31 @@ function interceptTimeout(
 
 function interceptTimerWithDisable() {
   try {
-    interceptTimeout('setTimeout', '$$onekeyDisabledSetTimeout');
+    interceptTimeout('setTimeout', '$$unionKeyDisabledSetTimeout');
   } catch (error) {
     console.error(error);
   }
   try {
-    interceptTimeout('setInterval', '$$onekeyDisabledSetInterval');
+    interceptTimeout('setInterval', '$$unionKeyDisabledSetInterval');
   } catch (error) {
     console.error(error);
   }
 }
 
 function enableSetTimeout() {
-  global.$$onekeyDisabledSetTimeout = undefined;
+  global.$$unionKeyDisabledSetTimeout = undefined;
 }
 
 function disableSetTimeout() {
-  global.$$onekeyDisabledSetTimeout = true;
+  global.$$unionKeyDisabledSetTimeout = true;
 }
 
 function enableSetInterval() {
-  global.$$onekeyDisabledSetInterval = undefined;
+  global.$$unionKeyDisabledSetInterval = undefined;
 }
 
 function disableSetInterval() {
-  global.$$onekeyDisabledSetInterval = true;
+  global.$$unionKeyDisabledSetInterval = true;
 }
 
 export default {

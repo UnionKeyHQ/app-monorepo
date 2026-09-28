@@ -114,7 +114,7 @@ const LNURLWithdraw = () => {
       } catch (e: any) {
         const { key, info } = e;
         let message = '';
-        if (key && key !== 'onekey_error') {
+        if (key && key !== 'unionkey_error') {
           message = intl.formatMessage(
             {
               id: key,

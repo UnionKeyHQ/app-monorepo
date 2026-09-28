@@ -102,14 +102,14 @@ const MacPermission = () => {
           <Title
             marker="II"
             title={intl.formatMessage({
-              id: 'content__enable_mac_permissions_for_oneKey',
+              id: 'content__enable_mac_permissions_for_unionKey',
             })}
           />
           <VStack space={4} pl={2}>
             <Marker
               marker="1."
               content={intl.formatMessage({
-                id: 'content__enable_mac_permissions_for_oneKey_step_1',
+                id: 'content__enable_mac_permissions_for_unionKey_step_1',
               })}
             >
               <Button
@@ -127,19 +127,19 @@ const MacPermission = () => {
             <Marker
               marker="2."
               content={intl.formatMessage({
-                id: 'content__enable_mac_permissions_for_oneKey_step_2',
+                id: 'content__enable_mac_permissions_for_unionKey_step_2',
               })}
             />
             <Marker
               marker="3."
               content={intl.formatMessage({
-                id: 'content__enable_mac_permissions_for_oneKey_step_3',
+                id: 'content__enable_mac_permissions_for_unionKey_step_3',
               })}
             />
             <Marker
               marker="4."
               content={intl.formatMessage({
-                id: 'content__enable_mac_permissions_for_oneKey_step_4',
+                id: 'content__enable_mac_permissions_for_unionKey_step_4',
               })}
             />
           </VStack>

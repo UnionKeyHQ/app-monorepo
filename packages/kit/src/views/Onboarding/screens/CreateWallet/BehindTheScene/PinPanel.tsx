@@ -48,7 +48,7 @@ const PinPanel: FC<PinPanelProps> = ({ visible }) => {
         borderColor="divider"
       >
         <Text typography="Body2Strong">
-          {intl.formatMessage({ id: 'content__pin_onekey_ext' })}
+          {intl.formatMessage({ id: 'content__pin_unionkey_ext' })}
         </Text>
         <Box flexDir="row" my={2}>
           <LinearGradient

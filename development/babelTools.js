@@ -21,7 +21,7 @@ const moduleResolverAliasForAllWebPlatform = {
 };
 
 function normalizeConfig({ platform, config }) {
-  process.env.ONEKEY_PLATFORM = platform;
+  process.env.UNIONKEY_PLATFORM = platform;
   let moduleResolver = null;
   if (platform === developmentConsts.platforms.ext) {
     moduleResolver = {

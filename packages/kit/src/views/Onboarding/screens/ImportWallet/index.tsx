@@ -27,7 +27,7 @@ import {
   OptionAdress,
   OptionKeyTag,
   OptionMigration,
-  OptionOneKeyLite,
+  OptionUnionKeyLite,
   OptionPrivateKey,
   OptionRecoveryPhrase,
   OptioniCloud,
@@ -121,12 +121,12 @@ const ImportWallet = () => {
     });
   }, [navigation]);
 
-  const onPressOneKeyLite = useCallback(() => {
+  const onPressUnionKeyLite = useCallback(() => {
     forceVisibleUnfocused?.();
     appNavigation.navigate(RootRoutes.Modal, {
       screen: ModalRoutes.CreateWallet,
       params: {
-        screen: CreateWalletModalRoutes.OnekeyLiteRestorePinCodeVerifyModal,
+        screen: CreateWalletModalRoutes.UnionKeyLiteRestorePinCodeVerifyModal,
       },
     });
   }, [appNavigation, forceVisibleUnfocused]);
@@ -225,11 +225,11 @@ const ImportWallet = () => {
         )}
         {supportedNFC && (
           <ItemWrapper>
-            <OptionOneKeyLite
+            <OptionUnionKeyLite
               title={intl.formatMessage({
                 id: 'onboarding__import_wallet_with_lite',
               })}
-              onPress={onPressOneKeyLite}
+              onPress={onPressUnionKeyLite}
             />
           </ItemWrapper>
         )}

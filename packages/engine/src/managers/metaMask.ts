@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { SEPERATOR } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../errors';
+import { UnionKeyInternalError } from '../errors';
 
 import type {
   MetaMaskGasAPIResponse,
@@ -22,7 +22,7 @@ const getMetaMaskGasInfo = async (
   ).data;
 
   if (resp.error) {
-    throw new OneKeyInternalError('metamast bad response');
+    throw new UnionKeyInternalError('metamast bad response');
   }
 
   const { estimatedBaseFee, low, medium, high, networkCongestion } = resp;

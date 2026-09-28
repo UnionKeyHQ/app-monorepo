@@ -1,6 +1,6 @@
 import type { MigrateData } from '@unionkeyhq/engine/src/types/migrate';
 import type { SearchDevice } from '@unionkeyhq/kit/src/utils/hardware';
-import type { IOneKeyDeviceFeatures } from '@unionkeyhq/shared/types';
+import type { IUnionKeyDeviceFeatures } from '@unionkeyhq/shared/types';
 
 import type { IAddExistingWalletMode } from '../../../routes';
 import type { KeyTagRoutes } from '../../KeyTag/Routes/enums';
@@ -16,7 +16,7 @@ export type IOnboardingBehindTheSceneParams =
   IOnboardingRecoveryPhraseParams & {
     isHardwareCreating?: {
       device: SearchDevice;
-      features: IOneKeyDeviceFeatures;
+      features: IUnionKeyDeviceFeatures;
     };
     entry?: 'onboarding' | 'walletSelector';
   };

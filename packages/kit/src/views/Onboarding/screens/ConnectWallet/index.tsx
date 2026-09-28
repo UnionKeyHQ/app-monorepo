@@ -115,18 +115,18 @@ function ConnectHardwareButton() {
   );
 }
 
-function ConnectOneKeyLiteButton() {
+function ConnectUnionKeyLiteButton() {
   const navigation = useAppNavigation();
 
   const context = useOnboardingContext();
   const forceVisibleUnfocused = context?.forceVisibleUnfocused;
 
-  const showOneKeyLiteModal = useCallback(() => {
+  const showUnionKeyLiteModal = useCallback(() => {
     forceVisibleUnfocused?.();
     navigation.navigate(RootRoutes.Modal, {
       screen: ModalRoutes.CreateWallet,
       params: {
-        screen: CreateWalletModalRoutes.OnekeyLiteRestorePinCodeVerifyModal,
+        screen: CreateWalletModalRoutes.UnionKeyLiteRestorePinCodeVerifyModal,
       },
     });
   }, [navigation, forceVisibleUnfocused]);
@@ -144,7 +144,7 @@ function ConnectOneKeyLiteButton() {
         bgColor={{ sm: 'surface-default' }}
         _hover={{ bgColor: 'surface-hovered' }}
         _pressed={{ bgColor: 'surface-pressed' }}
-        onPress={() => showOneKeyLiteModal()}
+        onPress={() => showUnionKeyLiteModal()}
       >
         <Image source={UnionKeyLite} size={8} />
         <Text
@@ -187,7 +187,7 @@ const ConnectWallet = () => {
         >
           <ConnectHardwareButton />
           {supportedNFC || platformEnv.isDev ? (
-            <ConnectOneKeyLiteButton />
+            <ConnectUnionKeyLiteButton />
           ) : null}
         </Layout>
       )}

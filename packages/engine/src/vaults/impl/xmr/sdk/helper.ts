@@ -6,7 +6,7 @@ import {
 } from '@mymonero/mymonero-keyimage-cache';
 import axios from 'axios';
 
-import { OneKeyInternalError } from '../../../../errors';
+import { UnionKeyInternalError } from '../../../../errors';
 
 import { cnFastHash } from './moneroAddress';
 
@@ -265,14 +265,14 @@ class Helper {
         authenticate_fn: () => {},
         status_update_fn: () => {},
         canceled_fn: () => {
-          reject(new OneKeyInternalError('Transaction canceled'));
+          reject(new UnionKeyInternalError('Transaction canceled'));
         },
         get_unspent_outs_fn: async (params, callback) => {
           try {
             const resp = await instance.post('/get_unspent_outs', params);
             callback(null, resp.data);
           } catch {
-            reject(new OneKeyInternalError('Get unspent outs error.'));
+            reject(new UnionKeyInternalError('Get unspent outs error.'));
           }
         },
         get_random_outs_fn: async (params, callback) => {
@@ -280,7 +280,7 @@ class Helper {
             const resp = await instance.post('/get_random_outs', params);
             callback(null, resp.data);
           } catch {
-            reject(new OneKeyInternalError('Get unspent outs error.'));
+            reject(new UnionKeyInternalError('Get unspent outs error.'));
           }
         },
         submit_raw_tx_fn: async (params, callback) => {
@@ -288,7 +288,7 @@ class Helper {
             const resp = await instance.post('/submit_raw_tx', params);
             callback(null, resp.data);
           } catch {
-            reject(new OneKeyInternalError('Submit raw tx error.'));
+            reject(new UnionKeyInternalError('Submit raw tx error.'));
           }
         },
         success_fn: (params) => {

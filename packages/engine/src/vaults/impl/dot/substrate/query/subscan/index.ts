@@ -1,7 +1,7 @@
 import axios from 'axios';
 import stringify from 'fast-json-stable-stringify';
 
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import { getChainIdFromNetworkId } from '@unionkeyhq/engine/src/managers/network';
 import { memoizee } from '@unionkeyhq/shared/src/utils/cacheUtils';
 
@@ -46,7 +46,7 @@ export class SubScanClient extends BaseDotClient {
         if (res.data.code === 0) {
           return res.data.data;
         }
-        throw new OneKeyError(`SubScanClient.postJson: ${res.data.message}`);
+        throw new UnionKeyError(`SubScanClient.postJson: ${res.data.message}`);
       });
   }
 

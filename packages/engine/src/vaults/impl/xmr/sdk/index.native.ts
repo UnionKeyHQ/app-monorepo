@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 import { wait } from '@unionkeyhq/kit/src/utils/helper';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { MoneroEvent } from '@unionkeyhq/shared/src/engine/xmrConsts';
 import {
   AppUIEventBusNames,
@@ -29,7 +29,7 @@ const ensureSDKReady = async () =>
         debugLogger.common.debug('ensure web embed exist resolve callback');
         resolve(true);
       },
-      OnekeyNetwork.xmr,
+      UnionKeyNetwork.xmr,
     );
   });
 

@@ -21,7 +21,7 @@ import {
   ModalRoutes,
   RootRoutes,
 } from '@unionkeyhq/kit/src/routes/routesEnum';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import platformEnv from '@unionkeyhq/shared/src/platformEnv';
 
 import Badge from '../Badge';
@@ -244,7 +244,7 @@ export const TokenIcon = ({
     if (!network?.logoURI) {
       return null;
     }
-    if (network.id === OnekeyNetwork.eth) {
+    if (network.id === UnionKeyNetwork.eth) {
       return null;
     }
     return (

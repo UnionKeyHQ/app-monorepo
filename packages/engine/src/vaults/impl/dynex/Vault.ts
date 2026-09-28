@@ -11,7 +11,7 @@ import {
   InsufficientBalance,
   InvalidAddress,
   NotImplemented,
-  OneKeyInternalError,
+  UnionKeyInternalError,
 } from '../../../errors';
 import {
   type IApproveInfo,

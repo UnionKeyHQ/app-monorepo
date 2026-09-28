@@ -12,7 +12,7 @@ import {
   COINTYPE_DOGE,
 } from '@unionkeyhq/shared/src/engine/engineConsts';
 
-import { OneKeyInternalError } from '../../../errors';
+import { UnionKeyInternalError } from '../../../errors';
 import { slicePathTemplate } from '../../../managers/derivation';
 import { getAccountNameInfoByTemplate } from '../../../managers/impl';
 import { AccountType } from '../../../types/account';
@@ -73,7 +73,7 @@ export class KeyringHd extends KeyringHdBtcFork {
       usedIndexes.map((index) => `${index.toString()}'`),
     );
     if (pubkeyInfos.length !== usedIndexes.length) {
-      throw new OneKeyInternalError('Unable to get publick key.');
+      throw new UnionKeyInternalError('Unable to get publick key.');
     }
 
     const { public: xpubVersionBytes } =

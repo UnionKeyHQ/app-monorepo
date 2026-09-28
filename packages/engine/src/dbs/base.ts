@@ -2,7 +2,7 @@ import { Buffer } from 'buffer';
 
 import type { RevealableSeed } from '@unionkeyhq/engine/src/secret';
 import { decrypt } from '@unionkeyhq/engine/src/secret/encryptors/aes256';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import type { Avatar } from '@unionkeyhq/shared/src/utils/emojiUtils';
 
 import {
@@ -34,7 +34,7 @@ import type { ISetNextAccountIdsParams, Wallet } from '../types/wallet';
 import type { IFeeInfoUnit } from '../vaults/types';
 import type { IDeviceType } from '@unionkeyhq/hd-core';
 
-type OneKeyContext = {
+type UnionKeyContext = {
   id: string;
   nextHD: number;
   verifyString: string;
@@ -95,13 +95,13 @@ const DEFAULT_VERIFY_STRING = 'OneKey';
 const MAIN_CONTEXT = 'mainContext';
 
 export const DEFAULT_RPC_ENDPOINT_TO_CLEAR: Record<string, string> = {
-  [OnekeyNetwork.eth]:
+  [UnionKeyNetwork.eth]:
     'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-  [OnekeyNetwork.bsc]: 'https://bsc-dataseed1.binance.org',
-  [OnekeyNetwork.polygon]: 'https://polygon-rpc.com',
+  [UnionKeyNetwork.bsc]: 'https://bsc-dataseed1.binance.org',
+  [UnionKeyNetwork.polygon]: 'https://polygon-rpc.com',
 };
 
-function checkPassword(context: OneKeyContext, password: string): boolean {
+function checkPassword(context: UnionKeyContext, password: string): boolean {
   if (!context) {
     console.error('Unable to get main context.');
     return false;
@@ -119,7 +119,7 @@ function checkPassword(context: OneKeyContext, password: string): boolean {
   }
 }
 interface DBAPI {
-  getContext(): Promise<OneKeyContext | null | undefined>;
+  getContext(): Promise<UnionKeyContext | null | undefined>;
   updatePassword(oldPassword: string, newPassword: string): Promise<void>;
   reset(): Promise<void>;
 
@@ -296,7 +296,7 @@ interface DBAPI {
 
 export type {
   DBAPI,
-  OneKeyContext,
+  UnionKeyContext,
   StoredCredential,
   StoredSeedCredential,
   StoredPrivateKeyCredential,

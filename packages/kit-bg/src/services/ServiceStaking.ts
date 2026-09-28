@@ -45,7 +45,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { ERC20PermitABI } from '@unionkeyhq/shared/src/contracts/abi/erc20';
 import { LIDO_NFT_ABI } from '@unionkeyhq/shared/src/contracts/abi/stETH';
 import {
@@ -96,10 +96,10 @@ export default class ServiceStaking extends ServiceBase {
 
   getKeleBaseUrl(networkId: string) {
     const base = this.getServerEndPoint();
-    if (networkId === OnekeyNetwork.eth) {
+    if (networkId === UnionKeyNetwork.eth) {
       return `${base}/keleMainnet`;
     }
-    if (networkId === OnekeyNetwork.goerli) {
+    if (networkId === UnionKeyNetwork.goerli) {
       return `${base}/keleTestnet`;
     }
     throw new Error('Not supported network');
@@ -458,7 +458,7 @@ export default class ServiceStaking extends ServiceBase {
     const { networkId, accountId } = params;
     const { engine, serviceContract, dispatch, serviceToken } =
       this.backgroundApi;
-    if (networkId !== OnekeyNetwork.eth && networkId !== OnekeyNetwork.goerli) {
+    if (networkId !== UnionKeyNetwork.eth && networkId !== UnionKeyNetwork.goerli) {
       return;
     }
 
@@ -588,7 +588,7 @@ export default class ServiceStaking extends ServiceBase {
     return {
       name: 'Liquid staked Ether 2.0',
       version: '2',
-      chainId: networdId === OnekeyNetwork.eth ? 1 : 5,
+      chainId: networdId === UnionKeyNetwork.eth ? 1 : 5,
       verifyingContract: getLidoContractAddress(networdId),
     };
   }
@@ -760,13 +760,13 @@ export default class ServiceStaking extends ServiceBase {
       logoURI:
         'https://common.unionkey.io/token/evm-1/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png',
     };
-    if (networkId === OnekeyNetwork.eth) {
-      baseToken.id = `${OnekeyNetwork.eth}--${MainnetLidoContractAddress}`;
-      baseToken.networkId = OnekeyNetwork.eth;
+    if (networkId === UnionKeyNetwork.eth) {
+      baseToken.id = `${UnionKeyNetwork.eth}--${MainnetLidoContractAddress}`;
+      baseToken.networkId = UnionKeyNetwork.eth;
       baseToken.tokenIdOnNetwork = MainnetLidoContractAddress;
-    } else if (networkId === OnekeyNetwork.goerli) {
-      baseToken.id = `${OnekeyNetwork.goerli}--${TestnetLidoContractAddress}`;
-      baseToken.networkId = OnekeyNetwork.goerli;
+    } else if (networkId === UnionKeyNetwork.goerli) {
+      baseToken.id = `${UnionKeyNetwork.goerli}--${TestnetLidoContractAddress}`;
+      baseToken.networkId = UnionKeyNetwork.goerli;
       baseToken.tokenIdOnNetwork = TestnetLidoContractAddress;
     } else {
       throw new Error('Wrong networkId');
@@ -780,7 +780,7 @@ export default class ServiceStaking extends ServiceBase {
   }): Promise<LidoMaticOverview | undefined> {
     const { networkId, accountId } = params;
     const { engine, serviceContract, serviceToken } = this.backgroundApi;
-    if (networkId !== OnekeyNetwork.eth && networkId !== OnekeyNetwork.goerli) {
+    if (networkId !== UnionKeyNetwork.eth && networkId !== UnionKeyNetwork.goerli) {
       return;
     }
     const stMaticAddress = getStMaticContractAdderess(networkId);

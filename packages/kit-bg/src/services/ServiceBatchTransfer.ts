@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { groupBy, keys } from 'lodash';
 
-import { OneKeyError } from '@unionkeyhq/engine/src/errors';
+import { UnionKeyError } from '@unionkeyhq/engine/src/errors';
 import { batchTransferContractAddress } from '@unionkeyhq/engine/src/presets/batchTransferContractAddress';
 import { HistoryEntryStatus } from '@unionkeyhq/engine/src/types/history';
 import { TransactionStatus } from '@unionkeyhq/engine/src/types/provider';
@@ -199,7 +199,7 @@ export default class ServiceBatchTransfer extends ServiceBase {
         try {
           signedTx = await engine.signAndSendEncodedTx(params);
         } catch (e) {
-          if (e instanceof OneKeyError) {
+          if (e instanceof UnionKeyError) {
             throw e;
           }
           if (sendTxRetry > BATCH_SEND_TX_RETRY_MAX) {

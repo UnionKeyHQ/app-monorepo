@@ -159,7 +159,7 @@ export default class ServiceBootstrap extends ServiceBase {
 
     if (networks) {
       serviceNetwork.migrateServerNetworks(networks).then(() => {
-        this.switchDefaultRpcToOnekeyRpcNode();
+        this.switchDefaultRpcToUnionKeyRpcNode();
       });
     }
   }
@@ -217,7 +217,7 @@ export default class ServiceBootstrap extends ServiceBase {
   }
 
   @backgroundMethod()
-  async switchDefaultRpcToOnekeyRpcNode() {
+  async switchDefaultRpcToUnionKeyRpcNode() {
     const { appSelector, dispatch, serviceNetwork } = this.backgroundApi;
     const { networks } = appSelector((s) => s.runtime);
     const { autoSwitchDefaultRpcAtVersion, userSwitchedNetworkRpcFlag } =
@@ -235,7 +235,7 @@ export default class ServiceBootstrap extends ServiceBase {
     }
     for (const n of networks) {
       const defaultRpc = defaultNetworkRpcs[n.id];
-      const onekeyRpc = Object.values(getPresetNetworks())
+      const unionKeyRpc = Object.values(getPresetNetworks())
         .find((item) => item.id === n.id)
         ?.rpcURLs?.find((rpc) =>
           rpc.url?.startsWith('https://api.unionkey.io/'),
@@ -244,10 +244,10 @@ export default class ServiceBootstrap extends ServiceBase {
       if (
         defaultRpc &&
         defaultRpc === n.rpcURL &&
-        onekeyRpc &&
+        unionKeyRpc &&
         !isUserSwitched
       ) {
-        await serviceNetwork.updateNetwork(n.id, { rpcURL: onekeyRpc }, false);
+        await serviceNetwork.updateNetwork(n.id, { rpcURL: unionKeyRpc }, false);
       }
     }
     dispatch(

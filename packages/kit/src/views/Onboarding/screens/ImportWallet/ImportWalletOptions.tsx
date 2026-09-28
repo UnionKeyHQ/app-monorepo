@@ -16,7 +16,7 @@ import {
 } from '@unionkeyhq/components';
 import type { IconProps } from '@unionkeyhq/components/src/Icon';
 import KeyTagPNG from '@unionkeyhq/kit/assets/onboarding/import_with_keytag.png';
-import OneKeyLitePNG from '@unionkeyhq/kit/assets/onboarding/import_with_lite.png';
+import UnionKeyLitePNG from '@unionkeyhq/kit/assets/onboarding/import_with_lite.png';
 
 interface OptionProps {
   icon?: IconProps['name'];
@@ -190,7 +190,7 @@ export const OptionAdress: FC<OptionProps> = ({
   </Option>
 );
 
-export const OptionOneKeyLite: FC<OptionProps> = ({
+export const OptionUnionKeyLite: FC<OptionProps> = ({
   title,
   description,
   onPress,
@@ -202,7 +202,7 @@ export const OptionOneKeyLite: FC<OptionProps> = ({
     onPress={onPress}
   >
     <Center>
-      <Image source={OneKeyLitePNG} w="224px" h="64px" />
+      <Image source={UnionKeyLitePNG} w="224px" h="64px" />
     </Center>
   </Option>
 );

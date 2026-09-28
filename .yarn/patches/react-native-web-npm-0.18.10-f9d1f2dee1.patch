@@ -111,13 +111,13 @@ index 801cc86c00539a8989670df44daa0f97158ac59a..277739565f9851e7b8c60e37f3ea819f
          this._hasWarned.perf = true;
        }
  
-+      // onekey patch ----------------------------------------------
++      // unionkey patch ----------------------------------------------
 +      var perfCheckContentLength = 200;
 +      if (this.props && this.props.perfCheckContentLength) {
 +        perfCheckContentLength = this.props.perfCheckContentLength;
 +      }
 +      if (contentLength > perfCheckContentLength) {
-+        // IOneKeyPerfCheckPayload
++        // IUnionKeyPerfCheckPayload
 +        var perfEventPayload = {
 +          testID: this.props && this.props.testID,
 +          componentName: 'VirtualizedList',
@@ -134,10 +134,10 @@ index 801cc86c00539a8989670df44daa0f97158ac59a..277739565f9851e7b8c60e37f3ea819f
 +          typeof CustomEvent !=='undefined' && 
 +          window.dispatchEvent
 +          ) {
-+          window.dispatchEvent(new CustomEvent('OneKeyEventPerfCheck', {detail: perfEventPayload}));
++          window.dispatchEvent(new CustomEvent('UnionKeyEventPerfCheck', {detail: perfEventPayload}));
 +        }
 +      }
-+      // onekey patch ----------------------------------------------
++      // unionkey patch ----------------------------------------------
 +
        this._scrollMetrics = {
          contentLength,

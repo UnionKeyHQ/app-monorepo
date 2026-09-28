@@ -12,7 +12,7 @@ import {
   backgroundClass,
   providerApiMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { IMPL_BTC, IMPL_TBTC } from '@unionkeyhq/shared/src/engine/engineConsts';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 import type {
@@ -141,9 +141,9 @@ class ProviderApiBtc extends ProviderApiBase {
     const { network: networkName } = params;
     let networkId;
     if (networkName === 'livenet') {
-      networkId = OnekeyNetwork.btc;
+      networkId = UnionKeyNetwork.btc;
     } else if (networkName === 'testnet') {
-      networkId = OnekeyNetwork.tbtc;
+      networkId = UnionKeyNetwork.tbtc;
     }
     if (!networkId) {
       throw web3Errors.provider.custom({

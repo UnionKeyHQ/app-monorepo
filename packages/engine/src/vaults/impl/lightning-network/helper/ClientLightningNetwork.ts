@@ -168,7 +168,7 @@ class ClientLightning {
         '/invoices/create',
         {
           amount,
-          description: description || 'OneKey Invoice',
+          description: description || 'UnionKey Invoice',
           testnet: this.testnet,
         },
         {

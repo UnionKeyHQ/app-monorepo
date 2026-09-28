@@ -23,7 +23,7 @@ import PermissionDialog from '../../components/PermissionDialog/PermissionDialog
 import useNavigation from '../../hooks/useNavigation';
 import { handleScanResult } from '../../utils/gotoScanQrcode';
 import { showMigrateDataModal } from '../Onboarding/screens/Migration/ConnectServer/MigrateDataModal';
-import { OneKeyMigrateQRCodePrefix } from '../Onboarding/screens/Migration/util';
+import { UnionKeyMigrateQRCodePrefix } from '../Onboarding/screens/Migration/util';
 
 import { PermitDeniedDialog } from './PermitDeniedDialog';
 import ScanCamera from './ScanCamera';
@@ -72,7 +72,7 @@ const ScanQrcode: FC = () => {
           navigation.goBack();
           setTimeout(() => {
             showMigrateDataModal({
-              serverAddress: data.replace(OneKeyMigrateQRCodePrefix, ''),
+              serverAddress: data.replace(UnionKeyMigrateQRCodePrefix, ''),
             });
           }, 150);
           return;

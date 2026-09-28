@@ -18,7 +18,7 @@ import {
   backgroundClass,
   backgroundMethod,
 } from '@unionkeyhq/shared/src/background/backgroundDecorators';
-import { OnekeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
+import { UnionKeyNetwork } from '@unionkeyhq/shared/src/config/networkIds';
 import { isHardwareWallet } from '@unionkeyhq/shared/src/engine/engineUtils';
 import debugLogger from '@unionkeyhq/shared/src/logger/debugLogger';
 
@@ -82,7 +82,7 @@ export default class ServiceNostr extends ServiceBase {
       currentAccountId,
       currentNetworkId,
     );
-    const networkId = OnekeyNetwork.nostr;
+    const networkId = UnionKeyNetwork.nostr;
     const path = `${getNostrPath(accountIndex)}/${NOSTR_ADDRESS_INDEX}`;
     const accountId = `${walletId}--${path}`;
     try {
@@ -116,7 +116,7 @@ export default class ServiceNostr extends ServiceBase {
       currentAccountId,
       currentNetworkId,
     );
-    const networkId = OnekeyNetwork.nostr;
+    const networkId = UnionKeyNetwork.nostr;
     try {
       const path = `${getNostrPath(accountIndex)}/${NOSTR_ADDRESS_INDEX}`;
       const accountId = `${walletId}--${path}`;
@@ -217,7 +217,7 @@ export default class ServiceNostr extends ServiceBase {
         event.id = getEventHash(event);
       }
       const vault = await this.backgroundApi.engine.getVault({
-        networkId: OnekeyNetwork.nostr,
+        networkId: UnionKeyNetwork.nostr,
         accountId: nostrAccount.id,
       });
       const signedEvent = await vault.keyring.signTransaction(
@@ -265,7 +265,7 @@ export default class ServiceNostr extends ServiceBase {
       password,
     });
     const vault = (await this.backgroundApi.engine.getVault({
-      networkId: OnekeyNetwork.nostr,
+      networkId: UnionKeyNetwork.nostr,
       accountId: nostrAccount.id,
     })) as VaultNostr;
     const encrypted = await vault.encrypt({ pubkey, plaintext }, { password });
@@ -293,7 +293,7 @@ export default class ServiceNostr extends ServiceBase {
       password,
     });
     const vault = (await this.backgroundApi.engine.getVault({
-      networkId: OnekeyNetwork.nostr,
+      networkId: UnionKeyNetwork.nostr,
       accountId: nostrAccount.id,
     })) as VaultNostr;
     const decrypted = await vault.decrypt({ pubkey, ciphertext }, { password });
@@ -339,7 +339,7 @@ export default class ServiceNostr extends ServiceBase {
       password,
     });
     const vault = (await this.backgroundApi.engine.getVault({
-      networkId: OnekeyNetwork.nostr,
+      networkId: UnionKeyNetwork.nostr,
       accountId: nostrAccount.id,
     })) as VaultNostr;
     const signedHash = await vault.keyring.signMessage([{ message: sigHash }], {
@@ -377,7 +377,7 @@ export default class ServiceNostr extends ServiceBase {
       password: '',
     });
     const vault = (await this.backgroundApi.engine.getVault({
-      networkId: OnekeyNetwork.nostr,
+      networkId: UnionKeyNetwork.nostr,
       accountId: nostrAccount.id,
     })) as VaultNostr;
     const npub = await vault.keyring.getAddress({
