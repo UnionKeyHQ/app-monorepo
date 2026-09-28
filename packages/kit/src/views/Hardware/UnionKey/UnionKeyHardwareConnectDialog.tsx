@@ -1,9 +1,15 @@
 import type { FC } from 'react';
-import { useEffect } from 'react';
+import { useCallback, useState } from 'react';
 
 import { useIntl } from 'react-intl';
 
-import { Box, Dialog, Spinner, Typography } from '@unionkeyhq/components';
+import {
+  Box,
+  Button,
+  Dialog,
+  Spinner,
+  Typography,
+} from '@unionkeyhq/components';
 import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgroundApiProxy';
 
 export type HardwareLoadingDialogProps = {
@@ -21,15 +27,18 @@ const HardwareLoadingDialog: FC<HardwareLoadingDialogProps> = ({
 }) => {
   const intl = useIntl();
   const { serviceHardware } = backgroundApiProxy;
+  const [isRunning, setIsRunning] = useState(false);
 
-  useEffect(() => {
+  const handleContinue = useCallback(() => {
+    setIsRunning(true);
     if (deviceId && connectId) {
       serviceHardware.getFeatures(connectId).finally(() => onClose?.());
     } else if (onHandler) {
       onHandler().finally(() => onClose?.());
+    } else {
+      onClose?.();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [connectId, deviceId, onClose, onHandler, serviceHardware]);
 
   return (
     <Dialog visible>
@@ -39,10 +48,19 @@ const HardwareLoadingDialog: FC<HardwareLoadingDialogProps> = ({
         px={{ base: 4, md: 6 }}
         my={{ base: 12, md: 6 }}
       >
-        <Spinner size="lg" />
+        {isRunning ? <Spinner size="lg" /> : null}
         <Typography.DisplayMedium mt={6}>
-          {intl.formatMessage({ id: 'modal__device_status_check' })}
+          {intl.formatMessage({
+            id: isRunning
+              ? 'modal__device_status_check'
+              : 'modal__connect_and_unlock_device',
+          })}
         </Typography.DisplayMedium>
+        {!isRunning ? (
+          <Button type="primary" mt={6} minW={120} onPress={handleContinue}>
+            {intl.formatMessage({ id: 'action__continue' })}
+          </Button>
+        ) : null}
       </Box>
     </Dialog>
   );

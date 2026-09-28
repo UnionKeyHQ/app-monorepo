@@ -24,7 +24,6 @@ import backgroundApiProxy from '@unionkeyhq/kit/src/background/instance/backgrou
 import type { UnionKeyHardwareRoutesParams } from '@unionkeyhq/kit/src/routes/Root/Modal/HardwareUnionKey';
 import { setVerification } from '@unionkeyhq/kit/src/store/reducers/settings';
 import { deviceUtils } from '@unionkeyhq/kit/src/utils/hardware';
-import { getTimeStamp, hexlify } from '@unionkeyhq/kit/src/utils/helper';
 import { CERTIFICATE_URL } from '@unionkeyhq/shared/src/config/appConfig';
 
 import type { UnionKeyHardwareModalRoutes } from '../../../routes/routesEnum';
@@ -77,7 +76,9 @@ const ErrorMessage: FC<{ messageKey: string }> = ({ messageKey }) => {
   );
 };
 
-const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({ walletId }) => {
+const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
+  walletId,
+}) => {
   const intl = useIntl();
   const navigation = useNavigation();
   const isVerticalLayout = useIsVerticalLayout();
@@ -85,26 +86,27 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({ walletId }) =>
   const { engine, serviceHardware, dispatch } = backgroundApiProxy;
 
   const [device, setDevice] = useState<Device>();
+  const [hasStarted, setHasStarted] = useState(false);
 
   const [requestState, setRequestState] = useState<{
     isLoading: boolean;
     errorKey: string;
     success: boolean;
-  }>({ isLoading: true, errorKey: '', success: false });
+  }>({ isLoading: false, errorKey: '', success: false });
 
   const handleGetDeviceSigResponse = useCallback(async () => {
     const deviceConnectId = device?.mac;
     const deviceType = device?.deviceType;
-    const deviceSN = device?.uuid;
     if (!deviceConnectId || !deviceType) return;
+    setHasStarted(true);
     setRequestState({
       isLoading: true,
       errorKey: '',
       success: false,
     });
 
-    const ts = getTimeStamp();
-    const dataHex = hexlify(ts).replace(/^0x/, '');
+    const challenge = `${Date.now()}`;
+    const dataHex = Buffer.from(challenge, 'utf8').toString('hex');
 
     let sigResponse = null;
     try {
@@ -126,20 +128,21 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({ walletId }) =>
 
     try {
       if (!sigResponse) return;
-      const { data } = await axios.post<{
-        success: boolean;
-        sn?: string;
-        code?: string;
+      const { data: responseData } = await axios.post<{
+        code?: number;
+        message?: string;
+        data?: string;
       }>(CERTIFICATE_URL, {
-        model: deviceType,
-        data: dataHex,
-        ...sigResponse,
+        deviceType,
+        data: challenge,
+        cert: Buffer.from(sigResponse.cert).toString('base64'),
+        signature: Buffer.from(sigResponse.signature).toString('base64'),
       });
 
-      if (data.sn !== deviceSN || !data.success) {
+      if (responseData.code !== 0) {
         setRequestState({
           isLoading: false,
-          errorKey: data.code || 'SN_MISMATCH',
+          errorKey: 'CERT_INVALID',
           success: false,
         });
         dispatch(
@@ -169,17 +172,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({ walletId }) =>
         success: false,
       });
     }
-  }, [
-    device?.mac,
-    device?.deviceType,
-    device?.uuid,
-    serviceHardware,
-    dispatch,
-  ]);
-
-  useEffect(() => {
-    handleGetDeviceSigResponse();
-  }, [handleGetDeviceSigResponse]);
+  }, [device?.mac, device?.deviceType, serviceHardware, dispatch]);
 
   useEffect(() => {
     (async () => {
@@ -198,6 +191,30 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({ walletId }) =>
   }, [engine, intl, navigation, serviceHardware, walletId]);
 
   const verifyChildren = useMemo(() => {
+    if (!hasStarted) {
+      return (
+        <Center flex="1" minHeight={240} alignSelf="center" px={8}>
+          <Text fontSize={56}>🔓</Text>
+          <Typography.Heading mt={2} textAlign="center">
+            {intl.formatMessage({ id: 'modal__connect_and_unlock_device' })}
+          </Typography.Heading>
+          <Typography.Body2 mt={2} color="text-subdued" textAlign="center">
+            {intl.formatMessage({ id: 'modal__confirm_on_device' })}
+          </Typography.Body2>
+          <Button
+            type="primary"
+            onPress={handleGetDeviceSigResponse}
+            isDisabled={!device}
+            size={isVerticalLayout ? 'xl' : 'base'}
+            mt={6}
+            minW={120}
+          >
+            {intl.formatMessage({ id: 'action__verify' })}
+          </Button>
+        </Center>
+      );
+    }
+
     if (requestState?.isLoading) {
       return (
         <PresenceTransition
@@ -279,6 +296,8 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({ walletId }) =>
     intl,
     handleGetDeviceSigResponse,
     isVerticalLayout,
+    hasStarted,
+    device,
   ]);
 
   return (

@@ -1,10 +1,11 @@
 import type { FC } from 'react';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useIntl } from 'react-intl';
 
 import {
+  Button,
   Center,
   Modal,
   Spinner,
@@ -48,6 +49,7 @@ const DeviceStatusCheckModal: FC = () => {
   const { device, entry } = useRoute<RouteProps>().params;
   const { serviceHardware } = backgroundApiProxy;
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isChecking, setIsChecking] = useState(false);
 
   const safeGoBack = useCallback(() => {
     if (navigation?.canGoBack?.()) {
@@ -56,6 +58,7 @@ const DeviceStatusCheckModal: FC = () => {
   }, [navigation]);
 
   useEffect(() => {
+    if (!isChecking) return undefined;
     const id = setTimeout(() => {
       safeGoBack();
       ToastManager.show({
@@ -68,11 +71,12 @@ const DeviceStatusCheckModal: FC = () => {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [safeGoBack, intl]);
+  }, [safeGoBack, intl, isChecking]);
 
-  useEffect(() => {
+  const handleContinue = useCallback(async () => {
+    setIsChecking(true);
     // If device and account are ready, go to success page
-    async function main() {
+    try {
       let features: IUnionKeyDeviceFeatures | null = null;
       try {
         // 30s timeout for device connection
@@ -131,18 +135,27 @@ const DeviceStatusCheckModal: FC = () => {
         await wait(600);
         backgroundApiProxy.dispatch(setOnBoardingLoadingBehindModal(false));
       }
+    } finally {
+      setIsChecking(false);
     }
-
-    main();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [device, entry, navigation, safeGoBack, serviceHardware]);
 
   const content = (
-    <Center h="152px">
-      <Spinner size="lg" />
+    <Center minH="220px">
+      {isChecking ? <Spinner size="lg" /> : null}
       <Typography.DisplayMedium mt={6}>
-        {intl.formatMessage({ id: 'modal__device_status_check' })}
+        {intl.formatMessage({
+          id: isChecking
+            ? 'modal__device_status_check'
+            : 'modal__connect_and_unlock_device',
+        })}
       </Typography.DisplayMedium>
+      {!isChecking ? (
+        <Button type="primary" mt={6} minW={120} onPress={handleContinue}>
+          {intl.formatMessage({ id: 'action__continue' })}
+        </Button>
+      ) : null}
     </Center>
   );
 

@@ -21,13 +21,13 @@ export const HARDWARE_LITE_URL = 'https://unionkey.io/lite';
 
 export const HARDWARE_STORE_URL = 'https://unionkey.io/hardware';
 
-export const CERTIFICATE_URL = 'https://unionkey.io/school.html';
+export const UNIONKEY_API_BASE_URL =
+  process.env.UNIONKEY_API_BASE_URL || 'https://api.unionkey.io';
+
+export const CERTIFICATE_URL = `${UNIONKEY_API_BASE_URL}/hardware/verify`;
 
 export const HELP_CENTER_URL = 'https://unionkey.io/school';
 
 export const MOBILE_DOWNLOAD_URL = 'https://unionkey.io/mobile';
 
 export const DESKTOP_DOWNLOAD_URL = 'https://unionkey.io/desktop';
-
-export const UNIONKEY_API_BASE_URL =
-  process.env.UNIONKEY_API_BASE_URL || 'https://api.unionkey.io';
