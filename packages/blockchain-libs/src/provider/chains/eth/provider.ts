@@ -216,8 +216,7 @@ class Provider extends BaseProvider {
   ): Promise<string> => {
     let finalMessage: any = message.message;
 
-    // Special temporary fix for attribute name error on SpaceSwap
-    // https://onekeyhq.atlassian.net/browse/OK-18748
+    // Compatibility fix for the legacy SpaceSwap attribute name.
     try {
       finalMessage = JSON.parse(message.message);
       if (

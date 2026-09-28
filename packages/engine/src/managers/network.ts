@@ -96,8 +96,7 @@ function generateEIP3091(customExplorerURL?: string):
     u.pathname = `${base}block/{block}`;
     const block = u.toString().replace('%7Bblock%7D', '{block}');
 
-    // https://onekeyhq.atlassian.net/browse/OK-15390
-    // https://onekeyhq.atlassian.net/browse/OK-18828
+    // Use the EIP-3091 transaction URL template.
     // https://eips.ethereum.org/EIPS/eip-3091
     u.pathname = `${base}tx/{transaction}`;
     const transaction = u

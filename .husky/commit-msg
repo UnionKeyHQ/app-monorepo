@@ -8,12 +8,8 @@ PATTERN="^(OK)-[[:digit:]]+"
 
 if ! [[ "$START_LINE" =~ $PATTERN|^feat\:|^fix\:|^docs\:|^style\:|^refactor\:|^perf\:|^test\:|^chore\: ]]; then
   echo "
-Bad commit message, you must add a jira issue key here. https://onekeyhq.atlassian.net/jira/your-work
-See example:
-
-  OK-1234: commit message...
-
-Or your commit message must a valid commitizen standard message.https://github.com/commitizen/cz-cli
+Bad commit message. Use a valid Conventional Commits message.
+See https://www.conventionalcommits.org/
 
   feat:        A new feature
   fix:         A bug fix
