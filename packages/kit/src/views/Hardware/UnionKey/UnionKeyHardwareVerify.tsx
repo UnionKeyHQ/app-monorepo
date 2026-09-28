@@ -97,7 +97,15 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
   const handleGetDeviceSigResponse = useCallback(async () => {
     const deviceConnectId = device?.mac;
     const deviceType = device?.deviceType;
-    if (!deviceConnectId || !deviceType) return;
+    if (!deviceConnectId) {
+      setHasStarted(true);
+      setRequestState({
+        isLoading: false,
+        errorKey: 'HARDWARE_ERROR',
+        success: false,
+      });
+      return;
+    }
     setHasStarted(true);
     setRequestState({
       isLoading: true,
@@ -205,7 +213,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
           <Button
             type="primary"
             onPress={handleGetDeviceSigResponse}
-            isDisabled={!device}
+            isDisabled={!device?.mac}
             size={isVerticalLayout ? 'xl' : 'base'}
             mt={6}
             minW={120}
