@@ -295,8 +295,14 @@ class ServiceHardware extends ServiceBase {
 
   @backgroundMethod()
   async unlockDevice(connectId: string) {
-    // only unlock device when device is locked
-    return this.getPassphraseState(connectId, true);
+    const hardwareSDK = await this.getSDKInstance();
+    const response = await hardwareSDK?.deviceUnlock(connectId);
+
+    if (response?.success) {
+      return response.payload;
+    }
+
+    return Promise.reject(deviceUtils.convertDeviceError(response?.payload));
   }
 
   @backgroundMethod()
@@ -306,8 +312,7 @@ class ServiceHardware extends ServiceBase {
       return features;
     }
 
-    // This sends an actual unlock request to the device. The SDK emits the
-    // PIN/passphrase UI events and waits for the user to finish on-device.
+    // Send the real UnLockDevice command and wait for confirmation on-device.
     await this.unlockDevice(connectId);
 
     const refreshedFeatures = await this.getFeatures(connectId);
