@@ -86,6 +86,8 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
   const { engine, serviceHardware, dispatch } = backgroundApiProxy;
 
   const [device, setDevice] = useState<Device>();
+  const [isDeviceUnlocked, setIsDeviceUnlocked] = useState(false);
+  const [isCheckingDevice, setIsCheckingDevice] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
 
   const [requestState, setRequestState] = useState<{
@@ -93,6 +95,24 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
     errorKey: string;
     success: boolean;
   }>({ isLoading: false, errorKey: '', success: false });
+
+  const handleUnlockDevice = useCallback(async () => {
+    const deviceConnectId = device?.mac;
+    if (!deviceConnectId) return;
+
+    setIsCheckingDevice(true);
+    try {
+      const features = await serviceHardware.ensureDeviceUnlocked(
+        deviceConnectId,
+      );
+      setIsDeviceUnlocked(features.unlocked !== false);
+    } catch (error) {
+      setIsDeviceUnlocked(false);
+      deviceUtils.showErrorToast(error, 'msg__hardware_default_error');
+    } finally {
+      setIsCheckingDevice(false);
+    }
+  }, [device?.mac, serviceHardware]);
 
   const handleGetDeviceSigResponse = useCallback(async () => {
     const deviceConnectId = device?.mac;
@@ -189,6 +209,17 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
         const d = await engine.getHWDeviceByWalletId(walletId);
         if (!d?.mac) throw new Error();
         setDevice(d);
+
+        setIsCheckingDevice(true);
+        try {
+          const features = await serviceHardware.ensureDeviceUnlocked(d.mac);
+          setIsDeviceUnlocked(features.unlocked !== false);
+        } catch (error) {
+          setIsDeviceUnlocked(false);
+          deviceUtils.showErrorToast(error, 'msg__hardware_default_error');
+        } finally {
+          setIsCheckingDevice(false);
+        }
       } catch (err: any) {
         if (navigation?.canGoBack?.()) {
           navigation.goBack();
@@ -212,13 +243,18 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
           </Typography.Body2>
           <Button
             type="primary"
-            onPress={handleGetDeviceSigResponse}
-            isDisabled={!device?.mac}
+            onPress={
+              isDeviceUnlocked ? handleGetDeviceSigResponse : handleUnlockDevice
+            }
+            isDisabled={!device?.mac || isCheckingDevice}
+            isLoading={isCheckingDevice}
             size={isVerticalLayout ? 'xl' : 'base'}
             mt={6}
             minW={120}
           >
-            {intl.formatMessage({ id: 'action__verify' })}
+            {intl.formatMessage({
+              id: isDeviceUnlocked ? 'action__verify' : 'action__unlock',
+            })}
           </Button>
         </Center>
       );
@@ -307,6 +343,9 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
     isVerticalLayout,
     hasStarted,
     device,
+    handleUnlockDevice,
+    isCheckingDevice,
+    isDeviceUnlocked,
   ]);
 
   return (
