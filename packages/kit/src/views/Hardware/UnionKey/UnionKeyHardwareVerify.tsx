@@ -87,7 +87,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
 
   const [device, setDevice] = useState<Device>();
   const [isDeviceUnlocked, setIsDeviceUnlocked] = useState(false);
-  const [isCheckingDevice, setIsCheckingDevice] = useState(true);
+  const [isCheckingDevice, setIsCheckingDevice] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
 
   const [requestState, setRequestState] = useState<{
@@ -233,17 +233,6 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
         const d = await engine.getHWDeviceByWalletId(walletId);
         if (!d?.mac) throw new Error();
         setDevice(d);
-
-        setIsCheckingDevice(true);
-        try {
-          const features = await ensureDeviceUnlocked(d.mac);
-          setIsDeviceUnlocked(features.unlocked !== false);
-        } catch (error) {
-          setIsDeviceUnlocked(false);
-          deviceUtils.showErrorToast(error, 'msg__hardware_default_error');
-        } finally {
-          setIsCheckingDevice(false);
-        }
       } catch (err: any) {
         if (navigation?.canGoBack?.()) {
           navigation.goBack();
@@ -252,14 +241,7 @@ const UnionKeyHardwareVerifyDetail: FC<HardwareVerifyDetail> = ({
         deviceUtils.showErrorToast(err, 'action__connection_timeout');
       }
     })();
-  }, [
-    engine,
-    ensureDeviceUnlocked,
-    intl,
-    navigation,
-    serviceHardware,
-    walletId,
-  ]);
+  }, [engine, intl, navigation, serviceHardware, walletId]);
 
   const verifyChildren = useMemo(() => {
     if (!hasStarted) {

@@ -304,12 +304,8 @@ class ServiceHardware extends ServiceBase {
 
   @backgroundMethod()
   async ensureDeviceUnlocked(connectId: string) {
-    const features = await this.getFeatures(connectId);
-    if (features.unlocked !== false) {
-      return features;
-    }
-
-    // Ask the SDK to unlock using the command supported by this firmware.
+    // Some Touch firmware omits `unlocked`, which the SDK normalizes to true.
+    // Always probe the device so a locked device receives the PIN request.
     await this.unlockDevice(connectId);
 
     const refreshedFeatures = await this.getFeatures(connectId);
