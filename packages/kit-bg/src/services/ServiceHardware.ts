@@ -302,11 +302,13 @@ class ServiceHardware extends ServiceBase {
       throw new Error('Hardware device id is unavailable');
     }
 
-    // The public UnionKey firmware uses the standard protected GetAddress
-    // flow to request a PIN. It does not expose the SDK-only UnLockDevice
-    // message, so derive a hidden address to make the device unlock itself.
-    const response = await hardwareSDK?.evmGetAddress(connectId, deviceId, {
-      path: "m/44'/60'/0'/0/0",
+    // The public UnionKey firmware uses the original protected Bitcoin
+    // GetAddress message to request a PIN. Avoid extension-only unlock and EVM
+    // messages so this works with the firmware protocol in the public repo.
+    const response = await hardwareSDK?.btcGetAddress(connectId, deviceId, {
+      path: "m/44'/0'/0'/0/0",
+      coin: 'Bitcoin',
+      scriptType: 'SPENDADDRESS',
       showOnOneKey: false,
       initSession: true,
       useEmptyPassphrase: true,
