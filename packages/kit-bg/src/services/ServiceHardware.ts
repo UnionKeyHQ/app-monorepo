@@ -296,7 +296,21 @@ class ServiceHardware extends ServiceBase {
   @backgroundMethod()
   async unlockDevice(connectId: string) {
     const hardwareSDK = await this.getSDKInstance();
-    const response = await hardwareSDK?.deviceUnlock(connectId);
+    const features = await this.getFeatures(connectId);
+    const deviceId = features.device_id;
+    if (!deviceId) {
+      throw new Error('Hardware device id is unavailable');
+    }
+
+    // The public UnionKey firmware uses the standard protected GetAddress
+    // flow to request a PIN. It does not expose the SDK-only UnLockDevice
+    // message, so derive a hidden address to make the device unlock itself.
+    const response = await hardwareSDK?.evmGetAddress(connectId, deviceId, {
+      path: "m/44'/60'/0'/0/0",
+      showOnOneKey: false,
+      initSession: true,
+      useEmptyPassphrase: true,
+    });
 
     if (response?.success) {
       return response.payload;
